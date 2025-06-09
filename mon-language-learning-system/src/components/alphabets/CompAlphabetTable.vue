@@ -1,6 +1,6 @@
 <template>
     <div class="alphabet-table container">
-        <h2>Mon Alphabet Table</h2>
+        <h2>The Mon Alphabet Table</h2>
         <p class="text-muted">This table displays the Mon consonants along with their pronunciations and examples.</p>
 
 
@@ -76,7 +76,7 @@ export default {
                         { column: '1', letter: 'က', tone: 'light', pronunciation: 'ka', sound: require('@/assets/sounds/alphabets/row1Column1.mp3'), example: 'ကလေး (child)' },
                         { column: '2', letter: 'ခ', tone: 'light', pronunciation: 'kha', sound: require('@/assets/sounds/alphabets/row1Column2.mp3'), example: 'ခေါင်း (head)' },
                         { column: '3', letter: 'ဂ', tone: 'heavy', pronunciation: 'gai/gea', sound: require('@/assets/sounds/alphabets/row1Column3.mp3'), example: 'ဂျာ (jar)' },
-                        { column: '4', letter: 'ဃ', tone: 'heavy', pronunciation: 'ghai/khea', sound: require('@/assets/sounds/alphabets/row1Column4.mp3'), example: 'ဃာ (gha)' },
+                        { column: '4', letter: 'ဃ', tone: 'heavy', pronunciation: 'khai/khea', sound: require('@/assets/sounds/alphabets/row1Column4.mp3'), example: 'ဃာ (gha)' },
                         { column: '5', letter: 'င', tone: 'heavy', pronunciation: 'nga', sound: require('@/assets/sounds/alphabets/row1Column5.mp3'), example: 'ငါး (fish)' }
                     ]
                 },
