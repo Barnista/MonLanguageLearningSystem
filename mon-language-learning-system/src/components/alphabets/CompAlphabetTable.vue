@@ -37,7 +37,7 @@
                     </td>
                     <td v-for="(consonant, cIndex) in item.consonants" :key="cIndex">
                         <div>
-                            <span class="fs-4 fw-bold">{{ consonant.letter }}</span>
+                            <span class="fs-3 fw-bold">{{ consonant.letter }}</span>
                             <span v-if="consonant.tone == 'light'" class="ms-2 badge rounded-pill text-bg-light text-primary fw-bold">LT</span>
                             <span v-if="consonant.tone == 'heavy'" class="ms-2 badge rounded-pill text-bg-light text-danger fw-bold">HV</span>
                         </div>
