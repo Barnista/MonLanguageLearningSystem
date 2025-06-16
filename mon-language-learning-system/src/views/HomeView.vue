@@ -1,6 +1,8 @@
 <template>
   <div class="home">
-    <CompAlphabetTable />
+    <CompConsonantTable class="mb-2"  />
+    <hr>
+    <CompVowelTable class="mt-5" />
     <div class="my-5">
       <hr>
     </div>
@@ -9,12 +11,14 @@
 
 <script>
 // @ is an alias to /src
-import CompAlphabetTable from '@/components/alphabets/CompAlphabetTable.vue'
+import CompConsonantTable from '@/components/alphabets/CompConsonantTable.vue'
+import CompVowelTable from '@/components/alphabets/CompVowelTable.vue';
 
 export default {
   name: 'HomeView',
   components: {
-    CompAlphabetTable
+    CompConsonantTable,
+    CompVowelTable
   }
 }
 </script>
