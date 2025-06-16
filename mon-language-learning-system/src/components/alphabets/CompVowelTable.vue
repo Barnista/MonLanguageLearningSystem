@@ -194,8 +194,8 @@ export default {
                                 consonants2: ['ဒ', 'ပ', 'ဝ', 'ၜ']
                             }
                         },
-                        { column: '3', letter: 'ိ', letter2: '', ipaCL: 'ɔeˀ', ipaBT: 'ìˀ', ipaCL2: 'ɔeˀ', sound: require('@/assets/sounds/alphabets/vowelRow1Column3_CL.mp3'), sound2: require('@/assets/sounds/alphabets/vowelRow1Column3_BT.mp3'), sound3: require('@/assets/sounds/alphabets/vowelRow1Column3_CL2.mp3'), example: '' },
-                        { column: '4', letter: 'ဳ', letter2: '', ipaCL: 'i', ipaBT: 'ì', ipaCL2: 'i', sound: require('@/assets/sounds/alphabets/vowelRow1Column4_CL.mp3'), sound2: require('@/assets/sounds/alphabets/vowelRow1Column4_BT.mp3'), sound3: require('@/assets/sounds/alphabets/vowelRow1Column4_CL2.mp3'), example: '' },
+                        { column: '3', letter: 'ိ', letter2: '', ipaCL: 'ɔeˀ', ipaBT: 'ìˀ', ipaCL2: 'ɔɪ', sound: require('@/assets/sounds/alphabets/vowelRow1Column3_CL.mp3'), sound2: require('@/assets/sounds/alphabets/vowelRow1Column3_BT.mp3'), sound3: require('@/assets/sounds/alphabets/vowelRow1Column3_CL2.mp3'), example: '' },
+                        { column: '4', letter: 'ဳ', letter2: '', ipaCL: 'i', ipaBT: 'ì', ipaCL2: 'aɪ', sound: require('@/assets/sounds/alphabets/vowelRow1Column4_CL.mp3'), sound2: require('@/assets/sounds/alphabets/vowelRow1Column4_BT.mp3'), sound3: require('@/assets/sounds/alphabets/vowelRow1Column4_CL2.mp3'), example: '' },
                         { column: '5', letter: 'ု', letter2: '', ipaCL: 'aoˀ', ipaBT: 'ùˀ', ipaCL2: 'ùˀ', sound: require('@/assets/sounds/alphabets/vowelRow1Column5_CL2.mp3'), sound2: require('@/assets/sounds/alphabets/vowelRow1Column5_BT.mp3'), sound3: require('@/assets/sounds/alphabets/vowelRow1Column5_CL.mp3'), example: '' },
                         { column: '6', letter: 'ူ', letter2: '', ipaCL: 'ao', ipaBT: 'ù', ipaCL2: 'ùˀ', sound: require('@/assets/sounds/alphabets/vowelRow1Column6_CL2.mp3'), sound2: require('@/assets/sounds/alphabets/vowelRow1Column6_BT.mp3'), sound3: require('@/assets/sounds/alphabets/vowelRow1Column6_CL.mp3'), example: '' }
                     ]
