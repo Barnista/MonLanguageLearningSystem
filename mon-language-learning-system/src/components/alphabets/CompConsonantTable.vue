@@ -76,7 +76,7 @@ export default {
                         { column: '2', letter: 'ခ', tone: 'clear', pronunciation: 'kʰaˀ', sound: require('@/assets/sounds/alphabets/row1Column2.mp3'), example: 'ခေါင်း (head)' },
                         { column: '3', letter: 'ဂ', tone: 'breathy', pronunciation: 'kɛ̤ˀ', sound: require('@/assets/sounds/alphabets/row1Column3.mp3'), example: 'ဂျာ (jar)' },
                         { column: '4', letter: 'ဃ', tone: 'breathy', pronunciation: 'kʰɛ̤ˀ', sound: require('@/assets/sounds/alphabets/row1Column4.mp3'), example: 'ဃာ (gha)' },
-                        { column: '5', letter: 'င', tone: 'breathy', pronunciation: 'ŋɛ̤ˀ', sound: require('@/assets/sounds/alphabets/row1Column5.mp3'), example: 'ငါး (fish)' }
+                        { column: '5', letter: 'ၚ', tone: 'breathy', pronunciation: 'ŋɛ̤ˀ', sound: require('@/assets/sounds/alphabets/row1Column5.mp3'), example: 'ငါး (fish)' }
                     ]
                 },
                 {
@@ -85,7 +85,7 @@ export default {
                         { column: '1', letter: 'စ', tone: 'clear', pronunciation: 'caˀ', sound: require('@/assets/sounds/alphabets/row2Column1.mp3'), example: 'စကား (word)' },
                         { column: '2', letter: 'ဆ', tone: 'clear', pronunciation: 'cʰaˀ', sound: require('@/assets/sounds/alphabets/row2Column2.mp3'), example: 'ဆေး (medicine)' },
                         { column: '3', letter: 'ဇ', tone: 'breathy', pronunciation: 'cɛ̤ˀ', sound: require('@/assets/sounds/alphabets/row2Column3.mp3'), example: 'ဇာတ် (story)' },
-                        { column: '4', letter: 'ဈ', tone: 'breathy', pronunciation: 'cʰɛ̤ˀ', sound: require('@/assets/sounds/alphabets/row2Column4.mp3'), example: 'ဈေး (market)' },
+                        { column: '4', letter: 'ၛ', tone: 'breathy', pronunciation: 'cʰɛ̤ˀ', sound: require('@/assets/sounds/alphabets/row2Column4.mp3'), example: 'ဈေး (market)' },
                         { column: '5', letter: 'ည', tone: 'breathy', pronunciation: 'ɲɛ̤ˀ', sound: require('@/assets/sounds/alphabets/row2Column5.mp3'), example: 'ညီ (brother)' }
                     ]
                 },
