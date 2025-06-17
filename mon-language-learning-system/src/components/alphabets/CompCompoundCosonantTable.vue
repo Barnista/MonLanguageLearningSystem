@@ -32,7 +32,7 @@
             <div class="row">
                 <div class="col-12 col-md-8 col-lg-9 col-xl-10 text-start mb-3">
                     <span class="fw-bold fs-5">{{ compound.compoundWith.length }} consonants</span> can be compound with
-                    {{ compound.compound }} including:
+                    <span class="fw-bold fs-5">{{ compound.compound }}</span> including:
                     <span class="fw-bold fs-5">{{ compound.compoundWith.join(', ') }}</span>.
                 </div>
                 <div class="col-12 col-md-4 col-lg-3 col-xl-2 text-end mb-3">
