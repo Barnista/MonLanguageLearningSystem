@@ -1,10 +1,16 @@
 <template>
     <div class="keyboard-comp">
-        <div class="text-end">
-            <span v-if="isCopied" class="text-success me-2">Copied to clipboard.</span>
-            <button @click="copyText" class="btn btn-outline-success mb-2">
-                <i class="bi bi-clipboard"></i> Copy text
-            </button>
+        <div class="d-flex justify-content-between align-items-center mb-2">
+            <div class="text-start">
+                <img :src="langs[selectedLangIndex].flag" alt="" class="me-2" width="48" height="auto">
+                <span class="fs-5 fw-bold">{{ langs[selectedLangIndex].label || langs[selectedLangIndex].lang }}</span>
+            </div>
+            <div class="d-flex align-items-center">
+                <span v-if="isCopied" class="text-success me-2">Copied to clipboard.</span>
+                <button @click="copyText" class="btn btn-outline-success">
+                    <i class="bi bi-clipboard"></i> Copy text
+                </button>
+            </div>
         </div>
         <input ref="inputText" class="form-control custom-input py-3 mb-2" type="text" v-model="input"
             @input="onInputChange" placeholder="Tap on the virtual keyboard to start">
