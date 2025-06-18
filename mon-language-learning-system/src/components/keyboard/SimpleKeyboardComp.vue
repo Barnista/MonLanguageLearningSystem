@@ -31,7 +31,7 @@ export default {
                     'default': [
                         'ၝ ၁ ၂ ၃ ၄ ၅ ၆ ၇ ၈ ၉ ၀ - = {bksp}',
                         '{tab} ဆ တ န မ အ ပ က ၚ သ စ ဟ ဩ ၑ',
-                        '{lock} ​ေ ျ ိ ် ါ ဴ ြ ု ူ း \' {enter}',
+                        '{lock} ေ ျ ိ ် ါ ဴ ြ ု ူ း \' {enter}',
                         '{shift} ဖ ထ ခ လ ဘ ည ာ ယ ၜ ။ {shift}',
                         '.com @ {space}'
                     ],
@@ -50,7 +50,6 @@ export default {
         }
     }),
     mounted() {
-        console.log('burmese', this.layouts.burmese);
         this.keyboard = new Keyboard(this.keyboardClass, {
             onChange: this.onChange,
             onKeyPress: this.onKeyPress,
