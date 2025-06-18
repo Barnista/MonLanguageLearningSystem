@@ -18,7 +18,7 @@
             @onKeyPress="onKeyPress" />
         <div class="text-center mt-2">
             <button v-for="(lang, index) in langs" :key="index"
-                :class="['btn', 'me-2', selectedLangIndex === index ? 'btn-primary' : 'btn-outline-primary']"
+                :class="['btn', 'me-2', 'mb-2', selectedLangIndex === index ? 'btn-primary' : 'btn-outline-primary']"
                 @click="selectedLang(lang, index)">
                 <img :src="lang.flag" alt="" class="me-2" width="28" height="auto">
                 {{ lang.label || lang.lang }}
