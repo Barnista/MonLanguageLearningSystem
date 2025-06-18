@@ -10,13 +10,6 @@
                     </div>
                     <div class="modal-body">
                         <KeyboardSetComp class="my-4" />
-                        <p class="text-center text-muted">
-                            <small>
-                                Created by <a href="https://github.com/Barnista/MonLanguageLearningSystem" target="_blank">Barnista</a>.
-                                Powered by <a href="https://github.com/hodgef/simple-keyboard" target="_blank">simple-keyboard</a>. 
-                                <br>Mon keyboard layout designed by <a href="https://github.com/keymanapp/keyboards/tree/master/release/m/mon_anonta" target="_blank">Anonta Mon</a>.
-                            </small>
-                        </p>
                     </div>
                 </div>
             </div>

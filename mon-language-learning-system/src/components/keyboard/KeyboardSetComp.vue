@@ -2,12 +2,12 @@
     <div class="keyboard-comp">
         <div class="text-end">
             <span v-if="isCopied" class="text-success me-2">Copied to clipboard.</span>
-            <button @click="copyText" class="btn btn-outline-success mb-2" >
+            <button @click="copyText" class="btn btn-outline-success mb-2">
                 <i class="bi bi-clipboard"></i> Copy text
             </button>
         </div>
-        <input ref="inputText" class="form-control custom-input py-3 mb-2" type="text" v-model="input" @input="onInputChange"
-            placeholder="Tap on the virtual keyboard to start">
+        <input ref="inputText" class="form-control custom-input py-3 mb-2" type="text" v-model="input"
+            @input="onInputChange" placeholder="Tap on the virtual keyboard to start">
         <SimpleKeyboardComp ref="simpleKeyboard" :keyboardClass="keyboardClass" :input="input" @onChange="onChange"
             @onKeyPress="onKeyPress" />
         <div class="text-center mt-2">
@@ -18,6 +18,15 @@
                 {{ lang.label || lang.lang }}
             </button>
         </div>
+        <p class="mt-4 text-center text-muted">
+            <small>
+                Created by <a href="https://github.com/Barnista/MonLanguageLearningSystem" target="_blank">Barnista</a>.
+                Powered by <a href="https://github.com/hodgef/simple-keyboard" target="_blank">simple-keyboard</a>.
+                <br>Mon keyboard layout designed by <a
+                    href="https://github.com/keymanapp/keyboards/tree/master/release/m/mon_anonta"
+                    target="_blank">Anonta Mon</a>.
+            </small>
+        </p>
     </div>
 </template>
 

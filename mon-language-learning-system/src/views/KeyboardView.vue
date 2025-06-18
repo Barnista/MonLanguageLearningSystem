@@ -1,7 +1,7 @@
 <template>
     <div class="keyboard-view">
         <div class="container my-5">
-            <KeyboardSetComp class="mb-2" />
+            <KeyboardSetComp class="mb-4" />
         </div>
     </div>
 </template>
