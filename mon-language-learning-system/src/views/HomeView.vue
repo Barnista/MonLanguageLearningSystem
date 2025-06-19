@@ -21,7 +21,7 @@
 
 <script>
 // @ is an alias to /src
-import CompCompoundCosonantTable from '@/components/alphabets/CompCompoundCosonantTable.vue';
+import CompCompoundCosonantTable from '@/components/alphabets/CompCompoundConsonantTable.vue';
 import CompConsonantTable from '@/components/alphabets/CompConsonantTable.vue'
 import CompVowelTable from '@/components/alphabets/CompVowelTable.vue';
 import KeyboardModal from '@/components/keyboard/KeyboardModal.vue';

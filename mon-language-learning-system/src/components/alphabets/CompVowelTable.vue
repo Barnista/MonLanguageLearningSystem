@@ -8,8 +8,6 @@
                 syllables.</p>
             <table class="my-2">
                 <thead>
-                </thead>
-                <tbody>
                     <tr>
                         <td class="bg-light"></td>
                         <td class="bg-light"></td>
@@ -18,8 +16,10 @@
                         <td class="bg-light"></td>
                         <td class="bg-light"></td>
                     </tr>
-                    <tr v-for="(item, index) in alphabets" :key="index">
-                        <td v-for="(vowel, cIndex) in item.vowels" :key="cIndex">
+                </thead>
+                <tbody>
+                    <tr v-for="(row, index) in vowels" :key="index">
+                        <td v-for="(vowel, cIndex) in row" :key="cIndex">
                             <div>
                                 <span class="fs-3 fw-bold">{{ vowel.letter }}</span>
                             </div>
@@ -67,11 +67,11 @@
                         <td class="bg-light"></td>
                         <td class="bg-light"></td>
                     </tr>
-                    <tr v-for="(item, index) in alphabets2" :key="index">
-                        <td v-for="(vowel, cIndex) in item.vowels" :key="cIndex">
+                    <tr v-for="(row, index) in vowels" :key="index">
+                        <td v-for="(vowel, cIndex) in row" :key="cIndex">
                             <div>
-                                <span class="fs-3 fw-bold">{{ vowel.letter }}</span>
-                                <span v-if="vowel.letter2" class="fw-bold text-muted"><br>(or {{ vowel.letter2
+                                <span class="fs-3 fw-bold">{{ vowel.compound || '-' }}</span>
+                                <span v-if="vowel.compound2" class="fw-bold text-muted"><br>(or {{ vowel.compound2
                                     }})<br><small><a :href="`#${vowel.exception.id}`">(see
                                             exceptions)</a></small></span>
                             </div>
@@ -95,18 +95,18 @@
                                 ✅ copied
                             </button>
                             <button v-else class="mt-2 ms-1 btn btn-sm btn-outline-secondary py-0 px-1"
-                                @click="copyToClipboard(vowel.letter, index, cIndex)">
+                                @click="copyToClipboard(vowel.compound, index, cIndex)">
                                 📋 copy
                             </button>
                         </td>
                     </tr>
                 </tbody>
             </table>
-            <div v-for="(item, index) in alphabets2" :key="index">
-                <div v-for="(vowel, cIndex) in item.vowels" :key="cIndex">
+            <div v-for="(row, index) in vowels" :key="index">
+                <div v-for="(vowel, cIndex) in row" :key="cIndex">
                     <div v-if="vowel.exception" class="mt-4">
                         <h4 class="text-start" :id="vowel.exception.id">
-                            Exception #{{ cIndex }}: {{ vowel.letter }} → <span class="fw-bold">{{ vowel.letter2
+                            Exception #{{ cIndex }}: {{ vowel.compound }} → <span class="fw-bold">{{ vowel.compound2
                                 }}</span>
                         </h4>
                         <p class="text-start text-muted">
@@ -121,14 +121,14 @@
                                 <tr>
                                     <td v-for="(consonant, cIndex) in vowel.exception.consonants1" :key="cIndex"
                                         class="fs-4">
-                                        {{ consonant }} → <span class="fw-bold">{{ `${consonant}${vowel.letter2}`
+                                        {{ consonant }} → <span class="fw-bold">{{ `${consonant}${vowel.compound2}`
                                             }}</span>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td v-for="(consonant, cIndex) in vowel.exception.consonants2" :key="cIndex"
                                         class="fs-4">
-                                        {{ consonant }} → <span class="fw-bold">{{ `${consonant}${vowel.letter2}`
+                                        {{ consonant }} → <span class="fw-bold">{{ `${consonant}${vowel.compound2}`
                                             }}</span>
                                     </td>
                                 </tr>
@@ -142,6 +142,9 @@
 </template>
 
 <script>
+
+import monAlphabets from '@/models/mon-alphabets';
+
 export default {
     name: 'CompVowelTable',
     data() {
@@ -149,82 +152,10 @@ export default {
             copiedIndex: null,
             copiedCIndex: null,
             copiedText: '',
-            alphabets: [
-                {
-                    row: '1',
-                    type: 'syllable-initial letter',
-                    vowels: [
-                        { column: '1', letter: 'အ', ipaCL: 'aˀ', ipaBT: 'ɛ̀ˀ', sound: require('@/assets/sounds/alphabets/vowelRow1Column1_CL.mp3'), sound2: require('@/assets/sounds/alphabets/vowelRow1Column1_BT.mp3'), example: '' },
-                        { column: '2', letter: 'အာ', ipaCL: 'a', ipaBT: 'ɛ̀a', sound: require('@/assets/sounds/alphabets/vowelRow1Column2_CL.mp3'), sound2: require('@/assets/sounds/alphabets/vowelRow1Column2_BT.mp3'), example: '' },
-                        { column: '3', letter: 'ဣ', ipaCL: 'ɔeˀ', ipaBT: 'ìˀ', sound: require('@/assets/sounds/alphabets/vowelRow1Column3_CL.mp3'), sound2: require('@/assets/sounds/alphabets/vowelRow1Column3_BT.mp3'), example: '' },
-                        { column: '4', letter: 'ဣဳ', ipaCL: 'i', ipaBT: 'ì', sound: require('@/assets/sounds/alphabets/vowelRow1Column4_CL.mp3'), sound2: require('@/assets/sounds/alphabets/vowelRow1Column4_BT.mp3'), example: '' },
-                        { column: '5', letter: 'ဥ', ipaCL: 'ùˀ', ipaBT: 'ùˀ', sound: require('@/assets/sounds/alphabets/vowelRow1Column5_CL.mp3'), sound2: require('@/assets/sounds/alphabets/vowelRow1Column5_BT.mp3'), example: '' },
-                        { column: '6', letter: 'ဥူ', ipaCL: 'ù', ipaBT: 'ù', sound: require('@/assets/sounds/alphabets/vowelRow1Column6_CL.mp3'), sound2: require('@/assets/sounds/alphabets/vowelRow1Column6_BT.mp3'), example: '' }
-                    ]
-                },
-                {
-                    row: '2',
-                    type: 'syllable-initial letter',
-                    vowels: [
-                        { column: '1', letter: 'ဨ', ipaCL: 'e', ipaBT: 'è', sound: require('@/assets/sounds/alphabets/vowelRow2Column1_CL.mp3'), sound2: require('@/assets/sounds/alphabets/vowelRow2Column1_BT.mp3'), example: '' },
-                        { column: '2', letter: 'အဲ', ipaCL: 'oa', ipaBT: 'òa', sound: require('@/assets/sounds/alphabets/vowelRow2Column2_CL.mp3'), sound2: require('@/assets/sounds/alphabets/vowelRow2Column2_BT.mp3'), example: '' },
-                        { column: '3', letter: 'ဩ', ipaCL: 'ao', ipaBT: 'ɜ̀', sound: require('@/assets/sounds/alphabets/vowelRow2Column3_CL.mp3'), sound2: require('@/assets/sounds/alphabets/vowelRow2Column3_BT.mp3'), example: '' },
-                        { column: '4', letter: 'အဴ‌‍‍', ipaCL: 'ao', ipaBT: 'ɛ̀a', sound: require('@/assets/sounds/alphabets/vowelRow2Column4_CL.mp3'), sound2: require('@/assets/sounds/alphabets/vowelRow2Column4_BT.mp3'), example: '' },
-                        { column: '5', letter: 'အံ‌‍‍', ipaCL: 'ɔˀ', ipaBT: 'òˀ', sound: require('@/assets/sounds/alphabets/vowelRow2Column5_CL.mp3'), sound2: require('@/assets/sounds/alphabets/vowelRow2Column5_BT.mp3'), example: '' },
-                        { column: '6', letter: 'အး', ipaCL: 'ah', ipaBT: 'ɛ̀h', sound: require('@/assets/sounds/alphabets/vowelRow2Column6_CL.mp3'), sound2: require('@/assets/sounds/alphabets/vowelRow2Column6_BT.mp3'), example: '' }
-                    ]
-                },
+            vowels: [
+                monAlphabets.vowels.slice(0, 6),
+                monAlphabets.vowels.slice(6, 12)
             ],
-            alphabets2: [
-                {
-                    row: '1',
-                    type: 'consonant diacritic',
-                    vowels: [
-                        { column: '1', letter: '-', letter2: '', ipaCL: 'aˀ', ipaBT: 'ɛ̀ˀ', sound: require('@/assets/sounds/alphabets/vowelRow1Column1_CL.mp3'), sound2: require('@/assets/sounds/alphabets/vowelRow1Column1_BT.mp3'), example: '' },
-                        {
-                            column: '2',
-                            letter: 'ာ', letter2: 'ါ',
-                            ipaCL: 'a', ipaBT: 'ɛ̀a',
-                            sound: require('@/assets/sounds/alphabets/vowelRow1Column2_CL.mp3'), sound2: require('@/assets/sounds/alphabets/vowelRow1Column2_BT.mp3'),
-                            example: '',
-                            exception: {
-                                id: 'exception-1',
-                                text: '"ါ" is used after certain consonants including:',
-                                consonants1: ['ခ', 'ဂ', 'ဇ', 'ဎ'],
-                                consonants2: ['ဒ', 'ပ', 'ဝ', 'ၜ']
-                            }
-                        },
-                        { column: '3', letter: 'ိ', letter2: '', ipaCL: 'ɔeˀ', ipaBT: 'ìˀ', ipaCL2: 'ɔɪ', sound: require('@/assets/sounds/alphabets/vowelRow1Column3_CL.mp3'), sound2: require('@/assets/sounds/alphabets/vowelRow1Column3_BT.mp3'), sound3: require('@/assets/sounds/alphabets/vowelRow1Column3_CL2.mp3'), example: '' },
-                        { column: '4', letter: 'ဳ', letter2: '', ipaCL: 'i', ipaBT: 'ì', ipaCL2: 'aɪ', sound: require('@/assets/sounds/alphabets/vowelRow1Column4_CL.mp3'), sound2: require('@/assets/sounds/alphabets/vowelRow1Column4_BT.mp3'), sound3: require('@/assets/sounds/alphabets/vowelRow1Column4_CL2.mp3'), example: '' },
-                        { column: '5', letter: 'ု', letter2: '', ipaCL: 'aoˀ', ipaBT: 'ùˀ', ipaCL2: 'ùˀ', sound: require('@/assets/sounds/alphabets/vowelRow1Column5_CL2.mp3'), sound2: require('@/assets/sounds/alphabets/vowelRow1Column5_BT.mp3'), sound3: require('@/assets/sounds/alphabets/vowelRow1Column5_CL.mp3'), example: '' },
-                        { column: '6', letter: 'ူ', letter2: '', ipaCL: 'ao', ipaBT: 'ù', ipaCL2: 'ùˀ', sound: require('@/assets/sounds/alphabets/vowelRow1Column6_CL2.mp3'), sound2: require('@/assets/sounds/alphabets/vowelRow1Column6_BT.mp3'), sound3: require('@/assets/sounds/alphabets/vowelRow1Column6_CL.mp3'), example: '' }
-                    ]
-                },
-                {
-                    row: '2',
-                    type: 'consonant diacritic',
-                    vowels: [
-                        { column: '1', letter: 'ေ', letter2: '', ipaCL: 'e', ipaBT: 'è', sound: require('@/assets/sounds/alphabets/vowelRow2Column1_CL.mp3'), sound2: require('@/assets/sounds/alphabets/vowelRow2Column1_BT.mp3'), example: '' },
-                        { column: '2', letter: 'ဲ', letter2: '', ipaCL: 'oa', ipaBT: 'òa', sound: require('@/assets/sounds/alphabets/vowelRow2Column2_CL.mp3'), sound2: require('@/assets/sounds/alphabets/vowelRow2Column2_BT.mp3'), example: '' },
-                        {
-                            column: '3',
-                            letter: 'ော', letter2: 'ေါ',
-                            ipaCL: 'ao', ipaBT: 'ɜ̀',
-                            sound: require('@/assets/sounds/alphabets/vowelRow2Column3_CL.mp3'), sound2: require('@/assets/sounds/alphabets/vowelRow2Column3_BT.mp3'),
-                            example: '',
-                            exception: {
-                                id: 'exception-2',
-                                text: '"ေါ" is used after certain consonants including:',
-                                consonants1: ['ခ', 'ဂ', 'ဇ', 'ဎ'],
-                                consonants2: ['ဒ', 'ပ', 'ဝ', 'ၜ']
-                            }
-                        },
-                        { column: '4', letter: 'ဴ', letter2: '', ipaCL: 'ao', ipaBT: 'ɛ̀a', sound: require('@/assets/sounds/alphabets/vowelRow2Column4_CL.mp3'), sound2: require('@/assets/sounds/alphabets/vowelRow2Column4_BT.mp3'), example: '' },
-                        { column: '5', letter: 'ံ', letter2: '', ipaCL: 'ɔˀ', ipaBT: 'òˀ', sound: require('@/assets/sounds/alphabets/vowelRow2Column5_CL.mp3'), sound2: require('@/assets/sounds/alphabets/vowelRow2Column5_BT.mp3'), example: '' },
-                        { column: '6', letter: 'း', letter2: '', ipaCL: 'ah', ipaBT: 'ɛ̀h', sound: require('@/assets/sounds/alphabets/vowelRow2Column6_CL.mp3'), sound2: require('@/assets/sounds/alphabets/vowelRow2Column6_BT.mp3'), example: '' }
-                    ]
-                },
-            ]
         }
     },
     methods: {
@@ -243,19 +174,19 @@ export default {
             });
         },
         pronouceVowelCL(vowel) {
-            const audio = new Audio(vowel.sound);
+            const audio = new Audio(vowel.soundCL);
             audio.play().catch(err => {
                 console.error('Error playing sound:', err);
             });
         },
         pronouceVowelCL2(vowel) {
-            const audio = new Audio(vowel.sound3);
+            const audio = new Audio(vowel.soundCL2);
             audio.play().catch(err => {
                 console.error('Error playing sound:', err);
             });
         },
         pronouceVowelBT(vowel) {
-            const audio = new Audio(vowel.sound2);
+            const audio = new Audio(vowel.soundBT);
             audio.play().catch(err => {
                 console.error('Error playing sound:', err);
             });
