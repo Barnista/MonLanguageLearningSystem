@@ -1,7 +1,7 @@
 <template>
   <div class="home container">
     <div class="text-center my-5">
-      <h1 class="display-4 fw-bold mb-3">Welcome to the {{ about.appName }}</h1>
+      <h1 class="display-4 fw-bold mb-3">Welcome to {{ about.appName }}</h1>
       <p class="lead mb-4">
         Explore the Mon language, learn alphabets, and practice your skills.<br>
         Start your journey by selecting a section below.
