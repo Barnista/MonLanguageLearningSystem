@@ -21,15 +21,20 @@
     <div class="my-5">
       <hr>
     </div>
+    <CompAbout />
   </div>
 </template>
 
 <script>
+
+import CompAbout from '@/components/CompAbout.vue';
+
 import about from '@/models/about';
 
 export default {
   name: 'HomeView',
   components: {
+    CompAbout
   },
   data: () => {
     return {

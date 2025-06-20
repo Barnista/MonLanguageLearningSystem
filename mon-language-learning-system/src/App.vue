@@ -22,7 +22,7 @@
 <script>
 
 import KeyboardModal from './components/keyboard/KeyboardModal.vue';
-import CompNavbar from './views/misc/CompNavbar.vue';
+import CompNavbar from './components/misc/CompNavbar.vue';
 
 import about from './models/about';
 

@@ -1,6 +1,6 @@
 <template>
     <div id="vowel-table" class="vowel-table">
-        <h2>Vowels</h2>
+        <h2>Vowels (10)</h2>
         <p class="text-muted">This table displays the Mon vowels along with their pronunciations and examples.</p>
         <div class="mt-4">
             <h3 class="text-start">1. Syllable-initial letter</h3>

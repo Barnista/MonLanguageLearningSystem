@@ -1,11 +1,11 @@
 <template>
     <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">
+            <router-link class="navbar-brand" to="/#">
                 <img src="@/assets/logo.png" alt="Mon Language Logo" width="30" height="30"
                     class="d-inline-block align-text-top">
                 {{ about.appName }}
-            </a>
+            </router-link>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>

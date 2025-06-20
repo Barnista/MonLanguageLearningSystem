@@ -1,6 +1,6 @@
 <template>
     <div id="compound-consonant-table" class="compound-consonant-table">
-        <h2>Compound Consonants</h2>
+        <h2>Compound Consonants (11)</h2>
         <p>Compound consonants are formed by combining two consonants. They are used to create specific sounds in the
             Mon language. There are 11 compound consonants including:</p>
         <table>

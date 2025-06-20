@@ -1,6 +1,6 @@
 <template>
     <div id="consonant-table" class="consonant-table">
-        <h2>Consonants</h2>
+        <h2>Consonants (35)</h2>
         <p class="text-muted">The Mon alphabet contains 35 consonants (including a zero consonant), as follows:</p>
 
         <div class="mt-4 d-flex">
