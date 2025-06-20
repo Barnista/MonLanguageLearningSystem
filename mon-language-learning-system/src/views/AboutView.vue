@@ -1,7 +1,7 @@
 <template>
   <div class="about mt-4">
     <div class="container my-5">
-      <h1 class="text-center">About {{ about.appName }}</h1>
+      <h1 class="text-center">About {{ about.appName2 }}</h1>
       <p class="mt-3">
         This system is designed to help users learn the Mon language through interactive lessons, exercises, and
         resources.
@@ -15,7 +15,7 @@
         wider audience.
       </p>
       <p>
-        For more information, you can visit the <a href="" target="_blank" rel="noopener noreferrer">GitHub
+        For more information, you can visit the <a href="https://github.com/Barnista/MonLanguageLearningSystem" target="_blank" rel="noopener noreferrer">GitHub
           repository</a>.
       </p>
 

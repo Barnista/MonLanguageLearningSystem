@@ -1,5 +1,6 @@
 export default {
     projectName: 'mon-language-learning-system',
     appName: 'The Mon Language',
-    appVersion: '0.6.0'
+    appName2: 'The Mon Language: Learning System',
+    appVersion: '0.6.1'
 }
