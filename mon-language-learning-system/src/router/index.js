@@ -8,6 +8,11 @@ const routes = [
     component: HomeView
   },
   {
+    path: '/:pathMatch(.*)*',
+    name: 'not-found',
+    component: () => import('../views/misc/NotFoundView.vue')
+  },
+  {
     path: '/about',
     name: 'about',
     // route level code-splitting
@@ -19,12 +24,38 @@ const routes = [
     path: '/keyboard',
     name: 'keyboard',
     component: () => import(/* webpackChunkName: "keyboard" */ '../views/KeyboardView.vue')
+  },
+  {
+    path: '/alphabets/consonant',
+    name: 'alphabets-consonant',
+    component: () => import('../views/alphabets/ConsonantView.vue')
+  },
+  {
+    path: '/alphabets/vowel',
+    name: 'alphabets-vowel',
+    component: () => import('../views/alphabets/VowelView.vue')
+  },
+  {
+    path: '/alphabets/compound-consonant',
+    name: 'alphabets-compound-consonant',
+    component: () => import('../views/alphabets/CompoundConsonantView.vue')
   }
 ]
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
-  routes
+  routes,
+  scrollBehavior(to, from, savedPosition){
+    console.log('route pushed:', to, from, savedPosition);
+    if (to.hash) {
+      return {
+        el: to.hash,
+        behavior: 'smooth'
+      }
+    }else{
+      return savedPosition;
+    }
+  }
 })
 
 export default router

@@ -749,7 +749,7 @@ export default {
 
 
         if (finalConsonant) {
-            word += finalConsonant + '်';
+            word += finalConsonant;
             let finalConsonantData = this.getConsonantByLetter(finalConsonant);
             if (finalConsonantData) {
                 ipa += finalConsonantData.compoundIPA || finalConsonantData.ipa;

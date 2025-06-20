@@ -1,5 +1,5 @@
 <template>
-    <div class="consonent-table container">
+    <div id="consonant-table" class="consonant-table">
         <h2>Consonants</h2>
         <p class="text-muted">The Mon alphabet contains 35 consonants (including a zero consonant), as follows:</p>
 
@@ -31,7 +31,7 @@
                     <td class="bg-light">column 5</td>
                 </tr>
                 <tr v-for="(item, index) in consonants" :key="index">
-                    <td :class="item.row === 'none' ? 'bg-secondary' : 'bg-light'">
+                    <td :class="item.type === 'none' ? 'bg-secondary' : 'bg-light'">
                         <span>{{ index < 5 ? `row ${index + 1}` : '-' }}</span>
                     </td>
                     <td v-for="(consonant, cIndex) in item.rows" :key="cIndex">

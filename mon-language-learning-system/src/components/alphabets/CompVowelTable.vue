@@ -1,5 +1,5 @@
 <template>
-    <div class="vowel-table container">
+    <div id="vowel-table" class="vowel-table">
         <h2>Vowels</h2>
         <p class="text-muted">This table displays the Mon vowels along with their pronunciations and examples.</p>
         <div class="mt-4">
