@@ -84,7 +84,7 @@
 
 <script>
 
-import about from '@/models/about';
+import about from '@/services/about';
 
 export default {
     name: "CompAbout",

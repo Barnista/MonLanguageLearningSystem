@@ -1,18 +1,18 @@
 <template>
     <div id="consonant-table" class="consonant-table">
-        <h2>Consonants (35)</h2>
-        <p class="text-muted">The Mon alphabet contains 35 consonants (including a zero consonant), as follows:</p>
+        <h2>{{langSet[lang ? lang : 'en'].learnAlphabets.consonants}} (35)</h2>
+        <p class="text-muted">{{ langSet[lang ? lang : 'en'].consonantView.description }}</p>
 
         <div class="mt-4 d-flex">
             <div style="width: 24px; height: 24px;" class="bg-secondary"></div>
-            <span style="margin-left: 8px;">= zero consonants </span>
+            <span style="margin-left: 8px;">= {{ langSet[lang ? lang : 'en'].consonantView.zeroConsonants }} </span>
             <div class="ms-2">
                 <span class="ms-2 badge rounded-pill text-bg-light text-primary fw-bold">CL</span>
-                <span> = clear consonants</span>
+                <span> = {{langSet[lang ? lang : 'en'].consonantView.clearConsonants}}</span>
             </div>
             <div class="ms-2">
                 <span class="ms-2 badge rounded-pill text-bg-light text-danger fw-bold">BT</span>
-                <span> = breathy consonants</span>
+                <span> = {{langSet[lang ? lang : 'en'].consonantView.breathyConsonants}}</span>
             </div>
         </div>
                 <table class="my-2">
@@ -24,15 +24,15 @@
             <tbody>
                 <tr>
                     <td class="bg-light"></td>
-                    <td class="bg-light">column 1</td>
-                    <td class="bg-light">column 2</td>
-                    <td class="bg-light">column 3</td>
-                    <td class="bg-light">column 4</td>
-                    <td class="bg-light">column 5</td>
+                    <td class="bg-light">{{ langSet[lang ? lang : 'en'].consonantView.column }} 1</td>
+                    <td class="bg-light">{{ langSet[lang ? lang : 'en'].consonantView.column }} 2</td>
+                    <td class="bg-light">{{ langSet[lang ? lang : 'en'].consonantView.column }} 3</td>
+                    <td class="bg-light">{{ langSet[lang ? lang : 'en'].consonantView.column }} 4</td>
+                    <td class="bg-light">{{ langSet[lang ? lang : 'en'].consonantView.column }} 5</td>
                 </tr>
                 <tr v-for="(item, index) in consonants" :key="index">
                     <td :class="item.type === 'none' ? 'bg-secondary' : 'bg-light'">
-                        <span>{{ index < 5 ? `row ${index + 1}` : '-' }}</span>
+                        <span>{{ index < 5 ? `${langSet[lang ? lang : 'en'].consonantView.row} ${index + 1}` : '-' }}</span>
                     </td>
                     <td v-for="(consonant, cIndex) in item.rows" :key="cIndex">
                         <div>
@@ -48,27 +48,36 @@
                         </button>
                         <button v-if="copiedIndex == index && copiedCIndex == cIndex"
                             class="mt-2 ms-2 btn btn-sm btn-light py-0 px-1 disabled">
-                            ✅ copied
+                            ✅ {{langSet[lang ? lang : 'en'].menu.copied}}
                         </button>
                         <button v-else class="mt-2 ms-2 btn btn-sm btn-outline-secondary py-0 px-1"
                             @click="copyToClipboard(consonant.letter, index, cIndex)">
-                            📋 copy
+                            📋 {{langSet[lang ? lang : 'en'].menu.copy}}
                         </button>
                     </td>
                 </tr>
             </tbody>
         </table>
-        <p>Note: Some letters may not have a pronunciation or example.</p>
+        <p>{{ langSet[lang ? lang : 'en'].consonantView.note }}</p>
     </div>
 </template>
 
 <script>
-import monAlphabets from '@/models/mon-alphabets';
+import monAlphabets from '@/services/mon-alphabets';
+
+import displayLanguages from '@/services/display-languages';
 
 export default {
     name: 'CompConsonantTable',
+    props: {
+        lang: String
+    },
+    mounted(){
+        console.log('con-lang', this.lang)
+    },
     data() {
         return {
+            langSet: displayLanguages.langSet,
             copiedIndex: null,
             copiedCIndex: null,
             copiedText: '',
@@ -97,7 +106,7 @@ export default {
                 console.error('Error playing sound: ', err);
             });
         }
-    }
+    },
 }
 </script>
 

@@ -143,7 +143,7 @@
 
 <script>
 
-import monAlphabets from '@/models/mon-alphabets';
+import monAlphabets from '@/services/mon-alphabets';
 
 export default {
     name: 'CompVowelTable',

@@ -1,5 +1,5 @@
 <template>
-  <CompNavbar />
+  <CompNavbar :lang="lang" @onChangeLang="onChangeLang" />
 
   <!-- Main Content -->
   <router-view class="safe-zone flex-grow-1" />
@@ -8,7 +8,7 @@
   <div class="sticky-bottom text-end p-3" id="toastBtn">
     <button @click="showKeyboard" class="btn btn-lg btn-primary rounded-pill shadow">
       <i class="bi bi-keyboard"></i>
-      Keyboard
+      {{ langSet[lang].keyboard.title }}
       <!-- For Mon, English, Thai, Burmese -->
     </button>
   </div>
@@ -24,7 +24,8 @@
 import KeyboardModal from './components/keyboard/KeyboardModal.vue';
 import CompNavbar from './components/misc/CompNavbar.vue';
 
-import about from './models/about';
+import about from './services/about';
+import displayLanguages from './services/display-languages';
 
 export default {
   components: {
@@ -33,15 +34,30 @@ export default {
   },
   data: () => {
     return {
-      about
+      about,
+      lang: 'en',
+      langSet: displayLanguages.langSet
     }
   },  
+  mounted() {
+    this.lang = this.$route.query.lang || 'en';
+    console.log('lang', this.lang);
+  },
+  watch: {
+    '$route.query.lang'(newLang) {
+      this.lang = newLang || 'en';
+    }
+  },
   methods: {
     showKeyboard() {
       const keyboardModal = this.$refs.keyboardModal;
       if (keyboardModal) {
         keyboardModal.show();
       }
+    },
+    onChangeLang(lang){
+      this.lang = lang;
+      this.$router.replace({ query: { ...this.$route.query, lang } });
     }
   }
 }
