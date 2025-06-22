@@ -44,7 +44,7 @@
                         </div>
                         <button class="mt-2 btn btn-sm btn-outline-success py-0 px-1"
                             @click="pronouceConsonant(consonant)">
-                            🔊 {{ consonant.ipa || 'N/A' }}
+                            🔊 /{{ consonant.ipa || 'N/A' }}/
                         </button>
                         <button v-if="copiedIndex == index && copiedCIndex == cIndex"
                             class="mt-2 ms-2 btn btn-sm btn-light py-0 px-1 disabled">

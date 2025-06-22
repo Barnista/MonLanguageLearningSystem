@@ -2,14 +2,14 @@
     <div class="consonant-view container">
         <CompConsonantTable :lang="lang" class="mt-4" />
         <div class="d-flex justify-content-between mt-4 mb-5">
-            <button @click="$router.push('/previous-content')" class="btn btn-secondary" disabled>
+            <router-link :to="`/?lang=${lang}`" class="btn btn-secondary">
                 <i class="bi bi-arrow-left"></i>
-                Previous
-            </button>
-            <button @click="$router.push('/alphabets/vowel#vowel-table')" class="btn btn-primary">
-                {{ langSet[lang].learnAlphabets.vowels }}
+                {{ langSet[lang].navbar.home || '_HOME_' }}
+            </router-link>
+            <router-link :to="`/alphabets/vowel?lang=${lang}#vowel-table`" class="btn btn-primary">
+                {{ langSet[lang].learnAlphabets.vowels || '_VOWELS_' }} (12)
                 <i class="bi bi-arrow-right"></i>
-            </button>
+            </router-link>
         </div>
     </div>
 </template>

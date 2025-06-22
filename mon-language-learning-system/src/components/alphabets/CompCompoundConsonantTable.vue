@@ -62,8 +62,11 @@
                         <td v-for="(vowel, cIndex) in row" :key="cIndex">
                             <div>
                                 <span class="fs-3 fw-bold">
-                                    {{ compound.selected }}{{ compound.compound }}{{ vowel.compound }}
+                                    {{ craftWord(compound.selected, compound.compound, vowel.compound).word || 'N/A' }}
                                 </span>
+                                <span v-if="isClearConsonant(compound.selected)"
+                                    class="ms-2 badge rounded-pill text-bg-light text-primary fw-bold">CL</span>
+                                <span v-else class="ms-2 badge rounded-pill text-bg-light text-danger fw-bold">BT</span>
                             </div>
                             <div class="mt-2">
                                 <span class="text-muted">
@@ -100,6 +103,9 @@ export default {
         };
     },
     methods: {
+        isClearConsonant(letter){
+            return monAlphabets.isClearConsonant(letter);
+        },
         isBreathyConsonant(letter) {
             return monAlphabets.isBreathyConsonant(letter);
         },

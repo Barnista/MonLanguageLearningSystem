@@ -1,6 +1,6 @@
 <template>
     <div id="vowel-table" class="vowel-table">
-        <h2>Vowels (10)</h2>
+        <h2>Vowels (12)</h2>
         <p class="text-muted">This table displays the Mon vowels along with their pronunciations and examples.</p>
         <div class="mt-4">
             <h3 class="text-start">1. Syllable-initial letter</h3>
@@ -72,7 +72,7 @@
                             <div>
                                 <span class="fs-3 fw-bold">{{ vowel.compound || '-' }}</span>
                                 <span v-if="vowel.compound2" class="fw-bold text-muted"><br>(or {{ vowel.compound2
-                                    }})<br><small><a :href="`#${vowel.exception.id}`">(see
+                                }})<br><small><a :href="`#${vowel.exception.id}`">(see
                                             exceptions)</a></small></span>
                             </div>
                             <button class="mt-2 btn btn-sm btn-outline-success py-0 px-1"
@@ -107,7 +107,7 @@
                     <div v-if="vowel.exception" class="mt-4">
                         <h4 class="text-start" :id="vowel.exception.id">
                             Exception #{{ cIndex }}: {{ vowel.compound }} → <span class="fw-bold">{{ vowel.compound2
-                                }}</span>
+                            }}</span>
                         </h4>
                         <p class="text-start text-muted">
                             {{ vowel.exception.text }}
@@ -119,17 +119,39 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td v-for="(consonant, cIndex) in vowel.exception.consonants1" :key="cIndex"
-                                        class="fs-4">
-                                        {{ consonant }} → <span class="fw-bold">{{ `${consonant}${vowel.compound2}`
-                                            }}</span>
+                                    <td v-for="(consonant, cIndex) in vowel.exception.consonants.slice(0, 4)"
+                                        :key="cIndex">
+                                        <div>
+                                            <span class="fs-4">{{ consonant }} → <span class="fw-bold">
+                                                    {{ craftWord(consonant, vowel.compound).word ||
+                                                        'N/A' }}</span></span>
+                                            <span v-if="isClearConsonant(consonant)"
+                                                class="ms-2 badge rounded-pill text-bg-light text-primary fw-bold">CL</span>
+                                            <span v-else
+                                                class="ms-2 badge rounded-pill text-bg-light text-danger fw-bold">BT</span>
+                                        </div>
+                                        <div>
+                                            <span class="text-muted">/{{ craftWord(consonant, vowel.compound).ipa ||
+                                                'N/A' }}/</span>
+                                        </div>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td v-for="(consonant, cIndex) in vowel.exception.consonants2" :key="cIndex"
-                                        class="fs-4">
-                                        {{ consonant }} → <span class="fw-bold">{{ `${consonant}${vowel.compound2}`
-                                            }}</span>
+                                    <td v-for="(consonant, cIndex) in vowel.exception.consonants.slice(4, 8)"
+                                        :key="cIndex">
+                                        <div>
+                                            <span class="fs-4">{{ consonant }} → <span class="fw-bold">
+                                                    {{ craftWord(consonant, vowel.compound).word ||
+                                                        'N/A' }}</span></span>
+                                            <span v-if="isClearConsonant(consonant)"
+                                                class="ms-2 badge rounded-pill text-bg-light text-primary fw-bold">CL</span>
+                                            <span v-else
+                                                class="ms-2 badge rounded-pill text-bg-light text-danger fw-bold">BT</span>
+                                        </div>
+                                        <div>
+                                            <span class="text-muted">/{{ craftWord(consonant, vowel.compound).ipa ||
+                                                'N/A' }}/</span>
+                                        </div>
                                     </td>
                                 </tr>
                             </tbody>
@@ -159,6 +181,12 @@ export default {
         }
     },
     methods: {
+        isClearConsonant(consonant) {
+            return monAlphabets.isClearConsonant(consonant);
+        },
+        craftWord(consonant, vowel) {
+            return monAlphabets.craftWord(consonant, null, vowel, null);
+        },
         copyToClipboard(text, index, cIndex) {
             this.copiedIndex = index;
             this.copiedCIndex = cIndex;

@@ -235,7 +235,7 @@ export default {
                     compound: 'ျ',
                     example: 'က + -ျ + = ကျ',
                     exampleIPA: 'kyɑ̆',
-                    compoundWith: ['က', 'ခ', 'ဂ', 'စ', 'ဆ', 'ဇ', 'တ', 'ထ', 'ဒ', 'ပ', 'ဖ', 'ဗ', 'မ', 'သ'],                    
+                    compoundWith: ['က', 'ခ', 'ဂ', 'စ', 'ဆ', 'ဇ', 'တ', 'ထ', 'ဒ', 'ပ', 'ဖ', 'ဗ', 'မ', 'သ'],
                     selected: 'က'
                 },
                 {
@@ -247,7 +247,7 @@ export default {
                     compound: 'ြ',
                     example: 'က + -ြ + = ကြ',
                     exampleIPA: 'krɑ̆',
-                    compoundWith: ['က', 'ခ', 'ဂ', 'စ', 'ဆ', 'ဇ', 'တ', 'ထ', 'ဒ', 'ပ', 'ဖ', 'ဗ', 'မ', 'သ'],                    
+                    compoundWith: ['က', 'ခ', 'ဂ', 'စ', 'ဆ', 'ဇ', 'တ', 'ထ', 'ဒ', 'ပ', 'ဖ', 'ဗ', 'မ', 'သ'],
                     selected: 'က'
                 },
                 {
@@ -259,7 +259,7 @@ export default {
                     compound: 'ၠ',
                     example: 'က + -ၠ + = ကၠ',
                     exampleIPA: 'klɑ̆',
-                    compoundWith: ['က', 'ခ', 'ဂ', 'စ', 'ဆ', 'ဇ', 'တ', 'ထ', 'ဒ', 'ပ', 'ဖ', 'ဗ', 'မ', 'သ'],                    
+                    compoundWith: ['က', 'ခ', 'ဂ', 'စ', 'ဆ', 'ဇ', 'တ', 'ထ', 'ဒ', 'ပ', 'ဖ', 'ဗ', 'မ', 'သ'],
                     selected: 'က'
                 },
                 {
@@ -357,8 +357,7 @@ export default {
             exception: {
                 id: 'vowel-exception-1',
                 text: '"ါ" is used after certain consonants including:',
-                consonants1: ['ခ', 'ဂ', 'ဇ', 'ဎ'],
-                consonants2: ['ဒ', 'ပ', 'ဝ', 'ၜ']
+                consonants: ['ခ', 'ဂ', 'ဇ', 'ဎ', 'ဒ', 'ပ', 'ဝ', 'ၜ']
             }
         },
         {
@@ -428,15 +427,14 @@ export default {
             compound: 'ော',
             compound2: 'ေါ',
             ipaCL: 'ao',
-            ipaBT: 'ɜ̀',
+            ipaBT: 'əʊ',
             soundCL: require('@/assets/sounds/alphabets/vowelRow2Column3_CL.mp3'),
             soundBT: require('@/assets/sounds/alphabets/vowelRow2Column3_BT.mp3'),
             example: '',
             exception: {
                 id: 'vowel-exception-2',
                 text: '"ေါ" is used after certain consonants including:',
-                consonants1: ['ခ', 'ဂ', 'ဇ', 'ဎ'],
-                consonants2: ['ဒ', 'ပ', 'ဝ', 'ၜ']
+                consonants: ['ခ', 'ဂ', 'ဇ', 'ဎ', 'ဒ', 'ပ', 'ဝ', 'ၜ']
             }
         },
         {
@@ -636,13 +634,18 @@ export default {
     },
     craftWord(consonant, compound, vowel, finalConsonant) {
         let ipa = '', ipa2 = '';
+        let cl_bt = '';
         let defaultVowel = this.vowels[0];
 
-        let word = consonant;
-        let consonantData = this.getConsonantByLetter(consonant);
-        if (consonantData) {
-            ipa += consonantData.compoundIPA || consonantData.ipa;
-            ipa2 = ipa;
+        let word = '';
+        if (consonant) {
+            word += consonant;
+            let consonantData = this.getConsonantByLetter(consonant);
+            if (consonantData) {
+                this.isClearConsonant(consonant) ? cl_bt = 'cl' : cl_bt = 'bt';
+                ipa += consonantData.compoundIPA || consonantData.ipa;
+                ipa2 = ipa;
+            }
         }
 
         if (compound) {
@@ -676,8 +679,13 @@ export default {
 
         // If no vowel is provided, use the default vowel
         if (vowel) {
-            word += vowel;
             let vowelData = this.vowels.find(v => v.compound === vowel);
+            if (!vowelData) this.vowels.find(v => v.compound2 === vowel);
+            if (vowelData.exception && vowelData.exception.consonants.includes(consonant)) {
+                word += vowelData.compound2;
+            } else {
+                word += vowelData.compound;
+            }
 
             if (compound) {
                 let blendCompound = this.rules.blendCompounds.find(c => c.compound === compound);
@@ -756,10 +764,11 @@ export default {
                 ipa2 += finalConsonantData.compoundIPA || finalConsonantData.ipa;
             }
         }
-        
-        if(ipa2 == ipa) ipa2 = null;
+
+        if (ipa2 == ipa) ipa2 = null;
         return {
             word: word,
+            cl_bt: cl_bt,
             ipa: ipa,
             ipa2: ipa2
         };

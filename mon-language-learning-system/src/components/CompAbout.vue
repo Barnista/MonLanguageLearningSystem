@@ -3,7 +3,8 @@
         <div class="d-flex justify-content-between mb-4">
             <img src="@/assets/logo.png" width="auto" height="256" :alt="about.appName2 + ' Logo'" />
             <div class="text-start">
-                <h1>About {{ about.appName2 }}</h1>
+                <h1>{{ about.appName2 }}</h1>
+                <h4 class="mt-4">About</h4>
                 <p class="mt-3">
                     This system is designed to help users learn the Mon language through interactive lessons, exercises,
                     and
