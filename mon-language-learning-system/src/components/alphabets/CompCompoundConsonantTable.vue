@@ -1,16 +1,15 @@
 <template>
     <div id="compound-consonant-table" class="compound-consonant-table">
-        <h2>Compound Consonants (11)</h2>
-        <p>Compound consonants are formed by combining two consonants. They are used to create specific sounds in the
-            Mon language. There are 11 compound consonants including:</p>
+        <h2>{{ langSet[lang ? lang : 'en'].learnAlphabets.compoundConsonants }} (11)</h2>
+        <p>{{ langSet[lang ? lang : 'en'].compoundConsonantView.description }}</p>
         <table>
             <thead>
                 <tr>
-                    <th>No.</th>
-                    <th>Consonant</th>
-                    <th>Compound symbol</th>
-                    <th>Example</th>
-                    <th>Pronunciation</th>
+                    <th>{{ langSet[lang ? lang : 'en'].table.no }}</th>
+                    <th>{{ langSet[lang ? lang : 'en'].table.compoundConsonant }}</th>
+                    <th>{{ langSet[lang ? lang : 'en'].table.compoundSymbol }}</th>
+                    <th>{{ langSet[lang ? lang : 'en'].table.compoundExample }}</th>
+                    <th><span v-html="langSet[lang ? lang : 'en'].table.pronounciation"></span></th>
                 </tr>
             </thead>
             <tbody>
@@ -19,33 +18,32 @@
                     <td class="fw-bold fs-4">{{ item.letter }}</td>
                     <td class="fw-bold fs-4">{{ item.compound }}</td>
                     <td class="fs-5">{{ item.example }}</td>
-                    <td class="fs-5">/{{ item.exampleIPA }}/</td>
+                    <td class="fs-5 text-muted">/{{ item.exampleIPA }}/</td>
                 </tr>
             </tbody>
         </table>
-
-        <div v-for="(compound, index) in compounds" :key="index" class="mt-4">
+        <hr>
+        <div v-for="(compound, index) in compounds" :key="index" class="mt-4 pt-2">
             <h3 class="text-start">
                 {{ index + 1 }}. {{ compound.letter }} → {{ compound.compound }}
                 <button class="ms-2 btn btn-outline-secondary"> 🔊 /{{ compound.ipa || 'N/A' }}/ </button>
             </h3>
             <div class="row">
                 <div class="col-12 col-md-8 col-lg-9 col-xl-10 text-start mb-3">
-                    <span class="fw-bold fs-5">{{ compound.compoundWith.length }} consonants</span> can be compound with
-                    <span class="fw-bold fs-5">{{ compound.compound }}</span> including:
+                    <span class="fw-bold fs-5">{{ compound.compoundWith.length }} {{ langSet[lang ? lang : 'en'].learnAlphabets.consonants }}</span> {{ langSet[lang ? lang : 'en'].compoundConsonantView.compoundDescription1 }}
+                    <span class="fw-bold fs-5">{{ compound.compound }}</span> {{ langSet[lang ? lang : 'en'].compoundConsonantView.compoundDescription2 }}
                     <span class="fw-bold fs-5">{{ compound.compoundWith.join(', ') }}</span>.
                 </div>
                 <div class="col-12 col-md-4 col-lg-3 col-xl-2 text-end mb-3">
                     <select v-model="compound.selected"
                         class="form-select text-success w-full fs-5 fw-bold text-center">
-                        <option value="" selected>try consonant</option>
+                        <option value="" selected>{{ langSet[lang ? lang : 'en'].menu.tryConsonant }}</option>
                         <option v-for="item in compound.compoundWith" :key="item" :value="item">
                             {{ item }}{{ compound.compound }} ({{ isBreathyConsonant(item) ? 'BT' : 'CL' }})
                         </option>
                     </select>
                 </div>
             </div>
-
             <table class="my-2">
                 <thead>
                 </thead>
@@ -83,6 +81,7 @@
                     </tr>
                 </tbody>
             </table>
+            <hr>
         </div>
     </div>
 </template>
@@ -90,11 +89,16 @@
 <script>
 
 import monAlphabets from '@/services/mon-alphabets';
+import displayLanguages from '@/services/display-languages';
 
 export default {
     name: 'CompCompoundConsonantTable',
+    props: {
+        lang: String
+    },
     data() {
         return {
+            langSet: displayLanguages.langSet,
             compounds: monAlphabets.getAllCompoundConsonants(),
             vowels: [
                 monAlphabets.vowels.slice(0, 6), // Row 1

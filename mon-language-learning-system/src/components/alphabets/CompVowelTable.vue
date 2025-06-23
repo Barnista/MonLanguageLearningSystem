@@ -1,11 +1,10 @@
 <template>
     <div id="vowel-table" class="vowel-table">
-        <h2>Vowels (12)</h2>
-        <p class="text-muted">This table displays the Mon vowels along with their pronunciations and examples.</p>
+        <h2>{{ langSet[lang ? lang : 'en'].learnAlphabets.vowels }} (12)</h2>
+        <p class="text-muted">{{ langSet[lang ? lang : 'en'].vowelView.description }}</p>
         <div class="mt-4">
-            <h3 class="text-start">1. Syllable-initial letter</h3>
-            <p class="text-start text-muted">12 letters with 12 sounds. These letters are used at the beginning of
-                syllables.</p>
+            <h3 class="text-start">1. {{ langSet[lang ? lang : 'en'].vowelView.vowelType1Title }}</h3>
+            <p class="text-start text-muted">{{ langSet[lang ? lang : 'en'].vowelView.vowelType1Description }}</p>
             <table class="my-2">
                 <thead>
                     <tr>
@@ -29,11 +28,11 @@
                             </button>
                             <button v-if="copiedIndex == index && copiedCIndex == cIndex"
                                 class="mt-2 ms-2 btn btn-sm btn-light py-0 px-1 disabled">
-                                ✅ copied
+                                ✅ {{ langSet[lang ? lang : 'en'].menu.copied }}
                             </button>
                             <button v-else class="mt-2 ms-2 btn btn-sm btn-outline-secondary py-0 px-1"
                                 @click="copyToClipboard(vowel.letter, index, cIndex)">
-                                📋 copy
+                                📋 {{ langSet[lang ? lang : 'en'].menu.copy }}
                             </button>
                         </td>
                     </tr>
@@ -42,17 +41,16 @@
         </div>
 
         <div class="mt-4">
-            <h3 class="text-start">2. Consonant diacritic</h3>
-            <p class="text-start text-muted">11 letters with 12 sounds. These letters are used after consonants to form
-                syllables.</p>
+            <h3 class="text-start">2. {{ langSet[lang ? lang : 'en'].vowelView.vowelType2Title }}</h3>
+            <p class="text-start text-muted">{{ langSet[lang ? lang : 'en'].vowelView.vowelType2Description }}</p>
             <div class="d-flex">
                 <div class="">
-                    <span class="ms-2 badge rounded-pill text-bg-light text-primary fw-bold">CL</span>
-                    <span> = value after clear consonants</span>
+                    <span class="badge rounded-pill text-bg-light text-primary fw-bold">CL</span>
+                    <span> = {{ langSet[lang ? lang : 'en'].vowelView.vowelType2CL }}</span>
                 </div>
                 <div class="ms-2">
-                    <span class="ms-2 badge rounded-pill text-bg-light text-danger fw-bold">BT</span>
-                    <span> = value after breathy consonants</span>
+                    <span class="badge rounded-pill text-bg-light text-danger fw-bold">BT</span>
+                    <span> = {{ langSet[lang ? lang : 'en'].vowelView.vowelType2BT }}</span>
                 </div>
             </div>
             <table class="my-2">
@@ -71,9 +69,8 @@
                         <td v-for="(vowel, cIndex) in row" :key="cIndex">
                             <div>
                                 <span class="fs-3 fw-bold">{{ vowel.compound || '-' }}</span>
-                                <span v-if="vowel.compound2" class="fw-bold text-muted"><br>(or {{ vowel.compound2
-                                }})<br><small><a :href="`#${vowel.exception.id}`">(see
-                                            exceptions)</a></small></span>
+                                <span v-if="vowel.compound2" class="fw-bold text-muted"><br>({{ langSet[lang ? lang : 'en'].menu.or }} {{ vowel.compound2
+                                }})<br><small><a :href="`#${vowel.exception.id}`">({{ langSet[lang ? lang : 'en'].menu.seeException }})</a></small></span>
                             </div>
                             <button class="mt-2 btn btn-sm btn-outline-success py-0 px-1"
                                 @click="pronouceVowelCL(vowel)">
@@ -92,11 +89,11 @@
                             </button>
                             <button v-if="copiedIndex == index && copiedCIndex == cIndex"
                                 class="mt-2 ms-1 btn btn-sm btn-light py-0 px-1 disabled">
-                                ✅ copied
+                                ✅ {{ langSet[lang ? lang : 'en'].menu.copied }}
                             </button>
                             <button v-else class="mt-2 ms-1 btn btn-sm btn-outline-secondary py-0 px-1"
                                 @click="copyToClipboard(vowel.compound, index, cIndex)">
-                                📋 copy
+                                📋 {{ langSet[lang ? lang : 'en'].menu.copy }}
                             </button>
                         </td>
                     </tr>
@@ -106,11 +103,11 @@
                 <div v-for="(vowel, cIndex) in row" :key="cIndex">
                     <div v-if="vowel.exception" class="mt-4">
                         <h4 class="text-start" :id="vowel.exception.id">
-                            Exception #{{ cIndex }}: {{ vowel.compound }} → <span class="fw-bold">{{ vowel.compound2
+                            {{ langSet[lang ? lang : 'en'].menu.exception }} #{{ cIndex }}: {{ vowel.compound }} → <span class="fw-bold">{{ vowel.compound2
                             }}</span>
                         </h4>
                         <p class="text-start text-muted">
-                            {{ vowel.exception.text }}
+                            "{{ vowel.compound2 }}" {{ langSet[lang ? lang : 'en'].vowelView.exceptionDescription }}
                         </p>
                         <table class="table table-bordered">
                             <thead>
@@ -167,10 +164,16 @@
 
 import monAlphabets from '@/services/mon-alphabets';
 
+import displayLanguages from '@/services/display-languages';
+
 export default {
     name: 'CompVowelTable',
+    props: {
+        lang: String
+    },
     data() {
         return {
+            langSet: displayLanguages.langSet,
             copiedIndex: null,
             copiedCIndex: null,
             copiedText: '',

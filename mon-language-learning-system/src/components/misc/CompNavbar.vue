@@ -23,27 +23,40 @@
                             <i class="bi bi-book-half"></i> {{ langSet[lang ? lang : 'en'].learnAlphabets.alphabets }}
                         </a>
                         <ul class="dropdown-menu">
-                            <li><router-link class="dropdown-item" :to="`/alphabets/consonant?lang=${lang}`">{{langSet[lang ? lang : 'en'].learnAlphabets.consonants}}</router-link>
+                            <li><router-link class="dropdown-item"
+                                    :to="`/alphabets/consonant?lang=${lang}`">{{ langSet[lang ? lang :
+                                    'en'].learnAlphabets.consonants}}</router-link>
                             </li>
-                            <li><router-link class="dropdown-item" :to="`/alphabets/vowel?lang=${lang}`">{{langSet[lang ? lang : 'en'].learnAlphabets.vowels}}</router-link></li>
-                            <li><router-link class="dropdown-item" :to="`/alphabets/compound-consonant?lang=${lang}`">{{langSet[lang ? lang : 'en'].learnAlphabets.compoundConsonants}}</router-link></li>
+                            <li><router-link class="dropdown-item" :to="`/alphabets/vowel?lang=${lang}`">{{ langSet[lang
+                                ? lang : 'en'].learnAlphabets.vowels}}</router-link></li>
+                            <li><router-link class="dropdown-item"
+                                    :to="`/alphabets/compound-consonant?lang=${lang}`">{{ langSet[lang ? lang :
+                                        'en'].learnAlphabets.compoundConsonants}}</router-link></li>
                             <li>
                                 <router-link class="dropdown-item disabled" to="#" tabindex="-1" aria-disabled="true">
-                                    {{langSet[lang ? lang : 'en'].learnAlphabets.finalConsonants}}
+                                    {{ langSet[lang ? lang : 'en'].learnAlphabets.finalConsonants }}
+                                </router-link>
+                            </li>
+                            <li>
+                                <router-link class="dropdown-item disabled" to="#" tabindex="-1" aria-disabled="true">
+                                    {{ langSet[lang ? lang : 'en'].learnAlphabets.doubleConsonants }}
                                 </router-link>
                             </li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
                             <li><router-link class="dropdown-item disabled" to="#" tabindex="-1"
-                                    aria-disabled="true">{{langSet[lang ? lang : 'en'].learnAlphabets.numerals}}</router-link></li>
+                                    aria-disabled="true">{{ langSet[lang ? lang :
+                                    'en'].learnAlphabets.numerals}}</router-link></li>
                             <li><router-link class="dropdown-item disabled" to="#" tabindex="-1"
-                                    aria-disabled="true">{{langSet[lang ? lang : 'en'].learnAlphabets.punctuations}}</router-link></li>
+                                    aria-disabled="true">{{ langSet[lang ? lang :
+                                    'en'].learnAlphabets.punctuations}}</router-link></li>
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <router-link :to="`/keyboard?lang=${lang}`" :class="['nav-link', { active: $route.path === '/keyboard' }]">
-                            <i class="bi bi-keyboard"></i> {{langSet[lang ? lang : 'en'].keyboard.title}}
+                        <router-link :to="`/keyboard?lang=${lang}`"
+                            :class="['nav-link', { active: $route.path === '/keyboard' }]">
+                            <i class="bi bi-keyboard"></i> {{ langSet[lang ? lang : 'en'].keyboard.title }}
                         </router-link>
                     </li>
                     <!--<li class="nav-item">
@@ -56,13 +69,13 @@
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                                 aria-expanded="false">
                                 <img :src="langOptions[lang ? lang : 'en'].icon" width="24" height="auto">
-                                {{langOptions[lang ? lang : 'en'].label}}
+                                {{ langOptions[lang ? lang : 'en'].label }}
                             </a>
                             <ul class="dropdown-menu">
                                 <li v-for="(lang, index) in langOptions" :key="index">
                                     <button class="dropdown-item" @click="$emit('onChangeLang', lang.id)">
                                         <img :src="lang.icon" width="24" height="auto">
-                                        {{lang.label}}
+                                        {{ lang.label }}
                                     </button>
                                 </li>
                             </ul>
