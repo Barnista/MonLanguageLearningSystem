@@ -59,6 +59,24 @@ export default {
                 numerals: 'Numerals',
                 punctuations: 'Punctuations'
             },
+            learnSentence: {
+                sentence: 'Sentence',
+                title: 'Learn Sentence & Structure',
+
+                speechClassification: 'Speech Classification',
+                noun: 'Noun',
+                pronoun: 'Pronoun',
+                verb: 'Verb',
+                adjective: 'Adjective',
+                adverb: 'Adverb',
+                preposition: 'Preposition',
+                conjunction: 'Conjunction',
+                interjection: 'Interjection',
+
+                type: 'Type',
+                tense: 'Tense',
+                syntax: 'Syntax'
+            },
             keyboard: {
                 title: 'Keyboard',
                 fullTitle: 'Virtual Keyboard'
@@ -125,6 +143,24 @@ export default {
                 doubleConsonants: 'พยัญชนะซ้อน',
                 numerals: 'ตัวเลข',
                 punctuations: 'เครื่องหมายวรรคตอน'
+            },
+            learnSentence: {
+                sentence: 'ประโยคมอญ',
+                title: 'เรียนโครงสร้างประโยค',
+
+                speechClassification: 'วจีภาค',
+                noun: 'คำนาม',
+                pronoun: 'คำสรรพนาม',
+                verb: 'คำกริยา',
+                adjective: 'คำวิเศษณ์',
+                adverb: 'คำกริยาวิเศษณ์',
+                preposition: 'คำบุพบท',
+                conjunction: 'คำสันธาน',
+                interjection: 'คำอุทาน',
+
+                type: 'ชนิดประโยค',
+                tense: 'รูปกาลประโยค',
+                syntax: 'วากยสัมพันธ์'
             },
             keyboard: {
                 title: 'คีย์บอร์ด',

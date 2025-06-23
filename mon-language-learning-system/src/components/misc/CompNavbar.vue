@@ -1,5 +1,5 @@
 <template>
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container-fluid">
             <router-link class="navbar-brand" :to="`/?lang=${lang}`">
                 <img src="@/assets/logo.png" alt="Mon Language Logo" width="30" height="30"
@@ -23,15 +23,15 @@
                             <i class="bi bi-book-half"></i> {{ langSet[lang ? lang : 'en'].learnAlphabets.alphabets }}
                         </a>
                         <ul class="dropdown-menu">
-                            <li><router-link class="dropdown-item"
-                                    :to="`/alphabets/consonant?lang=${lang}`">{{ langSet[lang ? lang :
-                                    'en'].learnAlphabets.consonants}}</router-link>
+                            <li><router-link class="dropdown-item" :to="`/alphabets/consonant?lang=${lang}`">{{
+                                langSet[lang ? lang :
+                                    'en'].learnAlphabets.consonants }}</router-link>
                             </li>
                             <li><router-link class="dropdown-item" :to="`/alphabets/vowel?lang=${lang}`">{{ langSet[lang
-                                ? lang : 'en'].learnAlphabets.vowels}}</router-link></li>
-                            <li><router-link class="dropdown-item"
-                                    :to="`/alphabets/compound-consonant?lang=${lang}`">{{ langSet[lang ? lang :
-                                        'en'].learnAlphabets.compoundConsonants}}</router-link></li>
+                                ? lang : 'en'].learnAlphabets.vowels }}</router-link></li>
+                            <li><router-link class="dropdown-item" :to="`/alphabets/compound-consonant?lang=${lang}`">{{
+                                langSet[lang ? lang :
+                                    'en'].learnAlphabets.compoundConsonants }}</router-link></li>
                             <li>
                                 <router-link class="dropdown-item disabled" to="#" tabindex="-1" aria-disabled="true">
                                     {{ langSet[lang ? lang : 'en'].learnAlphabets.finalConsonants }}
@@ -45,12 +45,76 @@
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
-                            <li><router-link class="dropdown-item disabled" to="#" tabindex="-1"
-                                    aria-disabled="true">{{ langSet[lang ? lang :
-                                    'en'].learnAlphabets.numerals}}</router-link></li>
-                            <li><router-link class="dropdown-item disabled" to="#" tabindex="-1"
-                                    aria-disabled="true">{{ langSet[lang ? lang :
-                                    'en'].learnAlphabets.punctuations}}</router-link></li>
+                            <li><router-link class="dropdown-item disabled" to="#" tabindex="-1" aria-disabled="true">{{
+                                langSet[lang ? lang :
+                                    'en'].learnAlphabets.numerals }}</router-link></li>
+                            <li><router-link class="dropdown-item disabled" to="#" tabindex="-1" aria-disabled="true">{{
+                                langSet[lang ? lang :
+                                    'en'].learnAlphabets.punctuations }}</router-link></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            <i class="bi bi-chat-dots"></i> {{ langSet[lang ? lang : 'en'].learnSentence.sentence }}
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <router-link class="dropdown-item disabled" to="#">
+                                    {{ langSet[lang ? lang :
+                                        'en'].learnSentence.noun }}
+                                </router-link>
+                            </li>
+                            <li>
+                                <router-link class="dropdown-item disabled" to="#">
+                                    {{ langSet[lang
+                                        ? lang : 'en'].learnSentence.pronoun }}
+                                </router-link>
+                            </li>
+                            <li>
+                                <router-link class="dropdown-item disabled" to="#">
+                                    {{
+                                        langSet[lang ? lang :
+                                            'en'].learnSentence.verb }}
+                                </router-link>
+                            </li>
+                            <li>
+                                <router-link class="dropdown-item disabled" to="#" tabindex="-1" aria-disabled="true">
+                                    {{ langSet[lang ? lang : 'en'].learnSentence.adjective }}
+                                </router-link>
+                            </li>
+                            <li>
+                                <router-link class="dropdown-item disabled" to="#" tabindex="-1" aria-disabled="true">
+                                    {{ langSet[lang ? lang : 'en'].learnSentence.adverb }}
+                                </router-link>
+                            </li>
+                            <li>
+                                <router-link class="dropdown-item disabled" to="#" tabindex="-1" aria-disabled="true">
+                                    {{ langSet[lang ? lang : 'en'].learnSentence.preposition }}
+                                </router-link>
+                            </li>
+                            <li>
+                                <router-link class="dropdown-item disabled" to="#" tabindex="-1" aria-disabled="true">
+                                    {{ langSet[lang ? lang : 'en'].learnSentence.conjunction }}
+                                </router-link>
+                            </li>
+                            <li>
+                                <router-link class="dropdown-item disabled" to="#" tabindex="-1" aria-disabled="true">
+                                    {{ langSet[lang ? lang : 'en'].learnSentence.interjection }}
+                                </router-link>
+                            </li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><router-link class="dropdown-item disabled" to="#" tabindex="-1" aria-disabled="true">{{
+                                langSet[lang ? lang :
+                                    'en'].learnSentence.type }}</router-link></li>
+                            <li><router-link class="dropdown-item disabled" to="#" tabindex="-1" aria-disabled="true">{{
+                                langSet[lang ? lang :
+                                    'en'].learnSentence.tense }}</router-link></li>
+                            <li><router-link class="dropdown-item disabled" to="#" tabindex="-1" aria-disabled="true">{{
+                                langSet[lang ? lang :
+                                    'en'].learnSentence.syntax }}</router-link></li>
                         </ul>
                     </li>
                     <li class="nav-item">
