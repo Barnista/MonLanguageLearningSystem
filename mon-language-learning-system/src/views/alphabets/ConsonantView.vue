@@ -1,5 +1,5 @@
 <template>
-    <div class="consonant-view container">
+    <div id="consonant-view" class="container">
         <CompConsonantTable :lang="lang" class="mt-4" />
         <div class="d-flex justify-content-between mt-4 mb-5">
             <router-link :to="`/?lang=${lang}`" class="btn btn-secondary">

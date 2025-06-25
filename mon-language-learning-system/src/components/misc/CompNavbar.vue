@@ -33,7 +33,7 @@
                                 langSet[lang ? lang :
                                     'en'].learnAlphabets.compoundConsonants }}</router-link></li>
                             <li>
-                                <router-link class="dropdown-item disabled" to="#" tabindex="-1" aria-disabled="true">
+                                <router-link class="dropdown-item" :to="`/alphabets/final-consonant?lang=${lang}`">
                                     {{ langSet[lang ? lang : 'en'].learnAlphabets.finalConsonants }}
                                 </router-link>
                             </li>

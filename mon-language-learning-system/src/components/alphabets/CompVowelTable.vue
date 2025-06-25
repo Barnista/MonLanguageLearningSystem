@@ -69,8 +69,10 @@
                         <td v-for="(vowel, cIndex) in row" :key="cIndex">
                             <div>
                                 <span class="fs-3 fw-bold">{{ vowel.compound || '-' }}</span>
-                                <span v-if="vowel.compound2" class="fw-bold text-muted"><br>({{ langSet[lang ? lang : 'en'].menu.or }} {{ vowel.compound2
-                                }})<br><small><a :href="`#${vowel.exception.id}`">({{ langSet[lang ? lang : 'en'].menu.seeException }})</a></small></span>
+                                <span v-if="vowel.compound2" class="fw-bold text-muted"><br>({{ langSet[lang ? lang :
+                                    'en'].menu.or }} {{ vowel.compound2
+                                    }})<br><small><a :href="`#${vowel.exception.id}`">({{ langSet[lang ? lang :
+                                            'en'].menu.seeException }})</a></small></span>
                             </div>
                             <button class="mt-2 btn btn-sm btn-outline-success py-0 px-1"
                                 @click="pronouceVowelCL(vowel)">
@@ -103,18 +105,22 @@
                 <div v-for="(vowel, cIndex) in row" :key="cIndex">
                     <div v-if="vowel.exception" class="mt-4">
                         <h4 class="text-start" :id="vowel.exception.id">
-                            {{ langSet[lang ? lang : 'en'].menu.exception }} #{{ cIndex }}: {{ vowel.compound }} → <span class="fw-bold">{{ vowel.compound2
-                            }}</span>
+                            {{ langSet[lang ? lang : 'en'].menu.exception }} #{{ cIndex }}: {{ vowel.compound }} → <span
+                                class="fw-bold">{{ vowel.compound2
+                                }}</span>
                         </h4>
-                        <p class="text-start text-muted">
-                            "{{ vowel.compound2 }}" {{ langSet[lang ? lang : 'en'].vowelView.exceptionDescription }}
+                        <p v-if="!vowel.exception.dependsOnFinal" class="text-start text-muted">
+                            "{{ vowel.compound2 }}" <span v-html="langSet[lang ? lang : 'en'].vowelView.exceptionDescription"></span>
+                        </p>
+                        <p v-else class="text-start text-muted">
+                            "{{ vowel.compound2 }}" <span v-html="langSet[lang ? lang : 'en'].vowelView.exceptionDescription2"></span>
                         </p>
                         <table class="table table-bordered">
                             <thead>
                                 <tr>
                                 </tr>
                             </thead>
-                            <tbody>
+                            <tbody v-if="!vowel.exception.dependsOnFinal">
                                 <tr>
                                     <td v-for="(consonant, cIndex) in vowel.exception.consonants.slice(0, 4)"
                                         :key="cIndex">
@@ -147,6 +153,36 @@
                                         </div>
                                         <div>
                                             <span class="text-muted">/{{ craftWord(consonant, vowel.compound).ipa ||
+                                                'N/A' }}/</span>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tbody v-else>
+                                <tr>
+                                    <td v-for="(final, cIndex) in vowel.exception.finals.slice(0, 5)"
+                                        :key="cIndex">
+                                        <div>
+                                            <span class="fs-4">{{ final }} → <span class="fw-bold">
+                                                    {{ craftWord2(vowel.compound, final).word ||
+                                                        'N/A' }}</span></span>
+                                        </div>
+                                        <div>
+                                            <span class="text-muted">/{{ craftWord2(vowel.compound, final).ipa ||
+                                                'N/A' }}/</span>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td v-for="(final, cIndex) in vowel.exception.finals.slice(5, 10)"
+                                        :key="cIndex">
+                                        <div>
+                                            <span class="fs-4">{{ final }} → <span class="fw-bold">
+                                                    {{ craftWord2(vowel.compound, final).word ||
+                                                        'N/A' }}</span></span>
+                                        </div>
+                                        <div>
+                                            <span class="text-muted">/{{ craftWord2(vowel.compound, final).ipa ||
                                                 'N/A' }}/</span>
                                         </div>
                                     </td>
@@ -189,6 +225,9 @@ export default {
         },
         craftWord(consonant, vowel) {
             return monAlphabets.craftWord(consonant, null, vowel, null);
+        },
+        craftWord2(vowel, final) {
+            return monAlphabets.craftWord('က', null, vowel, final);
         },
         copyToClipboard(text, index, cIndex) {
             this.copiedIndex = index;

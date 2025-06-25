@@ -41,12 +41,16 @@ export default {
                 vowelType2Description: '11 letters with 12 sounds. These letters are used after consonants to form syllables.',
                 vowelType2CL: 'value after clear consonants',
                 vowelType2BT: 'value after breathy consonants',
-                exceptionDescription: 'is used after certain consonants including:'
+                exceptionDescription: 'is used after certain <strong>consonants</strong> including:',
+                exceptionDescription2: 'is used if it is followed by certain <strong>final consonants</strong> including:'
             },
             compoundConsonantView: {
                 description: 'Compound consonants are formed by combining two consonants. They are used to create specific sounds in the Mon language. There are 11 compound consonants including:',
                 compoundDescription1: 'can be compound with',
                 compoundDescription2: 'including:'
+            },
+            finalConsonantView: {
+                description: 'Final consonants are used at the end of syllables to indicate the closing sound. They play an important role in pronunciation and meaning. There are 10 final consonants including:'
             },
             learnAlphabets: {
                 alphabets: 'Alphabets',
@@ -95,6 +99,10 @@ export default {
                 compoundSymbol: 'Compound symbol',
                 compoundExample: 'Example',
                 pronounciation: 'Pronunciation<br>(IPA)',
+                finalConsonant: 'Consonant',
+                finalSymbol: 'Final Consonant',
+                finalExample: 'Example',
+                other: 'Other'
             }
         },
         th: {
@@ -126,12 +134,16 @@ export default {
                 vowelType2Description: 'มี 11 รูป 12 เสียง เป็นสระที่นำมาประสมกับพยัญชนะ มีรูปสระดังนี้.',
                 vowelType2CL: 'เมื่อประสมกับพยัญชนะอโฆษะ',
                 vowelType2BT: 'เมื่อประสมกับพยัญชนะโฆษะ',
-                exceptionDescription: 'เป็นสระที่ต้องเปลี่ยนรูป เพื่อไม่ให้เกิดความสับสนเมื่อประสมกับพยัญชนะดังต่อไปนี้:'
+                exceptionDescription: 'เป็นสระที่ต้องเปลี่ยนรูป เพื่อไม่ให้เกิดความสับสนเมื่อประสมกับ<strong>พยัญชนะ</strong>ดังต่อไปนี้:',
+                exceptionDescription2: 'เป็นสระที่ต้องเปลี่ยนรูป เมื่อต้องมี<strong>ตัวสะกด</strong>ตามหลังดังต่อไปนี้:'
             },
             compoundConsonantView: {
                 description: 'พยัญชนะควบแขวน จะต้องเปลี่ยนรูปไปจากเดิม เมื่อควบแขวนกับพยัญชนะยืน ดังนี้:',
                 compoundDescription1: 'สามารถควบกับลักษณะลดรูป',
                 compoundDescription2: 'ได้แก่พยัญชนะ:'
+            },
+            finalConsonantView: {
+                description: 'ตัวสะกดในภาษามอญนั้น มีแม่สะกดอยู่ 10 แม่ คือตัวสะกดดังต่อไปนี้:'
             },
             learnAlphabets: {
                 alphabets: 'อักษรมอญ',
@@ -180,6 +192,10 @@ export default {
                 compoundSymbol: 'ลักษณะลดรูป',
                 compoundExample: 'ตัวอย่างการควบ',
                 pronounciation: 'การสะกดคำ<br>(สัทธอักษรสากล)',
+                finalConsonant: 'พยัญชนะ',
+                finalSymbol: 'รูปตัวสะกด',
+                finalExample: 'ตัวอย่างการประสม',
+                other: 'อื่นๆ'
             }
         }
     }

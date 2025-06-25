@@ -105,10 +105,9 @@ export default {
         },
         {
           title: this.langSet[this.lang].learnAlphabets.finalConsonants || '_FINAL CONSONANTS_',
-          route: `#`,
+          route: `/alphabets/final-consonant?lang=${this.lang}`,
           icon: 'bi bi-book-half',
-          color: 'success',
-          disabled: true
+          color: 'success'
         },
         {
           title: this.langSet[this.lang].learnAlphabets.doubleConsonants || '_DOUBLE CONSONANTS_',

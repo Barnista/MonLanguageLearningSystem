@@ -39,20 +39,25 @@ const routes = [
     path: '/alphabets/compound-consonant',
     name: 'alphabets-compound-consonant',
     component: () => import('../views/alphabets/CompoundConsonantView.vue')
+  },
+  {
+    path: '/alphabets/final-consonant',
+    name: 'alphabets-final-consonant',
+    component: () => import('../views/alphabets/FinalConsonantView.vue')
   }
 ]
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes,
-  scrollBehavior(to, from, savedPosition){
+  scrollBehavior(to, from, savedPosition) {
     console.log('route pushed:', to, from, savedPosition);
     if (to.hash) {
       return {
         el: to.hash,
         behavior: 'smooth'
       }
-    }else{
+    } else {
       return savedPosition;
     }
   }

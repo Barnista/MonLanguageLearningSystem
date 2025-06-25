@@ -11,6 +11,9 @@ export default {
                     ipa: 'kaˀ',
                     sound: require('@/assets/sounds/alphabets/row1Column1.mp3'),
                     compoundIPA: 'k',
+                    final: 'က်',
+                    final2: '်',
+                    finalWith: ['', 'ာ', 'ိ', 'ု', 'ေ', 'ော', 'ံ', 'ို']
                 },
                 {
                     letter: 'ခ',
@@ -43,7 +46,9 @@ export default {
                     example: 'က + -္ၚ + = က္ၚ',
                     exampleIPA: 'kəŋɑ̆',
                     compoundWith: ['က', 'တ', 'ဒ', 'ပ', 'ဗ', 'မ', 'လ', 'သ', 'အ'],
-                    selected: 'က'
+                    selected: 'က',
+                    final: 'င်',
+                    finalWith: ['', 'ာ', 'ိ', 'ု', 'ေ', 'ော', 'ံ', 'ို']
                 }
             ]
         },
@@ -143,6 +148,8 @@ export default {
                     ipa: 'taˀ',
                     sound: require('@/assets/sounds/alphabets/row4Column1.mp3'),
                     compoundIPA: 't',
+                    final: 'တ်',
+                    finalWith: ['', 'ာ', 'ိ', 'ု', 'ေ', 'ော', 'ို']
                 },
                 {
                     letter: 'ထ',
@@ -175,7 +182,9 @@ export default {
                     example: 'က + -ၞ + = ကၞ',
                     exampleIPA: 'kənɑ̆',
                     compoundWith: ['က', 'ခ', 'ဂ', 'စ', 'ဆ', 'ဇ', 'တ', 'ထ', 'ဒ', 'ပ', 'ဖ', 'ဗ', 'မ', 'သ'],
-                    selected: 'က'
+                    selected: 'က',
+                    final: 'န်',
+                    finalWith: ['', 'ာ', 'ိ', 'ု', 'ေ', 'ော', 'ို']
                 }
             ]
         },
@@ -187,6 +196,8 @@ export default {
                     ipa: 'paˀ',
                     sound: require('@/assets/sounds/alphabets/row5Column1.mp3'),
                     compoundIPA: 'p',
+                    final: 'ပ်',
+                    finalWith: ['', 'ာ', 'ိ', 'ု', 'ေ', 'ော', 'ို']
                 },
                 {
                     letter: 'ဖ',
@@ -219,7 +230,11 @@ export default {
                     example: 'က + -ၟ + = ကၟ',
                     exampleIPA: 'kəmɑ̆',
                     compoundWith: ['က', 'ခ', 'စ', 'ပ', 'ဖ', 'တ', 'ထ', 'ဒ', 'ပ', 'ဖ', 'ဗ', 'မ', 'သ', 'လ'],
-                    selected: 'က'
+                    selected: 'က',
+                    final: 'မ်',
+                    final2: 'ံ',
+                    final3: 'ီ',
+                    finalWith: ['', 'ာ', 'ိ', 'ု', 'ေ', 'ော', 'ို']
                 }
             ]
         },
@@ -236,7 +251,10 @@ export default {
                     example: 'က + -ျ + = ကျ',
                     exampleIPA: 'kyɑ̆',
                     compoundWith: ['က', 'ခ', 'ဂ', 'စ', 'ဆ', 'ဇ', 'တ', 'ထ', 'ဒ', 'ပ', 'ဖ', 'ဗ', 'မ', 'သ'],
-                    selected: 'က'
+                    selected: 'က',
+                    final: 'ယ်',
+                    final2: 'ဲ',
+                    finalWith: ['', 'ာ', 'ု', 'ေ', 'ော', 'ို']
                 },
                 {
                     letter: 'ရ',
@@ -272,7 +290,10 @@ export default {
                     example: 'က + -ွ + = ကွ',
                     exampleIPA: 'kwɑ̆',
                     compoundWith: ['က', 'ခ', 'ဂ', 'စ', 'ဆ', 'ဇ', 'တ', 'ထ', 'ဒ', 'ပ', 'ဖ', 'ဗ', 'မ', 'သ'],
-                    selected: 'က'
+                    selected: 'က',
+                    final: 'ဝ်',
+                    final2: 'ဵ',
+                    finalWith: ['', 'ေ', 'ော', 'ို']
                 },
                 {
                     letter: 'သ',
@@ -296,7 +317,10 @@ export default {
                     example: 'ည + -ှ = ညှ',
                     exampleIPA: 'hnɑ̆',
                     compoundWith: ['ည', 'ဏ', 'မ', 'န', 'ယ', 'ရ', 'လ', 'ဝ'],
-                    selected: 'ည'
+                    selected: 'ည',
+                    final: 'ဟ်',
+                    final2: 'ှ',
+                    finalWith: ['', 'ိ', 'ု', 'ေ', 'ော', 'ို']
                 },
                 {
                     letter: 'ဠ',
@@ -323,6 +347,9 @@ export default {
                     ipa: 'ʔaˀ',
                     sound: require('@/assets/sounds/alphabets/rowNoneColumn9.mp3'),
                     compoundIPA: 'ʔ',
+                    final: 'အ်',
+                    final2: 'ံ',
+                    finalWith: ['', 'ေ', 'ော', 'ို']
                 },
                 {
                     letter: 'ၝ',
@@ -356,7 +383,7 @@ export default {
             example: '',
             exception: {
                 id: 'vowel-exception-1',
-                text: '"ါ" is used after certain consonants including:',
+                dependsOnFinal: false,
                 consonants: ['ခ', 'ဂ', 'ဇ', 'ဎ', 'ဒ', 'ပ', 'ဝ', 'ၜ']
             }
         },
@@ -433,7 +460,7 @@ export default {
             example: '',
             exception: {
                 id: 'vowel-exception-2',
-                text: '"ေါ" is used after certain consonants including:',
+                dependsOnFinal: false,
                 consonants: ['ခ', 'ဂ', 'ဇ', 'ဎ', 'ဒ', 'ပ', 'ဝ', 'ၜ']
             }
         },
@@ -458,11 +485,17 @@ export default {
         {
             letter: 'အး',
             compound: 'း',
+            compound2: 'ို',
             ipaCL: 'ah',
             ipaBT: 'ɛ̀h',
             soundCL: require('@/assets/sounds/alphabets/vowelRow2Column6_CL.mp3'),
             soundBT: require('@/assets/sounds/alphabets/vowelRow2Column6_BT.mp3'),
-            example: ''
+            example: '',
+            exception: {
+                id: 'vowel-exception-5',
+                dependsOnFinal: true,
+                finals: ['က်', 'င်', 'တ်', 'န်', 'ပ်', 'မ်', 'ယ်', 'ဝ်', 'ဟ်', 'အ်']
+            }
         }
     ],
     numbers: [
@@ -609,11 +642,62 @@ export default {
                 isReversed: true,
                 letters: ['ည', 'ဏ', 'မ', 'န', 'ယ', 'ရ', 'လ', 'ဝ'],
             }
+        ],
+        blendFinals: [
+            {
+                final: 'က်',
+                final2: '်',
+                vowels: ['ာ', 'ော']
+            },
+            {
+                final: 'မ်',
+                final2: '',
+                vowels: ['', 'ာ', 'ု', 'ေ', 'ော']
+            },
+            {
+                final: 'မ်',
+                final2: 'ီ',
+                vowels: ['ိ'],
+                isReplaceable: true,
+            },
+            {
+                final: 'မ်',
+                final2: 'ီ',
+                vowels: ['ီု'],
+                isReplaceable: true,
+            },
+            {
+                final: 'ယ်',
+                final2: 'ဲ',
+                vowels: ['', 'ာ', 'ု', 'ေ', 'ော', 'ို']
+            },
+            {
+                final: 'ဝ်',
+                final2: 'ဵု',
+                vowels: ['ို'],
+                isReplaceable: true
+            },
+            {
+                final: 'ဟ်',
+                final2: '်ှ',
+                vowels: ['', 'ေ', 'ော']
+            },
+            {
+                final: 'အ်',
+                final2: 'ံ',
+                vowels: ['', 'ေ', 'ော'],
+                isLegacy: true
+            }
         ]
     },
     getAllCompoundConsonants() {
         return this.consonants.flatMap(consonant =>
             consonant.rows.filter(row => row.compound)
+        );
+    },
+    getAllFinalConsonants(){
+        return this.consonants.flatMap(consonant =>
+            consonant.rows.filter(row => row.final)
         );
     },
     getConsonantByLetter(letter) {
@@ -624,6 +708,11 @@ export default {
     getConsonantByCompound(compound) {
         return this.consonants.flatMap(consonant =>
             consonant.rows.filter(row => row.compound === compound)
+        )[0];
+    },
+    getConsonantByFinal(final) {
+        return this.consonants.flatMap(consonant =>
+            consonant.rows.filter(row => row.final === final)
         )[0];
     },
     isBreathyConsonant(letter) {
@@ -681,8 +770,14 @@ export default {
         if (vowel) {
             let vowelData = this.vowels.find(v => v.compound === vowel);
             if (!vowelData) this.vowels.find(v => v.compound2 === vowel);
-            if (vowelData.exception && vowelData.exception.consonants.includes(consonant)) {
-                word += vowelData.compound2;
+            if (vowelData.exception) {
+                if (vowelData.exception.consonants && vowelData.exception.consonants.includes(consonant)) {
+                    word += vowelData.compound2;
+                } else if (vowelData.exception.finals && vowelData.exception.finals.includes(finalConsonant)) {
+                    word += vowelData.compound2;
+                } else {
+                    word += vowelData.compound;
+                }
             } else {
                 word += vowelData.compound;
             }
@@ -758,7 +853,7 @@ export default {
 
         if (finalConsonant) {
             word += finalConsonant;
-            let finalConsonantData = this.getConsonantByLetter(finalConsonant);
+            let finalConsonantData = this.getConsonantByFinal(finalConsonant);
             if (finalConsonantData) {
                 ipa += finalConsonantData.compoundIPA || finalConsonantData.ipa;
                 ipa2 += finalConsonantData.compoundIPA || finalConsonantData.ipa;

@@ -1,13 +1,14 @@
 <template>
-    <div id="vowel-view" class="container">
-        <CompVowelTable :lang="lang" class="mt-4"/>
+    <div id="final-consonant-view" class="container">
+        <CompFinalConsonantTable :lang="lang" class="mt-4" />
         <div class="d-flex justify-content-between mt-4 mb-5">
-            <router-link :to="`/alphabets/consonant?lang=${lang}#consonant-table`" class="btn btn-secondary">
+            <router-link :to="`/alphabets/compound-consonant?lang=${lang}#compound-consonant-table`"
+                class="btn btn-secondary">
                 <i class="bi bi-arrow-left"></i>
-                {{ langSet[lang].learnAlphabets.consonants || '_CONSONANTS_' }} (35)
-            </router-link>
-            <router-link :to="`/alphabets/compound-consonant?lang=${lang}#compound-consonant-table`" class="btn btn-primary">
                 {{ langSet[lang].learnAlphabets.compoundConsonants || '_COMPOUND_CONSONANTS_' }} (11)
+            </router-link>
+            <router-link :to="`/?lang=${lang}`" class="btn btn-primary">
+                {{ langSet[lang].navbar.home || '_HOME_' }}
                 <i class="bi bi-arrow-right"></i>
             </router-link>
         </div>
@@ -16,14 +17,14 @@
 
 <script>
 
-import CompVowelTable from '@/components/alphabets/CompVowelTable.vue';
+import CompFinalConsonantTable from '@/components/alphabets/CompFinalConsonantTable.vue';
 
 import displayLanguages from '@/services/display-languages';
 
 export default {
-    name: 'VowelView',
+    name: 'FinalConsonantView',
     components: {
-        CompVowelTable
+        CompFinalConsonantTable
     },
     data: () => {
         return {
@@ -31,7 +32,7 @@ export default {
             langSet: displayLanguages.langSet
         }
     },
-    mounted(){
+    mounted() {
         this.lang = this.$route.query.lang || 'en';
     },
     watch: {
@@ -40,4 +41,5 @@ export default {
         }
     },
 }
+
 </script>
