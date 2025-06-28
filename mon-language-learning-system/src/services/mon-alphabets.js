@@ -84,6 +84,7 @@ export default {
                 },
                 {
                     letter: 'ည',
+                    letter2: 'ဥ',
                     tone: 'breathy',
                     ipa: 'ɲɛ̤ˀ',
                     sound: require('@/assets/sounds/alphabets/row2Column5.mp3'),
@@ -319,7 +320,7 @@ export default {
                     compoundWith: ['ည', 'ဏ', 'မ', 'န', 'ယ', 'ရ', 'လ', 'ဝ'],
                     selected: 'ည',
                     final: 'ဟ်',
-                    final2: 'ှ',
+                    final2: '်ှ',
                     finalWith: ['', 'ိ', 'ု', 'ေ', 'ော', 'ို']
                 },
                 {
@@ -485,17 +486,235 @@ export default {
         {
             letter: 'အး',
             compound: 'း',
-            compound2: 'ို',
             ipaCL: 'ah',
             ipaBT: 'ɛ̀h',
             soundCL: require('@/assets/sounds/alphabets/vowelRow2Column6_CL.mp3'),
             soundBT: require('@/assets/sounds/alphabets/vowelRow2Column6_BT.mp3'),
             example: '',
-            exception: {
-                id: 'vowel-exception-5',
-                dependsOnFinal: true,
-                finals: ['က်', 'င်', 'တ်', 'န်', 'ပ်', 'မ်', 'ယ်', 'ဝ်', 'ဟ်', 'အ်']
-            }
+        }
+    ],
+    otherVowels: [
+        {
+            letter: 'ို',
+            compound: 'ို',
+            ipaCL: 'ɒ',
+            ipaBT: 'ə̤',
+            ipaBT2: 'a̤',
+            thCL: 'อาฺ',
+            thBT: 'อ่าฺ',
+            thBT2: 'อ่าฺ',
+            origin: 'ိ + ု = ို',
+        },
+        {
+            letter: 'ာံ',
+            compound: 'ာံ',
+            ipaCL: 'am',
+            ipaBT: 'èm',
+            thCL: 'อาม',
+            thBT: 'เอ่ม',
+            origin: 'ာ + မ် = ာံ',
+        },
+        {
+            letter: 'ုံ',
+            compound: 'ုံ',
+            ipaCL: 'um',
+            ipaBT: 'ùm',
+            thCL: 'อุม',
+            thBT: 'อุ่ม',
+            origin: 'ု + မ် = ုံ'
+        },
+        {
+            letter: 'ေံ',
+            compound: 'ေံ',
+            ipaCL: 'em', // sound of မ်
+            ipaCL2: 'eˀ', //sound of အ်
+            ipaCL3: 'eh', //sound of အ်
+            ipaBT: 'èm', //sound of မ်
+            ipaBT2: 'èˀ', //sounf of အ်
+            thCL: 'เอม',
+            thCL2: 'เอะ',
+            thCL3: 'เอะ',
+            thBT: 'เอ่ม',
+            thBT2: 'เอ่ะ',
+            origin: 'ေ + မ် = ေံ <br>  ေ + အ် = ေံ'
+        },
+        {
+            letter: 'ောံ',
+            compound: 'ောံ',
+            ipaCL: 'om', // sound of မ်
+            ipaCL2: 'oˀ', //sound of အ်
+            ipaBT: 'òm', //sound of မ်
+            ipaBT2: 'òˀ', //sounf of အ်
+            thCL: 'โอม',
+            thCL2: 'โอะ',
+            thBT: 'โอ่ม',
+            thBT2: 'โอ่ะ',
+            origin: 'ော + မ် = ောံ <br> ေါ + မ် = ေံါ'
+        },
+        {
+            letter: 'ီ',
+            compound: 'ီ',
+            ipaCL: 'ɛm',
+            ipaBT: 'ìm',
+            thCL: 'อิม',
+            thBT: 'อิ่ม',
+            origin: 'ိ + မ် = ီ'
+        },
+        {
+            letter: 'ီု',
+            compound: 'ီု',
+            ipaCL: 'ɒm',
+            ipaBT: 'ɜ̀m',
+            thCL: 'ออฺม',
+            thBT: 'เอิ่ม',
+            origin: 'ိ + ု + မ် = ီု'
+        },
+        {
+            letter: 'ာဲ',
+            compound: 'ာဲ',
+            compound2: 'ဲါ',
+            ipaCL: 'ai',
+            ipaBT: 'ə̤i',
+            thCL: 'อาย',
+            thBT: 'อ่าย',
+            origin: 'ာ + ယ် = ာဲ <br> ါ + ယ် = ဲါ'
+        },
+        {
+            letter: 'ုဲ',
+            compound: 'ုဲ',
+            ipaCL: 'ui',
+            ipaBT: 'ùi',
+            thCL: 'อุย',
+            thBT: 'อุ่ย',
+            origin: 'ု + ယ် = ုဲ'
+        },
+        {
+            letter: 'ေဲ',
+            compound: 'ေဲ',
+            ipaCL: 'ea',
+            ipaBT: 'ɛ̀a',
+            thCL: 'เอีย',
+            thBT: 'เอี่ย',
+            origin: 'ေ + ယ် = ေဲ'
+        },
+        {
+            letter: 'ောဲ',
+            compound: 'ောဲ',
+            compound2: 'ေဲါ',
+            ipaCL: 'ua',
+            ipaBT: 'ùa',
+            thCL: 'อัว',
+            thBT: 'อั่ว',
+            origin: 'ော + ယ် = ောဲ <br> ေါ + ယ် = ေဲါ'
+        },
+        {
+            letter: 'ိုဲ',
+            compound: 'ိုဲ',
+            ipaCL: 'ɤj',
+            ipaCL2: 'oj',
+            ipaBT: 'əj',
+            thCL: 'เอย',
+            thCL2: 'โอย',
+            thBT: 'เอ่ย',
+            origin: 'ိ + ု + ယ် = ိုဲ'
+        },
+        {
+            letter: 'ဵု',
+            compound: 'ဵု',
+            ipaCL: 'ɒ',
+            ipaBT: 'ɜ̀',
+            thCL: 'ออฺ',
+            thBT: 'เอ่อ',
+            origin: 'ိ + ု + ဝ် = ဵု'
+        }
+    ],
+    finalConsonants: [
+        {
+            group: 'က',
+            members: [
+                { consonant: 'က', final: 'က်', final2: '်', finalIPA: 'k' },
+                { consonant: 'ခ', final: 'ခ်', finalIPA: 'kʰ' },
+                { consonant: 'ဂ', final: 'ဂ်', finalIPA: 'k' },
+                { consonant: 'ဃ', final: 'ဃ်', finalIPA: 'kʰ' }
+            ],
+            finalWith: ['', 'ာ', 'ိ', 'ု', 'ေ', 'ော', 'ံ', 'ို']
+        },
+        {
+            group: 'ၚ',
+            members: [
+                { consonant: 'ၚ', final: 'င်', finalIPA: 'ŋ' },
+            ],
+            finalWith: ['', 'ာ', 'ိ', 'ု', 'ေ', 'ော', 'ံ', 'ို']
+        },
+        {
+            group: 'တ',
+            memebers: [
+                { consonant: 'တ', final: 'တ်', finalIPA: 't' },
+                { consonant: 'စ', final: 'စ်', finalIPA: 'c' },
+                { consonant: 'ဇ', final: 'ဇ်', finalIPA: 'c' },
+                { consonant: 'ဋ', final: 'ဋ်', finalIPA: 't' },
+                { consonant: 'ဌ', final: 'ဌ်', finalIPA: 'tʰ' },
+                { consonant: 'ထ', final: 'ထ်', finalIPA: 'tʰ' },
+                { consonant: 'ဒ', final: 'ဒ်', finalIPA: 't' },
+                { consonant: 'ဓ', final: 'ဓ်', finalIPA: 'tʰ' },
+                { consonant: 'သ', final: 'သ်', finalIPA: 's' },
+            ],
+            finalWith: ['', 'ာ', 'ိ', 'ု', 'ေ', 'ော', 'ို']
+        },
+        {
+            group: 'န',
+            members: [
+                { consonant: 'န', final: 'န်', finalIPA: 'n' },
+                { consonant: 'ည', final: 'ည်', finalIPA: 'ɲ' },
+                { consonant: 'ဏ', final: 'ဏ်', finalIPA: 'n' }
+            ],
+            finalWith: ['', 'ာ', 'ိ', 'ု', 'ေ', 'ော', 'ို']
+        },
+        {
+            group: 'ပ',
+            members: [
+                { consonant: 'ပ', final: 'ပ်', finalIPA: 'p' },
+                { consonant: 'ဗ', final: 'ဗ်', finalIPA: 'p' },
+                { consonant: 'ဘ', final: 'ဘ်', finalIPA: 'pʰ' },
+            ],
+            finalWith: ['', 'ာ', 'ိ', 'ု', 'ေ', 'ော', 'ို']
+        },
+        {
+            group: 'မ',
+            members: [
+                { consonant: 'မ', final: 'မ်', final2: 'ံ', final3: 'ီ', finalIPA: 'm' }
+            ],
+            finalWith: ['', 'ာ', 'ိ', 'ု', 'ေ', 'ော', 'ို']
+        },
+        {
+            group: 'ယ',
+            members: [
+                { consonant: 'ယ', final: 'ယ်', final2: 'ဲ', finalIPA: 'j' }
+            ],
+            finalWith: ['', 'ာ', 'ု', 'ေ', 'ော', 'ို']
+        },
+        {
+            group: 'ဝ',
+            members: [
+                { consonant: 'ဝ', final: 'ဝ်', final2: 'ဵ', finalIPA: 'w' },
+                { consonant: 'လ', final: 'လ်', finalIPA: 'l' },
+                { consonant: 'ရ', final: 'ရ်', finalIPA: 'r' }
+            ],
+            finalWith: ['', 'ေ', 'ော', 'ို']
+        },
+        {
+            group: 'ဟ',
+            members: [
+                { consonant: 'ဟ', final: 'ဟ်', final2: '်ှ', finalIPA: 'h' }
+            ],
+            finalWith: ['', 'ိ', 'ု', 'ေ', 'ော', 'ို']
+        },
+        {
+            group: 'အ',
+            members: [
+                { consonant: 'အ', final: 'အ်', final2: 'ံ', finalIPA: 'ʔ' }
+            ],
+            finalWith: ['', 'ေ', 'ော', 'ို']
         }
     ],
     numbers: [
@@ -695,7 +914,7 @@ export default {
             consonant.rows.filter(row => row.compound)
         );
     },
-    getAllFinalConsonants(){
+    getAllFinalConsonants() {
         return this.consonants.flatMap(consonant =>
             consonant.rows.filter(row => row.final)
         );

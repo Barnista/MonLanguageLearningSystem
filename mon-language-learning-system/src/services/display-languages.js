@@ -35,6 +35,7 @@ export default {
             },
             vowelView: {
                 description: 'This table displays the Mon vowels along with their pronunciations and examples.',
+                description2: 'Some vowels when combined with some final consonants may create an entire different pronounciation or it is just for simplified writing. Learners should take note before learning on section "Final Consonants": ',
                 vowelType1Title: 'Syllable-initial letter',
                 vowelType1Description: '12 letters with 12 sounds. These letters are used at the beginning of syllables.',
                 vowelType2Title: 'Consonant diacritic',
@@ -57,6 +58,7 @@ export default {
                 title: 'Learn Alphabets',
                 consonants: 'Consonants',
                 vowels: 'Vowels',
+                otherVowels: 'Other Vowels',
                 compoundConsonants: 'Compound Consonants',
                 finalConsonants: 'Final Consonants',
                 doubleConsonants: 'Double Consonants',
@@ -99,10 +101,12 @@ export default {
                 compoundSymbol: 'Compound symbol',
                 compoundExample: 'Example',
                 pronounciation: 'Pronunciation<br>(IPA)',
-                finalConsonant: 'Consonant',
-                finalSymbol: 'Final Consonant',
+                finalConsonant: 'Group',
+                finalSymbol: 'Final Consonants',
                 finalExample: 'Example',
-                other: 'Other'
+                other: 'Other',
+                otherVowels: 'Vowels',
+                otherVowelsOrigin: 'Origin'
             }
         },
         th: {
@@ -128,6 +132,7 @@ export default {
             },
             vowelView: {
                 description: 'สระในภาษามอญมี 2 ประเภท ได้แก่ อักษรสระ (สระสำเร็จ) และ ลักาณะสระ (สระประสม) ดังที่แสดงบนตารางพร้อมคำอ่านและตัวอย่าง ต่อไปนี้',
+                description2: 'สระบางตัวเมื่อมีการประสมกับตัวสะกดแล้ว อาจจะทำให้เกิดเป็นสระเสียงใหม่ หรือเพื่อแค่ให้การเขียนดูสละสลวยขึ้น ซึ่งผู้เรียนควรทำความเข้าใจก่อนที่จะเรียนในบทเรียน "ตัวสะกด" มีดังนี้:',
                 vowelType1Title: 'อักษรสระ (สระสำเร็จ)',
                 vowelType1Description: 'มี 12 รูป 12 เสียง เป็นสระที่นำมาใช้ได้เลยดังนี้.',
                 vowelType2Title: 'ลักาณะสระ (สระประสม)',
@@ -150,6 +155,7 @@ export default {
                 title: 'เรียนอักษรมอญ',
                 consonants: 'พยัญชนะ',
                 vowels: 'สระ',
+                otherVowels: 'สระอื่นๆ',
                 compoundConsonants: 'พยัญชนะควบ',
                 finalConsonants: 'ตัวสะกด',
                 doubleConsonants: 'พยัญชนะซ้อน',
@@ -192,10 +198,12 @@ export default {
                 compoundSymbol: 'ลักษณะลดรูป',
                 compoundExample: 'ตัวอย่างการควบ',
                 pronounciation: 'การสะกดคำ<br>(สัทธอักษรสากล)',
-                finalConsonant: 'พยัญชนะ',
+                finalConsonant: 'แม่สะกด',
                 finalSymbol: 'รูปตัวสะกด',
                 finalExample: 'ตัวอย่างการประสม',
-                other: 'อื่นๆ'
+                other: 'อื่นๆ',
+                otherVowels: 'รูปสระ',
+                otherVowelsOrigin: 'ที่มาการประสม<br>ของสระ'
             }
         }
     }

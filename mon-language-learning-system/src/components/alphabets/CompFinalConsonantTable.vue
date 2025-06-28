@@ -19,7 +19,7 @@
                     <td class="fs-5">{{ index + 1 }}</td>
                     <td class="fw-bold fs-4 text-muted">{{ item.letter }}</td>
                     <td class="fw-bold fs-4">{{ item.final }}</td>
-                    <td class="fs-5">က+{{ item.final }}={{ craftWord('က', null, null, item.final).word }}</td>
+                    <td class="fs-5">က + {{ item.final }} = {{ craftWord('က', null, null, item.final).word }}</td>
                     <td class="fs-5 text-muted">
                         <button class="mt-2 btn btn-sm btn-outline-success py-0 px-1">
                             🔊 {{ `/${craftWord('က', null, null, item.final).ipa}/` || 'N/A' }}
