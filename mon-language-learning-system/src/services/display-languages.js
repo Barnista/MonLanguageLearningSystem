@@ -51,7 +51,12 @@ export default {
                 compoundDescription2: 'including:'
             },
             finalConsonantView: {
-                description: 'Final consonants are used at the end of syllables to indicate the closing sound. They play an important role in pronunciation and meaning. There are 10 final consonants including:'
+                description: 'Final consonants are used at the end of syllables to indicate the closing sound. They play an important role in pronunciation and meaning. There are 10 final consonants including:',
+                group: 'Group',
+                groupDescription1: 'can be used before adding the final consonant',
+                groupDescription2: 'including:',
+                groupDescription3: 'Final Consonants',
+                groupDescription4: 'as part of the same group including:'
             },
             learnAlphabets: {
                 alphabets: 'Alphabets',
@@ -93,7 +98,8 @@ export default {
                 or: 'or',
                 seeException: 'see exception',
                 exception: 'Exception',
-                tryConsonant: 'try consonant'
+                tryConsonant: 'try consonant',
+                tryFinalConsonant: 'try final consonant'
             },
             table: {
                 no: 'No.',
@@ -148,7 +154,12 @@ export default {
                 compoundDescription2: 'ได้แก่พยัญชนะ:'
             },
             finalConsonantView: {
-                description: 'ตัวสะกดในภาษามอญนั้น มีแม่สะกดอยู่ 10 แม่ คือตัวสะกดดังต่อไปนี้:'
+                description: 'ตัวสะกดในภาษามอญนั้น มีแม่สะกดอยู่ 10 แม่ คือตัวสะกดดังต่อไปนี้:',
+                group: 'แม่',
+                groupDescription1: 'สามารถประสมกับตัวสะกด',
+                groupDescription2: 'ได้แก่:',
+                groupDescription3: 'ตัวสะกดร่วม',
+                groupDescription4: 'ที่เป็นสมาชิกได้แก่:'
             },
             learnAlphabets: {
                 alphabets: 'อักษรมอญ',
@@ -190,7 +201,8 @@ export default {
                 or: 'หรือ',
                 seeException: 'ดูข้อยกเว้น',
                 exception: 'ข้อยกเว้น',
-                tryConsonant: 'โปรดเลือก'
+                tryConsonant: 'โปรดเลือก',
+                tryFinalConsonant: 'โปรดเลือก'
             },
             table: {
                 no: 'ลำดับ',

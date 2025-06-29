@@ -648,7 +648,7 @@ export default {
         },
         {
             group: 'တ',
-            memebers: [
+            members: [
                 { consonant: 'တ', final: 'တ်', finalIPA: 't' },
                 { consonant: 'စ', final: 'စ်', finalIPA: 'c' },
                 { consonant: 'ဇ', final: 'ဇ်', finalIPA: 'c' },
@@ -866,7 +866,7 @@ export default {
             {
                 final: 'က်',
                 final2: '်',
-                vowels: ['ာ', 'ော']
+                vowels: ['ာ', 'ော', 'ါ', 'ေါ']
             },
             {
                 final: 'မ်',
@@ -918,6 +918,9 @@ export default {
         return this.consonants.flatMap(consonant =>
             consonant.rows.filter(row => row.final)
         );
+    },
+    getAllFinalConsonantGroups() {
+        return this.finalConsonants;
     },
     getConsonantByLetter(letter) {
         return this.consonants.flatMap(consonant =>
@@ -987,25 +990,39 @@ export default {
 
         // If no vowel is provided, use the default vowel
         if (vowel) {
-            let vowelData = this.vowels.find(v => v.compound === vowel);
-            if (!vowelData) this.vowels.find(v => v.compound2 === vowel);
-            if (vowelData.exception) {
-                if (vowelData.exception.consonants && vowelData.exception.consonants.includes(consonant)) {
-                    word += vowelData.compound2;
-                } else if (vowelData.exception.finals && vowelData.exception.finals.includes(finalConsonant)) {
-                    word += vowelData.compound2;
+            let allVowels = [].concat(this.vowels).concat(this.otherVowels);
+            var vowelData = allVowels.find(v => v.compound === vowel || v.compound2 === vowel);
+
+            if (vowelData) {
+                if (vowelData.exception) {
+                    if (vowelData.exception.consonants && vowelData.exception.consonants.includes(consonant)) {
+                        word += vowelData.compound2;
+                    } else if (vowelData.exception.finals && vowelData.exception.finals.includes(finalConsonant)) {
+                        word += vowelData.compound2;
+                    } else {
+                        word += vowelData.compound;
+                    }
                 } else {
                     word += vowelData.compound;
                 }
-            } else {
-                word += vowelData.compound;
-            }
-
-            if (compound) {
-                let blendCompound = this.rules.blendCompounds.find(c => c.compound === compound);
-                if (blendCompound && blendCompound.isReversed) {
-                    ipa += vowelData.ipaCL;
-                    ipa2 = ipa;
+                if (compound) {
+                    let blendCompound = this.rules.blendCompounds.find(c => c.compound === compound);
+                    if (blendCompound && blendCompound.isReversed) {
+                        ipa += vowelData.ipaCL;
+                        ipa2 = ipa;
+                    } else {
+                        if (this.isClearConsonant(consonant)) {
+                            ipa += vowelData.ipaCL;
+                            if (vowelData.ipaCL2) {
+                                ipa2 += vowelData.ipaCL2;
+                            } else {
+                                ipa2 = ipa;
+                            }
+                        } else {
+                            ipa += vowelData.ipaBT;
+                            ipa2 = ipa;
+                        }
+                    }
                 } else {
                     if (this.isClearConsonant(consonant)) {
                         ipa += vowelData.ipaCL;
@@ -1020,19 +1037,8 @@ export default {
                     }
                 }
             } else {
-                if (this.isClearConsonant(consonant)) {
-                    ipa += vowelData.ipaCL;
-                    if (vowelData.ipaCL2) {
-                        ipa2 += vowelData.ipaCL2;
-                    } else {
-                        ipa2 = ipa;
-                    }
-                } else {
-                    ipa += vowelData.ipaBT;
-                    ipa2 = ipa;
-                }
+                console.log('VOWEL NOT FOUND:', vowel);
             }
-
         } else {
             word += defaultVowel.compound;
 
