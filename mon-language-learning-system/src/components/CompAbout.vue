@@ -73,7 +73,26 @@
                 </a>
             </p>
             <p>
-                คู่มือการเรียนรู้ภาษามอญ:
+                อักษรมอญ:
+                <a href="https://th.wikipedia.org/wiki/%E0%B8%AD%E0%B8%B1%E0%B8%81%E0%B8%A9%E0%B8%A3%E0%B8%A1%E0%B8%AD%E0%B8%8D"
+                    target="_blank" rel="noopener noreferrer">
+                    https://th.wikipedia.org/wiki/อักษรมอญ
+                </a>
+            </p>
+            <p>
+                คู่มือการเรียนรู้ภาษามอญ (ပြကိုဟ် ပရေင်ကတ်လ္ၚတ်လိက်မန်):
+                <a href="https://online.fliphtml5.com/yjjtg/ejio/#p=1" target="_blank" rel="noopener noreferrer">
+                    https://online.fliphtml5.com/yjjtg/ejio
+                </a>
+            </p>
+            <p>
+                พจนานุกรมมอญ-ไทย:
+                <a href="https://online.fliphtml5.com/yjjtg/bkuu/?1747471532#p=1" target="_blank" rel="noopener noreferrer">
+                    https://online.fliphtml5.com/yjjtg/bkuu/?1747471532
+                </a>
+            </p>
+            <p>
+                Mon Library:
                 <a href="http://www.monlibrary.com/" target="_blank" rel="noopener noreferrer">
                     http://www.monlibrary.com
                 </a>

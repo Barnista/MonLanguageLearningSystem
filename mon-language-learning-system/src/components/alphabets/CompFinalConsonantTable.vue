@@ -25,10 +25,11 @@
                                 class="text-muted">၊</span>
                         </span>
                     </td>
-                    <td class="fs-5">က + {{ item.members[0].final }} = {{ craftWord('က', null, null, item.final).word }}
+                    <td class="fs-5">က + {{ item.members[0].final }} = {{ craftWord2('က', null, null, item.final).word
+                    }}
                     </td>
                     <td class="fs-5">
-                        {{ `/${craftWord('က', null, null, item.members[0].final).ipa}/` || 'N/A' }}
+                        {{ `/${craftWord2('က', null, null, item.members[0].final).ipa}/` || 'N/A' }}
                     </td>
                     <td class="fs-5 text-muted">
                         <button v-if="copiedIndex == index && copiedCIndex == cIndex"
@@ -48,7 +49,8 @@
             <h3>
                 {{ index + 1 }}. {{ langSet[lang ? lang : 'en'].finalConsonantView.group }}
                 <span class="fw-bold">"{{ item.group }}"</span>
-                <span class="text-muted ms-3">{{ `/${craftWord('က', null, null, item.members[0].final).ipa}/` || 'N/A'
+                <span class="text-muted ms-3">/{{ item.thGroup }}/</span>
+                <span class="text-muted ms-3">{{ `/${craftWord2('က', null, null, item.members[0].final).ipa}/` || 'N/A'
                 }}</span>
             </h3>
             <div class="ms-3 mt-1">
@@ -59,7 +61,7 @@
                 </span>
                 <span>{{ langSet[lang ? lang : 'en'].finalConsonantView.groupDescription2 }}</span>
                 <span v-for="(vowel, vIndex) in item.finalWith" :key="vIndex" class="fw-bold fs-5 ms-2">
-                    {{ vowel ? vowel : '-' }}<span>,</span>
+                    {{ vowel.vowel ? vowel.vowel : '-' }}<span>,</span>
                 </span>
             </div>
             <div class="row mt-2">
@@ -95,7 +97,16 @@
                         <td v-for="(vowel, kIndex) in item.finalWith" :key="kIndex">
                             <div>
                                 <span class="fs-3 fw-bold">
-                                    {{ craftWord('က', null, vowel, item.members[selectedFinals[index]].final).word ||
+                                    {{ craftWord2('က', null, vowel.vowel,
+                                        item.members[selectedFinals[index]].final).word ||
+                                        'N/A' }}
+                                </span>
+                                <br>
+                                <span
+                                    v-if="craftWord2('က', null, vowel.vowel, item.members[selectedFinals[index]].final).word2"
+                                    class="fs-3 fw-bold">
+                                    {{ craftWord2('က', null, vowel.vowel,
+                                        item.members[selectedFinals[index]].final).word2 ||
                                         'N/A' }}
                                 </span>
                                 <br>
@@ -103,13 +114,16 @@
                             </div>
                             <div class="mt-2">
                                 <span class="text-muted">
-                                    /{{ craftWord('က', null, vowel, item.members[selectedFinals[index]].final).ipa ||
+                                    /{{ craftWord2('က', null, vowel.vowel,
+                                        item.members[selectedFinals[index]].final).ipa ||
                                         'N/A' }}/
                                 </span>
                                 <br>
-                                <span v-if="craftWord('က', null, vowel, item.members[selectedFinals[index]].final).ipa2"
+                                <span
+                                    v-if="craftWord2('က', null, vowel.vowel, item.members[selectedFinals[index]].final).ipa2"
                                     class="text-muted">
-                                    /{{ craftWord('က', null, vowel, item.members[selectedFinals[index]].final).ipa2 ||
+                                    /{{ craftWord2('က', null, vowel.vowel,
+                                        item.members[selectedFinals[index]].final).ipa2 ||
                                         'N/A'
                                     }}/
                                 </span>
@@ -120,7 +134,16 @@
                         <td v-for="(vowel, kIndex) in item.finalWith" :key="kIndex">
                             <div>
                                 <span class="fs-3 fw-bold">
-                                    {{ craftWord('ဂ', null, vowel, item.members[selectedFinals[index]].final).word ||
+                                    {{ craftWord2('ဂ', null, vowel.vowel,
+                                        item.members[selectedFinals[index]].final).word ||
+                                        'N/A' }}
+                                </span>
+                                <br>
+                                <span
+                                    v-if="craftWord2('ဂ', null, vowel.vowel, item.members[selectedFinals[index]].final).word2"
+                                    class="fs-3 fw-bold">
+                                    {{ craftWord2('ဂ', null, vowel.vowel,
+                                        item.members[selectedFinals[index]].final).word2 ||
                                         'N/A' }}
                                 </span>
                                 <br>
@@ -128,13 +151,16 @@
                             </div>
                             <div class="mt-2">
                                 <span class="text-muted">
-                                    /{{ craftWord('ဂ', null, vowel, item.members[selectedFinals[index]].final).ipa ||
+                                    /{{ craftWord2('ဂ', null, vowel.vowel,
+                                        item.members[selectedFinals[index]].final).ipa ||
                                         'N/A' }}/
                                 </span>
                                 <br>
-                                <span v-if="craftWord('ဂ', null, vowel, item.members[selectedFinals[index]].final).ipa2"
+                                <span
+                                    v-if="craftWord2('ဂ', null, vowel.vowel, item.members[selectedFinals[index]].final).ipa2"
                                     class="text-muted">
-                                    /{{ craftWord('ဂ', null, vowel, item.members[selectedFinals[index]].final).ipa2 ||
+                                    /{{ craftWord2('ဂ', null, vowel.vowel,
+                                        item.members[selectedFinals[index]].final).ipa2 ||
                                         'N/A'
                                     }}/
                                 </span>
@@ -143,6 +169,10 @@
                     </tr>
                 </tbody>
             </table>
+            <div v-if="langSet[lang ? lang : 'en'].finalConsonantView[`exception${index+1}`]" class="fs-6 mt-3">
+                <span class="fw-bold">{{ langSet[lang ? lang : 'en'].finalConsonantView.exception }}</span>
+                <span class="ms-1" v-html="langSet[lang ? lang : 'en'].finalConsonantView[`exception${index+1}`]"></span>
+            </div>
             <hr>
         </div>
     </div>
@@ -150,7 +180,7 @@
 
 <script>
 
-import monAlphabets from '@/services/mon-alphabets';
+import monAlphabets from '@/services/mon-library/alphabets/alphabets';
 
 import displayLanguages from '@/services/display-languages';
 
@@ -177,6 +207,9 @@ export default {
     methods: {
         craftWord(consonant, compound, vowel, final) {
             return monAlphabets.craftWord(consonant, compound, vowel, final)
+        },
+        craftWord2(consonant, compound, vowel, final) {
+            return monAlphabets.craftWord2(consonant, compound, vowel, final)
         },
         copyToClipboard(text, index, cIndex) {
             this.copiedIndex = index;

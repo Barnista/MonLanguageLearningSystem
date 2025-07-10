@@ -415,7 +415,7 @@ export default {
             compound: 'ု',
             ipaCL: 'ùˀ',
             ipaBT: 'ùˀ',
-            ipaCL2: 'aoˀ',
+            ipaCL2: 'aò',
             soundCL: require('@/assets/sounds/alphabets/vowelRow1Column5_CL.mp3'),
             soundBT: require('@/assets/sounds/alphabets/vowelRow1Column5_BT.mp3'),
             soundCL2: require('@/assets/sounds/alphabets/vowelRow1Column5_CL2.mp3'),
@@ -542,7 +542,7 @@ export default {
             letter: 'ောံ',
             compound: 'ောံ',
             ipaCL: 'om', // sound of မ်
-            ipaCL2: 'oˀ', //sound of အ်
+            ipaCL2: 'ò', //sound of အ်
             ipaBT: 'òm', //sound of မ်
             ipaBT2: 'òˀ', //sounf of အ်
             thCL: 'โอม',
@@ -631,23 +631,148 @@ export default {
     finalConsonants: [
         {
             group: 'က',
+            thGroup: 'กัก',
             members: [
                 { consonant: 'က', final: 'က်', final2: '်', finalIPA: 'k' },
                 { consonant: 'ခ', final: 'ခ်', finalIPA: 'kʰ' },
                 { consonant: 'ဂ', final: 'ဂ်', finalIPA: 'k' },
                 { consonant: 'ဃ', final: 'ဃ်', finalIPA: 'kʰ' }
             ],
-            finalWith: ['', 'ာ', 'ိ', 'ု', 'ေ', 'ော', 'ံ', 'ို']
+            finalWith: [
+                {
+                    vowel: '',
+                    ipaCL: 'aˀ',
+                    ipaBT: 'ɛ̀ˀ',
+                    ipaBT2: 'ɛˀ',
+                    thCL: 'อะ',
+                    thBT: 'เอี่ย',
+                    thBT2: 'แอ่',
+                },
+                {
+                    vowel: 'ာ',
+                    ipaCL: 'a',
+                    ipaBT: 'a̤',
+                    thCL: 'อา',
+                    thBT: 'อ่า',
+                },
+                {
+                    vowel: 'ိ',
+                    ipaCL: 'ɤ',
+                    ipaBT: 'ɤˀ',
+                    thCL: 'เออ',
+                    thBT: 'เอ่อ',
+                },
+                {
+                    vowel: 'ု',
+                    ipaCL: 'ɤ',
+                    ipaBT: 'ɤˀ',
+                    thCL: 'เออ',
+                    thBT: 'เอ่อ',
+                },
+                {
+                    vowel: 'ေ',
+                    ipaCL: 'ɛ̀',
+                    ipaCL2: 'ɒ',
+                    ipaBT: 'ɛ̀ˀ',
+                    thCL: 'เอีย',
+                    thCL2: 'ออฺ',
+                    thBT: 'เอี่ย',
+                },
+                {
+                    vowel: 'ော',
+                    ipaCL: 'o',
+                    ipaBT: 'ò',
+                    thCL: 'โอ',
+                    thBT: 'โอ่',
+                },
+                {
+                    vowel: 'ံ',
+                    ipaCL: 'ɒ',
+                    ipaBT: 'ɒˀ',
+                    thCL: 'ออ',
+                    thBT: 'อ่อ',
+                },
+                {
+                    vowel: 'ို',
+                    ipaCL: 'ɒ',
+                    ipaBT: 'ə̤',
+                    thCL: 'อาฺ',
+                    thBT: 'อ่าฺ'
+                }
+            ]
         },
         {
             group: 'ၚ',
+            thGroup: 'กัง',
             members: [
                 { consonant: 'ၚ', final: 'င်', finalIPA: 'ŋ' },
             ],
-            finalWith: ['', 'ာ', 'ိ', 'ု', 'ေ', 'ော', 'ံ', 'ို']
+            finalWith: [
+                {
+                    vowel: '',
+                    ipaCL: 'aˀ',
+                    ipaBT: 'ɛˀ',
+                    thCL: 'อะ',
+                    thBT: 'แอ่',
+                },
+                {
+                    vowel: 'ာ',
+                    ipaCL: 'a',
+                    ipaBT: 'a̤',
+                    thCL: 'อา',
+                    thBT: 'อ่า',
+                },
+                {
+                    vowel: 'ိ',
+                    ipaCL: 'ɤ',
+                    ipaBT: 'ɤˀ',
+                    thCL: 'เออ',
+                    thBT: 'เอ่อ',
+                },
+                {
+                    vowel: 'ု',
+                    ipaCL: 'ɤ',
+                    ipaBT: 'ɤˀ',
+                    thCL: 'เออ',
+                    thBT: 'เอ่อ',
+                },
+                {
+                    vowel: 'ေ',
+                    ipaCL: 'ɛ̀',
+                    ipaCL2: 'ɒ',
+                    ipaBT: 'ɛ̀ˀ',
+                    ipaBT2: 'ɒˀ',
+                    thCL: 'เอีย',
+                    thCL2: 'ออฺ',
+                    thBT: 'เอี่ย',
+                    thBT2: 'อ่อ',
+                },
+                {
+                    vowel: 'ော',
+                    ipaCL: 'o',
+                    ipaBT: 'ò',
+                    thCL: 'โอ',
+                    thBT: 'โอ่',
+                },
+                {
+                    vowel: 'ံ',
+                    ipaCL: 'ɒ',
+                    ipaBT: 'ɒˀ',
+                    thCL: 'ออ',
+                    thBT: 'อ่อ',
+                },
+                {
+                    vowel: 'ို',
+                    ipaCL: 'ɒ',
+                    ipaBT: 'ə̤',
+                    thCL: 'อาฺ',
+                    thBT: 'อ่าฺ'
+                }
+            ]
         },
         {
             group: 'တ',
+            thGroup: 'กอด',
             members: [
                 { consonant: 'တ', final: 'တ်', finalIPA: 't' },
                 { consonant: 'စ', final: 'စ်', finalIPA: 'c' },
@@ -659,62 +784,419 @@ export default {
                 { consonant: 'ဓ', final: 'ဓ်', finalIPA: 'tʰ' },
                 { consonant: 'သ', final: 'သ်', finalIPA: 's' },
             ],
-            finalWith: ['', 'ာ', 'ိ', 'ု', 'ေ', 'ော', 'ို']
+            finalWith: [
+                {
+                    vowel: '',
+                    ipaCL: 'ɒ',
+                    ipaBT: 'ò',
+                    thCL: 'ออ',
+                    thBT: 'โอ่ะ',
+                },
+                {
+                    vowel: 'ာ',
+                    ipaCL: 'a',
+                    ipaBT: 'a̤',
+                    thCL: 'อา',
+                    thBT: 'อ่า',
+                },
+                {
+                    vowel: 'ိ',
+                    ipaCL: 'ɔeˀ',
+                    ipaBT: 'ìˀ',
+                    thCL: 'อิ',
+                    thBT: 'อิ่',
+                },
+                {
+                    vowel: 'ု',
+                    ipaCL: 'ùˀ',
+                    ipaBT: 'ùˀ',
+                    thCL: 'อุ',
+                    thBT: 'อุ่',
+                },
+                {
+                    vowel: 'ေ',
+                    ipaCL: 'e',
+                    ipaBT: 'è',
+                    thCL: 'เอ',
+                    thBT: 'เอ่',
+                },
+                {
+                    vowel: 'ော',
+                    ipaCL: 'o',
+                    ipaBT: 'ò',
+                    thCL: 'โอ',
+                    thBT: 'โอ่',
+                },
+                {
+                    vowel: 'ို',
+                    ipaCL: 'ɒ',
+                    ipaBT: 'ɤˀ',
+                    thCL: 'ออฺ',
+                    thBT: 'เอ่อ'
+                }
+            ]
         },
         {
             group: 'န',
+            thGroup: 'กอน',
             members: [
                 { consonant: 'န', final: 'န်', finalIPA: 'n' },
                 { consonant: 'ည', final: 'ည်', finalIPA: 'ɲ' },
                 { consonant: 'ဏ', final: 'ဏ်', finalIPA: 'n' }
             ],
-            finalWith: ['', 'ာ', 'ိ', 'ု', 'ေ', 'ော', 'ို']
+            finalWith: [
+                {
+                    vowel: '',
+                    ipaCL: 'ɒ',
+                    ipaBT: 'ò',
+                    thCL: 'ออ',
+                    thBT: 'โอ่ะ',
+                },
+                {
+                    vowel: 'ာ',
+                    ipaCL: 'a',
+                    ipaBT: 'a̤',
+                    thCL: 'อา',
+                    thBT: 'อ่า',
+                },
+                {
+                    vowel: 'ိ',
+                    ipaCL: 'ɔeˀ',
+                    ipaBT: 'ìˀ',
+                    thCL: 'อิ',
+                    thBT: 'อิ่',
+                },
+                {
+                    vowel: 'ု',
+                    ipaCL: 'ùˀ',
+                    ipaBT: 'ùˀ',
+                    thCL: 'อุ',
+                    thBT: 'อุ่',
+                },
+                {
+                    vowel: 'ေ',
+                    ipaCL: 'e',
+                    ipaBT: 'è',
+                    thCL: 'เอ',
+                    thBT: 'เอ่',
+                },
+                {
+                    vowel: 'ော',
+                    ipaCL: 'o',
+                    ipaBT: 'ò',
+                    thCL: 'โอ',
+                    thBT: 'โอ่',
+                },
+                {
+                    vowel: 'ို',
+                    ipaCL: 'ɒ',
+                    ipaBT: 'ɤˀ',
+                    thCL: 'ออฺ',
+                    thBT: 'เอ่อ'
+                }
+            ]
         },
         {
             group: 'ပ',
+            thGroup: 'กอบ',
             members: [
                 { consonant: 'ပ', final: 'ပ်', finalIPA: 'p' },
                 { consonant: 'ဗ', final: 'ဗ်', finalIPA: 'p' },
                 { consonant: 'ဘ', final: 'ဘ်', finalIPA: 'pʰ' },
             ],
-            finalWith: ['', 'ာ', 'ိ', 'ု', 'ေ', 'ော', 'ို']
+            finalWith: [
+                {
+                    vowel: '',
+                    ipaCL: 'ɒ',
+                    ipaBT: 'ò',
+                    thCL: 'ออ',
+                    thBT: 'โอ่ะ',
+                },
+                {
+                    vowel: 'ာ',
+                    ipaCL: 'a',
+                    ipaBT: 'è',
+                    thCL: 'อา',
+                    thBT: 'เอ่',
+                },
+                {
+                    vowel: 'ိ',
+                    ipaCL: 'ɔeˀ',
+                    ipaBT: 'ìˀ',
+                    thCL: 'อิ',
+                    thBT: 'อิ่',
+                },
+                {
+                    vowel: 'ု',
+                    ipaCL: 'ùˀ',
+                    ipaBT: 'ùˀ',
+                    thCL: 'อุ',
+                    thBT: 'อุ่',
+                },
+                {
+                    vowel: 'ေ',
+                    ipaCL: 'e',
+                    ipaBT: 'è',
+                    thCL: 'เอ',
+                    thBT: 'เอ่',
+                },
+                {
+                    vowel: 'ော',
+                    ipaCL: 'o',
+                    ipaBT: 'ò',
+                    thCL: 'โอ',
+                    thBT: 'โอ่',
+                },
+                {
+                    vowel: 'ို',
+                    ipaCL: 'ɒ',
+                    ipaBT: 'ɤˀ',
+                    thCL: 'ออฺ',
+                    thBT: 'เอ่อ'
+                }
+            ]
         },
         {
             group: 'မ',
+            thGroup: 'กอม',
             members: [
                 { consonant: 'မ', final: 'မ်', final2: 'ံ', final3: 'ီ', finalIPA: 'm' }
             ],
-            finalWith: ['', 'ာ', 'ိ', 'ု', 'ေ', 'ော', 'ို']
+            finalWith: [
+                {
+                    vowel: '',
+                    ipaCL: 'ɒ',
+                    ipaBT: 'ò',
+                    thCL: 'ออ',
+                    thBT: 'โอ่ะ',
+                },
+                {
+                    vowel: 'ာ',
+                    ipaCL: 'a',
+                    ipaBT: 'è',
+                    thCL: 'อา',
+                    thBT: 'เอ่',
+                },
+                {
+                    vowel: 'ိ',
+                    ipaCL: 'ɔeˀ',
+                    ipaBT: 'ìˀ',
+                    thCL: 'อิ',
+                    thBT: 'อิ่',
+                },
+                {
+                    vowel: 'ု',
+                    ipaCL: 'ùˀ',
+                    ipaBT: 'ùˀ',
+                    thCL: 'อุ',
+                    thBT: 'อุ่',
+                },
+                {
+                    vowel: 'ေ',
+                    ipaCL: 'e',
+                    ipaBT: 'è',
+                    thCL: 'เอ',
+                    thBT: 'เอ่',
+                },
+                {
+                    vowel: 'ော',
+                    ipaCL: 'o',
+                    ipaBT: 'ò',
+                    thCL: 'โอ',
+                    thBT: 'โอ่',
+                },
+                {
+                    vowel: 'ို',
+                    ipaCL: 'ɒ',
+                    ipaBT: 'ɤˀ',
+                    thCL: 'ออฺ',
+                    thBT: 'เอ่อ'
+                }
+            ]
         },
         {
             group: 'ယ',
+            thGroup: 'กอย',
             members: [
                 { consonant: 'ယ', final: 'ယ်', final2: 'ဲ', finalIPA: 'j' }
             ],
-            finalWith: ['', 'ာ', 'ု', 'ေ', 'ော', 'ို']
+            finalWith: [
+                {
+                    vowel: '',
+                    ipaCL: 'oa',
+                    ipaBT: 'òa',
+                    thCL: 'อัว',
+                    thBT: 'อั่ว',
+                },
+                {
+                    vowel: 'ာ',
+                    ipaCL: 'ai',
+                    ipaBT: 'a̤i',
+                    thCL: 'อาย',
+                    thBT: 'อ่าย',
+                },
+                {
+                    vowel: 'ု',
+                    ipaCL: 'ùi',
+                    ipaBT: 'ùiˀ',
+                    thCL: 'อุย',
+                    thBT: 'อุ่ย',
+                },
+                {
+                    vowel: 'ေ',
+                    ipaCL: 'ea',
+                    ipaBT: 'ɛ̀a',
+                    thCL: 'เอีย',
+                    thBT: 'เอี่ย',
+                },
+                {
+                    vowel: 'ော',
+                    ipaCL: 'oa',
+                    ipaBT: 'òa',
+                    thCL: 'อัว',
+                    thBT: 'อั่ว',
+                },
+                {
+                    vowel: 'ို',
+                    ipaCL: 'ɤi',
+                    ipaCL2: 'oi',
+                    ipaBT: 'ɤiˀ',
+                    thCL: 'เอย',
+                    thCL2: 'โอย',
+                    thBT: 'เอ่ย'
+                }
+            ],
+            isSilent: true
         },
         {
             group: 'ဝ',
+            thGroup: 'กอ',
             members: [
                 { consonant: 'ဝ', final: 'ဝ်', final2: 'ဵ', finalIPA: 'w' },
                 { consonant: 'လ', final: 'လ်', finalIPA: 'l' },
                 { consonant: 'ရ', final: 'ရ်', finalIPA: 'r' }
             ],
-            finalWith: ['', 'ေ', 'ော', 'ို']
+            finalWith: [
+                {
+                    vowel: '',
+                    ipaCL: 'ɒ',
+                    ipaBT: 'ò',
+                    thCL: 'ออ',
+                    thBT: 'โอ่',
+                },
+                {
+                    vowel: 'ေ',
+                    ipaCL: 'e',
+                    ipaBT: 'è',
+                    thCL: 'เอ',
+                    thBT: 'เอ่',
+                },
+                {
+                    vowel: 'ော',
+                    ipaCL: 'o',
+                    ipaBT: 'ò',
+                    thCL: 'โอ',
+                    thBT: 'โอ่',
+                },
+                {
+                    vowel: 'ို',
+                    ipaCL: 'ɒ',
+                    ipaBT: 'ɤˀ',
+                    thCL: 'ออฺ',
+                    thBT: 'เอ่อ'
+                }
+            ],
+            isSilent: true
         },
         {
             group: 'ဟ',
+            thGroup: 'กอฮ',
             members: [
                 { consonant: 'ဟ', final: 'ဟ်', final2: '်ှ', finalIPA: 'h' }
             ],
-            finalWith: ['', 'ိ', 'ု', 'ေ', 'ော', 'ို']
+            finalWith: [
+                {
+                    vowel: '',
+                    ipaCL: 'ɒh',
+                    ipaBT: 'òh',
+                    thCL: 'ออฮ',
+                    thBT: 'โอ่ฮ',
+                },
+                {
+                    vowel: 'ိ',
+                    ipaCL: 'ɔeˀh',
+                    ipaBT: 'ìˀh',
+                    thCL: 'อิฮ',
+                    thBT: 'อิ่ฮ',
+                },
+                {
+                    vowel: 'ု',
+                    ipaCL: 'ùh',
+                    ipaBT: 'ùˀh',
+                    thCL: 'อุฮ',
+                    thBT: 'อุ่ฮ',
+                },
+                {
+                    vowel: 'ေ',
+                    ipaCL: 'eh',
+                    ipaBT: 'èˀh',
+                    thCL: 'เอฮ',
+                    thBT: 'เอ่ฮ',
+                },
+                {
+                    vowel: 'ော',
+                    ipaCL: 'oh',
+                    ipaBT: 'òh',
+                    thCL: 'โอฮ',
+                    thBT: 'โอ่ฮ',
+                },
+                {
+                    vowel: 'ို',
+                    ipaCL: 'ɒh',
+                    ipaBT: 'ɤˀh',
+                    thCL: 'ออฺฮ',
+                    thBT: 'เอ่อฮ'
+                }
+            ],
+            isSilent: true
         },
         {
             group: 'အ',
+            thGroup: 'เกาะ',
             members: [
                 { consonant: 'အ', final: 'အ်', final2: 'ံ', finalIPA: 'ʔ' }
             ],
-            finalWith: ['', 'ေ', 'ော', 'ို']
+            finalWith: [
+                {
+                    vowel: '',
+                    ipaCL: 'ɒˀ',
+                    ipaBT: 'òˀ',
+                    thCL: 'เอาะ',
+                    thBT: 'โอ่ะ',
+                },
+                {
+                    vowel: 'ေ',
+                    ipaCL: 'eˀ',
+                    ipaBT: 'èˀ',
+                    thCL: 'เอะ',
+                    thBT: 'เอ่ะ',
+                },
+                {
+                    vowel: 'ော',
+                    ipaCL: 'oˀ',
+                    ipaBT: 'òˀ',
+                    thCL: 'โอะ',
+                    thBT: 'โอ่ะ',
+                },
+                {
+                    vowel: 'ို',
+                    ipaCL: 'ɒ',
+                    ipaBT: 'ɤˀ',
+                    thCL: 'ออฺอ',
+                    thBT: 'เอ่อะ'
+                }
+            ],
+            isSilent: true
         }
     ],
     numbers: [
@@ -839,6 +1321,7 @@ export default {
                 'ဂ', 'ဃ', 'ၚ', 'ဇ', 'ၛ', 'ည', 'ဎ', 'ဒ', 'ဓ', 'န', 'ဗ', 'ဘ', 'မ', 'ယ', 'ရ', 'လ', 'ဝ', 'ၝ'
             ],
         },
+        // กฎที่ระบุว่าตัวควบใดกับพยัญชนะใด จะออกเสียงแบบควบแท้
         blendCompounds: [
             {
                 compound: 'ျ',
@@ -862,49 +1345,163 @@ export default {
                 letters: ['ည', 'ဏ', 'မ', 'န', 'ယ', 'ရ', 'လ', 'ဝ'],
             }
         ],
+        // กฎที่ระบุว่าตัวสะกดใดกับสระใดจะมีการเขียนแบบลดรูป
         blendFinals: [
             {
                 final: 'က်',
                 final2: '်',
-                vowels: ['ာ', 'ော', 'ါ', 'ေါ']
+                vowels: [
+                    {
+                        vowel: 'ာ',
+                        replace: 'ာ်'
+                    },
+                    {
+                        vowel: 'ော',
+                        replace: 'ော်'
+                    },
+                    {
+                        vowel: 'ါ',
+                        replace: 'ါ်'
+                    },
+                    {
+                        vowel: 'ေါ',
+                        replace: 'ေါ်'
+                    },
+                ]
             },
             {
                 final: 'မ်',
-                final2: '',
-                vowels: ['', 'ာ', 'ု', 'ေ', 'ော']
-            },
-            {
-                final: 'မ်',
-                final2: 'ီ',
-                vowels: ['ိ'],
-                isReplaceable: true,
-            },
-            {
-                final: 'မ်',
-                final2: 'ီ',
-                vowels: ['ီု'],
-                isReplaceable: true,
+                final2: 'ံ',
+                vowels: [
+                    {
+                        vowel: '',
+                        replace: 'ံ'
+                    },
+                    {
+                        vowel: 'ာ',
+                        replace: 'ာံ'
+                    },
+                    {
+                        vowel: 'ါ',
+                        replace: 'ံါ'
+                    },
+                    {
+                        vowel: 'ိ',
+                        replace: 'ီ'
+                    },
+                    {
+                        vowel: 'ု',
+                        replace: 'ုံ'
+                    },
+                    {
+                        vowel: 'ေ',
+                        replace: 'ေံ'
+                    },
+                    {
+                        vowel: 'ော',
+                        replace: 'ောံ'
+                    },
+                    {
+                        vowel: 'ေါ',
+                        replace: 'ေံါ'
+                    },
+                    {
+                        vowel: 'ို',
+                        replace: 'ီု'
+                    }
+                ]
             },
             {
                 final: 'ယ်',
                 final2: 'ဲ',
-                vowels: ['', 'ာ', 'ု', 'ေ', 'ော', 'ို']
+                vowels: [
+                    {
+                        vowel: '',
+                        replace: 'ဲ'
+                    },
+                    {
+                        vowel: 'ာ',
+                        replace: 'ာဲ'
+                    },
+                    {
+                        vowel: 'ါ',
+                        replace: 'ဲါ'
+                    },
+                    {
+                        vowel: 'ု',
+                        replace: 'ုဲ'
+                    },
+                    {
+                        vowel: 'ေ',
+                        replace: 'ေဲ'
+                    },
+                    {
+                        vowel: 'ော',
+                        replace: 'ောဲ'
+                    },
+                    {
+                        vowel: 'ေါ',
+                        replace: 'ေဲါ'
+                    },
+                    {
+                        vowel: 'ို',
+                        replace: 'ိုဲ'
+                    }
+                ]
             },
             {
                 final: 'ဝ်',
                 final2: 'ဵု',
-                vowels: ['ို'],
-                isReplaceable: true
+                vowels: [
+                    {
+                        vowel: 'ို',
+                        replace: 'ဵု'
+                    }
+                ],
             },
             {
                 final: 'ဟ်',
                 final2: '်ှ',
-                vowels: ['', 'ေ', 'ော']
+                vowels: [
+                    {
+                        vowel: '',
+                        replace: '်ှ'
+                    },
+                    {
+                        vowel: 'ေ',
+                        replace: '်ှေ'
+                    },
+                    {
+                        vowel: 'ော',
+                        replace: '်ှော'
+                    },
+                    {
+                        vowel: 'ေါ',
+                        replace: '်ှော'
+                    }
+                ]
             },
             {
                 final: 'အ်',
                 final2: 'ံ',
-                vowels: ['', 'ေ', 'ော'],
+                vowels: [
+                    {
+                        vowel: '',
+                        replace: 'ံ'
+                    },
+                    {
+                        vowel: 'ေ',
+                        replace: 'ေံ'
+                    },
+                    {
+                        vowel: 'ော',
+                        replace: 'ောံ'
+                    },
+                    {
+                        vowel: 'ေါ',
+                        replace: 'ေံါ'
+                    },
+                ],
                 isLegacy: true
             }
         ]
@@ -913,14 +1510,6 @@ export default {
         return this.consonants.flatMap(consonant =>
             consonant.rows.filter(row => row.compound)
         );
-    },
-    getAllFinalConsonants() {
-        return this.consonants.flatMap(consonant =>
-            consonant.rows.filter(row => row.final)
-        );
-    },
-    getAllFinalConsonantGroups() {
-        return this.finalConsonants;
     },
     getConsonantByLetter(letter) {
         return this.consonants.flatMap(consonant =>
@@ -933,9 +1522,34 @@ export default {
         )[0];
     },
     getConsonantByFinal(final) {
-        return this.consonants.flatMap(consonant =>
-            consonant.rows.filter(row => row.final === final)
+        return this.finalConsonants.flatMap(group =>
+            group.members.filter(member => member.final === final)
         )[0];
+    },
+    getVowelByCompound(compound) {
+        return this.vowels.find(vowel => vowel.compound === compound) ||
+            this.vowels.find(vowel => vowel.compound2 === compound) ||
+            this.otherVowels.find(vowel => vowel.compound === compound) ||
+            this.otherVowels.find(vowel => vowel.compound2 === compound);
+    },
+    getAllFinalConsonantGroups() {
+        return this.finalConsonants;
+    },
+    getFinalConsonantByLetter(letter) {
+        return this.finalConsonants.flatMap(group =>
+            [].concat(
+                group.members.filter(member => member.consonant === letter),
+                group.members.filter(member => member.final === letter),
+                group.members.filter(member => member.final2 === letter)
+            )
+        )[0];
+    },
+    getFinalConsonantGroupByLetter(letter) {
+        return this.finalConsonants.find(group =>
+            group.members.some(member => member.consonant === letter) ||
+            group.members.some(member => member.final === letter) ||
+            group.members.some(member => member.final2 === letter)
+        );
     },
     isBreathyConsonant(letter) {
         return this.rules.tones.breathy.includes(letter);
@@ -949,6 +1563,7 @@ export default {
         let defaultVowel = this.vowels[0];
 
         let word = '';
+        // If no consonant is provided, we use the default consonant
         if (consonant) {
             word += consonant;
             let consonantData = this.getConsonantByLetter(consonant);
@@ -959,6 +1574,7 @@ export default {
             }
         }
 
+        // If no compound is provided, we use the default compound
         if (compound) {
             word += compound;
             let compoundData = this.getConsonantByCompound(compound);
@@ -1075,7 +1691,7 @@ export default {
             }
         }
 
-
+        // If a final consonant is provided, append it to the word and IPA
         if (finalConsonant) {
             word += finalConsonant;
             let finalConsonantData = this.getConsonantByFinal(finalConsonant);
@@ -1092,5 +1708,130 @@ export default {
             ipa: ipa,
             ipa2: ipa2
         };
+    },
+    craftWord2(consonant, compound, vowel, finalConsonant) {
+        let ipa = '', ipa2 = '';
+        let word = '', word2 = '';
+
+        // If no consonant is provided, we use the default consonant
+        let currentConsonant = consonant ? (this.getConsonantByLetter(consonant) ?? this.consonants[0].rows[0].letter) : this.consonants[0].rows[0].letter;
+
+        // check if the consonant is breathy or clear
+        let isBreathy = this.isBreathyConsonant(currentConsonant.letter);
+        let cl_bt = isBreathy ? 'bt' : 'cl';
+
+        // if no vowel is provided, we use the default vowel
+        let currentVowel = vowel ? (this.getVowelByCompound(vowel) ?? this.vowels[0]) : this.vowels[0];
+        let vowelCompound = isBreathy ? (currentVowel.compound2 ?? currentVowel.compound) : currentVowel.compound;
+
+        // analyse like how you see braskets stacking upon each others and you have to layer them out one by one from top to bottom
+
+        // starting with final consonant and vowel,...
+
+        // find finalConsonant data but not yet assign any value to word or ipa
+        let finalConsonantData = this.getFinalConsonantByLetter(finalConsonant);
+        let finalConsonantGroup = this.getFinalConsonantGroupByLetter(finalConsonant);
+
+        if (finalConsonantData && finalConsonantGroup) {
+            //try to analyse with vowels according to rules of finalWith and also with blendFinals.
+            let allowedVowel = finalConsonantGroup.finalWith.find(vowel => currentVowel.compound === vowel.vowel || currentVowel.compound2 === vowel.vowel);
+
+            // if final consonant is compatible with the current vowel
+            if (allowedVowel) {
+                // check if there's any blen rules for final consonant and vowel
+                let blendFinal = this.rules.blendFinals.find(blend => blend.final === finalConsonantData.final || blend.final2 === finalConsonantData.final);
+
+                if (blendFinal) {
+                    // if there's a blend rule, replace the vowel with the blend rule
+                    // use the current vowel's compound or compound2 based on whether it's breathy or clear
+
+                    let replaceVowel = blendFinal.vowels.find(v => v.vowel === vowelCompound);
+                    if (replaceVowel) {
+                        // if replace vowel found, use the replaceVowel instead of final consonant and vowel in word2
+                        word2 = word2 + replaceVowel.replace;
+                    }
+                }
+                // anyway, we can append the final consonant and vowel to the word
+                word = word + vowelCompound + finalConsonantData.final;
+
+                // append the IPA for final consonant and vowel
+                ipa = ipa + (isBreathy ? allowedVowel.ipaBT : allowedVowel.ipaCL) + (!finalConsonantGroup.isSilent ? finalConsonantData.finalIPA : '');
+                if (isBreathy && allowedVowel.ipaBT2) {
+                    ipa2 = ipa2 + allowedVowel.ipaBT2 + (!finalConsonantGroup.isSilent ? finalConsonantData.finalIPA : '');
+                }
+                if (!isBreathy && allowedVowel.ipaCL2) {
+                    ipa2 = ipa2 + allowedVowel.ipaCL2 + (!finalConsonantGroup.isSilent ? finalConsonantData.finalIPA : '');
+                }
+            } else {
+                // reject final consonant and skip to the next layer which is vowel
+                word = word + vowelCompound;
+                ipa = ipa + (isBreathy ? currentVowel.ipaBT : currentVowel.ipaCL);
+                if (isBreathy && currentVowel.ipaBT2) {
+                    ipa2 = ipa2 + currentVowel.ipaBT2;
+                }
+                if (!isBreathy && currentVowel.ipaCL2) {
+                    ipa2 = ipa2 + currentVowel.ipaCL2;
+                }
+            }
+        } else {
+            // if no final consonant data, we then skip to the next layer which is vowel
+            word = word + vowelCompound;
+            ipa = ipa + (isBreathy ? currentVowel.ipaBT : currentVowel.ipaCL);
+            if (isBreathy && currentVowel.ipaBT2) {
+                ipa2 = ipa2 + currentVowel.ipaBT2;
+            }
+            if (!isBreathy && currentVowel.ipaCL2) {
+                ipa2 = ipa2 + currentVowel.ipaCL2;
+            }
+        }
+
+        // then continue with compound consonant and consonant (which is the most important layer)
+        let compoundConsonantData = compound ? this.getConsonantByCompound(compound) : null;
+        if (compoundConsonantData) {
+            // if compound consonant is provided, append it to the word
+
+            // append the compound consonant to the word
+            word = currentConsonant.letter + compoundConsonantData.compound + word;
+            if (word2) word2 = currentConsonant.letter + compoundConsonantData.compound + word2;
+
+            // check if the compound consonant has a blend sound with a certain consonant according to the rules
+            let blendCompound = this.rules.blendCompounds.find(c => c.compound === compound);
+            let isBlend = blendCompound?.letters.includes(currentConsonant.letter);
+            if (isBlend) {
+                // ถ้าหากเป็นควบแท้
+                // if the compound consonant is a blend, we append the compound consonant to the word
+                // and append the IPA for the compound consonant
+                if (blendCompound.isReversed) {
+                    // if the blend compound is reversed, start with the compound consonant ipa then the current consonant ipa
+                    ipa = compoundConsonantData.compoundIPA + currentConsonant.compoundIPA + ipa;
+                    if (ipa2) ipa2 = compoundConsonantData.compoundIPA + currentConsonant.compoundIPA + ipa2;
+                } else {
+                    ipa = currentConsonant.compoundIPA + compoundConsonantData.compoundIPA + ipa;
+                    if (ipa2) ipa2 = currentConsonant.compoundIPA + compoundConsonantData.compoundIPA + ipa2;
+                }
+            } else {
+                // ถ้าหากไม่ใช่ควบแท้
+                // if not a blend, we just append the consonant
+                // and append the IPA for the compound consonant
+                ipa = currentConsonant.compoundIPA + compoundConsonantData.compoundIPA + ipa;
+                if (ipa2) ipa2 = currentConsonant.ipa + compoundConsonantData.compoundIPA + ipa2;
+            }
+        } else {
+            // if no compound consonant is provided, we just append the consonant
+            word = currentConsonant.letter + word;
+            if (word2) word2 = currentConsonant.letter + word2;
+
+            ipa = currentConsonant.compoundIPA + ipa;
+            if (ipa2) ipa2 = currentConsonant.compoundIPA + ipa2;
+        }
+
+        //return feasible data
+        return {
+            word: word,
+            word2: word2,
+            cl_bt: cl_bt,
+            ipa: ipa,
+            ipa2: ipa2
+        }
     }
 }

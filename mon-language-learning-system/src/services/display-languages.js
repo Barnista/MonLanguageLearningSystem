@@ -56,7 +56,9 @@ export default {
                 groupDescription1: 'can be used before adding the final consonant',
                 groupDescription2: 'including:',
                 groupDescription3: 'Final Consonants',
-                groupDescription4: 'as part of the same group including:'
+                groupDescription4: 'as part of the same group including:',
+                exception: 'Exception:',
+                exception10: 'When <strong>-အ်</strong> was written in a form of <strong>-ံ</strong> may cause confusion with the other final consonant <strong>-မ်</strong>. It depends on the context and meaning of the sentence. However, in modern Mon language usage, it is common to write the full form of the final consonant, which is <strong>-အ်</strong> instead of <strong>-ံ</strong> to avoid confusion.'
             },
             learnAlphabets: {
                 alphabets: 'Alphabets',
@@ -159,7 +161,9 @@ export default {
                 groupDescription1: 'สามารถประสมกับตัวสะกด',
                 groupDescription2: 'ได้แก่:',
                 groupDescription3: 'ตัวสะกดร่วม',
-                groupDescription4: 'ที่เป็นสมาชิกได้แก่:'
+                groupDescription4: 'ที่เป็นสมาชิกได้แก่:',
+                exception: 'ข้อยกเว้น:',
+                exception10: '<strong>แม่เกาะ</strong> เมื่อลดรูปแล้วจะไปซ้ำกับ <strong>แม่กอม</strong> ในการอ่าน ขึ้นอยู่กับความเข้าใจและความหมายของบริบทของประโยคนั้นๆ แต่ในปัจจุบันผู้ใช้ภาษามอญนิยมเปลี่ยนจากการลดรูปเป็นการเขียนตัวสะกดเต็มรูป กล่าวคือใช้ <strong>-အ်</strong> แทน <strong>-ံ</strong> เพื่อหลีกเลี่ยงไม่ให้เกิดความสับสน.', 
             },
             learnAlphabets: {
                 alphabets: 'อักษรมอญ',

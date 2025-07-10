@@ -88,7 +88,7 @@
 
 <script>
 
-import monAlphabets from '@/services/mon-alphabets';
+import monAlphabets from '@/services/mon-library/alphabets/alphabets';
 import displayLanguages from '@/services/display-languages';
 
 export default {
