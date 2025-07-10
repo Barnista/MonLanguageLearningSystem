@@ -1813,7 +1813,7 @@ export default {
                 // ถ้าหากไม่ใช่ควบแท้
                 // if not a blend, we just append the consonant
                 // and append the IPA for the compound consonant
-                ipa = currentConsonant.compoundIPA + compoundConsonantData.compoundIPA + ipa;
+                ipa = currentConsonant.ipa + compoundConsonantData.compoundIPA + ipa;
                 if (ipa2) ipa2 = currentConsonant.ipa + compoundConsonantData.compoundIPA + ipa2;
             }
         } else {

@@ -224,10 +224,10 @@ export default {
             return monAlphabets.isClearConsonant(consonant);
         },
         craftWord(consonant, vowel) {
-            return monAlphabets.craftWord(consonant, null, vowel, null);
+            return monAlphabets.craftWord2(consonant, null, vowel, null);
         },
         craftWord2(vowel, final) {
-            return monAlphabets.craftWord('က', null, vowel, final);
+            return monAlphabets.craftWord2('က', null, vowel, final);
         },
         copyToClipboard(text, index, cIndex) {
             this.copiedIndex = index;

@@ -114,7 +114,7 @@ export default {
             return monAlphabets.isBreathyConsonant(letter);
         },
         craftWord(consonant, compound, vowel) {
-            return monAlphabets.craftWord(consonant, compound, vowel, null);
+            return monAlphabets.craftWord2(consonant, compound, vowel, null);
         }
     }
 };
