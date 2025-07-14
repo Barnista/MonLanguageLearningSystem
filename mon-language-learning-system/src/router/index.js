@@ -44,6 +44,11 @@ const routes = [
     path: '/alphabets/final-consonant',
     name: 'alphabets-final-consonant',
     component: () => import('../views/alphabets/FinalConsonantView.vue')
+  },
+  {
+    path: '/alphabets/double-consonant',
+    name: 'alphabets-double-consonant',
+    component: () => import('../views/alphabets/DoubleConsonantView.vue')
   }
 ]
 

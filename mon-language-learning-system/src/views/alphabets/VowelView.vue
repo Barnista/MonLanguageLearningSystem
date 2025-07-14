@@ -1,11 +1,11 @@
 <template>
     <div id="vowel-view" class="container">
+        <CompAlphabetJourney :lang="lang" :page="'vowel'" class="mt-4" />
         <CompVowelTable :lang="lang" class="mt-4" />
-        <div class="mt-5">
-            <hr>
-        </div>
+        <hr>
         <CompOtherVowelTable :lang="lang" class="mt-4" />
-        <div class="d-flex justify-content-between mt-4 mb-5">
+        <hr>
+        <div class="d-flex justify-content-between mt-4">
             <router-link :to="`/alphabets/consonant?lang=${lang}#consonant-table`" class="btn btn-secondary">
                 <i class="bi bi-arrow-left"></i>
                 {{ langSet[lang].learnAlphabets.consonants || '_CONSONANTS_' }} (35)
@@ -16,6 +16,7 @@
                 <i class="bi bi-arrow-right"></i>
             </router-link>
         </div>
+        <CompAlphabetJourney :lang="lang" :page="'vowel'" class="mt-4" />
     </div>
 </template>
 
@@ -23,6 +24,7 @@
 
 import CompVowelTable from '@/components/alphabets/CompVowelTable.vue';
 import CompOtherVowelTable from '@/components/alphabets/CompOtherVowelTable.vue';
+import CompAlphabetJourney from '@/components/misc/CompAlphabetJourney.vue';
 
 import displayLanguages from '@/services/display-languages';
 
@@ -30,7 +32,8 @@ export default {
     name: 'VowelView',
     components: {
         CompVowelTable,
-        CompOtherVowelTable
+        CompOtherVowelTable,
+        CompAlphabetJourney
     },
     data: () => {
         return {

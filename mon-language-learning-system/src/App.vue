@@ -6,7 +6,7 @@
 
   <KeyboardModal ref="keyboardModal" class="mt-5" />
   <div class="sticky-bottom text-end p-3" id="toastBtn">
-    <button @click="showKeyboard" class="btn btn-lg btn-primary rounded-pill shadow">
+    <button @click="showKeyboard" class="btn btn-lg btn-light bg-fabulous rounded-pill shadow">
       <i class="bi bi-keyboard"></i>
       {{ langSet[lang].keyboard.title }}
       <!-- For Mon, English, Thai, Burmese -->
@@ -70,5 +70,26 @@ export default {
   /* Adjust based on your navbar height */
   min-height: calc(100vh - 56px);
   /* Ensure footer is at the bottom */
+}
+
+.bg-fabulous {
+    background: linear-gradient(90deg, #ff8a00, #e52e71, #4a90e2, #ff8a00);
+    background-size: 400% 400%;
+    animation: gradient-flash 8s linear infinite;
+    color: #fff !important;
+}
+
+@keyframes gradient-flash {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
 }
 </style>

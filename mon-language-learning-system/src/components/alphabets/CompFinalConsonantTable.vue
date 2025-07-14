@@ -1,9 +1,7 @@
 <template>
     <div id="final-consonant-table">
         <h2>{{ langSet[lang ? lang : 'en'].learnAlphabets.finalConsonants }} (10)</h2>
-        <p class="text-muted">
-            {{ langSet[lang ? lang : 'en'].finalConsonantView.description }}
-        </p>
+        <p v-html="langSet[lang ? lang : 'en'].finalConsonantView.description"></p>
         <table>
             <thead>
                 <tr>
@@ -185,7 +183,6 @@
 <script>
 
 import monAlphabets from '@/services/mon-library/alphabets/alphabets';
-
 import displayLanguages from '@/services/display-languages';
 
 export default {
@@ -207,9 +204,6 @@ export default {
         for (let i = 0; i < this.finalGroups.length; i++) {
             this.selectedFinals.push(0);
         }
-        console.log(
-            this.craftWord2('ဂ', null, 'ေါ', 'ခ်')
-        )
     },
     methods: {
         craftWord(consonant, compound, vowel, final) {

@@ -38,7 +38,7 @@
                                 </router-link>
                             </li>
                             <li>
-                                <router-link class="dropdown-item disabled" to="#" tabindex="-1" aria-disabled="true">
+                                <router-link class="dropdown-item" :to="`/alphabets/double-consonant?lang=${lang}`">
                                     {{ langSet[lang ? lang : 'en'].learnAlphabets.doubleConsonants }}
                                 </router-link>
                             </li>

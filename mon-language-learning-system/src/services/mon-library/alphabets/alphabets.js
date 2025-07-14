@@ -1254,7 +1254,7 @@ export default {
         },
         {
             group: 'ဝ',
-            thGroup: 'กอ',
+            thGroup: 'กอว',
             members: [
                 { consonant: 'ဝ', final: 'ဝ်', final2: 'ဵ', finalIPA: 'w' },
                 { consonant: 'လ', final: 'လ်', finalIPA: 'l' },
@@ -1290,7 +1290,7 @@ export default {
                     thBT: 'เอ่อ'
                 }
             ],
-            isSilent: true
+            //isSilent: true
         },
         {
             group: 'ဟ',

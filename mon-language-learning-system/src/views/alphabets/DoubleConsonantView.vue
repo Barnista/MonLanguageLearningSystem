@@ -1,34 +1,33 @@
 <template>
     <div id="final-consonant-view" class="container">
-        <CompAlphabetJourney :lang="lang" :page="'final-consonant'" class="mt-4" />
-        <CompFinalConsonantTable :lang="lang" class="mt-4" />
+        <CompAlphabetJourney :lang="lang" :page="'double-consonant'" class="mt-4" />
+        <CompDoubleConsonantTable :lang="lang" class="mt-4" />
         <div class="d-flex justify-content-between mt-4">
-            <router-link :to="`/alphabets/compound-consonant?lang=${lang}#compound-consonant-table`"
+            <router-link :to="`/alphabets/final-consonant?lang=${lang}#final-consonant-table`"
                 class="btn btn-secondary">
                 <i class="bi bi-arrow-left"></i>
-                {{ langSet[lang].learnAlphabets.compoundConsonants || '_COMPOUND_CONSONANTS_' }} (11)
+                {{ langSet[lang].learnAlphabets.finalConsonants || '_FINAL_CONSONANTS_' }} (10)
             </router-link>
-            <router-link :to="`/alphabets/double-consonant?lang=${lang}#double-consonant-table`" class="btn btn-primary">
-                {{ langSet[lang].learnAlphabets.doubleConsonants || '_DOUBLE_CONSONANTS_' }} (2)
+            <router-link :to="`/?lang=${lang}`" class="btn btn-primary">
+                {{ langSet[lang].navbar.home || '_HOME_' }}
                 <i class="bi bi-arrow-right"></i>
             </router-link>
         </div>
-        <CompAlphabetJourney :lang="lang" :page="'final-consonant'" class="mt-4" />
+        <CompAlphabetJourney :lang="lang" :page="'double-consonant'" class="mt-4" />
     </div>
 </template>
 
 <script>
 
-import CompFinalConsonantTable from '@/components/alphabets/CompFinalConsonantTable.vue';
+import CompDoubleConsonantTable from '@/components/alphabets/CompDoubleConsonantTable.vue';
 import CompAlphabetJourney from '@/components/misc/CompAlphabetJourney.vue';
-
 import displayLanguages from '@/services/display-languages';
 
 export default {
-    name: 'FinalConsonantView',
+    name: 'DoubleConsonantView',
     components: {
-        CompFinalConsonantTable,
-        CompAlphabetJourney
+        CompAlphabetJourney,
+        CompDoubleConsonantTable
     },
     data: () => {
         return {

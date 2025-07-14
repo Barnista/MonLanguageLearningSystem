@@ -30,7 +30,7 @@ export default {
                 clearConsonants: 'clear consonants',
                 breathyConsonants: 'breathy consonants',
                 row: 'row',
-                column: 'column',
+                column: 'consonant',
                 note: 'Note: Some letters may not have a pronunciation or example.'
             },
             vowelView: {
@@ -51,7 +51,7 @@ export default {
                 compoundDescription2: 'including:'
             },
             finalConsonantView: {
-                description: 'Final consonants are used at the end of syllables to indicate the closing sound. They play an important role in pronunciation and meaning. There are 10 final consonants including:',
+                description: 'Final consonants are used at the end of syllables to indicate the closing sound. They play an important role in pronunciation and meaning. There are <strong>10 final consonant groups</strong> including:',
                 group: 'Group',
                 groupDescription1: 'can be used before adding the final consonant',
                 groupDescription2: 'including:',
@@ -59,6 +59,24 @@ export default {
                 groupDescription4: 'as part of the same group including:',
                 exception: 'Exception:',
                 exception10: 'When <strong>-အ်</strong> was written in a form of <strong>-ံ</strong> may cause confusion with the other final consonant <strong>-မ်</strong>. It depends on the context and meaning of the sentence. However, in modern Mon language usage, it is common to write the full form of the final consonant, which is <strong>-အ်</strong> instead of <strong>-ံ</strong> to avoid confusion.'
+            },
+            doubleConsonantView: {
+                description: 'In the Mon language, double consonants are two consonants overlapping each other. The purpose is to make writing concise and space-efficient. Double consonants are divided into <strong>2 types</strong>: ',
+                titleType1: 'Direct typography <strong>(Mon-style)</strong>',
+                titleType2: 'Pali-Sanskrit typography <strong>(Pali-Sanskrit-style)</strong>',
+                descriptionType1: 'It is a typography with simple rules. The reading is to pronounce both consonants, the main and the overlapped consonants, by <strong>reading from top to bottom</strong>, for example: ',
+                descriptionType2: 'It is a typography with legacy rules derived from Pali-Sansakrit scripts. The main consonant will turn into the final consonant for the consonant positioned at the start. The consonant that is <strong>overlapped</strong> will be pronounced on its own or combined with the following vowel and/or final consonant.',
+                descriptionTable2: 'Please open page Consonants and try to remember the context that: <strong>Mon consonants are divided into 5 rows, each row has 5 consonants and the remaining 10 are the zero-consonants, totaling 35 characters</strong>.',
+                ruleType21: 'Each row is divided into 2 types of consonants:',
+                ruleType22: '<strong>The 1st - 3rd - 5th consonants</strong> of every row are classified as final consonants. Can overlap the 2nd - 4th consonant or overlap itself (except ၚ and ဍ)',
+                ruleType23: '<strong>The 2nd - 4th consonants</strong> of every row are classified as overlapped consonants. Cannot overlap the 1st - 3rd - 5th consonant and cannot overlap itself.',
+                ruleTitle2: 'Overlapping rules',
+                ruleNo21: 'The <strong>1st</strong> consonant can overlap on the <strong>2nd</strong> consonant and can overlap itself (within the same row)',
+                ruleNo22: 'The <strong>3rd</strong> consonant can overlap on the <strong>4th</strong> consonant and can overlap itself (within the same row)',
+                ruleNo23: 'The <strong>5th</strong> consonant can overlap on all <strong>consonants</strong> and can overlap itself (within the same row)',
+                titleTable2: 'Demonstration:',
+                note: 'Note: ',
+                noteType1: 'The 11 compound consonants are not considered double consonants.'
             },
             learnAlphabets: {
                 alphabets: 'Alphabets',
@@ -158,14 +176,32 @@ export default {
                 compoundDescription2: 'ได้แก่พยัญชนะ:'
             },
             finalConsonantView: {
-                description: 'ตัวสะกดในภาษามอญนั้น มีแม่สะกดอยู่ 10 แม่ คือตัวสะกดดังต่อไปนี้:',
+                description: 'ตัวสะกดในภาษามอญนั้น <strong>มีแม่สะกดอยู่ 10 แม่</strong> คือตัวสะกดดังต่อไปนี้:',
                 group: 'แม่',
                 groupDescription1: 'สามารถประสมกับตัวสะกด',
                 groupDescription2: 'ได้แก่:',
                 groupDescription3: 'ตัวสะกดร่วม',
                 groupDescription4: 'ที่เป็นสมาชิกได้แก่:',
                 exception: 'ข้อยกเว้น:',
-                exception10: '<strong>แม่เกาะ</strong> เมื่อลดรูปแล้วจะไปซ้ำกับ <strong>แม่กอม</strong> ในการอ่าน ขึ้นอยู่กับความเข้าใจและความหมายของบริบทของประโยคนั้นๆ แต่ในปัจจุบันผู้ใช้ภาษามอญนิยมเปลี่ยนจากการลดรูปเป็นการเขียนตัวสะกดเต็มรูป กล่าวคือใช้ <strong>-အ်</strong> แทน <strong>-ံ</strong> เพื่อหลีกเลี่ยงไม่ให้เกิดความสับสน.', 
+                exception10: '<strong>แม่เกาะ</strong> เมื่อลดรูปแล้วจะไปซ้ำกับ <strong>แม่กอม</strong> ในการอ่าน ขึ้นอยู่กับความเข้าใจและความหมายของบริบทของประโยคนั้นๆ แต่ในปัจจุบันผู้ใช้ภาษามอญนิยมเปลี่ยนจากการลดรูปเป็นการเขียนตัวสะกดเต็มรูป กล่าวคือใช้ <strong>-အ်</strong> แทน <strong>-ံ</strong> เพื่อหลีกเลี่ยงไม่ให้เกิดความสับสน.',
+            },
+            doubleConsonantView: {
+                description: 'พยัญชนะซ้อนในภาษามอญ คือ พยัญชนะ 2 ตัวที่เขียนซ้อนทับกัน โดยมีวัตถุประสงค์เพื่อทำให้การเขียนมีความกระชับ สามารถใช้พื้นที่ในปริมาณจำกัดได้. พยัญชนะซ้อน แบ่งเป็น <strong>2 ประเภท</strong> ได้แก่:',
+                titleType1: 'การซ้อนพยัญชนะแบบภาษามอญโดยตรง <strong>(ซ้อนแบบมอญ)</strong>',
+                titleType2: 'การซ้อนพยัญชนะที่มาจากภาษาบาลี-สันสกฤต <strong>(ซ้อนแบบบาลี-สันสกฤต)</strong>',
+                descriptionType1: 'เป็นการซ้อนแบบไม่มีกฎเกณฑ์กำกับ การอ่านนั้นให้<strong>ออกเสียงพยัญชนะทั้ง 2 ตัว ทั้งตัวหลักและตัวซ้อน</strong> โดยให้<strong>อ่านจากบนลงล่าง</strong> เช่น:',
+                descriptionType2: 'เป็นการซ้อนที่มีกฎเกณฑ์ที่แน่นอน โดยพยัญชนะที่เป็น<strong>ตัวหลักจะเป็นตัวสะกด</strong>ให้กับพยัญชนะที่อยู่ข้างหน้า ส่วนพยัญชนะที่เป็น<strong>ตัวซ้อนจะออกเสียงตัวเอง</strong>หรือออกเสียงประสมกับสระและตัวสะกดที่อยู่ข้างหลัง.',
+                descriptionTable2: 'ให้ผู้เรียนเปิดหน้าตารางพยัญชนะมอญ แล้วทำความเข้าใจดังต่อไปนี้ว่า <strong>พยัญชนะมอญแบ่งออกเป็นวรรคได้ 5 วรรค แต่ละวรรมีพยัญชนะ 5 ตัว และอีก 10 ตัวเป็นเศษวรรค รวมเป็น 35 ตัว</strong>.',
+                ruleType21: 'พยัญชนะที่จัดเป็นวรรคทั้ง 5 วรรค จะ<strong>แบ่งพยัญชนะเป็น 2 ประเภท</strong> คือ',
+                ruleType22: '<strong>พยัญชนะตัวที่ 1 - 3 - 5</strong> ของทุกวรรค จัดเป็นพยัญชนะประเภทสะกด สามารถซ้อนพยัญชนะตัวที่ 2 - 4 หรือซ้อนตัวเองได้ (ยกเว้น ၚ กับ ဍ)',
+                ruleType23: '<strong>พยัญชนะตัวที่ 2 - 4</strong> ของทุกวรรค จัดเป็นพยัญชนะประเภทซ้อน ไม่สามารถซ้อนพยัญชนะ 1 - 3 - 5 และไม่สามารถซ้อนตัวเองได้.',
+                ruleTitle2: 'กฎเกณฑ์การซ้อน',
+                ruleNo21: 'พยัญชนะ<strong>ตัวที่ 1</strong> ของวรรค<strong>ซ้อนอยู่บน</strong>พยัญชนะ<strong>ตัวที่ 2</strong> ของวรรค<strong>และซ้อนตัวเอง</strong>ได้',
+                ruleNo22: 'พยัญชนะ<strong>ตัวที่ 3</strong> ของวรรค<strong>ซ้อนอยู่บน</strong>พยัญชนะ<strong>ตัวที่ 4</strong> ของวรรค<strong>และซ้อนตัวเอง</strong>ได้',
+                ruleNo23: 'พยัญชนะ<strong>ตัวที่ 5</strong> ของวรรค<strong>ซ้อนอยู่บน</strong>พยัญชนะ<strong>ทุกตัว</strong>ของวรรค<strong>และซ้อนตัวเอง</strong>ได้',
+                titleTable2: 'ตัวอย่างการซ้อนแต่ละวรรค',
+                note: 'หมายเหตุ: ',
+                noteType1: 'พยัญชนะควบแขวนทั้ง 11 ตัวนั้นไม่จัดเป็นพยัญชนะซ้อน'
             },
             learnAlphabets: {
                 alphabets: 'อักษรมอญ',

@@ -111,10 +111,9 @@ export default {
         },
         {
           title: this.langSet[this.lang].learnAlphabets.doubleConsonants || '_DOUBLE CONSONANTS_',
-          route: `#`,
+          route: `/alphabets/double-consonant?lang=${this.lang}`,
           icon: 'bi bi-book-half',
           color: 'success',
-          disabled: true
         },
         {
           title: this.langSet[this.lang].learnAlphabets.numerals || '_NUMERALS_',
