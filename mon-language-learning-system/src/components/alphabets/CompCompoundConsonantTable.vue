@@ -1,7 +1,7 @@
 <template>
     <div id="compound-consonant-table" class="compound-consonant-table">
         <h2>{{ langSet[lang ? lang : 'en'].learnAlphabets.compoundConsonants }} (11)</h2>
-        <p>{{ langSet[lang ? lang : 'en'].compoundConsonantView.description }}</p>
+        <p v-html="langSet[lang ? lang : 'en'].compoundConsonantView.description"></p>
         <table>
             <thead>
                 <tr>
@@ -10,15 +10,17 @@
                     <th>{{ langSet[lang ? lang : 'en'].table.compoundSymbol }}</th>
                     <th>{{ langSet[lang ? lang : 'en'].table.compoundExample }}</th>
                     <th><span v-html="langSet[lang ? lang : 'en'].table.pronounciation"></span></th>
+                    <th><span v-html="langSet[lang ? lang : 'en'].table.pronounciationThai"></span></th>
                 </tr>
             </thead>
             <tbody>
                 <tr v-for="(item, index) in compounds" :key="index">
-                    <td class="fs-5">{{ index + 1 }}</td>
-                    <td class="fw-bold fs-4">{{ item.letter }}</td>
-                    <td class="fw-bold fs-4">{{ item.compound }}</td>
-                    <td class="fs-5">{{ item.example }}</td>
-                    <td class="fs-5 text-muted">/{{ item.exampleIPA }}/</td>
+                    <td class="fs-6">{{ index + 1 }}</td>
+                    <td class="fw-bold fs-3">{{ item.letter }}</td>
+                    <td class="fw-bold fs-3">{{ item.compound }}</td>
+                    <td class="fs-6 text-muted">{{ item.example }}</td>
+                    <td class="fs-6 text-muted">/{{ item.exampleIPA }}/</td>
+                    <td class="fs-6 text-muted">/{{ item.exampleTH }}/</td>
                 </tr>
             </tbody>
         </table>
@@ -26,7 +28,7 @@
         <div v-for="(compound, index) in compounds" :key="index" class="mt-4 pt-2">
             <h3 class="text-start">
                 {{ index + 1 }}. {{ compound.letter }} → {{ compound.compound }}
-                <button class="ms-2 btn btn-outline-secondary"> 🔊 /{{ compound.ipa || 'N/A' }}/ </button>
+                <button class="ms-2 btn btn-outline-secondary"> 🔊 /{{ compound.ipa || 'NaN' }}/ </button>
             </h3>
             <div class="row">
                 <div class="col-12 col-md-8 col-lg-9 col-xl-10 text-start mb-3">
@@ -60,20 +62,17 @@
                         <td v-for="(vowel, cIndex) in row" :key="cIndex">
                             <div>
                                 <span class="fs-3 fw-bold">
-                                    {{ craftWord(compound.selected, compound.compound, vowel.compound).word || 'N/A' }}
+                                    {{ craftWord(compound.selected, compound.compound, vowel.compound).word || 'NaN' }}
                                 </span>
-                                <span v-if="isClearConsonant(compound.selected)"
-                                    class="ms-2 badge rounded-pill text-bg-light text-primary fw-bold">CL</span>
-                                <span v-else class="ms-2 badge rounded-pill text-bg-light text-danger fw-bold">BT</span>
                             </div>
                             <div class="mt-2">
                                 <span class="text-muted">
-                                    /{{ craftWord(compound.selected, compound.compound, vowel.compound).ipa || 'N/A' }}/
+                                    /{{ craftWord(compound.selected, compound.compound, vowel.compound).ipa || 'NaN' }}/
                                 </span>
                                 <br>
                                 <span v-if="craftWord(compound.selected, compound.compound, vowel.compound).ipa2"
                                     class="text-muted">
-                                    /{{ craftWord(compound.selected, compound.compound, vowel.compound).ipa2 || 'N/A'
+                                    /{{ craftWord(compound.selected, compound.compound, vowel.compound).ipa2 || 'NaN'
                                     }}/
                                 </span>
                             </div>

@@ -17,19 +17,20 @@
             </thead>
             <tbody>
                 <tr v-for="(item, index) in finalGroups" :key="index">
-                    <td class="fs-5">{{ index + 1 }}</td>
-                    <td class="fw-bold fs-4 text-muted">{{ item.group }}</td>
-                    <td class="fs-5">
+                    <td class="fs-6">{{ index + 1 }}</td>
+                    <td class="fs-4">{{ item.group }}</td>
+                    <td class="fw-bold fs-4">
                         <span v-for="(final, cIndex) in item.members" :key="cIndex" class="ms-2">
                             {{ final.final }} <span v-if="cIndex < (item.members.length - 1)"
                                 class="text-muted">၊</span>
                         </span>
                     </td>
-                    <td class="fs-5">က + {{ item.members[0].final }} = {{ craftWord2('က', null, null, item.final).word
-                    }}
+                    <td class="fs-6 text-muted">က + {{ item.members[0].final }} = {{ craftWord2('က', null, null,
+                        item.final).word
+                        }}
                     </td>
-                    <td class="fs-5">
-                        {{ `/${craftWord2('က', null, null, item.members[0].final).ipa}/` || 'N/A' }}
+                    <td class="fs-6 text-muted">
+                        {{ `/${craftWord2('က', null, null, item.members[0].final).ipa}/` || 'NaN' }}
                     </td>
                     <td class="fs-5 text-muted">
                         <button v-if="copiedIndex == index && copiedCIndex == cIndex"
@@ -49,9 +50,9 @@
             <h3>
                 {{ index + 1 }}. {{ langSet[lang ? lang : 'en'].finalConsonantView.group }}
                 <span class="fw-bold">"{{ item.group }}"</span>
-                <span class="text-muted ms-3">/{{ item.thGroup }}/</span>
-                <span class="text-muted ms-3">{{ `/${craftWord2('က', null, null, item.members[0].final).ipa}/` || 'N/A'
-                }}</span>
+                <span class="text-muted ms-2">{{ `/${craftWord2('က', null, null, item.members[0].final).ipa}/` || 'NaN'
+                    }}</span>
+                <span class="text-muted ms-2">{{ `/${item.thGroup}/` }}</span>
             </h3>
             <div class="ms-3 mt-1">
                 <span class="fw-bold fs-5">{{ item.finalWith.length }} {{ langSet[lang ? lang :
@@ -99,33 +100,34 @@
                                 <span class="fs-3 fw-bold">
                                     {{ craftWord2('က', null, vowel.vowel,
                                         item.members[selectedFinals[index]].final).word ||
-                                        'N/A' }}
+                                        'NaN' }}
                                 </span>
-                                <br>
-                                <span
-                                    v-if="craftWord2('က', null, vowel.vowel, item.members[selectedFinals[index]].final).word2"
-                                    class="fs-3 fw-bold">
+                            </div>
+                            <div
+                                v-if="craftWord2('က', null, vowel.vowel, item.members[selectedFinals[index]].final).word2">
+                                <span class="fs-3 fw-bold">
                                     {{ craftWord2('က', null, vowel.vowel,
                                         item.members[selectedFinals[index]].final).word2 ||
-                                        'N/A' }}
+                                        'NaN' }}
                                 </span>
-                                <br>
+                            </div>
+                            <div>
                                 <span class="ms-2 badge rounded-pill text-bg-light text-primary fw-bold">CL</span>
                             </div>
                             <div class="mt-2">
                                 <span class="text-muted">
-                                    /{{ craftWord2('က', null, vowel.vowel,
+                                    {{ `/${craftWord2('က', null, vowel.vowel,
                                         item.members[selectedFinals[index]].final).ipa ||
-                                        'N/A' }}/
+                                        'NaN'}/` }}
                                 </span>
                                 <br>
                                 <span
                                     v-if="craftWord2('က', null, vowel.vowel, item.members[selectedFinals[index]].final).ipa2"
                                     class="text-muted">
-                                    /{{ craftWord2('က', null, vowel.vowel,
+                                    {{ `/${craftWord2('က', null, vowel.vowel,
                                         item.members[selectedFinals[index]].final).ipa2 ||
-                                        'N/A'
-                                    }}/
+                                        'NaN'}/`
+                                    }}
                                 </span>
                             </div>
                         </td>
@@ -136,42 +138,44 @@
                                 <span class="fs-3 fw-bold">
                                     {{ craftWord2('ဂ', null, vowel.vowel,
                                         item.members[selectedFinals[index]].final).word ||
-                                        'N/A' }}
+                                        'NaN' }}
                                 </span>
-                                <br>
-                                <span
-                                    v-if="craftWord2('ဂ', null, vowel.vowel, item.members[selectedFinals[index]].final).word2"
-                                    class="fs-3 fw-bold">
+                            </div>
+                            <div
+                                v-if="craftWord2('ဂ', null, vowel.vowel, item.members[selectedFinals[index]].final).word2">
+                                <span class="fs-3 fw-bold">
                                     {{ craftWord2('ဂ', null, vowel.vowel,
                                         item.members[selectedFinals[index]].final).word2 ||
-                                        'N/A' }}
+                                        'NaN' }}
                                 </span>
-                                <br>
+                            </div>
+                            <div>
                                 <span class="ms-2 badge rounded-pill text-bg-light text-danger fw-bold">BT</span>
                             </div>
                             <div class="mt-2">
                                 <span class="text-muted">
-                                    /{{ craftWord2('ဂ', null, vowel.vowel,
+                                    {{ `/${craftWord2('ဂ', null, vowel.vowel,
                                         item.members[selectedFinals[index]].final).ipa ||
-                                        'N/A' }}/
+                                        'NaN'}/` }}
                                 </span>
                                 <br>
                                 <span
                                     v-if="craftWord2('ဂ', null, vowel.vowel, item.members[selectedFinals[index]].final).ipa2"
                                     class="text-muted">
-                                    /{{ craftWord2('ဂ', null, vowel.vowel,
+                                    {{ `/${craftWord2('ဂ', null, vowel.vowel,
                                         item.members[selectedFinals[index]].final).ipa2 ||
-                                        'N/A'
-                                    }}/
+                                        'NaN'}/`
+                                    }}
                                 </span>
                             </div>
                         </td>
                     </tr>
                 </tbody>
             </table>
-            <div v-if="langSet[lang ? lang : 'en'].finalConsonantView[`exception${index+1}`]" class="fs-6 mt-3">
+            <div v-if="langSet[lang ? lang : 'en'].finalConsonantView[`exception${index + 1}`]" class="fs-6 mt-3">
                 <span class="fw-bold">{{ langSet[lang ? lang : 'en'].finalConsonantView.exception }}</span>
-                <span class="ms-1" v-html="langSet[lang ? lang : 'en'].finalConsonantView[`exception${index+1}`]"></span>
+                <span class="ms-1"
+                    v-html="langSet[lang ? lang : 'en'].finalConsonantView[`exception${index + 1}`]"></span>
             </div>
             <hr>
         </div>
@@ -203,6 +207,9 @@ export default {
         for (let i = 0; i < this.finalGroups.length; i++) {
             this.selectedFinals.push(0);
         }
+        console.log(
+            this.craftWord2('ဂ', null, 'ေါ', 'ခ်')
+        )
     },
     methods: {
         craftWord(consonant, compound, vowel, final) {

@@ -1,16 +1,16 @@
 <template>
     <div id="other-vowel-table" class="other-vowel-table">
         <h2>{{ langSet[lang ? lang : 'en'].learnAlphabets.otherVowels }}</h2>
-        <p class="text-muted">{{ langSet[lang ? lang : 'en'].vowelView.description2 }}</p>
+        <p class="text-dark" v-html="langSet[lang ? lang : 'en'].vowelView.description2"></p>
         <div class="mt-4">
             <div class="d-flex">
                 <div class="">
                     <span class="badge rounded-pill text-bg-light text-primary fw-bold">CL</span>
-                    <span> = {{ langSet[lang ? lang : 'en'].vowelView.vowelType2CL }}</span>
+                    <span>= {{ langSet[lang ? lang : 'en'].vowelView.vowelType2CL }}</span>
                 </div>
-                <div class="ms-2">
+                <div class="ms-1">
                     <span class="badge rounded-pill text-bg-light text-danger fw-bold">BT</span>
-                    <span> = {{ langSet[lang ? lang : 'en'].vowelView.vowelType2BT }}</span>
+                    <span>= {{ langSet[lang ? lang : 'en'].vowelView.vowelType2BT }}</span>
                 </div>
             </div>
             <table class="my-2">
@@ -20,45 +20,57 @@
                         <th>{{ langSet[lang ? lang : 'en'].table.otherVowels }}</th>
                         <th><span v-html="langSet[lang ? lang : 'en'].table.otherVowelsOrigin"></span></th>
                         <th><span v-html="langSet[lang ? lang : 'en'].table.pronounciation"></span></th>
-                        <th>{{ langSet[lang ? lang : 'en'].table.other }}</th>
+                        <th><span v-html="langSet[lang ? lang : 'en'].table.pronounciationThai"></span></th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr v-for="(item, index) in otherVowels" :key="index">
-                        <td class="fs-5">{{ index + 1 }}</td>
+                        <td class="fs-6">{{ index + 1 }}</td>
                         <td class="fw-bold fs-4">{{ item.letter }}</td>
-                        <td class="fs-5 text-muted"><span v-html="item.origin"></span></td>
+                        <td class="fs-6 text-muted"><span v-html="item.origin"></span></td>
                         <td class="fs-6">
                             <div>
                                 <span class="text-muted">
-                                    {{ `/${item.ipaCL}/` || 'N/A' }} <span
+                                    {{ `/${item.ipaCL}/` || 'NaN' }} <span
                                         class="badge rounded-pill text-bg-light text-primary fw-bold">CL</span>
                                 </span>
-                                <span v-if="item.ipaCL2" class="ms-2 text-muted">
-                                    {{ `/${item.ipaCL2}/` || 'N/A' }} <span
+                                <span v-if="item.ipaCL2" class="ms-1 text-muted">
+                                    {{ `/${item.ipaCL2}/` || 'NaN' }} <span
                                         class="badge rounded-pill text-bg-light text-primary fw-bold">CL</span>
                                 </span>
                             </div>
                             <div>
                                 <span class="text-muted">
-                                    {{ `/${item.ipaBT}/` || 'N/A' }} <span
+                                    {{ `/${item.ipaBT}/` || 'NaN' }} <span
                                         class="badge rounded-pill text-bg-light text-danger fw-bold">BT</span>
                                 </span>
-                                <span v-if="item.ipaBT2" class="ms-2 text-muted">
-                                    {{ `/${item.ipaBT2}/` || 'N/A' }} <span
+                                <span v-if="item.ipaBT2" class="ms-1 text-muted">
+                                    {{ `/${item.ipaBT2}/` || 'NaN' }} <span
                                         class="badge rounded-pill text-bg-light text-danger fw-bold">BT</span>
                                 </span>
                             </div>
                         </td>
-                        <td class="fs-5 text-muted">
-                            <button v-if="copiedIndex == index && copiedCIndex == cIndex"
-                                class="mt-2 ms-1 btn btn-sm btn-light py-0 px-1 disabled">
-                                ✅ {{ langSet[lang ? lang : 'en'].menu.copied }}
-                            </button>
-                            <button v-else class="mt-2 ms-1 btn btn-sm btn-outline-secondary py-0 px-1"
-                                @click="copyToClipboard(item.compound, index, cIndex)">
-                                📋 {{ langSet[lang ? lang : 'en'].menu.copy }}
-                            </button>
+                        <td class="fs-6">
+                            <div>
+                                <span class="text-muted">
+                                    {{ `/${item.thCL}/` || 'NaN' }} <span
+                                        class="badge rounded-pill text-bg-light text-primary fw-bold">CL</span>
+                                </span>
+                                <span v-if="item.thCL2" class="ms-1 text-muted">
+                                    {{ `/${item.thCL2}/` || 'NaN' }} <span
+                                        class="badge rounded-pill text-bg-light text-primary fw-bold">CL</span>
+                                </span>
+                            </div>
+                            <div>
+                                <span class="text-muted">
+                                    {{ `/${item.thBT}/` || 'NaN' }} <span
+                                        class="badge rounded-pill text-bg-light text-danger fw-bold">BT</span>
+                                </span>
+                                <span v-if="item.thBT2" class="ms-1 text-muted">
+                                    {{ `/${item.thBT2}/` || 'NaN' }} <span
+                                        class="badge rounded-pill text-bg-light text-danger fw-bold">BT</span>
+                                </span>
+                            </div>
                         </td>
                     </tr>
                 </tbody>

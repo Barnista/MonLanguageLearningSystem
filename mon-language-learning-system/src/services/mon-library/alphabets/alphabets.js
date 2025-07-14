@@ -9,16 +9,17 @@ export default {
                     letter: 'က',
                     tone: 'clear',
                     ipa: 'kaˀ',
+                    th: 'กะ',
+                    thLetter: 'ก',
                     sound: require('@/assets/sounds/alphabets/row1Column1.mp3'),
                     compoundIPA: 'k',
-                    final: 'က်',
-                    final2: '်',
-                    finalWith: ['', 'ာ', 'ိ', 'ု', 'ေ', 'ော', 'ံ', 'ို']
                 },
                 {
                     letter: 'ခ',
                     tone: 'clear',
                     ipa: 'kʰaˀ',
+                    th: 'ขะ',
+                    thLetter: 'ข',
                     sound: require('@/assets/sounds/alphabets/row1Column2.mp3'),
                     compoundIPA: 'kʰ',
                 },
@@ -26,6 +27,8 @@ export default {
                     letter: 'ဂ',
                     tone: 'breathy',
                     ipa: 'kɛ̤ˀ',
+                    th: 'เกี่ยะ',
+                    thLetter: 'ค',
                     sound: require('@/assets/sounds/alphabets/row1Column3.mp3'),
                     compoundIPA: 'k',
                 },
@@ -33,6 +36,8 @@ export default {
                     letter: 'ဃ',
                     tone: 'breathy',
                     ipa: 'kʰɛ̤ˀ',
+                    th: 'เคี่ยะ',
+                    thLetter: 'ฆ',
                     sound: require('@/assets/sounds/alphabets/row1Column4.mp3'),
                     compoundIPA: 'kʰ',
                 },
@@ -40,15 +45,10 @@ export default {
                     letter: 'ၚ',
                     tone: 'breathy',
                     ipa: 'ŋɛ̤ˀ',
+                    th: 'เงี่ยะ',
+                    thLetter: 'ง',
                     sound: require('@/assets/sounds/alphabets/row1Column5.mp3'),
                     compoundIPA: 'ŋ',
-                    compound: '္ၚ',
-                    example: 'က + -္ၚ + = က္ၚ',
-                    exampleIPA: 'kəŋɑ̆',
-                    compoundWith: ['က', 'တ', 'ဒ', 'ပ', 'ဗ', 'မ', 'လ', 'သ', 'အ'],
-                    selected: 'က',
-                    final: 'င်',
-                    finalWith: ['', 'ာ', 'ိ', 'ု', 'ေ', 'ော', 'ံ', 'ို']
                 }
             ]
         },
@@ -58,6 +58,8 @@ export default {
                     letter: 'စ',
                     tone: 'clear',
                     ipa: 'caˀ',
+                    th: 'จะ',
+                    thLetter: 'จ',
                     sound: require('@/assets/sounds/alphabets/row2Column1.mp3'),
                     compoundIPA: 'c',
                 },
@@ -65,6 +67,8 @@ export default {
                     letter: 'ဆ',
                     tone: 'clear',
                     ipa: 'cʰaˀ',
+                    th: 'ชะ',
+                    thLetter: 'ฉ',
                     sound: require('@/assets/sounds/alphabets/row2Column2.mp3'),
                     compoundIPA: 'cʰ',
                 },
@@ -72,6 +76,8 @@ export default {
                     letter: 'ဇ',
                     tone: 'breathy',
                     ipa: 'cɛ̤ˀ',
+                    th: 'เจียะ',
+                    thLetter: 'ช',
                     sound: require('@/assets/sounds/alphabets/row2Column3.mp3'),
                     compoundIPA: 'c',
                 },
@@ -79,6 +85,8 @@ export default {
                     letter: 'ၛ',
                     tone: 'breathy',
                     ipa: 'cʰɛ̤ˀ',
+                    th: 'เชี่ยะ',
+                    thLetter: 'ณ',
                     sound: require('@/assets/sounds/alphabets/row2Column4.mp3'),
                     compoundIPA: 'cʰ',
                 },
@@ -87,13 +95,10 @@ export default {
                     letter2: 'ဥ',
                     tone: 'breathy',
                     ipa: 'ɲɛ̤ˀ',
+                    th: 'เญียะ',
+                    thLetter: 'ญ',
                     sound: require('@/assets/sounds/alphabets/row2Column5.mp3'),
                     compoundIPA: 'ɲ',
-                    compound: '္ည',
-                    example: 'က + -္ည + = က္ည',
-                    exampleIPA: 'kəɲɑ̆',
-                    compoundWith: ['က', 'ဂ', 'ဒ', 'ပ'],
-                    selected: 'က'
                 }
             ]
         },
@@ -103,6 +108,8 @@ export default {
                     letter: 'ဋ',
                     tone: 'clear',
                     ipa: 'taˀ',
+                    th: 'ตะ',
+                    thLetter: 'ฏ',
                     sound: require('@/assets/sounds/alphabets/row3Column1.mp3'),
                     compoundIPA: 't',
                 },
@@ -110,6 +117,8 @@ export default {
                     letter: 'ဌ',
                     tone: 'clear',
                     ipa: 'tʰaˀ',
+                    th: 'ทะ',
+                    thLetter: 'ฐ',
                     sound: require('@/assets/sounds/alphabets/row3Column2.mp3'),
                     compoundIPA: 'tʰ',
                 },
@@ -117,18 +126,17 @@ export default {
                     letter: 'ဍ',
                     tone: 'clear',
                     ipa: 'ɗaˀ',
+                    th: 'ดะ',
+                    thLetter: 'ฑ',
                     sound: require('@/assets/sounds/alphabets/row3Column3.mp3'),
                     compoundIPA: 'ɗ',
-                    compound: '္ဍ',
-                    example: 'က + -္ဍ + = က္ဍ',
-                    exampleIPA: 'kəɗɑ̆',
-                    compoundWith: ['က', 'ခ', 'စ', 'ပ', 'ဖ', 'သ'],
-                    selected: 'က'
                 },
                 {
                     letter: 'ဎ',
                     tone: 'breathy',
                     ipa: 'tʰɛ̤ˀ',
+                    th: 'เที่ยะ',
+                    thLetter: 'ฒ',
                     sound: require('@/assets/sounds/alphabets/row3Column4.mp3'),
                     compoundIPA: 'tʰ',
                 },
@@ -136,6 +144,8 @@ export default {
                     letter: 'ဏ',
                     tone: 'clear',
                     ipa: 'naˀ',
+                    th: 'นะ',
+                    thLetter: 'ณ',
                     sound: require('@/assets/sounds/alphabets/row3Column5.mp3'),
                     compoundIPA: 'n',
                 }
@@ -147,15 +157,17 @@ export default {
                     letter: 'တ',
                     tone: 'clear',
                     ipa: 'taˀ',
+                    th: 'ตะ',
+                    thLetter: 'ต',
                     sound: require('@/assets/sounds/alphabets/row4Column1.mp3'),
                     compoundIPA: 't',
-                    final: 'တ်',
-                    finalWith: ['', 'ာ', 'ိ', 'ု', 'ေ', 'ော', 'ို']
                 },
                 {
                     letter: 'ထ',
                     tone: 'clear',
                     ipa: 'tʰaˀ',
+                    th: 'ทะ',
+                    thLetter: 'ถ',
                     sound: require('@/assets/sounds/alphabets/row4Column2.mp3'),
                     compoundIPA: 'tʰ',
                 },
@@ -163,6 +175,8 @@ export default {
                     letter: 'ဒ',
                     tone: 'breathy',
                     ipa: 'tɛ̤ˀ',
+                    th: 'เตี่ยะ',
+                    thLetter: 'ท',
                     sound: require('@/assets/sounds/alphabets/row4Column3.mp3'),
                     compoundIPA: 't',
                 },
@@ -170,6 +184,8 @@ export default {
                     letter: 'ဓ',
                     tone: 'breathy',
                     ipa: 'tʰɛ̤ˀ',
+                    th: 'เทียะ',
+                    thLetter: 'ธ',
                     sound: require('@/assets/sounds/alphabets/row4Column4.mp3'),
                     compoundIPA: 'tʰ',
                 },
@@ -177,15 +193,10 @@ export default {
                     letter: 'န',
                     tone: 'breathy',
                     ipa: 'nɛ̤ˀ',
+                    th: 'เนียะ',
+                    thLetter: 'น',
                     sound: require('@/assets/sounds/alphabets/row4Column5.mp3'),
                     compoundIPA: 'n',
-                    compound: 'ၞ',
-                    example: 'က + -ၞ + = ကၞ',
-                    exampleIPA: 'kənɑ̆',
-                    compoundWith: ['က', 'ခ', 'ဂ', 'စ', 'ဆ', 'ဇ', 'တ', 'ထ', 'ဒ', 'ပ', 'ဖ', 'ဗ', 'မ', 'သ'],
-                    selected: 'က',
-                    final: 'န်',
-                    finalWith: ['', 'ာ', 'ိ', 'ု', 'ေ', 'ော', 'ို']
                 }
             ]
         },
@@ -195,15 +206,17 @@ export default {
                     letter: 'ပ',
                     tone: 'clear',
                     ipa: 'paˀ',
+                    th: 'ปะ',
+                    thLetter: 'ป',
                     sound: require('@/assets/sounds/alphabets/row5Column1.mp3'),
                     compoundIPA: 'p',
-                    final: 'ပ်',
-                    finalWith: ['', 'ာ', 'ိ', 'ု', 'ေ', 'ော', 'ို']
                 },
                 {
                     letter: 'ဖ',
                     tone: 'clear',
                     ipa: 'pʰaˀ',
+                    th: 'พะ',
+                    thLetter: 'ผ',
                     sound: require('@/assets/sounds/alphabets/row5Column2.mp3'),
                     compoundIPA: 'pʰ',
                 },
@@ -211,6 +224,8 @@ export default {
                     letter: 'ဗ',
                     tone: 'breathy',
                     ipa: 'pɛ̤ˀ',
+                    th: 'เปี่ยะ',
+                    thLetter: 'พ',
                     sound: require('@/assets/sounds/alphabets/row5Column3.mp3'),
                     compoundIPA: 'p',
                 },
@@ -218,6 +233,8 @@ export default {
                     letter: 'ဘ',
                     tone: 'breathy',
                     ipa: 'pʰɛ̤ˀ',
+                    th: 'เพียะ',
+                    thLetter: 'ภ',
                     sound: require('@/assets/sounds/alphabets/row5Column4.mp3'),
                     compoundIPA: 'pʰ',
                 },
@@ -225,17 +242,10 @@ export default {
                     letter: 'မ',
                     tone: 'breathy',
                     ipa: 'mɛ̤ˀ',
+                    th: 'เมียะ',
+                    thLetter: 'ม',
                     sound: require('@/assets/sounds/alphabets/row5Column5.mp3'),
                     compoundIPA: 'm',
-                    compound: 'ၟ',
-                    example: 'က + -ၟ + = ကၟ',
-                    exampleIPA: 'kəmɑ̆',
-                    compoundWith: ['က', 'ခ', 'စ', 'ပ', 'ဖ', 'တ', 'ထ', 'ဒ', 'ပ', 'ဖ', 'ဗ', 'မ', 'သ', 'လ'],
-                    selected: 'က',
-                    final: 'မ်',
-                    final2: 'ံ',
-                    final3: 'ီ',
-                    finalWith: ['', 'ာ', 'ိ', 'ု', 'ေ', 'ော', 'ို']
                 }
             ]
         },
@@ -246,60 +256,44 @@ export default {
                     letter: 'ယ',
                     tone: 'breathy',
                     ipa: 'jɛ̤ˀ',
+                    th: 'เยียะ',
+                    thLetter: 'ย',
                     sound: require('@/assets/sounds/alphabets/rowNoneColumn1.mp3'),
                     compoundIPA: 'j',
-                    compound: 'ျ',
-                    example: 'က + -ျ + = ကျ',
-                    exampleIPA: 'kyɑ̆',
-                    compoundWith: ['က', 'ခ', 'ဂ', 'စ', 'ဆ', 'ဇ', 'တ', 'ထ', 'ဒ', 'ပ', 'ဖ', 'ဗ', 'မ', 'သ'],
-                    selected: 'က',
-                    final: 'ယ်',
-                    final2: 'ဲ',
-                    finalWith: ['', 'ာ', 'ု', 'ေ', 'ော', 'ို']
                 },
                 {
                     letter: 'ရ',
                     tone: 'breathy',
                     ipa: 'rɛ̤ˀ',
+                    th: 'เรียะ',
+                    thLetter: 'ร',
                     sound: require('@/assets/sounds/alphabets/rowNoneColumn2.mp3'),
                     compoundIPA: 'r',
-                    compound: 'ြ',
-                    example: 'က + -ြ + = ကြ',
-                    exampleIPA: 'krɑ̆',
-                    compoundWith: ['က', 'ခ', 'ဂ', 'စ', 'ဆ', 'ဇ', 'တ', 'ထ', 'ဒ', 'ပ', 'ဖ', 'ဗ', 'မ', 'သ'],
-                    selected: 'က'
                 },
                 {
                     letter: 'လ',
                     tone: 'breathy',
                     ipa: 'lɛ̤ˀ',
+                    th: 'เลียะ',
+                    thLetter: 'ล',
                     sound: require('@/assets/sounds/alphabets/rowNoneColumn3.mp3'),
                     compoundIPA: 'l',
-                    compound: 'ၠ',
-                    example: 'က + -ၠ + = ကၠ',
-                    exampleIPA: 'klɑ̆',
-                    compoundWith: ['က', 'ခ', 'ဂ', 'စ', 'ဆ', 'ဇ', 'တ', 'ထ', 'ဒ', 'ပ', 'ဖ', 'ဗ', 'မ', 'သ'],
-                    selected: 'က'
                 },
                 {
                     letter: 'ဝ',
                     tone: 'breathy',
                     ipa: 'wɛ̤ˀ',
+                    th: 'เวียะ',
+                    thLetter: 'ว',
                     sound: require('@/assets/sounds/alphabets/rowNoneColumn4.mp3'),
                     compoundIPA: 'w',
-                    compound: 'ွ',
-                    example: 'က + -ွ + = ကွ',
-                    exampleIPA: 'kwɑ̆',
-                    compoundWith: ['က', 'ခ', 'ဂ', 'စ', 'ဆ', 'ဇ', 'တ', 'ထ', 'ဒ', 'ပ', 'ဖ', 'ဗ', 'မ', 'သ'],
-                    selected: 'က',
-                    final: 'ဝ်',
-                    final2: 'ဵ',
-                    finalWith: ['', 'ေ', 'ော', 'ို']
                 },
                 {
                     letter: 'သ',
                     tone: 'clear',
                     ipa: 'saˀ',
+                    th: 'ซะ',
+                    thLetter: 'ซ',
                     sound: require('@/assets/sounds/alphabets/rowNoneColumn5.mp3'),
                     compoundIPA: 's',
                 }
@@ -312,21 +306,17 @@ export default {
                     letter: 'ဟ',
                     tone: 'clear',
                     ipa: 'haˀ',
+                    th: 'ฮะ',
+                    thLetter: 'ฮ',
                     sound: require('@/assets/sounds/alphabets/rowNoneColumn6.mp3'),
                     compoundIPA: 'h',
-                    compound: 'ှ',
-                    example: 'ည + -ှ = ညှ',
-                    exampleIPA: 'hnɑ̆',
-                    compoundWith: ['ည', 'ဏ', 'မ', 'န', 'ယ', 'ရ', 'လ', 'ဝ'],
-                    selected: 'ည',
-                    final: 'ဟ်',
-                    final2: '်ှ',
-                    finalWith: ['', 'ိ', 'ု', 'ေ', 'ော', 'ို']
                 },
                 {
                     letter: 'ဠ',
                     tone: 'clear',
                     ipa: 'laˀ',
+                    th: 'ละ',
+                    thLetter: 'ฬ',
                     sound: require('@/assets/sounds/alphabets/rowNoneColumn7.mp3'),
                     compoundIPA: 'l',
                 },
@@ -334,28 +324,26 @@ export default {
                     letter: 'ၜ',
                     tone: 'clear',
                     ipa: 'ɓaˀ',
+                    th: 'บะ',
+                    thLetter: 'บ',
                     sound: require('@/assets/sounds/alphabets/rowNoneColumn8.mp3'),
                     compoundIPA: 'ɓ',
-                    compound: '္ၜ',
-                    example: 'က + -္ၜ = က္ၜ',
-                    exampleIPA: 'kəpɑ̆',
-                    compoundWith: ['က', 'စ', 'တ', 'ထ', 'ဗ'],
-                    selected: 'က'
                 },
                 {
                     letter: 'အ',
                     tone: 'clear',
                     ipa: 'ʔaˀ',
+                    th: 'อะ',
+                    thLetter: 'อ',
                     sound: require('@/assets/sounds/alphabets/rowNoneColumn9.mp3'),
                     compoundIPA: 'ʔ',
-                    final: 'အ်',
-                    final2: 'ံ',
-                    finalWith: ['', 'ေ', 'ော', 'ို']
                 },
                 {
                     letter: 'ၝ',
                     tone: 'breathy',
                     ipa: 'ɓɛ̤ˀ',
+                    th: 'เบียะ',
+                    thLetter: '-',
                     sound: require('@/assets/sounds/alphabets/rowNoneColumn10.mp3'),
                     compoundIPA: 'ɓ',
                 },
@@ -369,6 +357,8 @@ export default {
             compound: '',
             ipaCL: 'aˀ',
             ipaBT: 'ɛ̀ˀ',
+            thCL: 'อะ',
+            thBT: 'เอี่ยะ',
             soundCL: require('@/assets/sounds/alphabets/vowelRow1Column1_CL.mp3'),
             soundBT: require('@/assets/sounds/alphabets/vowelRow1Column1_BT.mp3'),
             example: ''
@@ -379,6 +369,8 @@ export default {
             compound2: 'ါ',
             ipaCL: 'a',
             ipaBT: 'ɛ̀a',
+            thCL: 'อา',
+            thBT: 'เอีย',
             soundCL: require('@/assets/sounds/alphabets/vowelRow1Column2_CL.mp3'),
             soundBT: require('@/assets/sounds/alphabets/vowelRow1Column2_BT.mp3'),
             example: '',
@@ -392,8 +384,11 @@ export default {
             letter: 'ဣ',
             compound: 'ိ',
             ipaCL: 'ɔeˀ',
-            ipaBT: 'ìˀ',
             ipaCL2: 'ɔɪ',
+            ipaBT: 'ìˀ',
+            thCL: 'อิ',
+            thCL2: 'ออฺย',
+            thBT: 'อิ่',
             soundCL: require('@/assets/sounds/alphabets/vowelRow1Column3_CL.mp3'),
             soundBT: require('@/assets/sounds/alphabets/vowelRow1Column3_BT.mp3'),
             soundCL2: require('@/assets/sounds/alphabets/vowelRow1Column3_CL2.mp3'),
@@ -403,8 +398,11 @@ export default {
             letter: 'ဣဳ',
             compound: 'ဳ',
             ipaCL: 'i',
-            ipaBT: 'ì',
             ipaCL2: 'aɪ',
+            ipaBT: 'ì',
+            thCL: 'อี',
+            thCL2: 'ออย',
+            thBT: 'อี่',
             soundCL: require('@/assets/sounds/alphabets/vowelRow1Column4_CL.mp3'),
             soundBT: require('@/assets/sounds/alphabets/vowelRow1Column4_BT.mp3'),
             soundCL2: require('@/assets/sounds/alphabets/vowelRow1Column4_CL2.mp3'),
@@ -414,8 +412,11 @@ export default {
             letter: 'ဥ',
             compound: 'ု',
             ipaCL: 'ùˀ',
-            ipaBT: 'ùˀ',
             ipaCL2: 'aò',
+            ipaBT: 'ùˀ',
+            thCL: 'อุ',
+            thCL2: 'เอ่า',
+            thBT: 'อุ่',
             soundCL: require('@/assets/sounds/alphabets/vowelRow1Column5_CL.mp3'),
             soundBT: require('@/assets/sounds/alphabets/vowelRow1Column5_BT.mp3'),
             soundCL2: require('@/assets/sounds/alphabets/vowelRow1Column5_CL2.mp3'),
@@ -424,12 +425,15 @@ export default {
         {
             letter: 'ဥူ',
             compound: 'ူ',
-            ipaCL: 'ao',
+            ipaCL: 'ùˀ',
+            ipaCL2: 'ao',
             ipaBT: 'ù',
-            ipaCL2: 'ùˀ',
-            soundCL: require('@/assets/sounds/alphabets/vowelRow1Column6_CL2.mp3'),
+            thCL: 'อู',
+            thCL2: 'อาว',
+            thBT: 'อู่',
+            soundCL: require('@/assets/sounds/alphabets/vowelRow1Column6_CL.mp3'),
             soundBT: require('@/assets/sounds/alphabets/vowelRow1Column6_BT.mp3'),
-            soundCL2: require('@/assets/sounds/alphabets/vowelRow1Column6_CL.mp3'),
+            soundCL2: require('@/assets/sounds/alphabets/vowelRow1Column6_CL2.mp3'),
             example: ''
         },
         {
@@ -437,6 +441,8 @@ export default {
             compound: 'ေ',
             ipaCL: 'e',
             ipaBT: 'è',
+            thCL: 'เอ',
+            thBT: 'เอ่',
             soundCL: require('@/assets/sounds/alphabets/vowelRow2Column1_CL.mp3'),
             soundBT: require('@/assets/sounds/alphabets/vowelRow2Column1_BT.mp3'),
             example: ''
@@ -446,6 +452,8 @@ export default {
             compound: 'ဲ',
             ipaCL: 'oa',
             ipaBT: 'òa',
+            thCL: 'อัว',
+            thBT: 'อั่ว',
             soundCL: require('@/assets/sounds/alphabets/vowelRow2Column2_CL.mp3'),
             soundBT: require('@/assets/sounds/alphabets/vowelRow2Column2_BT.mp3'),
             example: ''
@@ -456,6 +464,8 @@ export default {
             compound2: 'ေါ',
             ipaCL: 'ao',
             ipaBT: 'əʊ',
+            thCL: 'เอา',
+            thBT: 'โอว',
             soundCL: require('@/assets/sounds/alphabets/vowelRow2Column3_CL.mp3'),
             soundBT: require('@/assets/sounds/alphabets/vowelRow2Column3_BT.mp3'),
             example: '',
@@ -470,6 +480,8 @@ export default {
             compound: 'ဴ',
             ipaCL: 'ao',
             ipaBT: 'ɛ̀a',
+            thCL: 'อาว',
+            thBT: 'เอีย',
             soundCL: require('@/assets/sounds/alphabets/vowelRow2Column4_CL.mp3'),
             soundBT: require('@/assets/sounds/alphabets/vowelRow2Column4_BT.mp3'),
             example: ''
@@ -477,8 +489,10 @@ export default {
         {
             letter: 'အံ',
             compound: 'ံ',
-            ipaCL: 'ɔˀ',
-            ipaBT: 'òˀ',
+            ipaCL: 'ɔmˀ',
+            ipaBT: 'òmˀ',
+            thCL: 'ออฺม',
+            thBT: 'อม',
             soundCL: require('@/assets/sounds/alphabets/vowelRow2Column5_CL.mp3'),
             soundBT: require('@/assets/sounds/alphabets/vowelRow2Column5_BT.mp3'),
             example: ''
@@ -488,6 +502,8 @@ export default {
             compound: 'း',
             ipaCL: 'ah',
             ipaBT: 'ɛ̀h',
+            thCL: 'อะฮ',
+            thBT: 'เอี่ยฮ',
             soundCL: require('@/assets/sounds/alphabets/vowelRow2Column6_CL.mp3'),
             soundBT: require('@/assets/sounds/alphabets/vowelRow2Column6_BT.mp3'),
             example: '',
@@ -627,6 +643,174 @@ export default {
             thBT: 'เอ่อ',
             origin: 'ိ + ု + ဝ် = ဵု'
         }
+    ],
+    compoundConsonants: [
+        {
+            letter: 'ၚ',
+            tone: 'breathy',
+            ipa: 'ŋɛ̤ˀ',
+            th: 'เงี่ยะ',
+            thLetter: 'ง',
+            sound: require('@/assets/sounds/alphabets/row1Column5.mp3'),
+            compoundIPA: 'ŋ',
+            compound: '္ၚ',
+            example: 'က + -္ၚ + = က္ၚ',
+            exampleIPA: 'kaˀŋaˀ',
+            exampleTH: 'กะงะ',
+            compoundWith: ['က', 'တ', 'ဒ', 'ပ', 'ဗ', 'မ', 'လ', 'သ', 'အ'],
+            selected: 'က',
+        },
+        {
+            letter: 'ည',
+            letter2: 'ဥ',
+            tone: 'breathy',
+            ipa: 'ɲɛ̤ˀ',
+            th: 'เญียะ',
+            thLetter: 'ญ',
+            sound: require('@/assets/sounds/alphabets/row2Column5.mp3'),
+            compoundIPA: 'ɲ',
+            compound: '္ည',
+            example: 'က + -္ည + = က္ည',
+            exampleIPA: 'kaˀɲaˀ',
+            exampleTH: 'กะญะ',
+            compoundWith: ['က', 'ဂ', 'ဒ', 'ပ'],
+            selected: 'က'
+        },
+        {
+            letter: 'ဍ',
+            tone: 'clear',
+            ipa: 'ɗaˀ',
+            th: 'ดะ',
+            thLetter: 'ฑ',
+            sound: require('@/assets/sounds/alphabets/row3Column3.mp3'),
+            compoundIPA: 'ɗ',
+            compound: '္ဍ',
+            example: 'က + -္ဍ + = က္ဍ',
+            exampleIPA: 'kaˀɗaˀ',
+            exampleTH: 'กะดะ',
+            compoundWith: ['က', 'ခ', 'စ', 'ပ', 'ဖ', 'သ'],
+            selected: 'က'
+        },
+        {
+            letter: 'န',
+            tone: 'breathy',
+            ipa: 'nɛ̤ˀ',
+            th: 'เนียะ',
+            thLetter: 'น',
+            sound: require('@/assets/sounds/alphabets/row4Column5.mp3'),
+            compoundIPA: 'n',
+            compound: 'ၞ',
+            example: 'က + -ၞ + = ကၞ',
+            exampleIPA: 'kaˀnaˀ',
+            exampleTH: 'กะนะ',
+            compoundWith: ['က', 'ခ', 'ဂ', 'စ', 'ဆ', 'ဇ', 'တ', 'ထ', 'ဒ', 'ပ', 'ဖ', 'ဗ', 'မ', 'သ'],
+            selected: 'က',
+        },
+        {
+            letter: 'မ',
+            tone: 'breathy',
+            ipa: 'mɛ̤ˀ',
+            th: 'เมียะ',
+            thLetter: 'ม',
+            sound: require('@/assets/sounds/alphabets/row5Column5.mp3'),
+            compoundIPA: 'm',
+            compound: 'ၟ',
+            example: 'က + -ၟ + = ကၟ',
+            exampleIPA: 'kaˀmaˀ',
+            exampleTH: 'กะมะ',
+            compoundWith: ['က', 'ခ', 'စ', 'ပ', 'ဖ', 'တ', 'ထ', 'ဒ', 'ပ', 'ဖ', 'ဗ', 'မ', 'သ', 'လ'],
+            selected: 'က',
+        },
+        {
+            letter: 'ယ',
+            tone: 'breathy',
+            ipa: 'jɛ̤ˀ',
+            th: 'เยียะ',
+            thLetter: 'ย',
+            sound: require('@/assets/sounds/alphabets/rowNoneColumn1.mp3'),
+            compoundIPA: 'j',
+            compound: 'ျ',
+            example: 'က + -ျ + = ကျ',
+            exampleIPA: 'kjaˀ',
+            exampleTH: 'กยะ',
+            compoundWith: ['က', 'ခ', 'ဂ', 'စ', 'ဆ', 'ဇ', 'တ', 'ထ', 'ဒ', 'ပ', 'ဖ', 'ဗ', 'မ', 'သ'],
+            selected: 'က',
+        },
+        {
+            letter: 'ရ',
+            tone: 'breathy',
+            ipa: 'rɛ̤ˀ',
+            th: 'เรียะ',
+            thLetter: 'ร',
+            sound: require('@/assets/sounds/alphabets/rowNoneColumn2.mp3'),
+            compoundIPA: 'r',
+            compound: 'ြ',
+            example: 'က + -ြ + = ကြ',
+            exampleIPA: 'kraˀ',
+            exampleTH: 'กระ',
+            compoundWith: ['က', 'ခ', 'ဂ', 'စ', 'ဆ', 'ဇ', 'တ', 'ထ', 'ဒ', 'ပ', 'ဖ', 'ဗ', 'မ', 'သ'],
+            selected: 'က'
+        },
+        {
+            letter: 'လ',
+            tone: 'breathy',
+            ipa: 'lɛ̤ˀ',
+            th: 'เลียะ',
+            thLetter: 'ล',
+            sound: require('@/assets/sounds/alphabets/rowNoneColumn3.mp3'),
+            compoundIPA: 'l',
+            compound: 'ၠ',
+            example: 'က + -ၠ + = ကၠ',
+            exampleIPA: 'klaˀ',
+            exampleTH: 'กละ',
+            compoundWith: ['က', 'ခ', 'ဂ', 'စ', 'ဆ', 'ဇ', 'တ', 'ထ', 'ဒ', 'ပ', 'ဖ', 'ဗ', 'မ', 'သ'],
+            selected: 'က'
+        },
+        {
+            letter: 'ဝ',
+            tone: 'breathy',
+            ipa: 'wɛ̤ˀ',
+            th: 'เวียะ',
+            thLetter: 'ว',
+            sound: require('@/assets/sounds/alphabets/rowNoneColumn4.mp3'),
+            compoundIPA: 'w',
+            compound: 'ွ',
+            example: 'က + -ွ + = ကွ',
+            exampleIPA: 'kwaˀ',
+            exampleTH: 'กวะ',
+            compoundWith: ['က', 'ခ', 'ဂ', 'စ', 'ဆ', 'ဇ', 'တ', 'ထ', 'ဒ', 'ပ', 'ဖ', 'ဗ', 'မ', 'သ'],
+            selected: 'က',
+        },
+        {
+            letter: 'ဟ',
+            tone: 'clear',
+            ipa: 'haˀ',
+            th: 'ฮะ',
+            thLetter: 'ฮ',
+            sound: require('@/assets/sounds/alphabets/rowNoneColumn6.mp3'),
+            compoundIPA: 'h',
+            compound: 'ှ',
+            example: 'ည + -ှ = ညှ',
+            exampleIPA: 'hɲaˀ',
+            exampleTH: 'ฮญะ',
+            compoundWith: ['ည', 'ဏ', 'မ', 'န', 'ယ', 'ရ', 'လ', 'ဝ'],
+            selected: 'ည',
+        },
+        {
+            letter: 'ၜ',
+            tone: 'clear',
+            ipa: 'ɓaˀ',
+            th: 'บะ',
+            thLetter: 'บ',
+            sound: require('@/assets/sounds/alphabets/rowNoneColumn8.mp3'),
+            compoundIPA: 'ɓ',
+            compound: '္ၜ',
+            example: 'က + -္ၜ = က္ၜ',
+            exampleIPA: 'kaˀɓaˀ',
+            exampleTH: 'กะบะ',
+            compoundWith: ['က', 'စ', 'တ', 'ထ', 'ဗ'],
+            selected: 'က'
+        },
     ],
     finalConsonants: [
         {
@@ -1321,6 +1505,35 @@ export default {
                 'ဂ', 'ဃ', 'ၚ', 'ဇ', 'ၛ', 'ည', 'ဎ', 'ဒ', 'ဓ', 'န', 'ဗ', 'ဘ', 'မ', 'ယ', 'ရ', 'လ', 'ဝ', 'ၝ'
             ],
         },
+        // กฎที่ระบุว่าตสระใดเมื่อเจอกับพยัญชนะใดจะต้องเปลี่ยนรูป
+        blendVowels: [
+            {
+                vowel: 'ာ',
+                replace: 'ါ',
+                consonants: ['ခ', 'ဂ', 'ဇ', 'ဎ', 'ဒ', 'ပ', 'ဝ', 'ၜ']
+            },
+            {
+                vowel: 'ါ',
+                replace: 'ာ',
+                // consonants not in the first object (['ခ', 'ဂ', 'ဇ', 'ဎ', 'ဒ', 'ပ', 'ဝ', 'ၜ'])
+                consonants: [
+                    'က', 'စ', 'ဆ', 'ဋ', 'ဌ', 'ဍ', 'ဏ', 'တ', 'ထ', 'ဓ', 'န', 'ဗ', 'ဘ', 'မ', 'ယ', 'ရ', 'လ', 'သ', 'ဟ', 'ဠ', 'ၛ', 'ည', 'ၝ', 'အ'
+                ]
+            },
+            {
+                vowel: 'ော',
+                replace: 'ေါ',
+                consonants: ['ခ', 'ဂ', 'ဇ', 'ဎ', 'ဒ', 'ပ', 'ဝ', 'ၜ']
+            },
+            {
+                vowel: 'ေါ',
+                replace: 'ော',
+                // consonants not in the third object (['ခ', 'ဂ', 'ဇ', 'ဎ', 'ဒ', 'ပ', 'ဝ', 'ၜ'])
+                consonants: [
+                    'က', 'စ', 'ဆ', 'ဋ', 'ဌ', 'ဍ', 'ဏ', 'တ', 'ထ', 'ဓ', 'န', 'ဗ', 'ဘ', 'မ', 'ယ', 'ရ', 'လ', 'သ', 'ဟ', 'ဠ', 'ၛ', 'ည', 'ၝ', 'အ'
+                ]
+            },
+        ],
         // กฎที่ระบุว่าตัวควบใดกับพยัญชนะใด จะออกเสียงแบบควบแท้
         blendCompounds: [
             {
@@ -1507,9 +1720,7 @@ export default {
         ]
     },
     getAllCompoundConsonants() {
-        return this.consonants.flatMap(consonant =>
-            consonant.rows.filter(row => row.compound)
-        );
+        return this.compoundConsonants;
     },
     getConsonantByLetter(letter) {
         return this.consonants.flatMap(consonant =>
@@ -1517,9 +1728,7 @@ export default {
         )[0];
     },
     getConsonantByCompound(compound) {
-        return this.consonants.flatMap(consonant =>
-            consonant.rows.filter(row => row.compound === compound)
-        )[0];
+        return this.compoundConsonants.find(row => row.compound === compound);
     },
     getConsonantByFinal(final) {
         return this.finalConsonants.flatMap(group =>
@@ -1557,6 +1766,7 @@ export default {
     isClearConsonant(letter) {
         return this.rules.tones.clear.includes(letter);
     },
+    //OBSOLETE: Use cradtWord2 instead
     craftWord(consonant, compound, vowel, finalConsonant) {
         let ipa = '', ipa2 = '';
         let cl_bt = '';
@@ -1710,8 +1920,30 @@ export default {
         };
     },
     craftWord2(consonant, compound, vowel, finalConsonant) {
-        let ipa = '', ipa2 = '';
-        let word = '', word2 = '';
+        let ipa = {
+            consonant: '',
+            compound: '',
+            vowel: '',
+            final: '',
+        };
+        let ipa2 = {
+            consonant: '',
+            compound: '',
+            vowel: '',
+            final: '',
+        };
+        let word = {
+            consonant: '',
+            compound: '',
+            vowel: '',
+            final: '',
+        };
+        let word2 = {
+            consonant: '',
+            compound: '',
+            vowel: '',
+            final: '',
+        };
 
         // If no consonant is provided, we use the default consonant
         let currentConsonant = consonant ? (this.getConsonantByLetter(consonant) ?? this.consonants[0].rows[0].letter) : this.consonants[0].rows[0].letter;
@@ -1722,16 +1954,75 @@ export default {
 
         // if no vowel is provided, we use the default vowel
         let currentVowel = vowel ? (this.getVowelByCompound(vowel) ?? this.vowels[0]) : this.vowels[0];
-        let vowelCompound = isBreathy ? (currentVowel.compound2 ?? currentVowel.compound) : currentVowel.compound;
+        let blendVowelRule = this.rules.blendVowels.find(rule =>
+            rule.vowel === currentVowel.compound &&
+            rule.consonants.includes(currentConsonant.letter)
+        );
+        let vowelCompound = blendVowelRule
+            ? blendVowelRule.replace
+            : currentVowel.compound;
 
         // analyse like how you see braskets stacking upon each others and you have to layer them out one by one from top to bottom
 
-        // starting with final consonant and vowel,...
+        // starting with with compound consonant and consonant (which is the most important layer)
+        let compoundConsonantData = compound ? this.getConsonantByCompound(compound) : null;
+        if (compoundConsonantData) {
+            // if compound consonant is provided, append it to the word
 
-        // find finalConsonant data but not yet assign any value to word or ipa
+            // append the compound consonant to the word
+            word.consonant = currentConsonant.letter;
+            word.compound = compoundConsonantData.compound;
+
+            word2.consonant = currentConsonant.letter;
+            word2.compound = compoundConsonantData.compound;
+
+
+            // check if the compound consonant has a blend sound with a certain consonant according to the rules
+            let blendCompound = this.rules.blendCompounds.find(c => c.compound === compound);
+            let isBlend = blendCompound?.letters.includes(currentConsonant.letter);
+            if (isBlend) {
+                // ถ้าหากเป็นควบแท้
+                // if the compound consonant is a blend, we append the compound consonant to the word
+                // and append the IPA for the compound consonant
+
+                if (blendCompound.isReversed) {
+                    //ถ้าควบด้วย ဟ (ฮ)
+                    // if the blend compound is reversed, start with the compound consonant ipa then the current consonant ipa
+                    const a = currentConsonant;
+                    const b = compoundConsonantData;
+                    currentConsonant = b;
+                    compoundConsonantData = a;
+                    // also change the vowel IPA from BT to CL regardless
+                    isBreathy = false;
+                }
+
+                ipa.consonant = currentConsonant.compoundIPA;
+                ipa.compound = compoundConsonantData.compoundIPA;
+
+                ipa2.consonant = currentConsonant.compoundIPA;
+                ipa2.compound = compoundConsonantData.compoundIPA;
+            } else {
+                // ถ้าหากไม่ใช่ควบแท้
+                // if not a blend, we just append the consonant
+                // and append the IPA for the compound consonant
+                ipa.consonant = currentConsonant.ipa;
+                ipa.compound = compoundConsonantData.compoundIPA;
+
+                ipa2.consonant = currentConsonant.ipa;
+                ipa2.compound = compoundConsonantData.compoundIPA;
+            }
+        } else {
+            // if no compound consonant is provided, we just append the consonant
+            word.consonant = currentConsonant.letter;
+            word2.consonant = currentConsonant.letter;
+
+            ipa.consonant = currentConsonant.compoundIPA;
+            ipa2.consonant = currentConsonant.compoundIPA;
+        }
+
+        // then final consonant and vowel
         let finalConsonantData = this.getFinalConsonantByLetter(finalConsonant);
         let finalConsonantGroup = this.getFinalConsonantGroupByLetter(finalConsonant);
-
         if (finalConsonantData && finalConsonantGroup) {
             //try to analyse with vowels according to rules of finalWith and also with blendFinals.
             let allowedVowel = finalConsonantGroup.finalWith.find(vowel => currentVowel.compound === vowel.vowel || currentVowel.compound2 === vowel.vowel);
@@ -1748,90 +2039,54 @@ export default {
                     let replaceVowel = blendFinal.vowels.find(v => v.vowel === vowelCompound);
                     if (replaceVowel) {
                         // if replace vowel found, use the replaceVowel instead of final consonant and vowel in word2
-                        word2 = word2 + replaceVowel.replace;
+                        word2.vowel = replaceVowel.replace;
                     }
                 }
                 // anyway, we can append the final consonant and vowel to the word
-                word = word + vowelCompound + finalConsonantData.final;
+                word.vowel = vowelCompound;
+                word.final = finalConsonantData.final;
 
                 // append the IPA for final consonant and vowel
-                ipa = ipa + (isBreathy ? allowedVowel.ipaBT : allowedVowel.ipaCL) + (!finalConsonantGroup.isSilent ? finalConsonantData.finalIPA : '');
+                ipa.vowel = (isBreathy ? allowedVowel.ipaBT : allowedVowel.ipaCL);
+                ipa.final = (!finalConsonantGroup.isSilent ? finalConsonantData.finalIPA : '');
                 if (isBreathy && allowedVowel.ipaBT2) {
-                    ipa2 = ipa2 + allowedVowel.ipaBT2 + (!finalConsonantGroup.isSilent ? finalConsonantData.finalIPA : '');
+                    ipa2.vowel = allowedVowel.ipaBT2;
+                    ipa2.final = (!finalConsonantGroup.isSilent ? finalConsonantData.finalIPA : '');
                 }
                 if (!isBreathy && allowedVowel.ipaCL2) {
-                    ipa2 = ipa2 + allowedVowel.ipaCL2 + (!finalConsonantGroup.isSilent ? finalConsonantData.finalIPA : '');
+                    ipa2.vowel = allowedVowel.ipaCL2;
+                    ipa2.final = (!finalConsonantGroup.isSilent ? finalConsonantData.finalIPA : '');
                 }
             } else {
                 // reject final consonant and skip to the next layer which is vowel
-                word = word + vowelCompound;
-                ipa = ipa + (isBreathy ? currentVowel.ipaBT : currentVowel.ipaCL);
+                word.vowel = vowelCompound;
+                ipa.vowel = (isBreathy ? currentVowel.ipaBT : currentVowel.ipaCL);
                 if (isBreathy && currentVowel.ipaBT2) {
-                    ipa2 = ipa2 + currentVowel.ipaBT2;
+                    ipa2.vowel = currentVowel.ipaBT2;
                 }
                 if (!isBreathy && currentVowel.ipaCL2) {
-                    ipa2 = ipa2 + currentVowel.ipaCL2;
+                    ipa2.vowel = currentVowel.ipaCL2;
                 }
             }
         } else {
             // if no final consonant data, we then skip to the next layer which is vowel
-            word = word + vowelCompound;
-            ipa = ipa + (isBreathy ? currentVowel.ipaBT : currentVowel.ipaCL);
+            word.vowel = vowelCompound;
+            ipa.vowel = (isBreathy ? currentVowel.ipaBT : currentVowel.ipaCL);
             if (isBreathy && currentVowel.ipaBT2) {
-                ipa2 = ipa2 + currentVowel.ipaBT2;
+                ipa2.vowel = currentVowel.ipaBT2;
             }
             if (!isBreathy && currentVowel.ipaCL2) {
-                ipa2 = ipa2 + currentVowel.ipaCL2;
+                ipa2.vowel = currentVowel.ipaCL2;
             }
-        }
-
-        // then continue with compound consonant and consonant (which is the most important layer)
-        let compoundConsonantData = compound ? this.getConsonantByCompound(compound) : null;
-        if (compoundConsonantData) {
-            // if compound consonant is provided, append it to the word
-
-            // append the compound consonant to the word
-            word = currentConsonant.letter + compoundConsonantData.compound + word;
-            if (word2) word2 = currentConsonant.letter + compoundConsonantData.compound + word2;
-
-            // check if the compound consonant has a blend sound with a certain consonant according to the rules
-            let blendCompound = this.rules.blendCompounds.find(c => c.compound === compound);
-            let isBlend = blendCompound?.letters.includes(currentConsonant.letter);
-            if (isBlend) {
-                // ถ้าหากเป็นควบแท้
-                // if the compound consonant is a blend, we append the compound consonant to the word
-                // and append the IPA for the compound consonant
-                if (blendCompound.isReversed) {
-                    // if the blend compound is reversed, start with the compound consonant ipa then the current consonant ipa
-                    ipa = compoundConsonantData.compoundIPA + currentConsonant.compoundIPA + ipa;
-                    if (ipa2) ipa2 = compoundConsonantData.compoundIPA + currentConsonant.compoundIPA + ipa2;
-                } else {
-                    ipa = currentConsonant.compoundIPA + compoundConsonantData.compoundIPA + ipa;
-                    if (ipa2) ipa2 = currentConsonant.compoundIPA + compoundConsonantData.compoundIPA + ipa2;
-                }
-            } else {
-                // ถ้าหากไม่ใช่ควบแท้
-                // if not a blend, we just append the consonant
-                // and append the IPA for the compound consonant
-                ipa = currentConsonant.ipa + compoundConsonantData.compoundIPA + ipa;
-                if (ipa2) ipa2 = currentConsonant.ipa + compoundConsonantData.compoundIPA + ipa2;
-            }
-        } else {
-            // if no compound consonant is provided, we just append the consonant
-            word = currentConsonant.letter + word;
-            if (word2) word2 = currentConsonant.letter + word2;
-
-            ipa = currentConsonant.compoundIPA + ipa;
-            if (ipa2) ipa2 = currentConsonant.compoundIPA + ipa2;
         }
 
         //return feasible data
         return {
-            word: word,
-            word2: word2,
+            word: word.consonant + word.compound + word.vowel + word.final,
+            word2: (word2.vowel ? word2.consonant + word2.compound + word2.vowel + word2.final : ''),
             cl_bt: cl_bt,
-            ipa: ipa,
-            ipa2: ipa2
+            ipa: ipa.consonant + ipa.compound + ipa.vowel + ipa.final,
+            ipa2: (ipa2.vowel ? ipa2.consonant + ipa2.compound + ipa2.vowel + ipa2.final : '')
         }
     }
 }

@@ -1,10 +1,10 @@
 <template>
     <div id="vowel-table" class="vowel-table">
         <h2>{{ langSet[lang ? lang : 'en'].learnAlphabets.vowels }} (12)</h2>
-        <p class="text-muted">{{ langSet[lang ? lang : 'en'].vowelView.description }}</p>
-        <div class="mt-4">
-            <h3 class="text-start">1. {{ langSet[lang ? lang : 'en'].vowelView.vowelType1Title }}</h3>
-            <p class="text-start text-muted">{{ langSet[lang ? lang : 'en'].vowelView.vowelType1Description }}</p>
+        <p class="text-dark" v-html="langSet[lang ? lang : 'en'].vowelView.description"></p>
+        <div class="mt-4 mb-2">
+            <h3>1. {{ langSet[lang ? lang : 'en'].vowelView.vowelType1Title }}</h3>
+            <p class="text-dark" v-html="langSet[lang ? lang : 'en'].vowelView.vowelType1Description"></p>
             <table class="my-2">
                 <thead>
                     <tr>
@@ -19,38 +19,52 @@
                 <tbody>
                     <tr v-for="(row, index) in vowels" :key="index">
                         <td v-for="(vowel, cIndex) in row" :key="cIndex">
-                            <div>
-                                <span class="fs-3 fw-bold">{{ vowel.letter }}</span>
+                            <div class="mb-2">
+                                <span class="fs-2 fw-bold">{{ vowel.letter }}</span>
+                            </div>
+                            <div class="mb-2 text-muted">
+                                <span>{{ `/${vowel.ipaCL}/` || 'NaN' }}</span>
+                                <br>
+                                <span>{{ `/${vowel.thCL}/` || 'NaN' }} </span>
                             </div>
                             <button class="mt-2 btn btn-sm btn-outline-success py-0 px-1"
                                 @click="pronouceVowelCL(vowel)">
-                                🔊 {{ `/${vowel.ipaCL}/` || 'N/A' }}
+                                🔊
+                                <span class="d-none d-md-inline">
+                                    {{ langSet[lang ? lang : 'en'].menu.listen }}
+                                </span>
                             </button>
                             <button v-if="copiedIndex == index && copiedCIndex == cIndex"
-                                class="mt-2 ms-2 btn btn-sm btn-light py-0 px-1 disabled">
-                                ✅ {{ langSet[lang ? lang : 'en'].menu.copied }}
+                                class="mt-2 ms-1 btn btn-sm btn-light py-0 px-1 disabled">
+                                ✅
+                                <span class="d-none d-md-inline">
+                                    {{ langSet[lang ? lang : 'en'].menu.copied }}
+                                </span>
                             </button>
-                            <button v-else class="mt-2 ms-2 btn btn-sm btn-outline-secondary py-0 px-1"
+                            <button v-else class="mt-2 ms-1 btn btn-sm btn-outline-secondary py-0 px-1"
                                 @click="copyToClipboard(vowel.letter, index, cIndex)">
-                                📋 {{ langSet[lang ? lang : 'en'].menu.copy }}
+                                📋
+                                <span class="d-none d-md-inline">
+                                    {{ langSet[lang ? lang : 'en'].menu.copy }}
+                                </span>
                             </button>
                         </td>
                     </tr>
                 </tbody>
             </table>
         </div>
-
+        <hr>
         <div class="mt-4">
-            <h3 class="text-start">2. {{ langSet[lang ? lang : 'en'].vowelView.vowelType2Title }}</h3>
-            <p class="text-start text-muted">{{ langSet[lang ? lang : 'en'].vowelView.vowelType2Description }}</p>
+            <h3>2. {{ langSet[lang ? lang : 'en'].vowelView.vowelType2Title }}</h3>
+            <p class="text-dark" v-html="langSet[lang ? lang : 'en'].vowelView.vowelType2Description"></p>
             <div class="d-flex">
                 <div class="">
                     <span class="badge rounded-pill text-bg-light text-primary fw-bold">CL</span>
-                    <span> = {{ langSet[lang ? lang : 'en'].vowelView.vowelType2CL }}</span>
+                    <span>= {{ langSet[lang ? lang : 'en'].vowelView.vowelType2CL }}</span>
                 </div>
-                <div class="ms-2">
+                <div class="ms-1">
                     <span class="badge rounded-pill text-bg-light text-danger fw-bold">BT</span>
-                    <span> = {{ langSet[lang ? lang : 'en'].vowelView.vowelType2BT }}</span>
+                    <span>= {{ langSet[lang ? lang : 'en'].vowelView.vowelType2BT }}</span>
                 </div>
             </div>
             <table class="my-2">
@@ -67,36 +81,52 @@
                     </tr>
                     <tr v-for="(row, index) in vowels" :key="index">
                         <td v-for="(vowel, cIndex) in row" :key="cIndex">
-                            <div>
-                                <span class="fs-3 fw-bold">{{ vowel.compound || '-' }}</span>
+                            <div class="mb-2">
+                                <span class="fs-2 fw-bold">{{ vowel.compound || '-' }}</span>
                                 <span v-if="vowel.compound2" class="fw-bold text-muted"><br>({{ langSet[lang ? lang :
                                     'en'].menu.or }} {{ vowel.compound2
                                     }})<br><small><a :href="`#${vowel.exception.id}`">({{ langSet[lang ? lang :
-                                            'en'].menu.seeException }})</a></small></span>
+                                        'en'].menu.seeException }})</a></small></span>
                             </div>
-                            <button class="mt-2 btn btn-sm btn-outline-success py-0 px-1"
-                                @click="pronouceVowelCL(vowel)">
-                                🔊 {{ `/${vowel.ipaCL}/` || 'N/A' }} <span
-                                    class="badge rounded-pill text-bg-light text-primary fw-bold">CL</span>
-                            </button>
-                            <button v-if="vowel.ipaCL2" class="mt-2 ms-1 btn btn-sm btn-outline-success py-0 px-1"
-                                @click="pronouceVowelCL2(vowel)">
-                                🔊 {{ `/${vowel.ipaCL2}/` || 'N/A' }} <span
-                                    class="badge rounded-pill text-bg-light text-primary fw-bold">CL</span>
-                            </button>
-                            <button class="mt-2 ms-1 btn btn-sm btn-outline-success py-0 px-1"
-                                @click="pronouceVowelBT(vowel)">
-                                🔊 {{ `/${vowel.ipaBT}/` || 'N/A' }} <span
-                                    class="badge rounded-pill text-bg-light text-danger fw-bold">BT</span>
-                            </button>
-                            <button v-if="copiedIndex == index && copiedCIndex == cIndex"
-                                class="mt-2 ms-1 btn btn-sm btn-light py-0 px-1 disabled">
-                                ✅ {{ langSet[lang ? lang : 'en'].menu.copied }}
-                            </button>
-                            <button v-else class="mt-2 ms-1 btn btn-sm btn-outline-secondary py-0 px-1"
-                                @click="copyToClipboard(vowel.compound, index, cIndex)">
-                                📋 {{ langSet[lang ? lang : 'en'].menu.copy }}
-                            </button>
+                            <div class="mb-2 text-muted">
+                                <span class="me-1">{{ `/${vowel.ipaCL}/` || 'NaN' }}</span>
+                                <span>{{ `/${vowel.thCL}/` || 'NaN' }} </span>
+                                <br>
+                                <button class="mt-1 btn btn-sm btn-outline-success py-0 px-1"
+                                    @click="pronouceVowelCL(vowel)">
+                                    🔊
+                                    <span class="d-none d-md-inline">
+                                        {{ langSet[lang ? lang : 'en'].menu.listen }}
+                                    </span>
+                                    <span class="ms-1 badge rounded-pill text-bg-light text-primary fw-bold">CL</span>
+                                </button>
+                            </div>
+                            <div class="mb-2 text-muted" v-if="vowel.ipaCL2">
+                                <span class="me-1">{{ `/${vowel.ipaCL2}/` || 'NaN' }}</span>
+                                <span>{{ `/${vowel.thCL2}/` || 'NaN' }}</span>
+                                <br>
+                                <button v-if="vowel.ipaCL2" class="mt-1 btn btn-sm btn-outline-success py-0 px-1"
+                                    @click="pronouceVowelCL2(vowel)">
+                                    🔊
+                                    <span class="d-none d-md-inline">
+                                        {{ langSet[lang ? lang : 'en'].menu.listen }}
+                                    </span>
+                                    <span class="ms-1 badge rounded-pill text-bg-light text-primary fw-bold">CL</span>
+                                </button>
+                            </div>
+                            <div class="mb-2 text-muted">
+                                <span class="me-1">{{ `/${vowel.ipaBT}/` || 'NaN' }}</span>
+                                <span>{{ `/${vowel.thBT}/` || 'NaN' }} </span>
+                                <br>
+                                <button class="mt-1 btn btn-sm btn-outline-success py-0 px-1"
+                                    @click="pronouceVowelBT(vowel)">
+                                    🔊
+                                    <span class="d-none d-md-inline">
+                                        {{ langSet[lang ? lang : 'en'].menu.listen }}
+                                    </span>
+                                    <span class="ms-1 badge rounded-pill text-bg-light text-danger fw-bold">BT</span>
+                                </button>
+                            </div>
                         </td>
                     </tr>
                 </tbody>
@@ -110,10 +140,12 @@
                                 }}</span>
                         </h4>
                         <p v-if="!vowel.exception.dependsOnFinal" class="text-start text-muted">
-                            "{{ vowel.compound2 }}" <span v-html="langSet[lang ? lang : 'en'].vowelView.exceptionDescription"></span>
+                            "{{ vowel.compound2 }}" <span
+                                v-html="langSet[lang ? lang : 'en'].vowelView.exceptionDescription"></span>
                         </p>
                         <p v-else class="text-start text-muted">
-                            "{{ vowel.compound2 }}" <span v-html="langSet[lang ? lang : 'en'].vowelView.exceptionDescription2"></span>
+                            "{{ vowel.compound2 }}" <span
+                                v-html="langSet[lang ? lang : 'en'].vowelView.exceptionDescription2"></span>
                         </p>
                         <table class="table table-bordered">
                             <thead>
@@ -127,7 +159,7 @@
                                         <div>
                                             <span class="fs-4">{{ consonant }} → <span class="fw-bold">
                                                     {{ craftWord(consonant, vowel.compound).word ||
-                                                        'N/A' }}</span></span>
+                                                        'NaN' }}</span></span>
                                             <span v-if="isClearConsonant(consonant)"
                                                 class="ms-2 badge rounded-pill text-bg-light text-primary fw-bold">CL</span>
                                             <span v-else
@@ -135,7 +167,7 @@
                                         </div>
                                         <div>
                                             <span class="text-muted">/{{ craftWord(consonant, vowel.compound).ipa ||
-                                                'N/A' }}/</span>
+                                                'NaN' }}/</span>
                                         </div>
                                     </td>
                                 </tr>
@@ -145,7 +177,7 @@
                                         <div>
                                             <span class="fs-4">{{ consonant }} → <span class="fw-bold">
                                                     {{ craftWord(consonant, vowel.compound).word ||
-                                                        'N/A' }}</span></span>
+                                                        'NaN' }}</span></span>
                                             <span v-if="isClearConsonant(consonant)"
                                                 class="ms-2 badge rounded-pill text-bg-light text-primary fw-bold">CL</span>
                                             <span v-else
@@ -153,37 +185,35 @@
                                         </div>
                                         <div>
                                             <span class="text-muted">/{{ craftWord(consonant, vowel.compound).ipa ||
-                                                'N/A' }}/</span>
+                                                'NaN' }}/</span>
                                         </div>
                                     </td>
                                 </tr>
                             </tbody>
                             <tbody v-else>
                                 <tr>
-                                    <td v-for="(final, cIndex) in vowel.exception.finals.slice(0, 5)"
-                                        :key="cIndex">
+                                    <td v-for="(final, cIndex) in vowel.exception.finals.slice(0, 5)" :key="cIndex">
                                         <div>
                                             <span class="fs-4">{{ final }} → <span class="fw-bold">
                                                     {{ craftWord2(vowel.compound, final).word ||
-                                                        'N/A' }}</span></span>
+                                                        'NaN' }}</span></span>
                                         </div>
                                         <div>
                                             <span class="text-muted">/{{ craftWord2(vowel.compound, final).ipa ||
-                                                'N/A' }}/</span>
+                                                'NaN' }}/</span>
                                         </div>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td v-for="(final, cIndex) in vowel.exception.finals.slice(5, 10)"
-                                        :key="cIndex">
+                                    <td v-for="(final, cIndex) in vowel.exception.finals.slice(5, 10)" :key="cIndex">
                                         <div>
                                             <span class="fs-4">{{ final }} → <span class="fw-bold">
                                                     {{ craftWord2(vowel.compound, final).word ||
-                                                        'N/A' }}</span></span>
+                                                        'NaN' }}</span></span>
                                         </div>
                                         <div>
                                             <span class="text-muted">/{{ craftWord2(vowel.compound, final).ipa ||
-                                                'N/A' }}/</span>
+                                                'NaN' }}/</span>
                                         </div>
                                     </td>
                                 </tr>
