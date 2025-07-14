@@ -26,7 +26,7 @@
                         </span>
                     </td>
                     <td class="fs-6 text-muted">က + {{ item.members[0].final }} = {{ craftWord2('က', null, null,
-                        item.final).word
+                        item.members[0].final).word
                         }}
                     </td>
                     <td class="fs-6 text-muted">
@@ -38,7 +38,7 @@
                             ✅ {{ langSet[lang ? lang : 'en'].menu.copied }}
                         </button>
                         <button v-else class="mt-2 ms-2 btn btn-sm btn-outline-secondary py-0 px-1"
-                            @click="copyToClipboard(item.final, index, cIndex)">
+                            @click="copyToClipboard(item.members[0].final, index, cIndex)">
                             📋 {{ langSet[lang ? lang : 'en'].menu.copy }}
                         </button>
                     </td>

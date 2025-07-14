@@ -46,7 +46,7 @@
                                 class="ms-2 badge rounded-pill text-bg-light text-danger fw-bold">BT</span>
                         </div>
                         <div class="mb-2 text-muted">
-                            <span>/{{ `/${consonant.ipa}/` || 'NaN' }}/</span>
+                            <span>{{ `/${consonant.ipa}/` || 'NaN' }}</span>
                             <br>
                             <span>{{ `/${consonant.th}/` || 'NaN' }} <strong>({{ consonant.thLetter || 'NaN'
                                     }})</strong></span>
