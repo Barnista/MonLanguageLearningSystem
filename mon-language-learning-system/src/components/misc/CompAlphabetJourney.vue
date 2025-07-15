@@ -1,6 +1,6 @@
 <template>
     <div class="d-flex justify-content-center">
-        <nav class="fs-6 fw-bold d-none d-md-block bg-white border rounded px-4 pt-2"
+        <nav class="fs-6 fw-bold bg-white border rounded px-4 pt-2"
             style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);"
             aria-label="breadcrumb">
             <ol class="breadcrumb">
@@ -63,6 +63,18 @@
                 <li v-else class="mt-2 breadcrumb-item">
                     <router-link class="text-success" :to="`/alphabets/double-consonant?lang=${lang}`">{{ langSet[lang ?
                         lang : 'en'].learnAlphabets.doubleConsonants }}</router-link>
+                </li>
+
+                <li class="mt-2 breadcrumb-item">
+                    <span class="fw-bold text-muted">{{ langSet[lang ? lang :
+                        'en'].learnAlphabets.punctuations
+                        }}</span>
+                </li>
+
+                <li class="mt-2 breadcrumb-item">
+                    <span class="fw-bold text-muted">{{ langSet[lang ? lang :
+                        'en'].learnAlphabets.numerals
+                        }}</span>
                 </li>
             </ol>
         </nav>

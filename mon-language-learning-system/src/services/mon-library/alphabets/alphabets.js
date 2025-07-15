@@ -1722,6 +1722,11 @@ export default {
     getAllCompoundConsonants() {
         return this.compoundConsonants;
     },
+    getConsonantByPosition(row, column){
+        let r = (isNaN(row) ? this.consonants.length-1 : row);
+        let c = (isNaN(column) ? 0 : column);
+        return this.consonants[r].rows[c];
+    },
     getConsonantByLetter(letter) {
         return this.consonants.flatMap(consonant =>
             consonant.rows.filter(row => row.letter === letter)

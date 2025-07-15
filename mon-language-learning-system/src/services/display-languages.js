@@ -66,7 +66,7 @@ export default {
                 titleType2: 'Pali-Sanskrit typography <strong>(Pali-Sanskrit-style)</strong>',
                 descriptionType1: 'It is a typography with simple rules. The reading is to pronounce both consonants, the main and the overlapped consonants, by <strong>reading from top to bottom</strong>, for example: ',
                 descriptionType2: 'It is a typography with legacy rules derived from Pali-Sansakrit scripts. The main consonant will turn into the final consonant for the consonant positioned at the start. The consonant that is <strong>overlapped</strong> will be pronounced on its own or combined with the following vowel and/or final consonant.',
-                descriptionTable2: 'Please open page Consonants and try to remember the context that: <strong>Mon consonants are divided into 5 rows, each row has 5 consonants and the remaining 10 are the zero-consonants, totaling 35 characters</strong>.',
+                descriptionTable2: 'Please open section Consonants below and try to remember the context that: <strong>Mon consonants are divided into 5 rows, each row has 5 consonants and the remaining 10 are the zero-consonants, totaling 35 characters</strong>.',
                 ruleType21: 'Each row is divided into 2 types of consonants:',
                 ruleType22: '<strong>The 1st - 3rd - 5th consonants</strong> of every row are classified as final consonants. Can overlap the 2nd - 4th consonant or overlap itself (except ၚ and ဍ)',
                 ruleType23: '<strong>The 2nd - 4th consonants</strong> of every row are classified as overlapped consonants. Cannot overlap the 1st - 3rd - 5th consonant and cannot overlap itself.',
@@ -141,7 +141,15 @@ export default {
                 finalExample: 'Example',
                 other: 'Other',
                 otherVowels: 'Vowels',
-                otherVowelsOrigin: 'Origin'
+                otherVowelsOrigin: 'Origin',
+                doubleExample: 'Example',
+                doubleFullWriting: 'Full Writing',
+                translationThai: 'Translate<br>(Mon-Thai Dictionary)',
+                rowAt: 'Row',
+                columnAt: 'Consonant',
+                doubleAt: 'Overlapped',
+                itself: 'Itself',
+                none: 'None'
             }
         },
         th: {
@@ -198,7 +206,7 @@ export default {
                 titleType2: 'การซ้อนพยัญชนะที่มาจากภาษาบาลี-สันสกฤต <strong>(ซ้อนแบบบาลี-สันสกฤต)</strong>',
                 descriptionType1: 'เป็นการซ้อนแบบไม่มีกฎเกณฑ์กำกับ การอ่านนั้นให้<strong>ออกเสียงพยัญชนะทั้ง 2 ตัว ทั้งตัวหลักและตัวซ้อน</strong> โดยให้<strong>อ่านจากบนลงล่าง</strong> เช่น:',
                 descriptionType2: 'เป็นการซ้อนที่มีกฎเกณฑ์ที่แน่นอน โดยพยัญชนะที่เป็น<strong>ตัวหลักจะเป็นตัวสะกด</strong>ให้กับพยัญชนะที่อยู่ข้างหน้า ส่วนพยัญชนะที่เป็น<strong>ตัวซ้อนจะออกเสียงตัวเอง</strong>หรือออกเสียงประสมกับสระและตัวสะกดที่อยู่ข้างหลัง.',
-                descriptionTable2: 'ให้ผู้เรียนเปิดหน้าตารางพยัญชนะมอญ แล้วทำความเข้าใจดังต่อไปนี้ว่า <strong>พยัญชนะมอญแบ่งออกเป็นวรรคได้ 5 วรรค แต่ละวรรมีพยัญชนะ 5 ตัว และอีก 10 ตัวเป็นเศษวรรค รวมเป็น 35 ตัว</strong>.',
+                descriptionTable2: 'ให้ผู้เรียนเปิดหน้าต่างตารางพยัญชนะมอญด้านล่าง แล้วทำความเข้าใจดังต่อไปนี้ว่า <strong>พยัญชนะมอญแบ่งออกเป็นวรรคได้ 5 วรรค แต่ละวรรมีพยัญชนะ 5 ตัว และอีก 10 ตัวเป็นเศษวรรค รวมเป็น 35 ตัว</strong>.',
                 ruleType21: 'พยัญชนะที่จัดเป็นวรรคทั้ง 5 วรรค จะ<strong>แบ่งพยัญชนะเป็น 2 ประเภท</strong> คือ',
                 ruleType22: '<strong>พยัญชนะตัวที่ 1 - 3 - 5</strong> ของทุกวรรค จัดเป็นพยัญชนะประเภทสะกด สามารถซ้อนพยัญชนะตัวที่ 2 - 4 หรือซ้อนตัวเองได้ (ยกเว้น ၚ กับ ဍ)',
                 ruleType23: '<strong>พยัญชนะตัวที่ 2 - 4</strong> ของทุกวรรค จัดเป็นพยัญชนะประเภทซ้อน ไม่สามารถซ้อนพยัญชนะ 1 - 3 - 5 และไม่สามารถซ้อนตัวเองได้.',
@@ -273,7 +281,15 @@ export default {
                 finalExample: 'ตัวอย่างการประสม',
                 other: 'อื่นๆ',
                 otherVowels: 'รูปสระ',
-                otherVowelsOrigin: 'ที่มาการประสม<br>ของสระ'
+                otherVowelsOrigin: 'ที่มาการประสม<br>ของสระ',
+                doubleExample: 'ตัวอย่างคำ',
+                doubleFullWriting: 'เขียนแบบไม่ซ้อน',
+                translationThai: 'แปลจากพจนานุกรม<br>(มอญ-ไทย)',
+                rowAt: 'วรรคที่',
+                columnAt: 'พยัญชนะ<br>ตัวที่',
+                doubleAt: 'ซ้อนตัวที่',
+                itself: 'ตัวเอง',
+                none: 'ไม่มี'
             }
         }
     }
