@@ -26,6 +26,11 @@ const routes = [
     component: () => import(/* webpackChunkName: "keyboard" */ '../views/KeyboardView.vue')
   },
   {
+    path: '/alphabets',
+    name: 'alphabets-get-start',
+    component: () => import('../views/alphabets/GetStartView.vue')
+  },
+  {
     path: '/alphabets/consonant',
     name: 'alphabets-consonant',
     component: () => import('../views/alphabets/ConsonantView.vue')

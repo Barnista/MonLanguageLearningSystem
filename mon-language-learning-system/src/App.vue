@@ -4,7 +4,7 @@
   <!-- Main Content -->
   <router-view class="safe-zone flex-grow-1" />
 
-  <KeyboardModal ref="keyboardModal" class="mt-5" />
+  <KeyboardModal ref="keyboardModal" :lang="lang" class="mt-5" />
   <div class="sticky-bottom text-end p-3" id="toastBtn">
     <button @click="showKeyboard" class="btn btn-lg btn-light bg-fabulous rounded-pill shadow">
       <i class="bi bi-keyboard"></i>

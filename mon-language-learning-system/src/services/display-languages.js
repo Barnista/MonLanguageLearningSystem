@@ -79,6 +79,7 @@ export default {
                 noteType1: 'The 11 compound consonants are not considered double consonants.'
             },
             learnAlphabets: {
+                getStart: 'Get Start',
                 alphabets: 'Alphabets',
                 title: 'Learn Alphabets',
                 consonants: 'Consonants',
@@ -110,7 +111,13 @@ export default {
             },
             keyboard: {
                 title: 'Keyboard',
-                fullTitle: 'Virtual Keyboard'
+                fullTitle: 'Virtual Keyboard',
+                placeholder: 'Tap on the virtual keyboard to start',
+                copyBtn: 'Copy text',
+                copiedTxt: 'Copied to clipboard.',
+                developedBy: 'Developed by',
+                poweredBy: 'Powered by',
+                designedBy: 'Mon keyboard layout designed by'
             },
             menu: {
                 listen: 'listen',
@@ -204,6 +211,7 @@ export default {
                 noteType1: 'พยัญชนะควบแขวนทั้ง 11 ตัวนั้นไม่จัดเป็นพยัญชนะซ้อน'
             },
             learnAlphabets: {
+                getStart: 'เริ่มต้นเรียน',
                 alphabets: 'อักษรมอญ',
                 title: 'เรียนอักษรมอญ',
                 consonants: 'พยัญชนะ',
@@ -235,7 +243,13 @@ export default {
             },
             keyboard: {
                 title: 'คีย์บอร์ด',
-                fullTitle: 'คีย์บอร์ดจำลอง'
+                fullTitle: 'คีย์บอร์ดจำลอง',
+                placeholder: 'กดปุ่มใด ๆ บนคีย์บอร์ดที่ปรากฏ เพื่อเริ่มใช้งาน',
+                copyBtn: 'คัดลอก',
+                copiedTxt: 'คัดลอกข้อความแล้ว',
+                developedBy: 'พัฒนาโดย',
+                poweredBy: 'ขับเคลื่อนโดย',
+                designedBy: 'คียบอร์ดอักษรมอญออกแบบโดย'
             },
             menu: {
                 listen: 'ฟัง',

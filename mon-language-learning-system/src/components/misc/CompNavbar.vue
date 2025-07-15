@@ -23,6 +23,13 @@
                             <i class="bi bi-book-half"></i> {{ langSet[lang ? lang : 'en'].learnAlphabets.alphabets }}
                         </a>
                         <ul class="dropdown-menu">
+                             <li><router-link class="dropdown-item" :to="`/alphabets?lang=${lang}`">{{
+                                langSet[lang ? lang :
+                                    'en'].learnAlphabets.getStart }}</router-link>
+                            </li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
                             <li><router-link class="dropdown-item" :to="`/alphabets/consonant?lang=${lang}`">{{
                                 langSet[lang ? lang :
                                     'en'].learnAlphabets.consonants }}</router-link>

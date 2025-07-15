@@ -1,7 +1,7 @@
 <template>
     <div class="keyboard-view">
         <div class="container my-5">
-            <KeyboardSetComp class="mb-4" />
+            <KeyboardSetComp :lang="lang" class="mb-4" />
         </div>
     </div>
 </template>
@@ -13,6 +13,16 @@ export default {
     name: 'KeyboardView',
     components: {
         KeyboardSetComp
-    }
+    },
+    data: () => {
+        return {
+            lang: 'en'
+        }
+    },
+    watch: {
+        '$route.query.lang'(newLang) {
+            this.lang = newLang || 'en';
+        }
+    },
 };
 </script>

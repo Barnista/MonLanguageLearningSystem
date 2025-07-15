@@ -19,7 +19,7 @@ export default {
         },
         input: {
             type: String
-        }
+        },
     },
     data: () => ({
         keyboard: null,

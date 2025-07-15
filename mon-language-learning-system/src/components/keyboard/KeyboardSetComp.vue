@@ -6,15 +6,15 @@
                 <span class="fs-5 fw-bold">{{ langs[selectedLangIndex].label || langs[selectedLangIndex].lang }}</span>
             </div>
             <div class="d-flex align-items-center">
-                <span v-if="isCopied" class="text-success me-2">Copied to clipboard.</span>
+                <span v-if="isCopied" class="text-success me-2">{{ langSet[lang ? lang : 'en'].keyboard.copyTxt }}</span>
                 <button @click="copyText" class="btn btn-outline-success">
-                    <i class="bi bi-clipboard"></i> Copy text
+                    <i class="bi bi-clipboard"></i> {{ langSet[lang ? lang : 'en'].keyboard.copyBtn }}
                 </button>
             </div>
         </div>
         <input ref="inputText" class="form-control custom-input py-3 mb-2" type="text" v-model="input"
-            @input="onInputChange" placeholder="Tap on the virtual keyboard to start">
-        <SimpleKeyboardComp ref="simpleKeyboard" :keyboardClass="keyboardClass" :input="input" @onChange="onChange"
+            @input="onInputChange" :placeholder="langSet[lang ? lang : 'en'].keyboard.placeholder">
+        <SimpleKeyboardComp ref="simpleKeyboard" :lang="lang ? lang : 'en'" :keyboardClass="keyboardClass" :input="input" @onChange="onChange"
             @onKeyPress="onKeyPress" />
         <div class="text-center mt-2">
             <button v-for="(lang, index) in langs" :key="index"
@@ -26,9 +26,9 @@
         </div>
         <p class="mt-4 text-center text-muted">
             <small>
-                Created by <a href="https://github.com/Barnista/MonLanguageLearningSystem" target="_blank">Barnista</a>.
-                Powered by <a href="https://github.com/hodgef/simple-keyboard" target="_blank">simple-keyboard</a>.
-                <br>Mon keyboard layout designed by <a
+                {{ langSet[lang ? lang : 'en'].keyboard.developedBy }} <a href="https://github.com/Barnista/MonLanguageLearningSystem" target="_blank">Barnista</a>.
+                {{ langSet[lang ? lang : 'en'].keyboard.poweredBy }} <a href="https://github.com/hodgef/simple-keyboard" target="_blank">simple-keyboard</a>.
+                <br>{{ langSet[lang ? lang : 'en'].keyboard.designedBy }} <a
                     href="https://github.com/keymanapp/keyboards/tree/master/release/m/mon_anonta"
                     target="_blank">Anonta Mon</a>.
             </small>
@@ -37,13 +37,18 @@
 </template>
 
 <script>
+import displayLanguages from '@/services/display-languages';
 import SimpleKeyboardComp from './SimpleKeyboardComp.vue';
 export default {
     name: 'KeyboardSetComp',
     components: {
         SimpleKeyboardComp
     },
+    props: {
+        lang: String
+    },
     data: () => ({
+        langSet: displayLanguages.langSet,
         isCopied: false,
         input: "",
         langs: [
