@@ -2,22 +2,29 @@
     <div class="keyboard-view">
         <div class="container my-5">
             <KeyboardSetComp :lang="lang" class="mb-4" />
+            <hr>
+            <CompKeyboardGuide class=""/>
         </div>
     </div>
 </template>
 
 <script>
-import KeyboardSetComp from '@/components/keyboard/KeyboardSetComp.vue';
+import CompKeyboardGuide from '@/components/keyboard/CompKeyboardGuide.vue';
+import KeyboardSetComp from '@/components/keyboard/CompKeyboardSet.vue';
 
 export default {
     name: 'KeyboardView',
     components: {
-        KeyboardSetComp
+        KeyboardSetComp,
+        CompKeyboardGuide
     },
     data: () => {
         return {
             lang: 'en'
         }
+    },
+    mounted(){
+        this.lang = this.$route.query.lang || 'en';
     },
     watch: {
         '$route.query.lang'(newLang) {

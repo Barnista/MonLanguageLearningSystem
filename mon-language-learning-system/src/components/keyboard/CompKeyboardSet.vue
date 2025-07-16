@@ -38,7 +38,7 @@
 
 <script>
 import displayLanguages from '@/services/display-languages';
-import SimpleKeyboardComp from './SimpleKeyboardComp.vue';
+import SimpleKeyboardComp from './CompSimpleKeyboard.vue';
 export default {
     name: 'KeyboardSetComp',
     components: {

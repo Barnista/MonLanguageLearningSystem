@@ -23,7 +23,7 @@
 
 <script>
 import { Modal } from 'bootstrap/dist/js/bootstrap.bundle.min';
-import KeyboardSetComp from './KeyboardSetComp.vue';
+import KeyboardSetComp from './CompKeyboardSet.vue';
 import displayLanguages from '@/services/display-languages';
 
 export default {

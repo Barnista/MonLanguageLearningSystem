@@ -8,7 +8,8 @@
                 <i class="bi bi-arrow-left"></i>
                 {{ langSet[lang].learnAlphabets.compoundConsonants || '_COMPOUND_CONSONANTS_' }} (11)
             </router-link>
-            <router-link :to="`/alphabets/double-consonant?lang=${lang}#double-consonant-table`" class="btn btn-primary">
+            <router-link :to="`/alphabets/double-consonant?lang=${lang}#double-consonant-table`"
+                class="btn btn-primary">
                 {{ langSet[lang].learnAlphabets.doubleConsonants || '_DOUBLE_CONSONANTS_' }} (2)
                 <i class="bi bi-arrow-right"></i>
             </router-link>
@@ -19,7 +20,7 @@
 
 <script>
 
-import CompFinalConsonantTable from '@/components/alphabets/CompFinalConsonantTable.vue';
+import CompFinalConsonantTable from '@/components/alphabets/final/CompFinalConsonantTable.vue';
 import CompAlphabetJourney from '@/components/misc/CompAlphabetJourney.vue';
 
 import displayLanguages from '@/services/display-languages';
@@ -44,6 +45,7 @@ export default {
             this.lang = newLang || 'en';
         }
     },
+
 }
 
 </script>

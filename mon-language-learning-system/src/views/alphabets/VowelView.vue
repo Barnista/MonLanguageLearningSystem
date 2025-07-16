@@ -22,8 +22,8 @@
 
 <script>
 
-import CompVowelTable from '@/components/alphabets/CompVowelTable.vue';
-import CompOtherVowelTable from '@/components/alphabets/CompOtherVowelTable.vue';
+import CompVowelTable from '@/components/alphabets/vowel/CompVowelTable.vue';
+import CompOtherVowelTable from '@/components/alphabets/vowel/CompOtherVowelTable.vue';
 import CompAlphabetJourney from '@/components/misc/CompAlphabetJourney.vue';
 
 import displayLanguages from '@/services/display-languages';
