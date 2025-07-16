@@ -92,7 +92,7 @@ export default {
             copiedIndex: null,
             copiedCIndex: null,
             copiedText: '',
-            finalGroups: monAlphabets.getAllFinalConsonantGroups(),
+            finalGroups: monAlphabets.finalConsonants,
         }
     },
     created() {

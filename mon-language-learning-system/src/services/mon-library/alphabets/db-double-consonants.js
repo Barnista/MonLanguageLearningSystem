@@ -352,5 +352,11 @@ export default {
             ipa: 'tɒssaˀ',
             th: 'ตอดซะ'
         },
-    ]
+    ],
+    getExampleDirect(){
+        return this.exampleDirect;
+    },
+    getExamplePaliSansakrit(){
+        return this.examplePaliSansakrit;
+    }
 }

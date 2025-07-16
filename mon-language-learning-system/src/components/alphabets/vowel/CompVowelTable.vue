@@ -25,7 +25,7 @@
                             <div class="mb-2 text-muted">
                                 <span>{{ `/${vowel.ipaCL}/` || 'NaN' }}</span>
                                 <br>
-                                <span>{{ `/${vowel.thCL}/` || 'NaN' }} </span>
+                                <span>{{ `/${vowel.thCL.replace('-', 'อ')}/` || 'NaN' }} </span>
                             </div>
                             <button class="mt-2 btn btn-sm btn-outline-success py-0 px-1"
                                 @click="pronouceVowelCL(vowel)">

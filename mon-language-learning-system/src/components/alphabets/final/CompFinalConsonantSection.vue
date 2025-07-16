@@ -53,19 +53,75 @@
                         <span class="ms-2 badge rounded-pill text-bg-light text-primary fw-bold">CL</span>
                     </div>
                     <div class="mt-2">
-                        <span class="text-muted">
+                        <div class="text-muted">
                             {{ `/${craftWord2('က', null, vowel.vowel,
                                 item.members[selected].final).ipa ||
                                 'NaN'}/` }}
-                        </span>
-                        <br>
-                        <span v-if="craftWord2('က', null, vowel.vowel, item.members[selected].final).ipa2"
+                        </div>
+                        <div v-if="craftWord2('က', null, vowel.vowel, item.members[selected].final).ipa2"
                             class="text-muted">
                             {{ `/${craftWord2('က', null, vowel.vowel,
                                 item.members[selected].final).ipa2 ||
                                 'NaN'}/`
                             }}
+                        </div>
+                        <div class="text-muted mt-2">
+                            {{ `/${craftWord2('က', null, vowel.vowel,
+                                item.members[selected].final).th ||
+                                'NaN'}/` }}
+                        </div>
+                        <div v-if="craftWord2('က', null, vowel.vowel, item.members[selected].final).th2"
+                            class="text-muted">
+                            {{ `/${craftWord2('က', null, vowel.vowel,
+                                item.members[selected].final).th2 ||
+                                'NaN'}/`
+                            }}
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3 border text-center px-2 py-3" v-for="(vowel, kIndex) in item.finalWith" :key="kIndex">
+                    <div>
+                        <span class="fs-3 fw-bold">
+                            {{ craftWord2('ဂ', null, vowel.vowel,
+                                item.members[selected].final).word ||
+                                'NaN' }}
                         </span>
+                    </div>
+                    <div v-if="craftWord2('ဂ', null, vowel.vowel, item.members[selected].final).word2">
+                        <span class="fs-3 fw-bold">
+                            {{ craftWord2('ဂ', null, vowel.vowel,
+                                item.members[selected].final).word2 ||
+                                'NaN' }}
+                        </span>
+                    </div>
+                    <div>
+                        <span class="ms-2 badge rounded-pill text-bg-light text-danger fw-bold">BT</span>
+                    </div>
+                    <div class="mt-2">
+                        <div class="text-muted">
+                            {{ `/${craftWord2('ဂ', null, vowel.vowel,
+                                item.members[selected].final).ipa ||
+                                'NaN'}/` }}
+                        </div>
+                        <div v-if="craftWord2('ဂ', null, vowel.vowel, item.members[selected].final).ipa2"
+                            class="text-muted">
+                            {{ `/${craftWord2('ဂ', null, vowel.vowel,
+                                item.members[selected].final).ipa2 ||
+                                'NaN'}/`
+                            }}
+                        </div>
+                        <div class="text-muted mt-2">
+                            {{ `/${craftWord2('ဂ', null, vowel.vowel,
+                                item.members[selected].final).th ||
+                                'NaN'}/` }}
+                        </div>
+                        <div v-if="craftWord2('ဂ', null, vowel.vowel, item.members[selected].final).th2"
+                            class="text-muted">
+                            {{ `/${craftWord2('ဂ', null, vowel.vowel,
+                                item.members[selected].final).th2 ||
+                                'NaN'}/`
+                            }}
+                        </div>
                     </div>
                 </div>
             </div>
@@ -98,19 +154,30 @@
                                 <span class="ms-2 badge rounded-pill text-bg-light text-primary fw-bold">CL</span>
                             </div>
                             <div class="mt-2">
-                                <span class="text-muted">
+                                <div class="text-muted">
                                     {{ `/${craftWord2('က', null, vowel.vowel,
                                         item.members[selected].final).ipa ||
                                         'NaN'}/` }}
-                                </span>
-                                <br>
-                                <span v-if="craftWord2('က', null, vowel.vowel, item.members[selected].final).ipa2"
+                                </div>
+                                <div v-if="craftWord2('က', null, vowel.vowel, item.members[selected].final).ipa2"
                                     class="text-muted">
                                     {{ `/${craftWord2('က', null, vowel.vowel,
                                         item.members[selected].final).ipa2 ||
                                         'NaN'}/`
                                     }}
-                                </span>
+                                </div>
+                                <div class="text-muted mt-2">
+                                    {{ `/${craftWord2('က', null, vowel.vowel,
+                                        item.members[selected].final).th ||
+                                        'NaN'}/` }}
+                                </div>
+                                <div v-if="craftWord2('က', null, vowel.vowel, item.members[selected].final).th2"
+                                    class="text-muted">
+                                    {{ `/${craftWord2('က', null, vowel.vowel,
+                                        item.members[selected].final).th2 ||
+                                        'NaN'}/`
+                                    }}
+                                </div>
                             </div>
                         </td>
                     </tr>
@@ -134,19 +201,30 @@
                                 <span class="ms-2 badge rounded-pill text-bg-light text-danger fw-bold">BT</span>
                             </div>
                             <div class="mt-2">
-                                <span class="text-muted">
+                                <div class="text-muted">
                                     {{ `/${craftWord2('ဂ', null, vowel.vowel,
                                         item.members[selected].final).ipa ||
                                         'NaN'}/` }}
-                                </span>
-                                <br>
-                                <span v-if="craftWord2('ဂ', null, vowel.vowel, item.members[selected].final).ipa2"
+                                </div>
+                                <div v-if="craftWord2('ဂ', null, vowel.vowel, item.members[selected].final).ipa2"
                                     class="text-muted">
                                     {{ `/${craftWord2('ဂ', null, vowel.vowel,
                                         item.members[selected].final).ipa2 ||
                                         'NaN'}/`
                                     }}
-                                </span>
+                                </div>
+                                <div class="text-muted mt-2">
+                                    {{ `/${craftWord2('ဂ', null, vowel.vowel,
+                                        item.members[selected].final).th ||
+                                        'NaN'}/` }}
+                                </div>
+                                <div v-if="craftWord2('ဂ', null, vowel.vowel, item.members[selected].final).th2"
+                                    class="text-muted">
+                                    {{ `/${craftWord2('ဂ', null, vowel.vowel,
+                                        item.members[selected].final).th2 ||
+                                        'NaN'}/`
+                                    }}
+                                </div>
                             </div>
                         </td>
                     </tr>

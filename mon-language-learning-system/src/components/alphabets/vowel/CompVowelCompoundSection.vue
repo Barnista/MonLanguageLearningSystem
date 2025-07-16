@@ -26,7 +26,7 @@
                     </div>
                     <div class="mb-2 text-muted">
                         <span class="me-1">{{ `/${vowel.ipaCL}/` || 'NaN' }}</span>
-                        <span>{{ `/${vowel.thCL}/` || 'NaN' }} </span>
+                        <span>{{ `/${vowel.thCL.replace('-', 'อ')}/` || 'NaN' }} </span>
                         <br>
                         <button class="mt-1 btn btn-sm btn-outline-success py-0 px-1" @click="pronouceVowelCL(vowel)">
                             🔊
@@ -38,7 +38,7 @@
                     </div>
                     <div class="mb-2 text-muted" v-if="vowel.ipaCL2">
                         <span class="me-1">{{ `/${vowel.ipaCL2}/` || 'NaN' }}</span>
-                        <span>{{ `/${vowel.thCL2}/` || 'NaN' }}</span>
+                        <span>{{ `/${vowel.thCL2.replace('-', 'อ')}/` || 'NaN' }}</span>
                         <br>
                         <button v-if="vowel.ipaCL2" class="mt-1 btn btn-sm btn-outline-success py-0 px-1"
                             @click="pronouceVowelCL2(vowel)">
@@ -51,7 +51,7 @@
                     </div>
                     <div class="mb-2 text-muted">
                         <span class="me-1">{{ `/${vowel.ipaBT}/` || 'NaN' }}</span>
-                        <span>{{ `/${vowel.thBT}/` || 'NaN' }} </span>
+                        <span>{{ `/${vowel.thBT.replace('-', 'อ')}/` || 'NaN' }} </span>
                         <br>
                         <button class="mt-1 btn btn-sm btn-outline-success py-0 px-1" @click="pronouceVowelBT(vowel)">
                             🔊
@@ -89,7 +89,7 @@
                             </div>
                             <div class="mb-2 text-muted">
                                 <span class="me-1">{{ `/${vowel.ipaCL}/` || 'NaN' }}</span>
-                                <span>{{ `/${vowel.thCL}/` || 'NaN' }} </span>
+                                <span>{{ `/${vowel.thCL.replace('-', 'อ')}/` || 'NaN' }} </span>
                                 <br>
                                 <button class="mt-1 btn btn-sm btn-outline-success py-0 px-1"
                                     @click="pronouceVowelCL(vowel)">
@@ -102,7 +102,7 @@
                             </div>
                             <div class="mb-2 text-muted" v-if="vowel.ipaCL2">
                                 <span class="me-1">{{ `/${vowel.ipaCL2}/` || 'NaN' }}</span>
-                                <span>{{ `/${vowel.thCL2}/` || 'NaN' }}</span>
+                                <span>{{ `/${vowel.thCL2.replace('-', 'อ')}/` || 'NaN' }}</span>
                                 <br>
                                 <button v-if="vowel.ipaCL2" class="mt-1 btn btn-sm btn-outline-success py-0 px-1"
                                     @click="pronouceVowelCL2(vowel)">
@@ -115,7 +115,7 @@
                             </div>
                             <div class="mb-2 text-muted">
                                 <span class="me-1">{{ `/${vowel.ipaBT}/` || 'NaN' }}</span>
-                                <span>{{ `/${vowel.thBT}/` || 'NaN' }} </span>
+                                <span>{{ `/${vowel.thBT.replace('-', 'อ')}/` || 'NaN' }} </span>
                                 <br>
                                 <button class="mt-1 btn btn-sm btn-outline-success py-0 px-1"
                                     @click="pronouceVowelBT(vowel)">
@@ -168,6 +168,10 @@
                                         <span class="text-muted">/{{ craftWord(consonant, vowel.compound).ipa ||
                                             'NaN' }}/</span>
                                     </div>
+                                    <div class="mt-1">
+                                        <span class="text-muted">/{{ craftWord(consonant, vowel.compound).th ||
+                                            'NaN' }}/</span>
+                                    </div>
                                 </td>
                             </tr>
                             <tr>
@@ -185,6 +189,10 @@
                                         <span class="text-muted">/{{ craftWord(consonant, vowel.compound).ipa ||
                                             'NaN' }}/</span>
                                     </div>
+                                    <div class="mt-1">
+                                        <span class="text-muted">/{{ craftWord(consonant, vowel.compound).th ||
+                                            'NaN' }}/</span>
+                                    </div>
                                 </td>
                             </tr>
                         </tbody>
@@ -200,6 +208,10 @@
                                         <span class="text-muted">/{{ craftWord2(vowel.compound, final).ipa ||
                                             'NaN' }}/</span>
                                     </div>
+                                    <div class="mt-1">
+                                        <span class="text-muted">/{{ craftWord2(vowel.compound, final).ipa ||
+                                            'NaN' }}/</span>
+                                    </div>
                                 </td>
                             </tr>
                             <tr>
@@ -210,6 +222,10 @@
                                                     'NaN' }}</span></span>
                                     </div>
                                     <div>
+                                        <span class="text-muted">/{{ craftWord2(vowel.compound, final).ipa ||
+                                            'NaN' }}/</span>
+                                    </div>
+                                    <div class="mt-1">
                                         <span class="text-muted">/{{ craftWord2(vowel.compound, final).ipa ||
                                             'NaN' }}/</span>
                                     </div>

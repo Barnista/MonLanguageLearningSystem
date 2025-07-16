@@ -156,7 +156,6 @@
 <script>
 import displayLanguages from '@/services/display-languages';
 import CompConsonantTable from './CompConsonantTable.vue';
-import doubleConsonants from '@/services/mon-library/alphabets/double-consonants';
 import alphabets from '@/services/mon-library/alphabets/alphabets';
 
 export default {
@@ -170,8 +169,8 @@ export default {
     data: () => {
         return {
             langSet: displayLanguages.langSet,
-            exampleDirect: doubleConsonants.exampleDirect,
-            examplePaliSansakrit: doubleConsonants.examplePaliSansakrit
+            exampleDirect: alphabets.getDoubleExampleDirect(),
+            examplePaliSansakrit: alphabets.getDoubleExamplePaliSansakrit()
         }
     },
     methods: {

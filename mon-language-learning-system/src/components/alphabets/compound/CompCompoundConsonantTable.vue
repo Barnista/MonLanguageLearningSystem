@@ -67,7 +67,7 @@ export default {
     data() {
         return {
             langSet: displayLanguages.langSet,
-            compounds: monAlphabets.getAllCompoundConsonants(),
+            compounds: monAlphabets.compoundConsonants,
             vowels: [
                 monAlphabets.vowels.slice(0, 6), // Row 1
                 monAlphabets.vowels.slice(6, 12), // Row 2
