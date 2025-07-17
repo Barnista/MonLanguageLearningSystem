@@ -20,9 +20,8 @@ export default {
             homeView: {
                 welcome: `Welcome to`,
                 description: `
-                Explore the Mon language, learn alphabets, and practice your skills.<br>
-                Start your journey by selecting a section below.
-                `,
+                Explore the Mon language, learn alphabets, sentence structures, and practice your skills.`,
+                description2: `Start your journey today 📖✨`,
             },
             consonantView: {
                 description: 'The Mon alphabet contains <strong>35 consonants</strong> (including a zero consonants), as follows:',
@@ -117,7 +116,10 @@ export default {
                 copiedTxt: 'Copied to clipboard.',
                 developedBy: 'Developed by',
                 poweredBy: 'Powered by',
-                designedBy: 'Mon keyboard layout designed by'
+                designedBy: 'Mon keyboard layout designed by',
+                howToUse: 'How to Use',
+                gettingLost: 'Getting lost? see',
+                switchToKeyboard: 'Switch to Keyboard'
             },
             menu: {
                 listen: 'listen',
@@ -160,9 +162,8 @@ export default {
             homeView: {
                 welcome: `ยินดีต้อนรับสู่`,
                 description: `
-                สำรวจภาษามอญ เรียนรู้ตัวอักษร และฝึกฝนทักษะของคุณ<br>
-                เริ่มต้นการเดินทางของคุณโดยเลือกหมวดหมู่ด้านล่าง
-                `,
+                สำรวจภาษามอญ เรียนรู้ตัวอักษร โครงสร้างประโยค และฝึกฝนทักษะของคุณ`,
+                description2: `เริ่มต้นด้วยตัวเองวันนี้ได้เลย 📖✨`,
             },
             consonantView: {
                 description: 'พยัญชนะมอญมีทั้งหมด <strong>35 ตัว</strong> แบ่งเป็นวรรคได้ <strong>5 วรรค วรรคละ 5 ตัว</strong> ที่เหลืออีก 10 ตัวเป็นเศษวรรค ดังนี้:',
@@ -257,7 +258,10 @@ export default {
                 copiedTxt: 'คัดลอกข้อความแล้ว',
                 developedBy: 'พัฒนาโดย',
                 poweredBy: 'ขับเคลื่อนโดย',
-                designedBy: 'คียบอร์ดอักษรมอญออกแบบโดย'
+                designedBy: 'คียบอร์ดอักษรมอญออกแบบโดย',
+                howToUse: 'วิธีใช้งาน',
+                gettingLost: 'ยังไม่เข้าใจวิธีใช้หรือไม่? เปิดดู',
+                switchToKeyboard: 'สลับไปใช้คีย์บอร์ด'
             },
             menu: {
                 listen: 'ฟัง',

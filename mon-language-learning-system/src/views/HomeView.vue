@@ -1,9 +1,13 @@
 <template>
   <div class="home container">
     <div class="text-center my-5">
-      <h1 class="fw-bold mb-3">{{ langSet[lang].homeView.welcome || '_WELCOME_TO_' }} {{ about.appName }}</h1>
-      <p class="lead mb-4">
-        <span v-html="langSet[lang].homeView.description || '_DESCRIPTION_'"></span>
+      <h1 class="fw-bold mb-2">{{ langSet[lang].homeView.welcome || '_WELCOME_TO_' }} {{ about.appName }}</h1>
+      <p class="lead text-secondary">
+        <span>
+          <Typewriter :words="descriptions" :loop="0" :delay-speed="3000" :delete-speed="80" :type-speed="60"
+            :cursor="true" :cursor-blinking="true" :cursor-style="'|'" :cursor-color="'#aaaaaa'"
+            :on-loop-done="onLoopDone" :on-delay="onDelay" :on-delete="onDelete" :on-type="onType" class="text" />
+        </span>
       </p>
       <!--<img src="@/assets/mon-script-banner.png" alt="Mon Script Banner" class="img-fluid rounded shadow-sm mb-4" style="max-width: 400px;">-->
     </div>
@@ -27,13 +31,15 @@ import CompLearnGrammar from '@/components/home/CompLearnGrammar.vue';
 
 import about from '@/services/about';
 import displayLanguages from '@/services/display-languages';
+import { Typewriter } from 'vue-simple-typewriter';
 
 export default {
   name: 'HomeView',
   components: {
     CompAbout,
     CompLearnAlphabets,
-    CompLearnGrammar
+    CompLearnGrammar,
+    Typewriter
   },
   data: () => {
     return {
@@ -41,13 +47,15 @@ export default {
       langSet: displayLanguages.langSet,
       about: about,
       panels: [],
-      panels2: []
+      panels2: [],
+      descriptions: []
     }
   },
   mounted() {
     this.lang = this.$route.query.lang || 'en';
     this.rebuildPanels();
     this.rebuildPanels2();
+    this.rebuildDescriptions();
   },
   watch: {
     '$route.query.lang'(newLang) {
@@ -57,6 +65,11 @@ export default {
     }
   },
   methods: {
+    rebuildDescriptions() {
+      this.descriptions = [];
+      this.descriptions.push(this.langSet[this.lang].homeView.description);
+      this.descriptions.push(this.langSet[this.lang].homeView.description2);
+    },
     rebuildPanels() {
       this.panels = [
         {
