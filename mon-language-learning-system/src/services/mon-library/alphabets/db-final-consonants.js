@@ -193,6 +193,8 @@ export default {
                 {
                     consonant: 'ဋ',
                     final: 'ဋ်',
+                    //exception from double consonant
+                    final2: 'ဍ်',
                     finalIPA: 't',
                     finalTH: 'ด',
                 },

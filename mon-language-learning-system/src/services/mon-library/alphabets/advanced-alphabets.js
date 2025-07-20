@@ -171,14 +171,13 @@ export default {
             let n_ipa = craft.crafted.ipa;
             let n_th = craft.crafted.th;
 
-            //I ASSUME IF THE FINAL WORD HAS TO BE PRONOUCED, AT LEAST PRONOUNCED IT THE 2nd WAY
-            if(i == memories.length-1){
-                if(craft.crafted.ipa2) n_ipa = craft.crafted.ipa2;
-                if(craft.crafted.th2) n_th = craft.crafted.th2;
-            }
+            //I ASSUME IF THERE'S A 2nd WAY, AT LEAST PRONOUNCED IT THE 2nd WAY
+            if (craft.crafted.ipa2) n_ipa = craft.crafted.ipa2;
+            if (craft.crafted.th2) n_th = craft.crafted.th2;
 
-            ipa += n_ipa + ((i < memories.length-1) ? '-' : '');
-            th += n_th + ((i < memories.length-1) ? '-' : '');
+
+            ipa += n_ipa + ((i < memories.length - 1) ? '-' : '');
+            th += n_th + ((i < memories.length - 1) ? '-' : '');
         }
 
         return {
