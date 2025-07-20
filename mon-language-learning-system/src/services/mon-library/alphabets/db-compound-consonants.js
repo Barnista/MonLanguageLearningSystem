@@ -172,7 +172,10 @@ export default {
         return this.compoundConsonants;
     },
     getByCompound(compound) {
-        return this.compoundConsonants.find(row => row.compound === compound || row.letter === compound);
+        return this.compoundConsonants.find(
+            row => row.compound === compound || 
+            row.letter === compound
+        );
     },
     getByOverlaps(overlapping, overlapped){
         return this.compoundConsonants.find(row =>

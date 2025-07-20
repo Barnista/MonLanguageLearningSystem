@@ -239,7 +239,7 @@
 </template>
 
 <script>
-import displayLanguages from '@/services/display-languages';
+import displayLanguages from '@/services/display-languages/display-languages';
 import monAlphabets from '@/services/mon-library/alphabets/alphabets';
 
 export default {

@@ -320,7 +320,7 @@
 <script>
 
 import about from '@/services/about';
-import displayLanguages from '@/services/display-languages';
+import displayLanguages from '@/services/display-languages/display-languages';
 
 export default {
     name: 'CompNavbar',

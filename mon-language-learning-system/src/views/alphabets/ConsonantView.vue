@@ -23,7 +23,7 @@
 import CompConsonantTable from '@/components/alphabets/CompConsonantTable.vue';
 import CompAlphabetJourney from '@/components/misc/CompAlphabetJourney.vue';
 
-import displayLanguages from '@/services/display-languages';
+import displayLanguages from '@/services/display-languages/display-languages';
 
 export default {
     name: 'ConsonantView',

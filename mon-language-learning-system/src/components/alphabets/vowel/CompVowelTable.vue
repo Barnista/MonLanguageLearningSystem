@@ -61,7 +61,7 @@
 <script>
 
 import monAlphabets from '@/services/mon-library/alphabets/alphabets';
-import displayLanguages from '@/services/display-languages';
+import displayLanguages from '@/services/display-languages/display-languages';
 import CompVowelCompoundSection from './CompVowelCompoundSection.vue';
 
 export default {

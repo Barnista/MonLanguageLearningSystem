@@ -1,7 +1,7 @@
 <template>
     <div class="get-start-view container">
         <CompAlphabetJourney :lang="lang" :page="'get-start'" class="mt-4" />
-        <CompGetStart class="mt-4" />
+        <CompGetStart :lang="lang" class="mt-4" />
         <CompAlphabetJourney :lang="lang" :page="'get-start'" class="mt-4" />
     </div>
 </template>
@@ -9,7 +9,7 @@
 <script>
 import CompGetStart from '@/components/alphabets/CompGetStart.vue';
 import CompAlphabetJourney from '@/components/misc/CompAlphabetJourney.vue';
-import displayLanguages from '@/services/display-languages';
+import displayLanguages from '@/services/display-languages/display-languages';
 
 export default {
     name: 'AlphabetGetStartView',

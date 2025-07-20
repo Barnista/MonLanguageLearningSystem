@@ -10,7 +10,7 @@
             <hr>
         </div>
         <div class="mt-4">
-            <CompTextAnalyst ref="compTextAnalyst" />
+            <CompTextAnalyser ref="compTextAnalyser" :lang="lang" />
             <hr>
         </div>
         <div class="mt-4">
@@ -158,16 +158,16 @@
 </template>
 
 <script>
-import displayLanguages from '@/services/display-languages';
+import displayLanguages from '@/services/display-languages/display-languages';
 import CompConsonantTable from '../CompConsonantTable.vue';
 import alphabets from '@/services/mon-library/alphabets/alphabets';
-import CompTextAnalyst from '@/components/mini-apps/CompTextAnalyst.vue';
+import CompTextAnalyser from '@/components/mini-apps/CompTextAnalyser.vue';
 
 export default {
     name: 'CompDoubleConsonantTable',
     components: {
         CompConsonantTable,
-        CompTextAnalyst
+        CompTextAnalyser
     },
     props: {
         lang: String
@@ -180,7 +180,7 @@ export default {
         }
     },
     mounted(){
-        this.$refs.compTextAnalyst.setText('သတိသံပဋ္ဌာနံ');
+        this.$refs.compTextAnalyser.setText('သတိသံပဋ္ဌာနံ');
     },
     methods: {
         getConsonantByPoisition(row, column) {

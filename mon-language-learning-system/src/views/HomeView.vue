@@ -30,7 +30,7 @@ import CompLearnAlphabets from '@/components/home/CompLearnAlphabets.vue';
 import CompLearnGrammar from '@/components/home/CompLearnGrammar.vue';
 
 import about from '@/services/about';
-import displayLanguages from '@/services/display-languages';
+import displayLanguages from '@/services/display-languages/display-languages';
 import { Typewriter } from 'vue-simple-typewriter';
 
 export default {

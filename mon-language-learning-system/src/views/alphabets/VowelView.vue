@@ -26,7 +26,7 @@ import CompVowelTable from '@/components/alphabets/vowel/CompVowelTable.vue';
 import CompOtherVowelTable from '@/components/alphabets/vowel/CompOtherVowelTable.vue';
 import CompAlphabetJourney from '@/components/misc/CompAlphabetJourney.vue';
 
-import displayLanguages from '@/services/display-languages';
+import displayLanguages from '@/services/display-languages/display-languages';
 
 export default {
     name: 'VowelView',

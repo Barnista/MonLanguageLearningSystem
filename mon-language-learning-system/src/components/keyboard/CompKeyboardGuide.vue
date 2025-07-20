@@ -73,7 +73,7 @@
 </template>
 
 <script>
-import displayLanguages from '@/services/display-languages';
+import displayLanguages from '@/services/display-languages/display-languages';
 
 export default {
     name: 'CompKeyboardGuide',

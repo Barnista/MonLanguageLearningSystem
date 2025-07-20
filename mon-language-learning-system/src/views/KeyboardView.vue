@@ -32,7 +32,7 @@
 <script>
 import CompKeyboardGuide from '@/components/keyboard/CompKeyboardGuide.vue';
 import KeyboardSetComp from '@/components/keyboard/CompKeyboardSet.vue';
-import displayLanguages from '@/services/display-languages';
+import displayLanguages from '@/services/display-languages/display-languages';
 
 export default {
     name: 'KeyboardView',

@@ -107,6 +107,12 @@ export default {
             } else if (isCompoundConsonant) {
                 //D. add it to the currentWord
                 currentWord += char_current;
+
+                //if it's the last
+                // finish a word
+                if (i_next >= length) {
+                    wordFinished = true;
+                }
             } else if (isDoubleSymbol) {
                 //E. let's try to check if it's 
                 // -----a. Compound consonant
@@ -256,7 +262,7 @@ export default {
 
                 console.log('prev, next', nextIsFinal2Symbol, prevIsFinal2Symbol);
                 if (!nextIsFinal2Symbol && !prevIsFinal2Symbol && !nextIsFinal2Symbol2 && !prevIsFinal2Symbol2) {
-                    wordStructure.compound = compound.letter;
+                    wordStructure.compound = compound.compound;
                 } else {
                     wordStructure.final = compound.letter;
                 }

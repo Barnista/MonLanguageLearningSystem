@@ -39,7 +39,7 @@
 <script>
 import { Modal } from 'bootstrap/dist/js/bootstrap.bundle.min';
 import KeyboardSetComp from './CompKeyboardSet.vue';
-import displayLanguages from '@/services/display-languages';
+import displayLanguages from '@/services/display-languages/display-languages';
 import CompKeyboardGuide from './CompKeyboardGuide.vue';
 
 export default {

@@ -25,7 +25,7 @@ import KeyboardModal from './components/keyboard/KeyboardModal.vue';
 import CompNavbar from './components/misc/CompNavbar.vue';
 
 import about from './services/about';
-import displayLanguages from './services/display-languages';
+import displayLanguages from './services/display-languages/display-languages';
 
 export default {
   components: {

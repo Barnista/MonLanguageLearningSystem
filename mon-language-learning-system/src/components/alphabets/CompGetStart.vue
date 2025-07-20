@@ -63,20 +63,23 @@
                 </select>
             </div>
         </div>
-        <CompTextAnalyst ref="compTextAnalyst" class="mt-5" />
+        <CompTextAnalyser ref="compTextAnalyser" class="mt-5" :lang="lang" />
         <hr>
     </div>
 </template>
 
 <script>
 
-import advancedAlphabets from '@/services/mon-library/alphabets/advanced-alphabets';
-import CompTextAnalyst from '../mini-apps/CompTextAnalyst.vue';
+import advancedAlphabets from '@/services/mon-library/alphabets/alphabets-ai';
+import CompTextAnalyser from '../mini-apps/CompTextAnalyser.vue';
 
 export default {
     name: 'CompGetStart',
     components: {
-        CompTextAnalyst
+        CompTextAnalyser
+    },
+    props: {
+        lang: String
     },
     data: () => {
         return {
@@ -88,7 +91,7 @@ export default {
         }
     },
     mounted() {
-        this.$refs.compTextAnalyst.setText('သတိသံပဋ္ဌာနံ');
+        this.$refs.compTextAnalyser.setText('သတိသံပဋ္ဌာနံ');
     },
     methods: {
         analyseMonText(text) {
