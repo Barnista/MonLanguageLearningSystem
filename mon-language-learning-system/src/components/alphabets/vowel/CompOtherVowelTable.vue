@@ -53,21 +53,21 @@
                         <td class="fs-6">
                             <div>
                                 <span class="text-muted">
-                                    {{ `/${item.thCL}/` || 'NaN' }} <span
+                                    {{ `/${item.thCL.replace('-', 'อ')}/` || 'NaN' }} <span
                                         class="badge rounded-pill text-bg-light text-primary fw-bold">CL</span>
                                 </span>
                                 <span v-if="item.thCL2" class="ms-1 text-muted">
-                                    {{ `/${item.thCL2}/` || 'NaN' }} <span
+                                    {{ `/${item.thCL2.replace('-', 'อ')}/` || 'NaN' }} <span
                                         class="badge rounded-pill text-bg-light text-primary fw-bold">CL</span>
                                 </span>
                             </div>
                             <div>
                                 <span class="text-muted">
-                                    {{ `/${item.thBT}/` || 'NaN' }} <span
+                                    {{ `/${item.thBT.replace('-', 'อ')}/` || 'NaN' }} <span
                                         class="badge rounded-pill text-bg-light text-danger fw-bold">BT</span>
                                 </span>
                                 <span v-if="item.thBT2" class="ms-1 text-muted">
-                                    {{ `/${item.thBT2}/` || 'NaN' }} <span
+                                    {{ `/${item.thBT2.replace('-', 'อ')}/` || 'NaN' }} <span
                                         class="badge rounded-pill text-bg-light text-danger fw-bold">BT</span>
                                 </span>
                             </div>

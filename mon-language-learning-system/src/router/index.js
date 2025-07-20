@@ -61,7 +61,6 @@ const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes,
   scrollBehavior(to, from, savedPosition) {
-    console.log('route pushed:', to, from, savedPosition);
     if (to.hash) {
       return {
         el: to.hash,

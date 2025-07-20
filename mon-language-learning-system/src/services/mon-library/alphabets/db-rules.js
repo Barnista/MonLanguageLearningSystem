@@ -239,7 +239,7 @@ export default {
                 vowel: 'โ-่ะ',
                 replace: '-่'
             },
-        ]
+        ],
     },
     getAll() {
         return this.rules;
@@ -256,16 +256,16 @@ export default {
             rule.consonants.includes(consonant)
         );
     },
-    findBlendCompound(compound, consonant){
-        return this.rules.blendCompounds.find(c => 
+    findBlendCompound(compound, consonant) {
+        return this.rules.blendCompounds.find(c =>
             c.compound === compound &&
             c.letters.includes(consonant)
         );
     },
-    findBlendFinal(final){
+    findBlendFinal(final) {
         return this.rules.blendFinals.find(blend => blend.final === final || blend.final2 === final);
     },
-    findBlendTH(vowel){
+    findBlendTH(vowel) {
         return this.rules.blendTHs.find(rule => rule.vowel === vowel);
     }
 }

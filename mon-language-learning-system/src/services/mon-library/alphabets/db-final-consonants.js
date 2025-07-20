@@ -97,7 +97,13 @@ export default {
             group: 'ၚ',
             thGroup: 'กัง',
             members: [
-                { consonant: 'ၚ', final: 'င်', finalIPA: 'ŋ', finalTH: 'ง' },
+                {
+                    consonant: 'ၚ',
+                    final: 'င်',
+                    final2: 'ၚ်',
+                    finalIPA: 'ŋ',
+                    finalTH: 'ง'
+                },
             ],
             finalWith: [
                 {
@@ -707,7 +713,8 @@ export default {
             isSilent: true
         }
     ],
-    getAllGroups(){
+    finalSymbol: '်',
+    getAllGroups() {
         return this.finalConsonants;
     },
     getByLetter(letter) {
@@ -726,4 +733,25 @@ export default {
             group.members.some(member => member.final2 === letter)
         );
     },
+    getByAllowedVowel(compound) {
+        return this.finalConsonants.flatMap(group =>
+            [].concat(
+                group.finalWith.some(vowel => vowel.vowel === compound)
+            )
+        )[0];
+    },
+    isFinalConsonant(letter) {
+        const consonant = this.getByLetter(letter);
+        return consonant ? true : false;
+    },
+    isFinalSymbol(symbol) {
+        return symbol === this.finalSymbol;
+    },
+    isFinal2Symbol(symbol) {
+        return this.finalConsonants.some(group =>
+            group.members.some(member =>
+                member.final2 === symbol || member.final3 === symbol
+            )
+        );
+    }
 }

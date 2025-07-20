@@ -77,7 +77,10 @@ export default {
         let cl_bt = isBreathy ? 'bt' : 'cl';
 
         // if no vowel is provided, we use the default vowel
-        let currentVowel = vowel ? (dbVowels.getByCompound(vowel) ?? this.vowels[0]) : this.vowels[0];
+        // sometimes there's a stand alone vowel
+        let currentVowel = vowel ? (
+            dbVowels.getByCompound(vowel) ?? dbVowels.getByLetter(vowel) ?? this.vowels[0]
+        ) : this.vowels[0];
 
         // check if a certain vowel has to change its form if it meets with some consonants
         let blendVowelRule = dbRules.findBlendVowel(currentVowel.compound, currentConsonant.letter);
@@ -148,14 +151,14 @@ export default {
             }
         } else {
             // if no compound consonant is provided, we just append the consonant
-            word.consonant = currentConsonant.letter;
-            word2.consonant = currentConsonant.letter;
+            word.consonant = currentConsonant.letter ?? '';
+            word2.consonant = currentConsonant.letter ?? '';
 
-            ipa.consonant = currentConsonant.compoundIPA;
-            th.consonant = currentConsonant.compoundTH;
+            ipa.consonant = currentConsonant.compoundIPA ?? '';
+            th.consonant = currentConsonant.compoundTH ?? 'อ';
 
-            ipa2.consonant = currentConsonant.compoundIPA;
-            th2.consonant = currentConsonant.compoundTH;
+            ipa2.consonant = currentConsonant.compoundIPA ?? '';
+            th2.consonant = currentConsonant.compoundTH ?? 'อ';
         }
 
         // then final consonant and vowel
@@ -164,6 +167,7 @@ export default {
         if (finalConsonantData && finalConsonantGroup) {
             //try to analyse with vowels according to rules of finalWith and also with blendFinals.
             let allowedVowel = finalConsonantGroup.finalWith.find(vowel => currentVowel.compound === vowel.vowel || currentVowel.compound2 === vowel.vowel);
+            console.log(vowel, currentVowel, allowedVowel)
 
             // if final consonant is compatible with the current vowel
             if (allowedVowel) {
@@ -261,5 +265,5 @@ export default {
             th: resultTH,
             th2: resultTH2
         }
-    }
+    },
 }

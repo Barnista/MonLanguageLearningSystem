@@ -63,18 +63,48 @@
                 </select>
             </div>
         </div>
+        <CompTextAnalyst ref="compTextAnalyst" class="mt-5" />
         <hr>
     </div>
 </template>
 
 <script>
+
+import advancedAlphabets from '@/services/mon-library/alphabets/advanced-alphabets';
+import CompTextAnalyst from '../mini-apps/CompTextAnalyst.vue';
+
 export default {
-    name: 'CompGetStart'
+    name: 'CompGetStart',
+    components: {
+        CompTextAnalyst
+    },
+    data: () => {
+        return {
+            words: '',
+            deconstructed: [],
+            syllables: [],
+            ipa: '',
+            th: ''
+        }
+    },
+    mounted() {
+        this.$refs.compTextAnalyst.setText('သတိသံပဋ္ဌာနံ');
+    },
+    methods: {
+        analyseMonText(text) {
+            const result = advancedAlphabets.analyseText(text);
+            this.syllables = result.syllables;
+            this.deconstructed = result.deconstructs;
+            this.ipa = result.ipa;
+            this.th = result.th;
+            console.log(result);
+        },
+    }
 }
 </script>
 
 <style>
-    .headline{
-        font-size: 72pt;
-    }
+.headline {
+    font-size: 72pt;
+}
 </style>

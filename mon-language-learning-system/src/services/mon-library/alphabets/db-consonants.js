@@ -396,4 +396,8 @@ export default {
             consonant.rows.filter(row => row.letter === letter)
         )[0];
     },
+    isConsonant(letter){
+        const consonant = this.getByLetter(letter);
+        return consonant ? true : false;
+    }
 }

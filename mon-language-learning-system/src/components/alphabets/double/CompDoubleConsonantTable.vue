@@ -10,6 +10,10 @@
             <hr>
         </div>
         <div class="mt-4">
+            <CompTextAnalyst ref="compTextAnalyst" />
+            <hr>
+        </div>
+        <div class="mt-4">
             <h3 v-html="`1. ${langSet[lang ? lang : 'en'].doubleConsonantView.titleType1}`"></h3>
             <p v-html="langSet[lang ? lang : 'en'].doubleConsonantView.descriptionType1"></p>
             <table class="my-3">
@@ -155,13 +159,15 @@
 
 <script>
 import displayLanguages from '@/services/display-languages';
-import CompConsonantTable from './CompConsonantTable.vue';
+import CompConsonantTable from '../CompConsonantTable.vue';
 import alphabets from '@/services/mon-library/alphabets/alphabets';
+import CompTextAnalyst from '@/components/mini-apps/CompTextAnalyst.vue';
 
 export default {
     name: 'CompDoubleConsonantTable',
     components: {
-        CompConsonantTable
+        CompConsonantTable,
+        CompTextAnalyst
     },
     props: {
         lang: String
@@ -170,8 +176,11 @@ export default {
         return {
             langSet: displayLanguages.langSet,
             exampleDirect: alphabets.getDoubleExampleDirect(),
-            examplePaliSansakrit: alphabets.getDoubleExamplePaliSansakrit()
+            examplePaliSansakrit: alphabets.getDoubleExamplePaliSansakrit(),
         }
+    },
+    mounted(){
+        this.$refs.compTextAnalyst.setText('သတိသံပဋ္ဌာနံ');
     },
     methods: {
         getConsonantByPoisition(row, column) {

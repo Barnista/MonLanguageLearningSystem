@@ -59,9 +59,9 @@ export default {
         {
             letter: 'ဥ',
             compound: 'ု',
-            ipaCL: 'ùˀ',
+            ipaCL: 'u',
             ipaCL2: 'aò',
-            ipaBT: 'ùˀ',
+            ipaBT: 'uˀ',
             thCL: '-ุ',
             thCL2: 'เ-่า',
             thBT: '-ุ่',
@@ -140,7 +140,7 @@ export default {
             ipaCL: 'ɔmˀ',
             ipaBT: 'òmˀ',
             thCL: '-อฺม',
-            thBT: '-ม',
+            thBT: '-่ม',
             soundCL: require('@/assets/sounds/alphabets/vowelRow2Column5_CL.mp3'),
             soundBT: require('@/assets/sounds/alphabets/vowelRow2Column5_BT.mp3'),
             example: ''
@@ -164,9 +164,9 @@ export default {
             ipaCL: 'ɒ',
             ipaBT: 'ə̤',
             ipaBT2: 'a̤',
-            thCL: 'อาฺ',
-            thBT: 'อ่าฺ',
-            thBT2: 'อ่าฺ',
+            thCL: '-าฺ',
+            thBT: '-่าฺ',
+            thBT2: '-่าฺ',
             origin: 'ိ + ု = ို',
         },
         {
@@ -174,8 +174,8 @@ export default {
             compound: 'ာံ',
             ipaCL: 'am',
             ipaBT: 'èm',
-            thCL: 'อาม',
-            thBT: 'เอ่ม',
+            thCL: '-าม',
+            thBT: 'เ-่ม',
             origin: 'ာ + မ် = ာံ',
         },
         {
@@ -183,8 +183,8 @@ export default {
             compound: 'ုံ',
             ipaCL: 'um',
             ipaBT: 'ùm',
-            thCL: 'อุม',
-            thBT: 'อุ่ม',
+            thCL: '-ุม',
+            thBT: '-ุ่ม',
             origin: 'ု + မ် = ုံ'
         },
         {
@@ -195,11 +195,11 @@ export default {
             ipaCL3: 'eh', //sound of အ်
             ipaBT: 'èm', //sound of မ်
             ipaBT2: 'èˀ', //sounf of အ်
-            thCL: 'เอม',
-            thCL2: 'เอะ',
-            thCL3: 'เอะ',
-            thBT: 'เอ่ม',
-            thBT2: 'เอ่ะ',
+            thCL: 'เ-ม',
+            thCL2: 'เ-ะ',
+            thCL3: 'เ-ะ',
+            thBT: 'เ-่ม',
+            thBT2: 'เ-่ะ',
             origin: 'ေ + မ် = ေံ <br>  ေ + အ် = ေံ'
         },
         {
@@ -209,28 +209,28 @@ export default {
             ipaCL2: 'ò', //sound of အ်
             ipaBT: 'òm', //sound of မ်
             ipaBT2: 'òˀ', //sounf of အ်
-            thCL: 'โอม',
-            thCL2: 'โอะ',
-            thBT: 'โอ่ม',
-            thBT2: 'โอ่ะ',
+            thCL: 'โ-ม',
+            thCL2: 'โ-ะ',
+            thBT: 'โ-่ม',
+            thBT2: 'โ-่ะ',
             origin: 'ော + မ် = ောံ <br> ေါ + မ် = ေံါ'
         },
         {
             letter: 'ီ',
             compound: 'ီ',
-            ipaCL: 'ɛm',
-            ipaBT: 'ìm',
-            thCL: 'อิม',
-            thBT: 'อิ่ม',
+            ipaCL: 'ɔeˀm',
+            ipaBT: 'ìˀm',
+            thCL: '-ิม',
+            thBT: '-ิ่ม',
             origin: 'ိ + မ် = ီ'
         },
         {
             letter: 'ီု',
             compound: 'ီု',
             ipaCL: 'ɒm',
-            ipaBT: 'ɜ̀m',
-            thCL: 'ออฺม',
-            thBT: 'เอิ่ม',
+            ipaBT: 'ɤˀm',
+            thCL: '-อฺม',
+            thBT: 'เ-ิ่ม',
             origin: 'ိ + ု + မ် = ီု'
         },
         {
@@ -238,9 +238,9 @@ export default {
             compound: 'ာဲ',
             compound2: 'ဲါ',
             ipaCL: 'ai',
-            ipaBT: 'ə̤i',
-            thCL: 'อาย',
-            thBT: 'อ่าย',
+            ipaBT: 'a̤i',
+            thCL: '-าย',
+            thBT: '-่าย',
             origin: 'ာ + ယ် = ာဲ <br> ါ + ယ် = ဲါ'
         },
         {
@@ -248,8 +248,8 @@ export default {
             compound: 'ုဲ',
             ipaCL: 'ui',
             ipaBT: 'ùi',
-            thCL: 'อุย',
-            thBT: 'อุ่ย',
+            thCL: '-ุย',
+            thBT: '-ุ่ย',
             origin: 'ု + ယ် = ုဲ'
         },
         {
@@ -257,46 +257,50 @@ export default {
             compound: 'ေဲ',
             ipaCL: 'ea',
             ipaBT: 'ɛ̀a',
-            thCL: 'เอีย',
-            thBT: 'เอี่ย',
+            thCL: 'เ-ีย',
+            thBT: 'เ-ี่ย',
             origin: 'ေ + ယ် = ေဲ'
         },
         {
             letter: 'ောဲ',
             compound: 'ောဲ',
             compound2: 'ေဲါ',
-            ipaCL: 'ua',
-            ipaBT: 'ùa',
-            thCL: 'อัว',
-            thBT: 'อั่ว',
+            ipaCL: 'oa',
+            ipaBT: 'òa',
+            thCL: '-ัว',
+            thBT: '-ั่ว',
             origin: 'ော + ယ် = ောဲ <br> ေါ + ယ် = ေဲါ'
         },
         {
             letter: 'ိုဲ',
             compound: 'ိုဲ',
-            ipaCL: 'ɤj',
-            ipaCL2: 'oj',
-            ipaBT: 'əj',
-            thCL: 'เอย',
-            thCL2: 'โอย',
-            thBT: 'เอ่ย',
+            ipaCL: 'ɤi',
+            ipaCL2: 'oi',
+            ipaBT: 'ɤiˀ',
+            thCL: 'เ-ย',
+            thCL2: 'โ-ย',
+            thBT: 'เ-่ย',
             origin: 'ိ + ု + ယ် = ိုဲ'
         },
         {
             letter: 'ဵု',
             compound: 'ဵု',
-            ipaCL: 'ɒ',
-            ipaBT: 'ɜ̀',
-            thCL: 'ออฺ',
-            thBT: 'เอ่อ',
+            ipaCL: 'ɒw',
+            ipaBT: 'ɤˀw',
+            thCL: '-อฺว',
+            thBT: 'เ-ิ่ว',
             origin: 'ိ + ု + ဝ် = ဵု'
         }
     ],
-    getAll(){
+    getAll() {
         return this.vowels;
     },
-    getAllOtherVowels(){
+    getAllOtherVowels() {
         return this.otherVowels;
+    },
+    getByLetter(letter) {
+        return this.vowels.find(vowel => vowel.letter === letter) ||
+            this.otherVowels.find(vowel => vowel.letter === letter);
     },
     getByCompound(compound) {
         return this.vowels.find(vowel => vowel.compound === compound) ||
@@ -304,4 +308,12 @@ export default {
             this.otherVowels.find(vowel => vowel.compound === compound) ||
             this.otherVowels.find(vowel => vowel.compound2 === compound);
     },
+    isStandAloneVowel(letter) {
+        const vowel = this.getByLetter(letter);
+        return vowel ? true : false;
+    },
+    isCompoundVowel(compound) {
+        const vowel = this.getByCompound(compound);
+        return vowel ? true : false;
+    }
 }

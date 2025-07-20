@@ -172,6 +172,19 @@ export default {
         return this.compoundConsonants;
     },
     getByCompound(compound) {
-        return this.compoundConsonants.find(row => row.compound === compound);
+        return this.compoundConsonants.find(row => row.compound === compound || row.letter === compound);
+    },
+    getByOverlaps(overlapping, overlapped){
+        return this.compoundConsonants.find(row =>
+            row.compoundWith.includes(overlapping) && row.letter === overlapped
+        );
+    },
+    isCompoundConsonant(compound){
+        const consonant = this.getByCompound(compound);
+        return consonant ? true : false;
+    },
+    isCompoundConsonant2(overlapping, overlapped){
+        const consonant = this.getByOverlaps(overlapping, overlapped);
+        return consonant ? true : false;
     },
 }

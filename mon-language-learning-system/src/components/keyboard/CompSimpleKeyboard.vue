@@ -36,7 +36,7 @@ export default {
                         '.com @ {space}'
                     ],
                     'shift': [
-                        'ဎ ဍ ႅ ဋ ိဲ % ဵ ရ ဂ ( ) _ + {bksp}',
+                        'ဎ ဍ ၚ်္ ဋ ိဲ % ဵ ရ ဂ ( ) _ + {bksp}',
                         '{tab} ၛ ဝ ဣ ၟ ဳ ၠ ဥ ၎ ဿ ဏ ဨ အဴ ဋ္ဌ',
                         '{lock} ဗ ှ ီ ္ ွ ံ ဲ ဒ ဓ : " {enter}',
                         '{shift} ဇ ဌ ဃ ဠ ၐ ဉ ÷ ၞ င ၊ {shift}',
