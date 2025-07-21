@@ -178,8 +178,18 @@ export default {
             let n_th = craft.crafted.th;
 
             //I ASSUME IF THERE'S A 2nd WAY, AT LEAST PRONOUNCED IT THE 2nd WAY
-            if (craft.crafted.ipa2) n_ipa = craft.crafted.ipa2;
-            if (craft.crafted.th2) n_th = craft.crafted.th2;
+            if (craft.crafted.ipa2) {
+                //exception as 'ံ' does not refer to အ် anymore
+                if (!craft.structure.vowel.includes('ံ')) {
+                    n_ipa = craft.crafted.ipa2;
+                }
+            }
+            if (craft.crafted.th2) {
+                //exception as 'ံ' does not refer to အ် anymore
+                if (!craft.structure.vowel.includes('ံ')) {
+                    n_th = craft.crafted.th2;
+                }
+            }
 
 
             ipa += n_ipa + ((i < memories.length - 1) ? '-' : '');
