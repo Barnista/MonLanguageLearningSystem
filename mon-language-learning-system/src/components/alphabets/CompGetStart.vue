@@ -14,56 +14,8 @@
             rounded, making it visually distinct from other scripts in the region.
         </p>
         <hr>
-        <div class="container border rounded shadow py-4 px-4" style="max-width: 800px;">
-            <div class="text-center">
-                <span class="headline fw-bold text-primary">
-                    ခဗဒာယ်
-                </span>
-                <br>
-                <span class="fs-5 text-muted">
-                    /kʰaˀpɛ̤ˀta̤i/
-                </span>
-                <span class="fs-5 text-muted">
-                    /ขะเปี่ยต่าย/
-                </span>
-            </div>
-            <div class="d-flex mt-3">
-                <select class="p-2 ps-3 form-select form-select-lg mb-3" aria-label="Large select example">
-                    <option selected>Cn.</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
-                </select>
-                <div class="fs-2 px-1 text-primary">
-                    +
-                </div>
-                <select class="p-2 ps-3 form-select form-select-lg mb-3" aria-label="Large select example">
-                    <option selected>Cp.</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
-                </select>
-                <div class="fs-2 px-1 text-primary">
-                    +
-                </div>
-                <select class="p-2 ps-3 form-select form-select-lg mb-3" aria-label="Large select example">
-                    <option selected>Vw.</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
-                </select>
-                <div class="fs-2 px-1 text-primary">
-                    +
-                </div>
-                <select class="p-2 ps-3 form-select form-select-lg mb-3" aria-label="Large select example">
-                    <option selected>Fn.</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
-                </select>
-            </div>
-        </div>
-        <CompTextAnalyser ref="compTextAnalyser" class="mt-5" :lang="lang" />
+        <CompWordCraft ref="compWordCraft" class="mt-4" :lang="lang" />
+        <CompTextAnalyser ref="compTextAnalyser" class="mt-4" :lang="lang" />
         <hr>
     </div>
 </template>
@@ -72,11 +24,13 @@
 
 import advancedAlphabets from '@/services/mon-library/alphabets/alphabets-ai';
 import CompTextAnalyser from '../mini-apps/CompTextAnalyser.vue';
+import CompWordCraft from '../mini-apps/CompWordCraft.vue';
 
 export default {
     name: 'CompGetStart',
     components: {
-        CompTextAnalyser
+        CompTextAnalyser,
+        CompWordCraft
     },
     props: {
         lang: String
