@@ -1,7 +1,7 @@
 <template>
-    <div class="comp-about container">
-        <div class="d-flex justify-content-between mb-4">
-            <img src="@/assets/logo.png" width="auto" height="256" :alt="about.appName2 + ' Logo'" />
+    <div class="comp-about">
+        <div class="d-md-flex text-center mb-4">
+            <img src="@/assets/logo.png" class="me-3 mb-2" width="auto" height="256" :alt="about.appName2 + ' Logo'" />
             <div class="text-start">
                 <h1>{{ about.appName2 }}</h1>
                 <h4 class="mt-4">About</h4>
