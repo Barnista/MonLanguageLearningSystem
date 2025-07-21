@@ -66,13 +66,16 @@ export default {
                         if (currentDoubleConsonant) currentWord += currentDoubleConsonant.converts[0];
 
                         //completed
+                        console.log('CUT-A', char_current)
                         if (currentWord) memories.push(currentWord);
                         currentWord = '' + char_current;
                     } else if (nextIsDoubleSymbol && !next2IsPaliSansakrit) {
                         //in case we find the Direct double consonant
+                        console.log('CUT-B', char_current)
                         if (currentWord) memories.push(currentWord);
                         currentWord = '' + char_current;
                     } else if (!nextIsFinalSymbol && !nextIsDoubleSymbol && !next2IsPaliSansakrit) {
+                        console.log('CUT-C', char_current)
                         if (currentWord) memories.push(currentWord);
                         currentWord = '' + char_current;
                     } else {
@@ -82,6 +85,7 @@ export default {
                     //if it's the last
                     // finish a word
                     if (i_next >= length) {
+                        console.log('CUT-D', char_current)
                         if (currentWord) memories.push(currentWord);
                         currentWord = '' + char_current;
                         wordFinished = true;
@@ -94,6 +98,7 @@ export default {
                 //B. check if this char is registered as a stand alone vowel
                 //immediately register the currentWord into memories
                 //then start a new
+                console.log('CUT-E', char_current)
                 if (currentWord) memories.push(currentWord);
                 currentWord = '' + char_current;
             } else if (isCompoundVowel) {

@@ -44,6 +44,7 @@ export default {
                 },
                 {
                     letter: 'ၚ',
+                    letter2: 'င',
                     tone: 'breathy',
                     ipa: 'ŋɛ̤ˀ',
                     th: 'เงี่ยะ',
@@ -393,7 +394,10 @@ export default {
     },
     getByLetter(letter) {
         return this.consonants.flatMap(consonant =>
-            consonant.rows.filter(row => row.letter === letter)
+            consonant.rows.filter(row => 
+                row.letter === letter ||
+                row.letter2 === letter
+            )
         )[0];
     },
     isConsonant(letter){

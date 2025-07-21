@@ -299,8 +299,7 @@ export default {
         return this.otherVowels;
     },
     getByLetter(letter) {
-        return this.vowels.find(vowel => vowel.letter === letter) ||
-            this.otherVowels.find(vowel => vowel.letter === letter);
+        return this.vowels.find(vowel => vowel.letter === letter);
     },
     getByCompound(compound) {
         return this.vowels.find(vowel => vowel.compound === compound) ||
