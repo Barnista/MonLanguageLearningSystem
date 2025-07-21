@@ -1,6 +1,6 @@
 <template>
     <div class="comp-word-craft">
-        <div class="m-auto border rounded shadow" style="max-width: 800px;">
+        <div class="m-auto border rounded shadow" style="max-width: 900px;">
             <div class="bg-primary" style="height: 16px; border-top-left-radius: 4px; border-top-right-radius: 4px;">
             </div>
             <div class="py-4 px-4">

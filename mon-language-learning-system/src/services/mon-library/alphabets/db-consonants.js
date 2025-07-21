@@ -99,7 +99,6 @@ export default {
                 },
                 {
                     letter: 'ည',
-                    letter2: 'ဥ',
                     tone: 'breathy',
                     ipa: 'ɲɛ̤ˀ',
                     th: 'เญียะ',

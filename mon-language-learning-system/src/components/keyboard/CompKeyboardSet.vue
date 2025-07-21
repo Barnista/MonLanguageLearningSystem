@@ -1,5 +1,5 @@
 <template>
-    <div class="keyboard-comp">
+    <div class="keyboard-comp m-auto" style="max-width: 900px;">
         <div class="d-flex justify-content-between align-items-center mb-2">
             <div class="text-start">
                 <img :src="langs[selectedLangIndex].flag" alt="" class="me-2" width="48" height="auto">

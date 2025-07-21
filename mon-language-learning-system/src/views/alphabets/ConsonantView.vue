@@ -4,9 +4,9 @@
         <CompConsonantTable :lang="lang" class="mt-4" />
         <hr>
         <div class="d-flex justify-content-between mt-4">
-            <router-link :to="`/?lang=${lang}`" class="btn btn-secondary">
+            <router-link :to="`/alphabets?lang=${lang}`" class="btn btn-secondary">
                 <i class="bi bi-arrow-left"></i>
-                {{ langSet[lang].navbar.home || '_HOME_' }}
+                {{ langSet[lang].learnAlphabets.getStart || '_GET_START_' }}
             </router-link>
             
             <router-link :to="`/alphabets/vowel?lang=${lang}#vowel-table`" class="btn btn-primary">

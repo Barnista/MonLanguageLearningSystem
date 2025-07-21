@@ -180,7 +180,7 @@ export default {
         }
     },
     mounted(){
-        this.$refs.compTextAnalyser.setText('သတိသံပဋ္ဌာနံ');
+        this.$refs.compTextAnalyser.setText('ဥပ္ပဇ္ၛာဲ');
     },
     methods: {
         getConsonantByPoisition(row, column) {

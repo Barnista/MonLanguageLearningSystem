@@ -154,7 +154,9 @@ export default {
                 currentWord += char_current;
             }
             else {
-                console.log('INAVID CHAR:', char_current);
+                //maybe it was some spacing or punctuations, or untrained characters
+                wordFinished = true;
+                console.log('INVALID CHAR:', char_current);
             }
 
             //if one word is completed

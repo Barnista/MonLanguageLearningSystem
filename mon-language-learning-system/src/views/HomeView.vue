@@ -11,6 +11,10 @@
       </p>
       <!--<img src="@/assets/mon-script-banner.png" alt="Mon Script Banner" class="img-fluid rounded shadow-sm mb-4" style="max-width: 400px;">-->
     </div>
+    <CompMiniApps :lang="lang" />
+    <div class="mt-3 mb-5">
+      <hr>
+    </div>
     <CompLearnAlphabets :lang="lang" />
     <div class="mt-3 mb-5">
       <hr>
@@ -28,6 +32,7 @@
 import CompAbout from '@/components/CompAbout.vue';
 import CompLearnAlphabets from '@/components/home/CompLearnAlphabets.vue';
 import CompLearnGrammar from '@/components/home/CompLearnGrammar.vue';
+import CompMiniApps from '@/components/home/CompMiniApps.vue';
 
 import about from '@/services/about';
 import displayLanguages from '@/services/display-languages/display-languages';
@@ -39,7 +44,8 @@ export default {
     CompAbout,
     CompLearnAlphabets,
     CompLearnGrammar,
-    Typewriter
+    Typewriter,
+    CompMiniApps
   },
   data: () => {
     return {

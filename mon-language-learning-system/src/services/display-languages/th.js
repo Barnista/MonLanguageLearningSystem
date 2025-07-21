@@ -174,5 +174,10 @@ export default {
         syllables: 'พยางค์',
         deconstructed: 'ถอดอักขระ',
         aiBy: 'AI วิเคราะห์อักษรมอญ โดย'
+    },
+    apps: {
+        title: 'แอปพลิเคชัน',
+        textAnalyser: 'AI ช่วย',
+        wordCraft: 'สร้างคำเอง',
     }
 }

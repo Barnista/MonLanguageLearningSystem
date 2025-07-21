@@ -54,6 +54,16 @@ const routes = [
     path: '/alphabets/double-consonant',
     name: 'alphabets-double-consonant',
     component: () => import('../views/alphabets/DoubleConsonantView.vue')
+  },
+  {
+    path: '/apps/text-analyser',
+    name: 'apps-text-analyser',
+    component: () => import('../views/apps/TextAnalyserView.vue')
+  },
+  {
+    path: '/apps/word-craft',
+    name: 'apps-word-craft',
+    component: () => import('../views/apps/WordCraftView.vue')
   }
 ]
 

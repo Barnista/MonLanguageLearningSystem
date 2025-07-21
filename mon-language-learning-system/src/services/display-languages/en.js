@@ -174,5 +174,10 @@ export default {
         syllables: 'Syllables',
         deconstructed: 'Deconstructed',
         aiBy: 'Mon Alphabets AI by'
+    },
+    apps: {
+        title: 'Applications',
+        textAnalyser: 'AI',
+        wordCraft: 'Craft a Word',
     }
 }
