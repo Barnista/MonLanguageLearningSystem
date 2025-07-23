@@ -1,7 +1,7 @@
 <template>
     <div class="comp-dictionary-search">
         <div class="m-auto border rounded shadow" style="max-width: 900px;">
-            <div class="bg-primary" style="height: 16px; border-top-left-radius: 4px; border-top-right-radius: 4px;">
+            <div class="bg-danger" style="height: 16px; border-top-left-radius: 4px; border-top-right-radius: 4px;">
             </div>
             <div class="pt-4 px-4">
                 <div class="mb-4">
@@ -25,7 +25,7 @@
                             <img src="@/assets/flags/mon.svg" style="width: auto; height: 32px;">
                             Mon
                         </span>
-                        <button class="btn btn-outline-primary" @click="switchTranslate()">
+                        <button class="btn btn-outline-danger" @click="switchTranslate()">
                             <i class="bi bi-arrow-left-right"></i>
                         </button>
                     </div>
@@ -40,7 +40,7 @@
                         <input id="monInput" v-model="text" @keyup.enter="searchFromText(text)" type="text"
                             class="form-control form-control-lg"
                             :placeholder="langSet[lang ?? 'en'].textAnalyser.placeholder || '_PLACEHOLDER_'" />
-                        <button @click="searchFromText(text)" type="submit" class="btn btn-primary btn-lg">
+                        <button @click="searchFromText(text)" type="submit" class="btn btn-danger btn-lg">
                             <i class="bi bi-arrow-return-right"></i>
                             {{ langSet[lang ?? 'en'].textAnalyser.submitBtn || '_SUBMIT_' }}
                         </button>
@@ -56,21 +56,35 @@
                     </div>
                 </div>
                 <div class="mb-4">
-                    <ul class="list-group">
-                        <li v-for="(item, index) in searchResult" :key="index" class="list-group-item">
+                    <ol class="list-group list-group-numbered">
+                        <li v-for="(item, index) in searchResult" :key="index"
+                            class="list-group-item d-flex justify-content-between align-items-start pt-2">
                             <div class="ms-2 me-auto">
-                                <div class="fw-bold fs-5" v-html="hilightText(text, item.word)"></div>
-                                <div class="mt-2">
-                                    <span class="text-muted">แปลไทย:</span>
-                                    <span v-for="(titem, tindex) in item.translates" :key="tindex" class="ms-2">
-                                        <span class="badge text-bg-primary rounded-pill">{{
-                                            displayTranslateTypeTH(titem.type) }}</span>
-                                        <span class="ms-1">{{ titem.th }}</span>
+                                <span v-html="translateFrom == 'mon' ? hilightText(text, item.word) : item.word"
+                                    class="fw-bold fs-4 text-dark"></span>
+                                <div class="mt-1">
+                                    <span>IPA: <span class="text-muted">{{ `/${item.ipa}/` || 'NaN' }}</span></span>
+                                    <br>
+                                    <span>TH: <span class="text-muted">{{ `/${item.th}/` || 'NaN' }}</span></span>
+                                </div>
+                                <div class="my-2">
+                                    <span class="fw-bold text-muted me-1">แปล:</span>
+                                    <span v-for="(titem, tindex) in item.translates" :key="tindex" class="me-2">
+                                        <span class="text-muted">({{
+                                            displayTranslateTypeTH(titem.type) }})</span>
+                                        <span class="ms-1"
+                                            v-html="translateFrom == 'thai' ? hilightText(text, titem.th) : titem.th"></span>
                                     </span>
                                 </div>
                             </div>
+                            <button class="mt-2 ms-1 btn btn-outline-secondary">
+                            <i class="bi bi-clipboard"></i>
+                            <span class="ms-2 d-none d-md-inline">
+                                {{ langSet[lang ? lang : 'en'].menu.copy }}
+                            </span>
+                        </button>
                         </li>
-                    </ul>
+                    </ol>
                     <div class="text-center mt-2">
                         <span class="text-muted">{{ searchResult.length }} word(s) found.</span>
                     </div>
@@ -134,7 +148,8 @@ export default {
         searchFromText(text) {
             this.hideKeyboard();
 
-            this.searchResult = dictionary.searchByWord(text, true, 5, false);
+            if (this.translateFrom == 'mon') this.searchResult = dictionary.searchByWord(text, true, 10, false);
+            else this.searchResult = dictionary.searchByTranslateTH(text, true, 10, false);
         },
         setText(text) {
             this.text = text;

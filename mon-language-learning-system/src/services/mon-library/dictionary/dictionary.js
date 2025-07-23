@@ -51,22 +51,44 @@ export default {
                 return 'NaN';
         }
     },
+    //SEARCH WITH MON WORD
     searchByWord(word, isLimit, limit, isFirstCharOnly) {
         let result = [];
 
         //if user really search for something then proceed the search alg
         if (word) {
-            //search my matching if val.word includes anything from word
-            if(!isFirstCharOnly) result = this.db.filter(val =>
+            //search by matching if val.word includes anything from word
+            if (!isFirstCharOnly) result = this.db.filter(val =>
                 val.word.includes(word)
             );
 
-            if(isFirstCharOnly) result = this.db.filter(val =>
+            if (isFirstCharOnly) result = this.db.filter(val =>
                 val.word.startsWith(word)
             );
 
             //also limit search results to 5 items
-            if(isLimit) result = result.slice(0, limit);
+            if (isLimit) result = result.slice(0, limit);
+        }
+
+        return result;
+    },
+    //SEARCH WITH THAI WORD
+    searchByTranslateTH(word, isLimit, limit, isFirstCharOnly) {
+        let result = [];
+
+        //if user really search for something then proceed the search alg
+        if (word) {
+            //search by matching if val.word includes anything from word
+            if (!isFirstCharOnly) result = this.db.filter(val =>
+                val.translates.some(t => t.th.includes(word))
+            );
+
+            if (isFirstCharOnly) result = this.db.filter(val =>
+                val.translates.some(t => t.th.startsWith(word))
+            );
+
+            //also limit search results to 5 items
+            if (isLimit) result = result.slice(0, limit);
         }
 
         return result;
