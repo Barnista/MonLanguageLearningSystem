@@ -179,5 +179,6 @@ export default {
         title: 'แอปพลิเคชัน',
         textAnalyser: 'AI ช่วย',
         wordCraft: 'สร้างคำเอง',
+        dictionary: 'พจนานุกรม'
     }
 }

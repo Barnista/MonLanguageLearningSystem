@@ -52,6 +52,7 @@ export default {
                     const prevIsVowel = dbVowels.isCompoundVowel(char_prev);
                     const nextIsConsonant = dbConsonants.isConsonant(char_next);
                     const nextIsVowel = dbVowels.isCompoundVowel(char_next);
+                    const nextIsCompound = dbCompoundConsonants.isCompoundConsonant(char_next);
                     const nextIsFinalSymbol = dbFinalConsonants.isFinalSymbol(char_next);
                     const nextIsDoubleSymbol = dbDoubleConsonants.isDoubleSymbol(char_next);
                     const char_next2 = chars[i_next + 1];
@@ -60,32 +61,39 @@ export default {
                     const next2IsPaliSansakrit = dbDoubleConsonants.isDoubleConsonant2(char_current, char_next2);
                     if ((prevIsConsonant || prevIsVowel) &&
                         (nextIsVowel || (nextIsConsonant && (next2IsFinalSymbol || next2IsVowel)))) {
-                        //there's some double consonants that disguise as a sing consonant
+                        //there's some double consonants that disguise as a single consonant
                         //we have to check first before moving on
                         const currentDoubleConsonant = dbDoubleConsonants.getByDoubled(char_current);
                         if (currentDoubleConsonant) currentWord += currentDoubleConsonant.converts[0];
 
                         //completed
-                        console.log('CUT-A', char_current)
+                        console.log('CLASSIFIED-A', char_current)
                         if (currentWord) memories.push(currentWord);
                         currentWord = '' + char_current;
                     } else if (nextIsDoubleSymbol && !next2IsPaliSansakrit) {
                         //in case we find the Direct double consonant
-                        console.log('CUT-B', char_current)
+                        console.log('CLASSIFIED-B', char_current)
                         if (currentWord) memories.push(currentWord);
                         currentWord = '' + char_current;
                     } else if (!nextIsFinalSymbol && !nextIsDoubleSymbol && !next2IsPaliSansakrit) {
-                        console.log('CUT-C', char_current)
+                        //maybe the next char is vowel or consonant
+                        console.log('CLASSIFIED-C', char_current)
                         if (currentWord) memories.push(currentWord);
                         currentWord = '' + char_current;
-                    } else {
+                    } else if (nextIsCompound){
+                        //maybe the next is a compound consonant 
+                        console.log('CLASSIFIED-D', char_current)
+                        if (currentWord) memories.push(currentWord);
+                        currentWord = '' + char_current;
+                    }else {
+                        console.log('UNCLASSIFIED')
                         currentWord += char_current;
                     }
                 } else {
                     //if it's the last
                     // finish a word
                     if (i_next >= length) {
-                        console.log('CUT-D', char_current)
+                        console.log('CLASSIFIED-E', char_current)
                         if (currentWord) memories.push(currentWord);
                         currentWord = '' + char_current;
                         wordFinished = true;

@@ -21,11 +21,11 @@
                 </router-link>
             </div>
             <div class="col-4">
-                <router-link :to="`/keyboard?lang=${this.lang}`"
-                    :class="['btn', `btn-light bg-fabulous`, 'w-100', 'h-100', 'py-4', 'shadow-sm', 'rounded-3', 'd-flex', 'flex-column', 'align-items-center']">
+                <router-link :to="`/apps/dictionary?lang=${this.lang}`"
+                    :class="['btn', `btn-danger`, 'w-100', 'h-100', 'py-4', 'shadow-sm', 'rounded-3', 'd-flex', 'flex-column', 'align-items-center']">
                     <div class="d-flex flex-column justify-content-center align-items-center w-100 h-100">
-                        <i class="fs-1 bi bi-keyboard" style="font-size: 2rem;"></i>
-                        <span class="fs-5 fw-bold">{{ langSet[lang ? lang : 'en'].keyboard.title || '_KEYBOARD_' }}</span>
+                        <i class="fs-1 bi bi-translate" style="font-size: 2rem;"></i>
+                        <span class="fs-5 fw-bold">{{ langSet[lang ? lang : 'en'].apps.dictionary || '_DICTIONARY_' }}</span>
                     </div>
                 </router-link>
             </div>

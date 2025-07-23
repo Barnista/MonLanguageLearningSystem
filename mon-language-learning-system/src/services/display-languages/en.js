@@ -179,5 +179,6 @@ export default {
         title: 'Applications',
         textAnalyser: 'AI',
         wordCraft: 'Craft a Word',
+        dictionary: 'Dictionary'
     }
 }

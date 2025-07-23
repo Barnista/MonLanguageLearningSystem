@@ -64,6 +64,11 @@ const routes = [
     path: '/apps/word-craft',
     name: 'apps-word-craft',
     component: () => import('../views/apps/WordCraftView.vue')
+  },
+  {
+    path: '/apps/dictionary',
+    name: 'apps-dictionary',
+    component: () => import('../views/apps/DictionaryView.vue')
   }
 ]
 
