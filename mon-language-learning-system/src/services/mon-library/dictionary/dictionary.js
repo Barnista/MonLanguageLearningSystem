@@ -1,10 +1,12 @@
-import dbDict from './db-dict.json';
+import dbDict1 from './db-dict-1.json';
 
 export default {
     //RIGHT NOW, ONLY MON-THAI translation
-    db: dbDict,
+    db: [
+        ...dbDict1
+    ],
     testDB() {
-        console.log('DB:', dbDict ?? 'NOT FOUND')
+        console.log('DB:', this.db ?? 'NOT FOUND')
     },
     getTranslateType(type) {
         //Check what type of translation means
@@ -25,6 +27,8 @@ export default {
                 return 'Conjunction';
             case 'interj':
                 return 'Interjection';
+            case 'clf':
+                return 'Classifier';
             default:
                 return 'NaN';
         }
@@ -38,7 +42,7 @@ export default {
             case 'v':
                 return 'กริยา';
             case 'adj':
-                return 'กริยาวิเศษณ์';
+                return 'คุณศัพท์';
             case 'adv':
                 return 'วิเศษณ์';
             case 'prep':
@@ -47,9 +51,14 @@ export default {
                 return 'สันธาน';
             case 'interj':
                 return 'อุทาน';
+            case 'clf':
+                return 'ลักษณนาม';
             default:
                 return 'NaN';
         }
+    },
+    count(){
+        return this.db.length;
     },
     //SEARCH WITH MON WORD
     searchByWord(word, isLimit, limit, isFirstCharOnly) {

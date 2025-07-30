@@ -383,7 +383,7 @@ export default {
         }
         // Add more consonants as needed
     ],
-    getAll(){
+    getAll() {
         return this.consonants;
     },
     getByPosition(row, column) {
@@ -393,14 +393,36 @@ export default {
     },
     getByLetter(letter) {
         return this.consonants.flatMap(consonant =>
-            consonant.rows.filter(row => 
+            consonant.rows.filter(row =>
                 row.letter === letter ||
                 row.letter2 === letter
             )
         )[0];
     },
-    isConsonant(letter){
+    isConsonant(letter) {
         const consonant = this.getByLetter(letter);
         return consonant ? true : false;
+    },
+    plots() {
+        // Return a flat array of consonants with their positions
+        // This is useful for displaying in a grid or table format
+        let arr = this.consonants.flatMap((row, iR) =>
+            row.rows.map((consonant, iC) => ({
+            row: iR,
+            column: iC,
+            letter: consonant.letter,
+            sound: consonant.sound,
+            compoundIPA: consonant.compoundIPA,
+            compoundTH: consonant.compoundTH
+            }))
+        );
+
+        // Ensure the first letter is 'အ' for consistency
+        let firstLetter = arr.find(val => val.letter === 'အ');
+        let firstLetterIndex = arr.indexOf(firstLetter);
+        arr.splice(firstLetterIndex, 1); // Remove the first letter from its original position
+        arr.unshift(firstLetter);
+
+        return arr;
     }
 }

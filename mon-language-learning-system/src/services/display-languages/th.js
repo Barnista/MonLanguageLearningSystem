@@ -84,12 +84,12 @@ export default {
         noun: 'คำนาม',
         pronoun: 'คำสรรพนาม',
         verb: 'คำกริยา',
-        adjective: 'คำวิเศษณ์',
-        adverb: 'คำกริยาวิเศษณ์',
+        adjective: 'คำคุณศัพท์',
+        adverb: 'คำวิเศษณ์',
         preposition: 'คำบุพบท',
         conjunction: 'คำสันธาน',
         interjection: 'คำอุทาน',
-
+        classifier: 'คำลักษณนาม',
         type: 'ชนิดประโยค',
         tense: 'รูปกาลประโยค',
         syntax: 'วากยสัมพันธ์'
@@ -174,6 +174,19 @@ export default {
         syllables: 'พยางค์',
         deconstructed: 'ถอดอักขระ',
         aiBy: 'AI วิเคราะห์อักษรมอญ โดย'
+    },
+    dictionary: {
+        title: 'พจนานุกรม',
+        searchPlaceholder: 'ป้อนคำเพื่อค้นหา...',
+        searchBtn: 'ค้นหา',
+        translateTo: 'แปล',
+        translateToMon: 'มอญ',
+        translateToThai: 'ไทย',
+        letterFrom: 'ตัวอักษร',
+        noResult: 'ไม่พบผลลัพธ์',
+        found: 'ผลลัพธ์ที่พบ',
+        outOf: 'จากทั้งหมด',
+        meanings: 'ความหมาย',
     },
     apps: {
         title: 'แอปพลิเคชัน',

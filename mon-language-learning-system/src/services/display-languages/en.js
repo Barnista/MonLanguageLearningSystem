@@ -175,6 +175,19 @@ export default {
         deconstructed: 'Deconstructed',
         aiBy: 'Mon Alphabets AI by'
     },
+    dictionary: {
+        title: 'Dictionary',
+        searchPlaceholder: 'Type a word to search...',
+        searchBtn: 'Search',
+        translateTo: 'to',
+        translateToMon: 'Mon',
+        translateToThai: 'Thai',
+        letterFrom: 'Letter from',
+        noResult: 'No results found',
+        found: 'words(s) found',
+        outOf: 'out of',
+        meanings: 'meanings',
+    },
     apps: {
         title: 'Applications',
         textAnalyser: 'AI',

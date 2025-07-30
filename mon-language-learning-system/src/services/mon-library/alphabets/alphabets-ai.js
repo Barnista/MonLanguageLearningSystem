@@ -22,9 +22,9 @@ export default {
             const i_prev = index - 1;
             const i_next = index + 1;
 
-            const char_prev = chars[i_prev] || null;
-            const char_current = chars[index];
-            const char_next = chars[i_next] || null;
+            let char_prev = chars[i_prev] || null;
+            let char_current = chars[index];
+            let char_next = chars[i_next] || null;
 
             //CLASSIFICATION (try in comprehend the type of each character)
             const isConsonant = dbConsonants.isConsonant(char_current);
@@ -34,7 +34,7 @@ export default {
             const isDoubleSymbol = dbDoubleConsonants.isDoubleSymbol(char_current);
             const isFinalSymbol = dbFinalConsonants.isFinalSymbol(char_current);
             const isFinal2Symbol = dbFinalConsonants.isFinal2Symbol(char_current);
-
+            const doubleConsonant = dbDoubleConsonants.getByDoubled(char_current);
 
             if (isConsonant) {
                 //A. check if this char is registered as a consonant
@@ -56,11 +56,12 @@ export default {
                     const nextIsFinalSymbol = dbFinalConsonants.isFinalSymbol(char_next);
                     const nextIsDoubleSymbol = dbDoubleConsonants.isDoubleSymbol(char_next);
                     const char_next2 = chars[i_next + 1];
-                    const next2IsVowel = dbVowels.isCompoundVowel(char_next2);
-                    const next2IsFinalSymbol = dbFinalConsonants.isFinalSymbol(char_next2);
+                    //const next2IsVowel = dbVowels.isCompoundVowel(char_next2);
+                    //const next2IsFinalSymbol = dbFinalConsonants.isFinalSymbol(char_next2);
                     const next2IsPaliSansakrit = dbDoubleConsonants.isDoubleConsonant2(char_current, char_next2);
                     if ((prevIsConsonant || prevIsVowel) &&
-                        (nextIsVowel || (nextIsConsonant && (next2IsFinalSymbol || next2IsVowel)))) {
+                        (nextIsConsonant || nextIsVowel)
+                    ) {
                         //there's some double consonants that disguise as a single consonant
                         //we have to check first before moving on
                         const currentDoubleConsonant = dbDoubleConsonants.getByDoubled(char_current);
@@ -75,17 +76,33 @@ export default {
                         console.log('CLASSIFIED-B', char_current)
                         if (currentWord) memories.push(currentWord);
                         currentWord = '' + char_current;
-                    } else if (!nextIsFinalSymbol && !nextIsDoubleSymbol && !next2IsPaliSansakrit) {
+                    } else if (!nextIsFinalSymbol && !nextIsDoubleSymbol && !next2IsPaliSansakrit && !nextIsCompound) {
                         //maybe the next char is vowel or consonant
                         console.log('CLASSIFIED-C', char_current)
                         if (currentWord) memories.push(currentWord);
                         currentWord = '' + char_current;
-                    } else if (nextIsCompound){
+                    } else if (nextIsCompound) {
                         //maybe the next is a compound consonant 
-                        console.log('CLASSIFIED-D', char_current)
-                        if (currentWord) memories.push(currentWord);
-                        currentWord = '' + char_current;
-                    }else {
+                        //but do check first if it goes according to the rule
+
+                        //there's some PaliSansakrit double consonants that disguise as a compound consonant
+                        const currentDoubleConsonant2 = dbDoubleConsonants.getByPaliSansakrit2(char_current, char_next);
+                        if (currentDoubleConsonant2) {
+                            console.log('CLASSIFIED-D2', char_current)
+                            currentWord += currentDoubleConsonant2.converts[0];
+                            char_next = currentDoubleConsonant2.converts[1];
+
+                            if (currentWord) memories.push(currentWord);
+
+                            currentWord = '' + char_next;
+                            wordFinished = true;
+                            index++;
+                        } else {
+                            console.log('CLASSIFIED-D1', char_current)
+                            if (currentWord) memories.push(currentWord);
+                            currentWord = '' + char_current;
+                        }
+                    } else {
                         console.log('UNCLASSIFIED')
                         currentWord += char_current;
                     }
@@ -94,6 +111,11 @@ export default {
                     // finish a word
                     if (i_next >= length) {
                         console.log('CLASSIFIED-E', char_current)
+
+                        //there's some double consonants that disguise as a single consonant
+                        const currentDoubleConsonant = dbDoubleConsonants.getByDoubled(char_current);
+                        if (currentDoubleConsonant) currentWord += currentDoubleConsonant.converts[0];
+
                         if (currentWord) memories.push(currentWord);
                         currentWord = '' + char_current;
                         wordFinished = true;
@@ -134,14 +156,15 @@ export default {
                 const aIsCompoundConsonant = dbCompoundConsonants.isCompoundConsonant2(char_prev, char_next);
                 const aIsPaliSansakrit = dbDoubleConsonants.isDoubleConsonant2(char_prev, char_next);
 
-                if (aIsCompoundConsonant) {
-                    //move on to the next +2 index
-                    currentWord += char_current + char_next;
-                    index++;
-                } else if (aIsPaliSansakrit) {
+                if (aIsPaliSansakrit) {
+                    console.log('CLASSIFIED-F', char_current, char_next);
                     //it's 2 words according to Pali-Sansakrit rule
                     currentWord += dbFinalConsonants.finalSymbol;
                     wordFinished = true;
+                } else if (aIsCompoundConsonant) {
+                    //move on to the next +2 index
+                    currentWord += char_current + char_next;
+                    index++;
                 } else {
                     //it's 2 words according to Direct rule
                     wordFinished = true;
@@ -156,10 +179,22 @@ export default {
                 const prevBlendFinal = char_current + char_prev;
                 const nextIsFinal2Symbol = dbFinalConsonants.isFinal2Symbol(nextBlendFinal);
                 const prevIsFinal2Symbol = dbFinalConsonants.isFinal2Symbol(prevBlendFinal);
+                const prevIsCompoundSymbol = dbCompoundConsonants.isCompoundConsonant(char_prev);
                 if (!nextIsFinal2Symbol && !prevIsFinal2Symbol) wordFinished = true;
+                if (prevIsCompoundSymbol) wordFinished = true;
+
             } else if (isFinal2Symbol) {
                 //G. the current consonant is the final consonant that blends itself with some vowel
                 currentWord += char_current;
+            } else if (doubleConsonant){
+                //H. the current consonant is a special double consonant
+                //this is a special case, we have to check if it's a PaliSansakrit double consonant
+                //if so, we have to treat it as a single word
+                console.log('DOUBLE-CONSONANT', char_current);
+                currentWord += doubleConsonant.converts[0];
+                if (currentWord) memories.push(currentWord);
+
+                currentWord = '' + doubleConsonant.converts[1];
             }
             else {
                 //maybe it was some spacing or punctuations, or untrained characters

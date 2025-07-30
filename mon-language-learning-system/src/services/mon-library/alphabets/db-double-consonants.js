@@ -713,11 +713,11 @@ export default {
             column: 3,
             doubleWith: 3,
             consonant: 'ဒ',
-            overlapped: 'ထ',
-            letter: 'ဒ္ထ',
+            overlapped: 'ဒ',
+            letter: 'ဒ္ဒ',
             converts: [
                 'ဒ်',
-                'ထ'
+                'ဒ'
             ]
         },
         {
@@ -904,6 +904,32 @@ export default {
         //ZERO-CONSONANT
         {
             row: 6,
+            column: 1,
+            doubleWith: 1,
+            consonant: 'ယ',
+            overlapped: 'ယ',
+            compound: 'ျ',
+            letter: 'ယျ',
+            converts: [
+                'ယ်',
+                'ယ'
+            ]
+        },
+        {
+            row: 6,
+            column: 1,
+            doubleWith: 2,
+            consonant: 'ယ',
+            overlapped: 'ရ',
+            compound: 'ြ',
+            letter: 'ယြ',
+            converts: [
+                'ယ်',
+                'ရ'
+            ]
+        },
+        {
+            row: 6,
             column: 3,
             doubleWith: 3,
             consonant: 'လ',
@@ -920,7 +946,7 @@ export default {
             doubleWith: 5,
             consonant: 'သ',
             overlapped: 'သ',
-            letter: 'သ္သ',
+            letter: 'ဿ',
             converts: [
                 'သ်',
                 'သ'
@@ -940,6 +966,9 @@ export default {
     getByPaliSansakrit(overlapping, overlapped) {
         return this.paliSansakrits.find(item => item.consonant === overlapping && item.overlapped === overlapped) || null;
     },
+    getByPaliSansakrit2(overlapping, overlapped) {
+        return this.paliSansakrits.find(item => item.consonant === overlapping && item.compound === overlapped) || null;
+    },
     isDoubleConsonant(doubled) {
         const consonants = this.getByDoubled(doubled);
         return consonants ? true : false;
@@ -948,7 +977,7 @@ export default {
         const consonants = this.getByPaliSansakrit(overlapping, overlapped);
         return consonants ? true : false;
     },
-    isDoubleSymbol(symbol){
+    isDoubleSymbol(symbol) {
         return symbol === this.doubleSymbol;
     }
 }

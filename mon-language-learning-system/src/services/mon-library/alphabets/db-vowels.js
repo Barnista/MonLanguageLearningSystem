@@ -314,5 +314,24 @@ export default {
     isCompoundVowel(compound) {
         const vowel = this.getByCompound(compound);
         return vowel ? true : false;
+    },
+    plots() {
+        // Returns a list of vowels excluding the 'အ' vowel
+        // This is used for plotting the vowels in the UI
+        return this.vowels
+            .filter(vowel => !vowel.letter.includes('အ'))
+            .map(vowel => {
+                return {
+                    letter: vowel.letter,
+                    compound: vowel.compound,
+                    ipaCL: vowel.ipaCL,
+                    ipaBT: vowel.ipaBT,
+                    thCL: vowel.thCL,
+                    thBT: vowel.thBT,
+                    soundCL: vowel.soundCL,
+                    soundBT: vowel.soundBT,
+                    example: vowel.example
+                };
+            });
     }
 }
