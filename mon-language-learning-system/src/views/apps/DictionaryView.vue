@@ -16,7 +16,7 @@ export default {
     data: () => {
         return {
             lang: 'en',
-            searchText: '',
+            searchText: 'အ',
             translateFrom: 'mon', // Default translation from Mon to Thai
             // This can be changed to 'thai' for Thai to Mon translation
             langSet: displayLanguages.langSet,
@@ -24,13 +24,13 @@ export default {
     },
     mounted() {
         this.lang = this.$route.query.lang || 'en';
-        this.searchText = this.$route.query.q || '';
+        this.searchText = this.$route.query.q || 'အ';
         this.translateFrom = this.$route.query.from || 'mon'; // Default translation direction
         this.$refs.compDictionarySearch.selectedLang(this.translateFrom);
         if (this.searchText.length > 1) {
             this.$refs.compDictionarySearch.searchFromText(this.searchText);
         } else {
-            this.$refs.compDictionarySearch.searchFromLetter(this.searchText[0] || 'အ');
+            this.$refs.compDictionarySearch.searchFromLetter(this.searchText[0]);
         }
     },
     methods: {
@@ -54,7 +54,7 @@ export default {
             if (this.searchText.length > 1) {
                 this.$refs.compDictionarySearch.searchFromText(this.searchText);
             } else {
-                this.$refs.compDictionarySearch.searchFromLetter(this.searchText[0] || 'အ');
+                this.$refs.compDictionarySearch.searchFromLetter(this.searchText[0]);
             }
         },
         '$route.query.from'(newTranslateFrom) {

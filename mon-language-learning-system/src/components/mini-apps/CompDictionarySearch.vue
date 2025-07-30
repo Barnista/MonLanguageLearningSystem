@@ -1,8 +1,8 @@
 <template>
     <div class="comp-dictionary-search">
-        <h1 class="mb-4">{{ langSet[lang || 'en'].dictionary.title || '_DICT_' }} {{ langSet[lang ||
+        <h2 class="mb-4">{{ langSet[lang || 'en'].dictionary.title || '_DICT_' }} {{ langSet[lang ||
             'en'].dictionary.translateToMon || '_MON_' }} - {{ langSet[lang || 'en'].dictionary.translateToThai ||
-                '_THAI_' }}</h1>
+                '_THAI_' }}</h2>
         <div class="m-auto border rounded shadow" style="max-width: 900px;">
             <div class="bg-danger" style="height: 16px; border-top-left-radius: 4px; border-top-right-radius: 4px;">
             </div>
@@ -73,22 +73,22 @@
         <hr>
         <div class="mt-5 row">
             <div class="col-12 mb-3 d-flex justify-content-between">
-                <h2>{{ langSet[lang || 'en'].dictionary.letterFrom }} အ - ဩ</h2>
-                <span class="fs-4 bg-warning rounded shadow px-3 pt-1 pb-2"><span class="fw-bold">{{ text
+                <h3>{{ langSet[lang || 'en'].dictionary.letterFrom }} အ - ဩ</h3>
+                <span class="fs-5 bg-warning rounded shadow px-3 pt-1 pb-2"><span class="fw-bold">{{ text
                 }}</span> ({{ searchResult.length }})</span>
             </div>
             <div class="col-2 col-lg-1 mb-3">
                 <div class="btn-group-vertical d-flex flex-wrap justify-content-center">
                     <router-link v-for="(item, index) in consonants" :key="index"
                         :to="`/apps/dictionary?lang=${lang}&from=${translateFrom}&q=${item.letter}`"
-                        :class="['btn', (searchText === item.letter) ? 'btn-warning' : 'btn-success', 'shadow']">
-                        <span :class="['fs-5', (searchText === item.letter) ? 'fw-bold' : '']">{{ item.letter
+                        :class="['btn', (text === item.letter) ? 'btn-warning' : 'btn-success', 'shadow']">
+                        <span :class="['fs-5', (text === item.letter) ? 'fw-bold' : '']">{{ item.letter
                             }}</span>
                     </router-link>
                     <router-link v-for="(item, index) in vowels" :key="index"
                         :to="`/apps/dictionary?lang=${lang}&from=${translateFrom}&q=${item.letter}`"
-                        :class="['btn', (searchText === item.letter) ? 'btn-warning' : 'btn-secondary', 'shadow']">
-                        <span :class="['fs-5', (searchText === item.letter) ? 'fw-bold' : '']">{{ item.letter
+                        :class="['btn', (text === item.letter) ? 'btn-warning' : 'btn-secondary', 'shadow']">
+                        <span :class="['fs-5', (text === item.letter) ? 'fw-bold' : '']">{{ item.letter
                             }}</span>
                     </router-link>
                 </div>
@@ -217,10 +217,6 @@ export default {
         translateFrom: {
             type: String,
             default: 'mon'
-        },
-        searchText: {
-            type: String,
-            default: 'အ'
         },
     },
     data: () => {
