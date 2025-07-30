@@ -41,12 +41,14 @@
                         <button v-else @click="hideKeyboard()" class="btn btn-outline-light bg-fabulous btn-lg">
                             <i class="bi bi-chevron-bar-up"></i>
                         </button>
-                        <input id="monInput" v-model="text" @keyup="submitSearch(text)" @keyup.enter="submitSearch(text)" type="text"
-                            class="form-control form-control-lg"
+                        <input id="monInput" v-model="text" @keyup="submitSearch(text)"
+                            @keyup.enter="submitSearch(text)" type="text" class="form-control form-control-lg"
                             :placeholder="langSet[lang ?? 'en'].dictionary.searchPlaceholder || '_PLACEHOLDER_'" />
                         <button @click="submitSearch(text)" type="submit" class="btn btn-danger btn-lg">
                             <i class="bi bi-arrow-return-right"></i>
-                            {{ langSet[lang ?? 'en'].dictionary.searchBtn || '_SEARCH_' }}
+                            <span class="ms-1 d-none d-md-inline">
+                                {{ langSet[lang ?? 'en'].dictionary.searchBtn || '_SEARCH_' }}
+                            </span>
                         </button>
                     </div>
                     <div class="accordion-item">
@@ -75,21 +77,21 @@
             <div class="col-12 mb-3 d-flex justify-content-between">
                 <h3>{{ langSet[lang || 'en'].dictionary.letterFrom }} အ - ဩ</h3>
                 <span class="fs-5 bg-warning rounded shadow px-3 pt-1 pb-2"><span class="fw-bold">{{ text
-                }}</span> ({{ searchResult.length }})</span>
+                        }}</span> ({{ searchResult.length }})</span>
             </div>
             <div class="col-2 col-lg-1 mb-3">
                 <div class="btn-group-vertical d-flex flex-wrap justify-content-center">
-                    <router-link v-for="(item, index) in consonants" :key="index"
-                        :to="`/apps/dictionary?lang=${lang}&from=${translateFrom}&q=${item.letter}`"
-                        :class="['btn', (text === item.letter) ? 'btn-warning' : 'btn-success', 'shadow']">
-                        <span :class="['fs-5', (text === item.letter) ? 'fw-bold' : '']">{{ item.letter
-                            }}</span>
-                    </router-link>
                     <router-link v-for="(item, index) in vowels" :key="index"
                         :to="`/apps/dictionary?lang=${lang}&from=${translateFrom}&q=${item.letter}`"
                         :class="['btn', (text === item.letter) ? 'btn-warning' : 'btn-secondary', 'shadow']">
                         <span :class="['fs-5', (text === item.letter) ? 'fw-bold' : '']">{{ item.letter
-                            }}</span>
+                        }}</span>
+                    </router-link>
+                    <router-link v-for="(item, index) in consonants" :key="index"
+                        :to="`/apps/dictionary?lang=${lang}&from=${translateFrom}&q=${item.letter}`"
+                        :class="['btn', (text === item.letter) ? 'btn-warning' : 'btn-success', 'shadow']">
+                        <span :class="['fs-5', (text === item.letter) ? 'fw-bold' : '']">{{ item.letter
+                        }}</span>
                     </router-link>
                 </div>
             </div>
@@ -107,14 +109,16 @@
                                     <div class="mt-1">
                                         <span>IPA: <span class="text-muted">{{ `/${item.ipa}/` || 'NaN' }}</span></span>
                                         <span class="ms-3">TH: <span class="text-muted">{{ `/${item.th}/` || 'NaN'
-                                        }}</span></span>
+                                                }}</span></span>
                                     </div>
                                     <div class="my-2">
-                                        <span class="text-muted me-1">{{ langSet[lang || 'en'].dictionary.meanings }}:</span>
+                                        <span class="text-muted me-1">{{ langSet[lang || 'en'].dictionary.meanings
+                                            }}:</span>
                                         <span v-for="(titem, tindex) in item.translates" :key="tindex">
                                             <span v-if="titem.type" class="me-2 fst-italic">
                                                 <span class="text-success">({{
-                                                    (lang == 'th') ? displayTranslateTypeTH(titem.type) : displayTranslateType(titem.type) }})</span>
+                                                    (lang == 'th') ? displayTranslateTypeTH(titem.type) :
+                                                        displayTranslateType(titem.type) }})</span>
                                                 <span class="ms-1 fw-bold"
                                                     v-html="translateFrom == 'thai' ? hilightText(text, titem.th) : titem.th"></span>
                                                 <span class="ms-1 text-muted">|</span>
@@ -150,14 +154,16 @@
                                     <div class="mt-1">
                                         <span>IPA: <span class="text-muted">{{ `/${item.ipa}/` || 'NaN' }}</span></span>
                                         <span class="ms-3">TH: <span class="text-muted">{{ `/${item.th}/` || 'NaN'
-                                        }}</span></span>
+                                                }}</span></span>
                                     </div>
                                     <div class="my-2">
-                                        <span class="text-muted me-1">{{ langSet[lang || 'en'].dictionary.meanings }}:</span>
+                                        <span class="text-muted me-1">{{ langSet[lang || 'en'].dictionary.meanings
+                                            }}:</span>
                                         <span v-for="(titem, tindex) in item.translates" :key="tindex">
                                             <span v-if="titem.type" class="me-2 fst-italic">
                                                 <span class="text-success">({{
-                                                    (lang == 'th') ? displayTranslateTypeTH(titem.type) : displayTranslateType(titem.type) }})</span>
+                                                    (lang == 'th') ? displayTranslateTypeTH(titem.type) :
+                                                        displayTranslateType(titem.type) }})</span>
                                                 <span class="ms-1 fw-bold"
                                                     v-html="translateFrom == 'thai' ? hilightText(text, titem.th) : titem.th"></span>
                                                 <span class="ms-1 text-muted">|</span>
@@ -187,7 +193,7 @@
                     <span v-if="searchResult.length === 0" class="text-muted">{{ langSet[lang ||
                         'en'].dictionary.noResult || '_NO_RESULT_' }}</span>
                     <span v-else class="text-muted">{{ searchResult.length }} {{ langSet[lang || 'en'].dictionary.found
-                        }}.
+                    }}.
                         ({{ langSet[lang || 'en'].dictionary.outOf }} {{ wordCount }})</span>
                 </div>
             </div>

@@ -319,7 +319,7 @@ export default {
         // Returns a list of vowels excluding the 'အ' vowel
         // This is used for plotting the vowels in the UI
         return this.vowels
-            .filter(vowel => !vowel.letter.includes('အ'))
+            //.filter(vowel => !vowel.letter.includes('အ'))
             .map(vowel => {
                 return {
                     letter: vowel.letter,

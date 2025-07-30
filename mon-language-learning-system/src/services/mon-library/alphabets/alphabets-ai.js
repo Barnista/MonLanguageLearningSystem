@@ -186,7 +186,7 @@ export default {
             } else if (isFinal2Symbol) {
                 //G. the current consonant is the final consonant that blends itself with some vowel
                 currentWord += char_current;
-            } else if (doubleConsonant){
+            } else if (doubleConsonant) {
                 //H. the current consonant is a special double consonant
                 //this is a special case, we have to check if it's a PaliSansakrit double consonant
                 //if so, we have to treat it as a single word
@@ -241,6 +241,11 @@ export default {
                 }
             }
 
+            //exception if the vowel is a stand-alone vowel, always use the default ipa
+            if (dbVowels.isStandAloneVowel(craft.structure.vowel)) {
+                n_ipa = craft.crafted.ipa;
+                n_th = craft.crafted.th;
+            }
 
             ipa += n_ipa + ((i < memories.length - 1) ? '-' : '');
             th += n_th + ((i < memories.length - 1) ? '-' : '');

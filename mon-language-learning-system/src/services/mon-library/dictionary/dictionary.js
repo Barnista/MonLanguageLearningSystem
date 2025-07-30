@@ -1,9 +1,11 @@
 import dbDict1 from './db-dict-1.json';
+import dbDict2 from './db-dict-2.json';
 
 export default {
     //RIGHT NOW, ONLY MON-THAI translation
     db: [
-        ...dbDict1
+        ...dbDict1,
+        ...dbDict2
     ],
     testDB() {
         console.log('DB:', this.db ?? 'NOT FOUND')

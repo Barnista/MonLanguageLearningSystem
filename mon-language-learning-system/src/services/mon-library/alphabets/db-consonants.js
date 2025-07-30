@@ -418,10 +418,10 @@ export default {
         );
 
         // Ensure the first letter is 'အ' for consistency
-        let firstLetter = arr.find(val => val.letter === 'အ');
-        let firstLetterIndex = arr.indexOf(firstLetter);
-        arr.splice(firstLetterIndex, 1); // Remove the first letter from its original position
-        arr.unshift(firstLetter);
+        //let firstLetter = arr.find(val => val.letter === 'အ');
+        //let firstLetterIndex = arr.indexOf(firstLetter);
+        //arr.splice(firstLetterIndex, 1); // Remove the first letter from its original position
+        //arr.unshift(firstLetter);
 
         return arr;
     }
