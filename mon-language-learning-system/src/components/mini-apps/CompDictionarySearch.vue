@@ -41,7 +41,7 @@
                         <button v-else @click="hideKeyboard()" class="btn btn-outline-light bg-fabulous btn-lg">
                             <i class="bi bi-chevron-bar-up"></i>
                         </button>
-                        <input id="monInput" v-model="text" @keyup.enter="submitSearch(text)" type="text"
+                        <input id="monInput" v-model="text" @keyup="submitSearch(text)" @keyup.enter="submitSearch(text)" type="text"
                             class="form-control form-control-lg"
                             :placeholder="langSet[lang ?? 'en'].dictionary.searchPlaceholder || '_PLACEHOLDER_'" />
                         <button @click="submitSearch(text)" type="submit" class="btn btn-danger btn-lg">
@@ -114,7 +114,7 @@
                                         <span v-for="(titem, tindex) in item.translates" :key="tindex">
                                             <span v-if="titem.type" class="me-2 fst-italic">
                                                 <span class="text-success">({{
-                                                    (lang == 'th') ? displayTranslateTypeTH(titem.type) : displayTranslateType(item.type) }})</span>
+                                                    (lang == 'th') ? displayTranslateTypeTH(titem.type) : displayTranslateType(titem.type) }})</span>
                                                 <span class="ms-1 fw-bold"
                                                     v-html="translateFrom == 'thai' ? hilightText(text, titem.th) : titem.th"></span>
                                                 <span class="ms-1 text-muted">|</span>
@@ -157,7 +157,7 @@
                                         <span v-for="(titem, tindex) in item.translates" :key="tindex">
                                             <span v-if="titem.type" class="me-2 fst-italic">
                                                 <span class="text-success">({{
-                                                    (lang == 'th') ? displayTranslateTypeTH(titem.type) : displayTranslateType(item.type) }})</span>
+                                                    (lang == 'th') ? displayTranslateTypeTH(titem.type) : displayTranslateType(titem.type) }})</span>
                                                 <span class="ms-1 fw-bold"
                                                     v-html="translateFrom == 'thai' ? hilightText(text, titem.th) : titem.th"></span>
                                                 <span class="ms-1 text-muted">|</span>
@@ -288,7 +288,6 @@ export default {
             });
         },
         searchFromText(text) {
-            console.log('searchFromText', text);
             this.text = text;
             this.hideKeyboard();
 
@@ -296,7 +295,6 @@ export default {
             else this.searchResult = dictionary.searchByTranslateTH(text, false, 99, false);
         },
         searchFromLetter(letter) {
-            console.log('searchFromLetter', letter);
             this.text = letter;
             this.hideKeyboard();
 
