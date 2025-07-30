@@ -50,11 +50,11 @@ export default {
         },
         '$route.query.q'(newText) {
             this.searchText = newText || '';
-            this.$refs.compDictionarySearch.searchFromText(this.searchText);
+            if(this.searchText.length>1)this.$refs.compDictionarySearch.searchFromText(this.searchText);
         },
         '$route.query.letter'(newLetter) {
             this.searchLetter = newLetter || '';
-            if(!this.searchText)this.$refs.compDictionarySearch.searchFromLetter(this.searchLetter);
+            if(this.searchText.length==1)this.$refs.compDictionarySearch.searchFromLetter(this.searchLetter);
         },
         '$route.query.from'(newTranslateFrom) {
             this.translateFrom = newTranslateFrom || 'mon';

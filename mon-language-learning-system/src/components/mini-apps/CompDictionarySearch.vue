@@ -296,8 +296,8 @@ export default {
             this.letter = text[0];
             this.hideKeyboard();
 
-            if (this.translateFrom == 'mon') this.searchResult = dictionary.searchByWord(text, true, 99, false);
-            else this.searchResult = dictionary.searchByTranslateTH(text, true, 99, false);
+            if (this.translateFrom == 'mon') this.searchResult = dictionary.searchByWord(text, false, 99, false);
+            else this.searchResult = dictionary.searchByTranslateTH(text, false, 99, false);
         },
         searchFromLetter(letter) {
             this.letter = letter;
