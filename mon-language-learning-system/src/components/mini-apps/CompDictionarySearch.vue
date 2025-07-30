@@ -29,7 +29,7 @@
                             {{ langSet[lang || 'en'].dictionary.translateToMon || '_MON_' }}
                         </span>
                         <router-link class="btn btn-outline-danger"
-                            :to="`/apps/dictionary?lang=${lang}&from=${(translateFrom === 'mon') ? 'thai' : 'mon'}&q=${text}&letter=${searchLetter}`">
+                            :to="`/apps/dictionary?lang=${lang}&from=${(translateFrom === 'mon') ? 'thai' : 'mon'}&q=${text}`">
                             <i class="bi bi-arrow-left-right"></i>
                         </router-link>
                     </div>
@@ -80,15 +80,15 @@
             <div class="col-2 col-lg-1 mb-3">
                 <div class="btn-group-vertical d-flex flex-wrap justify-content-center">
                     <router-link v-for="(item, index) in consonants" :key="index"
-                        :to="`/apps/dictionary?lang=${lang}&from=${translateFrom}&q=${text}&letter=${item.letter}`"
-                        :class="['btn', (searchLetter === item.letter) ? 'btn-warning' : 'btn-success', 'shadow']">
-                        <span :class="['fs-5', (searchLetter === item.letter) ? 'fw-bold' : '']">{{ item.letter
+                        :to="`/apps/dictionary?lang=${lang}&from=${translateFrom}&q=${item.letter}`"
+                        :class="['btn', (searchText === item.letter) ? 'btn-warning' : 'btn-success', 'shadow']">
+                        <span :class="['fs-5', (searchText === item.letter) ? 'fw-bold' : '']">{{ item.letter
                             }}</span>
                     </router-link>
                     <router-link v-for="(item, index) in vowels" :key="index"
-                        :to="`/apps/dictionary?lang=${lang}&from=${translateFrom}&q=${text}&letter=${item.letter}`"
-                        :class="['btn', (searchLetter === item.letter) ? 'btn-warning' : 'btn-secondary', 'shadow']">
-                        <span :class="['fs-5', (searchLetter === item.letter) ? 'fw-bold' : '']">{{ item.letter
+                        :to="`/apps/dictionary?lang=${lang}&from=${translateFrom}&q=${item.letter}`"
+                        :class="['btn', (searchText === item.letter) ? 'btn-warning' : 'btn-secondary', 'shadow']">
+                        <span :class="['fs-5', (searchText === item.letter) ? 'fw-bold' : '']">{{ item.letter
                             }}</span>
                     </router-link>
                 </div>
@@ -97,7 +97,7 @@
                 <div class="row">
                     <div class="col-12 col-lg-6">
                         <ul class="list-group">
-                            <li v-for="(item, index) in searchResult.slice(0, Math.floor(searchResult.length / 2))"
+                            <li v-for="(item, index) in searchResult.slice(0, Math.ceil(searchResult.length / 2))"
                                 :key="index"
                                 class="list-group-item d-flex justify-content-between align-items-start pt-2">
                                 <div class="ms-2 me-auto">
@@ -140,7 +140,7 @@
                     </div>
                     <div class="col-12 col-lg-6">
                         <ul class="list-group">
-                            <li v-for="(item, index) in searchResult.slice(Math.floor(searchResult.length / 2), searchResult.length)"
+                            <li v-for="(item, index) in searchResult.slice(Math.ceil(searchResult.length / 2), searchResult.length)"
                                 :key="index"
                                 class="list-group-item d-flex justify-content-between align-items-start pt-2">
                                 <div class="ms-2 me-auto">
@@ -218,14 +218,10 @@ export default {
             type: String,
             default: 'mon'
         },
-        searchLetter: {
+        searchText: {
             type: String,
             default: 'အ'
         },
-        searchText: {
-            type: String,
-            default: ''
-        }
     },
     data: () => {
         return {
@@ -286,21 +282,21 @@ export default {
                 query: {
                     lang: this.lang,
                     from: this.translateFrom,
-                    q: text,
-                    letter: this.searchLetter
-                }
+                    q: text
+                },
+                //force: true
             });
         },
         searchFromText(text) {
+            console.log('searchFromText', text);
             this.text = text;
-            this.letter = text[0];
             this.hideKeyboard();
 
             if (this.translateFrom == 'mon') this.searchResult = dictionary.searchByWord(text, false, 99, false);
             else this.searchResult = dictionary.searchByTranslateTH(text, false, 99, false);
         },
         searchFromLetter(letter) {
-            this.letter = letter;
+            console.log('searchFromLetter', letter);
             this.text = letter;
             this.hideKeyboard();
 

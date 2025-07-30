@@ -1,6 +1,6 @@
 <template>
     <div class="dictionary-view container">
-        <CompDictionarySearch ref="compDictionarySearch" :lang="lang" :translate-from="translateFrom" :search-letter="searchLetter" :search-text="searchText" class="mt-5" />
+        <CompDictionarySearch ref="compDictionarySearch" :lang="lang" :translate-from="translateFrom" class="mt-5" />
     </div>
 </template>
 
@@ -17,7 +17,6 @@ export default {
         return {
             lang: 'en',
             searchText: '',
-            searchLetter: 'အ',
             translateFrom: 'mon', // Default translation from Mon to Thai
             // This can be changed to 'thai' for Thai to Mon translation
             langSet: displayLanguages.langSet,
@@ -26,11 +25,13 @@ export default {
     mounted() {
         this.lang = this.$route.query.lang || 'en';
         this.searchText = this.$route.query.q || '';
-        this.searchLetter = this.$route.query.letter || 'အ';
         this.translateFrom = this.$route.query.from || 'mon'; // Default translation direction
         this.$refs.compDictionarySearch.selectedLang(this.translateFrom);
-        this.$refs.compDictionarySearch.searchFromText(this.searchText);
-        this.$refs.compDictionarySearch.searchFromLetter(this.searchLetter);
+        if (this.searchText.length > 1) {
+            this.$refs.compDictionarySearch.searchFromText(this.searchText);
+        } else {
+            this.$refs.compDictionarySearch.searchFromLetter(this.searchText[0] || 'အ');
+        }
     },
     methods: {
         switchTranslate() {
@@ -50,11 +51,11 @@ export default {
         },
         '$route.query.q'(newText) {
             this.searchText = newText || '';
-            if(this.searchText.length>1)this.$refs.compDictionarySearch.searchFromText(this.searchText);
-        },
-        '$route.query.letter'(newLetter) {
-            this.searchLetter = newLetter || '';
-            if(this.searchText.length==1)this.$refs.compDictionarySearch.searchFromLetter(this.searchLetter);
+            if (this.searchText.length > 1) {
+                this.$refs.compDictionarySearch.searchFromText(this.searchText);
+            } else {
+                this.$refs.compDictionarySearch.searchFromLetter(this.searchText[0] || 'အ');
+            }
         },
         '$route.query.from'(newTranslateFrom) {
             this.translateFrom = newTranslateFrom || 'mon';
