@@ -167,7 +167,6 @@ export default {
         if (finalConsonantData && finalConsonantGroup) {
             //try to analyse with vowels according to rules of finalWith and also with blendFinals.
             let allowedVowel = finalConsonantGroup.finalWith.find(vowel => currentVowel.compound === vowel.vowel || currentVowel.compound2 === vowel.vowel);
-            console.log(vowel, currentVowel, allowedVowel)
 
             // if final consonant is compatible with the current vowel
             if (allowedVowel) {

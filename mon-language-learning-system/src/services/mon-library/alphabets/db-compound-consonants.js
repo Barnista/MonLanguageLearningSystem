@@ -190,4 +190,7 @@ export default {
         const consonant = this.getByOverlaps(overlapping, overlapped);
         return consonant ? true : false;
     },
+    plots(){
+        return this.compoundConsonants;
+    }
 }

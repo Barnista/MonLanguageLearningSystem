@@ -20,7 +20,9 @@
                             :placeholder="langSet[lang ?? 'en'].textAnalyser.placeholder || '_PLACEHOLDER_'" />
                         <button @click="analyseMonText(text)" type="submit" class="btn btn-primary btn-lg">
                             <i class="bi bi-arrow-return-right"></i>
-                            {{ langSet[lang ?? 'en'].textAnalyser.submitBtn || '_SUBMIT_' }}
+                            <span class="ms-1 d-none d-md-inline">
+                                {{ langSet[lang ?? 'en'].textAnalyser.submitBtn || '_SUBMIT_' }}
+                            </span>
                         </button>
                     </div>
                     <div class="accordion-item">
@@ -34,7 +36,8 @@
                     <div class="mt-4">
                         <div class="text-center">
                             <div class="fw-bold text-muted">{{ langSet[lang ?? 'en'].textAnalyser.syllables ||
-                                '_SYLLABLES_' }} ({{ syllables.length }}): <span class="fs-5">{{ text || 'NaN' }}</span></div>
+                                '_SYLLABLES_' }} ({{ syllables.length }}): <span class="fs-5">{{ text || 'NaN' }}</span>
+                            </div>
                             <h1 class="mt-2 mb-3">
                                 <span v-for="(letter, index) in syllables" :key="index">
                                     <span href="#" class="h1 fw-bold text-primary">{{ letter }}</span>

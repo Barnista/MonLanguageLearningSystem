@@ -147,9 +147,3 @@ export default {
     }
 }
 </script>
-
-<style>
-.headline {
-    font-size: 72pt;
-}
-</style>

@@ -68,6 +68,7 @@ export default {
       this.lang = newLang || 'en';
       this.rebuildPanels();
       this.rebuildPanels2();
+      this.rebuildDescriptions();
     }
   },
   methods: {
@@ -75,6 +76,7 @@ export default {
       this.descriptions = [];
       this.descriptions.push(this.langSet[this.lang].homeView.description);
       this.descriptions.push(this.langSet[this.lang].homeView.description2);
+      this.descriptions.push(this.langSet[this.lang].homeView.description3);
     },
     rebuildPanels() {
       this.panels = [

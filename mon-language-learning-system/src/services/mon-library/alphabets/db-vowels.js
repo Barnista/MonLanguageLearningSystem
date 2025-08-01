@@ -316,9 +316,9 @@ export default {
         return vowel ? true : false;
     },
     plots() {
-        // Returns a list of vowels excluding the 'အ' vowel
+        return this.vowels;
         // This is used for plotting the vowels in the UI
-        return this.vowels
+        /*return this.vowels
             //.filter(vowel => !vowel.letter.includes('အ'))
             .map(vowel => {
                 return {
@@ -333,5 +333,6 @@ export default {
                     example: vowel.example
                 };
             });
+            */
     }
 }

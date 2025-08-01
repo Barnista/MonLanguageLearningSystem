@@ -755,5 +755,8 @@ export default {
                 member.final2 === symbol || member.final3 === symbol
             )
         );
+    },
+    plots(){
+        return this.finalConsonants;
     }
 }

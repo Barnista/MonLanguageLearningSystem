@@ -1,6 +1,9 @@
 <template>
     <div class="dictionary-view container">
-        <CompDictionarySearch ref="compDictionarySearch" :lang="lang" :translate-from="translateFrom" class="mt-5" />
+        <h2 class="mt-4 mb-3">{{ langSet[lang || 'en'].dictionary.title || '_DICT_' }} {{ langSet[lang ||
+            'en'].dictionary.translateToMon || '_MON_' }} - {{ langSet[lang || 'en'].dictionary.translateToThai ||
+                '_THAI_' }}</h2>
+        <CompDictionarySearch ref="compDictionarySearch" :lang="lang" :translate-from="translateFrom" />
     </div>
 </template>
 

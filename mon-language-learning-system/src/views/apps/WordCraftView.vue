@@ -1,6 +1,7 @@
 <template>
     <div class="wordcraft-view container">
-        <CompWordCraft class="mt-5" />
+        <h2 class="mt-4 mb-3">{{ langSet[lang || 'en'].wordCraft.title || '_TITLE_' }}</h2>
+        <CompWordCraft :lang="lang" />
         <hr>
         <div class="accordion mb-4" :id="`accordionWordCraft`">
             <div class="accordion-item shadow">

@@ -1,8 +1,5 @@
 <template>
     <div class="comp-dictionary-search">
-        <h2 class="mb-4">{{ langSet[lang || 'en'].dictionary.title || '_DICT_' }} {{ langSet[lang ||
-            'en'].dictionary.translateToMon || '_MON_' }} - {{ langSet[lang || 'en'].dictionary.translateToThai ||
-                '_THAI_' }}</h2>
         <div class="m-auto border rounded shadow" style="max-width: 900px;">
             <div class="bg-danger" style="height: 16px; border-top-left-radius: 4px; border-top-right-radius: 4px;">
             </div>
@@ -73,7 +70,7 @@
             </div>
         </div>
         <hr>
-        <div class="mt-5 row">
+        <div class="mt-4 row">
             <div class="col-12 mb-3 d-flex justify-content-between">
                 <h3>{{ langSet[lang || 'en'].dictionary.letterFrom }} အ - ဩ</h3>
                 <span class="fs-5 bg-warning rounded shadow px-3 pt-1 pb-2"><span class="fw-bold">{{ text

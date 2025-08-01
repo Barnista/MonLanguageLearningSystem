@@ -1,6 +1,7 @@
 <template>
     <div class="text-analyser-view container">
-        <CompTextAnalyser ref="compTextAnalyser" :lang="lang" class="mt-5" />
+        <h2 class="mt-4 mb-3">{{ langSet[lang || 'en'].textAnalyser.title || '_TITLE_' }}</h2>
+        <CompTextAnalyser ref="compTextAnalyser" :lang="lang" />
         <hr>
         <div class="accordion mb-4" :id="`accordionTextAnalyser`">
             <div class="accordion-item shadow">
@@ -19,7 +20,7 @@
                 <div :id="`collapseTextAnalyser`" class="accordion-collapse collapse"
                     aria-labelledby="headingConsonantTable" :data-bs-parent="`#accordionTextAnalyser`">
                     <div class="accordion-body">
-                        
+
                     </div>
                 </div>
             </div>

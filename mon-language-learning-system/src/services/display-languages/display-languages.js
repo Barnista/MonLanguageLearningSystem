@@ -1,5 +1,6 @@
-import en from './en';
-import th from './th';
+import en from './en.json';
+import th from './th.json';
+import mnw from './mnw.json';
 
 export default {
     options: {
@@ -12,10 +13,16 @@ export default {
             id: 'th',
             label: 'ไทย',
             icon: require('@/assets/flags/thai.svg')
+        },
+        mnw: {
+            id: 'mnw',
+            label: 'မန်',
+            icon: require('@/assets/flags/mon.svg')
         }
     },
     langSet: {
         en: en,
-        th: th
+        th: th,
+        mnw: mnw
     }
 }
