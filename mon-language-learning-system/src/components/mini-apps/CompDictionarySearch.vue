@@ -79,13 +79,13 @@
             <div class="col-2 col-lg-1 mb-3">
                 <div class="btn-group-vertical d-flex flex-wrap justify-content-center">
                     <router-link v-for="(item, index) in vowels" :key="index"
-                        :to="`/apps/dictionary?lang=${lang}&from=${translateFrom}&q=${item.letter}`"
+                        :to="`/apps/dictionary?lang=${lang}&from=${'mon'}&q=${item.letter}`"
                         :class="['btn', (text === item.letter) ? 'btn-warning' : 'btn-secondary', 'shadow']">
                         <span :class="['fs-5', (text === item.letter) ? 'fw-bold' : '']">{{ item.letter
                         }}</span>
                     </router-link>
                     <router-link v-for="(item, index) in consonants" :key="index"
-                        :to="`/apps/dictionary?lang=${lang}&from=${translateFrom}&q=${item.letter}`"
+                        :to="`/apps/dictionary?lang=${lang}&from=${'mon'}&q=${item.letter}`"
                         :class="['btn', (text === item.letter) ? 'btn-warning' : 'btn-success', 'shadow']">
                         <span :class="['fs-5', (text === item.letter) ? 'fw-bold' : '']">{{ item.letter
                         }}</span>
