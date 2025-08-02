@@ -1,6 +1,6 @@
 <template>
-  <div class="about mt-5">
-    <CompAbout />
+  <div class="about container">
+    <CompAbout class="mt-5" />
   </div>
 </template>
 

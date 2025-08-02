@@ -5,6 +5,7 @@
     },
     "homeView": {
         "welcome": "Welcome to",
+        "displayLanguage": "Display Language",
         "description": "Explore Mon language, learn alphabets, grammars, and practice your skills.",
         "description2": "Join us in reviving a great language and culture. Precursor to Theravāda Buddhism in Southeast Asia.",
         "description3": "Start your journey today 📖✨"
@@ -77,8 +78,8 @@
         "punctuations": "Punctuations"
     },
     "learnSentence": {
-        "sentence": "Sentence",
-        "title": "Learn Sentence & Structure",
+        "sentence": "Grammars",
+        "title": "Learn Grammars",
         "speechClassification": "Speech Classification",
         "noun": "Noun",
         "pronoun": "Pronoun",
@@ -88,6 +89,7 @@
         "preposition": "Preposition",
         "conjunction": "Conjunction",
         "interjection": "Interjection",
+        "classifier": "Classifier",
         "type": "Type",
         "tense": "Tense",
         "syntax": "Syntax"
