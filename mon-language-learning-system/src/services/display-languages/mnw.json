@@ -1,7 +1,12 @@
 {
     "id": "en",
     "navbar": {
-        "home": "Home"
+        "home": "Home",
+        "others": "Others",
+        "report": "Report issue",
+        "community": "Community",
+        "abouts": "Abouts",
+        "dev": "Developers & Contributors"
     },
     "homeView": {
         "welcome": "Welcome to",
