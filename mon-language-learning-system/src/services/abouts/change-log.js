@@ -1,6 +1,13 @@
 export default {
     logs: [
         {
+            version: 'v1.5.1',
+            date: new Date('2025-08-08'),
+            changes: [
+                'corrected wrong gramma'
+            ]
+        },
+        {
             version: 'v1.5.0',
             date: new Date('2025-08-08'),
             changes: [
