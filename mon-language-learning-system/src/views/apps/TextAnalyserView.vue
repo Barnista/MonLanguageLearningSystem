@@ -45,11 +45,14 @@ export default {
     },
     mounted() {
         this.lang = this.$route.query.lang || 'en';
-        this.$refs.compTextAnalyser.setText('သာသနာဗုဒ္ဓ');
+        this.$refs.compTextAnalyser.setText('အရံင်');
     },
     watch: {
         '$route.query.lang'(newLang) {
             this.lang = newLang || 'en';
+        },
+        '$route.query.q'(newText) {
+            this.$refs.compTextAnalyser.setText(newText || 'အရံင်');
         }
     },
 }

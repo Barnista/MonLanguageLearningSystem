@@ -5,6 +5,7 @@
                 <img src="@/assets/logo.png" alt="Mon Language Logo" width="30" height="30"
                     class="d-inline-block align-text-top">
                 {{ about.appName }}
+                <span class="ms-1 text-muted fs-6">v{{ about.appVersion }}</span>
             </router-link>
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -190,14 +191,14 @@
                             </a>
                             <ul class="dropdown-menu">
                                 <li>
-                                    <router-link :to="`/#?lang=${lang}`"
-                                        :class="['disabled', 'dropdown-item', { active: $route.path === '/#' }]">
+                                    <router-link :to="`/report-issues?lang=${lang}`"
+                                        :class="['dropdown-item', { active: $route.path === '/report-issues' }]">
                                         <i class="bi bi-flag"></i> {{ langSet[lang ? lang : 'en'].navbar.report }}
                                     </router-link>
                                 </li>
                                 <li>
-                                    <router-link :to="`/#?lang=${lang}`"
-                                        :class="['disabled', 'dropdown-item', { active: $route.path === '/#' }]">
+                                    <router-link :to="`/community?lang=${lang}`"
+                                        :class="['dropdown-item', { active: $route.path === '/community' }]">
                                         <i class="bi bi-wechat"></i> {{ langSet[lang ? lang :
                                             'en'].navbar.community }}
                                     </router-link>
@@ -210,8 +211,8 @@
                                     </router-link>
                                 </li>
                                 <li>
-                                    <router-link :to="`/#?lang=${lang}`"
-                                        :class="['disabled', 'dropdown-item', { active: $route.path === '/#' }]">
+                                    <router-link :to="`/about-dev?lang=${lang}`"
+                                        :class="['dropdown-item', { active: $route.path === '/about-dev' }]">
                                         <i class="bi bi-people"></i> {{ langSet[lang ? lang : 'en'].navbar.dev }}
                                     </router-link>
                                 </li>
@@ -382,7 +383,7 @@
 
 <script>
 
-import about from '@/services/about';
+import about from '@/services/abouts/about';
 import displayLanguages from '@/services/display-languages/display-languages';
 
 export default {

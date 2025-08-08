@@ -1,7 +1,7 @@
 <template>
   <div class="home container">
     <div class="text-center mt-5 mb-4">
-      <h1 class="fw-bold mb-2">{{ langSet[lang].homeView.welcome || '_WELCOME_TO_' }} {{ about.appName }}</h1>
+      <h1 class="fw-bold mb-2">{{ langSet[lang].homeView.welcome || '_WELCOME_TO_' }}</h1>
       <p class="lead text-secondary">
         <span>
           <Typewriter :words="descriptions" :loop="0" :delay-speed="3000" :delete-speed="80" :type-speed="60"
@@ -37,32 +37,50 @@
       <hr>
     </div>
     <CompLearnGrammar :lang="lang" :panels2="panels2" />
-    <div class="my-5">
+    <div class="mt-3 mb-5">
       <hr>
     </div>
-    <CompAbout />
+    <CompOthers :lang="lang" />
+    <div class="mt-3 mb-5">
+      <hr>
+    </div>
+    <CompOtherCommunities :lang="lang" />
+    <div class="mt-3 mb-5">
+      <hr>
+    </div>
+    <CompRelatedContent :lang="lang" />
+    <div class="mt-3 mb-5">
+      <hr>
+    </div>
+    <CompJoinUs :lang="lang" />
   </div>
 </template>
 
 <script>
 
-import CompAbout from '@/components/CompAbout.vue';
 import CompLearnAlphabets from '@/components/home/CompLearnAlphabets.vue';
 import CompLearnGrammar from '@/components/home/CompLearnGrammar.vue';
 import CompMiniApps from '@/components/home/CompMiniApps.vue';
 
-import about from '@/services/about';
+import about from '@/services/abouts/about';
 import displayLanguages from '@/services/display-languages/display-languages';
 import { Typewriter } from 'vue-simple-typewriter';
+import CompOthers from '@/components/home/CompOthers.vue';
+import CompOtherCommunities from '@/components/others/communities/CompOtherCommunities.vue';
+import CompRelatedContent from '@/components/others/communities/CompRelatedContent.vue';
+import CompJoinUs from '@/components/others/communities/CompJoinUs.vue';
 
 export default {
   name: 'HomeView',
   components: {
-    CompAbout,
     CompLearnAlphabets,
     CompLearnGrammar,
+    CompOthers,
     Typewriter,
-    CompMiniApps
+    CompMiniApps,
+    CompOtherCommunities,
+    CompRelatedContent,
+    CompJoinUs
   },
   data: () => {
     return {
@@ -90,7 +108,7 @@ export default {
     }
   },
   methods: {
-    onChangeLang(lang){
+    onChangeLang(lang) {
       this.lang = lang;
       this.$router.replace({ query: { ...this.$route.query, lang } });
     },

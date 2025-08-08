@@ -3,9 +3,9 @@
         <div class="m-auto border rounded shadow" style="max-width: 900px;">
             <div class="bg-danger" style="height: 16px; border-top-left-radius: 4px; border-top-right-radius: 4px;">
             </div>
-            <div class="pt-4 px-4">
+            <div class="py-4 px-4">
                 <div class="mb-4">
-                    <div for="monInput" class="m-auto d-flex justify-content-between" style="max-width: 340px;">
+                    <div for="monInput" class="m-auto d-flex justify-content-between" style="max-width: 320px;">
                         <span v-if="translateFrom == 'mon'" class="fs-4">
                             <img src="@/assets/flags/mon.svg" style="width: auto; height: 32px;">
                             {{ langSet[lang || 'en'].dictionary.translateToMon || '_MON_' }}
@@ -67,12 +67,32 @@
                             ({{ langSet[lang || 'en'].dictionary.outOf }} {{ wordCount }})</span>
                     </div>
                 </div>
+                <hr>
+                <div class="d-flex justify-content-between text-muted">
+                    <small>
+                        {{ langSet[lang ?? 'en'].aboutView.developedBy || '_CREDITS_' }} Barnista
+                    </small>
+                    <small class="text-end">
+                        {{ langSet[lang ?? 'en'].menu.foundIssues || '_FOUND_ISSUES_' }}
+                        <router-link class="fw-bold" :to="{ name: 'report-issues', params: { lang: lang } }"
+                            target="_blank">
+                            {{ langSet[lang ?? 'en'].menu.reportIssues || '_REPORT_ISSUES_' }}
+                        </router-link>
+                    </small>
+                </div>
             </div>
+        </div>
+        <div class="text-center mt-4">
+            <router-link class="fw-bold btn btn-lg btn-outline-danger"
+                :to="{ name: 'apply-new-word', params: { lang: lang } }" target="_blank">
+                <i class="bi bi-plus-square-dotted"></i>
+                {{ langSet[lang ?? 'en'].dictionary.applyNewWord || '_APPLY_NEW_WORD_' }}
+            </router-link>
         </div>
         <hr>
         <div class="mt-4 row">
             <div class="col-12 mb-3 d-flex justify-content-between">
-                <h3>{{ langSet[lang || 'en'].dictionary.letterFrom }} အ - ဩ</h3>
+                <h3>{{ langSet[lang || 'en'].dictionary.letterFrom }} အ - ၝ</h3>
                 <span class="fs-5 bg-warning rounded shadow px-3 pt-1 pb-2"><span class="fw-bold">{{ text
                         }}</span> ({{ searchResult.length }})</span>
             </div>
@@ -80,13 +100,13 @@
                 <div class="btn-group-vertical d-flex flex-wrap justify-content-center">
                     <router-link v-for="(item, index) in vowels" :key="index"
                         :to="`/apps/dictionary?lang=${lang}&from=${'mon'}&q=${item.letter}`"
-                        :class="['btn', (text === item.letter) ? 'btn-warning' : 'btn-secondary', 'shadow']">
+                        :class="[(item.letter === 'ဣဳ' || item.letter === 'ဥ' || item.letter === 'ဥူ' || item.letter === 'ဨ' || item.letter === 'ဩ') ? 'disabled' : '', 'btn', (text === item.letter) ? 'btn-warning' : 'btn-secondary', 'shadow']">
                         <span :class="['fs-5', (text === item.letter) ? 'fw-bold' : '']">{{ item.letter
                         }}</span>
                     </router-link>
                     <router-link v-for="(item, index) in consonants" :key="index"
                         :to="`/apps/dictionary?lang=${lang}&from=${'mon'}&q=${item.letter}`"
-                        :class="['btn', (text === item.letter) ? 'btn-warning' : 'btn-success', 'shadow']">
+                        :class="['disabled', 'btn', (text === item.letter) ? 'btn-warning' : 'btn-success', 'shadow']">
                         <span :class="['fs-5', (text === item.letter) ? 'fw-bold' : '']">{{ item.letter
                         }}</span>
                     </router-link>
@@ -125,14 +145,14 @@
                                 </div>
                                 <button v-if="copiedIndex2 == item.no" class="mt-2 ms-1 btn btn-light disabled">
                                     <i class="bi bi-check-square-fill"></i>
-                                    <span class="ms-2 d-none d-md-inline">
+                                    <span class="ms-2 d-none">
                                         {{ langSet[lang ? lang : 'en'].menu.copied }}
                                     </span>
                                 </button>
                                 <button v-else @click="copyToClipboard2(item.word, item.no)"
                                     class="mt-2 ms-1 btn btn-outline-secondary">
                                     <i class="bi bi-clipboard"></i>
-                                    <span class="ms-2 d-none d-md-inline">
+                                    <span class="ms-2 d-none">
                                         {{ langSet[lang ? lang : 'en'].menu.copy }}
                                     </span>
                                 </button>
@@ -170,14 +190,14 @@
                                 </div>
                                 <button v-if="copiedIndex2 == item.no" class="mt-2 ms-1 btn btn-light disabled">
                                     <i class="bi bi-check-square-fill"></i>
-                                    <span class="ms-2 d-none d-md-inline">
+                                    <span class="ms-2 d-none">
                                         {{ langSet[lang ? lang : 'en'].menu.copied }}
                                     </span>
                                 </button>
                                 <button v-else @click="copyToClipboard2(item.word, item.no)"
                                     class="mt-2 ms-1 btn btn-outline-secondary">
                                     <i class="bi bi-clipboard"></i>
-                                    <span class="ms-2 d-none d-md-inline">
+                                    <span class="ms-2 d-none">
                                         {{ langSet[lang ? lang : 'en'].menu.copy }}
                                     </span>
                                 </button>
@@ -194,6 +214,14 @@
                         ({{ langSet[lang || 'en'].dictionary.outOf }} {{ wordCount }})</span>
                 </div>
             </div>
+        </div>
+        <hr>
+        <div class="text-center mt-4">
+            <router-link class="fw-bold btn btn-lg btn-outline-danger"
+                :to="{ name: 'apply-new-word', params: { lang: lang } }" target="_blank">
+                <i class="bi bi-plus-square-dotted"></i>
+                {{ langSet[lang ?? 'en'].dictionary.applyNewWord || '_APPLY_NEW_WORD_' }}
+            </router-link>
         </div>
     </div>
 </template>

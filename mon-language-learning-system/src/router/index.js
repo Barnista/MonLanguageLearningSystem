@@ -18,7 +18,7 @@ const routes = [
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
+    component: () => import(/* webpackChunkName: "about" */ '../views/others/AboutView.vue')
   },
   {
     path: '/keyboard',
@@ -69,6 +69,26 @@ const routes = [
     path: '/apps/dictionary',
     name: 'apps-dictionary',
     component: () => import('../views/apps/DictionaryView.vue')
+  },
+  {
+    path: '/report-issues',
+    name: 'report-issues',
+    component: () => import('../views/others/ReportIssuesView.vue')
+  },
+  {
+    path: '/community',
+    name: 'community',
+    component: () => import('../views/others/CommunityView.vue')
+  },
+  {
+    path: '/about-dev',
+    name: 'about-dev',
+    component: () => import('../views/others/AboutDevView.vue')
+  },
+  {
+    path: '/apply-new-word',
+    name: 'apply-new-word',
+    component: () => import('../views/others/ApplyNewWordView.vue')
   }
 ]
 

@@ -13,7 +13,7 @@
             <CompTextAnalyser ref="compTextAnalyser" :lang="lang" />
             <hr>
         </div>
-        <div class="mt-4">
+        <div class="mt-5">
             <h3 v-html="`1. ${langSet[lang ? lang : 'en'].doubleConsonantView.titleType1}`"></h3>
             <p v-html="langSet[lang ? lang : 'en'].doubleConsonantView.descriptionType1"></p>
             <table class="my-3">
@@ -58,9 +58,13 @@
             </p>
             <hr>
         </div>
-        <div class="mt-4">
+        <div class="mt-5">
             <h3 v-html="`2. ${langSet[lang ? lang : 'en'].doubleConsonantView.titleType2}`"></h3>
             <p v-html="langSet[lang ? lang : 'en'].doubleConsonantView.descriptionType2"></p>
+            <div class="text-center mb-3">
+                <img src="@/assets/imgs/alphabets/d1-double-consonant.jpg" class="p-4 img-fluid rounded border shadow"
+                    alt="Double Consonant Example" style="max-height: 600px;" />
+            </div>
             <div class="mb-3">
                 <span v-html="langSet[lang ? lang : 'en'].doubleConsonantView.descriptionTable2"></span>
             </div>
@@ -139,12 +143,13 @@
                         <tr v-for="(item, index) in examplePaliSansakrit" :key="index">
                             <td class="fs-6">{{ (item.row > 5 ? '-' : item.row) }}</td>
                             <td class="fs-6">{{ item.column }} ({{ getConsonantByPoisition(item.row - 1,
-                                item.column-1).letter }})</td>
+                                item.column - 1).letter }})</td>
                             <td class="fs-6">{{ (item.column == item.doubleWith ? langSet[lang ? lang :
                                 'en'].table.itself : `${item.doubleWith} (${getConsonantByPoisition(item.row - 1,
-                                item.doubleWith-1).letter})`) }}</td>
+                                    item.doubleWith - 1).letter})`) }}</td>
                             <td v-if="item.word" class="fs-5 fw-bold">{{ item.word }}</td>
-                            <td v-else class="fs-5 fst-italic text-muted">{{ langSet[lang ? lang : 'en'].table.none }}</td>
+                            <td v-else class="fs-5 fst-italic text-muted">{{ langSet[lang ? lang : 'en'].table.none }}
+                            </td>
                             <td class="fs-5 fw-bold">{{ (item.word) ? item.full : '' }}</td>
                             <td class="fs-6 text-muted">{{ (item.word) ? `/${item.ipa}/` : '' }}</td>
                             <td class="fs-6 text-muted">{{ (item.word) ? `/${item.th}/` : '' }}</td>
@@ -179,7 +184,7 @@ export default {
             examplePaliSansakrit: alphabets.getDoubleExamplePaliSansakrit(),
         }
     },
-    mounted(){
+    mounted() {
         this.$refs.compTextAnalyser.setText('ဥပ္ပဇ္ၛာဲ');
     },
     methods: {

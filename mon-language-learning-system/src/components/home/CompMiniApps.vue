@@ -2,7 +2,7 @@
     <div id="comp-mini-apps">
         <h3 class="text-dark mb-4">{{ langSet[lang ? lang : 'en'].apps.title || '_TITLE_' }} (ဨပ်ဗၠိခေၛန်)</h3>
         <div class="row">
-            <div class="col-4">
+            <div class="col-6 col-md-4 mb-3">
                 <router-link :to="`/apps/text-analyser?lang=${this.lang}`"
                     :class="['btn', `btn-primary`, 'w-100', 'h-100', 'py-4', 'shadow-sm', 'rounded-3', 'd-flex', 'flex-column', 'align-items-center']">
                     <div class="d-flex flex-column justify-content-center align-items-center w-100 h-100">
@@ -11,7 +11,7 @@
                     </div>
                 </router-link>
             </div>
-            <div class="col-4">
+            <div class="col-6 col-md-4 mb-3">
                 <router-link :to="`/apps/word-craft?lang=${this.lang}`"
                     :class="['btn', `btn-success`, 'w-100', 'h-100', 'py-4', 'shadow-sm', 'rounded-3', 'd-flex', 'flex-column', 'align-items-center']">
                     <div class="d-flex flex-column justify-content-center align-items-center w-100 h-100">
@@ -20,7 +20,7 @@
                     </div>
                 </router-link>
             </div>
-            <div class="col-4">
+            <div class="col-12 col-md-4 mb-3">
                 <router-link :to="`/apps/dictionary?lang=${this.lang}`"
                     :class="['btn', `btn-danger`, 'w-100', 'h-100', 'py-4', 'shadow-sm', 'rounded-3', 'd-flex', 'flex-column', 'align-items-center']">
                     <div class="d-flex flex-column justify-content-center align-items-center w-100 h-100">

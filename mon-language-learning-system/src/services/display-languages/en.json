@@ -3,20 +3,52 @@
     "navbar": {
         "home": "Home",
         "others": "Others",
-        "report": "Report issue",
+        "report": "Report issues",
         "community": "Community",
         "abouts": "Abouts",
-        "dev": "Developers & Contributors"
+        "dev": "Contributors"
     },
     "homeView": {
-        "welcome": "Welcome to",
+        "welcome": "Welcome to The Mon Language (မန်)",
         "displayLanguage": "Display Language",
         "description": "Explore Mon language, learn alphabets, grammars, and practice your skills.",
         "description2": "Join us in reviving a great language and culture. Precursor to Theravāda Buddhism in Southeast Asia.",
         "description3": "Start your journey today 📖✨"
     },
     "aboutView": {
-        
+        "title": "About This Project",
+        "founderTitle": "Message from Project Founder",
+        "founderName": "Tummanoon Wancha-em (Barnista)",
+        "founderCareer": "Project Founder & Developer",
+        "founderMessage": "",
+        "developedBy": "Developed by",
+        "changeLogs": "Change Logs",
+        "aboutDescription1": "This platform is designed to help users learn the Mon language through interactive lessons, implemented of AI, and various useful application of the language through mini-apps.",
+        "aboutDescription2": "The platform also includes features such as a virtual keyboard for typing in Mon, dictionary for Mon-Thai translation, and other various tools.",
+        "aboutDescription3": "Developed by Barnista, this project aims to preserve and promote the Mon language and culture through modern technology, making it accessible to a wider audience."
+    },
+    "communityView": {
+        "title": "Community",
+        "description": "Join our community to discuss, share, and learn more about the Mon language and culture. Connect with fellow learners and enthusiasts.",
+        "description2": "We are on X (Twitter), Facebook, Twitch, YouTube, Discord, and Telegram. Join us to share your thoughts, ask questions, and participate in discussions.",
+        "joinUs": "Join Us",
+        "explore": "Explore",
+        "otherCommunities": "Communities around the World",
+        "relatedContents": "Related Platforms"
+    },
+    "aboutDevView": {
+        "title": "About Contributors",
+        "contributors": "Key Contributors",
+        "contributorsDescription": "We would like to acknowledge the contributions of the following individuals who have played a significant role in the development of this project. Their efforts have been invaluable in making this project a success.",
+        "contributorsDescription2": "If you would like to contribute or support this project, please reach out to us. We are always looking for more contributors to help us improve and expand this project. Your support is greatly appreciated.",
+        "honorableMentions": "Honorable Mentions",
+        "references": "Academic References",
+        "technicals": "Technical Implementations",
+        "visit": "Visit",
+        "frontEnd": "Front-end",
+        "design": "Design & Accessibility",
+        "designDescription": "Responsive UX/UI, Multi-device support, modern Unicode typography, and accessibility features.",
+        "backEnd": "Back-end"
     },
     "consonantView": {
         "description": "The Mon alphabet contains <strong>35 consonants</strong> (including a zero consonants), as follows:",
@@ -59,7 +91,7 @@
         "titleType1": "Direct typography <strong>(Mon-style)</strong>",
         "titleType2": "Pali-Sanskrit typography <strong>(Pali-Sanskrit-style)</strong>",
         "descriptionType1": "It is a typography with simple rules. The reading is to pronounce both consonants, the main and the overlapped consonants, by <strong>reading from top to bottom</strong>, for example: ",
-        "descriptionType2": "It is a typography with legacy rules derived from Pali-Sansakrit scripts. The main consonant will turn into the final consonant for the consonant positioned at the start. The consonant that is <strong>overlapped</strong> will be pronounced on its own or combined with the following vowel and/or final consonant.",
+        "descriptionType2": "It is a typography with legacy rules derived from Pali-Sansakrit. The main consonant will turn into the final consonant for the consonant positioned at the start. The consonant that is <strong>overlapped</strong> will be pronounced on its own or combined with the following vowel and/or final consonant. To understand this, please see the example below:",
         "descriptionTable2": "Please open section Consonants below and try to remember the context that: <strong>Mon consonants are divided into 5 rows, each row has 5 consonants and the remaining 10 are the zero-consonants, totaling 35 characters</strong>.",
         "ruleType21": "Each row is divided into 2 types of consonants:",
         "ruleType22": "<strong>The 1st - 3rd - 5th consonants</strong> of every row are classified as final consonants. Can overlap the 2nd - 4th consonant or overlap itself (except ၚ and ဍ)",
@@ -71,6 +103,24 @@
         "titleTable2": "Demonstration:",
         "note": "Note: ",
         "noteType1": "The 11 compound consonants are not considered double consonants."
+    },
+    "getStartView": {
+        "title": "Get Start",
+        "getStartDescription1": "<strong>The Mon alphabet</strong> represents a writing system of significant historical and typological interest in Southeast Asia. It is derived from the ancient Brahmi script lineage and has been instrumental in the transmission of Theravāda Buddhist texts and Mon cultural heritage.",
+        "getStartDescription2": "<strong>The Mon alphabet</strong> is the writing system used for the Mon language, an Austroasiatic language spoken mainly in Myanmar (Burma) and Thailand by the Mon people.",
+        "getStartDescription3": "It’s historically important because Mon was <strong>one of the earliest languages in mainland Southeast Asia to be written down</strong> — and its script influenced the writing systems of neighboring languages, including Burmese, Thai, and Khmer.",
+        "historyTitle": "History of Mon Language",
+        "historyDescription1": "The Mon language is <strong>one of the oldest languages</strong> still spoken in mainland Southeast Asia, with a history stretching back well over a millennium. It belongs to the <strong>Monic branch of the Austroasiatic language</strong> family, making it a relative of Khmer (Cambodian) and distantly related to Vietnamese and other languages in the region.",
+        "historyDescription2": "Unlike Thai, Burmese, or Chinese, the <strong style=\"color: blue;\">Mon language is a non-tonal language</strong>; meaning it does not use changes in the pitch of the voice to distinguish the meaning of a word.",
+        "historyDescription3": "It’s thought to have evolved from an ancient Austroasiatic proto-language spoken across much of mainland Southeast Asia <strong>thousands of years ago.</strong>",
+        "scriptTitle": "Writing System & Alphabetical Structure",
+        "scriptItem1": "The Mon script is classified <strong>abugida</strong>, wherein each consonantal character inherently includes a vowel sound unless modified.",
+        "scriptItem2": "The writing direction is left to right, in horizontal rows.",
+        "comparisonTitle": "Comparison to Vietnamese, Khmer, Thai, and Burmese",
+        "funFactTitle": "Fun Facts",
+        "funFactItem1": "<strong>Mon language</strong>, unlike Thai or Burmese, is a <strong>non-tonal language</strong> meaning changes in pitch (how high or low the voice is) do not change the meaning of a word.",
+        "funFactItem2": "There are at least <strong>697 Mon words</strong> that have <strong>influenced Thai words</strong> til this day.",
+        "referenceTitle": "References"
     },
     "learnAlphabets": {
         "getStart": "Get Start",
@@ -151,7 +201,11 @@
         "seeException": "see exception",
         "exception": "Exception",
         "tryConsonant": "try consonant",
-        "tryFinalConsonant": "try final consonant"
+        "tryFinalConsonant": "try final consonant",
+        "readMore": "Read More",
+        "foundIssues": "found anything wrong? please",
+        "reportIssues": "report issues",
+        "askChatGPT": "Ask ChatGPT"
     },
     "table": {
         "no": "No.",
@@ -177,12 +231,16 @@
     },
     "textAnalyser": {
         "title": "Mon Alphabet AI",
+        "title2": "Introducing Mon Alphabets AI",
+        "description2": "To help you study the Mon language with latest technology. Trained with every grammatical rules. Simply, just type in any Mon word and it will analyse for you on; how to pronounce, and how to see syllable-by-syllable.",
         "header": "Enter a Mon Word",
         "placeholder": "Type Mon words here...",
         "submitBtn": "Submit",
         "syllables": "Syllables",
         "deconstructed": "Deconstructed",
-        "aiBy": "Mon Alphabets AI by"
+        "aiBy": "Mon Alphabets AI by",
+        "meanings": "Probable meanings",
+        "noMeaning": "No meaning found in our database"
     },
     "wordCraft": {
         "title": "Craft a Word by Yourself",
@@ -200,10 +258,11 @@
         "translateToMon": "Mon",
         "translateToThai": "Thai",
         "letterFrom": "Letter from",
-        "noResult": "No results found",
+        "noResult": "No result found",
         "found": "words(s) found",
         "outOf": "out of",
-        "meanings": "meanings"
+        "meanings": "meanings",
+        "applyNewWord": "Apply for new words"
     },
     "apps": {
         "title": "Applications",
