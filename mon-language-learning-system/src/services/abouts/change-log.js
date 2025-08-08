@@ -1,6 +1,13 @@
 export default {
     logs: [
         {
+            version: 'v1.5.2',
+            date: new Date('2025-08-08'),
+            changes: [
+                'added OG meta for SEO and social media sharing',
+            ]
+        },
+        {
             version: 'v1.5.1',
             date: new Date('2025-08-08'),
             changes: [
