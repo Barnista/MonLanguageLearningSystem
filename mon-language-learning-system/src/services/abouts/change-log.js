@@ -1,24 +1,21 @@
 export default {
     logs: [
         {
-            version: 'v1.5.3',
+           version: 'v1.5.5',
+            date: new Date('2025-08-09'),
+            changes: [
+                'added more 130 words to dictionary database',
+                'minor wording change'
+            ] 
+        },
+        {
+            version: 'v1.5.1 - v1.5.4',
             date: new Date('2025-08-08'),
             changes: [
                 'fixed SEO metas issues',
-            ]
-        },
-        {
-            version: 'v1.5.2',
-            date: new Date('2025-08-08'),
-            changes: [
                 'added OG meta for SEO and social media sharing',
-            ]
-        },
-        {
-            version: 'v1.5.1',
-            date: new Date('2025-08-08'),
-            changes: [
-                'corrected wrong gramma'
+                'corrected wrong gramma',
+                'updated display language - Mon version for Home Page'
             ]
         },
         {

@@ -1,11 +1,19 @@
 import dbDict1 from './db-dict-1.json';
 import dbDict2 from './db-dict-2.json';
+import dbDict3 from './db-dict-3.json';
+import dbDict4 from './db-dict-4.json';
+import dbDict5 from './db-dict-5.json';
+import dbDict6 from './db-dict-6.json';
 
 export default {
     //RIGHT NOW, ONLY MON-THAI translation
     db: [
         ...dbDict1,
-        ...dbDict2
+        ...dbDict2,
+        ...dbDict3,
+        ...dbDict4,
+        ...dbDict5,
+        ...dbDict6
     ],
     testDB() {
         console.log('DB:', this.db ?? 'NOT FOUND')

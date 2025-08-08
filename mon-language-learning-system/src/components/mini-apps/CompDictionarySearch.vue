@@ -100,13 +100,13 @@
                 <div class="btn-group-vertical d-flex flex-wrap justify-content-center">
                     <router-link v-for="(item, index) in vowels" :key="index"
                         :to="`/apps/dictionary?lang=${lang}&from=${'mon'}&q=${item.letter}`"
-                        :class="[(item.letter === 'ဣဳ' || item.letter === 'ဥ' || item.letter === 'ဥူ' || item.letter === 'ဨ' || item.letter === 'ဩ') ? 'disabled' : '', 'btn', (text === item.letter) ? 'btn-warning' : 'btn-secondary', 'shadow']">
+                        :class="['btn', (text === item.letter) ? 'btn-warning' : 'btn-secondary', 'shadow']">
                         <span :class="['fs-5', (text === item.letter) ? 'fw-bold' : '']">{{ item.letter
                         }}</span>
                     </router-link>
                     <router-link v-for="(item, index) in consonants" :key="index"
                         :to="`/apps/dictionary?lang=${lang}&from=${'mon'}&q=${item.letter}`"
-                        :class="['disabled', 'btn', (text === item.letter) ? 'btn-warning' : 'btn-success', 'shadow']">
+                        :class="[(item.letter !== 'က') ? 'disabled' : '', 'btn', (text === item.letter) ? 'btn-warning' : 'btn-success', 'shadow']">
                         <span :class="['fs-5', (text === item.letter) ? 'fw-bold' : '']">{{ item.letter
                         }}</span>
                     </router-link>

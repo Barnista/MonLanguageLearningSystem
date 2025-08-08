@@ -1,6 +1,6 @@
 <template>
     <div id="comp-mini-apps">
-        <h3 class="text-dark mb-4">{{ langSet[lang ? lang : 'en'].apps.title || '_TITLE_' }} (ဨပ်ဗၠိခေၛန်)</h3>
+        <h3 class="text-dark mb-4">{{ langSet[lang ? lang : 'en'].apps.title || '_TITLE_' }} (အေပ်ပလဳဂေရှေန်)</h3>
         <div class="row">
             <div class="col-6 col-md-4 mb-3">
                 <router-link :to="`/apps/text-analyser?lang=${this.lang}`"
