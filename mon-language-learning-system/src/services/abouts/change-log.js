@@ -1,6 +1,13 @@
 export default {
     logs: [
         {
+            version: 'v1.5.3',
+            date: new Date('2025-08-08'),
+            changes: [
+                'fixed SEO metas issues',
+            ]
+        },
+        {
             version: 'v1.5.2',
             date: new Date('2025-08-08'),
             changes: [
