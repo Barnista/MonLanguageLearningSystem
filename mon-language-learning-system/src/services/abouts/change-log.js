@@ -1,11 +1,14 @@
 export default {
     logs: [
         {
-           version: 'v1.5.5',
+           version: 'v1.5.5-v1.5.6',
             date: new Date('2025-08-09'),
             changes: [
-                'added more 130 words to dictionary database',
-                'minor wording change'
+                'added more 252 words to dictionary database',
+                'minor wording change',
+                'added Developer message section to Home Page',
+                'Get Start fun fact correction',
+                'more translation for Mon display language'
             ] 
         },
         {

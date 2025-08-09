@@ -106,10 +106,11 @@
                                 class="list-group-item d-flex justify-content-between align-items-start pt-2">
                                 <div class="ms-2 me-auto">
                                     <span class="me-2">{{ mItem.no + 1 }}.</span>
-                                    <span v-html="hilightText(craftedWord.word, mItem.word)" class="fw-bold fs-5 text-dark"></span>
+                                    <span v-html="hilightText(craftedWord.word, mItem.word)"
+                                        class="fw-bold fs-5 text-dark"></span>
                                     <div class="mt-1">
                                         <small>IPA: <span class="text-muted">{{ `/${mItem.ipa}/` || 'NaN'
-                                                }}</span></small>
+                                        }}</span></small>
                                         <small class="ms-3">TH: <span class="text-muted">{{ `/${mItem.th}/` ||
                                             'NaN'
                                                 }}</span></small>
@@ -117,7 +118,7 @@
                                     <div class="my-1">
                                         <small class="text-muted me-1">{{ langSet[lang ||
                                             'en'].dictionary.meanings
-                                            }}:</small>
+                                        }}:</small>
                                         <small v-for="(tItem, tIndex) in mItem.translates" :key="tIndex">
                                             <span v-if="tItem.type" class="me-2 fst-italic">
                                                 <span class="text-success">({{
@@ -153,10 +154,11 @@
                                 class="list-group-item d-flex justify-content-between align-items-start pt-2">
                                 <div class="ms-2 me-auto">
                                     <span class="me-2">{{ mItem.no + 1 }}.</span>
-                                    <span v-html="hilightText(craftedWord.word, mItem.word)" class="fw-bold fs-5 text-dark"></span>
+                                    <span v-html="hilightText(craftedWord.word, mItem.word)"
+                                        class="fw-bold fs-5 text-dark"></span>
                                     <div class="mt-1">
                                         <small>IPA: <span class="text-muted">{{ `/${mItem.ipa}/` || 'NaN'
-                                                }}</span></small>
+                                        }}</span></small>
                                         <small class="ms-3">TH: <span class="text-muted">{{ `/${mItem.th}/` ||
                                             'NaN'
                                                 }}</span></small>
@@ -164,7 +166,7 @@
                                     <div class="my-1">
                                         <small class="text-muted me-1">{{ langSet[lang ||
                                             'en'].dictionary.meanings
-                                            }}:</small>
+                                        }}:</small>
                                         <small v-for="(tItem, tIndex) in mItem.translates" :key="tIndex">
                                             <span v-if="tItem.type" class="me-2 fst-italic">
                                                 <span class="text-success">({{
@@ -233,6 +235,10 @@ export default {
         lang: {
             type: String,
             default: 'en'
+        },
+        searchLimit: {
+            type: Number,
+            default: 4
         }
     },
     data() {
@@ -278,8 +284,8 @@ export default {
             //this.craftedWord = alphabetsAi.analyseSingleWord(craftedWord);
             this.craftedWord = alphabets.craftWord2(this.sConsonant, this.sCompound, this.sVowel, this.sFinal);
             console.log(`Crafted Word:`, this.craftedWord);
-            
-            this.meanings = dictionary.searchByWord(this.craftedWord.word, true, 4, true);
+
+            this.meanings = dictionary.searchByWord(this.craftedWord.word, true, this.searchLimit, true);
             console.log(`Meanings:`, this.meanings);
         },
         copyToClipboard() {

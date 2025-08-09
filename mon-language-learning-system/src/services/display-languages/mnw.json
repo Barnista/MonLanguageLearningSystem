@@ -2,7 +2,7 @@
     "id": "en",
     "navbar": {
         "home": "Home",
-        "others": "Others",
+        "others": "သ္အာင်",
         "report": "Report issues",
         "community": "Community",
         "abouts": "Abouts",
@@ -119,38 +119,39 @@
         "comparisonTitle": "Comparison to Vietnamese, Khmer, Thai, and Burmese",
         "funFactTitle": "Fun Facts",
         "funFactItem1": "<strong>Mon language</strong>, unlike Thai or Burmese, is a <strong>non-tonal language</strong> meaning changes in pitch (how high or low the voice is) do not change the meaning of a word.",
-        "funFactItem2": "There are at least <strong>697 Mon words</strong> that have <strong>influenced Thai words</strong> til this day.",
+        "funFactItem2": "According to Facebook page \"เรียนภาษามอญ Learning Mon Language\", there are more than <strong>2,000 Mon words</strong> that have <strong>influenced Thai words</strong> til this day.",
         "referenceTitle": "References"
     },
     "learnAlphabets": {
         "getStart": "Get Start",
-        "alphabets": "Alphabets",
-        "title": "Learn Alphabets",
-        "consonants": "Consonants",
-        "vowels": "Vowels",
+        "alphabets": "အက္ခရ်",
+        "title": "အက္ခရ်",
+        "consonants": "ပ္တံ",
+        "vowels": "ဗျဉ်",
         "otherVowels": "Other Vowels",
-        "compoundConsonants": "Compound Consonants",
-        "finalConsonants": "Final Consonants",
-        "doubleConsonants": "Double Consonants",
-        "numerals": "Numerals",
-        "punctuations": "Punctuations"
+        "compoundConsonants": "သွဵ",
+        "finalConsonants": "သံယိုက်",
+        "doubleConsonants": "ဂစိုတ်ဂမၠိင်",
+        "numerals": "ဗျဥ်ၜါမွဲလ္ဇံက်",
+        "punctuations": "သကေႅတ ပါ်ပိုဒ် တတ်ပိုဒ်"
+
     },
     "learnSentence": {
-        "sentence": "Grammars",
-        "title": "Learn Grammars",
+        "sentence": "သဒ္ဒါ",
+        "title": "သဒ္ဒါ",
         "speechClassification": "Speech Classification",
-        "noun": "Noun",
-        "pronoun": "Pronoun",
-        "verb": "Verb",
-        "adjective": "Adjective",
-        "adverb": "Adverb",
-        "preposition": "Preposition",
-        "conjunction": "Conjunction",
-        "interjection": "Interjection",
-        "classifier": "Classifier",
-        "type": "Type",
-        "tense": "Tense",
-        "syntax": "Syntax"
+        "noun": "နာမ်",
+        "pronoun": "စၞးနာမ်",
+        "verb": "ကြိယာ",
+        "adjective": "နာမဝိသေသန",
+        "adverb": "ကြိယာဝိသေသန",
+        "preposition": "ဝိဘတ်",
+        "conjunction": "သမ္ဗန္ဓ",
+        "interjection": "အာမေဍိက်",
+        "classifier": "ပိုဒ်ထံက်ထ္ၜးဂကူ",
+        "type": "ကဏ္ဍ",
+        "tense": "ကာလ",
+        "syntax": "စွံဒၞာဲဍေံကဵုဍေံ"
     },
     "keyboard": {
         "title": "Keyboard",
@@ -265,7 +266,7 @@
         "applyNewWord": "Apply for new words"
     },
     "apps": {
-        "title": "Applications",
+        "title": "အေပ်ပလဳဂေရှန်",
         "textAnalyser": "ဉာဏ်ပတောံ",
         "wordCraft": "သိုင် မအက္ခရ် ",
         "dictionary": "အဘိဓာန်"

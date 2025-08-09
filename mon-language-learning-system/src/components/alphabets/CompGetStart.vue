@@ -139,9 +139,14 @@
                 <li>Abugida. (2025, July 21). In <a href="https://en.wikipedia.org/wiki/Main_Page" target="_blank"
                         class="fw-bold text-success">Wikipedia</a>. <a href="https://en.wikipedia.org/wiki/Abugida"
                         target="_blank">https://en.wikipedia.org/wiki/Abugida</a>.</li>
-                <li>ใบความรู้เรื่องคำยืมภาษามอญและชวา มลายูในภาษาไทย. (2025, August 8). In <a href="https://www.dltv.ac.th/" target="_blank"
-                        class="fw-bold text-success">มูลนิธิการศึกษาทางไกลผ่านดาวเทียม ในพระบรมราชูปถัมภ์</a>. <a href="https://dltv.ac.th/utils/files/download/167719"
-                        target="_blank">https://dltv.ac.th/utils/files/download/167719</a>.</li>   
+                <li>พจนานุกรมมอญ-ไทย. (2025, Juืำ 9). In <a href="https://online.fliphtml5.com" target="_blank"
+                        class="fw-bold text-success">FlipHTML5</a>. <a href="https://online.fliphtml5.com/yjjtg/bkuu/?1747471532"
+                        target="_blank">https://online.fliphtml5.com/yjjtg/bkuu/?1747471532</a>.</li>
+                <li>ใบความรู้เรื่องคำยืมภาษามอญและชวา มลายูในภาษาไทย. (2025, August 8). In <a
+                        href="https://www.dltv.ac.th/" target="_blank"
+                        class="fw-bold text-success">มูลนิธิการศึกษาทางไกลผ่านดาวเทียม ในพระบรมราชูปถัมภ์</a>. <a
+                        href="https://dltv.ac.th/utils/files/download/167719"
+                        target="_blank">https://dltv.ac.th/utils/files/download/167719</a>.</li>
             </ol>
         </div>
         <hr>

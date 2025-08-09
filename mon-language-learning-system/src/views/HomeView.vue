@@ -53,6 +53,7 @@
       <hr>
     </div>
     <CompJoinUs :lang="lang" />
+    <CompDevMessage :lang="lang" class="mt-5" />
   </div>
 </template>
 
@@ -69,6 +70,7 @@ import CompOthers from '@/components/home/CompOthers.vue';
 import CompOtherCommunities from '@/components/others/communities/CompOtherCommunities.vue';
 import CompRelatedContent from '@/components/others/communities/CompRelatedContent.vue';
 import CompJoinUs from '@/components/others/communities/CompJoinUs.vue';
+import CompDevMessage from '@/components/others/abouts/CompDevMessage.vue';
 
 export default {
   name: 'HomeView',
@@ -80,7 +82,8 @@ export default {
     CompMiniApps,
     CompOtherCommunities,
     CompRelatedContent,
-    CompJoinUs
+    CompJoinUs,
+    CompDevMessage
   },
   data: () => {
     return {

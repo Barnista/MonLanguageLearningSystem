@@ -3,7 +3,7 @@
         <h2 class="mt-4 mb-3">{{ langSet[lang || 'en'].dictionary.title || '_DICT_' }} {{ langSet[lang ||
             'en'].dictionary.translateToMon || '_MON_' }} - {{ langSet[lang || 'en'].dictionary.translateToThai ||
                 '_THAI_' }}</h2>
-        <CompDictionarySearch ref="compDictionarySearch" :lang="lang" :translate-from="translateFrom" />
+        <CompDictionarySearch ref="compDictionarySearch" :lang="lang" :translate-from="translateFrom" :search-limit="searchLimit" />
     </div>
 </template>
 
@@ -23,6 +23,7 @@ export default {
             translateFrom: 'mon', // Default translation from Mon to Thai
             // This can be changed to 'thai' for Thai to Mon translation
             langSet: displayLanguages.langSet,
+            searchLimit: 10
         }
     },
     mounted() {

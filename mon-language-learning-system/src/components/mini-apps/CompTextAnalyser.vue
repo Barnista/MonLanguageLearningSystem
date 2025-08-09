@@ -206,7 +206,14 @@ export default {
         CompSimpleKeyboard
     },
     props: {
-        lang: String
+        lang: {
+            type: String,
+            default: 'en'
+        },
+        searchLimit: {
+            type: Number,
+            default: 4
+        }
     },
     data: () => {
         return {
@@ -238,7 +245,7 @@ export default {
             this.deconstructed = result.deconstructs;
             this.ipa = result.ipa;
             this.th = result.th;
-            this.meanings = result.meanings;
+            this.meanings = dictionary.searchByWord(this.words, true, this.searchLimit, false);
             console.log(result);
         },
         setText(text) {

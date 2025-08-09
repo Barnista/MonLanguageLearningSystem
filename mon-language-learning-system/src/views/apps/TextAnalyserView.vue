@@ -1,7 +1,7 @@
 <template>
     <div class="text-analyser-view container">
         <h2 class="mt-4 mb-3">{{ langSet[lang || 'en'].textAnalyser.title || '_TITLE_' }}</h2>
-        <CompTextAnalyser ref="compTextAnalyser" :lang="lang" />
+        <CompTextAnalyser ref="compTextAnalyser" :lang="lang" :search-limit="searchLimit" />
         <hr>
         <div class="accordion mb-4" :id="`accordionTextAnalyser`">
             <div class="accordion-item shadow">
@@ -41,6 +41,7 @@ export default {
         return {
             lang: 'en',
             langSet: displayLanguages.langSet,
+            searchLimit: 10
         }
     },
     mounted() {

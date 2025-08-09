@@ -6,7 +6,6 @@ import dbVowels from "./db-vowels";
 import dbDoubleConsonants from "./db-double-consonants";
 import dbFinalConsonants from "./db-final-consonants";
 import alphabets from "./alphabets";
-import dictionary from "../dictionary/dictionary";
 
 export default {
     analyseText(text) {
@@ -258,8 +257,7 @@ export default {
             analysed: analysed,
             ipa: ipa,
             th: th,
-            deconstructs: chars,
-            meanings: dictionary.searchByWord(text, true, 4, false),
+            deconstructs: chars
         }
     },
     analyseSingleWord(word) {
