@@ -2,7 +2,7 @@ export default {
     projectName: "mon-language-learning-system",
     appName: "The Mon Language (မန်)",
     appName2: "The Mon Language: Learning System",
-    appVersion: "1.5.6",
+    appVersion: "1.5.7",
     relatedContents: [
         {
             name: "A AR Dictionary",
@@ -19,45 +19,38 @@ export default {
     ],
     ourCommunities: [
         {
-            name: "Twitter",
-            description: "Up-coming trends & realtime-updates",
-            platform: "twitter",
-            link: "https://x.com/barnista27",
-            country: "thai"
-        },
-        {
-            name: "Facebook",
+            name: "Facebook (Official)",
             description: "Always official annoucements",
             platform: "facebook",
             link: "https://www.facebook.com/profile.php?id=61574757156088",
             country: "thai"
         },
         {
-            name: "Twitch",
+            name: "Discord (Official)",
+            description: "Updates, Discussion, community, and meetings",
+            platform: "discord",
+            link: "https://discord.gg/GkMD5hVrYv",
+            country: "thai"
+        },
+        {
+            name: "Telegram (Official)",
+            description: "Secure messages, dicussion, and sharing",
+            platform: "telegram",
+            link: "https://t.me/+-o9Lj2pbcvJkOTBl",
+            country: "thai"
+        },
+                {
+            name: "Twitch (Barnista)",
             description: "Daily live stream on 08.30 PM (UTC+07)",
             platform: "twitch",
             link: "https://www.twitch.tv/barnista27",
             country: "thai"
         },
         {
-            name: "YouTube",
+            name: "YouTube (Barnista)",
             description: "Digital contents and live stream",
             platform: "youtube",
             link: "https://www.youtube.com/@barnista27",
-            country: "thai"
-        },
-        {
-            name: "Discord",
-            description: "Discussion, community, and meetings",
-            platform: "discord",
-            link: "https://discord.gg/H8gsHSfA",
-            country: "thai"
-        },
-        {
-            name: "Telegram",
-            description: "Secure messages, dicussion, and sharing",
-            platform: "telegram",
-            link: "https://t.me/+uFxq9fXz0F1kNzQ9",
             country: "thai"
         },
     ],
@@ -241,6 +234,11 @@ export default {
             name: "Vue Simple Typewriter",
             role: "Typewriter Effect for Vue.js",
             link: "https://www.npmjs.com/package/vue-simple-typewriter"
+        },
+        {
+            name: "vue-audio-player",
+            role: "Vue Audio Player Component",
+            link: "https://www.npmjs.com/package/@liripeng/vue-audio-player"
         }
 
     ],

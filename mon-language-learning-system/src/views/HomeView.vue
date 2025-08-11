@@ -44,6 +44,10 @@
     <div class="mt-3 mb-5">
       <hr>
     </div>
+    <!--<CompNewsUpdates :lang="lang" />
+    <div class="mt-3 mb-5">
+      <hr>
+    </div>-->
     <CompOtherCommunities :lang="lang" />
     <div class="mt-3 mb-5">
       <hr>
@@ -71,6 +75,7 @@ import CompOtherCommunities from '@/components/others/communities/CompOtherCommu
 import CompRelatedContent from '@/components/others/communities/CompRelatedContent.vue';
 import CompJoinUs from '@/components/others/communities/CompJoinUs.vue';
 import CompDevMessage from '@/components/others/abouts/CompDevMessage.vue';
+//import CompNewsUpdates from '@/components/home/CompNewsUpdates.vue';
 
 export default {
   name: 'HomeView',
@@ -83,7 +88,8 @@ export default {
     CompOtherCommunities,
     CompRelatedContent,
     CompJoinUs,
-    CompDevMessage
+    CompDevMessage,
+    //CompNewsUpdates
   },
   data: () => {
     return {

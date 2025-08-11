@@ -1,7 +1,17 @@
 export default {
     logs: [
         {
-           version: 'v1.5.5-v1.5.6',
+            version: 'v1.5.7',
+            date: new Date('2025-08-11'),
+            changes: [
+                'added more 70 words to dictionary database',
+                'better develop messages with audio player',
+                'new official community platform that we can discuss on Telegram, Discord, and Facebook'
+            ]
+
+        },
+        {
+            version: 'v1.5.5-v1.5.6',
             date: new Date('2025-08-09'),
             changes: [
                 'added more 252 words to dictionary database',
@@ -9,7 +19,7 @@ export default {
                 'added Developer message section to Home Page',
                 'Get Start fun fact correction',
                 'more translation for Mon display language'
-            ] 
+            ]
         },
         {
             version: 'v1.5.1 - v1.5.4',

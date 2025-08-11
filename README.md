@@ -8,6 +8,7 @@ A web application to facilitate in learning the Mon language
 2. [meSpeak.js](https://www.masswerk.at/mespeak/)
 3. [phoneme-synthesis](https://github.com/itinerarium/phoneme-synthesis/)
 4. [Vue Simple Typewriter](https://www.npmjs.com/package/vue-simple-typewriter)
+5. [vue-audio-player](https://www.npmjs.com/package/@liripeng/vue-audio-player)
 
 # References
 1. [Mon alphabet](https://en.wikipedia.org/wiki/Mon_alphabet)

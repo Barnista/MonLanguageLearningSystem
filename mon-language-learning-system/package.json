@@ -1,6 +1,6 @@
 {
   "name": "mon-language-learning-system",
-  "version": "1.5.6",
+  "version": "1.5.7",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -8,6 +8,7 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "@liripeng/vue-audio-player": "^2.0.4",
     "bootstrap": "^5.3.6",
     "bootstrap-icons": "^1.13.1",
     "core-js": "^3.8.3",
