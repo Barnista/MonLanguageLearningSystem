@@ -57,7 +57,7 @@
       <hr>
     </div>
     <CompJoinUs :lang="lang" />
-    <CompDevMessage :lang="lang" class="mt-5" />
+    <!--<CompDevMessage :lang="lang" class="mt-5" />-->
   </div>
 </template>
 
@@ -74,7 +74,7 @@ import CompOthers from '@/components/home/CompOthers.vue';
 import CompOtherCommunities from '@/components/others/communities/CompOtherCommunities.vue';
 import CompRelatedContent from '@/components/others/communities/CompRelatedContent.vue';
 import CompJoinUs from '@/components/others/communities/CompJoinUs.vue';
-import CompDevMessage from '@/components/others/abouts/CompDevMessage.vue';
+//import CompDevMessage from '@/components/others/abouts/CompDevMessage.vue';
 //import CompNewsUpdates from '@/components/home/CompNewsUpdates.vue';
 
 export default {
@@ -88,7 +88,7 @@ export default {
     CompOtherCommunities,
     CompRelatedContent,
     CompJoinUs,
-    CompDevMessage,
+    //CompDevMessage,
     //CompNewsUpdates
   },
   data: () => {
