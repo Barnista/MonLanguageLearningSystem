@@ -1,6 +1,15 @@
 export default {
     logs: [
         {
+            version: 'v1.5.8',
+            date: new Date('2025-08-12'),
+            changes: [
+                'completed Report issues page and Google Form (with Eng and Thai version)',
+                'completed Apply New Word page and Google Form (with Eng and Thai version)',
+                'more Mon language translation on Home Page',
+            ]
+        },
+        {
             version: 'v1.5.7',
             date: new Date('2025-08-11'),
             changes: [

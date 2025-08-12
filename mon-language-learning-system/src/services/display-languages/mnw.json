@@ -2,11 +2,11 @@
     "id": "en",
     "navbar": {
         "home": "Home",
-        "others": "သ္အာင်",
-        "report": "Report issues",
-        "community": "Community",
-        "abouts": "Abouts",
-        "dev": "Contributors"
+        "others": "အရာတၞဟ်",
+        "report": "ပ္တိုန်ထ္ၜးပြဿနာ",
+        "community": "ပွဳပွူဂကောံဂမၠိင်",
+        "abouts": "ပရော",
+        "dev": "ညးမသိုင်ပတန်"
     },
     "homeView": {
         "welcome": "ဒုင်တၠုင် ဏာ နူဘာသာမန် ရ",
@@ -16,7 +16,7 @@
         "description3": "စစမ်ရံင် တ္ၚဲဏံစိုအ် 📖✨"
     },
     "aboutView": {
-        "title": "About This Project",
+        "title": "ပရော",
         "founderTitle": "Message from Project Founder",
         "founderName": "Tummanoon Wancha-em (Barnista)",
         "founderCareer": "Project Founder & Developer",
@@ -28,17 +28,17 @@
         "aboutDescription3": "Developed by Barnista, this project aims to preserve and promote the Mon language and culture through modern technology, making it accessible to a wider audience."
     },
     "communityView": {
-        "title": "Community",
+        "title": "ပွဳပွူဂကောံဂမၠိင်",
         "description": "Join our community to discuss, share, and learn more about the Mon language and culture. Connect with fellow learners and enthusiasts.",
         "description2": "We are on X (Twitter), Facebook, Twitch, YouTube, Discord, and Telegram. Join us to share your thoughts, ask questions, and participate in discussions.",
-        "joinUs": "Join Us",
+        "joinUs": "ပူဗိုင်",
         "explore": "Explore",
-        "otherCommunities": "Communities around the World",
-        "relatedContents": "Related Platforms"
+        "otherCommunities": "ဂအာင်အာကာသမန်မည် မၞုဂၠးတိ",
+        "relatedContents": "ဗီုပြင်မတုပ်"
     },
     "aboutDevView": {
-        "title": "About Contributors",
-        "contributors": "Key Contributors",
+        "title": "ညးမသိုင်ပတန်",
+        "contributors": "ညးမသိုင်ပတန်",
         "contributorsDescription": "We would like to acknowledge the contributions of the following individuals who have played a significant role in the development of this project. Their efforts have been invaluable in making this project a success.",
         "contributorsDescription2": "If you would like to contribute or support this project, please reach out to us. We are always looking for more contributors to help us improve and expand this project. Your support is greatly appreciated.",
         "honorableMentions": "Honorable Mentions",
@@ -154,8 +154,8 @@
         "syntax": "စွံဒၞာဲဍေံကဵုဍေံ"
     },
     "keyboard": {
-        "title": "Keyboard",
-        "fullTitle": "Virtual Keyboard",
+        "title": "ကောန်ဍေင်",
+        "fullTitle": "ကောန်ဍေင်",
         "placeholder": "Tap on the virtual keyboard to start",
         "copyBtn": "Copy text",
         "copiedTxt": "Copied to clipboard.",
@@ -205,7 +205,7 @@
         "tryFinalConsonant": "try final consonant",
         "readMore": "Read More",
         "foundIssues": "found anything wrong? please",
-        "reportIssues": "report issues",
+        "reportIssues": "ပ္တိုန်ထ္ၜးပြဿနာ",
         "askChatGPT": "Ask ChatGPT"
     },
     "table": {

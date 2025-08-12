@@ -8,7 +8,7 @@
                 <ul class="timeline">
                     <li v-for="(log, index) in changeLogs" :key="index" class="timeline-item mb-5">
                         <h5 class="fw-bold">{{ log.version }}</h5>
-                        <p class="text-muted mb-2 fw-bold">{{ log.date }}</p>
+                        <p class="text-muted mb-2 fw-bold">{{ log.date.toDateString() }}</p>
                         <ul class="text-muted">
                             <li v-for="(change, cIndex) in log.changes" :key="cIndex">
                                 {{ change }}
