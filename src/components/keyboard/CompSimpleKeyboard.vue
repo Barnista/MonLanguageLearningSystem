@@ -42,7 +42,53 @@ export default {
                         '{shift} ဇ ဌ ဃ ဠ ၐ ဉ ÷ ၞ င ၊ {shift}',
                         '.com @ {space}'
                     ]
-                }
+                },
+                display: {
+                    '{bksp}': '<span class="text-danger">⌫ Back</span>',
+                    '{enter}': '<span class="text-primary">⏎ <small class="d-inline d-md-none">Enter</small><span class="d-none d-md-inline">Enter</span></span>',
+                    '{shift}': '<span class="text-secondary">⇧ <small class="d-inline d-md-none">Shift</small><span class="d-none d-md-inline">Shift</span></span>',
+                    '{lock}': '<span class="text-success">Tab</span>',
+                    '{tab}': '<span class="text-success">Caps</span>',
+                    '{space}': '<span class="text-muted"><small class="d-inline d-md-none">Mon - Anonta</small><span class="d-none d-md-inline">Mon - Mon Anonta</span></span>'
+                },
+                buttonTheme: [
+                    {
+                        class: "mon-text",
+                        buttons: "ၝ ၁ ၂ ၃ ၄ ၅ ၆ ၇ ၈ ၉ ၀"
+                    },
+                    {
+                        class: "mon-text",
+                        buttons: 'ဆ တ န မ အ ပ က ၚ သ စ ဟ ဩ ၑ'
+                    },
+                    {
+                        class: "mon-text",
+                        buttons: 'ေ ျ ိ ် ါ ဴ ြ ု ူ း'
+                    },
+                    {
+                        class: "mon-text",
+                        buttons: 'ဖ ထ ခ လ ဘ ည ာ ယ ၜ ။'
+                    },
+                    {
+                        class: "mon-text",
+                        buttons: "ဎ ဍ ၚ်္ ဋ ိဲ % ဵ ရ ဂ"
+                    },
+                    {
+                        class: "mon-text",
+                        buttons: "ၛ ဝ ဣ ဒ ဓ ဂ ဥ ၎ ဿ ဏ"
+                    },
+                    {
+                        class: "mon-text",
+                        buttons: 'ၛ ဝ ဣ ၟ ဳ ၠ ဥ ၎ ဿ ဏ ဨ အဴ ဋ္ဌ'
+                    },
+                    {
+                        class: "mon-text",
+                        buttons: 'ဗ ှ ီ ္ ွ ံ ဲ ဒ ဓ'
+                    },
+                    {
+                        class: "mon-text",
+                        buttons: 'ဇ ဌ ဃ ဠ ၐ ဉ ÷ ၞ င ၊'
+                    },
+                ]
             },
             english: layout_english,
             thai: layout_thai,

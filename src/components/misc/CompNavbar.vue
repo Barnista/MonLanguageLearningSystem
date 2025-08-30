@@ -217,7 +217,7 @@
                                     </router-link>
                                 </li>
                                 <li>
-                                    <router-link :to="`/changelogs?lang=${lang}`"
+                                    <router-link :to="`/change-logs?lang=${lang}`"
                                         :class="['dropdown-item', { active: $route.path === '/changelogs' }]">
                                         <i class="bi bi-journal-text"></i> {{ langSet[lang ? lang :
                                             'en'].aboutView.changeLogs }}

@@ -32,6 +32,7 @@
 <script>
 import CompTextAnalyser from '@/components/mini-apps/CompTextAnalyser.vue';
 import displayLanguages from '@/services/display-languages/display-languages';
+import { logPageView } from '@/services/firebase/app';
 
 export default {
     name: 'TextAnalyserView',
@@ -46,6 +47,7 @@ export default {
         }
     },
     mounted() {
+        logPageView('TextAnalyserView');
         this.lang = this.$route.query.lang || 'en';
         this.$refs.compTextAnalyser.setText('မ္ၚဵုရအဴ');
     },

@@ -1,7 +1,7 @@
 export default {
     logs: [
         {
-            version: 'v1.6.0',
+            version: 'v1.6.0 - 1.6.1',
             date: new Date('2025-08-31'),
             changes: [
                 'added keyboard layouts for mobile devices, designed by Anonta Mon.',
@@ -9,6 +9,9 @@ export default {
                 'improved Mon Alphabet AI-generate IPA and TH pronunciation results.',
                 'better UX/UI optimization for mobile devices.',
                 'added Change Logs page to let users know what\'s new and what\'s coming next.',
+                'implemented Myanmar Text Font as default font for Mon text rendering.',
+                'implemented Google Analytics to monitor web traffic and usage.',
+                'fixed minor bugs and issues.',
                 'connected to more Mon communities around the world.',
             ]
         },

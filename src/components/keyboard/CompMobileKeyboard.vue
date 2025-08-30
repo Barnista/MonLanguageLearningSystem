@@ -54,7 +54,45 @@ export default {
                     '{lock}': '<span class="fw-bold text-success">၁၂၃</span>',
                     '{tab}': '<span class="fw-bold text-success">ကခ</span>',
                     '{space}': '<span class="text-muted"><small class="d-inline d-md-none">Mon - Anonta</small><span class="d-none d-md-inline">Mon - Mon Anonta</span></span>'
-                }
+                },
+                buttonTheme: [
+                    {
+                        class: "mon-text",
+                        buttons: "ဆ တ န မ အ ပ က ၚ သ စ"
+                    },
+                    {
+                        class: "mon-text",
+                        buttons: 'ေ ျ ိ ် ါ ဴ ြ ု ူ း ာ'
+                    },
+                    {
+                        class: "mon-text",
+                        buttons: 'ဖ ထ ခ လ ဘ ည ယ ဟ'
+                    },
+                    {
+                        class: "mon-text",
+                        buttons: '{tab} {lock} ဍ ရ ၊ ၞ'
+                    },
+                    {
+                        class: "mon-text",
+                        buttons: "၁ ၂ ၃ ၄ ၅ ၆ ၇ ၈ ၉ ၀"
+                    },
+                    {
+                        class: "mon-text",
+                        buttons: "ၛ ဝ ဣ ဒ ဓ ဂ ဥ ၎ ဿ ဏ"
+                    },
+                    {
+                        class: "mon-text",
+                        buttons: 'ဗ ှ ီ ္ ွ ံ ဲ ၟ ဳ ၠ ဵ'
+                    },
+                    {
+                        class: "mon-text",
+                        buttons: 'ဇ ဌ ဃ ဠ ၜ ဉ ဋ ဨ'
+                    },
+                    {
+                        class: "mon-text",
+                        buttons: 'ဩ င ။ ၚ်္'
+                    },
+                ]
             },
             /* mon: {
                 layout: {

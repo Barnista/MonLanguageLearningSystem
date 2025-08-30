@@ -27,6 +27,7 @@ import CompOtherVowelTable from '@/components/alphabets/vowel/CompOtherVowelTabl
 import CompAlphabetJourney from '@/components/misc/CompAlphabetJourney.vue';
 
 import displayLanguages from '@/services/display-languages/display-languages';
+import { logPageView } from '@/services/firebase/app';
 
 export default {
     name: 'VowelView',
@@ -42,6 +43,7 @@ export default {
         }
     },
     mounted() {
+        logPageView('VowelView');
         this.lang = this.$route.query.lang || 'en';
     },
     watch: {

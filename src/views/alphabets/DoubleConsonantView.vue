@@ -22,6 +22,7 @@
 import CompDoubleConsonantTable from '@/components/alphabets/double/CompDoubleConsonantTable.vue';
 import CompAlphabetJourney from '@/components/misc/CompAlphabetJourney.vue';
 import displayLanguages from '@/services/display-languages/display-languages';
+import { logPageView } from '@/services/firebase/app';
 
 export default {
     name: 'DoubleConsonantView',
@@ -36,6 +37,7 @@ export default {
         }
     },
     mounted() {
+        logPageView('DoubleConsonantView');
         this.lang = this.$route.query.lang || 'en';
     },
     watch: {

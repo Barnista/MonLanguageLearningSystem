@@ -2,7 +2,7 @@ export default {
     projectName: "mon-language-learning-system",
     appName: "The Mon Language (မန်)",
     appName2: "The Mon Language: Learning System",
-    appVersion: "1.6.0",
+    appVersion: "1.6.1",
     relatedContents: [
         {
             name: "A AR Dictionary",
@@ -149,13 +149,19 @@ export default {
         {
             name: "Min Salad",
             role: "Monttip E-book's admin, Mon-Thai dictionary E-book provider, Buddhist Scholar, Mon native speaker.",
-            link: "https://t.me/mot_tip_ebook",
+            link: "",
             country: "mon"
         },
         {
             name: "Nai Saik Chan",
             role: "Dictionary database provider, asscociate developer (A AR Dictionary).",
             link: "https://github.com/NaiSaikChan",
+            country: "mon"
+        },
+        {
+            name: "Anonta Mon",
+            role: "Associate developer (Mon Keyboard Layout), keyboard designer.",
+            link: "https://github.com/anontamon",
             country: "mon"
         },
         {
@@ -173,7 +179,7 @@ export default {
         {
             name: "Barnista's Club: Community",
             role: "Ideas, inspiration, technical enjoyment, and emotional support",
-            link: "https://discord.gg/H8gsHSfA",
+            link: "https://discord.gg/GSZeRZaVZb",
             country: "thai"
         },
         {

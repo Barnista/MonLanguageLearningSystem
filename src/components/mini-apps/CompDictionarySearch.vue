@@ -110,7 +110,7 @@
         <hr>
         <div class="mt-4 row">
             <div class="col-12 mb-3 d-flex justify-content-between">
-                <h3>{{ langSet[lang || 'en'].dictionary.letterFrom }} အ - ၝ</h3>
+                <h3>{{ langSet[lang || 'en'].dictionary.letterFrom }} က - အ</h3>
                 <span class="fs-5 bg-warning rounded shadow px-3 pt-1 pb-2"><span class="fw-bold">{{ text
                 }}</span> ({{ searchResult.length }})</span>
             </div>
@@ -151,9 +151,9 @@
                                         }}:</span>
                                         <span v-for="(titem, tindex) in item.translates" :key="tindex">
                                             <span v-if="titem.type" class="me-2 fst-italic">
-                                                <span class="text-success">({{
+                                                <!--<span class="text-success">({{
                                                     (lang == 'th') ? displayTranslateTypeTH(titem.type) :
-                                                        displayTranslateType(titem.type) }})</span>
+                                                        displayTranslateType(titem.type) }})</span>-->
                                                 <span class="ms-1 fw-bold"
                                                     v-html="translateFrom == 'thai' ? hilightText(text, titem.th) : titem.th"></span>
                                                 <span class="ms-1 text-muted">|</span>
@@ -196,9 +196,9 @@
                                         }}:</span>
                                         <span v-for="(titem, tindex) in item.translates" :key="tindex">
                                             <span v-if="titem.type" class="me-2 fst-italic">
-                                                <span class="text-success">({{
+                                                <!-- <span class="text-success">({{
                                                     (lang == 'th') ? displayTranslateTypeTH(titem.type) :
-                                                        displayTranslateType(titem.type) }})</span>
+                                                        displayTranslateType(titem.type) }})</span>-->
                                                 <span class="ms-1 fw-bold"
                                                     v-html="translateFrom == 'thai' ? hilightText(text, titem.th) : titem.th"></span>
                                                 <span class="ms-1 text-muted">|</span>

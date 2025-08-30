@@ -121,9 +121,9 @@
                                         }}:</small>
                                         <small v-for="(tItem, tIndex) in mItem.translates" :key="tIndex">
                                             <span v-if="tItem.type" class="me-2 fst-italic">
-                                                <span class="text-success">({{
+                                                <!--<span class="text-success">({{
                                                     (lang == 'th') ? displayTranslateTypeTH(tItem.type) :
-                                                        displayTranslateType(tItem.type) }})</span>
+                                                        displayTranslateType(tItem.type) }})</span>-->
                                                 <span class="ms-1 fw-bold" v-html="tItem.th"></span>
                                                 <span class="ms-1 text-muted">|</span>
                                             </span>
@@ -169,9 +169,9 @@
                                         }}:</small>
                                         <small v-for="(tItem, tIndex) in mItem.translates" :key="tIndex">
                                             <span v-if="tItem.type" class="me-2 fst-italic">
-                                                <span class="text-success">({{
+                                                <!--<span class="text-success">({{
                                                     (lang == 'th') ? displayTranslateTypeTH(tItem.type) :
-                                                        displayTranslateType(tItem.type) }})</span>
+                                                        displayTranslateType(tItem.type) }})</span>-->
                                                 <span class="ms-1 fw-bold" v-html="tItem.th"></span>
                                                 <span class="ms-1 text-muted">|</span>
                                             </span>

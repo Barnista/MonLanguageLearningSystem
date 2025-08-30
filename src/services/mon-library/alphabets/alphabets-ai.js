@@ -203,7 +203,7 @@ export default {
             }
 
             //if one word is completed
-            if (wordFinished) {
+            if (wordFinished || index >= length - 1) {
                 if (currentWord) memories.push(currentWord);
                 //reset currentWord & wordFinished
                 currentWord = '';

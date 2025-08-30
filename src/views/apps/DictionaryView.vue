@@ -11,6 +11,7 @@
 <script>
 import CompDictionarySearch from '@/components/mini-apps/CompDictionarySearch.vue';
 import displayLanguages from '@/services/display-languages/display-languages';
+import { logPageView } from '@/services/firebase/app';
 
 export default {
     name: 'DictionaryView',
@@ -28,6 +29,7 @@ export default {
         }
     },
     mounted() {
+        logPageView('DictionaryView');
         this.lang = this.$route.query.lang || 'en';
         this.searchText = this.$route.query.q || 'က';
         this.translateFrom = this.$route.query.from || 'mon'; // Default translation direction

@@ -24,6 +24,7 @@ import CompConsonantTable from '@/components/alphabets/CompConsonantTable.vue';
 import CompAlphabetJourney from '@/components/misc/CompAlphabetJourney.vue';
 
 import displayLanguages from '@/services/display-languages/display-languages';
+import { logPageView } from '@/services/firebase/app';
 
 export default {
     name: 'ConsonantView',
@@ -38,6 +39,7 @@ export default {
         }
     },
     mounted() {
+        logPageView('ConsonantView');
         this.lang = this.$route.query.lang || 'en';
     },
     watch: {

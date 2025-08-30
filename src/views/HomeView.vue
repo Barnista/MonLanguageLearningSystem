@@ -74,6 +74,7 @@ import CompOthers from '@/components/home/CompOthers.vue';
 import CompOtherCommunities from '@/components/others/communities/CompOtherCommunities.vue';
 import CompRelatedContent from '@/components/others/communities/CompRelatedContent.vue';
 import CompJoinUs from '@/components/others/communities/CompJoinUs.vue';
+import { logPageView } from '@/services/firebase/app';
 //import CompDevMessage from '@/components/others/abouts/CompDevMessage.vue';
 //import CompNewsUpdates from '@/components/home/CompNewsUpdates.vue';
 
@@ -103,6 +104,7 @@ export default {
     }
   },
   mounted() {
+    logPageView('HomeView');
     this.lang = this.$route.query.lang || 'en';
     this.rebuildPanels();
     this.rebuildPanels2();

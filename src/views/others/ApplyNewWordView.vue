@@ -34,6 +34,7 @@
 <script>
 
 import displayLanguages from '@/services/display-languages/display-languages';
+import { logPageView } from '@/services/firebase/app';
 
 export default {
     name: 'ApplyNewWordView',
@@ -45,6 +46,7 @@ export default {
         };
     },
     mounted() {
+        logPageView('ApplyNewWordView');
         // Any initialization logic can be added here
         this.lang = this.$route.query.lang || 'en';
     },

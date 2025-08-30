@@ -32,6 +32,7 @@
 <script>
 import CompWordCraft from '@/components/mini-apps/CompWordCraft.vue';
 import displayLanguages from '@/services/display-languages/display-languages';
+import { logPageView } from '@/services/firebase/app';
 
 export default {
     name: 'WordCraftView',
@@ -45,6 +46,7 @@ export default {
         }
     },
     mounted() {
+        logPageView('WordCraftView');
         this.lang = this.$route.query.lang || 'en';
     },
     watch: {

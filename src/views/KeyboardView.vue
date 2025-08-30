@@ -33,6 +33,7 @@
 import CompKeyboardGuide from '@/components/keyboard/CompKeyboardGuide.vue';
 import KeyboardSetComp from '@/components/keyboard/CompKeyboardSet.vue';
 import displayLanguages from '@/services/display-languages/display-languages';
+import { logPageView } from '@/services/firebase/app';
 
 export default {
     name: 'KeyboardView',
@@ -47,6 +48,7 @@ export default {
         }
     },
     mounted() {
+        logPageView('KeyboardView');
         this.lang = this.$route.query.lang || 'en';
     },
     watch: {

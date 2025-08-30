@@ -15,7 +15,8 @@
 
   <!-- Footer -->
   <footer class="bg-dark text-white text-center py-3">
-    <small class="mb-0">v{{ about.appVersion }} © 2025 The Mon Language: Learning System. Developed by Barnista. All Rights Reserved.</small>
+    <small class="mb-0">v{{ about.appVersion }} © 2025 The Mon Language: Learning System. Developed by Barnista. All
+      Rights Reserved.</small>
   </footer>
 </template>
 
@@ -38,7 +39,7 @@ export default {
       lang: 'en',
       langSet: displayLanguages.langSet
     }
-  },  
+  },
   mounted() {
     this.lang = this.$route.query.lang || 'en';
     console.log('lang', this.lang);
@@ -55,7 +56,7 @@ export default {
         keyboardModal.show();
       }
     },
-    onChangeLang(lang){
+    onChangeLang(lang) {
       this.lang = lang;
       this.$router.replace({ query: { ...this.$route.query, lang } });
     }
@@ -66,17 +67,62 @@ export default {
 
 <style>
 @font-face {
-    font-family: 'Myanmar Text';
-    src: url('@/assets/fonts/mmrtext.ttf'),url('@/assets/fonts/mmrtextb.ttf');
+  font-family: 'Myanmar Text';
+  src: url('@/assets/fonts/mmrtext.ttf'), url('@/assets/fonts/mmrtextb.ttf');
 }
 
 @font-face {
-    font-family: 'Padauk';
-    src: url('@/assets/fonts/Padauk-Regular.ttf'),url('@/assets/fonts/Padauk-Bold.ttf');
+  font-family: 'Padauk';
+  src: url('@/assets/fonts/Padauk-Regular.ttf'),
+    url('@/assets/fonts/Padauk-Bold.ttf');
 }
 
-body, html, #app {
-  /*font-family: 'Padauk', 'Myanmar Text', sans-serif;*/
+@font-face {
+  font-family: 'Noto Sans Myanmar';
+  src: url('@/assets/fonts/NotoSansMyanmar-Regular.ttf'),
+    url('@/assets/fonts/NotoSansMyanmar-Medium.ttf'),
+    url('@/assets/fonts/NotoSansMyanmar-Bold.ttf');
+}
+
+.mon-text {
+   font-family: system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    "Helvetica Neue",
+    "Noto Sans",
+    "Liberation Sans",
+    Arial,
+    sans-serif,
+    "Myanmar Text",
+    "Padauk",
+    "Noto Sans Myanmar",
+    "Apple Color Emoji",
+    "Segoe UI Emoji",
+    "Segoe UI Symbol",
+    "Noto Color Emoji";
+}
+
+/* Default Myanmar fonts for Mon text rendering */
+body,
+html,
+#app {
+  font-family: system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    "Helvetica Neue",
+    "Noto Sans",
+    "Liberation Sans",
+    Arial,
+    sans-serif,
+    "Myanmar Text",
+    "Padauk",
+    "Noto Sans Myanmar",
+    "Apple Color Emoji",
+    "Segoe UI Emoji",
+    "Segoe UI Symbol",
+    "Noto Color Emoji";
 }
 
 .safe-zone {
@@ -87,23 +133,23 @@ body, html, #app {
 }
 
 .bg-fabulous {
-    background: linear-gradient(90deg, #ff8a00, #e52e71, #4a90e2, #ff8a00);
-    background-size: 400% 400%;
-    animation: gradient-flash 8s linear infinite;
-    color: #fff !important;
+  background: linear-gradient(90deg, #ff8a00, #e52e71, #4a90e2, #ff8a00);
+  background-size: 400% 400%;
+  animation: gradient-flash 8s linear infinite;
+  color: #fff !important;
 }
 
 @keyframes gradient-flash {
-    0% {
-        background-position: 0% 50%;
-    }
+  0% {
+    background-position: 0% 50%;
+  }
 
-    50% {
-        background-position: 100% 50%;
-    }
+  50% {
+    background-position: 100% 50%;
+  }
 
-    100% {
-        background-position: 0% 50%;
-    }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 </style>

@@ -21,6 +21,7 @@
 import CompGetStart from '@/components/alphabets/CompGetStart.vue';
 import CompAlphabetJourney from '@/components/misc/CompAlphabetJourney.vue';
 import displayLanguages from '@/services/display-languages/display-languages';
+import { logPageView } from '@/services/firebase/app';
 
 export default {
     name: 'AlphabetGetStartView',
@@ -35,6 +36,7 @@ export default {
         }
     },
     mounted() {
+        logPageView('AlphabetGetStartView');
         this.lang = this.$route.query.lang || 'en';
     },
     watch: {

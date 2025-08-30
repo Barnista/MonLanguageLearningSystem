@@ -8,6 +8,7 @@
 
 import CompDevs from '@/components/others/CompDevs.vue';
 import displayLanguages from '@/services/display-languages/display-languages';
+import { logPageView } from '@/services/firebase/app';
 
 export default {
     name: 'AboutDevView',
@@ -22,6 +23,7 @@ export default {
         };
     },
     mounted() {
+        logPageView('AboutDevView');
         // Any initialization logic can be added here
         this.lang = this.$route.query.lang || 'en';
     },

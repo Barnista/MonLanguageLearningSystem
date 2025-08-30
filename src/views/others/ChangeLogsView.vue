@@ -10,6 +10,7 @@
 import CompChangeLogs from '@/components/others/abouts/CompChangeLogs.vue';
 import CompFutureUpdates from '@/components/others/abouts/CompFutureUpdates.vue';
 import displayLanguages from '@/services/display-languages/display-languages';
+import { logPageView } from '@/services/firebase/app';
 
 export default {
   components: {
@@ -24,6 +25,7 @@ export default {
         };
     },
     mounted() {
+        logPageView('ChangeLogsView');
         // Any initialization logic can be added here
         this.lang = this.$route.query.lang || 'en';
     },
