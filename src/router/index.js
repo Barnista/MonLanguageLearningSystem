@@ -94,6 +94,11 @@ const routes = [
     path: '/change-logs',
     name: 'change-logs',
     component: () => import('../views/others/ChangeLogsView.vue')
+  },
+  {
+    path: '/monland',
+    name: 'monland',
+    component: () => import('../views/others/MonlandView.vue')
   }
 ]
 

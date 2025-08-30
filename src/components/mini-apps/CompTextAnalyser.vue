@@ -65,6 +65,15 @@
                                 {{ deconstructed }}
                             </span>
                         </div>
+                        <div v-if="text == 'စိုတ်မန်စိုတ်မွဲ'" class="text-center mt-3">
+                            <router-link class="btn btn-outline-light bg-fabulous shadow"
+                                :to="`/monland?lang=${lang}`" target="_blank">
+                                <i class="bi bi-question-diamond"></i>
+                                <span class="ms-1">
+                                    {{ langSet[lang ?? 'en'].textAnalyser.unlockMonland || '_UNLOCK_MONLAND_' }}
+                                </span>
+                            </router-link>
+                        </div>
                         <div v-if="meanings.length > 0" class="text-muted mt-5 row">
                             <hr>
                             <div class="fw-bold text-center mb-2">
