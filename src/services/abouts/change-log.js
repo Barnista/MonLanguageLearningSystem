@@ -1,7 +1,7 @@
 export default {
     logs: [
         {
-            version: 'v1.6.0 - 1.6.1',
+            version: 'v1.6.0 - 1.6.2',
             date: new Date('2025-08-31'),
             changes: [
                 'added keyboard layouts for mobile devices, designed by Anonta Mon.',

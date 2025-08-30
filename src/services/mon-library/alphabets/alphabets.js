@@ -70,7 +70,7 @@ export default {
         };
 
         // If no consonant is provided, we use the default consonant
-        let currentConsonant = consonant ? (dbConsonants.getByLetter(consonant) ?? this.consonants[0].rows[0].letter) : this.consonants[0].rows[0].letter;
+        let currentConsonant = consonant ? dbConsonants.getByLetter(consonant) : dbConsonants.getByLetter('အ');
 
         // check if the consonant is breathy or clear
         let isBreathy = dbRules.isBreathyConsonant(currentConsonant.letter);
