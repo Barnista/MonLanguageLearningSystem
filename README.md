@@ -1,16 +1,24 @@
-# MonLanguageLearningSystem
-A web application to facilitate in learning the Mon language
+# mon-language-learning-system
 
+## Project setup
+```
+npm install
+```
 
+### Compiles and hot-reloads for development
+```
+npm run serve
+```
 
-# Packages installed
-1. [simple-keyboard](https://www.npmjs.com/package/simple-keyboard)
-2. [meSpeak.js](https://www.masswerk.at/mespeak/)
-3. [phoneme-synthesis](https://github.com/itinerarium/phoneme-synthesis/)
-4. [Vue Simple Typewriter](https://www.npmjs.com/package/vue-simple-typewriter)
-5. [vue-audio-player](https://www.npmjs.com/package/@liripeng/vue-audio-player)
+### Compiles and minifies for production
+```
+npm run build
+```
 
-# References
-1. [Mon alphabet](https://en.wikipedia.org/wiki/Mon_alphabet)
-2. [อักษรมอญ](https://th.wikipedia.org/wiki/%E0%B8%AD%E0%B8%B1%E0%B8%81%E0%B8%A9%E0%B8%A3%E0%B8%A1%E0%B8%AD%E0%B8%8D)
-3. [Mon Anonta keyboard](https://keyman.com/keyboards/mon_anonta)
+### Lints and fixes files
+```
+npm run lint
+```
+
+### Customize configuration
+See [Configuration Reference](https://cli.vuejs.org/config/).
