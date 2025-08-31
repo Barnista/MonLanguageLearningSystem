@@ -2,7 +2,7 @@ export default {
     projectName: "mon-language-learning-system",
     appName: "The Mon Language (မန်)",
     appName2: "The Mon Language: Learning System",
-    appVersion: "1.6.3",
+    appVersion: "1.6.4",
     relatedContents: [
         {
             name: "A AR Dictionary",
@@ -329,8 +329,18 @@ export default {
         },
         {
             name: "Firebase",
-            role: "Cloud Database and Hosting",
+            role: "Cloud Database, Analytics and Hosting",
             link: "https://firebase.google.com/"
+        },
+        {
+            name: "Tesseract OCR",
+            role: "Optical Character Recognition (OCR)",
+            link: "https://tesseract-ocr.github.io/"
+        },
+        {
+            name: "Google Cloud Vision API",
+            role: "Image Analysis and Text Extraction",
+            link: "https://cloud.google.com/vision"
         }
     ]
 }

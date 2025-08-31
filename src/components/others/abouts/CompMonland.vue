@@ -1,9 +1,9 @@
 <template>
     <div class="comp-monland">
         <h2>
-            Monland
+            Project: Monland
         </h2>
-        <h5 class="text-muted">(Rāmaññadesa / ဒေသရးမည / ရာမညဒေသ / ประเทศมอญ / รามัญประเทศ)</h5>
+        <h5 class="text-muted">Mon Civilization Archive thru' Virtual Nation State</h5>
         <div class="row mt-4">
             <div class="col-12 col-lg-8 col-xl-7 mb-3">
                 <img src="@/assets/flags/ramanndesa.svg" alt="Flag of The New Rāmaññadesa designed by Barnista">
@@ -12,7 +12,8 @@
                     2025.
                 </p>
                 <p>
-                    Monland, also known as Rāmaññadesa (Mon: ရာမညဒေသ; Burmese: ရာမညဒေသ; Thai: รามัญประเทศ), is a Burmese
+                    Monland, also known as Rāmaññadesa (Rāmaññadesa / ဒေသရးမည / ရာမညဒေသ / ประเทศมอญ / รามัญประเทศ), is a
+                    Burmese
                     and Mon word which means "country of the Ramans". This was because the Mons were previously called
                     Ramans. The term was coined by King Dhammazedi in 1479.
                 </p>
@@ -24,15 +25,16 @@
                             Wikipedia
                         </span>
                     </a>
-                    <a class="btn btn-dark shadow-sm ms-2" href="https://chatgpt.com/share/68b349b4-5508-8006-8056-74481e139561"
-                        target="_blank" rel="noopener noreferrer">
+                    <a class="btn btn-dark shadow-sm ms-2"
+                        href="https://chatgpt.com/share/68b349b4-5508-8006-8056-74481e139561" target="_blank"
+                        rel="noopener noreferrer">
                         <i class="bi bi-openai"></i>
                         <span class="ms-1">
                             Ask ChatGPT
                         </span>
                     </a>
                 </div>
-                <div>
+                <div class="mt-4">
                     <ul>
                         <li>
                             <i class="bi bi-square-fill me-2" style="color: #c7ba20;"></i>
@@ -47,18 +49,6 @@
                             </ol>
                         </li>
                         <li>
-                            <i class="bi bi-square-fill me-2" style="color: #ff0000;"></i>
-                            <span class="fw-bold">Red Color</span> represents:
-                            <ol>
-                                <li>
-                                    Unity, Justice, and Freedom.
-                                </li>
-                                <li>
-                                    Bravery and courage of the Mon people.
-                                </li>
-                            </ol>
-                        </li>
-                        <li>
                             <i class="bi bi-square-fill me-2" style="color: #139337;"></i>
                             <span class="fw-bold">Green Color</span> represents:
                             <ol>
@@ -67,6 +57,30 @@
                                 </li>
                                 <li>
                                     Lush greenery, natural beauty, and land fertility of Monland.
+                                </li>
+                            </ol>
+                        </li>
+                        <li>
+                            <i class="bi bi-square-fill me-2" style="color: #c7ba20;"></i>
+                            <i class="bi bi-square-fill me-2" style="color: #139337;"></i>
+                            <span class="fw-bold">Yellow & Green</span> represents:
+                            <ol>
+                                <li>
+                                    The Old Color of Hongsawadi Kingdom (1350-1539). The glorious era of the Mon
+                                    civilization in Southeast Asia with its rich culture, art, literature, military, and administration.
+                                </li>
+                            </ol>
+                        </li>
+                        <hr>
+                        <li>
+                            <i class="bi bi-square-fill me-2" style="color: #ff0000;"></i>
+                            <span class="fw-bold">Red Color</span> represents:
+                            <ol>
+                                <li>
+                                    Unity, Justice, and Freedom.
+                                </li>
+                                <li>
+                                    Bravery and courage of the Mon people.
                                 </li>
                             </ol>
                         </li>
