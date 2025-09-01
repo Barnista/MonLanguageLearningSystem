@@ -370,13 +370,12 @@ export default {
                     index++;
                 }
             } else if (vowel) {
-                //there might be multiple sub-vowels combined into one vowel
-                wordStructure.vowel += vowel.compound;
-
                 //check if there's no next char, if the current vowel is also a kind of final consonant in disguise, then take final consonant instead
                 if (char_next === null && finalConsonant) {
                     wordStructure.final = finalConsonant.final;
-                    wordStructure.vowel -= vowel.compound;
+                } else {
+                    //there might be multiple sub-vowels combined into one vowel
+                    wordStructure.vowel += vowel.compound;
                 }
             } else if (finalSymbol) {
                 //some final consonants are so blended that it only show a symbol
@@ -409,19 +408,19 @@ export default {
 
 // generate all possible pronunciations
 function generateCartesianProducts(arrays) {
-  const result = [];
+    const result = [];
 
-  function helper(current, depth) {
-    if (depth === arrays.length) {
-      result.push(current);
-      return;
+    function helper(current, depth) {
+        if (depth === arrays.length) {
+            result.push(current);
+            return;
+        }
+
+        for (let char of arrays[depth]) {
+            helper(current + (current ? '-' : '') + char, depth + 1);
+        }
     }
 
-    for (let char of arrays[depth]) {
-      helper(current + (current ? '-' : '') + char, depth + 1);
-    }
-  }
-
-  helper('', 0);
-  return result;
+    helper('', 0);
+    return result;
 }
