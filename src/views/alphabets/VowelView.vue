@@ -6,11 +6,11 @@
         <CompOtherVowelTable :lang="lang" class="mt-4" />
         <hr>
         <div class="d-flex justify-content-between mt-4">
-            <router-link :to="`/alphabets/consonant?lang=${lang}#consonant-table`" class="btn btn-secondary">
+            <router-link :to="{ path: '/alphabets/consonant', query: { lang }, hash: '#consonant-table' }" class="btn btn-secondary">
                 <i class="bi bi-arrow-left"></i>
                 {{ langSet[lang].learnAlphabets.consonants || '_CONSONANTS_' }} (35)
             </router-link>
-            <router-link :to="`/alphabets/compound-consonant?lang=${lang}#compound-consonant-table`"
+            <router-link :to="{ path: '/alphabets/compound-consonant', query: { lang }, hash: '#compound-consonant-table' }"
                 class="btn btn-primary">
                 {{ langSet[lang].learnAlphabets.compoundConsonants || '_COMPOUND_CONSONANTS_' }} (11)
                 <i class="bi bi-arrow-right"></i>

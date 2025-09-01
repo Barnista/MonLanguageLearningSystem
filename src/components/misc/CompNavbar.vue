@@ -1,7 +1,7 @@
 <template>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow fixed-top" data-bs-theme="dark">
         <div class="container-fluid">
-            <router-link class="navbar-brand" :class="[($route.path !== '/') ? 'text-muted': '']" :to="`/?lang=${lang}`">
+            <router-link class="navbar-brand" :class="[($route.path !== '/') ? 'text-muted': '']" :to="{ path: '/', query: { lang } }">
                 <img src="@/assets/logo.png" alt="Mon Language Logo" width="30" height="30"
                     class="d-inline-block align-text-top">
                 {{ about.appName }}
@@ -18,11 +18,6 @@
                 </div>
                 <div class="offcanvas-body">
                     <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                        <!--<li class="nav-item">
-                            <router-link :to="`/?lang=${lang}`" :class="['nav-link', { active: $route.path === '/' }]">
-                                <i class="bi bi-house"></i> {{ langSet[lang ? lang : 'en'].navbar.home }}
-                            </router-link>
-                        </li>-->
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                                 aria-expanded="false">
@@ -30,31 +25,31 @@
                                 }}
                             </a>
                             <ul class="dropdown-menu">
-                                <li><router-link class="dropdown-item" :to="`/alphabets?lang=${lang}`">{{
+                                <li><router-link class="dropdown-item" :to="{ path: '/alphabets', query: { lang } }">{{
                                     langSet[lang ? lang :
                                         'en'].learnAlphabets.getStart }}</router-link>
                                 </li>
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>
-                                <li><router-link class="dropdown-item" :to="`/alphabets/consonant?lang=${lang}`">{{
+                                <li><router-link class="dropdown-item" :to="{ path: '/alphabets/consonant', query: { lang } }">{{
                                     langSet[lang ? lang :
                                         'en'].learnAlphabets.consonants }}</router-link>
                                 </li>
-                                <li><router-link class="dropdown-item" :to="`/alphabets/vowel?lang=${lang}`">{{
+                                <li><router-link class="dropdown-item" :to="{ path: '/alphabets/vowel', query: { lang } }">{{
                                     langSet[lang
                                         ? lang : 'en'].learnAlphabets.vowels }}</router-link></li>
-                                <li><router-link class="dropdown-item"
-                                        :to="`/alphabets/compound-consonant?lang=${lang}`">{{
+                <li><router-link class="dropdown-item"
+                    :to="{ path: '/alphabets/compound-consonant', query: { lang } }">{{
                                             langSet[lang ? lang :
                                                 'en'].learnAlphabets.compoundConsonants }}</router-link></li>
                                 <li>
-                                    <router-link class="dropdown-item" :to="`/alphabets/final-consonant?lang=${lang}`">
+                                    <router-link class="dropdown-item" :to="{ path: '/alphabets/final-consonant', query: { lang } }">
                                         {{ langSet[lang ? lang : 'en'].learnAlphabets.finalConsonants }}
                                     </router-link>
                                 </li>
                                 <li>
-                                    <router-link class="dropdown-item" :to="`/alphabets/double-consonant?lang=${lang}`">
+                                    <router-link class="dropdown-item" :to="{ path: '/alphabets/double-consonant', query: { lang } }">
                                         {{ langSet[lang ? lang : 'en'].learnAlphabets.doubleConsonants }}
                                     </router-link>
                                 </li>
@@ -157,26 +152,26 @@
                             </a>
                             <ul class="dropdown-menu">
                                 <li>
-                                    <router-link :to="`/apps/text-analyser?lang=${lang}`"
+                                    <router-link :to="{ path: '/apps/text-analyser', query: { lang } }"
                                         :class="['dropdown-item', { active: $route.path === '/apps/text-analyser' }]">
                                         <i class="bi bi-robot"></i> {{ langSet[lang ? lang : 'en'].apps.textAnalyser }}
                                     </router-link>
                                 </li>
                                 <li>
-                                    <router-link :to="`/apps/word-craft?lang=${lang}`"
+                                    <router-link :to="{ path: '/apps/word-craft', query: { lang } }"
                                         :class="['dropdown-item', { active: $route.path === '/apps/word-craft' }]">
                                         <i class="bi bi bi-bricks"></i> {{ langSet[lang ? lang : 'en'].apps.wordCraft }}
                                     </router-link>
                                 </li>
                                 <li>
-                                    <router-link :to="`/apps/dictionary?lang=${lang}`"
+                                    <router-link :to="{ path: '/apps/dictionary', query: { lang } }"
                                         :class="['dropdown-item', { active: $route.path === '/apps/dictionary' }]">
                                         <i class="bi bi bi-translate"></i> {{ langSet[lang ? lang :
                                             'en'].apps.dictionary }}
                                     </router-link>
                                 </li>
                                 <li>
-                                    <router-link :to="`/keyboard?lang=${lang}`"
+                                    <router-link :to="{ path: '/keyboard', query: { lang } }"
                                         :class="['dropdown-item', { active: $route.path === '/keyboard' }]">
                                         <i class="bi bi-keyboard"></i> {{ langSet[lang ? lang : 'en'].keyboard.title }}
                                     </router-link>
@@ -191,33 +186,33 @@
                             </a>
                             <ul class="dropdown-menu">
                                 <li>
-                                    <router-link :to="`/report-issues?lang=${lang}`"
+                                    <router-link :to="{ path: '/report-issues', query: { lang } }"
                                         :class="['dropdown-item', { active: $route.path === '/report-issues' }]">
                                         <i class="bi bi-flag"></i> {{ langSet[lang ? lang : 'en'].navbar.report }}
                                     </router-link>
                                 </li>
                                 <li>
-                                    <router-link :to="`/community?lang=${lang}`"
+                                    <router-link :to="{ path: '/community', query: { lang } }"
                                         :class="['dropdown-item', { active: $route.path === '/community' }]">
                                         <i class="bi bi-wechat"></i> {{ langSet[lang ? lang :
                                             'en'].navbar.community }}
                                     </router-link>
                                 </li>
                                 <li>
-                                    <router-link :to="`/abouts?lang=${lang}`"
+                                    <router-link :to="{ path: '/abouts', query: { lang } }"
                                         :class="['dropdown-item', { active: $route.path === '/abouts' }]">
                                         <i class="bi bi-info-circle"></i> {{ langSet[lang ? lang : 'en'].navbar.abouts
                                         }}
                                     </router-link>
                                 </li>
                                 <li>
-                                    <router-link :to="`/about-dev?lang=${lang}`"
+                                    <router-link :to="{ path: '/about-dev', query: { lang } }"
                                         :class="['dropdown-item', { active: $route.path === '/about-dev' }]">
                                         <i class="bi bi-people"></i> {{ langSet[lang ? lang : 'en'].navbar.dev }}
                                     </router-link>
                                 </li>
                                 <li>
-                                    <router-link :to="`/change-logs?lang=${lang}`"
+                                    <router-link :to="{ path: '/change-logs', query: { lang } }"
                                         :class="['dropdown-item', { active: $route.path === '/changelogs' }]">
                                         <i class="bi bi-journal-text"></i> {{ langSet[lang ? lang :
                                             'en'].aboutView.changeLogs }}
@@ -248,7 +243,7 @@
             <!--<div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                     <li class="nav-item">
-                        <router-link :to="`/?lang=${lang}`" :class="['nav-link', { active: $route.path === '/' }]">
+                        <router-link :to="{ path: '/', query: { lang } }" :class="['nav-link', { active: $route.path === '/' }]">
                             <i class="bi bi-house"></i> {{ langSet[lang ? lang : 'en'].navbar.home }}
                         </router-link>
                     </li>
@@ -258,29 +253,29 @@
                             <i class="bi bi-book-half"></i> {{ langSet[lang ? lang : 'en'].learnAlphabets.alphabets }}
                         </a>
                         <ul class="dropdown-menu">
-                            <li><router-link class="dropdown-item" :to="`/alphabets?lang=${lang}`">{{
+                            <li><router-link class="dropdown-item" :to="{ path: '/alphabets', query: { lang } }">{{
                                 langSet[lang ? lang :
                                     'en'].learnAlphabets.getStart }}</router-link>
                             </li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
-                            <li><router-link class="dropdown-item" :to="`/alphabets/consonant?lang=${lang}`">{{
+                            <li><router-link class="dropdown-item" :to="{ path: '/alphabets/consonant', query: { lang } }">{{
                                 langSet[lang ? lang :
                                     'en'].learnAlphabets.consonants }}</router-link>
                             </li>
-                            <li><router-link class="dropdown-item" :to="`/alphabets/vowel?lang=${lang}`">{{ langSet[lang
+                            <li><router-link class="dropdown-item" :to="{ path: '/alphabets/vowel', query: { lang } }">{{ langSet[lang
                                 ? lang : 'en'].learnAlphabets.vowels }}</router-link></li>
-                            <li><router-link class="dropdown-item" :to="`/alphabets/compound-consonant?lang=${lang}`">{{
+                            <li><router-link class="dropdown-item" :to="{ path: '/alphabets/compound-consonant', query: { lang } }">{{
                                 langSet[lang ? lang :
                                     'en'].learnAlphabets.compoundConsonants }}</router-link></li>
                             <li>
-                                <router-link class="dropdown-item" :to="`/alphabets/final-consonant?lang=${lang}`">
+                                <router-link class="dropdown-item" :to="{ path: '/alphabets/final-consonant', query: { lang } }">
                                     {{ langSet[lang ? lang : 'en'].learnAlphabets.finalConsonants }}
                                 </router-link>
                             </li>
                             <li>
-                                <router-link class="dropdown-item" :to="`/alphabets/double-consonant?lang=${lang}`">
+                                <router-link class="dropdown-item" :to="{ path: '/alphabets/double-consonant', query: { lang } }">
                                     {{ langSet[lang ? lang : 'en'].learnAlphabets.doubleConsonants }}
                                 </router-link>
                             </li>
@@ -360,7 +355,7 @@
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <router-link :to="`/keyboard?lang=${lang}`"
+                        <router-link :to="{ path: '/keyboard', query: { lang } }"
                             :class="['nav-link', { active: $route.path === '/keyboard' }]">
                             <i class="bi bi-keyboard"></i> {{ langSet[lang ? lang : 'en'].keyboard.title }}
                         </router-link>

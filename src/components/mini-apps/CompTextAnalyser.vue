@@ -42,23 +42,61 @@
                                 '_SYLLABLES_' }} ({{ syllables.length }}): <span class="fs-5">{{ words || 'NaN'
                                     }}</span>
                             </div>
-                            <h1 class="mt-2 mb-3">
+                            <h1 class="mt-2 mb-0">
                                 <span v-for="(letter, index) in syllables" :key="index">
                                     <span href="#" class="h1 fw-bold text-primary">{{ letter }}</span>
                                     <span v-if="index < (syllables.length - 1)" class="mx-1 text-muted">-</span>
                                 </span>
                             </h1>
-                            <div class="text-center">
-                                <span class="fw-bold">IPA:</span>
-                                <span class="fs-5 ms-2 text-muted">{{ ipa ? `/${ipa}/` : '/NaN/' }}</span>
+                            <div v-if="ipas.length <= 1" class="w-100 d-block mt-3 mb-4">
+                                <div class="text-center">
+                                    <span class="fw-bold">IPA:</span>
+                                    <span class="fs-5 ms-2 text-muted">{{ ipa ? `/${ipas[0]}/` : '/NaN/'
+                                    }}</span>
+                                </div>
+                                <div class="text-center">
+                                    <span class="fw-bold">TH:</span>
+                                    <span class="fs-5 ms-2 text-muted">{{ th ? `/${ths[0]}/` : '/NaN/'
+                                    }}</span>
+                                </div>
                             </div>
-                            <div class="text-center">
-                                <span class="fw-bold">TH:</span>
-                                <span class="fs-5 ms-2 text-muted">{{ th ? `/${th}/` : '/NaN/' }}</span>
+                            <div v-if="ipas.length > 1" id="carouselAutoplaying" class="carousel carousel-dark slide">
+                                <div class="carousel-indicators">
+                                    <button v-for="(item, index) in ipas" :key="index" type="button"
+                                        data-bs-target="#carouselAutoplaying" :data-bs-slide-to="index.toString()"
+                                        :class="[(index == 0) ? 'active' : '']"></button>
+                                </div>
+                                <div class="carousel-inner">
+                                    <div v-for="(item, index) in ipas" :key="index"
+                                        :class="['carousel-item', (index == 0) ? 'active' : '']">
+                                        <div class="w-100 d-block pt-5 pb-5">
+                                            <div class="text-center">
+                                                <span class="fw-bold">IPA:</span>
+                                                <span class="fs-5 ms-2 text-muted">{{ ipa ? `/${item}/` : '/NaN/'
+                                                }}</span>
+                                            </div>
+                                            <div class="text-center">
+                                                <span class="fw-bold">TH:</span>
+                                                <span class="fs-5 ms-2 text-muted">{{ th ? `/${ths[index]}/` : '/NaN/'
+                                                }}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button v-if="ipas.length > 1" class="carousel-control-prev" type="button"
+                                    data-bs-target="#carouselAutoplaying" data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Previous</span>
+                                </button>
+                                <button v-if="ipas.length > 1" class="carousel-control-next" type="button"
+                                    data-bs-target="#carouselAutoplaying" data-bs-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Next</span>
+                                </button>
                             </div>
                         </div>
 
-                        <div class="text-center text-muted mt-4">
+                        <div class="text-center text-muted">
                             <span class="fw-bold">{{ langSet[lang ?? 'en'].textAnalyser.deconstructed ||
                                 '_DECONSTRUCTED_' }} ({{ deconstructed.length }}):</span>
                             <span class="ms-2 text-muted">
@@ -66,8 +104,8 @@
                             </span>
                         </div>
                         <div v-if="text == 'စိုတ်မန်စိုတ်မွဲ'" class="text-center mt-3">
-                            <router-link class="btn btn-outline-light bg-fabulous shadow"
-                                :to="`/monland?lang=${lang}`" target="_blank">
+                            <router-link class="btn btn-outline-light bg-fabulous shadow" :to="{ path: '/monland', query: { lang } }"
+                                target="_blank">
                                 <i class="bi bi-question-diamond"></i>
                                 <span class="ms-1">
                                     {{ langSet[lang ?? 'en'].textAnalyser.unlockMonland || '_UNLOCK_MONLAND_' }}
@@ -79,7 +117,7 @@
                             <div class="fw-bold text-center mb-2">
                                 {{ langSet[lang ?? 'en'].textAnalyser.meanings ||
                                     '_MEANINGS_' }} ({{ meanings.length }}):
-                                <router-link class="ms-1" :to="`/apps/dictionary?lang=${lang}&from=${'mon'}&q=${words}`"
+                                <router-link class="ms-1" :to="{ path: '/apps/dictionary', query: { lang, from: 'mon', q: words } }"
                                     target="_blank">
                                     {{ langSet[lang ?? 'en'].menu.readMore || '_READ_MORE_' }}
                                 </router-link>
@@ -240,6 +278,8 @@ export default {
             meanings: [],
             ipa: '',
             th: '',
+            ipas: [],
+            ths: [],
             isKeyboardShown: false,
             collapseKeyboard: null,
             copiedIndex2: null,
@@ -267,6 +307,11 @@ export default {
             this.deconstructed = result.deconstructs;
             this.ipa = result.ipa;
             this.th = result.th;
+
+            //multiple pronunciations according to Mon grammatical rules
+            this.ipas = result.ipas;
+            this.ths = result.ths;
+
             this.meanings = dictionary.searchByWord(this.words, true, this.searchLimit, false);
             console.log(result);
         },

@@ -27,7 +27,7 @@
                             {{ langSet[lang || 'en'].dictionary.translateToMon || '_MON_' }}
                         </span>
                         <router-link class="btn btn-outline-danger"
-                            :to="`/apps/dictionary?lang=${lang}&from=${(translateFrom === 'mon') ? 'thai' : 'mon'}&q=${text}`">
+                            :to="{ path: '/apps/dictionary', query: { lang, from: (translateFrom === 'mon') ? 'thai' : 'mon', q: text } }">
                             <i class="bi bi-arrow-left-right"></i>
                         </router-link>
                     </div>
@@ -88,7 +88,7 @@
                 <div class="d-flex justify-content-between text-muted">
                     <small>
                         {{ langSet[lang ?? 'en'].aboutView.contributedBy || '_CREDITS_' }} <strong>Min Salad, Nai Sac
-                            Lun, {{ langSet[lang ?? 'en'].menu.and }} Nai Saik Chan.</strong>
+                            Lun, Nai Saik Chan, {{ langSet[lang ?? 'en'].menu.and }} Anonta Mon.</strong>
                     </small>
                     <small class="text-end d-none">
                         {{ langSet[lang ?? 'en'].menu.foundIssues || '_FOUND_ISSUES_' }}
@@ -102,7 +102,7 @@
         </div>
         <div class="text-center mt-4">
             <router-link class="fw-bold btn btn-lg btn-outline-danger"
-                :to="{ name: 'apply-new-word', params: { lang: lang } }" target="_blank">
+                :to="{ name: 'apply-new-word', params: { lang } }" target="_blank">
                 <i class="bi bi-plus-square-dotted"></i>
                 {{ langSet[lang ?? 'en'].dictionary.applyNewWord || '_APPLY_NEW_WORD_' }}
             </router-link>
@@ -112,25 +112,25 @@
             <div class="col-12 mb-3 d-flex justify-content-between">
                 <h3>{{ langSet[lang || 'en'].dictionary.letterFrom }} က - အ</h3>
                 <span class="fs-5 bg-warning rounded shadow px-3 pt-1 pb-2"><span class="fw-bold">{{ text
-                }}</span> ({{ searchResult.length }})</span>
+                }}</span> ({{ searchResult.length.toLocaleString() }})</span>
             </div>
-            <div class="col-3 col-md-2 col-lg-1 mb-3">
+            <div class="col-2 col-md-2 col-lg-1 mb-3">
                 <div class="btn-group-vertical d-flex flex-wrap justify-content-center">
                     <router-link v-for="(item, index) in consonants" :key="index"
-                        :to="`/apps/dictionary?lang=${lang}&from=${'mon'}&q=${item.letter}`"
+                        :to="{ path: '/apps/dictionary', query: { lang, from: 'mon', q: item.letter } }"
                         :class="['btn', (text === item.letter) ? 'btn-warning' : 'btn-success', 'shadow']">
                         <span :class="['fs-5', (text === item.letter) ? 'fw-bold' : '']">{{ item.letter
                             }}</span>
                     </router-link>
                     <router-link v-for="(item, index) in vowels" :key="index"
-                        :to="`/apps/dictionary?lang=${lang}&from=${'mon'}&q=${item.letter}`"
+                        :to="{ path: '/apps/dictionary', query: { lang, from: 'mon', q: item.letter } }"
                         :class="['btn', (text === item.letter) ? 'btn-warning' : 'btn-secondary', 'shadow']">
                         <span :class="['fs-5', (text === item.letter) ? 'fw-bold' : '']">{{ item.letter
                             }}</span>
                     </router-link>
                 </div>
             </div>
-            <div class="col-9 col-md-10 col-lg-11 mb-3">
+            <div class="col-10 col-md-10 col-lg-11 mb-3">
                 <div class="row">
                     <div class="col-12 col-lg-6">
                         <ul class="list-group">

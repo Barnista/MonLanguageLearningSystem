@@ -10,8 +10,7 @@
                         }}</span>
                 </li>
                 <li v-else class="mt-2 breadcrumb-item">
-                    <router-link class="text-success" :to="`/alphabets?lang=${lang}`">{{ langSet[lang ? lang :
-                        'en'].learnAlphabets.getStart }}</router-link>
+                    <router-link class="text-success" :to="{ path: '/alphabets', query: { lang } }">{{ langSet[lang ? lang : 'en'].learnAlphabets.getStart }}</router-link>
                 </li>
 
                 <li v-if="page && page == 'consonant'" class="mt-2 breadcrumb-item active" aria-current="page">
@@ -20,8 +19,7 @@
                         }}</span>
                 </li>
                 <li v-else class="mt-2 breadcrumb-item">
-                    <router-link class="text-success" :to="`/alphabets/consonant?lang=${lang}`">{{ langSet[lang ? lang :
-                        'en'].learnAlphabets.consonants }}</router-link>
+                    <router-link class="text-success" :to="{ path: '/alphabets/consonant', query: { lang } }">{{ langSet[lang ? lang : 'en'].learnAlphabets.consonants }}</router-link>
                 </li>
 
                 <li v-if="page && page == 'vowel'" class="mt-2 breadcrumb-item active" aria-current="page">
@@ -30,8 +28,7 @@
                         }}</span>
                 </li>
                 <li v-else class="mt-2 breadcrumb-item">
-                    <router-link class="text-success" :to="`/alphabets/vowel?lang=${lang}`">{{ langSet[lang ? lang :
-                        'en'].learnAlphabets.vowels }}</router-link>
+                    <router-link class="text-success" :to="{ path: '/alphabets/vowel', query: { lang } }">{{ langSet[lang ? lang : 'en'].learnAlphabets.vowels }}</router-link>
                 </li>
 
                 <li v-if="page && page == 'compound-consonant'" class="mt-2 breadcrumb-item active" aria-current="page">
@@ -40,9 +37,7 @@
                         }}</span>
                 </li>
                 <li v-else class="mt-2 breadcrumb-item">
-                    <router-link class="text-success" :to="`/alphabets/compound-consonant?lang=${lang}`">{{ langSet[lang
-                        ?
-                        lang : 'en'].learnAlphabets.compoundConsonants }}</router-link>
+                    <router-link class="text-success" :to="{ path: '/alphabets/compound-consonant', query: { lang } }">{{ langSet[lang ? lang : 'en'].learnAlphabets.compoundConsonants }}</router-link>
                 </li>
 
                 <li v-if="page && page == 'final-consonant'" class="mt-2 breadcrumb-item active" aria-current="page">
@@ -51,8 +46,7 @@
                         }}</span>
                 </li>
                 <li v-else class="mt-2 breadcrumb-item">
-                    <router-link class="text-success" :to="`/alphabets/final-consonant?lang=${lang}`">{{ langSet[lang ?
-                        lang : 'en'].learnAlphabets.finalConsonants }}</router-link>
+                    <router-link class="text-success" :to="{ path: '/alphabets/final-consonant', query: { lang } }">{{ langSet[lang ? lang : 'en'].learnAlphabets.finalConsonants }}</router-link>
                 </li>
 
                 <li v-if="page && page == 'double-consonant'" class="mt-2 breadcrumb-item active" aria-current="page">
@@ -61,8 +55,7 @@
                         }}</span>
                 </li>
                 <li v-else class="mt-2 breadcrumb-item">
-                    <router-link class="text-success" :to="`/alphabets/double-consonant?lang=${lang}`">{{ langSet[lang ?
-                        lang : 'en'].learnAlphabets.doubleConsonants }}</router-link>
+                    <router-link class="text-success" :to="{ path: '/alphabets/double-consonant', query: { lang } }">{{ langSet[lang ? lang : 'en'].learnAlphabets.doubleConsonants }}</router-link>
                 </li>
 
                 <li class="mt-2 breadcrumb-item">

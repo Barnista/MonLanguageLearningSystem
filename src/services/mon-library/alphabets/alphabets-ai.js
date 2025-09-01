@@ -219,6 +219,11 @@ export default {
         let analysed = [];
         let ipa = '';
         let th = '';
+        let ipas = [];
+        let ths = [];
+        let allIpa = [];
+        let allTh = [];
+
         for (let i = 0; i < memories.length; i++) {
             const word = memories[i];
             const craft = this.analyseSingleWord(word);
@@ -226,8 +231,11 @@ export default {
 
             let n_ipa = craft.crafted.ipa;
             let n_th = craft.crafted.th;
+            let n_ipa2 = craft.crafted.ipa2 ?? null;
+            let n_th2 = craft.crafted.th2 ?? null;
 
             //I ASSUME IF THERE'S A 2nd WAY, AT LEAST PRONOUNCED IT THE 2nd WAY
+            /*
             if (craft.crafted.ipa2) {
                 //exception as 'ံ' does not refer to အ် anymore
                 if (!craft.structure.vowel.includes('ံ')) {
@@ -240,16 +248,33 @@ export default {
                     n_th = craft.crafted.th2;
                 }
             }
+            */
 
             //exception if the vowel is a stand-alone vowel, always use the default ipa
             if (dbVowels.isStandAloneVowel(craft.structure.vowel)) {
                 n_ipa = craft.crafted.ipa;
                 n_th = craft.crafted.th;
+                n_ipa2 = null;
+                n_th2 = null;
             }
 
             ipa += n_ipa + ((i < memories.length - 1) ? '-' : '');
             th += n_th + ((i < memories.length - 1) ? '-' : '');
+
+            //collect all possible ipa & th
+            const tempIpa = [];
+            const tempTh = [];
+            if (n_ipa) tempIpa.push(n_ipa);
+            if (n_ipa2) tempIpa.push(n_ipa2);
+            if (n_th) tempTh.push(n_th);
+            if (n_th2) tempTh.push(n_th2);
+            ipas.push(tempIpa);
+            ths.push(tempTh);
         }
+
+        // generate all possible pronunciations
+        allIpa = generateCartesianProducts(ipas);
+        allTh = generateCartesianProducts(ths);
 
         return {
             text: text,
@@ -257,6 +282,8 @@ export default {
             analysed: analysed,
             ipa: ipa,
             th: th,
+            ipas: allIpa,
+            ths: allTh,
             deconstructs: chars
         }
     },
@@ -345,6 +372,12 @@ export default {
             } else if (vowel) {
                 //there might be multiple sub-vowels combined into one vowel
                 wordStructure.vowel += vowel.compound;
+
+                //check if there's no next char, if the current vowel is also a kind of final consonant in disguise, then take final consonant instead
+                if (char_next === null && finalConsonant) {
+                    wordStructure.final = finalConsonant.final;
+                    wordStructure.vowel -= vowel.compound;
+                }
             } else if (finalSymbol) {
                 //some final consonants are so blended that it only show a symbol
                 const prevVowel = dbVowels.getByCompound(char_prev);
@@ -372,4 +405,23 @@ export default {
             crafted: result,
         }
     }
+}
+
+// generate all possible pronunciations
+function generateCartesianProducts(arrays) {
+  const result = [];
+
+  function helper(current, depth) {
+    if (depth === arrays.length) {
+      result.push(current);
+      return;
+    }
+
+    for (let char of arrays[depth]) {
+      helper(current + (current ? '-' : '') + char, depth + 1);
+    }
+  }
+
+  helper('', 0);
+  return result;
 }

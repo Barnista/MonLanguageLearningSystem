@@ -15,10 +15,10 @@
         </div>
         <input ref="inputText" class="form-control custom-input py-3 mb-2" type="text" v-model="input"
             @input="onInputChange" :placeholder="langSet[lang ? lang : 'en'].keyboard.placeholder">
-        <SimpleKeyboardComp v-if="windowWidth > 800" class="d-none d-md-block" ref="mobileKeyboard" :lang="lang ? lang : 'en'" :keyboardClass="keyboardClass"
+        <SimpleKeyboardComp v-if="windowWidth > 800" class="d-none d-md-block" ref="mobileKeyboard" :lang="lang ? lang : 'en'"
             :input="input" @onChange="onChange" @onKeyPress="onKeyPress" />
         <CompMobileKeyboard v-if="windowWidth <= 800" class="d-block d-md-none" ref="mobileKeyboard" :lang="lang ? lang : 'en'"
-            :keyboardClass="keyboardClass" :input="input" @onChange="onChange" @onKeyPress="onKeyPress" />
+            :input="input" @onChange="onChange" @onKeyPress="onKeyPress" />
         <div class="text-center mt-2">
             <button v-for="(lang, index) in langs" :key="index"
                 :class="['btn', 'me-2', 'mb-2', selectedLangIndex === index ? 'btn-primary' : 'btn-outline-primary']"

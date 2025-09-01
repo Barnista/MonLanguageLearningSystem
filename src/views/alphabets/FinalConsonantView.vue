@@ -3,12 +3,12 @@
         <CompAlphabetJourney :lang="lang" :page="'final-consonant'" class="mt-4" />
         <CompFinalConsonantTable :lang="lang" class="mt-4" />
         <div class="d-flex justify-content-between mt-4">
-            <router-link :to="`/alphabets/compound-consonant?lang=${lang}#compound-consonant-table`"
+            <router-link :to="{ path: '/alphabets/compound-consonant', query: { lang }, hash: '#compound-consonant-table' }"
                 class="btn btn-secondary">
                 <i class="bi bi-arrow-left"></i>
                 {{ langSet[lang].learnAlphabets.compoundConsonants || '_COMPOUND_CONSONANTS_' }} (11)
             </router-link>
-            <router-link :to="`/alphabets/double-consonant?lang=${lang}#double-consonant-table`"
+            <router-link :to="{ path: '/alphabets/double-consonant', query: { lang }, hash: '#double-consonant-table' }"
                 class="btn btn-primary">
                 {{ langSet[lang].learnAlphabets.doubleConsonants || '_DOUBLE_CONSONANTS_' }} (2)
                 <i class="bi bi-arrow-right"></i>

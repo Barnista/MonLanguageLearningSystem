@@ -2,7 +2,7 @@ export default {
     projectName: "mon-language-learning-system",
     appName: "The Mon Language (မန်)",
     appName2: "The Mon Language: Learning System",
-    appVersion: "1.6.4",
+    appVersion: "1.6.5",
     relatedContents: [
         {
             name: "A AR Dictionary",
@@ -160,7 +160,7 @@ export default {
         },
         {
             name: "Anonta Mon",
-            role: "Associate developer (Mon Keyboard Layout), keyboard designer.",
+            role: "Mon-Thai dictionary compiler, Associate developer (Mon Keyboard Layout), keyboard designer.",
             link: "https://github.com/anontamon",
             country: "mon"
         },
@@ -318,6 +318,11 @@ export default {
             name: "vue-audio-player",
             role: "Vue Audio Player Component",
             link: "https://www.npmjs.com/package/@liripeng/vue-audio-player"
+        },
+        {
+            name: "Pyidaungsu Font",
+            role: "Official Myanmar Font that supports Mon script by Myanmar Computer Federation.",
+            link: "https://mcf.org.mm/pyidaungsu-font/"
         }
 
     ],

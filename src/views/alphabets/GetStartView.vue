@@ -3,12 +3,12 @@
         <CompAlphabetJourney :lang="lang" :page="'get-start'" class="mt-4" />
         <CompGetStart :lang="lang" class="mt-4" />
         <div class="d-flex justify-content-between mt-4">
-            <router-link :to="`/?lang=${lang}`" class="btn btn-secondary">
+            <router-link :to="{ path: '/', query: { lang } }" class="btn btn-secondary">
                 <i class="bi bi-arrow-left"></i>
                 {{ langSet[lang].navbar.home || '_HOME_' }}
             </router-link>
             
-            <router-link :to="`/alphabets/consonant?lang=${lang}#vowel-table`" class="btn btn-primary">
+            <router-link :to="{ path: '/alphabets/consonant', query: { lang }, hash: '#vowel-table' }" class="btn btn-primary">
                 {{ langSet[lang].learnAlphabets.consonants || '_CONSONANTS_' }} (35)
                 <i class="bi bi-arrow-right"></i>
             </router-link>

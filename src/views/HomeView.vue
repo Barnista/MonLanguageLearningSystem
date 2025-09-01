@@ -5,8 +5,7 @@
       <p class="lead text-secondary">
         <span>
           <Typewriter :words="descriptions" :loop="0" :delay-speed="3000" :delete-speed="80" :type-speed="60"
-            :cursor="true" :cursor-blinking="true" :cursor-style="'|'" :cursor-color="'#aaaaaa'"
-            :on-loop-done="onLoopDone" :on-delay="onDelay" :on-delete="onDelete" :on-type="onType" class="text" />
+            :cursor="true" :cursor-blinking="true" :cursor-style="'|'" :cursor-color="'#aaaaaa'" class="text" />
         </span>
       </p>
       <div class="d-flex justify-content-center align-items-center mt-4">
@@ -133,31 +132,31 @@ export default {
       this.panels = [
         {
           title: this.langSet[this.lang].learnAlphabets.consonants || '_CONSONANTS_',
-          route: `/alphabets/consonant?lang=${this.lang}`,
+          route: { path: '/alphabets/consonant', query: { lang: this.lang } },
           icon: 'bi bi-book-half',
           color: 'success'
         },
         {
           title: this.langSet[this.lang].learnAlphabets.vowels || '_VOWELS_',
-          route: `/alphabets/vowel?lang=${this.lang}`,
+          route: { path: '/alphabets/vowel', query: { lang: this.lang } },
           icon: 'bi bi-book-half',
           color: 'success'
         },
         {
           title: this.langSet[this.lang].learnAlphabets.compoundConsonants || '_COMPOUND_CONSONANTS_',
-          route: `/alphabets/compound-consonant?lang=${this.lang}`,
+          route: { path: '/alphabets/compound-consonant', query: { lang: this.lang } },
           icon: 'bi bi-book-half',
           color: 'success'
         },
         {
           title: this.langSet[this.lang].learnAlphabets.finalConsonants || '_FINAL CONSONANTS_',
-          route: `/alphabets/final-consonant?lang=${this.lang}`,
+          route: { path: '/alphabets/final-consonant', query: { lang: this.lang } },
           icon: 'bi bi-book-half',
           color: 'success'
         },
         {
           title: this.langSet[this.lang].learnAlphabets.doubleConsonants || '_DOUBLE CONSONANTS_',
-          route: `/alphabets/double-consonant?lang=${this.lang}`,
+          route: { path: '/alphabets/double-consonant', query: { lang: this.lang } },
           icon: 'bi bi-book-half',
           color: 'success',
         },
@@ -181,21 +180,21 @@ export default {
       this.panels2 = [
         {
           title: this.langSet[this.lang].learnSentence.noun || '_NOUN_',
-          route: `/alphabets/consonant?lang=${this.lang}`,
+          route: { path: '/alphabets/consonant', query: { lang: this.lang } },
           icon: 'bi bi-chat-dots',
           color: 'success',
           disabled: true
         },
         {
           title: this.langSet[this.lang].learnSentence.pronoun || '_PRONOUNCE_',
-          route: `/alphabets/vowel?lang=${this.lang}`,
+          route: { path: '/alphabets/vowel', query: { lang: this.lang } },
           icon: 'bi bi-chat-dots',
           color: 'success',
           disabled: true
         },
         {
           title: this.langSet[this.lang].learnSentence.verb || '_VERB_',
-          route: `/alphabets/compound-consonant?lang=${this.lang}`,
+          route: { path: '/alphabets/compound-consonant', query: { lang: this.lang } },
           icon: 'bi bi-chat-dots',
           color: 'success',
           disabled: true

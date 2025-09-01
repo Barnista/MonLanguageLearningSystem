@@ -1,6 +1,16 @@
 export default {
     logs: [
         {
+            version: 'v1.6.5',
+            date: new Date('2025-09-01'),
+            changes: [
+                'implemented Pyidaungsu font as default font for Mon text rendering. Suggested by Nai Saik Chan as almost every font for Myanmar script does not render Mon text correctly.',
+                'improved Mon Alphabet AI-generate IPA and TH pronunciation results.',
+                'Multiple pronunciation results for Mon Alphabet AI using Cartesian Product maths algorithm.',
+                'fixed minor bugs and issues.',
+            ]
+        },
+        {
             version: 'v1.6.0 - 1.6.4',
             date: new Date('2025-08-31'),
             changes: [

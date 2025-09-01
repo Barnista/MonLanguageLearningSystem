@@ -84,8 +84,15 @@ export default {
     url('@/assets/fonts/NotoSansMyanmar-Bold.ttf');
 }
 
+@font-face {
+  font-family: 'Pyidaungsu';
+  src: url('@/assets/fonts/Pyidaungsu-2.5.4_Regular.ttf'),
+    url('@/assets/fonts/Pyidaungsu-2.5.4_Bold.ttf'),
+    url('@/assets/fonts/PyidaungsuNumbers-Regular.ttf');
+}
+
 .mon-text {
-   font-family: system-ui,
+  font-family: system-ui,
     -apple-system,
     "Segoe UI",
     Roboto,
@@ -94,6 +101,7 @@ export default {
     "Liberation Sans",
     Arial,
     sans-serif,
+    "Pyidaungsu",
     "Myanmar Text",
     "Padauk",
     "Noto Sans Myanmar",
@@ -116,6 +124,7 @@ html,
     "Liberation Sans",
     Arial,
     sans-serif,
+    "Pyidaungsu",
     "Myanmar Text",
     "Padauk",
     "Noto Sans Myanmar",

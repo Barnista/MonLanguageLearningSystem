@@ -94,8 +94,7 @@
                     <div class="fw-bold text-center mb-2">
                         {{ langSet[lang ?? 'en'].textAnalyser.meanings ||
                             '_MEANINGS_' }} ({{ meanings.length }}):
-                        <router-link class="ms-1" :to="`/apps/dictionary?lang=${lang}&from=${'mon'}&q=${words}`"
-                            target="_blank">
+                        <router-link class="ms-1" :to="{ path: '/apps/dictionary', query: { lang, from: 'mon', q: words } }" target="_blank">
                             {{ langSet[lang ?? 'en'].menu.readMore || '_READ_MORE_' }}
                         </router-link>
                     </div>
@@ -239,7 +238,7 @@ export default {
         searchLimit: {
             type: Number,
             default: 4
-        }
+        },
     },
     data() {
         return {
@@ -265,6 +264,7 @@ export default {
             meanings: [],
             copied: false,
             copiedIndex2: null,
+            words: ''
         }
     },
     created() {
@@ -286,6 +286,7 @@ export default {
             //const craftedWord = `${this.sConsonant}${this.sCompound}${this.sVowel}${this.sFinal}`;
             //this.craftedWord = alphabetsAi.analyseSingleWord(craftedWord);
             this.craftedWord = alphabets.craftWord2(this.sConsonant, this.sCompound, this.sVowel, this.sFinal);
+            this.words = this.craftedWord.word;
             console.log(`Crafted Word:`, this.craftedWord);
 
             this.meanings = dictionary.searchByWord(this.craftedWord.word, true, this.searchLimit, true);
