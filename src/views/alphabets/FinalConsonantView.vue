@@ -39,7 +39,7 @@ export default {
         }
     },
     mounted() {
-        logPageView('FinalConsonantView');
+        logPageView(this.$options.name);
         this.lang = this.$route.query.lang || 'en';
     },
     watch: {

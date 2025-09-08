@@ -103,7 +103,7 @@ export default {
     }
   },
   mounted() {
-    logPageView('HomeView');
+    logPageView(this.$options.name);
     this.lang = this.$route.query.lang || 'en';
     this.rebuildPanels();
     this.rebuildPanels2();

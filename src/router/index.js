@@ -56,6 +56,11 @@ const routes = [
     component: () => import('../views/alphabets/DoubleConsonantView.vue')
   },
   {
+    path: '/alphabets/numerals',
+    name: 'alphabets-numerals',
+    component: () => import('../views/alphabets/NumeralsView.vue')
+  },
+  {
     path: '/apps/text-analyser',
     name: 'apps-text-analyser',
     component: () => import('../views/apps/TextAnalyserView.vue')
@@ -99,7 +104,7 @@ const routes = [
     path: '/monland',
     name: 'monland',
     component: () => import('../views/others/MonlandView.vue')
-  }
+  },
 ]
 
 const router = createRouter({

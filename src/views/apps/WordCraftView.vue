@@ -46,7 +46,7 @@ export default {
         }
     },
     mounted() {
-        logPageView('WordCraftView');
+        logPageView(this.$options.name);
         this.lang = this.$route.query.lang || 'en';
     },
     watch: {

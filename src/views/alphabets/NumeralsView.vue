@@ -1,36 +1,36 @@
 <template>
-    <div id="consonant-view" class="container">
-        <CompAlphabetJourney :lang="lang" :page="'consonant'" class="mt-4" />
-        <CompConsonantTable :lang="lang" class="mt-4" />
+    <div id="numerals-view" class="numerals-view container">
+        <CompAlphabetJourney :lang="lang" :page="'numerals'" class="mt-4" />
+        <CompNumeralTable :lang="lang" class="mt-4"/>
         <hr>
         <div class="d-flex justify-content-between mt-4">
-            <router-link :to="{ path: '/alphabets', query: { lang } }" class="btn btn-secondary">
+            <router-link :to="{ path: '/alphabets/consonant', query: { lang }, hash: '#double-consonant-table' }"
+                class="btn btn-secondary">
                 <i class="bi bi-arrow-left"></i>
-                {{ langSet[lang].learnAlphabets.getStart || '_GET_START_' }}
+                {{ langSet[lang].learnAlphabets.doubleConsonants || '_DOUBLE_CONSONANTS_' }} (35)
             </router-link>
-            
-            <router-link :to="{ path: '/alphabets/vowel', query: { lang }, hash: '#vowel-table' }" class="btn btn-primary">
-                {{ langSet[lang].learnAlphabets.vowels || '_VOWELS_' }} (12)
+            <router-link
+                :to="{ path: '/', query: { lang } }"
+                class="btn btn-primary">
+                {{ langSet[lang].navbar.home || '_HOME_' }}
                 <i class="bi bi-arrow-right"></i>
             </router-link>
         </div>
-        <CompAlphabetJourney :lang="lang" :page="'consonant'" class="mt-4" />
+        <CompAlphabetJourney :lang="lang" :page="'numerals'" class="mt-4" />
     </div>
 </template>
 
 <script>
-
-import CompConsonantTable from '@/components/alphabets/CompConsonantTable.vue';
+import CompNumeralTable from '@/components/alphabets/numerals/CompNumeralTable.vue';
 import CompAlphabetJourney from '@/components/misc/CompAlphabetJourney.vue';
-
 import displayLanguages from '@/services/display-languages/display-languages';
 import { logPageView } from '@/services/firebase/app';
 
 export default {
-    name: 'ConsonantView',
+    name: 'NumeralsView',
     components: {
-        CompConsonantTable,
-        CompAlphabetJourney
+        CompAlphabetJourney,
+        CompNumeralTable
     },
     data: () => {
         return {

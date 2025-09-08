@@ -43,7 +43,7 @@ export default {
         }
     },
     mounted() {
-        logPageView('VowelView');
+        logPageView(this.$options.name);
         this.lang = this.$route.query.lang || 'en';
     },
     watch: {

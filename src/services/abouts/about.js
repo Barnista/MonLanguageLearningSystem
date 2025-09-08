@@ -2,7 +2,7 @@ export default {
     projectName: "mon-language-learning-system",
     appName: "The Mon Language (မန်)",
     appName2: "The Mon Language: Learning System",
-    appVersion: "1.6.5",
+    appVersion: "1.6.6",
     relatedContents: [
         {
             name: "A AR Dictionary",
@@ -141,10 +141,36 @@ export default {
     ],
     contributors: [
         {
-            name: "Tummanoon Wancha-em (aka Barnista)",
+            name: "ธรรมนูญ วันชะเอม (ဓမ္မနုည ဝန်ဇအေမ် / Tummanoon Wancha-em / aka. Barnista)",
             role: "Project Founder, Developer, Barnista's persona, independent scholar, Thai-Mon descendant.",
             link: "https://www.youtube.com/@barnista27",
             country: "thai"
+        },
+        {
+            name: "กลุ่มรามัญวิวัฒน์ (ရာမညာဝိဝဍ္ဎန / Rammanyavivatana)",
+            role: "",
+            link: "",
+            country: "thai",
+            members: [
+                {
+                    name: "อลงกรณ์ สุนทรชื่น (Alongkorn Mon)",
+                    role: "Human Rights Defender on migrant workers of Myanmese-Mon ethnics in Thailand, Former President of Mon Youth Community Bangkok, Thai-Mon descendant.",
+                    link: "",
+                    country: "thai"
+                },
+                {
+                    name: "สุนทร ศรีปานเงิน (Sunthorn Sripanngern)",
+                    role: "Mon Language Fundamental & Guide provider. Dictionary provider, Historian, Linguistic Researcher, Mon native speaker.",
+                    link: "",
+                    country: "thai"
+                },
+                {
+                    name: "ธีรัททมาน์ เจียมจวนขาว (Tirattamar Jiamjuankhao)",
+                    role: "Mon Language Fundamental & Guide provider. Dictionary provider, Mon Linguist, Legal drafter on Thailand's Ethnic Protection Bill, Thai-Mon descendant. ",
+                    link: "",
+                    country: "thai"
+                },
+            ]
         },
         {
             name: "Min Salad",
@@ -170,10 +196,48 @@ export default {
             link: "",
             country: "thai"
         },
+    ],
+    honorableMentions: [
+        {
+            name: "ผศ.บัญญพนต์ พูลสวัสดิ์ (ၜညာဗန် ဘုန်သဝါတ် / Banyapon Poolsawas)",
+            role: "Technical & Innovation Advisor",
+            link: "https://github.com/banyapon",
+            country: "thai"
+        },
+        {
+            name: "Htaw Mon",
+            role: "Associate developer (mondictionary.org), Mon Club's Admin (Discord)",
+            link: "https://github.com/iammon/mon-dictionary",
+            country: "us"
+        },
+        {
+            name: "Nai Sac Lun",
+            role: "Mon-Burmese dictionary compiler (first and second editions).",
+            link: "",
+            country: "us"
+        },
+        {
+            name: "Tanapaphon Phoemphunsapphayakon",
+            role: "Testing and Feedback",
+            link: "",
+            country: "thai"
+        },
+        {
+            name: "Sittinon Singmane",
+            role: "Testing and Feedback",
+            link: "",
+            country: "thai"
+        },
         {
             name: "Monttip E-book (မတ်ဒိဗ်): Community",
             role: "Cultural guidance and validation, Linguistic documents provider",
             link: "https://t.me/mot_tip_ebook",
+            country: "mon"
+        },
+        {
+            name: "Mon Club: Community",
+            role: "Technical & Linguistic validation",
+            link: "https://discord.gg/vng8SMJXmy",
             country: "mon"
         },
         {
@@ -192,38 +256,6 @@ export default {
             name: "เรียนภาษามอญ Learning Mon Language: Community",
             role: "Cultural guidance and validation, Linguistic accuracy review",
             link: "https://www.facebook.com/profile.php?id=100063487753229",
-            country: "thai"
-        },
-    ],
-    honorableMentions: [
-        {
-            name: "Htaw Mon",
-            role: "Associate developer (mondictionary.org).",
-            link: "https://github.com/iammon/mon-dictionary",
-            country: "us"
-        },
-        {
-            name: "Nai Sac Lun",
-            role: "Mon-Burmese dictionary compiler (first and second editions).",
-            link: "Asscociate developer (Mon Dictionary website)",
-            country: "us"
-        },
-        {
-            name: "Tanapaphon Phoemphunsapphayakon",
-            role: "Testing and Feedback",
-            link: "",
-            country: "thai"
-        },
-        {
-            name: "Sittinon Singmane",
-            role: "Testing and Feedback",
-            link: "",
-            country: "thai"
-        },
-        {
-            name: "Banyapon Poolsawas",
-            role: "Moral Support",
-            link: "",
             country: "thai"
         },
     ],

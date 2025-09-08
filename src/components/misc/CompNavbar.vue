@@ -56,7 +56,7 @@
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>
-                                <li><router-link class="dropdown-item disabled" to="#" tabindex="-1"
+                                <li><router-link class="dropdown-item" :to="{ path: '/alphabets/numerals', query: { lang } }" tabindex="-1"
                                         aria-disabled="true">{{
                                             langSet[lang ? lang :
                                                 'en'].learnAlphabets.numerals }}</router-link></li>

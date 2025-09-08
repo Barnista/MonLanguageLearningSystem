@@ -29,7 +29,7 @@ export default {
         }
     },
     mounted() {
-        logPageView('DictionaryView');
+        logPageView(this.$options.name);
         this.lang = this.$route.query.lang || 'en';
         this.searchText = this.$route.query.q || 'က';
         this.translateFrom = this.$route.query.from || 'mon'; // Default translation direction

@@ -22,7 +22,7 @@ export default {
     };
   },
   mounted() {
-    logPageView('AboutView');
+    logPageView(this.$options.name);
     // Any initialization logic can be added here
     this.lang = this.$route.query.lang || 'en';
   },

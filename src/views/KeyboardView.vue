@@ -48,7 +48,7 @@ export default {
         }
     },
     mounted() {
-        logPageView('KeyboardView');
+        logPageView(this.$options.name);
         this.lang = this.$route.query.lang || 'en';
     },
     watch: {

@@ -47,7 +47,7 @@ export default {
         }
     },
     mounted() {
-        logPageView('TextAnalyserView');
+        logPageView(this.$options.name);
         this.lang = this.$route.query.lang || 'en';
         this.$refs.compTextAnalyser.setText('မ္ၚဵုရအဴ');
     },

@@ -1,15 +1,18 @@
 <template>
     <div class="report-issues container">
         <div class="mt-4 text-end">
-            <a v-if="lang === 'en'" href="https://forms.gle/gojTLT25uPB6xYuw6" class="fw-bold text-success" target="_blank">
+            <a v-if="lang === 'en'" href="https://forms.gle/gojTLT25uPB6xYuw6" class="fw-bold text-success"
+                target="_blank">
                 <i class="bi bi-box-arrow-up-right"></i>
                 Open this link
             </a>
-            <a v-if="lang === 'th'" href="https://forms.gle/m98mcQmYLEXWC3ZE6" class="fw-bold text-success" target="_blank">
+            <a v-if="lang === 'th'" href="https://forms.gle/m98mcQmYLEXWC3ZE6" class="fw-bold text-success"
+                target="_blank">
                 <i class="bi bi-box-arrow-up-right"></i>
                 เปิดลิงค์แบบฟอร์ม
             </a>
-            <a v-if="lang === 'mnw'" href="https://forms.gle/gojTLT25uPB6xYuw6" class="fw-bold text-success" target="_blank">
+            <a v-if="lang === 'mnw'" href="https://forms.gle/gojTLT25uPB6xYuw6" class="fw-bold text-success"
+                target="_blank">
                 <i class="bi bi-box-arrow-up-right"></i>
                 Open this link
             </a>
@@ -41,7 +44,7 @@ export default {
         };
     },
     mounted() {
-        logPageView('ReportIssuesView');
+        logPageView(this.$options.name);
         // Any initialization logic can be added here
         this.lang = this.$route.query.lang || 'en';
     },

@@ -27,7 +27,28 @@
                     </span>
                     <br>
                     <span class="text-success fs-6">{{ contributor.role
-                        }}</span>
+                    }}</span>
+                    <ul v-if="contributor.members" class="">
+                        <li v-for="(subCon, subIndex) in contributor.members" :key="subIndex" class="py-1 fs-6">
+                            <span>
+                                <img v-if="subCon.country == 'mon'" src="@/assets/flags/mon.svg" width="20"
+                                    height="auto" class="me-2">
+                                <img v-if="subCon.country == 'thai'" src="@/assets/flags/thai.svg" width="20"
+                                    height="auto" class="me-2">
+                                <img v-if="subCon.country == 'us'" src="@/assets/flags/en_us.svg" width="20"
+                                    height="auto" class="me-2">
+                                <strong>{{ subCon.name }}</strong>
+                                <a v-if="subCon.link" :href="subCon.link" target="_blank" class="ms-2">
+                                    <i class="bi bi-box-arrow-up-right"></i> {{ langSet[lang ? lang :
+                                        'en'].aboutDevView.visit
+                                        || '_Visit_' }}
+                                </a>
+                            </span>
+                            <br>
+                            <span class="text-success fs-6">{{ subCon.role
+                            }}</span>
+                        </li>
+                    </ul>
                 </li>
             </ul>
             <div class="alert alert-info shadow-sm" role="alert">
@@ -59,8 +80,14 @@
                         <img v-if="mention.country == 'us'" src="@/assets/flags/en_us.svg" width="20" height="auto"
                             class="me-2">
                         <strong>{{ mention.name }}</strong>
+                        <a v-if="mention.link" :href="mention.link" target="_blank" class="ms-2">
+                            <i class="bi bi-box-arrow-up-right"></i> {{ langSet[lang ? lang :
+                                'en'].aboutDevView.visit
+                                || '_Visit_' }}
+                        </a>
                     </span>
-                    <span class="text-success fs-6"> - {{ mention.role }}</span>
+                    <br>
+                    <span class="text-success fs-6">{{ mention.role }}</span>
                 </li>
             </ul>
         </div>

@@ -36,7 +36,7 @@ export default {
         }
     },
     mounted() {
-        logPageView('AlphabetGetStartView');
+        logPageView(this.$options.name);
         this.lang = this.$route.query.lang || 'en';
     },
     watch: {

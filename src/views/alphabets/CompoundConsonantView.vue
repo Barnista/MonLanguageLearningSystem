@@ -37,7 +37,7 @@ export default {
         }
     },
     mounted() {
-        logPageView('CompoundConsonantView');
+        logPageView(this.$options.name);
         this.lang = this.$route.query.lang || 'en';
     },
     watch: {

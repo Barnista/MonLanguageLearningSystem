@@ -8,8 +8,8 @@
                 <i class="bi bi-arrow-left"></i>
                 {{ langSet[lang].learnAlphabets.finalConsonants || '_FINAL_CONSONANTS_' }} (10)
             </router-link>
-            <router-link :to="{ path: '/', query: { lang } }" class="btn btn-primary">
-                {{ langSet[lang].navbar.home || '_HOME_' }}
+            <router-link :to="{ path: '/alphabets/numerals', query: { lang }, hash: '#numeral-table' }" class="btn btn-primary">
+                {{ langSet[lang].learnAlphabets.numerals || '_NUMERALS_' }}
                 <i class="bi bi-arrow-right"></i>
             </router-link>
         </div>
@@ -37,7 +37,7 @@ export default {
         }
     },
     mounted() {
-        logPageView('DoubleConsonantView');
+        logPageView(this.$options.name);
         this.lang = this.$route.query.lang || 'en';
     },
     watch: {
