@@ -2,7 +2,7 @@ export default {
     projectName: "mon-language-learning-system",
     appName: "The Mon Language (မန်)",
     appName2: "The Mon Language: Learning System",
-    appVersion: "1.6.6",
+    appVersion: "1.6.7",
     relatedContents: [
         {
             name: "A AR Dictionary",
@@ -83,6 +83,14 @@ export default {
     ],
     communities: [
         {
+            name: "Mon Youth Community Bangkok (ชมรมเยาวชนมอญกรุงเทพ)",
+            alias: "mon-youth-bangkok",
+            description: "ဂကောံသၟတ်ဝုတ်ဗၠာ်မန်ဍုၚ်ၜၚ်ကံက်",
+            platform: "facebook",
+            link: "https://www.facebook.com/monyouthbangkok",
+            country: "thai"
+        },
+        {
             name: "Mon Club",
             alias: "mon-club",
             description: "Next-gen Mon people that saves the civilization.",
@@ -96,6 +104,14 @@ export default {
             description: "ရန်ကဵုလိက်မည်တြေံ ညံင်ဂွုအ် ကၠေံကၠက်တုဲ ကၠောန် မတ်ဒိဗ် EBOOK မဒှ်ရ ။ ကၠောန် ဂွံ ၜိုတ် 400 အုပ်တုဲ ပ္တိုန်ဂွံစရင် ၜိုတ် 600 အုပ်ရ။",
             platform: "telegram",
             link: "https://t.me/mot_tip_ebook",
+            country: "mon"
+        },
+        {
+            name: "A Ar (အ အာ)",
+            alias: "aar",
+            description: "မန်ရီုဗၚ်မန် ကမၠောန်မန် ပရေၚ်ချဳဒရာၚ်မန် ပရိုၚ်မန် သွက်မန်",
+            platform: "facebook",
+            link: "https://www.facebook.com/www.aar.mon",
             country: "mon"
         },
         {
@@ -260,6 +276,18 @@ export default {
         },
     ],
     references: [
+        {
+            name: "ตัวเลขมอญ",
+            date: "2025, Sep 9",
+            site: "Wikipedia",
+            link: "https://th.wikipedia.org/wiki/ตัวเลขมอญ"
+        },
+        {
+            name: "Mon numbers",
+            date: "2025, Sep 9",
+            site: "Omniglot",
+            link: "https://www.omniglot.com/language/numbers/mon.htm"
+        },
         {
             name: "บันทึกความเข้าใจในการหัดอ่านภาษามอญ (လိက်ဂတ်)",
             date: "2025, Aug 30",

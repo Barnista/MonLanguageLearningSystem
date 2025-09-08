@@ -268,10 +268,18 @@
         "applyNewWord": "Apply for new words",
         "underReview": "Note: This dictionary is still in the process of reviewing. Please see the updates schedule on"
     },
+    "numConverter": {
+        "title": "Num Converter (Mon-Thai-Arabic)",
+        "description": "Please insert any number on any input to see results.",
+        "arabic": "#Arabic",
+        "thai": "#Thai",
+        "mon": "#Mon"
+    },
     "apps": {
         "title": "အေပ်ပလဳဂေရှန်",
         "textAnalyser": "ဉာဏ်ပတောံ",
         "wordCraft": "သိုင် မအက္ခရ် ",
-        "dictionary": "အဘိဓာန်"
+        "dictionary": "အဘိဓာန်",
+        "numConverter": "Num Converter"
     }
 }

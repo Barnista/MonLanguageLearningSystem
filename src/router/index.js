@@ -76,6 +76,11 @@ const routes = [
     component: () => import('../views/apps/DictionaryView.vue')
   },
   {
+    path: '/apps/num-converter',
+    name: 'apps-num-converter',
+    component: () => import('../views/apps/NumConverterView.vue')
+  },
+  {
     path: '/report-issues',
     name: 'report-issues',
     component: () => import('../views/others/ReportIssuesView.vue')

@@ -7,7 +7,7 @@ export default {
             thLetter: '๐',
             spelling: 'သုည',
             ipa: 'suɲɲa',
-            th: 'ซุญ-เญี่ยะ'
+            th: 'ซุญ-ญะ'
         },
         {
             number: 1,

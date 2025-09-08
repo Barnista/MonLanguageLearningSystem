@@ -1,6 +1,18 @@
 export default {
     logs: [
         {
+            version: 'v1.6.6 - 1.6.7',
+            date: new Date('2025-09-09'),
+            changes: [
+                'added Mon Numerals advanced algorithms.',
+                'initialized Numerals Page.',
+                'added Integer lessons on Numerals Page.',
+                'added Num Converter mini-app. (including a page)',
+                'added more contributors, communities, references.',
+                'added display languages for Num Converter Page.'
+            ]
+        },
+        {
             version: 'v1.6.5',
             date: new Date('2025-09-01'),
             changes: [

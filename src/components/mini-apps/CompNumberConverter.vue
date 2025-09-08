@@ -4,20 +4,20 @@
             <div class="bg-warning" style="height: 16px; border-top-left-radius: 4px; border-top-right-radius: 4px;">
             </div>
             <div class="px-3 pt-3 pb-3">
-                <h4>Num Converter (Mon-Thai-Arabic)</h4>
-                <p>Please insert any number on any input to see results.</p>
+                <h4>{{ langSet[lang ?? 'en'].numConverter.title || '_TITLE_' }}</h4>
+                <p>{{ langSet[lang ?? 'en'].numConverter.description || '_DESCRIPTION_' }}</p>
                 <div class="input-group mb-3">
-                    <span class="input-group-text" style="width: 88px;">#Arabic</span>
+                    <span class="input-group-text" style="width: 88px;">{{ langSet[lang ?? 'en'].numConverter.arabic }}</span>
                     <input type="text" class="form-control" v-model="arabicNum" @keyup="convertFromArabic"
                         placeholder="1,057,314.573">
                 </div>
                 <div class="input-group mb-3">
-                    <span class="input-group-text" style="width: 88px;">#Thai</span>
+                    <span class="input-group-text" style="width: 88px;">{{ langSet[lang ?? 'en'].numConverter.thai }}</span>
                     <input type="text" class="form-control" v-model="thaiNum" @keyup="convertFromThai"
                         placeholder="๑,๐๕๗,๓๑๔.๕๗๓">
                 </div>
                 <div class="input-group input-group-lg mb-3">
-                    <span class="input-group-text fw-bold" style="width: 88px;">#Mon</span>
+                    <span class="input-group-text fw-bold" style="width: 88px;">{{ langSet[lang ?? 'en'].numConverter.mon }}</span>
                     <input type="text" class="form-control fw-bold text-primary" v-model="monNum"
                         @keyup="convertFromMon" placeholder="၁၀၅၇၃၁၄.၅၇၃">
                 </div>

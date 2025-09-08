@@ -47,11 +47,11 @@
     <div class="mt-3 mb-5">
       <hr>
     </div>-->
-    <CompOtherCommunities :lang="lang" />
+    <CompRelatedContent :lang="lang" />
     <div class="mt-3 mb-5">
       <hr>
     </div>
-    <CompRelatedContent :lang="lang" />
+    <CompOtherCommunities :lang="lang" />
     <div class="mt-3 mb-5">
       <hr>
     </div>

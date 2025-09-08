@@ -13,16 +13,16 @@
             <table>
                 <thead>
                     <tr>
-                        <th>เลขมอญ</th>
-                        <th>คำอ่าน</th>
+                        <th>Mon Number</th>
+                        <th>Spelling</th>
                         <th>IPA</th>
                         <th>TH</th>
-                        <th>เลขอาราบิก</th>
+                        <th>Arabic Number</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr v-for="(item, index) in numbers" :key="index">
-                        <td class="text-start">{{ item.letter }}</td>
+                        <td class="text-start fs-5">{{ item.letter }}</td>
                         <td>{{ item.spelling }}</td>
                         <td>{{ item.ipa }}</td>
                         <td>{{ item.th }}</td>
@@ -38,16 +38,16 @@
             <table>
                 <thead>
                     <tr>
-                        <th>เลขมอญ</th>
-                        <th>คำอ่าน</th>
+                        <th>Mon Number</th>
+                        <th>Spelling</th>
                         <th>IPA</th>
                         <th>TH</th>
-                        <th>เลขอาราบิก</th>
+                        <th>Arabic Number</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr v-for="(item, index) in examples" :key="index">
-                        <td class="text-start">{{ item.letter }}</td>
+                        <td class="text-start fs-5">{{ item.letter }}</td>
                         <td>{{ item.spelling }}</td>
                         <td>{{ item.ipa }}</td>
                         <td>{{ item.th }}</td>
@@ -58,32 +58,32 @@
             <hr>
         </div>
 
-        <div>
+        <div class="mt-4">
             <h4><i class="bi bi-0-square"></i> Decimals</h4>
             <hr>
         </div>
 
-        <div>
+        <div class="mt-4">
             <h4><i class="bi bi-calculator"></i> Mathematics</h4>
             <hr>
         </div>
 
-        <div>
+        <div class="mt-4">
             <h4><i class="bi bi-beaker"></i> Quantitative Unit (via Classifier)</h4>
             <hr>
         </div>
 
-        <div>
+        <div class="mt-4">
             <h4><i class="bi bi-cash-coin"></i> Currency</h4>
             <hr>
         </div>
 
-        <div>
+        <div class="mt-4">
             <h4><i class="bi bi-clock"></i> Time</h4>
             <hr>
         </div>
 
-        <div>
+        <div class="mt-4">
             <h4><i class="bi bi-calendar3"></i> Calendar</h4>
             <hr>
         </div>
