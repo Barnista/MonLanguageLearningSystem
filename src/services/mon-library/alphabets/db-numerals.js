@@ -425,8 +425,6 @@ export default {
             }
         }
 
-        console.log(result);
-
         return result;
     },
     combineNumbers(extracted) {

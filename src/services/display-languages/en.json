@@ -106,6 +106,22 @@
         "note": "Note: ",
         "noteType1": "The 11 compound consonants are not considered double consonants."
     },
+    "numeralsView": {
+        "title": "Numerals",
+        "description": "Mon numerals are written using unique glyphs for each digit \"၀-၉\" (0–9), similar to other Indic scripts. <strong>Numbers are formed by combining these digits, read left to right.</strong> For example, the Mon digit for \"၂\" (2) is combined with \"၇\" (7) to form \"၂၇\" (27). Larger numbers follow the same positional value system as Arabic numerals.",
+        "description2": "Mon numerals are often <strong>used in educational materials, articles, literature, calendars, and time telling.</strong> Their pronunciation and spelling differ from Burmese or Thai, though the shapes may look similar due to shared historical roots.",
+        "integers": "Integers",
+        "integerExamples": "Examples of Multi-Digit Integer",
+        "decimals": "Decimals",
+        "mathematics": "Mathematics",
+        "units": "Quantitative Unit (via Classifier)",
+        "currency": "Currency",
+        "time": "Time",
+        "calendar": "Calendar",
+        "monNumber": "Mon Number",
+        "spelling": "Spelling",
+        "arabicNumber": "Arabic Number"
+    },
     "getStartView": {
         "title": "Get Start",
         "getStartDescription1": "<strong>The Mon alphabet</strong> represents a writing system of significant historical and typological interest in Southeast Asia. It is derived from the ancient Brahmi script lineage and has been instrumental in the transmission of Theravāda Buddhist texts and Mon cultural heritage.",
@@ -134,7 +150,7 @@
         "compoundConsonants": "Compound Consonants",
         "finalConsonants": "Final Consonants",
         "doubleConsonants": "Double Consonants",
-        "numerals": "Numerals",
+        "numerals": "Numbers/Time/Calendar",
         "punctuations": "Punctuations"
     },
     "learnSentence": {

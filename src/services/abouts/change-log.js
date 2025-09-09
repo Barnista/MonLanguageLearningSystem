@@ -1,7 +1,7 @@
 export default {
     logs: [
         {
-            version: 'v1.6.6 - 1.6.7',
+            version: 'v1.6.6 - 1.6.8',
             date: new Date('2025-09-09'),
             changes: [
                 'added Mon Numerals advanced algorithms.',
@@ -9,7 +9,12 @@ export default {
                 'added Integer lessons on Numerals Page.',
                 'added Num Converter mini-app. (including a page)',
                 'added more contributors, communities, references.',
-                'added display languages for Num Converter Page.'
+                'added display languages for Num Converter Page.',
+                'downplaying the Numeral lessons to make it less serious using gif images',
+                'translated some contents into thai',
+                'added Numpad keyboard to Num Converter mini-app',
+                'added copy button to Num Converter mini-app',
+                'fixed minor issues',
             ]
         },
         {

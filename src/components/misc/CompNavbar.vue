@@ -1,7 +1,8 @@
 <template>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow fixed-top" data-bs-theme="dark">
         <div class="container-fluid">
-            <router-link class="navbar-brand" :class="[($route.path !== '/') ? 'text-muted': '']" :to="{ path: '/', query: { lang } }">
+            <router-link class="navbar-brand" :class="[($route.path !== '/') ? 'text-muted' : '']"
+                :to="{ path: '/', query: { lang } }">
                 <img src="@/assets/logo.png" alt="Mon Language Logo" width="30" height="30"
                     class="d-inline-block align-text-top">
                 {{ about.appName }}
@@ -32,31 +33,36 @@
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>
-                                <li><router-link class="dropdown-item" :to="{ path: '/alphabets/consonant', query: { lang } }">{{
-                                    langSet[lang ? lang :
-                                        'en'].learnAlphabets.consonants }}</router-link>
+                                <li><router-link class="dropdown-item"
+                                        :to="{ path: '/alphabets/consonant', query: { lang } }">{{
+                                            langSet[lang ? lang :
+                                                'en'].learnAlphabets.consonants }}</router-link>
                                 </li>
-                                <li><router-link class="dropdown-item" :to="{ path: '/alphabets/vowel', query: { lang } }">{{
-                                    langSet[lang
-                                        ? lang : 'en'].learnAlphabets.vowels }}</router-link></li>
-                <li><router-link class="dropdown-item"
-                    :to="{ path: '/alphabets/compound-consonant', query: { lang } }">{{
+                                <li><router-link class="dropdown-item"
+                                        :to="{ path: '/alphabets/vowel', query: { lang } }">{{
+                                            langSet[lang
+                                                ? lang : 'en'].learnAlphabets.vowels }}</router-link></li>
+                                <li><router-link class="dropdown-item"
+                                        :to="{ path: '/alphabets/compound-consonant', query: { lang } }">{{
                                             langSet[lang ? lang :
                                                 'en'].learnAlphabets.compoundConsonants }}</router-link></li>
                                 <li>
-                                    <router-link class="dropdown-item" :to="{ path: '/alphabets/final-consonant', query: { lang } }">
+                                    <router-link class="dropdown-item"
+                                        :to="{ path: '/alphabets/final-consonant', query: { lang } }">
                                         {{ langSet[lang ? lang : 'en'].learnAlphabets.finalConsonants }}
                                     </router-link>
                                 </li>
                                 <li>
-                                    <router-link class="dropdown-item" :to="{ path: '/alphabets/double-consonant', query: { lang } }">
+                                    <router-link class="dropdown-item"
+                                        :to="{ path: '/alphabets/double-consonant', query: { lang } }">
                                         {{ langSet[lang ? lang : 'en'].learnAlphabets.doubleConsonants }}
                                     </router-link>
                                 </li>
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>
-                                <li><router-link class="dropdown-item" :to="{ path: '/alphabets/numerals', query: { lang } }" tabindex="-1"
+                                <li><router-link class="dropdown-item"
+                                        :to="{ path: '/alphabets/numerals', query: { lang } }" tabindex="-1"
                                         aria-disabled="true">{{
                                             langSet[lang ? lang :
                                                 'en'].learnAlphabets.numerals }}</router-link></li>
@@ -174,6 +180,12 @@
                                     <router-link :to="{ path: '/keyboard', query: { lang } }"
                                         :class="['dropdown-item', { active: $route.path === '/keyboard' }]">
                                         <i class="bi bi-keyboard"></i> {{ langSet[lang ? lang : 'en'].keyboard.title }}
+                                    </router-link>
+                                </li>
+                                <li>
+                                    <router-link :to="{ path: '/apps/num-converter', query: { lang } }"
+                                        :class="['dropdown-item', { active: $route.path === '/apps/num-converter' }]">
+                                        <i class="bi bi-regex"></i> {{ langSet[lang ? lang : 'en'].apps.numConverter }}
                                     </router-link>
                                 </li>
                             </ul>
