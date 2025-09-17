@@ -118,9 +118,43 @@
         "currency": "Currency",
         "time": "Time",
         "calendar": "Calendar",
-        "monNumber": "Mon Number",
-        "spelling": "Spelling",
-        "arabicNumber": "Arabic Number"
+        "monNumber": "Mon-Burmese",
+        "spelling": "Reading",
+        "arabicNumber": "Indic-Arabic",
+        "decimalsDescription1": "Historically, Mon numerals did not use a decimal separator at all. The decimal point (.) came into Burmese & Mon usage through Western mathematics and education during the British colonial period (1886–1948).",
+        "decimalsDescription2": "Before that, Mon & Burmese mathematical texts (e.g., astrology, astronomy, and arithmetic treatises) used vulgar fractions rather than decimal fractions.",
+        "decimalsDescription3": "Today, in Myanmar, people use the “.” for decimals, just like internationally.",
+        "equation": "Equation",
+        "mathematicsExamples": "Examples of Equation",
+        "mathematicsDescription": "Mon language mathematical equations use universal components but will be read of as follows:",
+        "time24HourClock": "24-hour Clock (o'clock)",
+        "time12HourClock": "12-hour Clock (am/pm)",
+        "timeVerbal": "Traditional Mon",
+        "timeDescription": "Counting time in Mon is done by reading hours and minutes using Mon numerals and words specifically related to time. Both the 24-hour clock system and the 12-hour clock system display time as [hour]:[minute] followed by the word <strong>နာဍဳ (hour)</strong>. For example, ၃:၁၅ နာဍဳ means 3:15 a.m. or နူဂယး ၃:၁၅ နာဍဳ means 3:15 a.m",
+        "timeDescription2": "The traditional Mon timekeeping system uses a 6-hour system, dividing the day into sections such as dawn, morning, noon, afternoon, evening, night, and midnight.",
+        "calendarDescription1": "This table provides an overview of how to read and use the calendar in Mon. The Gregorian calendar is commonly used, but traditional lunar months and different year systems are also recognized.",
+        "calendarDescription2": "Dates are typically written in the format: <strong>day/month/year or dd/MM/yyyy</strong>. Refer to the tables below for month names, abbreviations, and year system conversions.",
+        "todayIs": "Today is",
+        "months": "Months (ဂိတု)",
+        "monthsDescription1": "Below are the names of the months in Mon, Thai, and English, along with their abbreviations and the number of days in each month.",
+        "gregorianCalendar": "Gregorian Calendar",
+        "lunarCalendar": "Lunar Calendar (Traditional)",
+        "lunarCalendarDescription": "The traditional lunar calendar is used for religious and cultural events, such as festivals, Buddhist holidays, and ceremonies. Each lunar month corresponds to specific occasions, and the calendar is especially important for determining the dates of traditional Mon and Thai celebrations.",
+        "tableNo": "No.",
+        "tableDaysCount": "Days Count",
+        "days": "days",
+        "tableMonth": "Month",
+        "tableGregorian": "Gregorian Month",
+        "years": "Years (သၞာံ)",
+        "yearsDescription": "This section explains the different year systems used in Mon and neighboring cultures. The Christian Era (CE) is the international standard, while the Buddhist Era (BE) and Mon Era are used in religious and cultural contexts. Historical year systems based on kingdoms or significant events may also be encountered in old documents.",
+        "religionBased": "Religion-based (Commonly used)",
+        "realmBased": "Realm-based (Ceremonial)",
+        "realmBasedDescription": "This table lists historical year systems used in different Mon and neighboring realms. These systems were often based on the founding of kingdoms, dynasties, or significant historical events. This is not official, but we'd like to introduce them to you as a ceremonial to this great civilization.",
+        "tableName": "Name",
+        "tableAbb": "Abbreviation",
+        "tableStartYear": "CE Start Year",
+        "tableDescription": "Description",
+        "tableYearNow": "Now"
     },
     "getStartView": {
         "title": "Get Start",
@@ -138,7 +172,13 @@
         "funFactTitle": "Fun Facts",
         "funFactItem1": "<strong>Mon language</strong>, unlike Thai or Burmese, is a <strong>non-tonal language</strong> meaning changes in pitch (how high or low the voice is) do not change the meaning of a word.",
         "funFactItem2": "According to Facebook page \"เรียนภาษามอญ Learning Mon Language\", there are more than <strong>2,000 Mon words</strong> that have <strong>influenced Thai words</strong> til this day.",
-        "referenceTitle": "References"
+        "referenceTitle": "References",
+        "fontsTitle": "Fonts",
+        "fontsDescription": "Here are Unicode fonts for displaying Mon and Myanmar scripts correctly. If you see boxes or missing characters, please install one of these fonts to improve readability on your device.",
+        "fontsOption1": "Pyidaungsu",
+        "fontsOption2": "Myanmar Text",
+        "fontsOption3": "Padauk",
+        "recommended": "recommended"
     },
     "learnAlphabets": {
         "getStart": "Get Start",
@@ -150,7 +190,7 @@
         "compoundConsonants": "သွဵ",
         "finalConsonants": "သံယိုက်",
         "doubleConsonants": "ဂစိုတ်ဂမၠိင်",
-        "numerals": "ဂၞန်/နာဍဳ/ကြက္ကဒိန်",
+        "numerals": "လမောက်သင်ချာ",
         "punctuations": "သကေႅတ ပါ်ပိုဒ် တတ်ပိုဒ်"
     },
     "learnSentence": {
@@ -287,9 +327,9 @@
     "numConverter": {
         "title": "Num Converter (Mon-Thai-Arabic)",
         "description": "Please insert any number on any input to see results.",
-        "arabic": "#Arabic",
-        "thai": "#Thai",
-        "mon": "#Mon"
+        "arabic": "Indic-Arabic",
+        "thai": "Thai-Khmer",
+        "mon": "Mon-Burmese"
     },
     "apps": {
         "title": "အေပ်ပလဳဂေရှန်",

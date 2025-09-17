@@ -181,7 +181,7 @@ export default {
             digit: 2,
             letter: '၁၁',
             thLetter: '๑๑',
-            spelling: 'စှ်မွဲ',
+            spelling: 'စှ်-မွဲ',
             ipa: 'cɒh-mṳa',
             th: 'จอฮ-มัว'
         },
@@ -190,7 +190,7 @@ export default {
             digit: 2,
             letter: '၁၅',
             thLetter: '๑๕',
-            spelling: 'စှ်သုန်',
+            spelling: 'စှ်-သုန်',
             ipa: 'cɒh-sùˀn',
             th: 'จอฮ-ซุน'
         },
@@ -199,7 +199,7 @@ export default {
             digit: 2,
             letter: '၂၀',
             thLetter: '๒๐',
-            spelling: 'ၜါစှ်',
+            spelling: 'ၜါ-စှ်',
             ipa: 'ɓa-cɒh',
             th: 'บา-จอฮ'
         },
@@ -208,7 +208,7 @@ export default {
             digit: 3,
             letter: '၁၅၈',
             thLetter: '๑๕๘',
-            spelling: 'ကၠံမသုန်စှ်ဒစာံ',
+            spelling: 'ကၠံ-မသုန်-စှ်-ဒစာံ',
             ipa: 'klɒm-mɛ̀ˀ-sùˀn-cɒh-tɛ̀ˀcam',
             th: 'กลอม-เมี่ยะ-ซุน-จอฮ-เตี่ยะ-จาม'
         },
@@ -217,7 +217,7 @@ export default {
             digit: 3,
             letter: '၅၀၀',
             thLetter: '๕๐๐',
-            spelling: 'မသုန်ကၠံ',
+            spelling: 'မသုန်-ကၠံ',
             ipa: 'mɛ̀ˀ-sùˀn-klɒm',
             th: 'เมี่ยะ-ซุน-กลอม'
         },
@@ -226,7 +226,7 @@ export default {
             digit: 4,
             letter: '၉၉၉၉',
             thLetter: '๙,๙๙๙',
-            spelling: 'ဒစိတ်လ္ၚီဒစိတ်ကၠံဒစိတ်စှ်ဒစိတ်',
+            spelling: 'ဒစိတ်-လ္ၚီ-ဒစိတ်-ကၠံ-ဒစိတ်-စှ်-ဒစိတ်',
             ipa: 'tɛ̀ˀ-cɔeˀt-lɛ̤ˀŋìˀm-tɛ̀ˀ-cɔeˀt-klɒm-tɛ̀ˀ-cɔeˀt-cɒh-tɛ̀ˀ-cɔeˀt',
             th: 'เตี่ยะ-จิด-เลียะงิ่ม-เตี่ยะ-จิด-กลอม-เตี่ยะ-จิด-จอฮ-เตี่ยะ-จิด',
         },
@@ -235,17 +235,110 @@ export default {
             digit: 5,
             letter: '၆၀၂၀၅',
             thLetter: '๖๐,๒๐๕',
-            spelling: 'တရဴလှက်ၜါကၠံသုန်',
+            spelling: 'တရဴ-လှက်-ၜါ-ကၠံ-သုန်',
             ipa: 'taˀ-roa-laˀk-ɓa-klɒm-sùˀn',
             th: 'ตะ-ราว-ลัก-บา-กลอม-ซุน'
+        }
+    ],
+    decimalExamples: [
+        {
+            number: 7.5,
+            digit: 1,
+            letter: "၇.၅",
+            spelling: "ထပှ်-ဒဿမ-မသုန်",
+            ipa: 'tʰaˀ-pɒh-tòs-saˀ-mɛ̀ˀ-mɛ̀ˀ-sùˀn',
+            th: 'ทะ-ปอฮ-ต่ซ-ซะ-เมี่ยะ-เมี่ยะ-ซุน'
+        },
+        {
+            number: 1.843,
+            digit: 1,
+            letter: "၁.၈၄၃",
+            spelling: "မွဲ-ဒဿမ-ဒစာံ-ပန်-ပိ",
+            ipa: 'mṳa-tòs-saˀ-mɛ̀ˀ-tɛ̀ˀcam-pɒn-pɔɪ',
+            th: 'มัว-ต่ซ-ซะ-เมี่ยะ-เตี่ยะ-จาม-ปอน-ปอฺย'
+        },
+        {
+            number: 50.98,
+            digit: 2,
+            letter: "၅၀.၉၈",
+            spelling: "မသုန်စှ်-ဒဿမ-ဒစိတ်-ဒစာံ",
+            ipa: "mɛ̀ˀ-sùˀn-cɒh-tòs-saˀ-mɛ̀ˀ-tɛ̀ˀ-cɔeˀt-tɛ̀ˀcam",
+            th: "เมี่ยะ-ซุน-จอฮ-ต่ซ-ซะ-เมี่ยะ-เตี่ยะ-จิด-เตี่ยะ-จาม"
+        }
+    ],
+    equationExamples: [
+        {
+            equation: "၁ + ၂ = ၃",
+            equation2: "1 + 2 = 3",
+            spelling: "မွဲ-ဟုဲ-ၜါ-တုပ်သၟဟ်-ပိ",
+            ipa: "mṳa-hùi-ɓa-tùˀp-saˀmɒh-pɔɪ",
+            th: "มัว-ฮุย-บา-ตุบ-ซะมอฮ-ปอฺย",
+        },
+        {
+            equation: "၁၉ - ၄ = ၁၅",
+            equation2: "19 - 4 = 15",
+            spelling: "စှ်-ဒစိတ်-နုက်-ပန်-တုပ်သၟဟ်-စှ်-သုန်",
+            ipa: "cɒh-tɛ̀ˀ-nɤˀk-hùi-pɒn-tùˀp-saˀmɒh-cɒh-sùˀn",
+            th: "จอฮ-เตี่ยะ-เนิ่ก-ฮุย-ปอน-ตุบ-ซะมอฮ-จอฮ-ซุน",
+        },
+        {
+            equation: "၈ × ၄ = ၃၂",
+            equation2: "8 × 4 = 32",
+            spelling: "မွဲ-ဟုဲ-ၜါ-တုပ်သၟဟ်-ပိ",
+            ipa: "mṳa-hùi-ɓa-tùˀp-saˀmɒh-pɔɪ",
+            th: "มัว-ฮุย-บา-ตุบ-ซะมอฮ-ปอฺย",
+        },
+        {
+            equation: "၇၂ ÷ ၁၂ = ၆",
+            equation2: "72 ÷ 12 = 6",
+            spelling: "ထပှ်စှ်-ၜါ-စ-စှ်-ၜါ-တုပ်သၟဟ်-တရဴ",
+            ipa: "tʰaˀ-pɒh-cɒh-ɓa-caˀ-cɒh-ɓa-tùˀp-saˀmɒh-taˀ-roa",
+            th: "ทะ-ปอฮ-จอฮ-บา-จะ-จอฮ-บา-ตุบ-ซะมอฮ-ตะ-ราว",
         }
     ],
     symbols: [
         {
             letter: ".",
-            spelling: "ဍာပ်",
-            ipa: 'ɗap',
-            th: 'ดาบ'
+            spelling: "ဒဿမ",
+            spelling2: "ဒသ္သမ",
+            ipa: 'tòs-saˀ-mɛ̀ˀ',
+            th: 'ต่ซ-ซะ-เมี่ยะ'
+        },
+        {
+            letter: "+",
+            spelling: "ဟုယ်",
+            spelling2: "ဟုဲ",
+            ipa: "hùi",
+            th: "ฮุย"
+        },
+        {
+            letter: "-",
+            spelling: "နုက်",
+            ipa: "nɤˀk",
+            th: "เนิ่ก"
+        },
+        {
+            letter: "×",
+            letter2: "*",
+            spelling: "ပၟဝ်",
+            ipa: "paˀmɒw",
+            th: "ปะมอว"
+        },
+        {
+            letter: "÷",
+            letter2: "/",
+            spelling: "စ",
+            ipa: "caˀ",
+            th: "จะ"
+        },
+        {
+            letter: "=",
+            spelling: "တုပ်သၟဟ်",
+            spelling2: "ညဳ",
+            ipa: "tùˀp-saˀmɒh",
+            th: "ตุบ-ซะมอฮ",
+            ipa2: "ɲì",
+            th2: "ญี่"
         }
     ],
     monToArabic(monNumberStr) {
@@ -288,7 +381,7 @@ export default {
 
         return result;
     },
-    monToThai(monNumberStr) {
+    monToThai(monNumberStr, includeComma) {
         let result = '๐';
 
         if (monNumberStr) {
@@ -313,7 +406,7 @@ export default {
                     count++;
                 } else {
                     count = 1;
-                    numStr2 = ',' + numStr2;
+                    if(includeComma)numStr2 = ',' + numStr2;
                 }
                 numStr2 = element + numStr2;
             }
@@ -442,7 +535,7 @@ export default {
         obj.th = th;
         return obj;
     },
-    convertFromMon(monNumberStr) {
+    convertFromMon(monNumberStr, includeComma) {
         let obj = {
             monNum: '',
             thaiNum: '',
@@ -453,8 +546,8 @@ export default {
         }
 
         obj.monNum = monNumberStr;
-        obj.thaiNum = this.monToThai(monNumberStr);
-        obj.arabicNum = this.monToArabic(monNumberStr);
+        obj.thaiNum = this.monToThai(monNumberStr, includeComma);
+        obj.arabicNum = this.monToArabic(monNumberStr, includeComma);
 
         const extracted = this.extractNumbers(obj.monNum);
         const obj2 = this.combineNumbers(extracted);
@@ -466,7 +559,7 @@ export default {
 
         return obj;
     },
-    convertFromArabic(arabicNumberStr) {
+    convertFromArabic(arabicNumberStr, includeComma) {
         let obj = {
             monNum: '',
             thaiNum: '',
@@ -476,8 +569,8 @@ export default {
             th: ''
         }
 
-        obj.monNum = this.arabicToMon(arabicNumberStr);
-        obj.thaiNum = this.monToThai(obj.monNum);
+        obj.monNum = this.arabicToMon(arabicNumberStr, includeComma);
+        obj.thaiNum = this.monToThai(obj.monNum, includeComma);
         obj.arabicNum = arabicNumberStr;
 
         const extracted = this.extractNumbers(obj.monNum);
@@ -490,7 +583,7 @@ export default {
 
         return obj;
     },
-    convertFromThai(thaiNumberStr) {
+    convertFromThai(thaiNumberStr, includeComma) {
         let obj = {
             monNum: '',
             thaiNum: '',
@@ -500,9 +593,9 @@ export default {
             th: ''
         }
 
-        obj.monNum = this.thaiToMon(thaiNumberStr);
+        obj.monNum = this.thaiToMon(thaiNumberStr, includeComma);
         obj.thaiNum = thaiNumberStr;
-        obj.arabicNum = this.monToArabic(obj.monNum);
+        obj.arabicNum = this.monToArabic(obj.monNum, includeComma);
 
         const extracted = this.extractNumbers(obj.monNum);
         const obj2 = this.combineNumbers(extracted);
@@ -513,5 +606,9 @@ export default {
         }
 
         return obj;
-    }
+    },
+    zeroPad(num, places) {
+        if (Number(num) < 10) return String(num).padStart(places, '0');
+        else return String(num)
+    },
 }

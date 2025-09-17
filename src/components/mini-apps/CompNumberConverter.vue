@@ -7,19 +7,19 @@
                 <h4>{{ langSet[lang ?? 'en'].numConverter.title || '_TITLE_' }}</h4>
                 <p>{{ langSet[lang ?? 'en'].numConverter.description || '_DESCRIPTION_' }}</p>
                 <div class="input-group mb-3">
-                    <span class="input-group-text" style="width: 88px;">{{ langSet[lang ?? 'en'].numConverter.arabic
+                    <span class="input-group-text" style="width: 128px;">{{ langSet[lang ?? 'en'].numConverter.arabic
                         }}</span>
                     <input type="text" class="form-control" v-model="arabicNum" @keyup="convertFromArabic"
                         placeholder="1,057,314.573">
                 </div>
                 <div class="input-group mb-3">
-                    <span class="input-group-text" style="width: 88px;">{{ langSet[lang ?? 'en'].numConverter.thai
+                    <span class="input-group-text" style="width: 128px;">{{ langSet[lang ?? 'en'].numConverter.thai
                         }}</span>
                     <input type="text" class="form-control" v-model="thaiNum" @keyup="convertFromThai"
                         placeholder="๑,๐๕๗,๓๑๔.๕๗๓">
                 </div>
-                <div class="input-group input-group-lg">
-                    <span class="input-group-text fw-bold" style="width: 88px;">{{ langSet[lang ??
+                <div class="input-group input-group">
+                    <span class="input-group-text fw-bold" style="width: 140px;">{{ langSet[lang ??
                         'en'].numConverter.mon }}</span>
                     <input type="text" class="form-control fw-bold text-success" v-model="monNum"
                         @keyup="convertFromMon" placeholder="၁၀၅၇၃၁၄.၅၇၃">
@@ -119,19 +119,19 @@ export default {
     },
     methods: {
         convertFromMon() {
-            this.numResult = dbNumerals.convertFromMon(this.monNum);
+            this.numResult = dbNumerals.convertFromMon(this.monNum, true);
             this.monNum = this.numResult.monNum;
             this.thaiNum = this.numResult.thaiNum;
             this.arabicNum = Number(this.numResult.arabicNum).toLocaleString();
         },
         convertFromThai() {
-            this.numResult = dbNumerals.convertFromThai(this.thaiNum);
+            this.numResult = dbNumerals.convertFromThai(this.thaiNum, true);
             this.monNum = this.numResult.monNum;
             this.thaiNum = this.numResult.thaiNum;
             this.arabicNum = Number(this.numResult.arabicNum).toLocaleString();
         },
         convertFromArabic() {
-            this.numResult = dbNumerals.convertFromArabic(this.arabicNum);
+            this.numResult = dbNumerals.convertFromArabic(this.arabicNum, true);
             this.monNum = this.numResult.monNum;
             this.thaiNum = this.numResult.thaiNum;
             this.arabicNum = this.numResult.arabicNum;

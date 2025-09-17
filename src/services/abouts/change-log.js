@@ -1,6 +1,19 @@
 export default {
     logs: [
         {
+            version: 'v1.7.0',
+            date: new Date('2025-09-17'),
+            changes: [
+                'NumConverter App: users can convert back and forth between Arabic, Thai, and Mon numbers.',
+                'Integers: learn numbers from 0 to 1,000,000,000.',
+                'Decimals: learn how to put use decimal numbers (with dot ".")',
+                'Mathematics: learn how to read maths annotation symbols.',
+                'Time: learn how to tell, read, and write times depending on each clock systems.',
+                'Calendar: learn how to tell, read, and write dates/months/year on Gregorian calendar and Lunar Calendar.',
+                'Fixed some missing Mon characters on mobile keyboard layout'
+            ]
+        },
+        {
             version: 'v1.6.6 - 1.6.8',
             date: new Date('2025-09-09'),
             changes: [

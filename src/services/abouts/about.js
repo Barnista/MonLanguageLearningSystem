@@ -2,7 +2,7 @@ export default {
     projectName: "mon-language-learning-system",
     appName: "The Mon Language (မန်)",
     appName2: "The Mon Language: Learning System",
-    appVersion: "1.6.8",
+    appVersion: "1.7.0",
     relatedContents: [
         {
             name: "A AR Dictionary",
@@ -383,6 +383,11 @@ export default {
             name: "Pyidaungsu Font",
             role: "Official Myanmar Font that supports Mon script by Myanmar Computer Federation.",
             link: "https://mcf.org.mm/pyidaungsu-font/"
+        },
+        {
+            name: "analog-clock-lib",
+            role: "A small TypeScript library to render a customizable analog clock using an HTML Canvas element.",
+            link: "https://www.npmjs.com/package/analog-clock-lib"
         }
 
     ],
