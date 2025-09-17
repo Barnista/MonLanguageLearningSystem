@@ -744,12 +744,12 @@ export default {
 
         const days = dbNumerals.convertFromArabic(this.zeroPad(d.getDate(), 2));
         formatMon = formatMon.replace('dd', days.monNum);
-        formatTH = formatTH.replace('dd', days.arabicNum);
+        formatTH = formatTH.replace('dd', days.thaiNum);
         formatEN = formatEN.replace('dd', days.arabicNum);
 
         const months = dbNumerals.convertFromArabic(this.zeroPad(d.getMonth() + 1, 2));
         formatMon = formatMon.replace('MM', months.monNum);
-        formatTH = formatTH.replace('MM', months.arabicNum);
+        formatTH = formatTH.replace('MM', months.thaiNum);
         formatEN = formatEN.replace('MM', months.arabicNum);
 
         const yearCE = dbNumerals.convertFromArabic(d.getFullYear());
@@ -773,7 +773,7 @@ export default {
 
         const days = dbNumerals.convertFromArabic(this.zeroPad(d.getDate(), 2));
         formatMon = formatMon.replace('date', days.monNum);
-        formatTH = formatTH.replace('date', days.arabicNum);
+        formatTH = formatTH.replace('date', days.thaiNum);
         formatEN = formatEN.replace('date', days.arabicNum);
 
         const months = this.months.find(val => val.month == (d.getMonth() + 1));
