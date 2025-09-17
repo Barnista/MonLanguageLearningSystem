@@ -180,7 +180,7 @@
                                 <span>{{ item.letterTH }}</span>
                                 <br>
                                 <span>{{ item.letterEN }}</span>
-                                <br><br>
+                                <br>
                                 <span class="text-muted">{{ item.descriptionEN }}</span>
                                 <br>
                                 <span class="text-muted">{{ item.descriptionTH }}</span>

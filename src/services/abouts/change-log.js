@@ -1,7 +1,7 @@
 export default {
     logs: [
         {
-            version: 'v1.7.0',
+            version: 'v1.7.0 - 1.7.1',
             date: new Date('2025-09-17'),
             changes: [
                 'NumConverter App: users can convert back and forth between Arabic, Thai, and Mon numbers.',
@@ -10,7 +10,9 @@ export default {
                 'Mathematics: learn how to read maths annotation symbols.',
                 'Time: learn how to tell, read, and write times depending on each clock systems.',
                 'Calendar: learn how to tell, read, and write dates/months/year on Gregorian calendar and Lunar Calendar.',
-                'Fixed some missing Mon characters on mobile keyboard layout'
+                'Fixed some missing Mon characters on mobile keyboard layout',
+                'Fixed minor issues',
+                'Added Myanmese Era and Rattanakosin Era to Calendar lesson as they\'re still relevant in historical context.'
             ]
         },
         {

@@ -66,8 +66,8 @@ export default {
             letter: "နူဂယး",
             letterTH: "โมงเช้า",
             letterEN: "am",
-            ipa: "nɛ̀a-ɗaɪ",
-            th: "เนีย-ดอย",
+            ipa: "nù-kɛ̀ˀ-jɛ̀h",
+            th: "นู่-เกี่ยะ-เยี่ยฮ",
             fromHour: 7,
             beforeHour: 12,
             hourRequired: true
@@ -245,6 +245,19 @@ export default {
     ],
     historicalYearSystems: [
         {
+            letter: "ရတ္တနကောဝ်သိန်သက္ကရာဇ်",
+            letterEN: "Rattanakosin Era",
+            letterTH: "รัตนโกสินศก",
+            ipa: "ròt-taˀ-nɛ̀ˀ-kow-sɔeˀn-saˀk-kaˀ-ra̤c",
+            th: "ร่ด-ตะ-เนี่ยะ-โกว-ซิน-ซัก-กะ-ร่าจ",
+            abbriviation: "ရသ",
+            abbriviationEN: "RE",
+            abbriviationTH: "ร.ศ.",
+            startYear: 1781,
+            descriptionEN: "Years since the founding of Rattanakosin Kingdom (Modern day Thailand).",
+            descriptionTH: "นับปีตั้งแต่การสถาปนาอาณาจักรรัตนโกสิน (ปัจจุบัน ประเทศไทย)"
+        },
+        {
             letter: "ဟံသာသက္ကရာဇ်",
             letterEN: "Hongsawadi Era",
             letterTH: "หงสาศักราช",
@@ -258,6 +271,19 @@ export default {
             descriptionTH: "นับปีตั้งแต่การสถาปนาอาณาจักรหงสาวดี"
         },
         {
+            letter: "မြန်မာသက္ကရာဇ်",
+            letterEN: "Myanmar Era",
+            letterTH: "จุลศักราช",
+            ipa: "mɛ̤ˀròn-mɛ̀a-saˀk-kaˀ-ra̤c",
+            th: "เมียะร่น-เมีย-ซัก-กะ-ร่าจ",
+            abbriviation: "မသ",
+            abbriviationEN: "ME",
+            abbriviationTH: "จ.ศ.",
+            startYear: 638,
+            descriptionEN: "Years since King Popa Sawrahan of Pegan Kingdom recalibrated the lunar calendar.",
+            descriptionTH: "นับปีตั้งแต่พระเจ้า โปปาซอว์ราฮัน กษัตริย์แห่งอาณาจักรพุกาม ได้ปรับเทียบปฏิทินทางจันทรคติใหม่"
+        },
+        {
             letter: "သုဝဏ္ဏဘူမိသက္ကရာဇ်",
             letterEN: "Suwunnabumi Era",
             letterTH: "สุวรรณภูมิศักราช",
@@ -269,7 +295,7 @@ export default {
             startYear: -400,
             descriptionEN: "Years since the founding of Thaton Kingdom.",
             descriptionTH: "นับปีตั้งแต่การสถาปนาอาณาจักรสะเทิม (สุวรรณภูมิ)"
-        }
+        },
     ],
     months: [
         {
