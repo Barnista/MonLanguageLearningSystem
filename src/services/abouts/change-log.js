@@ -1,7 +1,7 @@
 export default {
     logs: [
         {
-            version: 'v1.7.2',
+            version: 'v1.7.2-v1.7.3',
             date: new Date('2025-09-25'),
             changes: [
                 'added Pronoun lessons including',
@@ -17,7 +17,8 @@ export default {
                 'fixed font issues on iOS devices',
                 'removed "င" from keyboard since it is not a Mon consonant. Users have to use "ၚ" always.',
                 'unboldened Mon letters in all pages to avoid visual confusion.',
-                'improved AI algorithm to recognize repetition of words (examples "ဇၟာပ်ပ်" /cɛ̤ˀmèp-cɛ̤ˀmèp/ /เจียะเม่บ-เจียะเม่บ/)'
+                'improved AI algorithm to recognize repetition of words (examples "ဇၟာပ်ပ်" /cɛ̤ˀmèp-cɛ̤ˀmèp/ /เจียะเม่บ-เจียะเม่บ/)',
+                'corrected some Mon words'
             ]
         },
         {
