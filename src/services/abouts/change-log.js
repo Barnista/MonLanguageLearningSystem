@@ -14,6 +14,7 @@ export default {
                 'Pronouns in Religious Context',
                 'and Pronoun in Royal Context',
                 'added CompGrammarJourney to be used initially on Pronoun page',
+                'fixed font issues on iOS devices',
                 'removed "င" from keyboard since it is not a Mon consonant. Users have to use "ၚ" always.',
                 'unboldened Mon letters in all pages to avoid visual confusion.',
                 'improved AI algorithm to recognize repetition of words (examples "ဇၟာပ်ပ်" /cɛ̤ˀmèp-cɛ̤ˀmèp/ /เจียะเม่บ-เจียะเม่บ/)'
