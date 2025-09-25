@@ -140,7 +140,7 @@
                                 <div class="ms-2 me-auto">
                                     <span class="fs-5 me-2">{{ Number(item.no).toLocaleString() }}.</span>
                                     <span v-html="translateFrom == 'mon' ? hilightText(text, item.word) : item.word"
-                                        class="fw-bold fs-4 text-dark"></span>
+                                        class="fs-3 text-dark"></span>
                                     <div class="mt-1">
                                         <span>IPA: <span class="text-muted">{{ `/${item.ipa}/` || 'NaN' }}</span></span>
                                         <span class="ms-3">TH: <span class="text-muted">{{ `/${item.th}/` || 'NaN'
@@ -185,7 +185,7 @@
                                 <div class="ms-2 me-auto">
                                     <span class="fs-5 me-2">{{ Number(item.no).toLocaleString() }}.</span>
                                     <span v-html="translateFrom == 'mon' ? hilightText(text, item.word) : item.word"
-                                        class="fw-bold fs-4 text-dark"></span>
+                                        class="fs-3 text-dark"></span>
                                     <div class="mt-1">
                                         <span>IPA: <span class="text-muted">{{ `/${item.ipa}/` || 'NaN' }}</span></span>
                                         <span class="ms-3">TH: <span class="text-muted">{{ `/${item.th}/` || 'NaN'

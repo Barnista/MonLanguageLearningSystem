@@ -38,9 +38,9 @@ export default {
                     'shift': [
                         'ဝ ဣ ဒ ဓ ဂ ဥ ၎ {bksp}',
                         'ီ ္ ွ ံ ဲ ၟ ဳ ၠ ဵ',
-                        'ဌ ဎ ၝ ဨ စ သ ဏ င ၚ်္',
+                        'ဌ ဎ ၝ ဨ စ သ ဏ ဿ ၚ်္',
                         '{shift} ဇ ဌ ဃ ဠ ၜ ဉ ဋ',
-                        '{lock} ဩ ဿ {space} ။ {enter}'
+                        '{lock} ဩ {space} ။ {enter}'
                     ],
                     'lock': [
                         '၁ ၂ ၃ ၄ ၅ ၆ ၇ ၈ ၉ ၀ {bksp}',

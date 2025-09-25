@@ -6,7 +6,7 @@
             <div class="pt-3 px-3 pt-md-4 px-md-4">
                 <div class="mb-4">
                     <label for="monInput" class="form-label fw-bold h4">{{ langSet[lang ?? 'en'].textAnalyser.header ||
-                        '_HEADER_' }}: <span class="text-muted">{{ text || 'NaN' }}</span></label>
+                        '_HEADER_' }}: <span class="fw-normal text-muted">{{ text || 'NaN' }}</span></label>
                     <div class="input-group mt-2">
                         <button v-if="!isKeyboardShown" @click="showKeyboard()"
                             class="btn btn-outline-light bg-fabulous btn-lg">
@@ -39,12 +39,12 @@
                     <div class="mt-4">
                         <div class="text-center">
                             <div class="fw-bold text-muted">{{ langSet[lang ?? 'en'].textAnalyser.syllables ||
-                                '_SYLLABLES_' }} ({{ syllables.length }}): <span class="fs-5">{{ words || 'NaN'
+                                '_SYLLABLES_' }} ({{ syllables.length }}): <span class="fw-normal fs-4">{{ words || 'NaN'
                                     }}</span>
                             </div>
                             <h1 class="mt-2 mb-0">
                                 <span v-for="(letter, index) in syllables" :key="index">
-                                    <span href="#" class="h1 fw-bold text-primary">{{ letter }}</span>
+                                    <span href="#" class="fs-1 fw-bold text-primary">{{ letter }}</span>
                                     <span v-if="index < (syllables.length - 1)" class="mx-1 text-muted">-</span>
                                 </span>
                             </h1>
@@ -130,7 +130,7 @@
                                         <div class="ms-2 me-auto">
                                             <span class="me-2">{{ Number(mItem.no).toLocaleString() }}.</span>
                                             <span v-html="hilightText(text, mItem.word)"
-                                                class="fw-bold fs-5 text-dark"></span>
+                                                class="fs-4 text-dark"></span>
                                             <div class="mt-1">
                                                 <small>IPA: <span class="text-muted">{{ `/${mItem.ipa}/` || 'NaN'
                                                         }}</span></small>

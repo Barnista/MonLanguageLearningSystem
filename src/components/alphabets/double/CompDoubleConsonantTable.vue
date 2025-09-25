@@ -38,8 +38,8 @@
                 </thead>
                 <tbody>
                     <tr v-for="(item, index) in exampleDirect" :key="index">
-                        <td class="fs-5 fw-bold">{{ item.word }}</td>
-                        <td class="fs-5 fw-bold">{{ item.full }}</td>
+                        <td class="fs-4">{{ item.word }}</td>
+                        <td class="fs-4">{{ item.full }}</td>
                         <td class="fs-6 text-muted">/{{ item.ipa }}/</td>
                         <td class="fs-6 text-muted">/{{ item.th }}/</td>
                         <td class="fs-6 text-start">
@@ -70,13 +70,13 @@
             </div>
             <div class="accordion" id="consonantTableAccordion">
                 <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingConsonantTable">
+                    <h1 class="accordion-header" id="headingConsonantTable">
                         <button class="fw-bold accordion-button collapsed" type="button" data-bs-toggle="collapse"
                             data-bs-target="#collapseConsonantTable" aria-expanded="false"
                             aria-controls="collapseConsonantTable">
                             {{ langSet[lang ? lang : 'en'].learnAlphabets.consonants }} (35)
                         </button>
-                    </h2>
+                    </h1>
                     <div id="collapseConsonantTable" class="accordion-collapse collapse"
                         aria-labelledby="headingConsonantTable" data-bs-parent="#consonantTableAccordion">
                         <div class="accordion-body">
@@ -116,7 +116,7 @@
                 <table class="my-3">
                     <thead>
                         <tr>
-                            <td class="bg-light fw-bold">
+                            <td class="d-none bg-light fw-bold">
                                 <span v-html="langSet[lang ? lang : 'en'].table.rowAt"></span>
                             </td>
                             <td class="bg-light fw-bold">
@@ -128,7 +128,7 @@
                             <td class="bg-light fw-bold">
                                 <span v-html="langSet[lang ? lang : 'en'].table.doubleExample"></span>
                             </td>
-                            <td class="bg-light fw-bold">
+                            <td class="d-none bg-light fw-bold">
                                 <span v-html="langSet[lang ? lang : 'en'].table.doubleFullWriting"></span>
                             </td>
                             <td class="bg-light fw-bold">
@@ -141,16 +141,16 @@
                     </thead>
                     <tbody>
                         <tr v-for="(item, index) in examplePaliSansakrit" :key="index">
-                            <td class="fs-6">{{ (item.row > 5 ? '-' : item.row) }}</td>
+                            <td class="d-none fs-6">{{ (item.row > 5 ? '-' : item.row) }}</td>
                             <td class="fs-6">{{ item.column }} ({{ getConsonantByPoisition(item.row - 1,
                                 item.column - 1).letter }})</td>
                             <td class="fs-6">{{ (item.column == item.doubleWith ? langSet[lang ? lang :
                                 'en'].table.itself : `${item.doubleWith} (${getConsonantByPoisition(item.row - 1,
                                     item.doubleWith - 1).letter})`) }}</td>
-                            <td v-if="item.word" class="fs-5 fw-bold">{{ item.word }}</td>
+                            <td v-if="item.word" class="fs-4">{{ item.word }}</td>
                             <td v-else class="fs-5 fst-italic text-muted">{{ langSet[lang ? lang : 'en'].table.none }}
                             </td>
-                            <td class="fs-5 fw-bold">{{ (item.word) ? item.full : '' }}</td>
+                            <td class="d-none fs-4">{{ (item.word) ? item.full : '' }}</td>
                             <td class="fs-6 text-muted">{{ (item.word) ? `/${item.ipa}/` : '' }}</td>
                             <td class="fs-6 text-muted">{{ (item.word) ? `/${item.th}/` : '' }}</td>
                         </tr>
@@ -164,7 +164,7 @@
 
 <script>
 import displayLanguages from '@/services/display-languages/display-languages';
-import CompConsonantTable from '../CompConsonantTable.vue';
+import CompConsonantTable from '../consonant/CompConsonantTable.vue';
 import alphabets from '@/services/mon-library/alphabets/alphabets';
 import CompTextAnalyser from '@/components/mini-apps/CompTextAnalyser.vue';
 

@@ -8,7 +8,7 @@
                     <th>{{ langSet[lang ? lang : 'en'].table.no }}</th>
                     <th>{{ langSet[lang ? lang : 'en'].table.finalConsonant }}</th>
                     <th>{{ langSet[lang ? lang : 'en'].table.finalSymbol }}</th>
-                    <th>{{ langSet[lang ? lang : 'en'].table.finalExample }}</th>
+                    <th class="d-none d-md-block">{{ langSet[lang ? lang : 'en'].table.finalExample }}</th>
                     <th><span v-html="langSet[lang ? lang : 'en'].table.pronounciation"></span></th>
                     <th>{{ langSet[lang ? lang : 'en'].table.other }}</th>
                 </tr>
@@ -16,14 +16,14 @@
             <tbody>
                 <tr v-for="(item, index) in finalGroups" :key="index">
                     <td class="fs-6">{{ index + 1 }}</td>
-                    <td class="fs-4">{{ item.group }}</td>
-                    <td class="fw-bold fs-4">
+                    <td class="fs-2">{{ item.group }}</td>
+                    <td class="fs-3">
                         <span v-for="(final, cIndex) in item.members" :key="cIndex" class="ms-2">
                             {{ final.final }} <span v-if="cIndex < (item.members.length - 1)"
                                 class="text-muted">၊</span>
                         </span>
                     </td>
-                    <td class="fs-6 text-muted">က + {{ item.members[0].final }} = {{ craftWord2('က', null, null,
+                    <td class="d-none d-md-block fs-6 text-muted">က + {{ item.members[0].final }} = {{ craftWord2('က', null, null,
                         item.members[0].final).word
                     }}
                     </td>
@@ -52,7 +52,7 @@
                         aria-controls="collapseConsonantTable">
                         <h3 class="text-start">
                             {{ index + 1 }}. {{ langSet[lang ? lang : 'en'].finalConsonantView.group }}
-                            <span class="fw-bold">"{{ item.group }}"</span>
+                            <span class="fs-2">"{{ item.group }}"</span>
                             <span class="text-muted ms-2">{{ `/${craftWord2('က', null, null,
                                 item.members[0].final).ipa}/` || 'NaN'
                                 }}</span>

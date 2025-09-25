@@ -110,6 +110,11 @@ const routes = [
     name: 'monland',
     component: () => import('../views/others/MonlandView.vue')
   },
+  {
+    path: '/grammars/pronoun',
+    name: 'grammars-pronoun',
+    component: () => import('../views/grammars/PronounView.vue')
+  }
 ]
 
 const router = createRouter({

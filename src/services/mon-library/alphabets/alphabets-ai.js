@@ -180,8 +180,22 @@ export default {
                 const nextIsFinal2Symbol = dbFinalConsonants.isFinal2Symbol(nextBlendFinal);
                 const prevIsFinal2Symbol = dbFinalConsonants.isFinal2Symbol(prevBlendFinal);
                 const prevIsCompoundSymbol = dbCompoundConsonants.isCompoundConsonant(char_prev);
+
                 if (!nextIsFinal2Symbol && !prevIsFinal2Symbol) wordFinished = true;
                 if (prevIsCompoundSymbol) wordFinished = true;
+
+                //v1.7.2 check if there's a double final consonant, if true that means it's a repetition word (same as "ๆ" in Thai)
+                const char_next2 = chars[i_next + 1] || null;
+                const currentFinal = char_prev + char_current;
+                const nextSameFinal = char_next + char_next2;
+                if (currentFinal == nextSameFinal) {
+                    //skip 2 step
+                    index += 2;
+                    //add 1 word
+                    if (currentWord) memories.push(currentWord);
+                    //then let the same word get added later
+                    wordFinished = true;
+                }
 
             } else if (isFinal2Symbol) {
                 //G. the current consonant is the final consonant that blends itself with some vowel

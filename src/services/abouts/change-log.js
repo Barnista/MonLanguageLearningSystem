@@ -1,6 +1,25 @@
 export default {
     logs: [
         {
+            version: 'v1.7.2',
+            date: new Date('2025-09-25'),
+            changes: [
+                'added Pronoun lessons including',
+                'Subject Pronouns (can also be used as Objective Pronoun)',
+                'Possessive Pronouns (pronouns that signify ownership of somethings)',
+                'Interrogative Pronouns (Questions: who, what, where, when, why)',
+                'Definite Pronouns',
+                'Indefinite Pronouns (with examples)',
+                'Distributive Pronouns (with examples)',
+                'Pronouns in Religious Context',
+                'and Pronoun in Royal Context',
+                'added CompGrammarJourney to be used initially on Pronoun page',
+                'removed "င" from keyboard since it is not a Mon consonant. Users have to use "ၚ" always.',
+                'unboldened Mon letters in all pages to avoid visual confusion.',
+                'improved AI algorithm to recognize repetition of words (examples "ဇၟာပ်ပ်" /cɛ̤ˀmèp-cɛ̤ˀmèp/ /เจียะเม่บ-เจียะเม่บ/)'
+            ]
+        },
+        {
             version: 'v1.7.0 - 1.7.1',
             date: new Date('2025-09-17'),
             changes: [

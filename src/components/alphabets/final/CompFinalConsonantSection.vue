@@ -1,7 +1,7 @@
 <template>
     <div class="comp-final-consonant-section">
         <div class="ms-3 mt-1">
-            <span class="fw-bold fs-5">{{ item.finalWith.length }} {{ langSet[lang ? lang :
+            <span class="fs-5">{{ item.finalWith.length }} {{ langSet[lang ? lang :
                 'en'].learnAlphabets.vowels }}</span>
             <span class="ms-1">{{ langSet[lang ? lang : 'en'].finalConsonantView.groupDescription1 }}</span>
             <span class="ms-1 fw-bold">{{ langSet[lang ? lang : 'en'].finalConsonantView.group }} "{{ item.group }}"
@@ -23,7 +23,7 @@
                 </div>
             </div>
             <div class="col-12 col-md-4 col-lg-3 col-xl-2 text-end mb-3">
-                <select v-model="selected" class="form-select text-success w-full fs-5 fw-bold text-center">
+                <select v-model="selected" class="form-select text-success w-full fs-4 text-center">
                     <option value="" selected>{{ langSet[lang ? lang : 'en'].menu.tryFinalConsonant }}</option>
                     <option v-for="(final, zIndex) in item.members" :key="zIndex" :value="zIndex">
                         {{ final.final }}
@@ -36,21 +36,21 @@
                 <div class="col-12 border bg-light py-1"></div>
                 <div class="col-3 border text-center px-2 py-3" v-for="(vowel, kIndex) in item.finalWith" :key="kIndex">
                     <div>
-                        <span class="fs-3 fw-bold">
+                        <span class="fs-2">
                             {{ craftWord2('က', null, vowel.vowel,
                                 item.members[selected].final).word ||
                                 'NaN' }}
                         </span>
                     </div>
                     <div v-if="craftWord2('က', null, vowel.vowel, item.members[selected].final).word2">
-                        <span class="fs-3 fw-bold">
+                        <span class="fs-2">
                             {{ craftWord2('က', null, vowel.vowel,
                                 item.members[selected].final).word2 ||
                                 'NaN' }}
                         </span>
                     </div>
                     <div>
-                        <span class="ms-2 badge rounded-pill text-bg-light text-primary fw-bold">CL</span>
+                        <span class="ms-2 badge rounded-pill text-bg-light text-primary">CL</span>
                     </div>
                     <div class="mt-2">
                         <div class="text-muted">
@@ -81,21 +81,21 @@
                 </div>
                 <div class="col-3 border text-center px-2 py-3" v-for="(vowel, kIndex) in item.finalWith" :key="kIndex">
                     <div>
-                        <span class="fs-3 fw-bold">
+                        <span class="fs-2">
                             {{ craftWord2('ဂ', null, vowel.vowel,
                                 item.members[selected].final).word ||
                                 'NaN' }}
                         </span>
                     </div>
                     <div v-if="craftWord2('ဂ', null, vowel.vowel, item.members[selected].final).word2">
-                        <span class="fs-3 fw-bold">
+                        <span class="fs-2">
                             {{ craftWord2('ဂ', null, vowel.vowel,
                                 item.members[selected].final).word2 ||
                                 'NaN' }}
                         </span>
                     </div>
                     <div>
-                        <span class="ms-2 badge rounded-pill text-bg-light text-danger fw-bold">BT</span>
+                        <span class="ms-2 badge rounded-pill text-bg-light text-danger">BT</span>
                     </div>
                     <div class="mt-2">
                         <div class="text-muted">

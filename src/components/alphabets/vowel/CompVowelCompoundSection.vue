@@ -17,8 +17,8 @@
                 <div class="col-12 border bg-light py-1"></div>
                 <div class="col-3 border text-center px-2 py-3" v-for="(vowel, index) in vowels2" :key="index">
                     <div class="mb-2">
-                        <span class="fs-2 fw-bold">{{ vowel.compound || '-' }}</span>
-                        <span v-if="vowel.compound2" class="fw-bold text-muted"><br>({{ langSet[lang ? lang
+                        <span class="fs-1">{{ vowel.compound || '-' }}</span>
+                        <span v-if="vowel.compound2" class="text-muted"><br>({{ langSet[lang ? lang
                             :
                             'en'].menu.or }} {{ vowel.compound2
                             }})<br><small><a :href="`#${vowel.exception.id}`">({{ langSet[lang ? lang :
@@ -80,8 +80,8 @@
                     <tr v-for="(row, index) in vowels" :key="index">
                         <td v-for="(vowel, cIndex) in row" :key="cIndex">
                             <div class="mb-2">
-                                <span class="fs-2 fw-bold">{{ vowel.compound || '-' }}</span>
-                                <span v-if="vowel.compound2" class="fw-bold text-muted"><br>({{ langSet[lang ? lang
+                                <span class="fs-2">{{ vowel.compound || '-' }}</span>
+                                <span v-if="vowel.compound2" class="text-muted"><br>({{ langSet[lang ? lang
                                     :
                                     'en'].menu.or }} {{ vowel.compound2
                                     }})<br><small><a :href="`#${vowel.exception.id}`">({{ langSet[lang ? lang :
@@ -136,7 +136,7 @@
                 <div v-if="vowel.exception" class="mt-4">
                     <h4 class="text-start" :id="vowel.exception.id">
                         {{ langSet[lang ? lang : 'en'].menu.exception }} #{{ cIndex }}: {{ vowel.compound }} → <span
-                            class="fw-bold">{{ vowel.compound2
+                            class="">{{ vowel.compound2
                             }}</span>
                     </h4>
                     <p v-if="!vowel.exception.dependsOnFinal" class="text-start text-muted">
@@ -156,7 +156,7 @@
                             <tr>
                                 <td v-for="(consonant, cIndex) in vowel.exception.consonants.slice(0, 4)" :key="cIndex">
                                     <div>
-                                        <span class="fs-4">{{ consonant }} → <span class="fw-bold">
+                                        <span class="fs-4">{{ consonant }} → <span class="">
                                                 {{ craftWord(consonant, vowel.compound).word ||
                                                     'NaN' }}</span></span>
                                         <span v-if="isClearConsonant(consonant)"
@@ -177,7 +177,7 @@
                             <tr>
                                 <td v-for="(consonant, cIndex) in vowel.exception.consonants.slice(4, 8)" :key="cIndex">
                                     <div>
-                                        <span class="fs-4">{{ consonant }} → <span class="fw-bold">
+                                        <span class="fs-4">{{ consonant }} → <span class="">
                                                 {{ craftWord(consonant, vowel.compound).word ||
                                                     'NaN' }}</span></span>
                                         <span v-if="isClearConsonant(consonant)"

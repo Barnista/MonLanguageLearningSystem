@@ -20,7 +20,7 @@
                     <tr v-for="(row, index) in vowels" :key="index">
                         <td v-for="(vowel, cIndex) in row" :key="cIndex">
                             <div class="mb-2">
-                                <span class="fs-2 fw-bold">{{ vowel.letter }}</span>
+                                <span class="fs-1">{{ vowel.letter }}</span>
                             </div>
                             <div class="mb-2 text-muted">
                                 <span>{{ `/${vowel.ipaCL}/` || 'NaN' }}</span>

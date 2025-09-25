@@ -19,9 +19,9 @@
                         placeholder="๑,๐๕๗,๓๑๔.๕๗๓">
                 </div>
                 <div class="input-group input-group">
-                    <span class="input-group-text fw-bold" style="width: 140px;">{{ langSet[lang ??
+                    <span class="input-group-text" style="width: 128px;">{{ langSet[lang ??
                         'en'].numConverter.mon }}</span>
-                    <input type="text" class="form-control fw-bold text-success" v-model="monNum"
+                    <input type="text" class="form-control text-success" v-model="monNum"
                         @keyup="convertFromMon" placeholder="၁၀၅၇၃၁၄.၅၇၃">
                     <button v-if="!isKeyboardShown" @click="showKeyboard()"
                         class="btn btn-outline-light bg-fabulous btn-lg">
@@ -41,7 +41,7 @@
                 </div>
                 <hr>
                 <div class="text-center mt-3 pb-3">
-                    <h4 class="h1 text-success mb-3">
+                    <h4 class="h1 fs-1 text-success mb-3">
                         {{ numResult ? numResult.monNum : 'NaN' }}
                         <button v-if="copied" class="ms-2 btn btn-sm btn-light py-1 px-2 disabled">
                             <i class="bi bi-check-lg me-1"></i>

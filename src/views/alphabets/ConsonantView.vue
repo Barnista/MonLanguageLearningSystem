@@ -20,7 +20,7 @@
 
 <script>
 
-import CompConsonantTable from '@/components/alphabets/CompConsonantTable.vue';
+import CompConsonantTable from '@/components/alphabets/consonant/CompConsonantTable.vue';
 import CompAlphabetJourney from '@/components/misc/CompAlphabetJourney.vue';
 
 import displayLanguages from '@/services/display-languages/display-languages';

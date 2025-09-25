@@ -5,22 +5,24 @@
         <table>
             <thead>
                 <tr>
-                    <th>{{ langSet[lang ? lang : 'en'].table.no }}</th>
+                    <th class="d-none">{{ langSet[lang ? lang : 'en'].table.no }}</th>
                     <th>{{ langSet[lang ? lang : 'en'].table.compoundConsonant }}</th>
                     <th>{{ langSet[lang ? lang : 'en'].table.compoundSymbol }}</th>
                     <th>{{ langSet[lang ? lang : 'en'].table.compoundExample }}</th>
-                    <th><span v-html="langSet[lang ? lang : 'en'].table.pronounciation"></span></th>
-                    <th><span v-html="langSet[lang ? lang : 'en'].table.pronounciationThai"></span></th>
+                    <th class=""><span v-html="langSet[lang ? lang : 'en'].table.pronounciation"></span></th>
                 </tr>
             </thead>
             <tbody>
                 <tr v-for="(item, index) in compounds" :key="index">
-                    <td class="fs-6">{{ index + 1 }}</td>
-                    <td class="fw-bold fs-3">{{ item.letter }}</td>
-                    <td class="fw-bold fs-3">{{ item.compound }}</td>
+                    <td class="d-none fs-6">{{ index + 1 }}</td>
+                    <td class="fs-2">{{ item.letter }}</td>
+                    <td class="fs-2">{{ item.compound }}</td>
                     <td class="fs-6 text-muted">{{ item.example }}</td>
-                    <td class="fs-6 text-muted">/{{ item.exampleIPA }}/</td>
-                    <td class="fs-6 text-muted">/{{ item.exampleTH }}/</td>
+                    <td class=" fs-6 text-muted">
+                        /{{ item.exampleIPA }}/
+                        <br>
+                        /{{ item.exampleTH }}/
+                    </td>
                 </tr>
             </tbody>
         </table>
@@ -41,7 +43,7 @@
                 <div :id="`collapseNo${index}`" class="accordion-collapse collapse"
                     aria-labelledby="headingConsonantTable" :data-bs-parent="`#accordionNo${index}`">
                     <div class="accordion-body">
-                        <CompCompoundConsonantSection :lang="lang" :compound="compound"/>
+                        <CompCompoundConsonantSection :lang="lang" :compound="compound" />
                     </div>
                 </div>
             </div>

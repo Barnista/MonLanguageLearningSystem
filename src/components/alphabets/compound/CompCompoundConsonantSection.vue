@@ -2,16 +2,16 @@
     <div class="comp-compound-consonant-section">
         <div class="row">
             <div class="col-12 col-md-8 col-lg-9 col-xl-10 text-start mb-3">
-                <span class="fw-bold fs-5">{{ compound.compoundWith.length }} {{ langSet[lang ? lang
+                <span class="fs-4">{{ compound.compoundWith.length }} {{ langSet[lang ? lang
                     :
                     'en'].learnAlphabets.consonants }}</span> {{ langSet[lang ? lang :
                         'en'].compoundConsonantView.compoundDescription1 }}
-                <span class="fw-bold fs-5">{{ compound.compound }}</span> {{ langSet[lang ? lang :
+                <span class="fs-4">&ensp;{{ compound.compound }}</span> {{ langSet[lang ? lang :
                     'en'].compoundConsonantView.compoundDescription2 }}
-                <span class="fw-bold fs-5">{{ compound.compoundWith.join(', ') }}</span>.
+                <span class="fs-4">{{ compound.compoundWith.join(', ') }}</span>.
             </div>
             <div class="col-12 col-md-4 col-lg-3 col-xl-2 text-end mb-3">
-                <select v-model="selected" class="form-select text-success w-full fs-5 fw-bold text-center">
+                <select v-model="selected" class="form-select text-success w-full fs-4 text-center">
                     <option value="" selected>{{ langSet[lang ? lang : 'en'].menu.tryConsonant }}
                     </option>
                     <option v-for="item in compound.compoundWith" :key="item" :value="item">
@@ -26,7 +26,7 @@
                 <div class="col-12 border bg-light py-1"></div>
                 <div class="col-3 border text-center px-2 py-3" v-for="(vowel, index) in vowels2" :key="index">
                     <div>
-                        <span class="fs-3 fw-bold">
+                        <span class="fs-2">
                             {{ craftWord(selected, compound.compound,
                                 vowel.compound).word || 'NaN' }}
                         </span>
@@ -70,7 +70,7 @@
                     <tr v-for="(row, index) in vowels" :key="index">
                         <td v-for="(vowel, cIndex) in row" :key="cIndex">
                             <div>
-                                <span class="fs-3 fw-bold">
+                                <span class="fs-2">
                                     {{ craftWord(selected, compound.compound,
                                         vowel.compound).word || 'NaN' }}
                                 </span>

@@ -16,17 +16,17 @@
             <table class="my-2">
                 <thead>
                     <tr>
-                        <th>{{ langSet[lang ? lang : 'en'].table.no }}</th>
+                        <th class="d-none">{{ langSet[lang ? lang : 'en'].table.no }}</th>
                         <th>{{ langSet[lang ? lang : 'en'].table.otherVowels }}</th>
-                        <th><span v-html="langSet[lang ? lang : 'en'].table.otherVowelsOrigin"></span></th>
+                        <th class=""><span v-html="langSet[lang ? lang : 'en'].table.otherVowelsOrigin"></span></th>
                         <th><span v-html="langSet[lang ? lang : 'en'].table.pronounciation"></span></th>
                         <th><span v-html="langSet[lang ? lang : 'en'].table.pronounciationThai"></span></th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr v-for="(item, index) in otherVowels" :key="index">
-                        <td class="fs-6">{{ index + 1 }}</td>
-                        <td class="fw-bold fs-4">{{ item.letter }}</td>
+                        <td class="d-none fs-6">{{ index + 1 }}</td>
+                        <td class="fs-3">{{ item.letter }}</td>
                         <td class="fs-6 text-muted"><span v-html="item.origin"></span></td>
                         <td class="fs-6">
                             <div>
