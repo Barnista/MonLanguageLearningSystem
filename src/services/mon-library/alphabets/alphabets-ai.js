@@ -6,6 +6,7 @@ import dbVowels from "./db-vowels";
 import dbDoubleConsonants from "./db-double-consonants";
 import dbFinalConsonants from "./db-final-consonants";
 import alphabets from "./alphabets";
+import dbNumerals from "./db-numerals";
 
 export default {
     analyseText(text) {
@@ -35,6 +36,7 @@ export default {
             const isFinalSymbol = dbFinalConsonants.isFinalSymbol(char_current);
             const isFinal2Symbol = dbFinalConsonants.isFinal2Symbol(char_current);
             const doubleConsonant = dbDoubleConsonants.getByDoubled(char_current);
+            const isNumberChar = dbNumerals.isNumberChar(char_current);
 
             if (isConsonant) {
                 //A. check if this char is registered as a consonant
@@ -209,6 +211,33 @@ export default {
                 if (currentWord) memories.push(currentWord);
 
                 currentWord = '' + doubleConsonant.converts[1];
+            } else if (isNumberChar) {
+                console.log('num found', char_current);
+                //v1.7.4 numeral recognition
+                const isNextCharNumber = dbNumerals.isNumberChar(char_next);
+                const isNextCharNumSymbol = dbNumerals.isSymbol(char_next);
+                const isPrevCharNumber = dbNumerals.isNumberChar(char_prev);
+                const isPrevCharNumSymbol = dbNumerals.isSymbol(char_prev);
+
+                //check if user write number close to the previous word, then cut the previous word out first
+                if (!isPrevCharNumber && !isPrevCharNumSymbol) {
+                    if (currentWord) memories.push(currentWord);
+                    //reset currentWord
+                    currentWord = '';
+                } else {
+                    currentWord += char_current;
+                }
+
+                //if the next char is either . or ,
+                if (isNextCharNumSymbol) {
+                    currentWord += char_next;
+                    index++;
+                }
+
+                //next char is neither number or num symbol then end this as a word
+                if (!isNextCharNumber && !isNextCharNumSymbol) {
+                    wordFinished = true;
+                }
             }
             else {
                 //maybe it was some spacing or punctuations, or untrained characters
@@ -241,6 +270,8 @@ export default {
         for (let i = 0; i < memories.length; i++) {
             const word = memories[i];
             const craft = this.analyseSingleWord(word);
+            //re-assign value in case there's a better option from analysed word
+            memories[i] = craft.word;
             analysed.push(craft);
 
             let n_ipa = craft.crafted.ipa;
@@ -306,116 +337,133 @@ export default {
         //remove empty spaces first to avoid alg malfunction
         chars = chars.filter(n => n);
 
+        const num = dbNumerals.getNumber(word);
+
+        let result = null;
         let wordStructure = {
             consonant: '',
             compound: '',
             vowel: '',
             final: '',
+            num: ''
         }
-        let index = 0;
-        let length = chars.length;
 
-        do {
-            //classify into 2 structural groups
-            // 1. consonant & compound consonant
-            // 2. vowels & final consonant
+        if (num) {
+            result = num;
+            wordStructure.num = result.monNum;
 
-            const i_prev = index - 1;
-            const i_next = index + 1;
-
-            const char_prev = chars[i_prev] || null;
-            const char_current = chars[index];
-            const char_next = chars[i_next] || null;
-
-            const consonant = dbConsonants.getByLetter(char_current);
-            const compound = dbCompoundConsonants.getByCompound(char_current);
-            const vowel = dbVowels.getByCompound(char_current);
-            const standAloneVowel = dbVowels.getByLetter(char_current);
-            const finalConsonant = dbFinalConsonants.getByLetter(char_current);
-            const finalSymbol = dbFinalConsonants.isFinalSymbol(char_current);
-            const final2Symbol = dbFinalConsonants.isFinal2Symbol(char_current);
-
-            if (consonant) {
-                if (i_prev >= 0 && i_next < length) {
-                    const nextIsFinalSymbol = dbFinalConsonants.isFinalSymbol(char_next);
-                    const prevIsDoubleSymbol = dbDoubleConsonants.isDoubleSymbol(char_prev);
-
-                    if (prevIsDoubleSymbol) {
-                        //it's the compound consonant
-                        if (compound) wordStructure.compound = compound.letter;
-                    } else if (nextIsFinalSymbol) {
-                        //it's the final consonant
-                        wordStructure.final = char_current + char_next;
-                        index++;
-                    }
-                } else {
-                    if (index == 0) {
-                        //first char means it's reall a consonant
-                        wordStructure.consonant = consonant.letter;
-                    }
-                    // if it's the last char, that means it's another incompleted word, just ignore it.
-                }
-            } else if (compound) {
-                //some final consonant can disguise itself as a compound symbol
-                const nextBlendFinal = char_current + char_next;
-                const prevBlendFinal = char_current + char_prev;
-                const nextIsFinal2Symbol = dbFinalConsonants.isFinal2Symbol(nextBlendFinal);
-                const prevIsFinal2Symbol = dbFinalConsonants.isFinal2Symbol(prevBlendFinal);
-
-                const nextBlendFinal2 = char_next + char_current;
-                const prevBlendFinal2 = char_prev + char_current;
-                const nextIsFinal2Symbol2 = dbFinalConsonants.isFinal2Symbol(nextBlendFinal2);
-                const prevIsFinal2Symbol2 = dbFinalConsonants.isFinal2Symbol(prevBlendFinal2);
-
-                console.log('prev, next', nextIsFinal2Symbol, prevIsFinal2Symbol);
-                if (!nextIsFinal2Symbol && !prevIsFinal2Symbol && !nextIsFinal2Symbol2 && !prevIsFinal2Symbol2) {
-                    wordStructure.compound = compound.compound;
-                } else {
-                    wordStructure.final = compound.letter;
-                }
-
-            } else if (standAloneVowel) {
-                wordStructure.vowel = standAloneVowel.letter;
-
-                //assing the next vowel into consonant and skip the next index
-                const nextVowel = dbVowels.getByCompound(char_next);
-                if (nextVowel) {
-                    wordStructure.vowel += nextVowel.compound;
-                    index++;
-                }
-            } else if (vowel) {
-                //check if there's no next char, if the current vowel is also a kind of final consonant in disguise, then take final consonant instead
-                if (char_next === null && finalConsonant) {
-                    wordStructure.final = finalConsonant.final;
-                } else {
-                    //there might be multiple sub-vowels combined into one vowel
-                    wordStructure.vowel += vowel.compound;
-                }
-            } else if (finalSymbol) {
-                //some final consonants are so blended that it only show a symbol
-                const prevVowel = dbVowels.getByCompound(char_prev);
-                if (prevVowel) wordStructure.final = finalConsonant.final;
-            } else if (final2Symbol) {
-                // add it into vowel
-                wordStructure.vowel += char_current;
-            } else {
-                console.log('invalid char');
+            return {
+                word: result.monNum,
+                structure: wordStructure,
+                crafted: result,
             }
 
-            index++;
-        } while (index < length);
+        } else {
+            let index = 0;
+            let length = chars.length;
+            do {
+                //classify into 2 structural groups
+                // 1. consonant & compound consonant
+                // 2. vowels & final consonant
 
-        const result = alphabets.craftWord2(
-            wordStructure.consonant,
-            wordStructure.compound,
-            wordStructure.vowel,
-            wordStructure.final
-        );
+                const i_prev = index - 1;
+                const i_next = index + 1;
 
-        return {
-            word: word,
-            structure: wordStructure,
-            crafted: result,
+                const char_prev = chars[i_prev] || null;
+                const char_current = chars[index];
+                const char_next = chars[i_next] || null;
+
+                const consonant = dbConsonants.getByLetter(char_current);
+                const compound = dbCompoundConsonants.getByCompound(char_current);
+                const vowel = dbVowels.getByCompound(char_current);
+                const standAloneVowel = dbVowels.getByLetter(char_current);
+                const finalConsonant = dbFinalConsonants.getByLetter(char_current);
+                const finalSymbol = dbFinalConsonants.isFinalSymbol(char_current);
+                const final2Symbol = dbFinalConsonants.isFinal2Symbol(char_current);
+
+                if (consonant) {
+                    if (i_prev >= 0 && i_next < length) {
+                        const nextIsFinalSymbol = dbFinalConsonants.isFinalSymbol(char_next);
+                        const prevIsDoubleSymbol = dbDoubleConsonants.isDoubleSymbol(char_prev);
+
+                        if (prevIsDoubleSymbol) {
+                            //it's the compound consonant
+                            if (compound) wordStructure.compound = compound.letter;
+                        } else if (nextIsFinalSymbol) {
+                            //it's the final consonant
+                            wordStructure.final = char_current + char_next;
+                            index++;
+                        }
+                    } else {
+                        if (index == 0) {
+                            //first char means it's reall a consonant
+                            wordStructure.consonant = consonant.letter;
+                        }
+                        // if it's the last char, that means it's another incompleted word, just ignore it.
+                    }
+                } else if (compound) {
+                    //some final consonant can disguise itself as a compound symbol
+                    const nextBlendFinal = char_current + char_next;
+                    const prevBlendFinal = char_current + char_prev;
+                    const nextIsFinal2Symbol = dbFinalConsonants.isFinal2Symbol(nextBlendFinal);
+                    const prevIsFinal2Symbol = dbFinalConsonants.isFinal2Symbol(prevBlendFinal);
+
+                    const nextBlendFinal2 = char_next + char_current;
+                    const prevBlendFinal2 = char_prev + char_current;
+                    const nextIsFinal2Symbol2 = dbFinalConsonants.isFinal2Symbol(nextBlendFinal2);
+                    const prevIsFinal2Symbol2 = dbFinalConsonants.isFinal2Symbol(prevBlendFinal2);
+
+                    console.log('prev, next', nextIsFinal2Symbol, prevIsFinal2Symbol);
+                    if (!nextIsFinal2Symbol && !prevIsFinal2Symbol && !nextIsFinal2Symbol2 && !prevIsFinal2Symbol2) {
+                        wordStructure.compound = compound.compound;
+                    } else {
+                        wordStructure.final = compound.letter;
+                    }
+
+                } else if (standAloneVowel) {
+                    wordStructure.vowel = standAloneVowel.letter;
+
+                    //assing the next vowel into consonant and skip the next index
+                    const nextVowel = dbVowels.getByCompound(char_next);
+                    if (nextVowel) {
+                        wordStructure.vowel += nextVowel.compound;
+                        index++;
+                    }
+                } else if (vowel) {
+                    //check if there's no next char, if the current vowel is also a kind of final consonant in disguise, then take final consonant instead
+                    if (char_next === null && finalConsonant) {
+                        wordStructure.final = finalConsonant.final;
+                    } else {
+                        //there might be multiple sub-vowels combined into one vowel
+                        wordStructure.vowel += vowel.compound;
+                    }
+                } else if (finalSymbol) {
+                    //some final consonants are so blended that it only show a symbol
+                    const prevVowel = dbVowels.getByCompound(char_prev);
+                    if (prevVowel) wordStructure.final = finalConsonant.final;
+                } else if (final2Symbol) {
+                    // add it into vowel
+                    wordStructure.vowel += char_current;
+                }
+                else {
+                    console.log('invalid char');
+                }
+
+                index++;
+            } while (index < length);
+
+            result = alphabets.craftWord2(
+                wordStructure.consonant,
+                wordStructure.compound,
+                wordStructure.vowel,
+                wordStructure.final
+            );
+
+            return {
+                word: word,
+                structure: wordStructure,
+                crafted: result,
+            }
         }
     }
 }

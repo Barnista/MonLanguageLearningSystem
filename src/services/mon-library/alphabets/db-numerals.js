@@ -341,8 +341,35 @@ export default {
             th2: "ญี่"
         }
     ],
+    isSymbol(symbol){
+        return (symbol == '.' || symbol == ',');
+    },
+    isNumberChar(num){
+        const num1 = this.numbers.find(val => val.letter == num);
+        const num2 = this.numbers.find(val => val.number == Number(num));
+        return (num1 || num2);
+    },
+    getNumber(num){
+        //check if it's arabic number
+        //if not check if it's mon number
+        //if not then it's not a number
+        const arabic = Number(num);
+
+        if(arabic){
+            //then convert to monNumber anyway
+            return this.convertFromArabic(arabic.toString(), false);
+        }else{
+            const mon = this.convertFromMon(num.toString(), false);
+
+            if(mon.arabicNum != ''){
+                return mon;
+            }
+
+            return null;
+        }
+    },
     monToArabic(monNumberStr) {
-        let result = '0';
+        let result = '';
 
         if (monNumberStr) {
             const str = monNumberStr.toString().split("");
@@ -362,7 +389,7 @@ export default {
         return result;
     },
     arabicToMon(arabicNumberStr) {
-        let result = '၀';
+        let result = '';
 
         if (arabicNumberStr) {
             let str = arabicNumberStr.toString().split("");
@@ -382,7 +409,7 @@ export default {
         return result;
     },
     monToThai(monNumberStr, includeComma) {
-        let result = '๐';
+        let result = '';
 
         if (monNumberStr) {
             const str = monNumberStr.toString().split("");
@@ -498,19 +525,19 @@ export default {
                         ...numItem
                     };
 
-                    if (chars.length > 1 && numItem.number == 0) {
+                    if (chars.length > 1 && numItem && numItem.number == 0) {
                         //if the number is multiple digits and the last number is 0 then remove its content 
                         num = {}
                     } else {
                         //if the number is 5 then modify its spelling
-                        if (numItem.number == 5) {
+                        if (numItem && numItem.number == 5) {
                             num.spelling = num.spelling2;
                             num.ipa = num.ipa2;
                             num.th = num.th2;
                         }
 
                         //smallest digit to biggest digit
-                        result.push(num);
+                       if(num) result.push(num);
                     }
                 }
 

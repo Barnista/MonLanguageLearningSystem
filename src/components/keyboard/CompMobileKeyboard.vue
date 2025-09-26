@@ -33,7 +33,7 @@ export default {
                         'ေ ျ ိ ် ါ ဴ ြ ု ူ',
                         'ာ း ဗ ၛ ဆ ဟ ရ ၞ ှ',
                         '{shift} ဖ ထ ခ လ ဘ ည ယ',
-                        '{lock} ဍ {space} ၊ {enter}'
+                        '{lock} င ဍ {space} ၊ {enter}'
                     ],
                     'shift': [
                         'ဝ ဣ ဒ ဓ ဂ ဥ ၎ {bksp}',
