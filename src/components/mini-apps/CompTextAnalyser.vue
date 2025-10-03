@@ -108,7 +108,7 @@
                                 target="_blank">
                                 <i class="bi bi-question-diamond"></i>
                                 <span class="ms-1">
-                                    {{ langSet[lang ?? 'en'].textAnalyser.unlockMonland || '_UNLOCK_MONLAND_' }}
+                                    {{ langSet[lang ?? 'en'].textAnalyser.unlockMonland || '_UNLOCK_MON_RENAISSANCE_' }}
                                 </span>
                             </router-link>
                         </div>

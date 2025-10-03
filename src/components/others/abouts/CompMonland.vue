@@ -348,7 +348,7 @@
                 </div>
                 <div class="rounded border shadow-sm p-3 bg-light">
                     <h4 class="fw-bold mb-3">
-                        Download Meeting Presentations
+                        Download Meeting Records
                     </h4>
                     <ol>
                         <li>
