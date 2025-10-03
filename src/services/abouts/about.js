@@ -2,7 +2,7 @@ export default {
     projectName: "mon-language-learning-system",
     appName: "The Mon Language (မန်)",
     appName2: "The Mon Language: Learning System",
-    appVersion: "1.7.4",
+    appVersion: "1.7.5",
     relatedContents: [
         {
             name: "A AR Dictionary",
@@ -83,14 +83,6 @@ export default {
     ],
     communities: [
         {
-            name: "Mon Youth Community Bangkok (ชมรมเยาวชนมอญกรุงเทพ)",
-            alias: "mon-youth-bangkok",
-            description: "ဂကောံသၟတ်ဝုတ်ဗၠာ်မန်ဍုၚ်ၜၚ်ကံက်",
-            platform: "facebook",
-            link: "https://www.facebook.com/monyouthbangkok",
-            country: "thai"
-        },
-        {
             name: "Mon Club",
             alias: "mon-club",
             description: "Next-gen Mon people that saves the civilization.",
@@ -99,12 +91,36 @@ export default {
             country: "mon"
         },
         {
-            name: "Monttip E-book (မတ်ဒိဗ်)",
+            name: "Mottip E-book (မတ်ဒိဗ်)",
             alias: "monttip",
             description: "ရန်ကဵုလိက်မည်တြေံ ညံင်ဂွုအ် ကၠေံကၠက်တုဲ ကၠောန် မတ်ဒိဗ် EBOOK မဒှ်ရ ။ ကၠောန် ဂွံ ၜိုတ် 400 အုပ်တုဲ ပ္တိုန်ဂွံစရင် ၜိုတ် 600 အုပ်ရ။",
             platform: "telegram",
             link: "https://t.me/mot_tip_ebook",
             country: "mon"
+        },
+        {
+            name: "Mon Youth Community Bangkok (ชมรมเยาวชนมอญกรุงเทพ)",
+            alias: "mon-youth-bangkok",
+            description: "ဂကောံသၟတ်ဝုတ်ဗၠာ်မန်ဍုၚ်ၜၚ်ကံက်",
+            platform: "facebook",
+            link: "https://www.facebook.com/monyouthbangkok",
+            country: "thai"
+        },
+        {
+            name: 'Mon Youth Forum  (ဌာန်ကောံသၟတ်မန်)',
+            alias: "mon-youth-forum",
+            description: "Mon Youth Forum is representing a national youth network among the Mon Youth. It is initiated since 2007 during the 1st Mon Youth Seminar.",
+            platform: "facebook",
+            link: 'https://www.facebook.com/MonYouthForum',
+            country: "mon"
+        },
+        {
+            name: 'Mon Lighting Group',
+            alias: 'mon-lighting',
+            description: 'ဂကောံမန်လျးအရံင် กลุ่มมอญแสงเทียน',
+            platform: 'facebook',
+            link: 'https://www.facebook.com/MONlightinggroup',
+            country: 'thai'
         },
         {
             name: "A Ar (အ အာ)",

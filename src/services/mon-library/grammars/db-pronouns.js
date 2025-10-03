@@ -616,7 +616,7 @@ export default {
                                 th: 'เตีย-เยี่ยะ-กา',
                                 meaningEN: 'You',
                                 meaningTH: 'โยม/ทายิก/ทายิกา',
-                                gender: 'neutral'
+                                gender: 'neuter'
                             },
                             {
                                 word: 'ဒါယကာဗျန်',
@@ -672,7 +672,7 @@ export default {
                                 th: 'เตีย-เยี่ยะ-กา',
                                 meaningEN: 'You',
                                 meaningTH: 'โยม/ทายิก/ทายิกา',
-                                gender: 'neutral'
+                                gender: 'neuter'
                             },
                             {
                                 word: 'ဒါယကာဗျန်',

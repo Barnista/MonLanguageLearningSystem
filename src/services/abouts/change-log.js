@@ -1,5 +1,12 @@
 export default {
     logs: [
+         {
+            version: 'v1.7.5',
+            date: new Date('2025-10-03'),
+            changes: [
+                'added Mon Renaissance page to inform users about future projects (but they have to go through secret code)'
+            ]
+        },
         {
             version: 'v1.7.2-v1.7.4',
             date: new Date('2025-09-26'),
