@@ -353,7 +353,7 @@
                     <ol>
                         <li>
                             <div>
-                                Mon Dialect & Accent Study for the Development of Text-to-Speech & Speech-to-Text (2025-10-03)
+                                (2025-10-03) <span class="fw-bold">Dialect & Accent Study for the Development of Text-to-Speech & Speech-to-Text</span> 
                             </div>
                             <a href="https://docs.google.com/presentation/d/1ZN5-gDx-10Jqz7z0W1-4v0LuN-m3wPxe/edit?usp=sharing&ouid=113208107963041164524&rtpof=true&sd=true"
                                 target="_blank">
@@ -362,7 +362,7 @@
                         </li>
                         <li>
                             <div>
-                                OCR for Historical Mon Script (2025-09-26)
+                                (2025-09-26) <span class="fw-bold">OCR for Historical Mon Script</span> 
                             </div>
                             <a href="https://docs.google.com/presentation/d/1-N_FNvlbX3oLqhUtTFbStjRv7yUCalLx/edit?usp=drive_link&ouid=113208107963041164524&rtpof=true&sd=true"
                                 target="_blank">
@@ -370,10 +370,6 @@
                             </a>
                         </li>
                     </ol>
-                    <hr>
-                    <div class="fw-bold">
-                        Designed and defined by Barnista, 31 Aug 2025.
-                    </div>
                 </div>
             </div>
         </div>

@@ -6,7 +6,9 @@
         "report": "ပ္တိုန်ထ္ၜးပြဿနာ",
         "community": "ပွဳပွူဂကောံဂမၠိင်",
         "abouts": "ပရော",
-        "dev": "ညးမသိုင်ပတန်"
+        "dev": "ညးမသိုင်ပတန်",
+        "learnMon": "Learn Mon",
+        "membership": "Membership"
     },
     "homeView": {
         "welcome": "ဒုင်တၠုင် ဏာ နူဘာသာမန် ရ",
@@ -194,6 +196,7 @@
         "punctuations": "သကေႅတ ပါ်ပိုဒ် တတ်ပိုဒ်"
     },
     "learnSentence": {
+        "getStart": "Get Start",
         "sentence": "သဒ္ဒါ",
         "title": "သဒ္ဒါ",
         "speechClassification": "Speech Classification",

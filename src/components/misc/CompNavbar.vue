@@ -22,16 +22,19 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                                 aria-expanded="false">
-                                <i class="bi bi-book-half"></i> {{ langSet[lang ? lang : 'en'].learnAlphabets.alphabets
+                                <i class="bi bi-book-half"></i> {{ langSet[lang ? lang : 'en'].navbar.learnMon
                                 }}
                             </a>
                             <ul class="dropdown-menu">
-                                <li><router-link class="dropdown-item" :to="{ path: '/alphabets', query: { lang } }">{{
-                                    langSet[lang ? lang :
-                                        'en'].learnAlphabets.getStart }}</router-link>
-                                </li>
                                 <li>
-                                    <hr class="dropdown-divider">
+                                    <router-link class="dropdown-item" :to="{ path: '/alphabets', query: { lang } }">
+                                        <i class="bi bi-book-half"></i>
+                                        {{ langSet[lang ? lang :
+                                            'en'].learnAlphabets.alphabets
+                                        }} ({{
+                                            langSet[lang ? lang :
+                                                'en'].learnAlphabets.getStart }})
+                                    </router-link>
                                 </li>
                                 <li><router-link class="dropdown-item"
                                         :to="{ path: '/alphabets/consonant', query: { lang } }">{{
@@ -70,14 +73,16 @@
                                         aria-disabled="true">{{
                                             langSet[lang ? lang :
                                                 'en'].learnAlphabets.punctuations }}</router-link></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                aria-expanded="false">
-                                <i class="bi bi-chat-dots"></i> {{ langSet[lang ? lang : 'en'].learnSentence.sentence }}
-                            </a>
-                            <ul class="dropdown-menu">
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li>
+                                    <router-link class="dropdown-item" :to="{ path: '/grammars', query: { lang } }">
+                                        <i class="bi bi-chat-dots"></i>
+                                        {{ langSet[lang ? lang : 'en'].learnSentence.sentence }} ({{ langSet[lang ? lang
+                                        : 'en'].learnSentence.getStart }})
+                                    </router-link>
+                                </li>
                                 <li>
                                     <router-link class="dropdown-item disabled" to="#">
                                         {{ langSet[lang ? lang :
@@ -85,7 +90,8 @@
                                     </router-link>
                                 </li>
                                 <li>
-                                    <router-link class="dropdown-item disabled" to="#">
+                                    <router-link class="dropdown-item"
+                                        :to="{ path: '/grammars/pronoun', query: { lang } }">
                                         {{ langSet[lang
                                             ? lang : 'en'].learnSentence.pronoun }}
                                     </router-link>
@@ -150,6 +156,7 @@
                                                 'en'].learnSentence.syntax }}</router-link></li>
                             </ul>
                         </li>
+
                         <!-- APPS MENU -->
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
@@ -232,6 +239,8 @@
                                 </li>
                             </ul>
                         </li>
+
+                        <!-- LANGUAGE SELECTOR -->
                         <li class="nav-item">
                             <div class="dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
@@ -248,6 +257,15 @@
                                     </li>
                                 </ul>
                             </div>
+                        </li>
+
+                        <!-- LOGIN BUTTON -->
+                        <li class="nav-item">
+                            <router-link :to="{ path: '/membership', query: { lang } }"
+                                :class="['nav-link', { active: $route.path === '/membership' }, 'text-warning']">
+                                <i class="bi bi-person-circle"></i>
+                                Membership
+                            </router-link>
                         </li>
                     </ul>
                 </div>

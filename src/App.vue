@@ -4,9 +4,9 @@
   <!-- Main Content -->
   <router-view class="safe-zone flex-grow-1" />
 
-  <KeyboardModal ref="keyboardModal" :lang="lang" class="mt-5" />
+  <KeyboardModal ref="keyboardModal" :lang="lang" />
   <div class="sticky-bottom text-end p-3" id="toastBtn">
-    <button @click="showKeyboard" class="btn btn-lg btn-light bg-fabulous rounded-pill shadow">
+    <button @click="showKeyboard" class="btn btn-lg bg-fabulous rounded-pill shadow">
       <i class="bi bi-keyboard"></i>
       {{ langSet[lang].keyboard.title }}
       <!-- For Mon, English, Thai, Burmese -->
@@ -148,6 +148,10 @@ html,
   background-size: 400% 400%;
   animation: gradient-flash 8s linear infinite;
   color: #fff !important;
+}
+
+.bg-transparent {
+  background-color: transparent !important;
 }
 
 @keyframes gradient-flash {

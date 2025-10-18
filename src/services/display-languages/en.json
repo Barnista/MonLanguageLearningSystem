@@ -6,7 +6,9 @@
         "report": "Report issues",
         "community": "Community",
         "abouts": "Abouts",
-        "dev": "Contributors"
+        "dev": "Contributors",
+        "learnMon": "Learn Mon",
+        "membership": "Membership"
     },
     "homeView": {
         "welcome": "Welcome to The Mon Language (မန်)",
@@ -194,6 +196,7 @@
         "punctuations": "Punctuations"
     },
     "learnSentence": {
+        "getStart": "Get Start",
         "sentence": "Grammars",
         "title": "Learn Grammars",
         "speechClassification": "Speech Classification",

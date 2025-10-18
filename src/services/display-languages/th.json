@@ -6,7 +6,9 @@
         "report": "รายงานปัญหา",
         "community": "ชุมชนของเรา",
         "abouts": "เกี่ยวกับเรา",
-        "dev": "ผู้มีส่วนช่วย"
+        "dev": "ผู้มีส่วนช่วย",
+        "learnMon": "เรียนภาษามอญ",
+        "membership": "สมัครสมาชิก"
     },
     "homeView": {
         "welcome": "ยินดีต้อนรับสู่ The Mon Language (မန်)",
@@ -197,6 +199,7 @@
         "punctuations": "เครื่องหมายวรรคตอน"
     },
     "learnSentence": {
+        "getStart": "เริ่มต้นเรียน",
         "sentence": "ไวยกรณ์",
         "title": "เรียนไวยกรณ์มอญ",
         "speechClassification": "วจีภาค",
