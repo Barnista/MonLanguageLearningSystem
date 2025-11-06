@@ -9,50 +9,44 @@
                             Membership — Deep dive into a Virtual Nation
                         </h1>
                         <p>
-                            Become a member to unlock <strong>Mon Renaissance</strong> experience: personalized progression,
-                            quests hunting, MonCoin collecting, community participation, history and culture diving, and exclusive contents designed to help you cherish the Mon Civilization.
+                            Become a member to unlock <strong>Mon Renaissance</strong> experience: personalized
+                            progression,
+                            quests hunting, MonCoin collecting, community participation, history and culture diving, and
+                            exclusive contents designed to help you cherish the Mon Civilization.
                         </p>
                         <ul class="benefits">
                             <li>Sign up now for <strong>FREE</strong>!</li>
                             <li>Mon ethnic gets a starter <strong>EXP & MonCoin</strong> package for free.</li>
                             <li>Access to <strong>exclusive features</strong> and community workshop.</li>
-                            <li>Doing quests to collect & unlock customizations, badges and MonCoins like a video games.</li>
+                            <li>Doing quests to collect & unlock customizations, badges and MonCoins like a video games.
+                            </li>
                         </ul>
                     </div>
                 </div>
             </div>
             <div class="col-12 col-lg-5 col-xl-4">
-                <div class="card m-auto">
+                <div class="p-3 bg-light text-dark rounded border shadow m-auto">
                     <h2>
                         <img src="@/assets/48x48.png" alt="Mon Renaissance logo" style="width: 48px; height: 48px;" />
-                        {{ isRegister ? 'Create account' : 'Sign in' }}
+                        Join Membership
                     </h2>
-                    <form @submit.prevent="handleSubmit" class="form">
-                        <label>
-                            <span>Email</span>
-                            <input v-model="email" type="email" required />
-                        </label>
-
-                        <label>
-                            <span>Password</span>
-                            <input v-model="password" type="password" minlength="6" required />
-                        </label>
-
-                        <div class="actions">
-                            <button type="submit" :disabled="'loading'">
-                                {{ loading ? (isRegister ? 'Creating...' : 'Signing in...') : (isRegister ? 'Create account'
-                                : 'Sign in') }}
-                            </button>
-                            <button type="button" class="link" @click="toggleMode" :disabled="loading">
-                                {{ isRegister ? 'Have an account? Sign in' : "Don't have an account? Create one" }}
-                            </button>
-                        </div>
-                    </form>
-                    <div class="divider">OR</div>
-                    <button class="google" @click="signInWithGoogle" :disabled="loading">
-                        Continue with Google
-                    </button>
-                    <p v-if="error" class="error">{{ error }}</p>
+                    <div>
+                        <button class="btn btn-danger shadow-sm w-100 mb-2" @click="signInWithGoogle"
+                            :disabled="loading">
+                            Sign In with Google
+                        </button>
+                        <br>
+                        <button class="btn btn-primary shadow-sm w-100 mb-2" @click="signInWithFacebook"
+                            :disabled="loading">
+                            Sign In with Facebook
+                        </button>
+                        <p v-if="error" class="error">{{ error }}</p>
+                    </div>
+                    <div>
+                        <router-link :to="{ name: 'privacy-policy', query: { lang } }">Privacy Policy</router-link>
+                        <br>
+                        <router-link :to="{ name: 'terms-of-use', query: { lang } }">Terms of Use</router-link>
+                    </div>
                 </div>
             </div>
         </div>
@@ -60,94 +54,29 @@
 </template>
 
 <script>
-import { ref } from 'vue'
-import { useRouter } from 'vue-router'
-import {
-    getAuth,
-    signInWithEmailAndPassword,
-    createUserWithEmailAndPassword,
-    signInWithPopup,
-    GoogleAuthProvider,
-} from 'firebase/auth'
+import { getAuth, GoogleAuthProvider, FacebookAuthProvider } from 'firebase/auth';
+import authService from '@/services/firebase/auth-service';
+
+// Requires Firebase app to be initialized elsewhere in the project (e.g. src/firebase.js)
+const auth = getAuth()
+const googleProvider = new GoogleAuthProvider()
+const facebookProvider = new FacebookAuthProvider()
 
 export default {
     name: 'LoginView',
-    setup() {
-        const router = useRouter()
-        const email = ref('')
-        const password = ref('')
-        const loading = ref(false)
-        const error = ref('')
-        const isRegister = ref(true)
-
-        // Requires Firebase app to be initialized elsewhere in the project (e.g. src/firebase.js)
-        const auth = getAuth()
-        const googleProvider = new GoogleAuthProvider()
-
-        const handleSubmit = async () => {
-            error.value = ''
-            loading.value = true
-            try {
-                if (isRegister.value) {
-                    await createUserWithEmailAndPassword(auth, email.value, password.value)
-                } else {
-                    await signInWithEmailAndPassword(auth, email.value, password.value)
-                }
-                // On success, navigate to home (adjust route as needed)
-                router.push({ name: 'Home' }).catch(() => { })
-            } catch (err) {
-                error.value = parseAuthError(err)
-            } finally {
-                loading.value = false
-            }
-        }
-
-        const signInWithGoogle = async () => {
-            error.value = ''
-            loading.value = true
-            try {
-                await signInWithPopup(auth, googleProvider)
-                router.push({ name: 'Home' }).catch(() => { })
-            } catch (err) {
-                error.value = parseAuthError(err)
-            } finally {
-                loading.value = false
-            }
-        }
-
-        const toggleMode = () => {
-            isRegister.value = !isRegister.value
-            error.value = ''
-        }
-
-        function parseAuthError(err) {
-            if (!err || !err.code) return String(err || 'Unknown error')
-            switch (err.code) {
-                case 'auth/user-not-found':
-                case 'auth/wrong-password':
-                    return 'Invalid email or password.'
-                case 'auth/email-already-in-use':
-                    return 'Email already in use.'
-                case 'auth/invalid-email':
-                    return 'Invalid email address.'
-                case 'auth/popup-closed-by-user':
-                    return 'Popup closed before completing sign in.'
-                case 'auth/popup-blocked':
-                    return 'Popup blocked by the browser.'
-                default:
-                    return err.message || err.code
-            }
-        }
-
-        return {
-            email,
-            password,
-            loading,
-            error,
-            isRegister,
-            handleSubmit,
-            signInWithGoogle,
-            toggleMode,
+    data: () => ({
+        isLoading: false
+    }),
+    methods: {
+        signInWithGoogle() {
+            authService.signInWithGoogle(auth, googleProvider).then(value => {
+                console.log('USER', value.user)
+            }).catch(error => {
+                console.error('CATCH ERROR', error)
+            });
+        },
+        signInWithFacebook() {
+            authService.signInWithFacebook(auth, facebookProvider)
         }
     },
 }
@@ -261,7 +190,7 @@ h2 {
     text-align: center;
 }
 
-.jumbotron{
-text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.384);
+.jumbotron {
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.384);
 }
 </style>
