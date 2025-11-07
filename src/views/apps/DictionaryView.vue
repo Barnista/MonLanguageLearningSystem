@@ -4,7 +4,8 @@
             'en'].dictionary.translateToMon || '_MON_' }} - {{ langSet[lang || 'en'].dictionary.translateToThai ||
                 '_THAI_' }}</h2>
         <div class="mt-3"></div>
-        <CompDictionarySearch ref="compDictionarySearch" :lang="lang" :translate-from="translateFrom" :search-limit="searchLimit" />
+        <CompDictionarySearch ref="compDictionarySearch" :lang="lang" :translate-from="translateFrom" :translate-to="translateTo"
+            :search-limit="searchLimit" />
     </div>
 </template>
 
@@ -12,6 +13,7 @@
 import CompDictionarySearch from '@/components/mini-apps/CompDictionarySearch.vue';
 import displayLanguages from '@/services/display-languages/display-languages';
 import { logPageView } from '@/services/firebase/app';
+import { LangCode } from '@/services/lang-code';
 
 export default {
     name: 'DictionaryView',
@@ -22,35 +24,22 @@ export default {
         return {
             lang: 'en',
             searchText: 'က',
-            translateFrom: 'mon', // Default translation from Mon to Thai
+            translateFrom: 'mnw', // Default translation from Mon to Thai
+            translateTo: 'eng',
             // This can be changed to 'thai' for Thai to Mon translation
             langSet: displayLanguages.langSet,
-            searchLimit: 10
+            searchLimit: 10,
+            langCode: LangCode
         }
     },
     mounted() {
         logPageView(this.$options.name);
         this.lang = this.$route.query.lang || 'en';
         this.searchText = this.$route.query.q || 'က';
-        this.translateFrom = this.$route.query.from || 'mon'; // Default translation direction
-        this.$refs.compDictionarySearch.selectedLang(this.translateFrom);
-        if (this.searchText.length > 1) {
-            this.$refs.compDictionarySearch.searchFromText(this.searchText);
-        } else {
-            this.$refs.compDictionarySearch.searchFromLetter(this.searchText[0]);
-        }
+        this.translateFrom = this.$route.query.from || this.langCode.Mon; // Default translation direction
+        this.translateTo = this.$route.query.to || this.langCode.English;
     },
     methods: {
-        switchTranslate() {
-            if (this.translateFrom === 'mon') {
-                //switch to thai
-                this.translateFrom = 'thai';
-            } else {
-                //switch to mon
-                this.translateFrom = 'mon';
-            }
-            this.selectedLang(this.translateFrom);
-        },
     },
     watch: {
         '$route.query.lang'(newLang) {
@@ -58,15 +47,15 @@ export default {
         },
         '$route.query.q'(newText) {
             this.searchText = newText || '';
-            if (this.searchText.length > 1) {
-                this.$refs.compDictionarySearch.searchFromText(this.searchText);
-            } else {
-                this.$refs.compDictionarySearch.searchFromLetter(this.searchText[0]);
-            }
+            this.$refs.compDictionarySearch.searchFromText(newText, this.translateFrom, this.translateTo);
         },
         '$route.query.from'(newTranslateFrom) {
-            this.translateFrom = newTranslateFrom || 'mon';
-            this.$refs.compDictionarySearch.selectedLang(this.translateFrom);
+            this.translateFrom = newTranslateFrom || this.langCode.Mon;
+            this.$refs.compDictionarySearch.selectedLang(this.translateFrom, this.translateTo);
+        },
+        '$route.query.to'(newTranslateTo) {
+            this.translateTo = newTranslateTo || this.langCode.English;
+            this.$refs.compDictionarySearch.selectedLang(this.translateFrom, this.translateTo);
         }
     },
 }

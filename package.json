@@ -1,6 +1,6 @@
 {
   "name": "mon-language-learning-system",
-  "version": "1.7.5",
+  "version": "1.7.5 build 0001",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -13,10 +13,17 @@
     "bootstrap": "^5.3.6",
     "bootstrap-icons": "^1.13.1",
     "core-js": "^3.8.3",
+    "crypto": "^1.0.1",
+    "crypto-browserify": "^3.12.1",
+    "datatables.net-bs5": "^2.3.4",
+    "datatables.net-dt": "^2.3.4",
+    "datatables.net-vue3": "^3.0.4",
     "firebase": "^11.10.0",
+    "path-browserify": "^1.0.1",
     "simple-keyboard": "^3.8.62",
     "simple-keyboard-layouts": "^3.4.98",
     "sql.js": "^1.13.0",
+    "stream-browserify": "^3.0.0",
     "vue": "^3.2.13",
     "vue-router": "^4.0.3",
     "vue-simple-typewriter": "^0.0.6",
@@ -32,6 +39,12 @@
     "eslint": "^7.32.0",
     "eslint-plugin-vue": "^8.0.3",
     "vue-analog-clock": "^1.0.2"
+  },
+  "browser": {
+    "crypto": false,
+    "fs": false,
+    "path": false,
+    "os": false
   },
   "eslintConfig": {
     "root": true,
