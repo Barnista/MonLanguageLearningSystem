@@ -147,15 +147,15 @@
                 </div>
             </div>
         </div>
-        <div class="text-center mt-4">
+        <!--<div class="text-center mt-4">
             <router-link class="fw-bold btn btn-lg btn-outline-danger"
                 :to="{ name: 'apply-new-word', params: { lang } }" target="_blank">
                 <i class="bi bi-plus-square-dotted"></i>
                 {{ langSet[lang ?? 'en'].dictionary.applyNewWord || '_APPLY_NEW_WORD_' }}
             </router-link>
-        </div>
-        <hr>
-        <div class="mt-4 row">
+        </div>-->
+        <!--<hr>-->
+        <div class="mt-5 row">
             <div class="col-12 mb-3 d-flex justify-content-between">
                 <h3>{{ langSet[lang || 'en'].dictionary.letterFrom }} က - အ</h3>
                 <span class="fs-5 bg-warning rounded shadow px-3 pt-1 pb-2"><span class="fw-bold">{{ text
