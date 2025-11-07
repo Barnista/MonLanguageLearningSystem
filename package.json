@@ -1,6 +1,6 @@
 {
   "name": "mon-language-learning-system",
-  "version": "1.7.5 build 0001",
+  "version": "1.7.5 build 002",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",

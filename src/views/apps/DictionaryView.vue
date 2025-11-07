@@ -1,8 +1,10 @@
 <template>
     <div class="dictionary-view container">
         <h2 class="mt-4 d-none d-md-block">{{ langSet[lang || 'en'].dictionary.title || '_DICT_' }} {{ langSet[lang ||
-            'en'].dictionary.translateToMon || '_MON_' }} - {{ langSet[lang || 'en'].dictionary.translateToThai ||
-                '_THAI_' }}</h2>
+            'en'].dictionary.translateToMon || '_MON_' }} — {{ langSet[lang || 'en'].dictionary.translateToEnglish ||
+                '_ENG_' }}/{{ langSet[lang || 'en'].dictionary.translateToThai ||
+                '_THA_' }}/{{ langSet[lang || 'en'].dictionary.translateToBurmese ||
+                '_MYA_' }}</h2>
         <div class="mt-3"></div>
         <CompDictionarySearch ref="compDictionarySearch" :lang="lang" :translate-from="translateFrom" :translate-to="translateTo"
             :search-limit="searchLimit" />

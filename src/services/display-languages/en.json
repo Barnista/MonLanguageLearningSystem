@@ -373,6 +373,8 @@
         "translateTo": "to",
         "translateToMon": "Mon",
         "translateToThai": "Thai",
+        "translateToEnglish": "English",
+        "translateToBurmese": "Burmese",
         "letterFrom": "Letter from",
         "noResult": "No result found",
         "found": "word(s) found",
