@@ -116,6 +116,35 @@
                             </div>
                         </div>
                     </div>
+                    <div class="d-flex justify-content-evenly">
+                        <div>
+                            <router-link class="btn btn-outline-secondary shadow-sm"
+                                :to="{ path: '/apps/dictionary', query: { lang, from: translateFrom, to: translateTo, q: text, author: '1' } }">
+                                <i class="bi bi-sort-alpha-down"></i>
+                            </router-link>
+                            <router-link class="btn btn-outline-secondary shadow-sm"
+                                :to="{ path: '/apps/dictionary', query: { lang, from: translateFrom, to: translateTo, q: text, author: '1' } }">
+                                <i class="bi bi-sort-alpha-down-alt"></i>
+                            </router-link>
+                        </div>
+                        <div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                                    value="option1">
+                                <label class="form-check-label" for="inlineRadio1">1</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                                    value="option2">
+                                <label class="form-check-label" for="inlineRadio2">2</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3"
+                                    value="option3" disabled>
+                                <label class="form-check-label" for="inlineRadio3">3 (disabled)</label>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="mb-4">
                     <div class="text-center mt-2">
@@ -147,19 +176,11 @@
                 </div>
             </div>
         </div>
-        <!--<div class="text-center mt-4">
-            <router-link class="fw-bold btn btn-lg btn-outline-danger"
-                :to="{ name: 'apply-new-word', params: { lang } }" target="_blank">
-                <i class="bi bi-plus-square-dotted"></i>
-                {{ langSet[lang ?? 'en'].dictionary.applyNewWord || '_APPLY_NEW_WORD_' }}
-            </router-link>
-        </div>-->
-        <!--<hr>-->
         <div class="mt-5 row">
             <div class="col-12 mb-3 d-flex justify-content-between">
                 <h3>{{ langSet[lang || 'en'].dictionary.letterFrom }} က - အ</h3>
                 <span class="fs-5 bg-warning rounded shadow px-3 pt-1 pb-2"><span class="fw-bold">{{ text
-                }}</span> ({{ searchResult.length.toLocaleString() }})</span>
+                        }}</span> ({{ searchResult.length.toLocaleString() }})</span>
             </div>
             <div class="col-12">
                 <nav aria-label="Search result pages">
@@ -187,13 +208,13 @@
                         :to="{ path: '/apps/dictionary', query: { lang, from: langCode.Mon, to: (translateTo != langCode.Mon) ? translateTo : 'eng', q: item.letter } }"
                         :class="['btn', (text === item.letter) ? 'btn-warning' : 'btn-success', 'shadow']">
                         <span :class="['fs-5', (text === item.letter) ? 'fw-bold' : '']">{{ item.letter
-                            }}</span>
+                        }}</span>
                     </router-link>
                     <router-link v-for="(item, index) in vowels" :key="index"
                         :to="{ path: '/apps/dictionary', query: { lang, from: langCode.Mon, to: (translateTo != langCode.Mon) ? translateTo : 'eng', q: item.letter } }"
                         :class="['btn', (text === item.letter) ? 'btn-warning' : 'btn-secondary', 'shadow']">
                         <span :class="['fs-5', (text === item.letter) ? 'fw-bold' : '']">{{ item.letter
-                            }}</span>
+                        }}</span>
                     </router-link>
                 </div>
             </div>
@@ -220,7 +241,7 @@
                     <span v-if="searchResult.length === 0" class="text-muted">{{ langSet[lang ||
                         'en'].dictionary.noResult || '_NO_RESULT_' }}</span>
                     <span v-else class="text-muted">{{ searchResult.length }} {{ langSet[lang || 'en'].dictionary.found
-                        }}.
+                    }}.
                         ({{ langSet[lang || 'en'].dictionary.outOf }} {{ wordCount }})</span>
                 </div>
             </div>
@@ -268,6 +289,7 @@ import CompSimpleKeyboard from '../keyboard/CompSimpleKeyboard.vue';
 import { MonDictDB } from '@/services/mon-library/dictionary/mon-dict-db';
 import { LangCode } from '@/services/lang-code';
 import CompCardDefinition from './CompCardDefinition.vue';
+import { orderBy } from 'firebase/firestore';
 //import DataTable from 'datatables.net-vue3';
 //import DataTablesCore from 'datatables.net-bs5';
 
@@ -297,7 +319,15 @@ export default {
         query: {
             type: String,
             default: 'က'
-        }
+        },
+        authorIncludes: {
+            type: String,
+            default: '3'
+        },
+        orderBy: {
+            type: String,
+            default: 'ASC'
+        },
     },
     data: () => {
         return {
@@ -366,14 +396,16 @@ export default {
                 //force: true
             });
         },
-        searchFromText(text, translateFrom, translateTo) {
+        searchFromText(text, translateFrom, translateTo, authorIncludes, orderBy) {
             this.text = text;
             this.hideKeyboard();
+
+            const authIncludes = (authorIncludes == '3') ? [1, 2, 3] : [(parseInt(authorIncludes)), 3];
 
             if (translateFrom == this.langCode.Mon) {
                 //this.searchResult = dictionary.searchByWord(text, false, 99, false);
                 this.isLoading = true;
-                MonDictDB.searchByWord(this.db, text, false, 99, true, translateTo)
+                MonDictDB.searchByWord(this.db, text, false, 99, true, translateTo, authIncludes, orderBy)
                     .then(vals => {
                         this.isLoading = false;
                         this.searchResult = vals;
@@ -387,7 +419,7 @@ export default {
             } else {
                 //this.searchResult = dictionary.searchByTranslateTH(text, false, 99, false);
                 this.isLoading = true;
-                MonDictDB.searchByDefinition(this.db, text, false, 99, false, translateFrom)
+                MonDictDB.searchByDefinition(this.db, text, false, 99, false, translateFrom, authIncludes, orderBy)
                     .then(vals => {
                         this.isLoading = false;
                         this.searchResult = vals;

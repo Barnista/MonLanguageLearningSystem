@@ -1,3 +1,5 @@
+import { orderBy } from "firebase/firestore"
+
 export const DB_TABLE = {
     Author: 'Author',
     Category: 'Category',
@@ -45,7 +47,7 @@ export const DB_QUERY_PRESET = {
 }
 
 export const DB_QUERY_INSTANTS = {
-    SELECT_WORD_WITH_LIMIT(word, isLimit, limit, isFirstCharOnly, lang_code) {
+    SELECT_WORD_WITH_LIMIT(word, isLimit, limit, isFirstCharOnly, lang_code, includeAuthorIds, orderBy = 'ASC') {
         return `
         SELECT 
             Word.id as 'id',
@@ -69,12 +71,13 @@ export const DB_QUERY_INSTANTS = {
         WHERE 
             Word.word LIKE '${isFirstCharOnly ? '' : '%'}${word}%'
             ${lang_code ? `AND Definition.lang_code = '${lang_code}'` : ''}
+            ${includeAuthorIds && includeAuthorIds.length > 0 ? `AND Word.author_id IN (${includeAuthorIds.join(',')})` : ''}
         ORDER BY
-            Word.word
+            Word.word ${orderBy}
         ${isLimit ? `LIMIT(${limit})` : ''}
         `
     },
-    SELECT_WORD_FROM_DEFINITION(word, isLimit, limit, isFirstCharOnly, lang_code) {
+    SELECT_WORD_FROM_DEFINITION(word, isLimit, limit, isFirstCharOnly, lang_code, includeAuthorIds, orderBy = 'ASC') {
         return `
         SELECT 
             Word.id as 'id',
@@ -98,8 +101,9 @@ export const DB_QUERY_INSTANTS = {
         WHERE 
             Definition.definition LIKE '${isFirstCharOnly ? '' : '%'}${word}%'
             ${lang_code ? `AND Definition.lang_code = '${lang_code}'` : ''}
+            ${includeAuthorIds && includeAuthorIds.length > 0 ? `AND Word.author_id IN (${includeAuthorIds.join(',')})` : ''}
         ORDER BY
-            Word.word
+            Definition.definition ${orderBy}
         ${isLimit ? `LIMIT(${limit})` : ''}
         `
     }

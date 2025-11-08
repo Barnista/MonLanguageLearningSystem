@@ -7,7 +7,7 @@
                 '_MYA_' }}</h2>
         <div class="mt-3"></div>
         <CompDictionarySearch ref="compDictionarySearch" :lang="lang" :translate-from="translateFrom" :translate-to="translateTo"
-            :search-limit="searchLimit" />
+            :search-limit="searchLimit" :authorIncludes="authorIncludes" :orderBy="orderBy" />
     </div>
 </template>
 
@@ -31,7 +31,9 @@ export default {
             // This can be changed to 'thai' for Thai to Mon translation
             langSet: displayLanguages.langSet,
             searchLimit: 10,
-            langCode: LangCode
+            langCode: LangCode,
+            authorIncludes: '3',
+            orderBy: 'ASC',
         }
     },
     mounted() {
@@ -40,6 +42,8 @@ export default {
         this.searchText = this.$route.query.q || 'က';
         this.translateFrom = this.$route.query.from || this.langCode.Mon; // Default translation direction
         this.translateTo = this.$route.query.to || this.langCode.English;
+        this.authorIncludes = this.$route.query.author || '3';
+        this.orderBy = this.$route.query.order || 'ASC';
     },
     methods: {
     },
@@ -49,7 +53,7 @@ export default {
         },
         '$route.query.q'(newText) {
             this.searchText = newText || '';
-            this.$refs.compDictionarySearch.searchFromText(newText, this.translateFrom, this.translateTo);
+            this.$refs.compDictionarySearch.searchFromText(newText, this.translateFrom, this.translateTo, this.authorIncludes, this.orderBy);
         },
         '$route.query.from'(newTranslateFrom) {
             this.translateFrom = newTranslateFrom || this.langCode.Mon;
@@ -58,6 +62,14 @@ export default {
         '$route.query.to'(newTranslateTo) {
             this.translateTo = newTranslateTo || this.langCode.English;
             this.$refs.compDictionarySearch.selectedLang(this.translateFrom, this.translateTo);
+        },
+        '$route.query.author'(newAuthor) {
+            this.authorIncludes = newAuthor || '3';
+            this.$refs.compDictionarySearch.searchFromText(this.searchText, this.translateFrom, this.translateTo, this.authorIncludes, this.orderBy);
+        },
+        '$route.query.order'(newOrder) {
+            this.orderBy = newOrder || 'ASC';
+            this.$refs.compDictionarySearch.searchFromText(this.searchText, this.translateFrom, this.translateTo, this.authorIncludes, this.orderBy);
         }
     },
 }
