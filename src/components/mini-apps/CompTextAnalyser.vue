@@ -249,7 +249,7 @@ import { Collapse } from 'bootstrap/dist/js/bootstrap.bundle.min';
 import advancedAlphabets from '@/services/mon-library/alphabets/alphabets-ai';
 import CompSimpleKeyboard from '../keyboard/CompSimpleKeyboard.vue';
 import displayLanguages from '@/services/display-languages/display-languages';
-import dictionary from '@/services/mon-library/dictionary/dictionary';
+//import dictionary from '@/services/mon-library/dictionary/dictionary';
 import CompMobileKeyboard from '../keyboard/CompMobileKeyboard.vue';
 
 export default {
@@ -286,7 +286,7 @@ export default {
         }
     },
     created() {
-        dictionary.initDB();
+        //dictionary.initDB();
         this.windowWidth = window.innerWidth;
         window.addEventListener('resize', () => {
             this.windowWidth = window.innerWidth;
@@ -312,7 +312,7 @@ export default {
             this.ipas = result.ipas;
             this.ths = result.ths;
 
-            this.meanings = dictionary.searchByWord(this.words, true, this.searchLimit, false);
+            //this.meanings = dictionary.searchByWord(this.words, true, this.searchLimit, false);
             console.log(result);
         },
         setText(text) {
@@ -355,10 +355,12 @@ export default {
             return n_word;
         },
         displayTranslateTypeTH(type) {
-            return dictionary.getTranslateTypeTH(type)
+            return type
+            //return dictionary.getTranslateTypeTH(type)
         },
         displayTranslateType(type) {
-            return dictionary.getTranslateType(type)
+            return type
+            //return dictionary.getTranslateType(type)
         }
     }
 }

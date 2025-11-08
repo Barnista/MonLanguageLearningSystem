@@ -1,4 +1,3 @@
-import { orderBy } from "firebase/firestore"
 
 export const DB_TABLE = {
     Author: 'Author',
@@ -47,7 +46,7 @@ export const DB_QUERY_PRESET = {
 }
 
 export const DB_QUERY_INSTANTS = {
-    SELECT_WORD_WITH_LIMIT(word, isLimit, limit, isFirstCharOnly, lang_code, includeAuthorIds, orderBy = 'ASC') {
+    SELECT_WORD_WITH_LIMIT(word, isLimit, limit, isFirstCharOnly, lang_code, includeAuthorIds, orderBy) {
         return `
         SELECT 
             Word.id as 'id',
@@ -73,11 +72,12 @@ export const DB_QUERY_INSTANTS = {
             ${lang_code ? `AND Definition.lang_code = '${lang_code}'` : ''}
             ${includeAuthorIds && includeAuthorIds.length > 0 ? `AND Word.author_id IN (${includeAuthorIds.join(',')})` : ''}
         ORDER BY
-            Word.word ${orderBy}
+            Word.id ${orderBy}
         ${isLimit ? `LIMIT(${limit})` : ''}
         `
     },
-    SELECT_WORD_FROM_DEFINITION(word, isLimit, limit, isFirstCharOnly, lang_code, includeAuthorIds, orderBy = 'ASC') {
+    SELECT_WORD_FROM_DEFINITION(word, isLimit, limit, isFirstCharOnly, lang_code, includeAuthorIds, orderBy) {
+        
         return `
         SELECT 
             Word.id as 'id',
