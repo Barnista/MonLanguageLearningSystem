@@ -81,7 +81,7 @@ export default {
         // if no vowel is provided, we use the default vowel
         // sometimes there's a stand alone vowel
         let currentVowel = null;
-        if (vowel) (dbVowels.getByCompound(vowel) || dbVowels.getByLetter(vowel) || this.vowels[0]); else this.vowels[0];
+        if (vowel) currentVowel = (dbVowels.getByCompound(vowel) || dbVowels.getByLetter(vowel) || this.vowels[0]); else currentVowel = this.vowels[0];
 
         // check if a certain vowel has to change its form if it meets with some consonants
         let blendVowelRule = dbRules.findBlendVowel(currentVowel.compound, currentConsonant.letter);

@@ -286,10 +286,6 @@
 
 <script>
 import displayLanguages from '@/services/display-languages/display-languages';
-<<<<<<< HEAD
-=======
-
->>>>>>> parent of 0a885ff (Revert "v1.7.5 build 003")
 import { Collapse } from 'bootstrap/dist/js/bootstrap.bundle.min';
 import dbConsonants from '@/services/mon-library/alphabets/db-consonants';
 import dbVowels from '@/services/mon-library/alphabets/db-vowels';
@@ -298,13 +294,6 @@ import CompSimpleKeyboard from '../keyboard/CompSimpleKeyboard.vue';
 import { MonDictDB } from '@/services/mon-library/dictionary/mon-dict-db';
 import { LangCode } from '@/services/lang-code';
 import CompCardDefinition from './CompCardDefinition.vue';
-<<<<<<< HEAD
-//import DataTable from 'datatables.net-vue3';
-//import DataTablesCore from 'datatables.net-bs5';
-
-//DataTable.use(DataTablesCore);
-=======
->>>>>>> parent of 0a885ff (Revert "v1.7.5 build 003")
 
 export default {
     name: 'CompDictionarySearch',

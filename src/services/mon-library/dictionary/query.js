@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-=======
-
->>>>>>> parent of 0a885ff (Revert "v1.7.5 build 003")
 export const DB_TABLE = {
     Author: 'Author',
     Category: 'Category',
