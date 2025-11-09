@@ -192,10 +192,11 @@ export const MonDictDB = {
         }
     },
     //SEARCH WITH MON WORD
-    async searchByWord(db, word, isLimit, limit, isFirstCharOnly, lang_code) {
+    async searchByWord(db, word, isLimit, limit, isFirstCharOnly, lang_code, includeAuthorIds, orderBy) {
         if (this.isReady(db)) {
-            const query = DB_QUERY_INSTANTS.SELECT_WORD_WITH_LIMIT(word, isLimit, limit, isFirstCharOnly, lang_code);
+            const query = DB_QUERY_INSTANTS.SELECT_WORD_WITH_LIMIT(word, isLimit, limit, isFirstCharOnly, lang_code, includeAuthorIds, orderBy);
             const result = await db.exec(query);
+            let new_arr = [];
             if (result[0]) {
                 const values = result[0].values;
                 /*
@@ -217,12 +218,22 @@ export const MonDictDB = {
 
                 let map = {};
 
+                let currentKey = null;
+                let currentId = null;
                 for (let i = 0; i < values.length; i++) {
                     const vals = values[i];
+                    let key = i;
+                    let id = vals[0];
+                    if (currentId == id) {
+                        key = currentKey;
+                    } else {
+                        currentKey = key;
+                        currentId = id;
+                    }
                     //assign id as index
-                    if (map[vals[0]]) {
+                    if (map[key]) {
                         //keep assigning definitions
-                        map[vals[0]]['definitions'].push({
+                        map[key]['definitions'].push({
                             'definition': vals[6],
                             'pos_code': vals[7],
                             'authorDefName': vals[8],
@@ -230,7 +241,7 @@ export const MonDictDB = {
                         })
                     } else {
                         //new object with initial-definition
-                        map[vals[0]] = {
+                        map[key] = {
                             'id': vals[0],
                             'word': vals[1],
                             'ipa': vals[2],
@@ -240,7 +251,7 @@ export const MonDictDB = {
                             'definitions': []
                         }
 
-                        map[vals[0]]['definitions'].push({
+                        map[key]['definitions'].push({
                             'definition': vals[6],
                             'pos_code': vals[7],
                             'authorDefName': vals[8],
@@ -249,21 +260,20 @@ export const MonDictDB = {
                     }
                 }
 
-                let new_arr = [];
                 for (let k in map) {
                     new_arr.push(map[k])
                 }
-
-                return new_arr;
             }
+            return new_arr;
         } else {
             return [];
         }
     },
-    async searchByDefinition(db, word, isLimit, limit, isFirstCharOnly, lang_code) {
+    async searchByDefinition(db, word, isLimit, limit, isFirstCharOnly, lang_code, includeAuthorIds, orderBy) {
         if (this.isReady(db)) {
-            const query = DB_QUERY_INSTANTS.SELECT_WORD_FROM_DEFINITION(word, isLimit, limit, isFirstCharOnly, lang_code);
+            const query = DB_QUERY_INSTANTS.SELECT_WORD_FROM_DEFINITION(word, isLimit, limit, isFirstCharOnly, lang_code, includeAuthorIds, orderBy);
             const result = await db.exec(query);
+            let new_arr = [];
             if (result[0]) {
                 const values = result[0].values;
                 /*
@@ -285,12 +295,22 @@ export const MonDictDB = {
 
                 let map = {};
 
+                let currentKey = null;
+                let currentId = null;
                 for (let i = 0; i < values.length; i++) {
                     const vals = values[i];
+                    let key = i;
+                    let id = vals[0];
+                    if (currentId == id) {
+                        key = currentKey;
+                    } else {
+                        currentKey = key;
+                        currentId = id;
+                    }
                     //assign id as index
-                    if (map[vals[0]]) {
+                    if (map[key]) {
                         //keep assigning definitions
-                        map[vals[0]]['definitions'].push({
+                        map[key]['definitions'].push({
                             'definition': vals[6],
                             'pos_code': vals[7],
                             'authorDefName': vals[8],
@@ -298,32 +318,30 @@ export const MonDictDB = {
                         })
                     } else {
                         //new object with initial-definition
-                        map[vals[0]] = {
+                        map[key] = {
                             'id': vals[0],
                             'word': vals[1],
                             'ipa': vals[2],
                             'th': vals[3],
                             'authorName': vals[4],
                             'authorId': vals[5],
-                            'definitions': [
-                                {
-                                    'definition': vals[6],
-                                    'pos_code': vals[7],
-                                    'authorDefName': vals[8],
-                                    'authorDefId': vals[9]
-                                }
-                            ]
+                            'definitions': []
                         }
+
+                        map[key]['definitions'].push({
+                            'definition': vals[6],
+                            'pos_code': vals[7],
+                            'authorDefName': vals[8],
+                            'authorDefId': vals[9]
+                        })
                     }
                 }
 
-                let new_arr = [];
                 for (let k in map) {
                     new_arr.push(map[k])
                 }
-
-                return new_arr;
             }
+            return new_arr;
         } else {
             return [];
         }

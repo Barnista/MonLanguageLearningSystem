@@ -381,7 +381,10 @@
         "outOf": "out of",
         "meanings": "meanings",
         "applyNewWord": "Apply for new words",
-        "underReview": "Note: This dictionary is still in the process of reviewing. Please see the updates schedule on"
+        "underReview": "Note: This dictionary is still in the process of reviewing. Please see the updates schedule on",
+        "author1": "နာဲသက်လောန်",
+        "author2": "ကမ္မတဳကနှံမဟာစရုည်",
+        "author3": "Both Compilers"
     },
     "numConverter": {
         "title": "Num Converter (Mon-Thai-Arabic)",

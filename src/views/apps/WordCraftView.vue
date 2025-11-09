@@ -4,7 +4,7 @@
         <div class="mt-3"></div>
         <CompWordCraft :lang="lang" />
         <hr>
-        <div class="accordion mb-4" :id="`accordionWordCraft`">
+        <div class="accordion mb-4" id="accordionWordCraft">
             <div class="accordion-item shadow">
                 <h2 class="accordion-header" :id="`accordionWordCraft`">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"

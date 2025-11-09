@@ -6,9 +6,9 @@
             <div class="py-3 px-3 py-md-4 px-md-4">
                 <div class="mb-4">
                     <div for="monInput" class="m-auto d-flex justify-content-center">
-                        <button v-if="translateFrom == langCode.Mon" class="btn btn-outline-secondary shadow-sm">
-                            <img src="@/assets/flags/mon.svg" class="flag">
-                            {{ langSet[lang || 'en'].dictionary.translateToMon || '_MON_' }}
+                        <button v-if="translateFrom == langCode.Mon" class="btn btn-sm fs-5">
+                            <img src="@/assets/flags/mon.svg" class="flag-2">
+                            မန်
                         </button>
                         <div v-else class="btn-group shadow-sm">
                             <button type="button" class="btn btn-outline-primary dropdown-toggle"
@@ -44,13 +44,13 @@
                                 </li>
                             </ul>
                         </div>
-                        <router-link class="btn btn-outline-danger shadow-sm mx-3 px-3"
+                        <router-link class="btn btn-outline-danger shadow-sm fs-5 pb-0 mx-2 px-3"
                             :to="{ path: '/apps/dictionary', query: { lang, from: translateTo, to: translateFrom, q: text } }">
                             <i class="bi bi-arrow-left-right"></i>
                         </router-link>
-                        <button v-if="translateTo == langCode.Mon" class="btn btn-outline-secondary shadow-sm">
-                            <img src="@/assets/flags/mon.svg" class="flag">
-                            {{ langSet[lang || 'en'].dictionary.translateToMon || '_MON_' }}
+                        <button v-if="translateTo == langCode.Mon" class="btn btn-sm fs-5">
+                            <img src="@/assets/flags/mon.svg" class="flag-2">
+                            မန်
                         </button>
                         <div v-else class="btn-group shadow-sm">
                             <button type="button" class="btn btn-outline-primary dropdown-toggle"
@@ -87,7 +87,7 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="input-group mt-4">
+                    <div class="input-group mt-4 rounded shadow-sm">
                         <button v-if="!isKeyboardShown" @click="showKeyboard()"
                             class="btn btn-outline-light bg-fabulous btn-lg">
                             <i class="bi bi-keyboard"></i>
@@ -105,7 +105,7 @@
                             </span>
                         </button>
                     </div>
-                    <div class="accordion-item">
+                    <div class="accordion-item rounded shadow-sm">
                         <div :id="`collapseKeyboard`" class="accordion-collapse collapse"
                             aria-labelledby="headingConsonantTable2" :data-bs-parent="`#accordionKeyboard2`">
                             <div class="accordion-body">
@@ -116,45 +116,38 @@
                             </div>
                         </div>
                     </div>
-                    <div class="d-flex justify-content-evenly">
-                        <div>
-                            <router-link class="btn btn-outline-secondary shadow-sm"
-                                :to="{ path: '/apps/dictionary', query: { lang, from: translateFrom, to: translateTo, q: text, author: '1' } }">
-                                <i class="bi bi-sort-alpha-down"></i>
-                            </router-link>
-                            <router-link class="btn btn-outline-secondary shadow-sm"
-                                :to="{ path: '/apps/dictionary', query: { lang, from: translateFrom, to: translateTo, q: text, author: '1' } }">
-                                <i class="bi bi-sort-alpha-down-alt"></i>
-                            </router-link>
-                        </div>
-                        <div>
+                    <div class="mt-3 row">
+                        <div class="col-12 col-md-9 col-lg-10 d-flex align-items-center">
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
-                                    value="option1">
-                                <label class="form-check-label" for="inlineRadio1">1</label>
+                                <input class="form-check-input" @change="onChangeAuthor" :value="'1'" type="radio"
+                                    name="authorRadioOptions" id="authorRadio1" :checked="(authorIncludes == '1')">
+                                <label class="form-check-label" for="authorRadio1">{{ langSet[lang ?? 'en'].dictionary.author1 }}</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
-                                    value="option2">
-                                <label class="form-check-label" for="inlineRadio2">2</label>
+                                <input class="form-check-input" @change="onChangeAuthor" :value="'2'" type="radio"
+                                    name="authorRadioOptions" id="authorRadio2" :checked="(authorIncludes == '2')">
+                                <label class="form-check-label" for="authorRadio2">{{ langSet[lang ?? 'en'].dictionary.author2 }}</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3"
-                                    value="option3" disabled>
-                                <label class="form-check-label" for="inlineRadio3">3 (disabled)</label>
+                                <input class="form-check-input" @change="onChangeAuthor" :value="'3'" type="radio"
+                                    name="authorRadioOptions" id="authorRadio3" :checked="(authorIncludes == '3')">
+                                <label class="form-check-label" for="authorRadio3">{{ langSet[lang ?? 'en'].dictionary.author3 }}</label>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <div class="mb-4">
-                    <div class="text-center mt-2">
-                        <span v-if="searchResult.length === 0" class="text-muted">{{ langSet[lang ||
-                            'en'].dictionary.noResult || '_NO_RESULT_' }}</span>
-                        <span v-else class="text-muted">{{ Number(searchResult.length).toLocaleString() }} {{
-                            langSet[lang ||
-                                'en'].dictionary.found }}.
-                            ({{ langSet[lang || 'en'].dictionary.outOf }} {{ count.toLocaleString()
-                            }})</span>
+                        <div class="col-12 col-md-3 col-lg-2 text-end">
+                            <div class="btn-group">
+                                <router-link class="btn pb-0 fs-5 shadow-sm"
+                                    :class="[(orderBy == 'ASC') ? 'btn-primary' : 'btn-outline-primary']"
+                                    :to="{ path: '/apps/dictionary', query: { lang, from: translateFrom, to: translateTo, q: text, author: authorIncludes, order: 'ASC' } }">
+                                    <i class="bi bi-sort-alpha-down"></i>
+                                </router-link>
+                                <router-link class="btn pb-0 fs-5 shadow-sm"
+                                    :class="[(orderBy == 'DESC') ? 'btn-primary' : 'btn-outline-primary']"
+                                    :to="{ path: '/apps/dictionary', query: { lang, from: translateFrom, to: translateTo, q: text, author: authorIncludes, order: 'DESC' } }">
+                                    <i class="bi bi-sort-alpha-down-alt"></i>
+                                </router-link>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <hr>
@@ -176,11 +169,21 @@
                 </div>
             </div>
         </div>
-        <div class="mt-5 row">
-            <div class="col-12 mb-3 d-flex justify-content-between">
-                <h3>{{ langSet[lang || 'en'].dictionary.letterFrom }} က - အ</h3>
-                <span class="fs-5 bg-warning rounded shadow px-3 pt-1 pb-2"><span class="fw-bold">{{ text
-                        }}</span> ({{ searchResult.length.toLocaleString() }})</span>
+        <div class="mt-4 row">
+            <div class="col-12 mb-3 d-flex justify-content-between align-items-center">
+                <h3 class="d-none d-md-block">{{ langSet[lang || 'en'].dictionary.letterFrom }} က - အ</h3>
+                <span class="fs-5 bg-warning rounded shadow-sm px-3 pt-1 pb-2">
+                    <span class="fw-bold">{{ text }}</span>
+                    <span class="mx-1" aria-hidden="true">&raquo;</span>
+                    <small>
+                        <span v-if="searchResult.length === 0" class="text-muted">{{ langSet[lang ||
+                            'en'].dictionary.noResult || '_NO_RESULT_' }}</span>
+                        <span v-else class="text-muted">{{ Number(searchResult.length).toLocaleString() }} {{
+                            langSet[lang || 'en'].dictionary.outOf }} {{
+                                count.toLocaleString()
+                            }}.</span>
+                    </small>
+                </span>
             </div>
             <div class="col-12">
                 <nav aria-label="Search result pages">
@@ -237,12 +240,16 @@
                         </ul>
                     </div>
                 </div>
-                <div class="text-center mt-2">
-                    <span v-if="searchResult.length === 0" class="text-muted">{{ langSet[lang ||
-                        'en'].dictionary.noResult || '_NO_RESULT_' }}</span>
-                    <span v-else class="text-muted">{{ searchResult.length }} {{ langSet[lang || 'en'].dictionary.found
-                    }}.
-                        ({{ langSet[lang || 'en'].dictionary.outOf }} {{ wordCount }})</span>
+                <div class="my-2">
+                    <div class="text-end">
+                        <span v-if="searchResult.length === 0" class="text-muted">{{ langSet[lang ||
+                            'en'].dictionary.noResult || '_NO_RESULT_' }}</span>
+                        <span v-else class="text-muted">{{ Number(searchResult.length).toLocaleString() }} {{
+                            langSet[lang ||
+                                'en'].dictionary.found }}.
+                            ({{ langSet[lang || 'en'].dictionary.outOf }} {{ count.toLocaleString()
+                            }})</span>
+                    </div>
                 </div>
             </div>
             <div class="col-12">
@@ -279,6 +286,10 @@
 
 <script>
 import displayLanguages from '@/services/display-languages/display-languages';
+<<<<<<< HEAD
+=======
+
+>>>>>>> parent of 0a885ff (Revert "v1.7.5 build 003")
 import { Collapse } from 'bootstrap/dist/js/bootstrap.bundle.min';
 import dbConsonants from '@/services/mon-library/alphabets/db-consonants';
 import dbVowels from '@/services/mon-library/alphabets/db-vowels';
@@ -287,10 +298,13 @@ import CompSimpleKeyboard from '../keyboard/CompSimpleKeyboard.vue';
 import { MonDictDB } from '@/services/mon-library/dictionary/mon-dict-db';
 import { LangCode } from '@/services/lang-code';
 import CompCardDefinition from './CompCardDefinition.vue';
+<<<<<<< HEAD
 //import DataTable from 'datatables.net-vue3';
 //import DataTablesCore from 'datatables.net-bs5';
 
 //DataTable.use(DataTablesCore);
+=======
+>>>>>>> parent of 0a885ff (Revert "v1.7.5 build 003")
 
 export default {
     name: 'CompDictionarySearch',
@@ -298,7 +312,6 @@ export default {
         CompSimpleKeyboard,
         CompMobileKeyboard,
         CompCardDefinition,
-        //DataTable
     },
     props: {
         lang: {
@@ -355,29 +368,26 @@ export default {
         window.addEventListener('resize', () => {
             this.windowWidth = window.innerWidth;
         });
-
-        this.startDB();
     },
     mounted() {
         this.collapseKeyboard = new Collapse('#collapseKeyboard', {
             toggle: false
         });
 
-        console.log('DataTable', this.$refs.dataTable)
+        this.startDB();
     },
     methods: {
         async startDB() {
             try {
                 this.db = await MonDictDB.startDB()
                 this.count = await MonDictDB.count(this.db);
-                this.searchFromText(this.query, this.translateFrom, this.translateTo)
+                this.searchFromText(this.query, this.translateFrom, this.translateTo, this.authorIncludes, this.orderBy)
             } catch (error) {
                 console.error(error)
             }
         },
         selectedLang(translateFrom, translateTo) {
-            console.log('SELECTED-LANG', translateFrom, translateTo)
-            this.searchFromText(this.query, translateFrom, translateTo)
+            this.searchFromText(this.query, translateFrom, translateTo, this.authorIncludes, this.orderBy)
         },
         submitSearch(text) {
             this.$router.push({
@@ -386,7 +396,9 @@ export default {
                     lang: this.lang,
                     from: this.translateFrom,
                     to: this.translateTo,
-                    q: text
+                    q: text,
+                    author: this.authorIncludes,
+                    order: this.orderBy
                 },
                 //force: true
             });
@@ -395,36 +407,36 @@ export default {
             this.text = text;
             this.hideKeyboard();
 
-            const authIncludes = (authorIncludes == '3') ? [1, 2, 3] : [(parseInt(authorIncludes)), 3];
+            const authIncludes = (authorIncludes == '3') ? [1, 2, 3] : [Number(authorIncludes), 3];
 
-            if (translateFrom == this.langCode.Mon) {
-                //this.searchResult = dictionary.searchByWord(text, false, 99, false);
-                this.isLoading = true;
-                MonDictDB.searchByWord(this.db, text, false, 99, true, translateTo, authIncludes, orderBy)
-                    .then(vals => {
-                        this.isLoading = false;
-                        this.searchResult = vals;
-                        this.calPageNavs()
-                        this.changePage(1)
-                        console.log('RESULT COUNT', this.searchResult.length)
-                    }).catch(error => {
-                        this.isLoading = false;
-                        console.error('ERR_searchFromText', error)
-                    })
-            } else {
-                //this.searchResult = dictionary.searchByTranslateTH(text, false, 99, false);
-                this.isLoading = true;
-                MonDictDB.searchByDefinition(this.db, text, false, 99, false, translateFrom, authIncludes, orderBy)
-                    .then(vals => {
-                        this.isLoading = false;
-                        this.searchResult = vals;
-                        this.calPageNavs()
-                        this.changePage(1)
-                        console.log('RESULT', this.searchResult)
-                    }).catch(error => {
-                        this.isLoading = false;
-                        console.error('ERR_searchFromText', error)
-                    })
+            if (this.db) {
+                if (translateFrom == this.langCode.Mon) {
+                    //this.searchResult = dictionary.searchByWord(text, false, 99, false);
+                    this.isLoading = true;
+                    MonDictDB.searchByWord(this.db, text, false, 99, true, translateTo, authIncludes, orderBy)
+                        .then(vals => {
+                            this.isLoading = false;
+                            this.searchResult = vals;
+                            this.calPageNavs()
+                            this.changePage(1)
+                        }).catch(error => {
+                            this.isLoading = false;
+                            console.error('ERR_searchFromText', error)
+                        })
+                } else {
+                    //this.searchResult = dictionary.searchByTranslateTH(text, false, 99, false);
+                    this.isLoading = true;
+                    MonDictDB.searchByDefinition(this.db, text, false, 99, false, translateFrom, authIncludes, orderBy)
+                        .then(vals => {
+                            this.isLoading = false;
+                            this.searchResult = vals;
+                            this.calPageNavs()
+                            this.changePage(1)
+                        }).catch(error => {
+                            this.isLoading = false;
+                            console.error('ERR_searchFromText', error)
+                        })
+                }
             }
         },
         calPageNavs() {
@@ -441,7 +453,6 @@ export default {
         },
         changePage(page) {
             if (page > 0 && page <= this.pageNavs.length) {
-                console.log('PAGE CHANGED', page)
                 this.page = page;
 
                 const min1 = Math.ceil((this.page - 1) * this.itemsPerPage)
@@ -449,8 +460,8 @@ export default {
                 const min2 = Math.ceil((this.page - 1) * this.itemsPerPage) + this.itemsPerPage / 2
                 const max2 = Math.ceil((this.page - 1) * this.itemsPerPage) + this.itemsPerPage
 
-                console.log('COORDINATE', min1, max1, min2, max2)
-
+                this.searchResult1 = []
+                this.searchResult2 = []
                 this.searchResult1 = this.searchResult.slice(min1, max1)
                 this.searchResult2 = this.searchResult.slice(min2, max2)
             } else {
@@ -468,8 +479,21 @@ export default {
         onChange(input) {
             this.text = input;
         },
+        onChangeAuthor(e) {
+            const val = e.target.value;
+            this.$router.push({
+                path: '/apps/dictionary',
+                query: {
+                    lang: this.lang,
+                    from: this.translateFrom,
+                    to: this.translateTo,
+                    q: this.text,
+                    author: val,
+                    order: this.orderBy
+                },
+            });
+        },
         onKeyPress(button) {
-            console.log("button", button);
             if (button === '{enter}') {
                 this.searchFromText(this.text);
             }
@@ -482,5 +506,10 @@ export default {
 .flag {
     width: auto;
     height: 28px;
+}
+
+.flag-2 {
+    width: auto;
+    height: 32px;
 }
 </style>

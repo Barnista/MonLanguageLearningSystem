@@ -6,7 +6,7 @@
                 '_THA_' }}/{{ langSet[lang || 'en'].dictionary.translateToBurmese ||
                 '_MYA_' }}</h2>
         <div class="mt-3"></div>
-        <CompDictionarySearch ref="compDictionarySearch" :lang="lang" :translate-from="translateFrom" :translate-to="translateTo"
+        <CompDictionarySearch ref="compDictionarySearch" :lang="lang" :query="searchText" :translate-from="translateFrom" :translate-to="translateTo"
             :search-limit="searchLimit" :authorIncludes="authorIncludes" :orderBy="orderBy" />
     </div>
 </template>
