@@ -1,86 +1,17 @@
-import { DB_TABLES_1 } from './tables/table_1';
-import { DB_TABLES_2 } from './tables/table_2';
-import { DB_TABLES_3 } from './tables/table_3';
-import { DB_TABLES_4 } from './tables/table_4';
-import { DB_TABLES_5 } from './tables/table_5';
-import { DB_DATA_AUTHOR_1 } from './datas/author_1';
-import { DB_DATA_CATEGORY_1 } from './datas/category_1';
-import { DB_DATA_CATEGORYDETAIL_1 } from './datas/categorydetail_1';
-import { DB_DATA_DEFINITION_1 } from './datas/definition_1';
-import { DB_DATA_DEFINITION_2 } from './datas/definition_2';
-import { DB_DATA_DEFINITION_3 } from './datas/definition_3';
-import { DB_DATA_DEFINITION_4 } from './datas/definition_4';
-import { DB_DATA_DEFINITION_5 } from './datas/definition_5';
-import { DB_DATA_DEFINITION_6 } from './datas/definition_6';
-import { DB_DATA_DEFINITION_7 } from './datas/definition_7';
-import { DB_DATA_DEFINITION_8 } from './datas/definition_8';
-import { DB_DATA_DEFINITION_9 } from './datas/definition_9';
-import { DB_DATA_DEFINITION_10 } from './datas/definition_10';
-import { DB_DATA_DEFINITION_11 } from './datas/definition_11';
-import { DB_DATA_DEFINITION_12 } from './datas/definition_12';
-import { DB_DATA_DEFINITION_13 } from './datas/definition_13';
-import { DB_DATA_DEFINITION_14 } from './datas/definition_14';
-import { DB_DATA_DEFINITION_15 } from './datas/definition_15';
-import { DB_DATA_DEFINITION_16 } from './datas/definition_16';
-import { DB_DATA_DEFINITION_17 } from './datas/definition_17';
-import { DB_DATA_DEFINITION_18 } from './datas/definition_18';
-import { DB_DATA_DEFINITION_19 } from './datas/definition_19';
-import { DB_DATA_DEFINITION_20 } from './datas/definition_20';
-import { DB_DATA_DEFINITION_21 } from './datas/definition_21';
-import { DB_DATA_DEFINITION_22 } from './datas/definition_22';
-import { DB_DATA_DEFINITION_23 } from './datas/definition_23';
-import { DB_DATA_DEFINITION_24 } from './datas/definition_24';
-import { DB_DATA_WORD_1 } from './datas/word_1';
-import { DB_DATA_WORD_2 } from './datas/word_2';
-import { DB_DATA_WORD_3 } from './datas/word_3';
+import { DB_TABLES_1 } from './table/table_1';
+import { DB_TABLES_2 } from './table/table_2';
+import { DB_TABLES_3 } from './table/table_3';
+import { DB_TABLES_4 } from './table/table_4';
+import { DB_TABLES_5 } from './table/table_5';
 import { DB_QUERY_INSTANTS, DB_QUERY_PRESET, DB_TABLE } from './query';
-import initSqlJs from 'sql.js';
+import { DBEngine } from './engine';
+import { DBLedger } from'./ledger';
 
 export const MonDictDB = {
-    init: () => {
-        return initSqlJs({
-            locateFile: file => `https://sql.js.org/dist/${file}`
-        })
-    },
-    testRun: (SqlJS) => {
-        const db = new SqlJS.Database();
-        const result = db.exec("select 'hello world'");
-        console.log('Exec script:', result);
-
-        // Run a query without reading the results
-        db.run("CREATE TABLE test (col1, col2);");
-        // Insert two rows: (1,111) and (2,222)
-        db.run("INSERT INTO test VALUES (?,?), (?,?)", [1, 111, 2, 222]);
-
-        // Prepare a statement
-        var stmt = db.prepare("SELECT * FROM test WHERE col1 BETWEEN $start AND $end");
-        stmt.getAsObject({ $start: 1, $end: 1 }); // {col1:1, col2:111}
-
-        // Bind new values
-        stmt.bind({ $start: 1, $end: 2 });
-        while (stmt.step()) { //
-            var row = stmt.getAsObject();
-            // [...] do something with the row of result
-            console.log('Test Query:', row);
-        }
-    },
-    createDB: (SqlJS, dbTables, dbDatas) => {
-        const db = new SqlJS.Database();
-        // Create database according to the design v1
-        for (let i = 0; i < dbTables.length; i++) {
-            const dbTable = dbTables[i];
-            db.run(dbTable);
-        }
-        for (let i = 0; i < dbDatas.length; i++) {
-            const dbData = dbDatas[i];
-            db.run(dbData);
-        }
-        return db;
-    },
     startDB: async () => {
         //MonDictDB.testRun();
-        const engine = await MonDictDB.init();
-        const db = MonDictDB.createDB(
+        const engine = await DBEngine.init();
+        const db = DBEngine.createDB(
             engine,
             [
                 DB_TABLES_1,
@@ -89,39 +20,13 @@ export const MonDictDB = {
                 DB_TABLES_4,
                 DB_TABLES_5
             ],
-            [
-                DB_DATA_AUTHOR_1,
-                DB_DATA_CATEGORY_1,
-                DB_DATA_CATEGORYDETAIL_1,
-                DB_DATA_DEFINITION_1,
-                DB_DATA_DEFINITION_2,
-                DB_DATA_DEFINITION_3,
-                DB_DATA_DEFINITION_4,
-                DB_DATA_DEFINITION_5,
-                DB_DATA_DEFINITION_6,
-                DB_DATA_DEFINITION_7,
-                DB_DATA_DEFINITION_8,
-                DB_DATA_DEFINITION_9,
-                DB_DATA_DEFINITION_10,
-                DB_DATA_DEFINITION_11,
-                DB_DATA_DEFINITION_12,
-                DB_DATA_DEFINITION_13,
-                DB_DATA_DEFINITION_14,
-                DB_DATA_DEFINITION_15,
-                DB_DATA_DEFINITION_16,
-                DB_DATA_DEFINITION_17,
-                DB_DATA_DEFINITION_18,
-                DB_DATA_DEFINITION_19,
-                DB_DATA_DEFINITION_20,
-                DB_DATA_DEFINITION_21,
-                DB_DATA_DEFINITION_22,
-                DB_DATA_DEFINITION_23,
-                DB_DATA_DEFINITION_24,
-                DB_DATA_WORD_1,
-                DB_DATA_WORD_2,
-                DB_DATA_WORD_3
-            ]
+            //DO NOT LOAD DATA RIGHT AWAY, IT'S GONNA CAUSE THE WEB TO SLOW DOWN
+            []
         );
+
+        // ASYNC LOADING DATA
+        const result = await DBLedger.loadDataAsync(db);
+        console.log('SQL Data loaded:', result);
 
         return db;
     },
@@ -193,7 +98,7 @@ export const MonDictDB = {
     },
     //SEARCH WITH MON WORD
     async searchByWord(db, word, isLimit, limit, isFirstCharOnly, lang_code, includeAuthorIds, orderBy) {
-        if (this.isReady(db)) {
+        if (this.isReady(db) && word) {
             const query = DB_QUERY_INSTANTS.SELECT_WORD_WITH_LIMIT(word, isLimit, limit, isFirstCharOnly, lang_code, includeAuthorIds, orderBy);
             const result = await db.exec(query);
             let new_arr = [];
@@ -270,7 +175,7 @@ export const MonDictDB = {
         }
     },
     async searchByDefinition(db, word, isLimit, limit, isFirstCharOnly, lang_code, includeAuthorIds, orderBy) {
-        if (this.isReady(db)) {
+        if (this.isReady(db) && word) {
             const query = DB_QUERY_INSTANTS.SELECT_WORD_FROM_DEFINITION(word, isLimit, limit, isFirstCharOnly, lang_code, includeAuthorIds, orderBy);
             const result = await db.exec(query);
             let new_arr = [];

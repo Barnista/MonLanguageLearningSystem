@@ -121,17 +121,20 @@
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" @change="onChangeAuthor" :value="'1'" type="radio"
                                     name="authorRadioOptions" id="authorRadio1" :checked="(authorIncludes == '1')">
-                                <label class="form-check-label" for="authorRadio1">{{ langSet[lang || 'en'].dictionary.author1 }}</label>
+                                <label class="form-check-label" for="authorRadio1">{{ langSet[lang ||
+                                    'en'].dictionary.author1 }}</label>
                             </div>
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" @change="onChangeAuthor" :value="'2'" type="radio"
                                     name="authorRadioOptions" id="authorRadio2" :checked="(authorIncludes == '2')">
-                                <label class="form-check-label" for="authorRadio2">{{ langSet[lang || 'en'].dictionary.author2 }}</label>
+                                <label class="form-check-label" for="authorRadio2">{{ langSet[lang ||
+                                    'en'].dictionary.author2 }}</label>
                             </div>
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" @change="onChangeAuthor" :value="'3'" type="radio"
                                     name="authorRadioOptions" id="authorRadio3" :checked="(authorIncludes == '3')">
-                                <label class="form-check-label" for="authorRadio3">{{ langSet[lang || 'en'].dictionary.author3 }}</label>
+                                <label class="form-check-label" for="authorRadio3">{{ langSet[lang ||
+                                    'en'].dictionary.author3 }}</label>
                             </div>
                         </div>
                         <div class="col-12 col-md-3 col-lg-2 text-end">
@@ -224,7 +227,24 @@
             <div class="col-10 col-md-10 col-lg-11 mb-3">
                 <div class="row">
                     <div class="col-12 col-lg-6">
-                        <ul class="list-group shadow-sm">
+                        <ul v-if="isLoading" class="list-group shadow-sm">
+                            <li class="list-group-item">
+                                <CompCardDefinitionSkeleton />
+                            </li>
+                            <li class="list-group-item">
+                                <CompCardDefinitionSkeleton />
+                            </li>
+                            <li class="list-group-item">
+                                <CompCardDefinitionSkeleton />
+                            </li>
+                            <li class="list-group-item">
+                                <CompCardDefinitionSkeleton />
+                            </li>
+                            <li class="list-group-item">
+                                <CompCardDefinitionSkeleton />
+                            </li>
+                        </ul>
+                        <ul v-if="!isLoading" class="list-group shadow-sm">
                             <li v-for="(item) in searchResult1" :key="item.id" class="list-group-item">
                                 <CompCardDefinition :lang="lang" :word="item" :definitions="item.definitions"
                                     :hilight="text" />
@@ -232,7 +252,24 @@
                         </ul>
                     </div>
                     <div class="col-12 col-lg-6">
-                        <ul class="list-group shadow-sm">
+                        <ul v-if="isLoading" class="list-group shadow-sm">
+                            <li class="list-group-item">
+                                <CompCardDefinitionSkeleton />
+                            </li>
+                            <li class="list-group-item">
+                                <CompCardDefinitionSkeleton />
+                            </li>
+                            <li class="list-group-item">
+                                <CompCardDefinitionSkeleton />
+                            </li>
+                            <li class="list-group-item">
+                                <CompCardDefinitionSkeleton />
+                            </li>
+                            <li class="list-group-item">
+                                <CompCardDefinitionSkeleton />
+                            </li>
+                        </ul>
+                        <ul v-if="!isLoading" class="list-group shadow-sm">
                             <li v-for="(item) in searchResult2" :key="item.id" class="list-group-item">
                                 <CompCardDefinition :lang="lang" :word="item" :definitions="item.definitions"
                                     :hilight="text" />
@@ -294,6 +331,7 @@ import CompSimpleKeyboard from '../keyboard/CompSimpleKeyboard.vue';
 import { MonDictDB } from '@/services/mon-library/dictionary/mon-dict-db';
 import { LangCode } from '@/services/lang-code';
 import CompCardDefinition from './CompCardDefinition.vue';
+import CompCardDefinitionSkeleton from './CompCardDefinitionSkeleton.vue'
 
 export default {
     name: 'CompDictionarySearch',
@@ -301,6 +339,7 @@ export default {
         CompSimpleKeyboard,
         CompMobileKeyboard,
         CompCardDefinition,
+        CompCardDefinitionSkeleton,
     },
     props: {
         lang: {
@@ -368,11 +407,12 @@ export default {
     methods: {
         async startDB() {
             try {
-                this.db = await MonDictDB.startDB()
+                this.isLoading = true;
+                this.db = await MonDictDB.startDB();
                 this.count = await MonDictDB.count(this.db);
                 this.searchFromText(this.query, this.translateFrom, this.translateTo, this.authorIncludes, this.orderBy)
             } catch (error) {
-                console.error(error)
+                console.error(error);
             }
         },
         selectedLang(translateFrom, translateTo) {
@@ -454,6 +494,8 @@ export default {
                 this.searchResult1 = this.searchResult.slice(min1, max1)
                 this.searchResult2 = this.searchResult.slice(min2, max2)
             } else {
+                this.searchResult1 = []
+                this.searchResult2 = []
                 console.log('PAGE CHANGE IS OUT OF BOUND')
             }
         },
