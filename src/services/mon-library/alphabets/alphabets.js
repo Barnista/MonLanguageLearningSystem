@@ -70,28 +70,29 @@ export default {
         };
 
         // If no consonant is provided, we use the default consonant
-        let currentConsonant = consonant ? dbConsonants.getByLetter(consonant) : dbConsonants.getByLetter('အ');
+        let currentConsonant = null;
+        if (consonant) currentConsonant = dbConsonants.getByLetter(consonant); else currentConsonant = dbConsonants.getByLetter('အ');
 
         // check if the consonant is breathy or clear
         let isBreathy = dbRules.isBreathyConsonant(currentConsonant.letter);
-        let cl_bt = isBreathy ? 'bt' : 'cl';
+        let cl_bt = 'cl';
+        if (isBreathy) cl_bt = 'bt';
 
         // if no vowel is provided, we use the default vowel
         // sometimes there's a stand alone vowel
-        let currentVowel = vowel ? (
-            dbVowels.getByCompound(vowel) ?? dbVowels.getByLetter(vowel) ?? this.vowels[0]
-        ) : this.vowels[0];
+        let currentVowel = null;
+        if (vowel) (dbVowels.getByCompound(vowel) || dbVowels.getByLetter(vowel) || this.vowels[0]); else this.vowels[0];
 
         // check if a certain vowel has to change its form if it meets with some consonants
         let blendVowelRule = dbRules.findBlendVowel(currentVowel.compound, currentConsonant.letter);
-        let vowelCompound = blendVowelRule
-            ? blendVowelRule.replace
-            : currentVowel.compound;
+        let vowelCompound = null;
+        if (blendVowelRule) vowelCompound = blendVowelRule.replace; else vowelCompound = currentVowel.compound;
 
         // analyse like how you see braskets stacking upon each others and you have to layer them out one by one from top to bottom
 
         // starting with with compound consonant and consonant (which is the most important layer)
-        let compoundConsonantData = compound ? dbCompoundConsonants.getByCompound(compound) : null;
+        let compoundConsonantData = null;
+        if (compound) compoundConsonantData = dbCompoundConsonants.getByCompound(compound);
         if (compoundConsonantData) {
             // if compound consonant is provided, append it to the word
 
@@ -113,8 +114,8 @@ export default {
                 if (blendCompound.isReversed) {
                     //ถ้าควบด้วย ဟ (ฮ)
                     // if the blend compound is reversed, start with the compound consonant ipa then the current consonant ipa
-                    const a = currentConsonant;
-                    const b = compoundConsonantData;
+                    let a = currentConsonant;
+                    let b = compoundConsonantData;
                     currentConsonant = b;
                     compoundConsonantData = a;
                     // also change the vowel IPA from BT to CL regardless
@@ -151,14 +152,14 @@ export default {
             }
         } else {
             // if no compound consonant is provided, we just append the consonant
-            word.consonant = currentConsonant.letter ?? '';
-            word2.consonant = currentConsonant.letter ?? '';
+            word.consonant = currentConsonant.letter || '';
+            word2.consonant = currentConsonant.letter || '';
 
-            ipa.consonant = currentConsonant.compoundIPA ?? '';
-            th.consonant = currentConsonant.compoundTH ?? 'อ';
+            ipa.consonant = currentConsonant.compoundIPA || '';
+            th.consonant = currentConsonant.compoundTH || 'อ';
 
-            ipa2.consonant = currentConsonant.compoundIPA ?? '';
-            th2.consonant = currentConsonant.compoundTH ?? 'อ';
+            ipa2.consonant = currentConsonant.compoundIPA || '';
+            th2.consonant = currentConsonant.compoundTH || 'อ';
         }
 
         // then final consonant and vowel
@@ -188,28 +189,55 @@ export default {
                 word.final = finalConsonantData.final;
 
                 // append the IPA-TH for final consonant and vowel
-                ipa.vowel = (isBreathy ? allowedVowel.ipaBT : allowedVowel.ipaCL);
-                ipa.final = (!finalConsonantGroup.isSilent ? finalConsonantData.finalIPA : '');
-                th.vowel = (isBreathy ? allowedVowel.thBT : allowedVowel.thCL);
-                th.final = (!finalConsonantGroup.isSilent ? finalConsonantData.finalTH : '');
+                if (isBreathy) {
+                    ipa.vowel = allowedVowel.ipaBT;
+                    th.vowel = allowedVowel.thBT;
+                } else {
+                    ipa.vowel = allowedVowel.ipaCL;
+                    th.vowel = allowedVowel.thCL;
+                }
+
+
+                if (!finalConsonantGroup.isSilent) {
+                    ipa.final = finalConsonantData.finalIPA;
+                    th.final = finalConsonantData.finalTH;
+                } else {
+                    ipa.final = '';
+                    th.final = '';
+                }
 
                 if (isBreathy && allowedVowel.ipaBT2) {
                     ipa2.vowel = allowedVowel.ipaBT2;
-                    ipa2.final = (!finalConsonantGroup.isSilent ? finalConsonantData.finalIPA : '');
                     th2.vowel = allowedVowel.thBT2;
-                    th2.final = (!finalConsonantGroup.isSilent ? finalConsonantData.finalTH : '');
+                    if (!finalConsonantGroup.isSilent) {
+                        ipa2.final = finalConsonantData.finalIPA;
+                        th2.final = finalConsonantData.finalTH;
+                    } else {
+                        ipa2.final = '';
+                        th2.final = '';
+                    }
                 }
                 if (!isBreathy && allowedVowel.ipaCL2) {
                     ipa2.vowel = allowedVowel.ipaCL2;
-                    ipa2.final = (!finalConsonantGroup.isSilent ? finalConsonantData.finalIPA : '');
                     th2.vowel = allowedVowel.thCL2;
-                    th2.final = (!finalConsonantGroup.isSilent ? finalConsonantData.finalTH : '');
+                    if (!finalConsonantGroup.isSilent) {
+                        ipa2.final = finalConsonantData.finalIPA;
+                        th2.final = finalConsonantData.finalTH;
+                    } else {
+                        ipa2.final = '';
+                        th2.final = '';
+                    }
                 }
             } else {
                 // reject final consonant and skip to the next layer which is vowel
                 word.vowel = vowelCompound;
-                ipa.vowel = (isBreathy ? currentVowel.ipaBT : currentVowel.ipaCL);
-                th.vowel = (isBreathy ? currentVowel.thBT : currentVowel.thCL);
+                if (isBreathy) {
+                    ipa.vowel = currentVowel.ipaBT;
+                    th.vowel = currentVowel.thBT;
+                } else {
+                    ipa.vowel = currentVowel.ipaCL;
+                    th.vowel = currentVowel.thCL;
+                }
 
                 if (isBreathy && currentVowel.ipaBT2) {
                     ipa2.vowel = currentVowel.ipaBT2;
@@ -223,8 +251,13 @@ export default {
         } else {
             // if no final consonant data, we then skip to the next layer which is vowel
             word.vowel = vowelCompound;
-            ipa.vowel = (isBreathy ? currentVowel.ipaBT : currentVowel.ipaCL);
-            th.vowel = (isBreathy ? currentVowel.thBT : currentVowel.thCL);
+            if (isBreathy) {
+                ipa.vowel = currentVowel.ipaBT;
+                th.vowel = currentVowel.thBT;
+            } else {
+                ipa.vowel = currentVowel.ipaCL;
+                th.vowel = currentVowel.thCL;
+            }
 
             if (isBreathy && currentVowel.ipaBT2) {
                 ipa2.vowel = currentVowel.ipaBT2;
@@ -238,21 +271,33 @@ export default {
 
         //replace th.vowel and th2.vowel if there will be a final consonant to lead with; analyse according to the rule blendTHs
         if (th.vowel && th.final) {
-            const blendTH = dbRules.findBlendTH(th.vowel);
+            let blendTH = dbRules.findBlendTH(th.vowel);
             if (blendTH) th.vowel = blendTH.replace;
         }
         if (th2.vowel && th2.final) {
-            const blendTH = dbRules.findBlendTH(th2.vowel);
+            let blendTH = dbRules.findBlendTH(th2.vowel);
             if (blendTH) th2.vowel = blendTH.replace;
         }
 
         //store processed information
-        const resultWord = word.consonant + word.compound + word.vowel + word.final;
-        const resultWord2 = (word2.vowel ? word2.consonant + word2.compound + word2.vowel + word2.final : '');
-        const resultIPA = ipa.consonant + ipa.compound + ipa.vowel + ipa.final;
-        const resultIPA2 = (ipa2.vowel ? ipa2.consonant + ipa2.compound + ipa2.vowel + ipa2.final : '');
-        const resultTH = (th.compound ? th.consonant + (th.vowel.replace('-', th.compound)) + th.final : (th.vowel.replace('-', th.consonant)) + th.final)
-        const resultTH2 = (th2.vowel ? (th2.compound ? th.consonant + (th2.vowel.replace('-', th2.compound)) + th2.final : (th2.vowel.replace('-', th2.consonant)) + th2.final) : '')
+        let resultWord = word.consonant + word.compound + word.vowel + word.final;
+        let resultWord2 = '';
+        if (word2.vowel) resultWord2 = word2.consonant + word2.compound + word2.vowel + word2.final;
+        let resultIPA = ipa.consonant + ipa.compound + ipa.vowel + ipa.final;
+        let resultIPA2 = '';
+        if (ipa2.vowel) resultIPA2 = ipa2.consonant + ipa2.compound + ipa2.vowel + ipa2.final;
+        let resultTH = null;
+        if (th.compound) {
+            resultTH = th.consonant + (th.vowel.replace('-', th.compound)) + th.final;
+        } else {
+            resultTH = th.vowel.replace('-', th.consonant) + th.final;
+        }
+        let resultTH2 = null;
+        if (th2.vowel) {
+            resultTH2 = th.consonant + (th2.vowel.replace('-', th2.compound)) + th2.final;
+        } else {
+            resultTH2 = th2.vowel.replace('-', th2.consonant) + th2.final;
+        }
 
         //return feasible data
         return {
