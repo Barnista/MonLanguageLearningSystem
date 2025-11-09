@@ -1,26 +1,26 @@
 <template>
     <div id="other-vowel-table" class="other-vowel-table">
-        <h2>{{ langSet[lang ? lang : 'en'].learnAlphabets.otherVowels }}</h2>
-        <p class="text-dark" v-html="langSet[lang ? lang : 'en'].vowelView.description2"></p>
+        <h2>{{ langSet[lang || 'en'].learnAlphabets.otherVowels }}</h2>
+        <p class="text-dark" v-html="langSet[lang || 'en'].vowelView.description2"></p>
         <div class="mt-4">
             <div class="d-flex">
                 <div class="">
                     <span class="badge rounded-pill text-bg-light text-primary fw-bold">CL</span>
-                    <span>= {{ langSet[lang ? lang : 'en'].vowelView.vowelType2CL }}</span>
+                    <span>= {{ langSet[lang || 'en'].vowelView.vowelType2CL }}</span>
                 </div>
                 <div class="ms-1">
                     <span class="badge rounded-pill text-bg-light text-danger fw-bold">BT</span>
-                    <span>= {{ langSet[lang ? lang : 'en'].vowelView.vowelType2BT }}</span>
+                    <span>= {{ langSet[lang || 'en'].vowelView.vowelType2BT }}</span>
                 </div>
             </div>
             <table class="my-2">
                 <thead>
                     <tr>
-                        <th class="d-none">{{ langSet[lang ? lang : 'en'].table.no }}</th>
-                        <th>{{ langSet[lang ? lang : 'en'].table.otherVowels }}</th>
-                        <th class=""><span v-html="langSet[lang ? lang : 'en'].table.otherVowelsOrigin"></span></th>
-                        <th><span v-html="langSet[lang ? lang : 'en'].table.pronounciation"></span></th>
-                        <th><span v-html="langSet[lang ? lang : 'en'].table.pronounciationThai"></span></th>
+                        <th class="d-none">{{ langSet[lang || 'en'].table.no }}</th>
+                        <th>{{ langSet[lang || 'en'].table.otherVowels }}</th>
+                        <th class=""><span v-html="langSet[lang || 'en'].table.otherVowelsOrigin"></span></th>
+                        <th><span v-html="langSet[lang || 'en'].table.pronounciation"></span></th>
+                        <th><span v-html="langSet[lang || 'en'].table.pronounciationThai"></span></th>
                     </tr>
                 </thead>
                 <tbody>

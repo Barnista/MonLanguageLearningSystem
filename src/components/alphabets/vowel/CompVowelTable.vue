@@ -1,10 +1,10 @@
 <template>
     <div id="vowel-table" class="vowel-table">
-        <h2>{{ langSet[lang ? lang : 'en'].learnAlphabets.vowels }} (12)</h2>
-        <p class="text-dark" v-html="langSet[lang ? lang : 'en'].vowelView.description"></p>
+        <h2>{{ langSet[lang || 'en'].learnAlphabets.vowels }} (12)</h2>
+        <p class="text-dark" v-html="langSet[lang || 'en'].vowelView.description"></p>
         <div class="mt-4 mb-2">
-            <h3>1. {{ langSet[lang ? lang : 'en'].vowelView.vowelType1Title }}</h3>
-            <p class="text-dark" v-html="langSet[lang ? lang : 'en'].vowelView.vowelType1Description"></p>
+            <h3>1. {{ langSet[lang || 'en'].vowelView.vowelType1Title }}</h3>
+            <p class="text-dark" v-html="langSet[lang || 'en'].vowelView.vowelType1Description"></p>
             <table class="my-2">
                 <thead>
                     <tr>
@@ -31,21 +31,21 @@
                                 @click="pronouceVowelCL(vowel)">
                                 🔊
                                 <span class="d-none d-md-inline">
-                                    {{ langSet[lang ? lang : 'en'].menu.listen }}
+                                    {{ langSet[lang || 'en'].menu.listen }}
                                 </span>
                             </button>
                             <button v-if="copiedIndex == index && copiedCIndex == cIndex"
                                 class="mt-2 ms-1 btn btn-sm btn-light py-0 px-1 disabled">
                                 ✅
                                 <span class="d-none d-md-inline">
-                                    {{ langSet[lang ? lang : 'en'].menu.copied }}
+                                    {{ langSet[lang || 'en'].menu.copied }}
                                 </span>
                             </button>
                             <button v-else class="mt-2 ms-1 btn btn-sm btn-outline-secondary py-0 px-1"
                                 @click="copyToClipboard(vowel.letter, index, cIndex)">
                                 📋
                                 <span class="d-none d-md-inline">
-                                    {{ langSet[lang ? lang : 'en'].menu.copy }}
+                                    {{ langSet[lang || 'en'].menu.copy }}
                                 </span>
                             </button>
                         </td>
