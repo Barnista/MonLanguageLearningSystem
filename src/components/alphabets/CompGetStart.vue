@@ -124,12 +124,12 @@
         </div>
 
         <div class="mt-5">
-            <h4>{{ langSet[lang ?? 'en'].getStartView.fontsTitle }}</h4>
+            <h4>{{ langSet[lang || 'en'].getStartView.fontsTitle }}</h4>
             <hr>
-            <p v-html="langSet[lang ?? 'en'].getStartView.fontsDescription"></p>
+            <p v-html="langSet[lang || 'en'].getStartView.fontsDescription"></p>
             <ol>
                 <li>
-                    <span class="fw-bold">{{ langSet[lang ?? 'en'].getStartView.fontsOption1 }} ({{ langSet[lang ??
+                    <span class="fw-bold">{{ langSet[lang || 'en'].getStartView.fontsOption1 }} ({{ langSet[lang ||
                         'en'].getStartView.recommended }}): </span>
                     <a href="https://mcf.org.mm/pyidaungsu-font" target="_blank">
                         https://mcf.org.mm/pyidaungsu-font
@@ -137,14 +137,14 @@
                     </a>
                 </li>
                 <li>
-                    <span class="fw-bold">{{ langSet[lang ?? 'en'].getStartView.fontsOption2 }}: </span>
+                    <span class="fw-bold">{{ langSet[lang || 'en'].getStartView.fontsOption2 }}: </span>
                     <a href="https://font.download/font/myanmar-text" target="_blank">
                         https://font.download/font/myanmar-text
                         <i class="bi bi-box-arrow-up-right"></i>
                     </a>
                 </li>
                 <li>
-                    <span class="fw-bold">{{ langSet[lang ?? 'en'].getStartView.fontsOption3 }}: </span>
+                    <span class="fw-bold">{{ langSet[lang || 'en'].getStartView.fontsOption3 }}: </span>
                     <a href="https://font.download/font/padauk" target="_blank">
                         https://font.download/font/padauk
                         <i class="bi bi-box-arrow-up-right"></i>

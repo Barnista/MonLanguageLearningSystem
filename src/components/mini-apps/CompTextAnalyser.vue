@@ -5,7 +5,7 @@
             </div>
             <div class="pt-3 px-3 pt-md-4 px-md-4">
                 <div class="mb-4">
-                    <label for="monInput" class="form-label fw-bold h4">{{ langSet[lang ?? 'en'].textAnalyser.header ||
+                    <label for="monInput" class="form-label fw-bold h4">{{ langSet[lang || 'en'].textAnalyser.header ||
                         '_HEADER_' }}: <span class="fw-normal text-muted">{{ text || 'NaN' }}</span></label>
                     <div class="input-group mt-2">
                         <button v-if="!isKeyboardShown" @click="showKeyboard()"
@@ -17,11 +17,11 @@
                         </button>
                         <input id="monInput" v-model="text" @keyup.enter="analyseMonText(text)" type="text"
                             class="form-control form-control-lg"
-                            :placeholder="langSet[lang ?? 'en'].textAnalyser.placeholder || '_PLACEHOLDER_'" />
+                            :placeholder="langSet[lang || 'en'].textAnalyser.placeholder || '_PLACEHOLDER_'" />
                         <button @click="analyseMonText(text)" type="submit" class="btn btn-primary btn-lg">
                             <i class="bi bi-arrow-return-right"></i>
                             <span class="ms-1 d-none d-md-inline">
-                                {{ langSet[lang ?? 'en'].textAnalyser.submitBtn || '_SUBMIT_' }}
+                                {{ langSet[lang || 'en'].textAnalyser.submitBtn || '_SUBMIT_' }}
                             </span>
                         </button>
                     </div>
@@ -38,7 +38,7 @@
                     </div>
                     <div class="mt-4">
                         <div class="text-center">
-                            <div class="fw-bold text-muted">{{ langSet[lang ?? 'en'].textAnalyser.syllables ||
+                            <div class="fw-bold text-muted">{{ langSet[lang || 'en'].textAnalyser.syllables ||
                                 '_SYLLABLES_' }} ({{ syllables.length }}): <span class="fw-normal fs-4">{{ words || 'NaN'
                                     }}</span>
                             </div>
@@ -97,7 +97,7 @@
                         </div>
 
                         <div class="text-center text-muted">
-                            <span class="fw-bold">{{ langSet[lang ?? 'en'].textAnalyser.deconstructed ||
+                            <span class="fw-bold">{{ langSet[lang || 'en'].textAnalyser.deconstructed ||
                                 '_DECONSTRUCTED_' }} ({{ deconstructed.length }}):</span>
                             <span class="ms-2 text-muted">
                                 {{ deconstructed }}
@@ -108,18 +108,18 @@
                                 target="_blank">
                                 <i class="bi bi-question-diamond"></i>
                                 <span class="ms-1">
-                                    {{ langSet[lang ?? 'en'].textAnalyser.unlockMonland || '_UNLOCK_MON_RENAISSANCE_' }}
+                                    {{ langSet[lang || 'en'].textAnalyser.unlockMonland || '_UNLOCK_MON_RENAISSANCE_' }}
                                 </span>
                             </router-link>
                         </div>
                         <div v-if="meanings.length > 0" class="text-muted mt-5 row">
                             <hr>
                             <div class="fw-bold text-center mb-2">
-                                {{ langSet[lang ?? 'en'].textAnalyser.meanings ||
+                                {{ langSet[lang || 'en'].textAnalyser.meanings ||
                                     '_MEANINGS_' }} ({{ meanings.length }}):
                                 <router-link class="ms-1" :to="{ path: '/apps/dictionary', query: { lang, from: 'mon', q: words } }"
                                     target="_blank">
-                                    {{ langSet[lang ?? 'en'].menu.readMore || '_READ_MORE_' }}
+                                    {{ langSet[lang || 'en'].menu.readMore || '_READ_MORE_' }}
                                 </router-link>
                             </div>
                             <div class="col-12 col-lg-6 mb-2">
@@ -178,7 +178,7 @@
                                         <div class="ms-2 me-auto">
                                             <span class="me-2">{{ Number(mItem.no).toLocaleString() }}.</span>
                                             <span v-html="hilightText(text, mItem.word)"
-                                                class="fw-bold fs-5 text-dark"></span>
+                                                class="fs-4 text-dark"></span>
                                             <div class="mt-1">
                                                 <small>IPA: <span class="text-muted">{{ `/${mItem.ipa}/` || 'NaN'
                                                         }}</span></small>
@@ -219,20 +219,20 @@
                                 </ul>
                             </div>
                             <!--<div v-else class="text-center text-muted">
-                                <small>{{ langSet[lang ?? 'en'].textAnalyser.noMeaning || '_NO_MEANING_FOUND_'
+                                <small>{{ langSet[lang || 'en'].textAnalyser.noMeaning || '_NO_MEANING_FOUND_'
                                     }}</small>
                             </div>-->
                         </div>
                         <hr>
                         <div class="d-flex justify-content-between text-muted">
                             <small>
-                                {{ langSet[lang ?? 'en'].textAnalyser.aiBy || '_CREDITS_' }} Barnista
+                                {{ langSet[lang || 'en'].textAnalyser.aiBy || '_CREDITS_' }} Barnista
                             </small>
                             <small class="text-end">
-                                {{ langSet[lang ?? 'en'].menu.foundIssues || '_FOUND_ISSUES_' }}
+                                {{ langSet[lang || 'en'].menu.foundIssues || '_FOUND_ISSUES_' }}
                                 <router-link class="fw-bold" :to="{ name: 'report-issues', params: { lang: lang } }"
                                     target="_blank">
-                                    {{ langSet[lang ?? 'en'].menu.reportIssues || '_REPORT_ISSUES_' }}
+                                    {{ langSet[lang || 'en'].menu.reportIssues || '_REPORT_ISSUES_' }}
                                 </router-link>
                             </small>
                         </div>
@@ -249,7 +249,7 @@ import { Collapse } from 'bootstrap/dist/js/bootstrap.bundle.min';
 import advancedAlphabets from '@/services/mon-library/alphabets/alphabets-ai';
 import CompSimpleKeyboard from '../keyboard/CompSimpleKeyboard.vue';
 import displayLanguages from '@/services/display-languages/display-languages';
-//import dictionary from '@/services/mon-library/dictionary/dictionary';
+import dictionary from '@/services/mon-library/dictionary/dictionary';
 import CompMobileKeyboard from '../keyboard/CompMobileKeyboard.vue';
 
 export default {
@@ -286,7 +286,7 @@ export default {
         }
     },
     created() {
-        //dictionary.initDB();
+        dictionary.initDB();
         this.windowWidth = window.innerWidth;
         window.addEventListener('resize', () => {
             this.windowWidth = window.innerWidth;
@@ -312,7 +312,7 @@ export default {
             this.ipas = result.ipas;
             this.ths = result.ths;
 
-            //this.meanings = dictionary.searchByWord(this.words, true, this.searchLimit, false);
+            this.meanings = dictionary.searchByWord(this.words, true, this.searchLimit, false);
             console.log(result);
         },
         setText(text) {
@@ -355,12 +355,12 @@ export default {
             return n_word;
         },
         displayTranslateTypeTH(type) {
-            return type
-            //return dictionary.getTranslateTypeTH(type)
+            //return type
+            return dictionary.getTranslateTypeTH(type)
         },
         displayTranslateType(type) {
-            return type
-            //return dictionary.getTranslateType(type)
+            //return type
+            return dictionary.getTranslateType(type)
         }
     }
 }

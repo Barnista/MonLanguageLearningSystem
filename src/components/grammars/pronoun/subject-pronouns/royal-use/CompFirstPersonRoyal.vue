@@ -1,28 +1,28 @@
 <template>
     <div class="comp-speaker-monk-pronoun-table">
-        <h4>{{ langSet[lang ?? 'en'].pronounView.firstPerson }}</h4>
-        <p v-html="langSet[lang ?? 'en'].pronounView.firstPersonRoyalDescription">
+        <h4>{{ langSet[lang || 'en'].pronounView.firstPerson }}</h4>
+        <p v-html="langSet[lang || 'en'].pronounView.firstPersonRoyalDescription">
         </p>
         <table>
             <thead>
                 <tr>
                     <th style="max-width: 120px;">
                         <i class="bi bi-chat-left-quote"></i>
-                        {{ langSet[lang ?? 'en'].pronounView.context }}
+                        {{ langSet[lang || 'en'].pronounView.context }}
                     </th>
                     <th>
                         <i class="bi bi-person"></i>
-                        {{ langSet[lang ?? 'en'].pronounView.singular }}
+                        {{ langSet[lang || 'en'].pronounView.singular }}
                     </th>
                     <th>
                         <i class="bi bi-people"></i>
-                        {{ langSet[lang ?? 'en'].pronounView.plural }}
+                        {{ langSet[lang || 'en'].pronounView.plural }}
                     </th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td class="bg-speaker-to-monarch fw-bold">{{ langSet[lang ?? 'en'].pronounView.speakerToMonarch }}</td>
+                    <td class="bg-speaker-to-monarch fw-bold">{{ langSet[lang || 'en'].pronounView.speakerToMonarch }}</td>
                     <td>
                         <CompPronounCard2 :pronouns="pronounRoyal.speakerToMonarch.singular.firstPerson"
                             :lang="lang" :lang-set="langSet" />
@@ -33,7 +33,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="bg-monarch-to-speaker fw-bold">{{ langSet[lang ?? 'en'].pronounView.monarchToSpeaker }}</td>
+                    <td class="bg-monarch-to-speaker fw-bold">{{ langSet[lang || 'en'].pronounView.monarchToSpeaker }}</td>
                     <td>
                         <CompPronounCard2 :pronouns="pronounRoyal.monarchToSpeaker.singular.firstPerson"
                             :lang="lang" :lang-set="langSet" />

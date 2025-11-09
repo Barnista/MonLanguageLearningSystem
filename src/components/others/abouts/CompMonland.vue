@@ -186,7 +186,7 @@
                                 </li>
                                 <li class="timeline-item mb-5">
                                     <h5 class="fw-bold">Mon Family Tree (Paternal & Maternal)</h5>
-                                    <p class="text-primary mb-2 fw-bold">??? 2027</p>
+                                    <p class="text-primary mb-2 fw-bold">||? 2027</p>
                                     <ul class="text-muted">
                                         <li>
                                             To trace back family lineage; since naming system in Myanmar and Thailand
@@ -199,7 +199,7 @@
                                 </li>
                                 <li class="timeline-item mb-5">
                                     <h5 class="fw-bold">iOS, Android, Windows, OSX, Ubuntu apps</h5>
-                                    <p class="text-primary mb-2 fw-bold">??? 2027</p>
+                                    <p class="text-primary mb-2 fw-bold">||? 2027</p>
                                     <ul class="text-muted">
                                         <li>
                                             Bring The Mon Language (မန်) platform into offline usage via native platform

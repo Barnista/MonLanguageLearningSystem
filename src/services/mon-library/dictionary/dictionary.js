@@ -18,7 +18,6 @@ export default {
         //...dbDict6
     ],
     initDB() {
-        console.log('DB:', this.db.length + ' items' ?? 'NOT FOUND');
         this.db.forEach((item, index) => {
             item.no = index + 1; //add no property to each item
         });

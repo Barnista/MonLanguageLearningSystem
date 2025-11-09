@@ -96,11 +96,11 @@
                 <div v-if="meanings.length > 0" class="text-muted mt-5 row">
                     <hr>
                     <div class="fw-bold text-center mb-2">
-                        {{ langSet[lang ?? 'en'].textAnalyser.meanings ||
+                        {{ langSet[lang || 'en'].textAnalyser.meanings ||
                             '_MEANINGS_' }} ({{ meanings.length }}):
                         <router-link class="ms-1"
                             :to="{ path: '/apps/dictionary', query: { lang, from: 'mon', q: words } }" target="_blank">
-                            {{ langSet[lang ?? 'en'].menu.readMore || '_READ_MORE_' }}
+                            {{ langSet[lang || 'en'].menu.readMore || '_READ_MORE_' }}
                         </router-link>
                     </div>
                     <div class="col-12 col-lg-6 mb-2">
@@ -198,20 +198,20 @@
                         </ul>
                     </div>
                     <!--<div v-else class="text-center text-muted">
-                                <small>{{ langSet[lang ?? 'en'].textAnalyser.noMeaning || '_NO_MEANING_FOUND_'
+                                <small>{{ langSet[lang || 'en'].textAnalyser.noMeaning || '_NO_MEANING_FOUND_'
                                     }}</small>
                             </div>-->
                 </div>
                 <hr>
                 <div class="d-flex justify-content-between text-muted">
                     <small>
-                        {{ langSet[lang ?? 'en'].aboutView.developedBy || '_CREDITS_' }} Barnista
+                        {{ langSet[lang || 'en'].aboutView.developedBy || '_CREDITS_' }} Barnista
                     </small>
                     <small class="text-end">
-                        {{ langSet[lang ?? 'en'].menu.foundIssues || '_FOUND_ISSUES_' }}
+                        {{ langSet[lang || 'en'].menu.foundIssues || '_FOUND_ISSUES_' }}
                         <router-link class="fw-bold" :to="{ name: 'report-issues', params: { lang: lang } }"
                             target="_blank">
-                            {{ langSet[lang ?? 'en'].menu.reportIssues || '_REPORT_ISSUES_' }}
+                            {{ langSet[lang || 'en'].menu.reportIssues || '_REPORT_ISSUES_' }}
                         </router-link>
                     </small>
                 </div>
@@ -229,7 +229,7 @@ import dbVowels from '@/services/mon-library/alphabets/db-vowels';
 import dbFinalConsonants from '@/services/mon-library/alphabets/db-final-consonants';
 
 import alphabets from '@/services/mon-library/alphabets/alphabets';
-//import dictionary from '@/services/mon-library/dictionary/dictionary';
+import dictionary from '@/services/mon-library/dictionary/dictionary';
 
 export default {
     name: 'CompWordCraft',
@@ -271,7 +271,7 @@ export default {
         }
     },
     created() {
-        //dictionary.initDB();
+        dictionary.initDB();
     },
     mounted() {
         this.onCraftWord();
@@ -292,7 +292,7 @@ export default {
             this.words = this.craftedWord.word;
             console.log(`Crafted Word:`, this.craftedWord);
 
-            //this.meanings = dictionary.searchByWord(this.craftedWord.word, true, this.searchLimit, true);
+            this.meanings = dictionary.searchByWord(this.craftedWord.word, true, this.searchLimit, true);
             console.log(`Meanings:`, this.meanings);
         },
         copyToClipboard() {
@@ -330,12 +330,12 @@ export default {
             return n_word;
         },
         displayTranslateTypeTH(type) {
-            console.log('displayPOS', type)
-            //return dictionary.getTranslateTypeTH(type)
+            //console.log('displayPOS', type)
+            return dictionary.getTranslateTypeTH(type)
         },
         displayTranslateType(type) {
-            console.log('displayPOS', type)
-            //return dictionary.getTranslateType(type)
+            //console.log('displayPOS', type)
+            return dictionary.getTranslateType(type)
         }
     }
 }

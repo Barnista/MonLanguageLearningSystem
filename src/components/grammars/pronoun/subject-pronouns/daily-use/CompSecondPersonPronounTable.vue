@@ -1,29 +1,29 @@
 <template>
     <div class="comp-first-person-pronoun-table">
-        <h4>{{ langSet[lang ?? 'en'].pronounView.secondPerson }}</h4>
-        <p v-html="langSet[lang ?? 'en'].pronounView.secondPersonDescription">
+        <h4>{{ langSet[lang || 'en'].pronounView.secondPerson }}</h4>
+        <p v-html="langSet[lang || 'en'].pronounView.secondPersonDescription">
         </p>
         <table>
             <thead>
                 <tr>
                     <th style="max-width: 120px;">
                         <i class="bi bi-chat-left-quote"></i>
-                        {{ langSet[lang ?? 'en'].pronounView.context }}
+                        {{ langSet[lang || 'en'].pronounView.context }}
                     </th>
                     <th>
                         <i class="bi bi-person"></i>
-                        {{ langSet[lang ?? 'en'].pronounView.singular }}
+                        {{ langSet[lang || 'en'].pronounView.singular }}
                     </th>
                     <th>
                         <i class="bi bi-people"></i>
-                        {{ langSet[lang ?? 'en'].pronounView.plural }}
+                        {{ langSet[lang || 'en'].pronounView.plural }}
                     </th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
                     <th class="bg-neutral">
-                        {{ langSet[lang ?? 'en'].pronounView.neutral }}
+                        {{ langSet[lang || 'en'].pronounView.neutral }}
                     </th>
                     <td>
                         <CompPronounCard2 :lang="lang" :lang-set="langSet"
@@ -36,7 +36,7 @@
                 </tr>
                 <tr>
                     <th class="bg-formal">
-                        {{ langSet[lang ?? 'en'].pronounView.formal }}
+                        {{ langSet[lang || 'en'].pronounView.formal }}
                     </th>
                     <td>
                          <CompPronounCard2 :lang="lang" :lang-set="langSet"
@@ -49,7 +49,7 @@
                 </tr>
                 <tr>
                     <th class="bg-informal">
-                        {{ langSet[lang ?? 'en'].pronounView.informal }}
+                        {{ langSet[lang || 'en'].pronounView.informal }}
                     </th>
                     <td>
                         <CompPronounCard2 :lang="lang" :lang-set="langSet"

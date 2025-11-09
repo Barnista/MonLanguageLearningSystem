@@ -2,11 +2,11 @@
     <div class="bg-white text-dark rounded shadow-sm mb-1 text-start">
         <div v-if="gender == 'm'" class="fw-bold bg-primary text-light text-center px-1"
             style="border-top-left-radius: 4px; border-top-right-radius: 4px;">
-            {{ langSet[lang ?? 'en'].pronounView.masculine }}
+            {{ langSet[lang || 'en'].pronounView.masculine }}
         </div>
         <div v-else class="fw-bold bg-danger text-light text-center px-1"
             style="border-top-left-radius: 4px; border-top-right-radius: 4px;">
-            {{ langSet[lang ?? 'en'].pronounView.feminine }}
+            {{ langSet[lang || 'en'].pronounView.feminine }}
         </div>
         <div class="px-1 py-1">
             <ul class="list-group list-group-flush">
@@ -22,7 +22,7 @@
                     <small class="text-muted">แปล: {{ item.meaningTH }}</small>
                     <div v-if="item.isSameAge">
                         <small class="text-danger">
-                            {{ langSet[lang ?? 'en'].pronounView.sameAgeOnly }}
+                            {{ langSet[lang || 'en'].pronounView.sameAgeOnly }}
                         </small>
                     </div>
                 </li>

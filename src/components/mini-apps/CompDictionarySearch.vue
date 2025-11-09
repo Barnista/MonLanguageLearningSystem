@@ -97,11 +97,11 @@
                         </button>
                         <input id="monInput" v-model="text" @keyup="submitSearch(text)"
                             @keyup.enter="submitSearch(text)" type="text" class="form-control form-control-lg"
-                            :placeholder="langSet[lang ?? 'en'].dictionary.searchPlaceholder || '_PLACEHOLDER_'" />
+                            :placeholder="langSet[lang || 'en'].dictionary.searchPlaceholder || '_PLACEHOLDER_'" />
                         <button @click="submitSearch(text)" type="submit" class="btn btn-danger btn-lg">
                             <i class="bi bi-arrow-return-right"></i>
                             <span class="ms-1 d-none d-md-inline">
-                                {{ langSet[lang ?? 'en'].dictionary.searchBtn || '_SEARCH_' }}
+                                {{ langSet[lang || 'en'].dictionary.searchBtn || '_SEARCH_' }}
                             </span>
                         </button>
                     </div>
@@ -121,17 +121,17 @@
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" @change="onChangeAuthor" :value="'1'" type="radio"
                                     name="authorRadioOptions" id="authorRadio1" :checked="(authorIncludes == '1')">
-                                <label class="form-check-label" for="authorRadio1">{{ langSet[lang ?? 'en'].dictionary.author1 }}</label>
+                                <label class="form-check-label" for="authorRadio1">{{ langSet[lang || 'en'].dictionary.author1 }}</label>
                             </div>
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" @change="onChangeAuthor" :value="'2'" type="radio"
                                     name="authorRadioOptions" id="authorRadio2" :checked="(authorIncludes == '2')">
-                                <label class="form-check-label" for="authorRadio2">{{ langSet[lang ?? 'en'].dictionary.author2 }}</label>
+                                <label class="form-check-label" for="authorRadio2">{{ langSet[lang || 'en'].dictionary.author2 }}</label>
                             </div>
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" @change="onChangeAuthor" :value="'3'" type="radio"
                                     name="authorRadioOptions" id="authorRadio3" :checked="(authorIncludes == '3')">
-                                <label class="form-check-label" for="authorRadio3">{{ langSet[lang ?? 'en'].dictionary.author3 }}</label>
+                                <label class="form-check-label" for="authorRadio3">{{ langSet[lang || 'en'].dictionary.author3 }}</label>
                             </div>
                         </div>
                         <div class="col-12 col-md-3 col-lg-2 text-end">
@@ -153,17 +153,17 @@
                 <hr>
                 <div class="d-flex justify-content-between text-muted">
                     <small>
-                        <span class="me-1">{{ langSet[lang ?? 'en'].aboutView.poweredBy || '_POWERED_BY_' }}</span>
+                        <span class="me-1">{{ langSet[lang || 'en'].aboutView.poweredBy || '_POWERED_BY_' }}</span>
                         <a class="fw-bold" href="https://github.com/Barnista/MonDictDB" target="_blank">
                             <i class="bi bi-github"></i>
                             MonDictDB
                         </a>
                     </small>
                     <small class="text-end">
-                        {{ langSet[lang ?? 'en'].menu.foundIssues || '_FOUND_ISSUES_' }}
+                        {{ langSet[lang || 'en'].menu.foundIssues || '_FOUND_ISSUES_' }}
                         <router-link class="fw-bold" :to="{ name: 'report-issues', params: { lang: lang } }"
                             target="_blank">
-                            {{ langSet[lang ?? 'en'].menu.reportIssues || '_REPORT_ISSUES_' }}
+                            {{ langSet[lang || 'en'].menu.reportIssues || '_REPORT_ISSUES_' }}
                         </router-link>
                     </small>
                 </div>
@@ -278,7 +278,7 @@
             <router-link class="fw-bold btn btn-lg btn-outline-danger"
                 :to="{ name: 'apply-new-word', params: { lang: lang } }" target="_blank">
                 <i class="bi bi-plus-square-dotted"></i>
-                {{ langSet[lang ?? 'en'].dictionary.applyNewWord || '_APPLY_NEW_WORD_' }}
+                {{ langSet[lang || 'en'].dictionary.applyNewWord || '_APPLY_NEW_WORD_' }}
             </router-link>
         </div>
     </div>

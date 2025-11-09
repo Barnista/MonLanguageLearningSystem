@@ -276,8 +276,8 @@ export default {
 
             let n_ipa = craft.crafted.ipa;
             let n_th = craft.crafted.th;
-            let n_ipa2 = craft.crafted.ipa2 ?? null;
-            let n_th2 = craft.crafted.th2 ?? null;
+            let n_ipa2 = craft.crafted.ipa2;
+            let n_th2 = craft.crafted.th2;
 
             //I ASSUME IF THERE'S A 2nd WAY, AT LEAST PRONOUNCED IT THE 2nd WAY
             /*

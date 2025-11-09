@@ -4,22 +4,22 @@
             <div class="bg-warning" style="height: 16px; border-top-left-radius: 4px; border-top-right-radius: 4px;">
             </div>
             <div class="px-3 pt-3 pb-3">
-                <h4>{{ langSet[lang ?? 'en'].numConverter.title || '_TITLE_' }}</h4>
-                <p>{{ langSet[lang ?? 'en'].numConverter.description || '_DESCRIPTION_' }}</p>
+                <h4>{{ langSet[lang || 'en'].numConverter.title || '_TITLE_' }}</h4>
+                <p>{{ langSet[lang || 'en'].numConverter.description || '_DESCRIPTION_' }}</p>
                 <div class="input-group mb-3">
-                    <span class="input-group-text" style="width: 128px;">{{ langSet[lang ?? 'en'].numConverter.arabic
+                    <span class="input-group-text" style="width: 128px;">{{ langSet[lang || 'en'].numConverter.arabic
                         }}</span>
                     <input type="text" class="form-control" v-model="arabicNum" @keyup="convertFromArabic"
                         placeholder="1,057,314.573">
                 </div>
                 <div class="input-group mb-3">
-                    <span class="input-group-text" style="width: 128px;">{{ langSet[lang ?? 'en'].numConverter.thai
+                    <span class="input-group-text" style="width: 128px;">{{ langSet[lang || 'en'].numConverter.thai
                         }}</span>
                     <input type="text" class="form-control" v-model="thaiNum" @keyup="convertFromThai"
                         placeholder="๑,๐๕๗,๓๑๔.๕๗๓">
                 </div>
                 <div class="input-group input-group">
-                    <span class="input-group-text" style="width: 128px;">{{ langSet[lang ??
+                    <span class="input-group-text" style="width: 128px;">{{ langSet[lang ||
                         'en'].numConverter.mon }}</span>
                     <input type="text" class="form-control text-success" v-model="monNum"
                         @keyup="convertFromMon" placeholder="၁၀၅၇၃၁၄.၅၇၃">
@@ -69,13 +69,13 @@
                 <hr>
                 <div class="d-flex justify-content-between text-muted">
                     <small>
-                        {{ langSet[lang ?? 'en'].aboutView.developedBy || '_CREDITS_' }} Barnista
+                        {{ langSet[lang || 'en'].aboutView.developedBy || '_CREDITS_' }} Barnista
                     </small>
                     <small class="text-end">
-                        {{ langSet[lang ?? 'en'].menu.foundIssues || '_FOUND_ISSUES_' }}
+                        {{ langSet[lang || 'en'].menu.foundIssues || '_FOUND_ISSUES_' }}
                         <router-link class="fw-bold" :to="{ name: 'report-issues', params: { lang: lang } }"
                             target="_blank">
-                            {{ langSet[lang ?? 'en'].menu.reportIssues || '_REPORT_ISSUES_' }}
+                            {{ langSet[lang || 'en'].menu.reportIssues || '_REPORT_ISSUES_' }}
                         </router-link>
                     </small>
                 </div>

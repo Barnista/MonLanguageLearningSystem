@@ -1,24 +1,24 @@
 <template>
     <div class="comp-first-person-pronoun-table">
-        <p v-html="langSet[lang ?? 'en'].pronounView.distributivePronounDescription">
+        <p v-html="langSet[lang || 'en'].pronounView.distributivePronounDescription">
         </p>
         <table>
             <thead>
                 <tr>
                     <th style="max-width: 120px;">
                         <i class="bi bi-chat-left-quote"></i>
-                        {{ langSet[lang ?? 'en'].pronounView.context }}
+                        {{ langSet[lang || 'en'].pronounView.context }}
                     </th>
                     <th>
                         <i class="bi bi-person"></i>
-                        {{ langSet[lang ?? 'en'].pronounView.singular }}
+                        {{ langSet[lang || 'en'].pronounView.singular }}
                     </th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
                     <th class="bg-neutral">
-                        {{ langSet[lang ?? 'en'].pronounView.neutral }}
+                        {{ langSet[lang || 'en'].pronounView.neutral }}
                     </th>
                     <td>
                         <CompPronounCard2 :lang="lang" :lang-set="langSet" :pronouns="distributive.neutral" col="12"
@@ -29,7 +29,7 @@
         </table>
         <hr>
         <div class="mt-3">
-            <h3>{{ langSet[lang ?? 'en'].menu.examples }}</h3>
+            <h3>{{ langSet[lang || 'en'].menu.examples }}</h3>
             <ol class="list-group list-group-numbered shadow-sm">
                 <li v-for="(item, index) in examples" :key="index"
                     class="list-group-item d-flex justify-content-between align-items-start">

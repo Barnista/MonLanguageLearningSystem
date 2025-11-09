@@ -1,6 +1,6 @@
 <template>
     <div class="comp-mathematic-table">
-        <p v-html="langSet[lang ?? 'en'].numeralsView.mathematicsDescription"></p>
+        <p v-html="langSet[lang || 'en'].numeralsView.mathematicsDescription"></p>
         <div class="row mt-3">
             <div v-for="(symbol, index) in symbols" :key="index"
                 :class="[(index < symbols.length - 1) ? 'col-6 col-lg-4' : 'col-12 col-lg-8', 'mb-3']">
@@ -16,12 +16,12 @@
             </div>
         </div>
         <div class="mt-3">
-            <h4>{{ langSet[lang ?? 'en'].numeralsView.mathematicsExamples }}</h4>
+            <h4>{{ langSet[lang || 'en'].numeralsView.mathematicsExamples }}</h4>
             <table>
                 <thead>
                     <tr>
-                        <th style="width: 150px;">{{ langSet[lang ?? 'en'].numeralsView.equation }}</th>
-                        <th>{{ langSet[lang ?? 'en'].numeralsView.spelling }}</th>
+                        <th style="width: 150px;">{{ langSet[lang || 'en'].numeralsView.equation }}</th>
+                        <th>{{ langSet[lang || 'en'].numeralsView.spelling }}</th>
                         <th>IPA</th>
                         <th>TH</th>
                     </tr>

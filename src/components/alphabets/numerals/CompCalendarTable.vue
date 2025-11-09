@@ -1,13 +1,13 @@
 <template>
     <div class="comp-calendar-table">
-        <p v-html="langSet[lang ?? 'en'].numeralsView.calendarDescription1">
+        <p v-html="langSet[lang || 'en'].numeralsView.calendarDescription1">
         </p>
-        <p v-html="langSet[lang ?? 'en'].numeralsView.calendarDescription2">
+        <p v-html="langSet[lang || 'en'].numeralsView.calendarDescription2">
         </p>
         <div class="mt-3 row">
             <div class="col-12 col-lg-6 mb-3">
                 <div class="card shadow-sm pt-3 pb-4 text-center">
-                    <h4>{{ langSet[lang ?? 'en'].numeralsView.todayIs }} (date/month/year)</h4>
+                    <h4>{{ langSet[lang || 'en'].numeralsView.todayIs }} (date/month/year)</h4>
                     <span class="fs-4">
                         {{ currentddMMyyyy.letter }}
                     </span>
@@ -21,7 +21,7 @@
             </div>
             <div class="col-12 col-lg-6 mb-3">
                 <div class="card shadow-sm pt-3 pb-4 text-center">
-                    <h4>{{ langSet[lang ?? 'en'].numeralsView.todayIs }} (dd/MM/yyyy)</h4>
+                    <h4>{{ langSet[lang || 'en'].numeralsView.todayIs }} (dd/MM/yyyy)</h4>
                     <span class="fs-4">
                         {{ currentDateMonthYear.letter }}
                     </span>
@@ -35,19 +35,19 @@
             </div>
         </div>
         <div class="mt-4">
-            <h3>{{ langSet[lang ?? 'en'].numeralsView.months }}</h3>
-            <p v-html="langSet[lang ?? 'en'].numeralsView.monthsDescription1"></p>
+            <h3>{{ langSet[lang || 'en'].numeralsView.months }}</h3>
+            <p v-html="langSet[lang || 'en'].numeralsView.monthsDescription1"></p>
             <div class="mt-3">
                 <h4>
                     <i class="bi bi-calendar2-month"></i>
-                    {{ langSet[lang ?? 'en'].numeralsView.gregorianCalendar }}
+                    {{ langSet[lang || 'en'].numeralsView.gregorianCalendar }}
                 </h4>
                 <table>
                     <thead>
                         <tr>
-                            <th>{{ langSet[lang ?? 'en'].numeralsView.tableNo }}</th>
-                            <th style="min-width: 180px;">{{ langSet[lang ?? 'en'].numeralsView.tableMonth }}</th>
-                            <th>{{ langSet[lang ?? 'en'].numeralsView.tableDaysCount }}</th>
+                            <th>{{ langSet[lang || 'en'].numeralsView.tableNo }}</th>
+                            <th style="min-width: 180px;">{{ langSet[lang || 'en'].numeralsView.tableMonth }}</th>
+                            <th>{{ langSet[lang || 'en'].numeralsView.tableDaysCount }}</th>
                             <th>IPA</th>
                             <th>TH</th>
                         </tr>
@@ -65,7 +65,7 @@
                                 <span class="text-muted">{{ item.letterEN }}</span>
                             </td>
                             <td>
-                                {{ item.days }} {{ langSet[lang ?? 'en'].numeralsView.days }}
+                                {{ item.days }} {{ langSet[lang || 'en'].numeralsView.days }}
                             </td>
                             <td>
                                 /{{ item.ipa }}/
@@ -80,16 +80,16 @@
             <div class="mt-3">
                 <h4>
                     <i class="bi bi-moon-stars"></i>
-                    {{ langSet[lang ?? 'en'].numeralsView.lunarCalendar }}
+                    {{ langSet[lang || 'en'].numeralsView.lunarCalendar }}
                 </h4>
-                <p v-html="langSet[lang ?? 'en'].numeralsView.lunarCalendarDescription"></p>
+                <p v-html="langSet[lang || 'en'].numeralsView.lunarCalendarDescription"></p>
                 <table>
                     <thead>
                         <tr>
-                            <th style="min-width: 180px;">{{ langSet[lang ?? 'en'].numeralsView.tableMonth }}</th>
+                            <th style="min-width: 180px;">{{ langSet[lang || 'en'].numeralsView.tableMonth }}</th>
                             <th>IPA</th>
                             <th>TH</th>
-                            <th>{{ langSet[lang ?? 'en'].numeralsView.tableGregorian }}</th>
+                            <th>{{ langSet[lang || 'en'].numeralsView.tableGregorian }}</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -121,17 +121,17 @@
             <hr>
         </div>
         <div class="mt-4">
-            <h3>{{ langSet[lang ?? en].numeralsView.years }}</h3>
-            <p v-html="langSet[lang ?? en].numeralsView.yearsDescription"></p>
+            <h3>{{ langSet[lang || en].numeralsView.years }}</h3>
+            <p v-html="langSet[lang || en].numeralsView.yearsDescription"></p>
             <div class="mt-3">
-                <h4>{{ langSet[lang ?? en].numeralsView.religionBased }}</h4>
+                <h4>{{ langSet[lang || en].numeralsView.religionBased }}</h4>
                 <table>
                     <thead>
                         <tr>
-                            <th>{{ langSet[lang ?? en].numeralsView.tableName }}</th>
-                            <th>{{ langSet[lang ?? en].numeralsView.tableAbb }}</th>
-                            <th>{{ langSet[lang ?? en].numeralsView.tableStartYear }}</th>
-                            <th>{{ langSet[lang ?? en].numeralsView.tableYearNow }}</th>
+                            <th>{{ langSet[lang || en].numeralsView.tableName }}</th>
+                            <th>{{ langSet[lang || en].numeralsView.tableAbb }}</th>
+                            <th>{{ langSet[lang || en].numeralsView.tableStartYear }}</th>
+                            <th>{{ langSet[lang || en].numeralsView.tableYearNow }}</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -161,15 +161,15 @@
                 </table>
             </div>
             <div class="mt-3">
-                <h4>{{ langSet[lang ?? en].numeralsView.realmBased }}</h4>
-                <p v-html="langSet[lang ?? en].numeralsView.realmBasedDescription"></p>
+                <h4>{{ langSet[lang || en].numeralsView.realmBased }}</h4>
+                <p v-html="langSet[lang || en].numeralsView.realmBasedDescription"></p>
                 <table>
                     <thead>
                         <tr>
-                            <th style="min-width: 180px;">{{ langSet[lang ?? en].numeralsView.tableName }}</th>
-                            <th>{{ langSet[lang ?? en].numeralsView.tableAbb }}</th>
-                            <th>{{ langSet[lang ?? en].numeralsView.tableStartYear }}</th>
-                            <th>{{ langSet[lang ?? en].numeralsView.tableYearNow }}</th>
+                            <th style="min-width: 180px;">{{ langSet[lang || en].numeralsView.tableName }}</th>
+                            <th>{{ langSet[lang || en].numeralsView.tableAbb }}</th>
+                            <th>{{ langSet[lang || en].numeralsView.tableStartYear }}</th>
+                            <th>{{ langSet[lang || en].numeralsView.tableYearNow }}</th>
                         </tr>
                     </thead>
                     <tbody>

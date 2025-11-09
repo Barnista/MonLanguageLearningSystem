@@ -1,9 +1,9 @@
 <template>
     <div class="comp-pronoun-table">
-        <h2>{{ langSet[lang ?? 'en'].pronounView.title }}</h2>
-        <p v-html="langSet[lang ?? 'en'].pronounView.description">
+        <h2>{{ langSet[lang || 'en'].pronounView.title }}</h2>
+        <p v-html="langSet[lang || 'en'].pronounView.description">
         </p>
-        <p v-html="langSet[lang ?? 'en'].pronounView.description2">
+        <p v-html="langSet[lang || 'en'].pronounView.description2">
         </p>
         <div class="accordion mt-4" :id="`subjectPronoun`">
             <div class="accordion-item">
@@ -13,7 +13,7 @@
                         aria-controls="collapseSubjectPronoun">
                         <h3>
                             <i class="bi bi-person"></i>
-                            {{ langSet[lang ?? 'en'].pronounView.subjectPronouns }}
+                            {{ langSet[lang || 'en'].pronounView.subjectPronouns }}
                         </h3>
                     </button>
                 </h3>
@@ -39,7 +39,7 @@
                         aria-controls="collapsePossessivePronoun">
                         <h3>
                             <i class="bi bi-person-square"></i>
-                            {{ langSet[lang ?? 'en'].pronounView.possessivePronouns }}
+                            {{ langSet[lang || 'en'].pronounView.possessivePronouns }}
                         </h3>
                     </button>
                 </h3>
@@ -65,7 +65,7 @@
                         aria-controls="collapseInterrogativePronoun">
                         <h3>
                             <i class="bi bi-question-square"></i>
-                            {{ langSet[lang ?? 'en'].pronounView.interrogativePronouns }}
+                            {{ langSet[lang || 'en'].pronounView.interrogativePronouns }}
                         </h3>
                     </button>
                 </h3>
@@ -86,7 +86,7 @@
                         aria-controls="collapseDefinitePronoun">
                         <h3>
                             <i class="bi bi-plus-square"></i>
-                            {{ langSet[lang ?? 'en'].pronounView.definitePronouns }}
+                            {{ langSet[lang || 'en'].pronounView.definitePronouns }}
                         </h3>
                     </button>
                 </h3>
@@ -107,7 +107,7 @@
                         aria-controls="collapseIndefinitePronoun">
                         <h3>
                             <i class="bi bi-plus-square-dotted"></i>
-                            {{ langSet[lang ?? 'en'].pronounView.indefinitePronouns }}
+                            {{ langSet[lang || 'en'].pronounView.indefinitePronouns }}
                         </h3>
                     </button>
                 </h3>
@@ -128,7 +128,7 @@
                         aria-controls="collapseDistributivePronoun">
                         <h3>
                             <i class="bi bi-ui-radios-grid"></i>
-                            {{ langSet[lang ?? 'en'].pronounView.distributivePronouns }}
+                            {{ langSet[lang || 'en'].pronounView.distributivePronouns }}
                         </h3>
                     </button>
                 </h3>
@@ -142,7 +142,7 @@
             <hr>
         </div>
 
-        <h2 class="mt-5">{{ langSet[lang ?? 'en'].pronounView.otherPronouns }}</h2>
+        <h2 class="mt-5">{{ langSet[lang || 'en'].pronounView.otherPronouns }}</h2>
         <div class="accordion mt-4" :id="`subjectPronoun2`">
             <div class="accordion-item">
                 <h3 class="accordion-header" :id="`subjectPronoun2`">
@@ -151,7 +151,7 @@
                         aria-controls="collapseSubjectPronoun2">
                         <h3>
                             <img class="d-inline" src="@/assets/imgs/icons/monk.png" width="24" height="24">
-                            {{ langSet[lang ?? 'en'].pronounView.subjectPronouns2 }}
+                            {{ langSet[lang || 'en'].pronounView.subjectPronouns2 }}
                         </h3>
                     </button>
                 </h3>
@@ -177,7 +177,7 @@
                         aria-controls="collapseSubjectPronoun3">
                         <h3>
                             <img class="d-inline" src="@/assets/imgs/icons/king.png" width="24" height="24">
-                            {{ langSet[lang ?? 'en'].pronounView.subjectPronouns3 }}
+                            {{ langSet[lang || 'en'].pronounView.subjectPronouns3 }}
                         </h3>
                     </button>
                 </h3>

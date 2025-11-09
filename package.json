@@ -1,6 +1,6 @@
 {
   "name": "mon-language-learning-system",
-  "version": "1.7.6",
+  "version": "1.7.8",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -30,8 +30,9 @@
     "vuefire": "^3.2.2"
   },
   "devDependencies": {
-    "@babel/core": "^7.12.16",
+    "@babel/core": "^7.28.5",
     "@babel/eslint-parser": "^7.12.16",
+    "@babel/preset-env": "^7.28.5",
     "@vue/cli-plugin-babel": "~5.0.0",
     "@vue/cli-plugin-eslint": "~5.0.0",
     "@vue/cli-plugin-router": "~5.0.0",

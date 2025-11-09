@@ -1,28 +1,28 @@
 <template>
     <div class="comp-speaker-monk-pronoun-table">
-        <h4>{{ langSet[lang ?? 'en'].pronounView.secondPerson }}</h4>
-        <p v-html="langSet[lang ?? 'en'].pronounView.secondPersonReligiousDescription">
+        <h4>{{ langSet[lang || 'en'].pronounView.secondPerson }}</h4>
+        <p v-html="langSet[lang || 'en'].pronounView.secondPersonReligiousDescription">
         </p>
         <table>
             <thead>
                 <tr>
                     <th style="max-width: 120px;">
                         <i class="bi bi-chat-left-quote"></i>
-                        {{ langSet[lang ?? 'en'].pronounView.context }}
+                        {{ langSet[lang || 'en'].pronounView.context }}
                     </th>
                     <th>
                         <i class="bi bi-person"></i>
-                        {{ langSet[lang ?? 'en'].pronounView.singular }}
+                        {{ langSet[lang || 'en'].pronounView.singular }}
                     </th>
                     <th>
                         <i class="bi bi-people"></i>
-                        {{ langSet[lang ?? 'en'].pronounView.plural }}
+                        {{ langSet[lang || 'en'].pronounView.plural }}
                     </th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td class="bg-speaker-to-monk fw-bold">{{ langSet[lang ?? 'en'].pronounView.speakerToMonk }}</td>
+                    <td class="bg-speaker-to-monk fw-bold">{{ langSet[lang || 'en'].pronounView.speakerToMonk }}</td>
                     <td>
                         <CompPronounCard2 :pronouns="pronounReligious.speakerMonk.speakerToMonk.singular.secondPerson"
                             :lang="lang" :lang-set="langSet" />
@@ -33,7 +33,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="bg-monk-to-speaker fw-bold">{{ langSet[lang ?? 'en'].pronounView.monkToSpeaker }}</td>
+                    <td class="bg-monk-to-speaker fw-bold">{{ langSet[lang || 'en'].pronounView.monkToSpeaker }}</td>
                     <td>
                         <CompPronounCard2 :pronouns="pronounReligious.speakerMonk.monkToSpeaker.singular.secondPerson"
                             :lang="lang" :lang-set="langSet" />
@@ -44,7 +44,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="bg-junior-to-senior fw-bold">{{ langSet[lang ?? 'en'].pronounView.juniorToSenior }}</td>
+                    <td class="bg-junior-to-senior fw-bold">{{ langSet[lang || 'en'].pronounView.juniorToSenior }}</td>
                     <td>
                         <CompPronounCard2 :pronouns="pronounReligious.monkMonk.juniorToSenior.singular.secondPerson"
                             :lang="lang" :lang-set="langSet" />
@@ -55,7 +55,7 @@
                     </td>
                 </tr>
                  <tr>
-                    <td class="bg-senior-to-junior fw-bold">{{ langSet[lang ?? 'en'].pronounView.seniorToJunior }}</td>
+                    <td class="bg-senior-to-junior fw-bold">{{ langSet[lang || 'en'].pronounView.seniorToJunior }}</td>
                     <td>
                         <CompPronounCard2 :pronouns="pronounReligious.monkMonk.seniorToJunior.singular.secondPerson"
                             :lang="lang" :lang-set="langSet" />

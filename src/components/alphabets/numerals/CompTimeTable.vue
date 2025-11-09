@@ -1,7 +1,7 @@
 <template>
     <div class="comp-time-table">
-        <p v-html="langSet[lang ?? 'en'].numeralsView.timeDescription"></p>
-        <p v-html="langSet[lang ?? 'en'].numeralsView.timeDescription2"></p>
+        <p v-html="langSet[lang || 'en'].numeralsView.timeDescription"></p>
+        <p v-html="langSet[lang || 'en'].numeralsView.timeDescription2"></p>
         <div class="mt-3">
             <div class="row">
                 <div class="col-12 col-lg-4 mb-3 text-center">
@@ -36,12 +36,12 @@
             </div>
         </div>
         <div class="mt-3">
-            <h4>{{ langSet[lang ?? 'en'].numeralsView.time24HourClock }}</h4>
+            <h4>{{ langSet[lang || 'en'].numeralsView.time24HourClock }}</h4>
             <table class="mt-2">
                 <thead>
                     <tr>
-                        <th style="width: 200px;">{{ langSet[lang ?? 'en'].numeralsView.time }}</th>
-                        <th>{{ langSet[lang ?? 'en'].numeralsView.spelling }}</th>
+                        <th style="width: 200px;">{{ langSet[lang || 'en'].numeralsView.time }}</th>
+                        <th>{{ langSet[lang || 'en'].numeralsView.spelling }}</th>
                         <th>IPA</th>
                         <th>TH</th>
                     </tr>
@@ -69,12 +69,12 @@
             </table>
         </div>
         <div class="mt-3">
-            <h4>{{ langSet[lang ?? 'en'].numeralsView.time12HourClock }}</h4>
+            <h4>{{ langSet[lang || 'en'].numeralsView.time12HourClock }}</h4>
             <table class="mt-2">
                 <thead>
                     <tr>
-                        <th style="width: 200px;">{{ langSet[lang ?? 'en'].numeralsView.time }}</th>
-                        <th>{{ langSet[lang ?? 'en'].numeralsView.spelling }}</th>
+                        <th style="width: 200px;">{{ langSet[lang || 'en'].numeralsView.time }}</th>
+                        <th>{{ langSet[lang || 'en'].numeralsView.spelling }}</th>
                         <th>IPA</th>
                         <th>TH</th>
                     </tr>
@@ -102,12 +102,12 @@
             </table>
         </div>
         <div class="mt-3">
-            <h4>{{ langSet[lang ?? 'en'].numeralsView.timeVerbal }}</h4>
+            <h4>{{ langSet[lang || 'en'].numeralsView.timeVerbal }}</h4>
             <table class="mt-2">
                 <thead>
                     <tr>
-                        <th style="width: 200px;">{{ langSet[lang ?? 'en'].numeralsView.time }}</th>
-                        <th>{{ langSet[lang ?? 'en'].numeralsView.spelling }}</th>
+                        <th style="width: 200px;">{{ langSet[lang || 'en'].numeralsView.time }}</th>
+                        <th>{{ langSet[lang || 'en'].numeralsView.spelling }}</th>
                         <th>IPA</th>
                         <th>TH</th>
                     </tr>

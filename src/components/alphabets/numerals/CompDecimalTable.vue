@@ -1,8 +1,8 @@
 <template>
     <div class="comp-decimal-table">
-        <p v-html="langSet[lang ?? 'en'].numeralsView.decimalsDescription1"></p>
-        <p v-html="langSet[lang ?? 'en'].numeralsView.decimalsDescription2"></p>
-        <p v-html="langSet[lang ?? 'en'].numeralsView.decimalsDescription3"></p>
+        <p v-html="langSet[lang || 'en'].numeralsView.decimalsDescription1"></p>
+        <p v-html="langSet[lang || 'en'].numeralsView.decimalsDescription2"></p>
+        <p v-html="langSet[lang || 'en'].numeralsView.decimalsDescription3"></p>
         <div class="text-end">
             <ButtonAskChatGPT :href="'https://chatgpt.com/share/68c7927e-b8b8-8006-bdd5-cbdb890a444e'" :lang="'en'"
                 class="me-2" />
@@ -22,8 +22,8 @@
                 <table>
                     <thead>
                         <tr>
-                            <th style="width: 100px;">{{ langSet[lang ?? 'en'].numeralsView.monNumber }}</th>
-                            <th>{{ langSet[lang ?? 'en'].numeralsView.spelling }}</th>
+                            <th style="width: 100px;">{{ langSet[lang || 'en'].numeralsView.monNumber }}</th>
+                            <th>{{ langSet[lang || 'en'].numeralsView.spelling }}</th>
                             <th>IPA</th>
                             <th>TH</th>
                         </tr>

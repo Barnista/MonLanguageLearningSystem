@@ -1,27 +1,27 @@
 <template>
     <div class="comp-first-person-pronoun-table">
-        <p v-html="langSet[lang ?? 'en'].pronounView.definitePronounDescription">
+        <p v-html="langSet[lang || 'en'].pronounView.definitePronounDescription">
         </p>
         <table>
             <thead>
                 <tr>
                     <th style="max-width: 120px;">
                         <i class="bi bi-chat-left-quote"></i>
-                        {{ langSet[lang ?? 'en'].pronounView.context }}
+                        {{ langSet[lang || 'en'].pronounView.context }}
                     </th>
                     <th>
                         <i class="bi bi-person"></i>
-                        {{ langSet[lang ?? 'en'].pronounView.singular }}
+                        {{ langSet[lang || 'en'].pronounView.singular }}
                         /
                         <i class="bi bi-people"></i>
-                        {{ langSet[lang ?? 'en'].pronounView.plural }}
+                        {{ langSet[lang || 'en'].pronounView.plural }}
                     </th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
                     <th class="bg-neutral">
-                        {{ langSet[lang ?? 'en'].pronounView.neutral }}
+                        {{ langSet[lang || 'en'].pronounView.neutral }}
                     </th>
                     <td>
                         <CompPronounCard2 :lang="lang" :lang-set="langSet"

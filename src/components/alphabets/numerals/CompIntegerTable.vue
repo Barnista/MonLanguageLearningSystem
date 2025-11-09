@@ -3,8 +3,8 @@
         <table class="mt-3">
             <thead>
                 <tr>
-                    <th>{{ langSet[lang ?? 'en'].numeralsView.monNumber }}</th>
-                    <th>{{ langSet[lang ?? 'en'].numeralsView.spelling }}</th>
+                    <th>{{ langSet[lang || 'en'].numeralsView.monNumber }}</th>
+                    <th>{{ langSet[lang || 'en'].numeralsView.spelling }}</th>
                     <th>IPA</th>
                     <th>TH</th>
                 </tr>
@@ -23,12 +23,12 @@
             </tbody>
         </table>
         <div class="mt-3">
-            <h4>{{ langSet[lang ?? 'en'].numeralsView.integerExamples }}</h4>
+            <h4>{{ langSet[lang || 'en'].numeralsView.integerExamples }}</h4>
             <table>
                 <thead>
                     <tr>
-                        <th style="width: 100px;">{{ langSet[lang ?? 'en'].numeralsView.monNumber }}</th>
-                        <th>{{ langSet[lang ?? 'en'].numeralsView.spelling }}</th>
+                        <th style="width: 100px;">{{ langSet[lang || 'en'].numeralsView.monNumber }}</th>
+                        <th>{{ langSet[lang || 'en'].numeralsView.spelling }}</th>
                         <th>IPA</th>
                         <th>TH</th>
                     </tr>
