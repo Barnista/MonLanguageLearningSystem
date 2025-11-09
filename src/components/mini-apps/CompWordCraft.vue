@@ -30,8 +30,7 @@
                 <div class="dash mt-4"></div>
                 <div class="d-flex mt-4">
                     <select v-model="sConsonant" @change="onCraftWord"
-                        class="py-2 me-1 form-select form-select-lg text-light bg-danger"
-                        aria-label="Large select example">
+                        class="py-2 me-1 form-select form-select-lg text-light bg-danger" aria-label="Large select example">
                         <option value="" selected>{{ langSet[lang].wordCraft.optionNone || '_NONE_' }}</option>
                         <option v-for="(item, index) in consonants" :key="index" :value="item.letter">{{ item.letter }}
                         </option>
@@ -40,8 +39,7 @@
                         +
                     </div>
                     <select v-model="sCompound" @change="onCraftWord"
-                        class="py-2 mx-1 form-select form-select-lg text-light bg-success"
-                        aria-label="Large select example">
+                        class="py-2 mx-1 form-select form-select-lg text-light bg-success" aria-label="Large select example">
                         <option value="" selected>{{ langSet[lang].wordCraft.optionNone || '_NONE_' }}</option>
                         <option v-for="(item, index) in compoundCosonants" :key="index" :value="item.compound">{{
                             item.compound }}</option>
@@ -50,8 +48,7 @@
                         +
                     </div>
                     <select v-model="sVowel" @change="onCraftWord"
-                        class="py-2 mx-1 form-select form-select-lg text-dark bg-warning"
-                        aria-label="Large select example">
+                        class="py-2 mx-1 form-select form-select-lg text-dark bg-warning" aria-label="Large select example">
                         <option v-for="(item, index) in vowels" :key="index" :value="item.compound">{{ item.compound ?
                             item.compound : langSet[lang].wordCraft.optionNone || '_NONE_' }}</option>
                         <option v-for="(item, index) in vowels" :key="index" :value="item.letter">{{ item.letter ?
@@ -61,8 +58,7 @@
                         +
                     </div>
                     <select v-model="sFinal" @change="onCraftWord"
-                        class="py-2 ms-1 form-select form-select-lg text-light bg-primary"
-                        aria-label="Large select example">
+                        class="py-2 ms-1 form-select form-select-lg text-light bg-primary" aria-label="Large select example">
                         <option value="" selected>{{ langSet[lang].wordCraft.optionNone || '_NONE_' }}</option>
                         <optgroup v-for="(item, index) in finalConsonants" :key="index"
                             :label="`${item.group} (${item.thGroup})`">
@@ -98,8 +94,7 @@
                     <div class="fw-bold text-center mb-2">
                         {{ langSet[lang ?? 'en'].textAnalyser.meanings ||
                             '_MEANINGS_' }} ({{ meanings.length }}):
-                        <router-link class="ms-1"
-                            :to="{ path: '/apps/dictionary', query: { lang, from: 'mon', q: words } }" target="_blank">
+                        <router-link class="ms-1" :to="{ path: '/apps/dictionary', query: { lang, from: 'mon', q: words } }" target="_blank">
                             {{ langSet[lang ?? 'en'].menu.readMore || '_READ_MORE_' }}
                         </router-link>
                     </div>
@@ -114,7 +109,7 @@
                                         class="fw-bold fs-5 text-dark"></span>
                                     <div class="mt-1">
                                         <small>IPA: <span class="text-muted">{{ `/${mItem.ipa}/` || 'NaN'
-                                                }}</span></small>
+                                        }}</span></small>
                                         <small class="ms-3">TH: <span class="text-muted">{{ `/${mItem.th}/` ||
                                             'NaN'
                                                 }}</span></small>
@@ -122,7 +117,7 @@
                                     <div class="my-1">
                                         <small class="text-muted me-1">{{ langSet[lang ||
                                             'en'].dictionary.meanings
-                                            }}:</small>
+                                        }}:</small>
                                         <small v-for="(tItem, tIndex) in mItem.translates" :key="tIndex">
                                             <span v-if="tItem.type" class="me-2 fst-italic">
                                                 <!--<span class="text-success">({{
@@ -134,7 +129,8 @@
                                         </small>
                                     </div>
                                 </div>
-                                <button v-if="copiedIndex2 == mItem.no" class="mt-2 ms-1 btn btn-sm btn-light disabled">
+                                <button v-if="copiedIndex2 == mItem.no"
+                                    class="mt-2 ms-1 btn btn-sm btn-light disabled">
                                     <i class="bi bi-check-square-fill"></i>
                                     <span class="ms-2 d-none">
                                         {{ langSet[lang ? lang : 'en'].menu.copied }}
@@ -161,7 +157,7 @@
                                         class="fw-bold fs-5 text-dark"></span>
                                     <div class="mt-1">
                                         <small>IPA: <span class="text-muted">{{ `/${mItem.ipa}/` || 'NaN'
-                                                }}</span></small>
+                                        }}</span></small>
                                         <small class="ms-3">TH: <span class="text-muted">{{ `/${mItem.th}/` ||
                                             'NaN'
                                                 }}</span></small>
@@ -169,7 +165,7 @@
                                     <div class="my-1">
                                         <small class="text-muted me-1">{{ langSet[lang ||
                                             'en'].dictionary.meanings
-                                            }}:</small>
+                                        }}:</small>
                                         <small v-for="(tItem, tIndex) in mItem.translates" :key="tIndex">
                                             <span v-if="tItem.type" class="me-2 fst-italic">
                                                 <!--<span class="text-success">({{
@@ -181,7 +177,8 @@
                                         </small>
                                     </div>
                                 </div>
-                                <button v-if="copiedIndex2 == mItem.no" class="mt-2 ms-1 btn btn-sm btn-light disabled">
+                                <button v-if="copiedIndex2 == mItem.no"
+                                    class="mt-2 ms-1 btn btn-sm btn-light disabled">
                                     <i class="bi bi-check-square-fill"></i>
                                     <span class="ms-2 d-none">
                                         {{ langSet[lang ? lang : 'en'].menu.copied }}
@@ -229,7 +226,7 @@ import dbVowels from '@/services/mon-library/alphabets/db-vowels';
 import dbFinalConsonants from '@/services/mon-library/alphabets/db-final-consonants';
 
 import alphabets from '@/services/mon-library/alphabets/alphabets';
-//import dictionary from '@/services/mon-library/dictionary/dictionary';
+import dictionary from '@/services/mon-library/dictionary/dictionary';
 
 export default {
     name: 'CompWordCraft',
@@ -271,7 +268,7 @@ export default {
         }
     },
     created() {
-        //dictionary.initDB();
+        dictionary.initDB();
     },
     mounted() {
         this.onCraftWord();
@@ -292,7 +289,7 @@ export default {
             this.words = this.craftedWord.word;
             console.log(`Crafted Word:`, this.craftedWord);
 
-            //this.meanings = dictionary.searchByWord(this.craftedWord.word, true, this.searchLimit, true);
+            this.meanings = dictionary.searchByWord(this.craftedWord.word, true, this.searchLimit, true);
             console.log(`Meanings:`, this.meanings);
         },
         copyToClipboard() {
@@ -330,12 +327,10 @@ export default {
             return n_word;
         },
         displayTranslateTypeTH(type) {
-            console.log('displayPOS', type)
-            //return dictionary.getTranslateTypeTH(type)
+            return dictionary.getTranslateTypeTH(type)
         },
         displayTranslateType(type) {
-            console.log('displayPOS', type)
-            //return dictionary.getTranslateType(type)
+            return dictionary.getTranslateType(type)
         }
     }
 }
