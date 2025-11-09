@@ -279,16 +279,6 @@
 
 <script>
 import displayLanguages from '@/services/display-languages/display-languages';
-
-<<<<<<< HEAD
-<<<<<<< HEAD
-//import dictionary from '@/services/mon-library/dictionary/dictionary';
-=======
-import dictionary from '@/services/mon-library/dictionary/dictionary';
->>>>>>> parent of 6ed454d (v1.7.5 build 003)
-=======
-import dictionary from '@/services/mon-library/dictionary/dictionary';
->>>>>>> parent of 6ed454d (v1.7.5 build 003)
 import { Collapse } from 'bootstrap/dist/js/bootstrap.bundle.min';
 import dbConsonants from '@/services/mon-library/alphabets/db-consonants';
 import dbVowels from '@/services/mon-library/alphabets/db-vowels';
@@ -297,7 +287,6 @@ import CompSimpleKeyboard from '../keyboard/CompSimpleKeyboard.vue';
 import { MonDictDB } from '@/services/mon-library/dictionary/mon-dict-db';
 import { LangCode } from '@/services/lang-code';
 import CompCardDefinition from './CompCardDefinition.vue';
-import { orderBy } from 'firebase/firestore';
 //import DataTable from 'datatables.net-vue3';
 //import DataTablesCore from 'datatables.net-bs5';
 
@@ -347,7 +336,6 @@ export default {
             collapseKeyboard: null,
             text: '',
             letter: '',
-            wordCount: dictionary.count(),
             copiedIndex: null,
             copiedIndex2: null,
             db: null,
@@ -363,7 +351,6 @@ export default {
         }
     },
     created() {
-        dictionary.initDB();
         this.windowWidth = window.innerWidth;
         window.addEventListener('resize', () => {
             this.windowWidth = window.innerWidth;

@@ -1,5 +1,3 @@
-import { orderBy } from "firebase/firestore"
-
 export const DB_TABLE = {
     Author: 'Author',
     Category: 'Category',
