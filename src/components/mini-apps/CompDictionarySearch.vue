@@ -280,7 +280,11 @@
 <script>
 import displayLanguages from '@/services/display-languages/display-languages';
 
+<<<<<<< HEAD
 //import dictionary from '@/services/mon-library/dictionary/dictionary';
+=======
+import dictionary from '@/services/mon-library/dictionary/dictionary';
+>>>>>>> parent of 6ed454d (v1.7.5 build 003)
 import { Collapse } from 'bootstrap/dist/js/bootstrap.bundle.min';
 import dbConsonants from '@/services/mon-library/alphabets/db-consonants';
 import dbVowels from '@/services/mon-library/alphabets/db-vowels';
