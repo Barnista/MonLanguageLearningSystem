@@ -281,7 +281,11 @@
 import displayLanguages from '@/services/display-languages/display-languages';
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 //import dictionary from '@/services/mon-library/dictionary/dictionary';
+=======
+import dictionary from '@/services/mon-library/dictionary/dictionary';
+>>>>>>> parent of 6ed454d (v1.7.5 build 003)
 =======
 import dictionary from '@/services/mon-library/dictionary/dictionary';
 >>>>>>> parent of 6ed454d (v1.7.5 build 003)
