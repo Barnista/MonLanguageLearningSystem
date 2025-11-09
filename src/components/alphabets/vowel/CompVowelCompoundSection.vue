@@ -1,15 +1,15 @@
 <template>
     <div class="comp-vowel-compound-section">
-        <h3>2. {{ langSet[lang || 'en'].vowelView.vowelType2Title }}</h3>
-        <p class="text-dark" v-html="langSet[lang || 'en'].vowelView.vowelType2Description"></p>
+        <h3>2. {{ langSet[lang ? lang : 'en'].vowelView.vowelType2Title }}</h3>
+        <p class="text-dark" v-html="langSet[lang ? lang : 'en'].vowelView.vowelType2Description"></p>
         <div class="d-flex">
             <div class="">
                 <span class="badge rounded-pill text-bg-light text-primary fw-bold">CL</span>
-                <span>= {{ langSet[lang || 'en'].vowelView.vowelType2CL }}</span>
+                <span>= {{ langSet[lang ? lang : 'en'].vowelView.vowelType2CL }}</span>
             </div>
             <div class="ms-1">
                 <span class="badge rounded-pill text-bg-light text-danger fw-bold">BT</span>
-                <span>= {{ langSet[lang || 'en'].vowelView.vowelType2BT }}</span>
+                <span>= {{ langSet[lang ? lang : 'en'].vowelView.vowelType2BT }}</span>
             </div>
         </div>
         <div class="my-2 d-block d-md-none">
@@ -31,7 +31,7 @@
                         <button class="mt-1 btn btn-sm btn-outline-success py-0 px-1" @click="pronouceVowelCL(vowel)">
                             🔊
                             <span class="d-none d-md-inline">
-                                {{ langSet[lang || 'en'].menu.listen }}
+                                {{ langSet[lang ? lang : 'en'].menu.listen }}
                             </span>
                             <span class="ms-1 badge rounded-pill text-bg-light text-primary fw-bold">CL</span>
                         </button>
@@ -44,7 +44,7 @@
                             @click="pronouceVowelCL2(vowel)">
                             🔊
                             <span class="d-none d-md-inline">
-                                {{ langSet[lang || 'en'].menu.listen }}
+                                {{ langSet[lang ? lang : 'en'].menu.listen }}
                             </span>
                             <span class="ms-1 badge rounded-pill text-bg-light text-primary fw-bold">CL</span>
                         </button>
@@ -56,7 +56,7 @@
                         <button class="mt-1 btn btn-sm btn-outline-success py-0 px-1" @click="pronouceVowelBT(vowel)">
                             🔊
                             <span class="d-none d-md-inline">
-                                {{ langSet[lang || 'en'].menu.listen }}
+                                {{ langSet[lang ? lang : 'en'].menu.listen }}
                             </span>
                             <span class="ms-1 badge rounded-pill text-bg-light text-danger fw-bold">BT</span>
                         </button>
@@ -95,7 +95,7 @@
                                     @click="pronouceVowelCL(vowel)">
                                     🔊
                                     <span class="d-none d-md-inline">
-                                        {{ langSet[lang || 'en'].menu.listen }}
+                                        {{ langSet[lang ? lang : 'en'].menu.listen }}
                                     </span>
                                     <span class="ms-1 badge rounded-pill text-bg-light text-primary fw-bold">CL</span>
                                 </button>
@@ -108,7 +108,7 @@
                                     @click="pronouceVowelCL2(vowel)">
                                     🔊
                                     <span class="d-none d-md-inline">
-                                        {{ langSet[lang || 'en'].menu.listen }}
+                                        {{ langSet[lang ? lang : 'en'].menu.listen }}
                                     </span>
                                     <span class="ms-1 badge rounded-pill text-bg-light text-primary fw-bold">CL</span>
                                 </button>
@@ -121,7 +121,7 @@
                                     @click="pronouceVowelBT(vowel)">
                                     🔊
                                     <span class="d-none d-md-inline">
-                                        {{ langSet[lang || 'en'].menu.listen }}
+                                        {{ langSet[lang ? lang : 'en'].menu.listen }}
                                     </span>
                                     <span class="ms-1 badge rounded-pill text-bg-light text-danger fw-bold">BT</span>
                                 </button>
@@ -135,17 +135,17 @@
             <div v-for="(vowel, cIndex) in row" :key="cIndex">
                 <div v-if="vowel.exception" class="mt-4">
                     <h4 class="text-start" :id="vowel.exception.id">
-                        {{ langSet[lang || 'en'].menu.exception }} #{{ cIndex }}: {{ vowel.compound }} → <span
+                        {{ langSet[lang ? lang : 'en'].menu.exception }} #{{ cIndex }}: {{ vowel.compound }} → <span
                             class="">{{ vowel.compound2
                             }}</span>
                     </h4>
                     <p v-if="!vowel.exception.dependsOnFinal" class="text-start text-muted">
                         "{{ vowel.compound2 }}" <span
-                            v-html="langSet[lang || 'en'].vowelView.exceptionDescription"></span>
+                            v-html="langSet[lang ? lang : 'en'].vowelView.exceptionDescription"></span>
                     </p>
                     <p v-else class="text-start text-muted">
                         "{{ vowel.compound2 }}" <span
-                            v-html="langSet[lang || 'en'].vowelView.exceptionDescription2"></span>
+                            v-html="langSet[lang ? lang : 'en'].vowelView.exceptionDescription2"></span>
                     </p>
                     <table class="table table-bordered">
                         <thead>
