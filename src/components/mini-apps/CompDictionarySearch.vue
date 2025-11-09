@@ -280,7 +280,7 @@
 <script>
 import displayLanguages from '@/services/display-languages/display-languages';
 
-import dictionary from '@/services/mon-library/dictionary/dictionary';
+//import dictionary from '@/services/mon-library/dictionary/dictionary';
 import { Collapse } from 'bootstrap/dist/js/bootstrap.bundle.min';
 import dbConsonants from '@/services/mon-library/alphabets/db-consonants';
 import dbVowels from '@/services/mon-library/alphabets/db-vowels';
