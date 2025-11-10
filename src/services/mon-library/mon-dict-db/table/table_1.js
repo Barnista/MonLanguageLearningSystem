@@ -1,0 +1,1 @@
+/* eslint-disable no-useless-escape */ export default `CREATE TABLE Author (    id INTEGER PRIMARY KEY AUTOINCREMENT,    name TEXT NOT NULL,    bio TEXT);`; /* eslint-disable no-useless-escape */

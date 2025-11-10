@@ -328,7 +328,7 @@ import dbConsonants from '@/services/mon-library/alphabets/db-consonants';
 import dbVowels from '@/services/mon-library/alphabets/db-vowels';
 import CompMobileKeyboard from '../keyboard/CompMobileKeyboard.vue';
 import CompSimpleKeyboard from '../keyboard/CompSimpleKeyboard.vue';
-import { MonDictDB } from '@/services/mon-library/dictionary/mon-dict-db';
+import { MonDictDB } from '@/services/mon-library/mon-dict-db/index';
 import { LangCode } from '@/services/lang-code';
 import CompCardDefinition from './CompCardDefinition.vue';
 import CompCardDefinitionSkeleton from './CompCardDefinitionSkeleton.vue'
@@ -379,7 +379,7 @@ export default {
             letter: '',
             copiedIndex: null,
             copiedIndex2: null,
-            db: null,
+            payload: null,
             translateLang: 'tha',
             count: 0,
             langCode: LangCode,
@@ -408,8 +408,8 @@ export default {
         async startDB() {
             try {
                 this.isLoading = true;
-                this.db = await MonDictDB.startDB();
-                this.count = await MonDictDB.count(this.db);
+                this.payload = await MonDictDB.startDB('https://sql.js.org/dist/');
+                this.count = await MonDictDB.count(this.payload);
                 this.searchFromText(this.query, this.translateFrom, this.translateTo, this.authorIncludes, this.orderBy)
             } catch (error) {
                 console.error(error);
@@ -438,11 +438,11 @@ export default {
 
             const authIncludes = (authorIncludes == '3') ? [1, 2, 3] : [Number(authorIncludes), 3];
 
-            if (this.db) {
+            if (this.payload) {
                 if (translateFrom == this.langCode.Mon) {
                     //this.searchResult = dictionary.searchByWord(text, false, 99, false);
                     this.isLoading = true;
-                    MonDictDB.searchByWord(this.db, text, false, 99, true, translateTo, authIncludes, orderBy)
+                    MonDictDB.searchByWord(this.payload, text, false, 99, true, translateTo, authIncludes, orderBy)
                         .then(vals => {
                             this.isLoading = false;
                             this.searchResult = vals;
@@ -455,7 +455,7 @@ export default {
                 } else {
                     //this.searchResult = dictionary.searchByTranslateTH(text, false, 99, false);
                     this.isLoading = true;
-                    MonDictDB.searchByDefinition(this.db, text, false, 99, false, translateFrom, authIncludes, orderBy)
+                    MonDictDB.searchByDefinition(this.payload, text, false, 99, false, translateFrom, authIncludes, orderBy)
                         .then(vals => {
                             this.isLoading = false;
                             this.searchResult = vals;
