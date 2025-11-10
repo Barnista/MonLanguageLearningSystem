@@ -431,6 +431,8 @@ export default {
                 },
                 //force: true
             });
+
+            this.searchFromText(text, this.translateFrom, this.translateTo, this.authorIncludes, this.orderBy);
         },
         searchFromText(text, translateFrom, translateTo, authorIncludes, orderBy) {
             this.text = text;
