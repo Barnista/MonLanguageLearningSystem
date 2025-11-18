@@ -1,5 +1,5 @@
 <template>
-  <div class="about container">
+  <div class="about">
     <div v-if="!unlocked" class="row justify-content-center mt-5">
       <div class="col-md-8">
         <div class="card pb-1 shadow">
@@ -47,7 +47,7 @@
         </div>
       </div>
     </div>
-    <CompMonland v-if="unlocked" :lang="lang" class="mt-5" />
+    <CompMonland v-if="unlocked" :lang="lang" class="p-3 p-md-4 p-lg-5" />
   </div>
 </template>
 
@@ -55,7 +55,7 @@
 
 import CompMobileKeyboard from '@/components/keyboard/CompMobileKeyboard.vue';
 import CompSimpleKeyboard from '@/components/keyboard/CompSimpleKeyboard.vue';
-import CompMonland from '@/components/others/abouts/CompMonland.vue';
+import CompMonland from '@/components/others/abouts/monland/CompMonland.vue';
 import displayLanguages from '@/services/display-languages/display-languages';
 import { logPageView } from '@/services/firebase/app';
 import { Collapse } from 'bootstrap/dist/js/bootstrap.bundle.min';
