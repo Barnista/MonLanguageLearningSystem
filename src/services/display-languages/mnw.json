@@ -1,5 +1,5 @@
 {
-    "id": "en",
+    "id": "mnw",
     "navbar": {
         "home": "Home",
         "others": "အရာတၞဟ်",
@@ -12,16 +12,16 @@
     },
     "homeView": {
         "welcome": "ဒုင်တၠုင် ဏာ နူဘာသာမန် ရ",
-        "displayLanguage": "Display Language",
+        "displayLanguage": "အရေဝ်ဘာသာ",
         "description": "ဒုင်တၠုင် ဏာ နူဘာသာမန် ရပ္ၚောံလုပ်လိက်မန် ၊ ဗဂပ်အက္ခရ်မန် ၊ သဒ္ဒါမည်၊ ပရးမလိက်မည် ထ္ၜးဗီုပြင်န",
         "description2": "ကလေင်ဗဂဵုတိုန် လိက်ပတ်ကေုာံယေန်သၞာင်မမြဟ်မြဴမံင် ပ္ဍဲတိုက်အဂၞဲအာရှ မွဲအခိင်တေံ ။ ဒှ်မံင်ဂကူအာဂတးပၠတရဴ သွက်ထေရဝါဒဗုဒ္ဓဘာသာ ။",
         "description3": "စစမ်ရံင် တ္ၚဲဏံစိုအ် 📖✨"
     },
     "aboutView": {
         "title": "ပရော",
-        "founderTitle": "Message from Project Founder",
+        "founderTitle": "မြော်ဂလာန်နူဇရေၚ်ညးခၞံဗဒှ်",
         "founderName": "Tummanoon Wancha-em (Barnista)",
-        "founderCareer": "Project Founder & Developer",
+        "founderCareer": "ညးခၞံဗဒှ် ကေုာံ ညးဘိုၚ်ရေၚ်တၠုၚ်ဂမၠိုၚ်",
         "founderMessage": "",
         "developedBy": "Developed by",
         "contributedBy": "Contributed by",
