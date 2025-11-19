@@ -2,6 +2,12 @@
     <div class="comp-monland-timeline">
         <img src="@/assets/imgs/charts/mon_renaissance_movement.jpg" alt="Mon Renaissance Movement Mapping Chart"
             class="w-100 h-auto">
+        <div class="mt-3 text-center">
+            <a class="btn btn-danger shadow-sm" href="https://drive.google.com/file/d/1jO7hCP4jvYnda3CSIbvm1IE45EIhRRds/view?usp=drive_link" target="_blank">
+                <i class="bi bi-download"></i>
+                Download Mon Renaissance Timeline Chart (2.7mb)
+            </a>
+        </div>
         <div class="mt-4">
             <h3>What is "Renaissance" ?</h3>
             <p>
@@ -17,10 +23,6 @@
 
                 Shifts in religion & politics (Reformation, Humanism).
             </p>
-        </div>
-        <div class="mt-4">
-            <h3>Timelines and Works of Our Associates.</h3>
-            <p>lorem ipsum</p>
         </div>
         <div class="mt-4">
             <h3>Timelines for The Mon Language (Platform)</h3>
@@ -55,7 +57,7 @@
                     <ul class="timeline">
                         <li class="timeline-item mb-5">
                             <h5 class="fw-bold">Membership (with Digital ID Card)</h5>
-                            <p class="text-primary mb-2 fw-bold">October 2025</p>
+                            <p class="text-primary mb-2 fw-bold">December 2025</p>
                             <ul class="text-muted">
                                 <li>
                                     Database-generated ID number (like Passport)
@@ -77,7 +79,7 @@
                         </li>
                         <li class="timeline-item mb-5">
                             <h5 class="fw-bold">e-Library</h5>
-                            <p class="text-primary mb-2 fw-bold">October - November 2025</p>
+                            <p class="text-primary mb-2 fw-bold">December 2025</p>
                             <ul class="text-muted">
                                 <li>
                                     To collect all Mon literatures both in the past and in the present time
@@ -90,13 +92,16 @@
                                     under Common Creative licenses.
                                 </li>
                                 <li>
+                                    It comes with search engine. Much better than FlipHTML5.
+                                </li>
+                                <li>
                                     Users can upload their own documents to help enriching the Mon civilization
                                 </li>
                             </ul>
                         </li>
                         <li class="timeline-item mb-5">
                             <h5 class="fw-bold">Community Workshop</h5>
-                            <p class="text-primary mb-2 fw-bold">Novemver - December 2025</p>
+                            <p class="text-primary mb-2 fw-bold">January 2025</p>
                             <ul class="text-muted">
                                 <li>
                                     Users can help translate each document from e-Library into Thai, Burmese,
@@ -111,7 +116,7 @@
                         <li class="timeline-item mb-5">
                             <h5 class="fw-bold">OCR (Optiocal Character Recognition) for reading historical
                                 documents in Mon and Pali-Sansakrit (written in Mon script).</h5>
-                            <p class="text-primary mb-2 fw-bold">January - December 2025</p>
+                            <p class="text-primary mb-2 fw-bold">January - December 2026</p>
                             <ul class="text-muted">
                                 <li>
                                     Digitize ancient Mon and Pali-Sanskrit manuscripts using OCR technology.
@@ -133,7 +138,7 @@
                         </li>
                         <li class="timeline-item mb-5">
                             <h5 class="fw-bold">Mon Dialect & Accent RESEARCH</h5>
-                            <p class="text-primary mb-2 fw-bold">November 2025 - July 2026</p>
+                            <p class="text-primary mb-2 fw-bold">January 2026 - January 2027</p>
                             <ul class="text-muted">
                                 <li>
                                     Research and document the various Mon dialects and accents spoken in
@@ -157,7 +162,7 @@
                         </li>
                         <li class="timeline-item mb-5">
                             <h5 class="fw-bold">Text-to-Speech & Speech-to-Text for Mon language.</h5>
-                            <p class="text-primary mb-2 fw-bold">June - Dec 2026</p>
+                            <p class="text-primary mb-2 fw-bold">July 2026 - July 2027</p>
                             <ul class="text-muted">
                                 <li>
                                     Bringing all Mon local dialects to create the standard version of Mon
