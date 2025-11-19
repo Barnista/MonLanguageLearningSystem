@@ -1,6 +1,36 @@
 export default {
     logs: [
-         {
+        {
+            version: 'v1.7.9',
+            date: new Date('2025-11-19'),
+            changes: [
+                "Mon-version display language, localized by Ven. Suriya Mon, Sunthorn Sripanngern, and Min Salad.",
+                "Burmese-version display language, localized by Nai Saik Chan.",
+                "Implemented newly dictionary database engine, MonDictDB.",
+                "Dictionary now supports English, Thai, and Burmese translation.",
+                "Improved dictionary search menu.",
+                "Reformed learning contents and pronunciations (IPA/TH) to comply with Mahajaroon's Mon Textbook.",
+                "Improved pronunciations (IPA/TH) on page 'Pronoun' to comply with Mahajaroon's Mon Textbook.",
+                "Improved AI algorithm to generate proper IPA and TH according to Mahajaroon's Mon Textbook.",
+                "Added academic references to each learning contents",
+                "Added APIs and Open-sources portal page as to service third party developers to contribute with us.",
+                "Added basic localized SEO meta data.",
+                "Added/Improved Credits and contributors name on page 'Contributors'",
+                "Added more related contents",
+                "More contents for Mon Renaissance",
+                "Fixed bugs and issues"
+            ]
+        },
+        {
+            version: 'MonDictDB (Open-source)',
+            date: new Date('2025-11-02'),
+            changes: [
+                "Centralized dictionary database compiled from both Nai Sac Lun and Mahajaroon's Committee.",
+                "Open-source for Mon people and developers to use, duplicate and contribute.",
+                "Implemented on The Mon language platform since v1.7.6"
+            ]
+        },
+        {
             version: 'v1.7.5',
             date: new Date('2025-10-03'),
             changes: [
@@ -185,44 +215,42 @@ export default {
     ],
     futureUpdates: [
         {
-            version: 'v1.7.x',
-            date: new Date('2025-09-14'),
-            changes: [
-                '- add Learn Alphabets -> Punctuation',
-                '- add Learn Alphabets -> Numberals (numbers, maths, calendar)',
-                '- add Learn Grammars -> Noun (+images and categories)',
-                '- add Learn Grammars -> Pronoun',
-                '- add Learn Grammars -> Verb',
-                '- more Mon version web pages (display language)',
-            ]
-        },
-        {
-            version: 'Mon Alphabet AI (software development packages)',
-            date: new Date('2025-09-28'),
-            changes: [
-                '- avaible on NPM (node js) and PIP (python)',
-                '- IPA and TH pronunciations analysis',
-                '- built-in Unified-Dictionary-System with great contribution:',
-                '- Mon–Burmese Dictionary, compiled by Nai Sac Lun.',
-                '- Mon-Burmese, Mon-Thai, Mon-Eng Dictionary database, provided by Nai Saik Chan.',
-                '- Mon-Thai Dictionary with pronunciation, provided by Mottip Ebook community',
-                '- implemented Tesseract OCR, Cloud Vision API, and Lexitron 2.0',
-                '- improve English translation with Cloud Translation API',
-                '- cross translation between Mon, Thai, Burmese, and English.',
-                '- simple data query functions',
-            ]
-        },
-        {
             version: 'v1.8.x',
-            date: new Date('2025-10-12'),
+            date: new Date('2026-01-31'),
             changes: [
-                '- complete and unified Mon-Thai, Mon-Burmese, Mon-English dictionary powered by Mon Alphabet AI',
-                '- add Learn Grammars -> Adverb/Adjective',
-                '- add Learn Grammars -> Preposition',
-                '- add Learn Grammars -> Conjunction',
-                '- add Learn Grammars -> Interjection',
-                '- add Learn Grammars -> Classifier',
-                '- more Mon version web pages (display language)',
+                '+ Membership system',
+                '+ E-Library with search engine',
+                '+ Manuscripts and tablets forums'
+            ]
+        },
+        {
+            version: 'Mon Alphabet AI (Open-source)',
+            date: new Date('2025-12-31'),
+            changes: [
+                '+ avaible on NPM (node js) and PIP (python)',
+                '+ IPA and TH pronunciations analysis',
+                '+ built-in Unified-Dictionary-System with great contribution:',
+                '+ Mon–Burmese Dictionary, compiled by Nai Sac Lun.',
+                '+ Mon-Burmese, Mon-Thai, Mon-Eng Dictionary database, provided by Nai Saik Chan.',
+                '+ Mon-Thai Dictionary with pronunciation, provided by Mottip Ebook community',
+                '+ implemented Tesseract OCR, Cloud Vision API, and Lexitron 2.0',
+                '+ improve English translation with Cloud Translation API',
+                '+ cross translation between Mon, Thai, Burmese, and English.',
+                '+ simple data query functions',
+            ]
+        },
+        {
+            version: 'v1.9.x',
+            date: new Date('2026-01-31'),
+            changes: [
+                '+ add Learn Alphabets -> Punctuation',
+                '+ add Learn Grammars -> Noun (+images and categories)',
+                '+ add Learn Grammars -> Verb',
+                '+ add Learn Grammars -> Adverb/Adjective',
+                '+ add Learn Grammars -> Preposition',
+                '+ add Learn Grammars -> Conjunction',
+                '+ add Learn Grammars -> Interjection',
+                '+ add Learn Grammars -> Classifier',
             ]
         },
     ]

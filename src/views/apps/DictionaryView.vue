@@ -6,12 +6,17 @@
                 '_THA_' }}/{{ langSet[lang || 'en'].dictionary.translateToBurmese ||
                 '_MYA_' }}</h2>
         <div class="mt-3"></div>
-        <CompDictionarySearch ref="compDictionarySearch" :lang="lang" :query="searchText" :translate-from="translateFrom" :translate-to="translateTo"
-            :search-limit="searchLimit" :authorIncludes="authorIncludes" :orderBy="orderBy" />
+        <CompDictionarySearch ref="compDictionarySearch" :lang="lang" :query="searchText"
+            :translate-from="translateFrom" :translate-to="translateTo" :search-limit="searchLimit"
+            :authorIncludes="authorIncludes" :orderBy="orderBy" />
     </div>
 </template>
 
 <script>
+import { useRoute } from 'vue-router';
+import { useHead, useSeoMeta } from '@unhead/vue'
+import seoLanguages from '@/services/display-languages/seo-languages';
+
 import CompDictionarySearch from '@/components/mini-apps/CompDictionarySearch.vue';
 import displayLanguages from '@/services/display-languages/display-languages';
 import { logPageView } from '@/services/firebase/app';
@@ -21,6 +26,20 @@ export default {
     name: 'DictionaryView',
     components: {
         CompDictionarySearch
+    },
+    setup() {
+        // Grab query params
+        const route = useRoute();
+        const lang = route.query.lang || 'eng';
+        const langSEO = seoLanguages.langSEO[lang];
+        useHead({
+            htmlAttrs: { lang: langSEO["lang"] || 'en-US' },
+            meta: langSEO["meta"]["default"],
+            link: langSEO["link"]["default"]
+        });
+        useSeoMeta({
+            ...langSEO["seoMeta"]["default"]
+        });
     },
     data: () => {
         return {

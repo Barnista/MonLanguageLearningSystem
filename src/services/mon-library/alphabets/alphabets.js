@@ -283,20 +283,29 @@ export default {
         let resultWord = word.consonant + word.compound + word.vowel + word.final;
         let resultWord2 = '';
         if (word2.vowel) resultWord2 = word2.consonant + word2.compound + word2.vowel + word2.final;
-        let resultIPA = ipa.consonant + ipa.compound + ipa.vowel + ipa.final;
-        let resultIPA2 = '';
-        if (ipa2.vowel) resultIPA2 = ipa2.consonant + ipa2.compound + ipa2.vowel + ipa2.final;
+        
+        let resultIPA = null;
+        if (ipa){
+            resultIPA = ipa.consonant + ipa.vowel.replace('ʔ', ipa.compound);
+        }
+        
+        let resultIPA2 = null;
+        if (ipa2.vowel) {
+            resultIPA2 = ipa2.consonant + ipa2.vowel.replace('ʔ', ipa2.compound);
+        }
+        
         let resultTH = null;
         if (th.compound) {
-            resultTH = th.consonant + (th.vowel.replace('-', th.compound)) + th.final;
+            resultTH = th.consonant + (th.vowel.replace('-', th.compound));
         } else {
-            resultTH = th.vowel.replace('-', th.consonant) + th.final;
+            resultTH = th.vowel.replace('-', th.consonant);
         }
+
         let resultTH2 = null;
         if (th2.vowel) {
-            resultTH2 = th.consonant + (th2.vowel.replace('-', th2.compound)) + th2.final;
+            resultTH2 = th.consonant + (th2.vowel.replace('-', th2.compound));
         } else {
-            resultTH2 = th2.vowel.replace('-', th2.consonant) + th2.final;
+            resultTH2 = th2.vowel.replace('-', th2.consonant);
         }
 
         //return feasible data

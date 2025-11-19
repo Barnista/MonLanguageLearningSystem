@@ -8,8 +8,6 @@
                     <th>{{ langSet[lang ? lang : 'en'].table.no }}</th>
                     <th>{{ langSet[lang ? lang : 'en'].table.finalConsonant }}</th>
                     <th>{{ langSet[lang ? lang : 'en'].table.finalSymbol }}</th>
-                    <th class="d-none d-md-block">{{ langSet[lang ? lang : 'en'].table.finalExample }}</th>
-                    <th><span v-html="langSet[lang ? lang : 'en'].table.pronounciation"></span></th>
                     <th>{{ langSet[lang ? lang : 'en'].table.other }}</th>
                 </tr>
             </thead>
@@ -22,13 +20,6 @@
                             {{ final.final }} <span v-if="cIndex < (item.members.length - 1)"
                                 class="text-muted">၊</span>
                         </span>
-                    </td>
-                    <td class="d-none d-md-block fs-6 text-muted">က + {{ item.members[0].final }} = {{ craftWord2('က', null, null,
-                        item.members[0].final).word
-                    }}
-                    </td>
-                    <td class="fs-6 text-muted">
-                        {{ `/${craftWord2('က', null, null, item.members[0].final).ipa}/` || 'NaN' }}
                     </td>
                     <td class="fs-5 text-muted">
                         <button v-if="copiedIndex == index && copiedCIndex == cIndex"

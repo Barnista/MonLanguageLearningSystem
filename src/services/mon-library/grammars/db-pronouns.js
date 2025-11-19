@@ -5,7 +5,7 @@ export default {
                 singular: {
                     firstPerson: [{
                         word: 'အဲ',
-                        ipa: 'ʔoa',
+                        ipa: 'ʔuːa',
                         th: 'อัว',
                         meaningEN: 'I',
                         meaningTH: 'ผม/ฉัน/ดิฉัน',
@@ -14,15 +14,15 @@ export default {
                     secondPerson: [
                         {
                             word: 'ညး',
-                            ipa: 'ɲɛ̀h',
-                            th: 'เญี่ยฮ',
+                            ipa: 'ɲɛh',
+                            th: 'แญฺฮ',
                             meaningEN: 'You',
                             meaningTH: 'คุณ/ท่าน',
                             gender: 'neuter'
                         },
                         {
                             word: 'နာဲ',
-                            ipa: 'na̤i',
+                            ipa: 'nàːj',
                             th: 'น่าย',
                             meaningEN: 'You',
                             meaningTH: 'คุณ/ท่าน',
@@ -30,24 +30,24 @@ export default {
                         },
                         {
                             word: 'မၞး',
-                            ipa: 'mɛ̤ˀnɛ̀h',
-                            th: 'เมียะเนี่ยฮ',
+                            ipa: 'mɛˑanɛh',
+                            th: 'แหฺม-ะแนฺฮ',
                             meaningEN: 'You',
                             meaningTH: 'คุณ/ท่าน',
                             gender: 'masculine'
                         },
                         {
                             word: 'မ',
-                            ipa: 'mɛ̀ˀ',
-                            th: 'เมี่ยะ',
+                            ipa: 'mɛˑa',
+                            th: 'แมฺ.',
                             meaningEN: 'You',
                             meaningTH: 'คุณ/ท่าน',
                             gender: 'masculine'
                         },
                         {
                             word: 'ယ',
-                            ipa: 'jɛ̀ˀ',
-                            th: 'เยี่ยะ',
+                            ipa: 'jɛˑa',
+                            th: 'แยฺ.',
                             meaningEN: 'You',
                             meaningTH: 'คุณ/ท่าน',
                             gender: 'masculine',
@@ -57,7 +57,7 @@ export default {
                     thirdPerson: [{
                         word: 'ဍေဟ်',
                         ipa: 'ɗeh',
-                        th: 'เดฮ',
+                        th: 'เด็ะฮ',
                         meaningEN: 'Him/Her',
                         meaningTH: 'เขา',
                         gender: 'neuter'
@@ -66,8 +66,8 @@ export default {
                 plural: {
                     firstPerson: [{
                         word: 'ပိုယ်',
-                        ipa: 'poi',
-                        th: 'โปย',
+                        ipa: 'pəːj',
+                        th: 'เปย',
                         meaningEN: 'We',
                         meaningTH: 'เรา',
                         gender: 'neuter'
@@ -75,16 +75,16 @@ export default {
                     secondPerson: [
                         {
                             word: 'ညးတအ်',
-                            ipa: 'ɲɛ̀h-tɒˀ',
-                            th: 'เญี่ยฮ-เต่าะ',
+                            ipa: 'ɲɛh-tɔˤ',
+                            th: 'แญฺฮ-เต็าะ',
                             meaningEN: 'You',
                             meaningTH: 'ท่านทั้งหลาย/พวกคุณ',
                             gender: 'neuter'
                         },
                         {
                             word: 'မၞးတအ်',
-                            ipa: 'mɛ̤ˀnɛ̀h-tɒˀ',
-                            th: 'เมียะเนี่ยฮ-เต่าะ',
+                            ipa: 'mɛˑanɛh-tɔˤ',
+                            th: 'แหฺม-ะแนฺฮ-เต็าะ',
                             meaningEN: 'You',
                             meaningTH: 'ท่านทั้งหลาย',
                             gender: 'masculine'
@@ -92,8 +92,8 @@ export default {
                     ],
                     thirdPerson: [{
                         word: 'ဍေဟ်တအ်',
-                        ipa: 'ɗeh-tɒˀ',
-                        th: 'เดฮ-เต่าะ',
+                        ipa: 'ɗeh-tɔˤ',
+                        th: 'เด็ะฮ-เต็าะ',
                         meaningEN: 'They',
                         meaningTH: 'พวกเขา',
                         gender: 'neuter'
@@ -104,8 +104,8 @@ export default {
                 singular: {
                     firstPerson: [{
                         word: 'အဲဍိက်',
-                        ipa: 'ʔoa-ɗɤk',
-                        th: 'อัว-เดิก',
+                        ipa: 'ʔuːa-ɗəc',
+                        th: 'อัว-เดิ็จ',
                         meaningEN: 'I',
                         meaningTH: 'ผม/กระผม/ฉัน/ดิฉัน',
                         gender: 'neuter'
@@ -113,16 +113,16 @@ export default {
                     secondPerson: [
                         {
                             word: 'ညး',
-                            ipa: 'ɲɛ̀h',
-                            th: 'เญี่ยฮ',
+                            ipa: 'ɲɛh',
+                            th: 'แญฺฮ',
                             meaningEN: 'You',
                             meaningTH: 'ท่าน/คุณ/คุณผู้หญิง',
                             gender: 'neuter'
                         },
                         {
                             word: 'နာဲဗြဴ',
-                            ipa: 'na̤i-prɛ̀a',
-                            th: 'น่าย-เปรีย',
+                            ipa: 'nàːj-prɛaː',
+                            th: 'น่าย-แปร็—า',
                             meaningEN: 'You',
                             meaningTH: 'คุณ/คุณหญิง',
                             gender: 'feminine'
@@ -131,8 +131,8 @@ export default {
                     thirdPerson: [
                         {
                             word: 'ညး',
-                            ipa: 'ɲɛ̀h',
-                            th: 'เญี่ยฮ',
+                            ipa: 'ɲɛh',
+                            th: 'แญฺฮ',
                             meaningEN: 'Him/Her',
                             meaningTH: 'ท่าน',
                             gender: 'neuter'
@@ -142,24 +142,24 @@ export default {
                 plural: {
                     firstPerson: [{
                         word: 'ပိုယ်ဍိက်တအ်',
-                        ipa: 'poi-ɗɤk-tɒˀ',
-                        th: 'โปย-เดิก-เต่าะ',
+                        ipa: 'pəːj-ɗəc-tɔˤ',
+                        th: 'เปย-เดิ็จ-เต็าะ',
                         meaningEN: 'We',
                         meaningTH: 'พวกเราทั้งหลาย',
                         gender: 'neuter'
                     }],
                     secondPerson: [{
                         word: 'ညးတအ်',
-                        ipa: 'ɲɛ̀h-tɒˀ',
-                        th: 'เญี่ยฮ-เต่าะ',
+                        ipa: 'ɲɛh-tɔˤ',
+                        th: 'แญฺฮ-เต็าะ',
                         meaningEN: 'You',
                         meaningTH: 'ท่านทั้งหลาย',
                         gender: 'neuter'
                     }],
                     thirdPerson: [{
                         word: 'ညးတအ်',
-                        ipa: 'ɲɛ̀h-tɒˀ',
-                        th: 'เญี่ยฮ-เต่าะ',
+                        ipa: 'ɲɛh-tɔˤ',
+                        th: 'แญฺฮ-เต็าะ',
                         meaningEN: 'They',
                         meaningTH: 'ท่านทั้งหลาย',
                         gender: 'neuter'
@@ -170,7 +170,7 @@ export default {
                 singular: {
                     firstPerson: [{
                         word: 'အဲ',
-                        ipa: 'ʔoa',
+                        ipa: 'ʔuːa',
                         th: 'อัว',
                         meaningEN: 'I',
                         meaningTH: 'เรา/กู',
@@ -179,31 +179,31 @@ export default {
                     secondPerson: [
                         {
                             word: 'ဗေဟ်',
-                            ipa: 'pèˀh',
-                            th: 'เป่ฮ',
+                            ipa: 'pèh',
+                            th: 'เปะฮ',
                             meaningEN: 'You',
                             meaningTH: 'แก/มึง',
                             gender: 'neuter'
                         },
                         {
                             word: 'ဗှ်ေ',
-                            ipa: 'pèˀh',
-                            th: 'เป่ฮ',
+                            ipa: 'pèh',
+                            th: 'เปะฮ',
                             meaningEN: 'You',
                             meaningTH: 'แก/มึง',
                             gender: 'neuter'
                         },
                         {
                             word: 'ၝ',
-                            ipa: 'ɓɛ̀ˀ',
-                            th: 'เบี่ยะ',
+                            ipa: 'ɓɛˑa',
+                            th: 'แบฺ.',
                             meaningEN: 'You',
                             meaningTH: 'แก/มึง',
                             gender: 'masculine'
                         },
                         {
                             word: 'ၝိုယ်',
-                            ipa: 'ɓɤiˀ',
+                            ipa: 'ɓə̀ːj',
                             th: 'เบ่ย',
                             meaningEN: 'You',
                             meaningTH: 'แก/มึง',
@@ -211,7 +211,7 @@ export default {
                         },
                         {
                             word: 'ၝိုဲ',
-                            ipa: 'ɓɤiˀ',
+                            ipa: 'ɓə̀ːj',
                             th: 'เบ่ย',
                             meaningEN: 'You',
                             meaningTH: 'แก/มึง',
@@ -219,7 +219,7 @@ export default {
                         },
                         {
                             word: 'ၝုဲ',
-                            ipa: 'ɓùiˀ',
+                            ipa: 'ɓùj',
                             th: 'บุ่ย',
                             meaningEN: 'You',
                             meaningTH: 'แก/มึง',
@@ -229,7 +229,7 @@ export default {
                     thirdPerson: [{
                         word: 'ဍေဟ်',
                         ipa: 'ɗeh',
-                        th: 'เดฮ',
+                        th: 'เด็ะฮ',
                         meaningEN: 'Him/Her',
                         meaningTH: 'เขา/มัน',
                         gender: 'neuter'
@@ -238,8 +238,8 @@ export default {
                 plural: {
                     firstPerson: [{
                         word: 'ပိုယ်',
-                        ipa: 'poi',
-                        th: 'โปย',
+                        ipa: 'pəːj',
+                        th: 'เปย',
                         meaningEN: 'We',
                         meaningTH: 'เรา',
                         gender: 'neuter'
@@ -247,32 +247,32 @@ export default {
                     secondPerson: [
                         {
                             word: 'ဗေဟ်တအ်',
-                            ipa: 'pèˀh-tɒˀ',
-                            th: 'เป่ฮ-เต่าะ',
+                            ipa: 'pèh-tɔˤ',
+                            th: 'เปะฮ-เต็าะ',
                             meaningEN: 'You',
                             meaningTH: 'พวกแก/พวกมึง',
                             gender: 'neuter'
                         },
                         {
                             word: 'ဗှ်ေတအ်',
-                            ipa: 'pèˀh-tɒˀ',
-                            th: 'เป่ฮ-เต่าะ',
+                            ipa: 'pèh-tɔˤ',
+                            th: 'เปะฮ-เต็าะ',
                             meaningEN: 'You',
                             meaningTH: 'พวกแก/พวกมึง',
                             gender: 'neuter'
                         },
                         {
                             word: 'ၝတအ်',
-                            ipa: 'ɓɛ̀ˀ-tɒˀ',
-                            th: 'เบี่ยะ-เต่าะ',
+                            ipa: 'ɓɛˑa-tɔˤ',
+                            th: 'แบฺ.-เต็าะ',
                             meaningEN: 'You',
                             meaningTH: 'พวกแก/พวกมึง',
                             gender: 'masculine'
                         },
                         {
                             word: 'ၝိုယ်တအ်',
-                            ipa: 'ɓɤiˀ-tɒˀ',
-                            th: 'เบ่ย-เต่าะ',
+                            ipa: 'ɓə̀ːj-tɔˤ',
+                            th: 'เบ่ย-เต็าะ',
                             meaningEN: 'You',
                             meaningTH: 'พวกแก/พวกมึง',
                             gender: 'feminine'
@@ -280,8 +280,8 @@ export default {
                     ],
                     thirdPerson: [{
                         word: 'ဍေဟ်တအ်',
-                        ipa: 'ɗeh-tɒˀ',
-                        th: 'เดฮ-เต่าะ',
+                        ipa: 'ɗeh-tɔˤ',
+                        th: 'เด็ะฮ-เต็าะ',
                         meaningEN: 'They',
                         meaningTH: 'พวกมัน',
                         gender: 'neuter'
@@ -296,16 +296,16 @@ export default {
                         firstPerson: [
                             {
                                 word: 'အဲဍိက်',
-                                ipa: 'ʔoa-ɗɤk',
-                                th: 'อัว-เดิก',
+                                ipa: 'ʔuːa-ɗəc',
+                                th: 'อัว-เดิ็จ',
                                 meaningEN: 'I',
                                 meaningTH: 'กระผม/ดิฉัน',
                                 gender: 'masculine'
                             },
                             {
                                 word: 'အဲဍိက်ဗြဴ',
-                                ipa: 'ʔoa-ɗɤk-prɛ̀a',
-                                th: 'อัว-เดิก-เปรีย',
+                                ipa: 'ʔuːa-ɗəc-prɛaː',
+                                th: 'อัว-เดิ็จ-แปร็—า',
                                 meaningEN: 'I',
                                 meaningTH: 'กระผม/ดิฉัน',
                                 gender: 'feminine'
@@ -314,15 +314,15 @@ export default {
                         secondPerson: [
                             {
                                 word: 'တဳလပိုန်',
-                                ipa: 'taɪ-lɛ̀ˀ-pɒn',
-                                th: 'ตอย-เลี่ยะ-ปอฺน',
+                                ipa: 'tɒːi-lɛˑa-pɒːn',
+                                th: 'ต็อฺย-แลฺ.-ปอฺน',
                                 meaningEN: 'Your Holiness',
                                 meaningTH: 'พระคุณเจ้า/พระคุณท่าน',
                                 gender: 'neuter'
                             },
                             {
                                 word: 'အစါတၠ',
-                                ipa: 'ʔaˀ-ca-taˀlaˀ',
+                                ipa: 'ʔa-caː-tala',
                                 th: 'อะ-จา-ตะละ',
                                 meaningEN: 'Your Holiness',
                                 meaningTH: 'พระคุณท่าน',
@@ -330,15 +330,15 @@ export default {
                             },
                             {
                                 word: 'ကျာ်ဇၞော်အစါ',
-                                ipa: 'kjak-cɛ̤ˀnòk-ʔaˀ-ca',
-                                th: 'กยาก-เจียะโน่ก-อะ-จา',
+                                ipa: 'kjaːc-cɛˑanòːk-ʔa-caː',
+                                th: 'กย็าจ-แจฺ-ะโนก-อะ-จา',
                                 meaningEN: 'Your Holiness',
                                 meaningTH: 'พระคุณท่าน',
                                 gender: 'neuter'
                             },
                             {
                                 word: 'တၠဂုန်အစါ',
-                                ipa: 'taˀlaˀ-kùˀn-ʔaˀ-ca',
+                                ipa: 'tala-kùn-ʔa-caː',
                                 th: 'ตะละ-กุ่น-อะ-จา',
                                 meaningEN: 'Your Holiness',
                                 meaningTH: 'ท่านเจ้าคุณ',
@@ -346,23 +346,23 @@ export default {
                             },
                             {
                                 word: 'ဂုန်ဇၞော်',
-                                ipa: 'kùˀn-cɛ̤ˀnòk',
-                                th: 'กุ่น-เจียะโน่ก',
+                                ipa: 'kùn-cɛˑanòːk',
+                                th: 'กุ่น-แจฺ-ะโนก',
                                 meaningEN: 'Your Holiness',
                                 meaningTH: 'ท่านเจ้าอาวาส',
                                 gender: 'neuter'
                             },
                             {
                                 word: 'ကျာ်ဇၞော်',
-                                ipa: 'kjak-cɛ̤ˀnòk',
-                                th: 'กยาก-เจียะโน่ก',
+                                ipa: 'kjaːc-cɛˑanòːk',
+                                th: 'กย็าจ-แจฺ-ะโนก',
                                 meaningEN: 'Your Holiness',
                                 meaningTH: 'พระอาจารย์/เจ้าอาวาส',
                                 gender: 'neuter'
                             },
                             {
                                 word: 'တၠဂုန်',
-                                ipa: 'taˀlaˀ-kùˀn',
+                                ipa: 'tala-kùn',
                                 th: 'ตะละ-กุ่น',
                                 meaningEN: 'Your Holiness',
                                 meaningTH: 'เจ้าคุณ',
@@ -370,7 +370,7 @@ export default {
                             },
                             {
                                 word: 'ကောန်နာဲ',
-                                ipa: 'kon-na̤i',
+                                ipa: 'koːn-nàːj',
                                 th: 'โกน-น่าย',
                                 meaningEN: 'Your Holiness',
                                 meaningTH: 'ท่าน',
@@ -380,7 +380,7 @@ export default {
                         thirdPerson: [
                             {
                                 word: 'အစါတၠ',
-                                ipa: 'ʔaˀ-ca-taˀlaˀ',
+                                ipa: 'ʔa-caː-tala',
                                 th: 'อะ-จา-ตะละ',
                                 meaningEN: 'His/Her Holiness',
                                 meaningTH: 'พระคุณท่าน',
@@ -388,15 +388,15 @@ export default {
                             },
                             {
                                 word: 'ကျာ်ဇၞော်အစါ',
-                                ipa: 'kjak-cɛ̤ˀnòk-ʔaˀ-ca',
-                                th: 'กยาก-เจียะโน่ก-อะ-จา',
+                                ipa: 'kjaːc-cɛˑanòːk-ʔa-caː',
+                                th: 'กย็าจ-แจฺ-ะโนก-อะ-จา',
                                 meaningEN: 'His/Her Holiness',
                                 meaningTH: 'พระคุณท่าน',
                                 gender: 'neuter'
                             },
                             {
                                 word: 'တၠဂုန်အစါ',
-                                ipa: 'taˀlaˀ-kùˀn-ʔaˀ-ca',
+                                ipa: 'tala-kùn-ʔa-caː',
                                 th: 'ตะละ-กุ่น-อะ-จา',
                                 meaningEN: 'His/Her Holiness',
                                 meaningTH: 'ท่านเจ้าคุณ',
@@ -404,23 +404,23 @@ export default {
                             },
                             {
                                 word: 'ဂုန်ဇၞော်',
-                                ipa: 'kùˀn-cɛ̤ˀnòk',
-                                th: 'กุ่น-เจียะโน่ก',
+                                ipa: 'kùn-cɛˑanòːk',
+                                th: 'กุ่น-แจฺ-ะโนก',
                                 meaningEN: 'His/Her Holiness',
                                 meaningTH: 'ท่านเจ้าอาวาส',
                                 gender: 'neuter'
                             },
                             {
                                 word: 'ကျာ်ဇၞော်',
-                                ipa: 'kjak-cɛ̤ˀnòk',
-                                th: 'กยาก-เจียะโน่ก',
+                                ipa: 'kjaːc-cɛˑanòːk',
+                                th: 'กย็าจ-แจฺ-ะโนก',
                                 meaningEN: 'His/Her Holiness',
                                 meaningTH: 'พระอาจารย์/เจ้าอาวาส',
                                 gender: 'neuter'
                             },
                             {
                                 word: 'တၠဂုန်',
-                                ipa: 'taˀlaˀ-kùˀn',
+                                ipa: 'tala-kùn',
                                 th: 'ตะละ-กุ่น',
                                 meaningEN: 'His/Her Holiness',
                                 meaningTH: 'เจ้าคุณ',
@@ -428,7 +428,7 @@ export default {
                             },
                             {
                                 word: 'ကောန်နာဲ',
-                                ipa: 'kon-na̤i',
+                                ipa: 'koːn-nàːj',
                                 th: 'โกน-น่าย',
                                 meaningEN: 'His/Her Holiness',
                                 meaningTH: 'ท่าน',
@@ -440,16 +440,16 @@ export default {
                         firstPerson: [
                             {
                                 word: 'ပိုယ်ဍိက်တအ်',
-                                ipa: 'poi-ɗɤk-tɒˀ',
-                                th: 'โปย-เดิก-เต่าะ',
+                                ipa: 'pəːj-ɗəc-tɔˤ',
+                                th: 'เปย-เดิ็จ-เต็าะ',
                                 meaningEN: 'We',
                                 meaningTH: 'เรา',
                                 gender: 'neuter'
                             },
                             {
                                 word: 'ရဲပိုယ်ဍိက်တအ်',
-                                ipa: 'ròa-poi-ɗɤk-tɒˀ',
-                                th: 'รั่ว-โปย-เดิก-เต่าะ',
+                                ipa: 'ròa-pəːj-ɗəc-tɔˤ',
+                                th: 'รั่ว-เปย-เดิ็จ-เต็าะ',
                                 meaningEN: 'We',
                                 meaningTH: 'พวกเรา',
                                 gender: 'neuter'
@@ -458,15 +458,15 @@ export default {
                         secondPerson: [
                             {
                                 word: 'တဳလပိုန်',
-                                ipa: 'taɪ-lɛ̀ˀ-pɒn',
-                                th: 'ตอย-เลี่ยะ-ปอฺน',
+                                ipa: 'tɒːi-lɛˑa-pɒːn',
+                                th: 'ต็อฺย-แลฺ.-ปอฺน',
                                 meaningEN: 'Your Holiness',
                                 meaningTH: 'พระคุณเจ้า/พระคุณท่าน',
                                 gender: 'neuter'
                             },
                             {
                                 word: 'အစါတၠ',
-                                ipa: 'ʔaˀ-ca-taˀlaˀ',
+                                ipa: 'ʔa-caː-tala',
                                 th: 'อะ-จา-ตะละ',
                                 meaningEN: 'Your Holiness',
                                 meaningTH: 'พระคุณท่าน',
@@ -474,15 +474,15 @@ export default {
                             },
                             {
                                 word: 'ကျာ်ဇၞော်အစါ',
-                                ipa: 'kjak-cɛ̤ˀnòk-ʔaˀ-ca',
-                                th: 'กยาก-เจียะโน่ก-อะ-จา',
+                                ipa: 'kjaːc-cɛˑanòːk-ʔa-caː',
+                                th: 'กย็าจ-แจฺ-ะโนก-อะ-จา',
                                 meaningEN: 'Your Holiness',
                                 meaningTH: 'พระคุณท่าน',
                                 gender: 'neuter'
                             },
                             {
                                 word: 'တၠဂုန်အစါ',
-                                ipa: 'taˀlaˀ-kùˀn-ʔaˀ-ca',
+                                ipa: 'tala-kùn-ʔa-caː',
                                 th: 'ตะละ-กุ่น-อะ-จา',
                                 meaningEN: 'Your Holiness',
                                 meaningTH: 'ท่านเจ้าคุณ',
@@ -490,23 +490,23 @@ export default {
                             },
                             {
                                 word: 'ဂုန်ဇၞော်',
-                                ipa: 'kùˀn-cɛ̤ˀnòk',
-                                th: 'กุ่น-เจียะโน่ก',
+                                ipa: 'kùn-cɛˑanòːk',
+                                th: 'กุ่น-แจฺ-ะโนก',
                                 meaningEN: 'Your Holiness',
                                 meaningTH: 'ท่านเจ้าอาวาส',
                                 gender: 'neuter'
                             },
                             {
                                 word: 'ကျာ်ဇၞော်',
-                                ipa: 'kjak-cɛ̤ˀnòk',
-                                th: 'กยาก-เจียะโน่ก',
+                                ipa: 'kjaːc-cɛˑanòːk',
+                                th: 'กย็าจ-แจฺ-ะโนก',
                                 meaningEN: 'Your Holiness',
                                 meaningTH: 'พระอาจารย์/เจ้าอาวาส',
                                 gender: 'neuter'
                             },
                             {
                                 word: 'တၠဂုန်',
-                                ipa: 'taˀlaˀ-kùˀn',
+                                ipa: 'tala-kùn',
                                 th: 'ตะละ-กุ่น',
                                 meaningEN: 'Your Holiness',
                                 meaningTH: 'เจ้าคุณ',
@@ -514,7 +514,7 @@ export default {
                             },
                             {
                                 word: 'ကောန်နာဲ',
-                                ipa: 'kon-na̤i',
+                                ipa: 'koːn-nàːj',
                                 th: 'โกน-น่าย',
                                 meaningEN: 'Your Holiness',
                                 meaningTH: 'ท่าน',
@@ -524,7 +524,7 @@ export default {
                         thirdPerson: [
                             {
                                 word: 'အစါတၠ',
-                                ipa: 'ʔaˀ-ca-taˀlaˀ',
+                                ipa: 'ʔa-caː-tala',
                                 th: 'อะ-จา-ตะละ',
                                 meaningEN: 'Their Holiness',
                                 meaningTH: 'พระคุณท่าน',
@@ -532,15 +532,15 @@ export default {
                             },
                             {
                                 word: 'ကျာ်ဇၞော်အစါ',
-                                ipa: 'kjak-cɛ̤ˀnòk-ʔaˀ-ca',
-                                th: 'กยาก-เจียะโน่ก-อะ-จา',
+                                ipa: 'kjaːc-cɛˑanòːk-ʔa-caː',
+                                th: 'กย็าจ-แจฺ-ะโนก-อะ-จา',
                                 meaningEN: 'Their Holiness',
                                 meaningTH: 'พระคุณท่าน',
                                 gender: 'neuter'
                             },
                             {
                                 word: 'တၠဂုန်အစါ',
-                                ipa: 'taˀlaˀ-kùˀn-ʔaˀ-ca',
+                                ipa: 'tala-kùn-ʔa-caː',
                                 th: 'ตะละ-กุ่น-อะ-จา',
                                 meaningEN: 'Their Holiness',
                                 meaningTH: 'ท่านเจ้าคุณ',
@@ -548,23 +548,23 @@ export default {
                             },
                             {
                                 word: 'ဂုန်ဇၞော်',
-                                ipa: 'kùˀn-cɛ̤ˀnòk',
-                                th: 'กุ่น-เจียะโน่ก',
+                                ipa: 'kùn-cɛˑanòːk',
+                                th: 'กุ่น-แจฺ-ะโนก',
                                 meaningEN: 'Their Holiness',
                                 meaningTH: 'ท่านเจ้าอาวาส',
                                 gender: 'neuter'
                             },
                             {
                                 word: 'ကျာ်ဇၞော်',
-                                ipa: 'kjak-cɛ̤ˀnòk',
-                                th: 'กยาก-เจียะโน่ก',
+                                ipa: 'kjaːc-cɛˑanòːk',
+                                th: 'กย็าจ-แจฺ-ะโนก',
                                 meaningEN: 'Their Holiness',
                                 meaningTH: 'พระอาจารย์/เจ้าอาวาส',
                                 gender: 'neuter'
                             },
                             {
                                 word: 'တၠဂုန်',
-                                ipa: 'taˀlaˀ-kùˀn',
+                                ipa: 'tala-kùn',
                                 th: 'ตะละ-กุ่น',
                                 meaningEN: 'Their Holiness',
                                 meaningTH: 'เจ้าคุณ',
@@ -572,7 +572,7 @@ export default {
                             },
                             {
                                 word: 'ကောန်နာဲ',
-                                ipa: 'kon-na̤i',
+                                ipa: 'koːn-nàːj',
                                 th: 'โกน-น่าย',
                                 meaningEN: 'Their Holiness',
                                 meaningTH: 'ท่าน',
@@ -586,15 +586,15 @@ export default {
                         firstPerson: [
                             {
                                 word: 'အာတ္တမာ',
-                                ipa: 'ʔat-taˀ-mɛ̀a',
-                                th: 'อาด-ตะ-เมีย',
+                                ipa: 'ʔaːt-ta-mɛaː',
+                                th: 'อ็าต-ตะ-แมฺ—า',
                                 meaningEN: 'I',
                                 meaningTH: 'อาตมา',
                                 gender: 'neuter'
                             },
                             {
                                 word: 'အဲ',
-                                ipa: 'ʔoa',
+                                ipa: 'ʔuːa',
                                 th: 'อัว',
                                 meaningEN: 'I',
                                 meaningTH: 'กระผม/ดิฉัน',
@@ -602,7 +602,7 @@ export default {
                             },
                             {
                                 word: 'အဲတၠဂုန်',
-                                ipa: 'ʔoa-taˀlaˀ-kùˀn',
+                                ipa: 'ʔuːa-tala-kùn',
                                 th: 'อัว-ตะละ-กุ่น',
                                 meaningEN: 'I',
                                 meaningTH: 'หลวงพี่',
@@ -612,16 +612,16 @@ export default {
                         secondPerson: [
                             {
                                 word: 'ဒါယကာ',
-                                ipa: 'tɛ̀a-jɛ̀ˀ-ka',
-                                th: 'เตีย-เยี่ยะ-กา',
+                                ipa: 'tɛaː-jɛˑa-kaː',
+                                th: 'แตฺ—า-แยฺ.-กา',
                                 meaningEN: 'You',
                                 meaningTH: 'โยม/ทายิก/ทายิกา',
                                 gender: 'neuter'
                             },
                             {
                                 word: 'ဒါယကာဗျန်',
-                                ipa: 'tɛ̀a-jɛ̀ˀ-ka-pjòn',
-                                th: 'เตีย-เยี่ยะ-กา-ปย่น',
+                                ipa: 'tɛaː-jɛˑa-kaː-pjɔ̀n',
+                                th: 'แตฺ—า-แยฺ.-กา-ปย่อน',
                                 meaningEN: 'You',
                                 meaningTH: 'โยมผู้หญิง',
                                 gender: 'feminine'
@@ -630,8 +630,8 @@ export default {
                         thirdPerson: [
                             {
                                 word: 'ဒါယကာဂမၠိုင်',
-                                ipa: 'tɛ̀a-jɛ̀ˀ-ka-kɛ̀ˀ-mɛ̤ˀlə̤ŋ',
-                                th: 'เตีย-เยี่ยะ-กา-เกี่ยะ-เมียะล่าฺง',
+                                ipa: 'tɛaː-jɛˑa-kaː-kɛˑa-mɛˑalàːŋ',
+                                th: 'แตฺ—า-แยฺ.-กา-แกฺ.-แหฺม-ะล่าฺง',
                                 meaningEN: 'He/She',
                                 meaningTH: 'โยมทั้งหลาย',
                                 gender: 'neuter'
@@ -642,15 +642,15 @@ export default {
                         firstPerson: [
                             {
                                 word: 'အာတ္တမာ',
-                                ipa: 'ʔat-taˀ-mɛ̀a',
-                                th: 'อาด-ตะ-เมีย',
+                                ipa: 'ʔaːt-ta-mɛaː',
+                                th: 'อ็าต-ตะ-แมฺ—า',
                                 meaningEN: 'We',
                                 meaningTH: 'อาตมา',
                                 gender: 'neuter'
                             },
                             {
                                 word: 'အဲ',
-                                ipa: 'ʔoa',
+                                ipa: 'ʔuːa',
                                 th: 'We',
                                 meaningEN: 'I',
                                 meaningTH: 'กระผม/ดิฉัน',
@@ -658,7 +658,7 @@ export default {
                             },
                             {
                                 word: 'အဲတၠဂုန်',
-                                ipa: 'ʔoa-taˀlaˀ-kùˀn',
+                                ipa: 'ʔuːa-tala-kùn',
                                 th: 'อัว-ตะละ-กุ่น',
                                 meaningEN: 'We',
                                 meaningTH: 'หลวงพี่',
@@ -668,16 +668,16 @@ export default {
                         secondPerson: [
                             {
                                 word: 'ဒါယကာ',
-                                ipa: 'tɛ̀a-jɛ̀ˀ-ka',
-                                th: 'เตีย-เยี่ยะ-กา',
+                                ipa: 'tɛaː-jɛˑa-kaː',
+                                th: 'แตฺ—า-แยฺ.-กา',
                                 meaningEN: 'You',
                                 meaningTH: 'โยม/ทายิก/ทายิกา',
                                 gender: 'neuter'
                             },
                             {
                                 word: 'ဒါယကာဗျန်',
-                                ipa: 'tɛ̀a-jɛ̀ˀ-ka-pjòn',
-                                th: 'เตีย-เยี่ยะ-กา-ปย่น',
+                                ipa: 'tɛaː-jɛˑa-kaː-pjɔ̀n',
+                                th: 'แตฺ—า-แยฺ.-กา-ปย่อน',
                                 meaningEN: 'You',
                                 meaningTH: 'โยมผู้หญิง',
                                 gender: 'feminine'
@@ -686,8 +686,8 @@ export default {
                         thirdPerson: [
                             {
                                 word: 'ဒါယကာဂမၠိုင်',
-                                ipa: 'tɛ̀a-jɛ̀ˀ-ka-kɛ̀ˀ-mɛ̤ˀlə̤ŋ',
-                                th: 'เตีย-เยี่ยะ-กา-เกี่ยะ-เมียะล่าฺง',
+                                ipa: 'tɛaː-jɛˑa-kaː-kɛˑa-mɛˑalàːŋ',
+                                th: 'แตฺ—า-แยฺ.-กา-แกฺ.-แหฺม-ะล่าฺง',
                                 meaningEN: 'They',
                                 meaningTH: 'โยมทั้งหลาย',
                                 gender: 'neuter'
@@ -702,8 +702,8 @@ export default {
                         firstPerson: [
                             {
                                 word: 'အဲဍိက်',
-                                ipa: 'ʔoa-ɗɤk',
-                                th: 'อัว-เดิก',
+                                ipa: 'ʔuːa-ɗəc',
+                                th: 'อัว-เดิ็จ',
                                 meaningEN: 'I',
                                 meaningTH: 'กระผม/ดิฉัน',
                                 gender: 'neuter'
@@ -712,7 +712,7 @@ export default {
                         secondPerson: [
                             {
                                 word: 'အစါတၠ',
-                                ipa: 'ʔaˀ-ca-taˀlaˀ',
+                                ipa: 'ʔa-caː-tala',
                                 th: 'อะ-จา-ตะละ',
                                 meaningEN: 'You',
                                 meaningTH: 'พระคุณเจ้า',
@@ -720,16 +720,16 @@ export default {
                             },
                             {
                                 word: 'ကျာ်ဇၞော်',
-                                ipa: 'kjak-cɛ̤ˀnòk',
-                                th: 'กยาก-เจียะโน่ก',
+                                ipa: 'kjaːc-cɛˑanòːk',
+                                th: 'กย็าจ-แจฺ-ะโนก',
                                 meaningEN: 'You',
                                 meaningTH: 'พระอาจารย์',
                                 gender: 'neuter'
                             },
                             {
                                 word: 'ကျာ်ဇၞော်အစါ',
-                                ipa: 'kjak-cɛ̤ˀnòk-ʔaˀ-ca',
-                                th: 'กยาก-เจียะโน่ก-อะ-จา',
+                                ipa: 'kjaːc-cɛˑanòːk-ʔa-caː',
+                                th: 'กย็าจ-แจฺ-ะโนก-อะ-จา',
                                 meaningEN: 'You',
                                 meaningTH: 'พระอาจารย์',
                                 gender: 'neuter'
@@ -738,7 +738,7 @@ export default {
                         thirdPerson: [
                             {
                                 word: 'အစါတၠ',
-                                ipa: 'ʔaˀ-ca-taˀlaˀ',
+                                ipa: 'ʔa-caː-tala',
                                 th: 'อะ-จา-ตะละ',
                                 meaningEN: 'He/She',
                                 meaningTH: 'พระคุณเจ้า',
@@ -746,16 +746,16 @@ export default {
                             },
                             {
                                 word: 'ကျာ်ဇၞော်',
-                                ipa: 'kjak-cɛ̤ˀnòk',
-                                th: 'กยาก-เจียะโน่ก',
+                                ipa: 'kjaːc-cɛˑanòːk',
+                                th: 'กย็าจ-แจฺ-ะโนก',
                                 meaningEN: 'He/She',
                                 meaningTH: 'พระอาจารย์',
                                 gender: 'neuter'
                             },
                             {
                                 word: 'ကျာ်ဇၞော်အစါ',
-                                ipa: 'kjak-cɛ̤ˀnòk-ʔaˀ-ca',
-                                th: 'กยาก-เจียะโน่ก-อะ-จา',
+                                ipa: 'kjaːc-cɛˑanòːk-ʔa-caː',
+                                th: 'กย็าจ-แจฺ-ะโนก-อะ-จา',
                                 meaningEN: 'He/She',
                                 meaningTH: 'พระอาจารย์',
                                 gender: 'neuter'
@@ -766,16 +766,16 @@ export default {
                         firstPerson: [
                             {
                                 word: 'ပိုယ်ဍိက်တအ်',
-                                ipa: 'poi-ɗɤk-tɒˀ',
-                                th: 'โปย-เดิก-เต่าะ',
+                                ipa: 'pəːj-ɗəc-tɔˤ',
+                                th: 'เปย-เดิ็จ-เต็าะ',
                                 meaningEN: 'We',
                                 meaningTH: 'เรา',
                                 gender: 'neuter'
                             },
                             {
                                 word: 'ရဲပိုယ်ဍိက်တအ်',
-                                ipa: 'ròa-poi-ɗɤk-tɒˀ',
-                                th: 'รั่ว-โปย-เดิก-เต่าะ',
+                                ipa: 'ròa-pəːj-ɗəc-tɔˤ',
+                                th: 'รั่ว-เปย-เดิ็จ-เต็าะ',
                                 meaningEN: 'We',
                                 meaningTH: 'พวกเรา',
                                 gender: 'neuter'
@@ -784,16 +784,16 @@ export default {
                         secondPerson: [
                             {
                                 word: 'အစါတၠညးဂမၠိုင်',
-                                ipa: 'ʔaˀ-ca-taˀlaˀ-ɲɛ̀h-kɛ̀ˀ-mɛ̤ˀlə̤ŋ',
-                                th: 'อะ-จา-ตะละ-เญี่ยฮ-เกี่ยะ-เมียะล่าฺง',
+                                ipa: 'ʔa-caː-tala-ɲɛh-kɛˑa-mɛˑalàːŋ',
+                                th: 'อะ-จา-ตะละ-แญฺฮ-แกฺ.-แหฺม-ะล่าฺง',
                                 meaningEN: 'Your Highness',
                                 meaningTH: 'พระคุณเจ้าทั้งหลาย',
                                 gender: 'neuter'
                             },
                             {
                                 word: 'ကျာ်ဇၞော်အစါညးဂမၠိုင်',
-                                ipa: 'kjak-cɛ̤ˀnòk-ʔaˀ-caɲ-ɲɛ̀h-kɛ̀ˀ-mɛ̤ˀlə̤ŋ',
-                                th: 'กยาก-เจียะโน่ก-อะ-จาญ-เญี่ยฮ-เกี่ยะ-เมียะล่าฺง',
+                                ipa: 'kjaːc-cɛˑanòːk-ʔa-caːɲ-ɲɛh-kɛˑa-mɛˑalàːŋ',
+                                th: 'กย็าจ-แจฺ-ะโนก-อะ-จาญ-แญฺฮ-แกฺ.-แหฺม-ะล่าฺง',
                                 meaningEN: 'Your Highness',
                                 meaningTH: 'พระอาจารย์ทั้งหลาย',
                                 gender: 'neuter'
@@ -802,16 +802,16 @@ export default {
                         thirdPerson: [
                             {
                                 word: 'အစါတၠညးဂမၠိုင်',
-                                ipa: 'ʔaˀ-ca-taˀlaˀ-ɲɛ̀h-kɛ̀ˀ-mɛ̤ˀlə̤ŋ',
-                                th: 'อะ-จา-ตะละ-เญี่ยฮ-เกี่ยะ-เมียะล่าฺง',
+                                ipa: 'ʔa-caː-tala-ɲɛh-kɛˑa-mɛˑalàːŋ',
+                                th: 'อะ-จา-ตะละ-แญฺฮ-แกฺ.-แหฺม-ะล่าฺง',
                                 meaningEN: 'Their Highness',
                                 meaningTH: 'พระคุณเจ้าทั้งหลาย',
                                 gender: 'neuter'
                             },
                             {
                                 word: 'ကျာ်ဇၞော်အစါညးဂမၠိုင်',
-                                ipa: 'kjak-cɛ̤ˀnòk-ʔaˀ-caɲ-ɲɛ̀h-kɛ̀ˀ-mɛ̤ˀlə̤ŋ',
-                                th: 'กยาก-เจียะโน่ก-อะ-จาญ-เญี่ยฮ-เกี่ยะ-เมียะล่าฺง',
+                                ipa: 'kjaːc-cɛˑanòːk-ʔa-caːɲ-ɲɛh-kɛˑa-mɛˑalàːŋ',
+                                th: 'กย็าจ-แจฺ-ะโนก-อะ-จาญ-แญฺฮ-แกฺ.-แหฺม-ะล่าฺง',
                                 meaningEN: 'Their Highness',
                                 meaningTH: 'พระอาจารย์ทั้งหลาย',
                                 gender: 'neuter'
@@ -824,15 +824,15 @@ export default {
                         firstPerson: [
                             {
                                 word: 'အာတ္တမာ',
-                                ipa: 'ʔat-taˀ-mɛ̀a',
-                                th: 'อาด-ตะ-เมีย',
+                                ipa: 'ʔaːt-ta-mɛaː',
+                                th: 'อ็าต-ตะ-แมฺ—า',
                                 meaningEN: 'I',
                                 meaningTH: 'อาตมา',
                                 gender: 'neuter'
                             },
                             {
                                 word: 'အဲ',
-                                ipa: 'ʔoa',
+                                ipa: 'ʔuːa',
                                 th: 'อัว',
                                 meaningEN: 'I',
                                 meaningTH: 'ฉัน',
@@ -840,7 +840,7 @@ export default {
                             },
                             {
                                 word: 'အဲတၠဂုန်',
-                                ipa: 'ʔoa-taˀlaˀ-kùˀn',
+                                ipa: 'ʔuːa-tala-kùn',
                                 th: 'อัว-ตะละ-กุ่น',
                                 meaningEN: 'I',
                                 meaningTH: 'หลวงพี่',
@@ -850,7 +850,7 @@ export default {
                         secondPerson: [
                             {
                                 word: 'ကောန်နာဲ',
-                                ipa: 'kon-na̤i',
+                                ipa: 'koːn-nàːj',
                                 th: 'โกน-น่าย',
                                 meaningEN: 'You',
                                 meaningTH: 'ท่าน',
@@ -858,7 +858,7 @@ export default {
                             },
                             {
                                 word: 'တၠဂုန်',
-                                ipa: 'taˀlaˀ-kùˀn',
+                                ipa: 'tala-kùn',
                                 th: 'ตะละ-กุ่น',
                                 meaningEN: 'You',
                                 meaningTH: 'หลวงพี่',
@@ -868,8 +868,8 @@ export default {
                         thirdPerson: [
                             {
                                 word: 'တဳလပိုန်သင်',
-                                ipa: 'taɪ-lɛ̀ˀ-pɒn-saˀŋ',
-                                th: 'ตอย-เลี่ยะ-ปอฺน-ซัง',
+                                ipa: 'tɒːi-lɛˑa-pɒːn-saˀŋ',
+                                th: 'ต็อฺย-แลฺ.-ปอฺน-ซัง',
                                 meaningEN: 'They',
                                 meaningTH: 'พระสงฆ์',
                                 gender: 'neuter'
@@ -880,15 +880,15 @@ export default {
                         firstPerson: [
                             {
                                 word: 'အာတ္တမာ',
-                                ipa: 'ʔat-taˀ-mɛ̀a',
-                                th: 'อาด-ตะ-เมีย',
+                                ipa: 'ʔaːt-ta-mɛaː',
+                                th: 'อ็าต-ตะ-แมฺ—า',
                                 meaningEN: 'We',
                                 meaningTH: 'อาตมา',
                                 gender: 'neuter'
                             },
                             {
                                 word: 'အဲ',
-                                ipa: 'ʔoa',
+                                ipa: 'ʔuːa',
                                 th: 'อัว',
                                 meaningEN: 'We',
                                 meaningTH: 'ฉัน',
@@ -896,7 +896,7 @@ export default {
                             },
                             {
                                 word: 'အဲတၠဂုန်',
-                                ipa: 'ʔoa-taˀlaˀ-kùˀn',
+                                ipa: 'ʔuːa-tala-kùn',
                                 th: 'อัว-ตะละ-กุ่น',
                                 meaningEN: 'We',
                                 meaningTH: 'หลวงพี่',
@@ -906,8 +906,8 @@ export default {
                         secondPerson: [
                             {
                                 word: 'ကောန်နာဲတအ်',
-                                ipa: 'kon-na̤i-tɒˀ',
-                                th: 'โกน-น่าย-เต่าะ',
+                                ipa: 'koːn-nàːj-tɔˤ',
+                                th: 'โกน-น่าย-เต็าะ',
                                 meaningEN: 'You',
                                 meaningTH: 'ท่านทั้งหลาย',
                                 gender: 'neuter'
@@ -916,8 +916,8 @@ export default {
                         thirdPerson: [
                             {
                                 word: 'တဳလပိုန်သင်ဂမၠိုင်',
-                                ipa: 'ti-lɛ̀ˀ-pɒn-saˀŋ-kɛ̀ˀ-mɛ̤ˀlə̤ŋ',
-                                th: 'ตอย-เลี่ยะ-ปอฺน-ซัง-เกี่ยะ-เมียะล่าฺง',
+                                ipa: 'ti-lɛ̀ˀ-pɒn-saˀŋ-kɛˑa-mɛˑalàːŋ',
+                                th: 'ต็อฺย-แลฺ.-ปอฺน-ซัง-แกฺ.-แหฺม-ะล่าฺง',
                                 meaningEN: 'They',
                                 meaningTH: 'พระสงฆ์ทั้งหลาย',
                                 gender: 'neuter'
@@ -933,16 +933,16 @@ export default {
                     firstPerson: [
                         {
                             word: 'အဲဍိက်',
-                            ipa: 'ʔoa-ɗɤk',
-                            th: 'อัว-เดิก',
+                            ipa: 'ʔuːa-ɗəc',
+                            th: 'อัว-เดิ็จ',
                             meaningEN: 'I',
                             meaningTH: 'ข้าพเจ้า',
                             gender: 'neuter'
                         },
                         {
                             word: 'အဲဍိက်ဂတာဇိုင်ကျာ်',
-                            ipa: 'ʔoa-ɗɤk-kɛ̀ˀ-ta-cə̤ŋ-kjak',
-                            th: 'อัว-เดิก-เกี่ยะ-ตา-จ่าฺง-กยาก',
+                            ipa: 'ʔuːa-ɗəc-kɛˑa-taː-càːŋ-kjaːc',
+                            th: 'อัว-เดิ็จ-เกี่ยะ-ตา-จ่าฺง-กย็าจ',
                             meaningEN: 'I',
                             meaningTH: 'ใต้ฝ่าละอองธุลีพระบาท',
                             gender: 'neuter'
@@ -951,24 +951,24 @@ export default {
                     secondPerson: [
                         {
                             word: 'တၠညး',
-                            ipa: 'taˀlaˀ-ɲɛ̀h',
-                            th: 'ตะละ-เญี่ยฮ',
+                            ipa: 'tala-ɲɛh',
+                            th: 'ตะละ-แญฺฮ',
                             meaningEN: 'Your Royal Higness',
                             meaningTH: 'พระองค์',
                             gender: 'neuter'
                         },
                         {
                             word: 'မရာဇ်',
-                            ipa: 'mɛ̀ˀ-ra̤c',
-                            th: 'เมี่ยะ-ร่าจ',
+                            ipa: 'mɛˑa-ràːt',
+                            th: 'แมฺ.-ราต',
                             meaningEN: 'Your Majesty',
                             meaningTH: 'พระองค์',
                             gender: 'neuter'
                         },
                         {
                             word: 'တၠညးစိင်ဗ္တာင်',
-                            ipa: 'taˀlah-cɤŋ-pɛ̀ˀ-taŋ',
-                            th: 'ตะละฮ-เจิง-เปี่ยะ-ตาง',
+                            ipa: 'talah-cəɲ-pɛˑa-taːɲ',
+                            th: 'ตะละฮ-เจิญ-แปฺ.-ตาญ',
                             meaningEN: 'Your Majesty',
                             meaningTH: 'พระเจ้าช้างเผือก',
                             gender: 'neuter'
@@ -977,32 +977,32 @@ export default {
                     thirdPerson: [
                         {
                             word: 'တၠညး',
-                            ipa: 'taˀlaˀ-ɲɛ̀h',
-                            th: 'ตะละ-เญี่ยฮ',
+                            ipa: 'tala-ɲɛh',
+                            th: 'ตะละ-แญฺฮ',
                             meaningEN: 'His/Her Royal Highness',
                             meaningTH: 'พระองค์',
                             gender: 'neuter'
                         },
                         {
                             word: 'တၠတိ',
-                            ipa: 'taˀlaˀ-tɔɪ',
-                            th: 'ตะละ-ตอฺย',
+                            ipa: 'tala-tɒi',
+                            th: 'ตะละ-ต็อฺย',
                             meaningEN: 'His/Her Majesty',
                             meaningTH: 'พระเจ้าแผ่นดิน',
                             gender: 'neuter'
                         },
                         {
                             word: 'မရာဇ်',
-                            ipa: 'mɛ̀ˀ-ra̤c',
-                            th: 'เมี่ยะ-ร่าจ',
+                            ipa: 'mɛˑa-ràːt',
+                            th: 'แมฺ.-ราต',
                             meaningEN: 'His/Her Majesty',
                             meaningTH: 'พระเจ้าแผ่นดิน',
                             gender: 'neuter'
                         },
                         {
                             word: 'တၠညးက္ဍိုင်ဗ္တာင်',
-                            ipa: 'taˀlaˀ-ɲɛ̀h-kaˀɗɒŋ-pɛ̀ˀ-taŋ',
-                            th: 'ตะละ-เญี่ยฮ-กะดาฺง-เปี่ยะ-ตาง',
+                            ipa: 'tala-ɲɛh-kaɗɑːŋ-pɛˑa-taːɲ',
+                            th: 'ตะละ-แญฺฮ-กะดาฺง-แปฺ.-ตาญ',
                             meaningEN: 'His/Her Majesty',
                             meaningTH: 'พระเจ้าร่มฉัตรขาว',
                             gender: 'neuter'
@@ -1013,16 +1013,16 @@ export default {
                     firstPerson: [
                         {
                             word: 'အဲဍိက်',
-                            ipa: 'ʔoa-ɗɤk',
-                            th: 'อัว-เดิก',
+                            ipa: 'ʔuːa-ɗəc',
+                            th: 'อัว-เดิ็จ',
                             meaningEN: 'We',
                             meaningTH: 'ข้าพเจ้า',
                             gender: 'neuter'
                         },
                         {
                             word: 'အဲဍိက်ဂတာဇိုင်ကျာ်',
-                            ipa: 'ʔoa-ɗɤk-kɛ̀ˀ-ta-cə̤ŋ-kjak',
-                            th: 'อัว-เดิก-เกี่ยะ-ตา-จ่าฺง-กยาก',
+                            ipa: 'ʔuːa-ɗəc-kɛˑa-taː-càːŋ-kjaːc',
+                            th: 'อัว-เดิ็จ-แกฺ.-ตา-จ่าฺง-กย็าจ',
                             meaningEN: 'We',
                             meaningTH: 'ใต้ฝ่าละอองธุลีพระบาท',
                             gender: 'neuter'
@@ -1031,24 +1031,24 @@ export default {
                     secondPerson: [
                         {
                             word: 'တၠညး',
-                            ipa: 'taˀlaˀ-ɲɛ̀h',
-                            th: 'ตะละ-เญี่ยฮ',
+                            ipa: 'tala-ɲɛh',
+                            th: 'ตะละ-แญฺฮ',
                             meaningEN: 'Your Royal Higness',
                             meaningTH: 'พระองค์',
                             gender: 'neuter'
                         },
                         {
                             word: 'မရာဇ်',
-                            ipa: 'mɛ̀ˀ-ra̤c',
-                            th: 'เมี่ยะ-ร่าจ',
+                            ipa: 'mɛˑa-ràːt',
+                            th: 'แมฺ.-ราต',
                             meaningEN: 'Your Majesty',
                             meaningTH: 'พระองค์',
                             gender: 'neuter'
                         },
                         {
                             word: 'တၠညးစိင်ဗ္တာင်',
-                            ipa: 'taˀlah-cɤŋ-pɛ̀ˀ-taŋ',
-                            th: 'ตะละฮ-เจิง-เปี่ยะ-ตาง',
+                            ipa: 'talah-cəɲ-pɛˑa-taːɲ',
+                            th: 'ตะละฮ-เจิญ-แปฺ.-ตาญ',
                             meaningEN: 'Your Majesty',
                             meaningTH: 'พระเจ้าช้างเผือก',
                             gender: 'neuter'
@@ -1057,32 +1057,32 @@ export default {
                     thirdPerson: [
                         {
                             word: 'တၠညး',
-                            ipa: 'taˀlaˀ-ɲɛ̀h',
-                            th: 'ตะละ-เญี่ยฮ',
+                            ipa: 'tala-ɲɛh',
+                            th: 'ตะละ-แญฺฮ',
                             meaningEN: 'Their Royal Highness',
                             meaningTH: 'พระองค์',
                             gender: 'neuter'
                         },
                         {
                             word: 'တၠတိ',
-                            ipa: 'taˀlaˀ-tɔɪ',
-                            th: 'ตะละ-ตอฺย',
+                            ipa: 'tala-tɒi',
+                            th: 'ตะละ-ต็อฺย',
                             meaningEN: 'Their Majesty',
                             meaningTH: 'พระเจ้าแผ่นดิน',
                             gender: 'neuter'
                         },
                         {
                             word: 'မရာဇ်',
-                            ipa: 'mɛ̀ˀ-ra̤c',
-                            th: 'เมี่ยะ-ร่าจ',
+                            ipa: 'mɛˑa-ràːt',
+                            th: 'แมฺ.-ราต',
                             meaningEN: 'Their Majesty',
                             meaningTH: 'พระเจ้าแผ่นดิน',
                             gender: 'neuter'
                         },
                         {
                             word: 'တၠညးက္ဍိုင်ဗ္တာင်',
-                            ipa: 'taˀlaˀ-ɲɛ̀h-kaˀɗɒŋ-pɛ̀ˀ-taŋ',
-                            th: 'ตะละ-เญี่ยฮ-กะดาฺง-เปี่ยะ-ตาง',
+                            ipa: 'tala-ɲɛh-kaɗɑːŋ-pɛˑa-taːɲ',
+                            th: 'ตะละ-แญฺฮ-กะดาฺง-แปฺ.-ตาญ',
                             meaningEN: 'Their Majesty',
                             meaningTH: 'พระเจ้าร่มฉัตรขาว',
                             gender: 'neuter'
@@ -1095,7 +1095,7 @@ export default {
                     firstPerson: [
                         {
                             word: 'အဲ',
-                            ipa: 'ʔoa',
+                            ipa: 'ʔuːa',
                             th: 'อัว',
                             meaningEN: 'I',
                             meaningTH: 'ข้าพเจ้า/ฉัน',
@@ -1105,8 +1105,8 @@ export default {
                     secondPerson: [
                         {
                             word: 'ညး',
-                            ipa: 'ɲɛ̀h',
-                            th: 'เญี่ยฮ',
+                            ipa: 'ɲɛh',
+                            th: 'แญฺฮ',
                             meaningEN: 'You',
                             meaningTH: 'ท่าน/คุณ',
                             gender: 'neuter'
@@ -1115,8 +1115,8 @@ export default {
                     thirdPerson: [
                         {
                             word: 'ညးတအ်',
-                            ipa: 'ɲɛ̀h-tɒˀ',
-                            th: 'เญี่ยฮ-เต่าะ',
+                            ipa: 'ɲɛh-tɔˤ',
+                            th: 'แญฺฮ-เต็าะ',
                             meaningEN: 'He/She',
                             meaningTH: 'ท่านทั้งหลาย',
                             gender: 'neuter'
@@ -1127,8 +1127,8 @@ export default {
                     firstPerson: [
                         {
                             word: 'ပိုယ်',
-                            ipa: 'poi',
-                            th: 'โปย',
+                            ipa: 'pəːj',
+                            th: 'เปย',
                             meaningEN: 'We',
                             meaningTH: 'เรา',
                             gender: 'neuter'
@@ -1137,8 +1137,8 @@ export default {
                     secondPerson: [
                         {
                             word: 'ညးတအ်',
-                            ipa: 'ɲɛ̀h-tɒˀ',
-                            th: 'เญี่ยฮ-เต่าะ',
+                            ipa: 'ɲɛh-tɔˤ',
+                            th: 'แญฺฮ-เต็าะ',
                             meaningEN: 'He/She',
                             meaningTH: 'ท่านทั้งหลาย',
                             gender: 'neuter'
@@ -1147,8 +1147,8 @@ export default {
                     thirdPerson: [
                         {
                             word: 'ညးတအ်',
-                            ipa: 'ɲɛ̀h-tɒˀ',
-                            th: 'เญี่ยฮ-เต่าะ',
+                            ipa: 'ɲɛh-tɔˤ',
+                            th: 'แญฺฮ-เต็าะ',
                             meaningEN: 'He/She',
                             meaningTH: 'ท่านทั้งหลาย',
                             gender: 'neuter'
@@ -1163,15 +1163,15 @@ export default {
                     firstPerson: [
                         {
                             word: 'ဒြပ်အဲ',
-                            ipa: 'tròp-ʔoa',
-                            th: 'ตร่บ-อัว',
+                            ipa: 'trɔ̀p-ʔuːa',
+                            th: 'ตรอป-อัว',
                             meaningEN: 'My/Mine',
                             meaningTH: 'ของฉัน/ผม/ดิฉัน',
                             gender: 'neuter'
                         },
                         {
                             word: 'ကၟက်အဲ',
-                            ipa: 'kaˀmaˀk-ʔoa',
+                            ipa: 'kamak-ʔuːa',
                             th: 'กะมัก-อัว',
                             meaningEN: 'My/Mine',
                             meaningTH: 'ของฉัน/ผม/ดิฉัน',
@@ -1181,16 +1181,16 @@ export default {
                     secondPerson: [
                         {
                             word: 'ဒြပ်ညး',
-                            ipa: 'tròp-ɲɛ̀h',
-                            th: 'ตร่บ-เญี่ยฮ',
+                            ipa: 'trɔ̀p-ɲɛh',
+                            th: 'ตรอป-แญฺฮ',
                             meaningEN: 'Your/Yours',
                             meaningTH: 'ของคุณ/ท่าน',
                             gender: 'neuter'
                         },
                         {
                             word: 'ကၟက်ညး',
-                            ipa: 'kaˀmaˀk-ɲɛ̀h',
-                            th: 'กะมัก-เญี่ยฮ',
+                            ipa: 'kamak-ɲɛh',
+                            th: 'กะมัก-แญฺฮ',
                             meaningEN: 'Your/Yours',
                             meaningTH: 'ของคุณ/ท่าน',
                             gender: 'neuter'
@@ -1199,16 +1199,16 @@ export default {
                     thirdPerson: [
                         {
                             word: 'ဒြပ်ဍေဟ်',
-                            ipa: 'tròp-ɗeh',
-                            th: 'ตร่บ-เดฮ',
+                            ipa: 'trɔ̀p-ɗeh',
+                            th: 'ตรอป-เด็ะฮ',
                             meaningEN: 'His/Her/Hers',
                             meaningTH: 'ของเขา',
                             gender: 'neuter'
                         },
                         {
                             word: 'ကၟက်ဍေဟ်',
-                            ipa: 'kaˀmaˀk-ɗeh',
-                            th: 'กะมัก-เดฮ',
+                            ipa: 'kamak-ɗeh',
+                            th: 'กะมัก-เด็ะฮ',
                             meaningEN: 'His/Her/Hers',
                             meaningTH: 'ของเขา',
                             gender: 'neuter'
@@ -1219,16 +1219,16 @@ export default {
                     firstPerson: [
                         {
                             word: 'ဒြပ်ပိုယ်',
-                            ipa: 'tròp-poi',
-                            th: 'ตร่บ-โปย',
+                            ipa: 'trɔ̀p-pəːj',
+                            th: 'ตรอป-เปย',
                             meaningEN: 'Our/Ours',
                             meaningTH: 'ของเรา',
                             gender: 'neuter'
                         },
                         {
                             word: 'ကၟက်ပိုယ်',
-                            ipa: 'kaˀmaˀk-poi',
-                            th: 'กะมัก-โปย',
+                            ipa: 'kamak-pəːj',
+                            th: 'กะมัก-เปย',
                             meaningEN: 'Our/Ours',
                             meaningTH: 'ของเรา',
                             gender: 'neuter'
@@ -1237,16 +1237,16 @@ export default {
                     secondPerson: [
                         {
                             word: 'ဒြပ်ညးတအ်',
-                            ipa: 'tròp-ɲɛ̀h-tɒˀ',
-                            th: 'ตร่บ-เญี่ยฮ-เต่าะ',
+                            ipa: 'trɔ̀p-ɲɛh-tɔˤ',
+                            th: 'ตรอป-แญฺฮ-เต็าะ',
                             meaningEN: 'Your/Yours',
                             meaningTH: 'ของพวกคุณ/ท่าน',
                             gender: 'neuter'
                         },
                         {
                             word: 'ကၟက်ညးတအ်',
-                            ipa: 'kaˀmaˀk-ɲɛ̀h-tɒˀ',
-                            th: 'กะมัก-เญี่ยฮ-เต่าะ',
+                            ipa: 'kamak-ɲɛh-tɔˤ',
+                            th: 'กะมัก-แญฺฮ-เต็าะ',
                             meaningEN: 'Your/Yours',
                             meaningTH: 'ของพวกคุณ/ท่าน',
                             gender: 'neuter'
@@ -1255,16 +1255,16 @@ export default {
                     thirdPerson: [
                         {
                             word: 'ဒြပ်ဍေဟ်တအ်',
-                            ipa: 'tròp-ɗeh-tɒˀ',
-                            th: 'ตร่บ-เดฮ-เต่าะ',
+                            ipa: 'trɔ̀p-ɗeh-tɔˤ',
+                            th: 'ตรอป-เด็ะฮ-เต็าะ',
                             meaningEN: 'Their/Theirs',
                             meaningTH: 'ของพวกเขา',
                             gender: 'neuter'
                         },
                         {
                             word: 'ကၟက်ဍေဟ်တအ်',
-                            ipa: 'kaˀmaˀk-ɗeh-tɒˀ',
-                            th: 'กะมัก-เดฮ-เต่าะ',
+                            ipa: 'kamak-ɗeh-tɔˤ',
+                            th: 'กะมัก-เด็ะฮ-เต็าะ',
                             meaningEN: 'Their/Theirs',
                             meaningTH: 'ของพวกเขา',
                             gender: 'neuter'
@@ -1277,63 +1277,63 @@ export default {
             neutral: [
                 {
                     word: 'ညးဂှ်',
-                    ipa: 'ɲɛ̀h-kòh',
-                    th: 'เญี่ยฮ-โก่ฮ',
+                    ipa: 'ɲɛh-kɔ̀h',
+                    th: 'แญฺฮ-เกาะฮ',
                     meaningEN: 'Who?',
                     meaningTH: 'ใคร',
                     gender: 'neuter'
                 },
                 {
                     word: 'မူဂှ်',
-                    ipa: 'mù-kòh',
-                    th: 'มู่-โก่ฮ',
+                    ipa: 'mù-kɔ̀h',
+                    th: 'มู่-เกาะฮ',
                     meaningEN: 'What?',
                     meaningTH: 'อะไร',
                     gender: 'neuter'
                 },
                 {
                     word: 'သာ်လဵု',
-                    ipa: 'sak-lɤˀw',
-                    th: 'ซาก-เลิ่ว',
+                    ipa: 'saːc-lə̀ː',
+                    th: 'ซ็าจ-เล่อ',
                     meaningEN: 'How?',
                     meaningTH: 'อย่างไร',
                     gender: 'neuter'
                 },
                 {
                     word: 'ဒြပ်ညးဂှ်',
-                    ipa: 'tròp-ɲɛ̀h-kòh',
-                    th: 'ตร่บ-เญี่ยฮ-โก่ฮ',
+                    ipa: 'trɔ̀p-ɲɛh-kɔ̀h',
+                    th: 'ตรอป-แญฺฮ-เกาะฮ',
                     meaningEN: 'Whose?',
                     meaningTH: 'ของใคร',
                     gender: 'neuter'
                 },
                 {
                     word: 'ဒၞါဲလဵု',
-                    ipa: 'tɛ̤ˀna̤i-lɤˀw',
-                    th: 'เตี่ยะน่าย-เลิ่ว',
+                    ipa: 'tɛˑanàːj-lə̀ː',
+                    th: 'แตฺ-ะน่าย-เล่อ',
                     meaningEN: 'Where?',
                     meaningTH: 'ที่ไหน',
                     gender: 'neuter'
                 },
                 {
                     word: 'ဣလဵု',
-                    ipa: 'ʔɔeˀ-lɤˀw',
-                    th: 'อิ-เลิ่ว',
+                    ipa: 'ʔì-lə̀ː',
+                    th: 'อิ-เล่อ',
                     meaningEN: 'Which?',
                     meaningTH: 'อันไหน',
                     gender: 'neuter'
                 },
                 {
                     word: 'ဆဝ်လအ်',
-                    ipa: 'cʰɒw-lòˀ',
-                    th: 'ชอว-โล่ะ',
+                    ipa: 'cʰɔː-lɔ̀ˤ',
+                    th: 'ชอ-เลาะ',
                     meaningEN: 'When?',
                     meaningTH: 'เมื่อไหร่',
                     gender: 'neuter'
                 },
                 {
                     word: 'မူပ',
-                    ipa: 'mù-paˀ',
+                    ipa: 'mùː-pa',
                     th: 'มู่-ปะ',
                     meaningEN: 'Why?/How so?',
                     meaningTH: 'ทำไม',
@@ -1341,16 +1341,16 @@ export default {
                 },
                 {
                     word: 'ပသာ်',
-                    ipa: 'paˀ-sak',
-                    th: 'ปะ-ซาก',
+                    ipa: 'pa-saːc',
+                    th: 'ปะ-ซ็าจ',
                     meaningEN: 'Why?/How so?',
                     meaningTH: 'ทำไม',
                     gender: 'neuter'
                 },
                 {
                     word: 'ဗီုလဵု',
-                    ipa: 'pɤˀm-lɤˀw',
-                    th: 'เปิ่ม-เลิ่ว',
+                    ipa: 'pə̀ːm-lə̀ː',
+                    th: 'เปิ่ม-เล่อ',
                     meaningEN: 'Which one?',
                     meaningTH: 'แบบไหน/อย่างไหน',
                     gender: 'neuter'
@@ -1361,32 +1361,32 @@ export default {
             neutral: [
                 {
                     word: 'ဣဂှ်',
-                    ipa: 'ʔɔeˀ-kòh',
-                    th: 'อิ-โก่ฮ',
+                    ipa: 'ʔì-kɔ̀h',
+                    th: 'อิ-เกาะฮ',
                     meaningEN: 'That',
                     meaningTH: 'นั่น',
                     gender: 'neuter'
                 },
                 {
                     word: 'ဣဂှ်',
-                    ipa: 'ʔɔeˀ-kòh',
-                    th: 'อิ-โก่ฮ',
+                    ipa: 'ʔì-kɔ̀h',
+                    th: 'อิ-เกาะฮ',
                     meaningEN: 'This',
                     meaningTH: 'นี่/นี้',
                     gender: 'neuter'
                 },
                 {
                     word: 'ဣတေအ်',
-                    ipa: 'ʔɔeˀ-teˀ',
-                    th: 'อิ-เต่ะ',
+                    ipa: 'ʔì-teˤ',
+                    th: 'อิ-เต็ะ',
                     meaningEN: 'These',
                     meaningTH: 'โน้น',
                     gender: 'neuter'
                 },
                 {
                     word: 'တအ်ဂှ်',
-                    ipa: 'tɒˀ-kòh',
-                    th: 'เต่าะ-โก่ฮ',
+                    ipa: 'tɔˤ-kɔ̀h',
+                    th: 'เต็าะ-เกาะฮ',
                     meaningEN: 'Those',
                     meaningTH: 'เหล่านั้น',
                     gender: 'neuter'
@@ -1397,15 +1397,15 @@ export default {
             neutral: [
                 {
                     word: 'လ္ၚဵု',
-                    ipa: 'lɛ̤ˀŋɤˀw',
-                    th: 'เลียะเงิ่ว',
+                    ipa: 'lɛˑaŋə̀ː',
+                    th: 'แหฺล-ะเง่อ',
                     meaningEN: 'Some',
                     meaningTH: 'บาง',
                     gender: 'neuter'
                 },
                 {
                     word: 'အောန်',
-                    ipa: 'ʔon',
+                    ipa: 'ʔoːn',
                     th: 'โอน',
                     meaningEN: 'Few',
                     meaningTH: 'น้อย',
@@ -1413,16 +1413,16 @@ export default {
                 },
                 {
                     word: 'တၞဟ်ဟ်',
-                    ipa: 'taˀnɒh-taˀnɒh',
-                    th: 'ตะนอฮ-ตะนอฮ',
+                    ipa: 'tanɔh-tanɔh',
+                    th: 'ตะเน็าะฮ-ตะเน็าะฮ',
                     meaningEN: 'Other',
                     meaningTH: 'อื่นๆ',
                     gender: 'neuter'
                 },
                 {
                     word: 'လဆောဝ်',
-                    ipa: 'lɛ̀ˀ-cʰow',
-                    th: 'เลี่ยะ-โชว',
+                    ipa: 'lɛˑa-cʰoː',
+                    th: 'แลฺ.-โช',
                     meaningEN: 'Sometimes',
                     meaningTH: 'บางครั้ง',
                     gender: 'neuter'
@@ -1433,64 +1433,64 @@ export default {
             neutral: [
                 {
                     word: 'ဇၟာပ်',
-                    ipa: 'cɛ̤ˀmèp',
-                    th: 'เจียะเม่บ',
+                    ipa: 'cɛˑamàːp',
+                    th: 'แจฺ-ะมาป',
                     meaningEN: 'Every',
                     meaningTH: 'ทุก ๆ',
                     gender: 'neuter'
                 },
                 {
                     word: 'ဇၟာပ်မၞိဟ်',
-                    ipa: 'cɛ̤ˀmèp-mɛ̤ˀnìˀh',
-                    th: 'เจียะเม่บ-เมียะนิ่ฮ',
+                    ipa: 'cɛˑamàːp-mɛˑanìh',
+                    th: 'แจฺ-ะมาป-แหฺม-ะนิฮ',
                     meaningEN: 'Everyone',
                     meaningTH: 'ทุก ๆ คน',
                     gender: 'neuter'
                 },
                 {
                     word: 'လၟေၚ်',
-                    ipa: 'lɛ̤ˀmɛ̀ˀŋ',
-                    th: 'เลียะเมี่ยง',
+                    ipa: 'lɛˑamiàŋ',
+                    th: 'แหฺล-ะเมี่ยง',
                     meaningEN: 'Each',
                     meaningTH: 'ราย/แต่ละ',
                     gender: 'neuter'
                 },
                 {
                     word: 'လၟေၚ်တ္ၚဲ',
-                    ipa: 'lɛ̤ˀmɛ̀ˀŋ-taˀŋoa',
-                    th: 'เลียะเมี่ยง-ตะงัว',
+                    ipa: 'lɛˑamiàŋ-taŋuːa',
+                    th: 'แหฺล-ะเมี่ยง-ตะงัว',
                     meaningEN: 'Each day',
                     meaningTH: 'รายวัน',
                     gender: 'neuter'
                 },
                 {
                     word: 'ရိုဟ်ဟ်',
-                    ipa: 'rɤˀh-rɤˀh',
-                    th: 'เร่อฮ-เร่อฮ',
+                    ipa: 'rə̀h-rə̀h',
+                    th: 'เรอะฮ-เรอะฮ',
                     meaningEN: 'Every',
                     meaningTH: 'ทุก ๆ',
                     gender: 'neuter'
                 },
                 {
                     word: 'ရိုဟ်တ္ၚဲ',
-                    ipa: 'rɤˀh-taˀŋoa',
-                    th: 'เร่อฮ-ตะงัว',
+                    ipa: 'rə̀h-taŋuːa',
+                    th: 'เรอะฮ-ตะงัว',
                     meaningEN: 'Every day',
                     meaningTH: 'ทุก ๆ วัน',
                     gender: 'neuter'
                 },
                 {
                     word: 'မွဲမွဲ',
-                    ipa: 'mɛ̤ˀwòa-mɛ̤ˀwòa',
-                    th: 'เมียะวั่ว-เมียะวั่ว',
+                    ipa: 'muːà-muːà',
+                    th: 'มั่ว-มั่ว',
                     meaningEN: 'Each',
                     meaningTH: 'แต่ละ',
                     gender: 'neuter'
                 },
                 {
                     word: 'ဂွံလဝ်မၞိဟ်မွဲမွဲ',
-                    ipa: 'kwòm-lòw-mɛ̤ˀnìˀh-mɛ̤ˀwòa-mɛ̤ˀwòa',
-                    th: 'กว่ม-โล่ว-เมียะนิ่ฮ-เมียะวั่ว-เมียะวั่ว',
+                    ipa: 'kwɔ̀m-lɔ̀ː-mɛˑanìh-muːà-muːà',
+                    th: 'กว่อม-ล่อ-แหฺม-ะนิฮ-มั่ว-มั่ว',
                     meaningEN: 'To Every person',
                     meaningTH: 'ได้ไว้แต่ละคน',
                     gender: 'neuter'
@@ -1503,21 +1503,21 @@ export default {
             {
                 isPrefix: false,
                 word: 'တအ်',
-                ipa: 'tɒˀ',
-                th: 'เต่าะ'
+                ipa: 'tɔˤ',
+                th: 'เต็าะ'
             }
         ],
         possessive: [
             {
                 isPrefix: true,
                 word: 'ဒြပ်',
-                ipa: 'tròp',
-                th: 'ตร่บ'
+                ipa: 'trɔ̀p',
+                th: 'ตรอป'
             },
             {
                 isPrefix: true,
                 word: 'ကၟက်',
-                ipa: 'kaˀmaˀk',
+                ipa: 'kamak',
                 th: 'กะมัก'
             },
         ]
@@ -1527,8 +1527,8 @@ export default {
             {
                 word: 'လ္ၚဵု',
                 text: 'မၞိဟ်<span class="bg-warning">လ္ၚဵု</span> အာဗဵုပေါဲပ္ဍဲကွာန်တေအ်',
-                ipa: 'mɛ̤ˀnìˀh-lɛ̤ˀŋɤˀw  ʔa-pɤˀw-poa-paˀɗoa-kwan-teˀ',
-                th: 'เมียะนิ่ฮ-เลียะเงิ่ว  อา-เปิ่ว-ปัว-ปะดัว-กวาน-เต่ะ',
+                ipa: 'mɛˑanìh-lɛ̤ˀŋɤˀw  ʔa-pɤˀw-poa-paˀɗoa-kwan-teˤ',
+                th: 'แหฺม-ะนิฮ-เลียะเงิ่ว  อา-เปิ่ว-ปัว-ปะดัว-กวาน-เต็ะ',
                 translates: [
                     {
                         lang: 'en',
@@ -1543,8 +1543,8 @@ export default {
             {
                 word: 'အောန်',
                 text: '<span class="bg-warning">အောန်</span>မၞိဟ် ဂွအ်အာဗဵုပေါဲပ္ဍဲကွာန်တေအ်',
-                ipa: 'ʔon-mɛ̤ˀnìˀh  kwòˀ-ʔa-pɤˀw-poa-paˀɗoa-kwan-teˀ',
-                th: 'โอน-เมียะนิ่ฮ  โกว่ะ-อา-เปิ่ว-ปัว-ปะดัว-กวาน-เต่ะ',
+                ipa: 'ʔoːn-mɛˑanìh  kwòˀ-ʔa-pɤˀw-poa-paˀɗoa-kwan-teˤ',
+                th: 'โอน-แหฺม-ะนิฮ  โกว่ะ-อา-เปิ่ว-ปัว-ปะดัว-กวาน-เต็ะ',
                 translates: [
                     {
                         lang: 'en',
@@ -1559,8 +1559,8 @@ export default {
             {
                 word: 'တၞဟ်ဟ်',
                 text: 'ဒြပ်<span class="bg-warning">တၞဟ်ဟ်</span> လေဝ်နွံဒၟံၚ်ရ',
-                ipa: 'tròp-taˀnɒh-taˀnɒh  lèw-nɛ̤ˀwòm-tɛ̤ˀmɒˀŋ-rɛ̀ˀ',
-                th: 'ตร่บ-ตะนอฮ-ตะนอฮ  เล่ว-เนียะว่ม-เตี่ยะม่อง-เรี่ยะ',
+                ipa: 'trɔ̀p-tanɔh-tanɔh  lèw-nɛ̤ˀwòm-tɛ̤ˀmɒˀŋ-rɛ̀ˀ',
+                th: 'ตรอป-ตะเน็าะฮ-ตะเน็าะฮ  เล่ว-เนียะว่ม-เตี่ยะม่อง-เรี่ยะ',
                 translates: [
                     {
                         lang: 'en',
@@ -1575,8 +1575,8 @@ export default {
             {
                 word: 'လဆောဝ်',
                 text: '<span class="bg-warning">လဆောဝ်</span> ဂှ်လေဝ် အဲဟွအ်ဒးပၟိက်ဍေအ်ရ',
-                ipa: 'lɛ̀ˀ-cʰow  kòh-lèw  ʔoa-haˀwɒˀ-tɛ̀h-paˀmɤk-ɗeˀ-rɛ̀ˀ',
-                th: 'เลี่ยะ-โชว  โก่ฮ-เล่ว  อัว-ฮะเว่าะ-เตี่ยฮ-ปะเมิก-เด่ะ-เรี่ยะ',
+                ipa: 'lɛˑa-cʰoː  kɔ̀h-lèw  ʔuːa-haˀwɒˀ-tɛ̀h-paˀmɤk-ɗeˀ-rɛ̀ˀ',
+                th: 'แลฺ.-โช  เกาะฮ-เล่ว  อัว-ฮะเว่าะ-เตี่ยฮ-ปะเมิก-เด่ะ-เรี่ยะ',
                 translates: [
                     {
                         lang: 'en',
@@ -1593,8 +1593,8 @@ export default {
             {
                 word: 'လၟေၚ်တ္ၚဲ',
                 text: 'လိက်ပရိုၚ် <span class="bg-warning">လၟေၚ်တ္ၚဲ</span>။',
-                ipa: 'lɤˀk-paˀ-rə̤ŋ-lɛ̤ˀmɛ̀ˀŋ-taˀŋoa',
-                th: 'เลิ่ก-ปะ-ร่าฺง-เลียะเมี่ยง-ตะงัว',
+                ipa: 'lɤˀk-paˀ-rə̤ŋ-lɛˑamiàŋ-taŋuːa',
+                th: 'เลิ่ก-ปะ-ร่าฺง-แหฺล-ะเมี่ยง-ตะงัว',
                 translates: [
                     {
                         lang: 'en',
@@ -1609,8 +1609,8 @@ export default {
             {
                 word: 'မွဲမွဲ',
                 text: '<span class="bg-warning">မွဲမွဲ</span>တ္ၚဲ နာဲသုၚ်ၜံက်အိုတ်မူစိတၞုၚ်ရော။',
-                ipa: 'mɛ̤ˀwòa-mɛ̤ˀwòa-taˀŋoa  na̤i-sɤŋ-ɓɒk-ʔɒt-mù-cɔeˀ-taˀnɤŋ-rəʊ',
-                th: 'เมียะวั่ว-เมียะวั่ว-ตะงัว  น่าย-เซิง-บอก-ออฺด-มู่-จิ-ตะเนิง-โรว',
+                ipa: 'muːà-muːà-taŋuːa  nàːj-sɤŋ-ɓɒk-ʔɒt-mù-cì-taˀnɤŋ-rəʊ',
+                th: 'มั่ว-มั่ว-ตะงัว  น่าย-เซิง-บอก-ออฺด-มู่-จิ-ตะเนิง-โรว',
                 translates: [
                     {
                         lang: 'en',
@@ -1625,8 +1625,8 @@ export default {
             {
                 word: 'ဇၟာပ်ပ်',
                 text: 'အဲကၠုၚ်တိုန်သာ <span class="bg-warning">ဇၟာပ်ပ်</span> သတ္တဟရ။',
-                ipa: 'ʔoa-klɤŋ-tɒn-sa  cɛ̤ˀmèp-cɛ̤ˀmèp  sɒt-taˀ-haˀ-rɛ̀ˀ',
-                th: 'อัว-เกลิง-ตอฺน-ซา  เจียะเม่บ-เจียะเม่บ  ซอด-ตะ-ฮะ-เรี่ยะ',
+                ipa: 'ʔuːa-klɤŋ-tɒn-sa  cɛˑamàːp-cɛˑamàːp  sɒt-taˀ-haˀ-rɛ̀ˀ',
+                th: 'อัว-เกลิง-ตอฺน-ซา  แจฺ-ะมาป-แจฺ-ะมาป  ซอด-ตะ-ฮะ-เรี่ยะ',
                 translates: [
                     {
                         lang: 'en',

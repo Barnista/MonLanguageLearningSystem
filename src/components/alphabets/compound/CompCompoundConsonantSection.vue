@@ -36,19 +36,9 @@
                             /{{ craftWord(selected, compound.compound,
                                 vowel.compound).ipa || 'NaN' }}/
                         </div>
-                        <div v-if="craftWord(selected, compound.compound, vowel.compound).ipa2" class="text-muted">
-                            /{{ craftWord(selected, compound.compound,
-                                vowel.compound).ipa2 || 'NaN'
-                            }}/
-                        </div>
                         <div class="text-muted mt-2">
                             /{{ craftWord(selected, compound.compound,
                                 vowel.compound).th || 'NaN' }}/
-                        </div>
-                        <div v-if="craftWord(selected, compound.compound, vowel.compound).th2" class="text-muted">
-                            /{{ craftWord(selected, compound.compound,
-                                vowel.compound).th2 || 'NaN'
-                            }}/
                         </div>
                     </div>
                 </div>

@@ -25,23 +25,11 @@
                                 'en'].menu.seeException }})</a></small></span>
                     </div>
                     <div class="mb-2 text-muted">
-                        <span class="me-1">{{ `/${vowel.ipaCL}/` || 'NaN' }}</span>
+                        <span class="me-1">{{ `/${vowel.ipaCL.replace('ʔ', '')}/` || 'NaN' }}</span>
                         <span>{{ `/${vowel.thCL.replace('-', 'อ')}/` || 'NaN' }} </span>
                         <br>
-                        <button class="mt-1 btn btn-sm btn-outline-success py-0 px-1" @click="pronouceVowelCL(vowel)">
-                            🔊
-                            <span class="d-none d-md-inline">
-                                {{ langSet[lang ? lang : 'en'].menu.listen }}
-                            </span>
-                            <span class="ms-1 badge rounded-pill text-bg-light text-primary fw-bold">CL</span>
-                        </button>
-                    </div>
-                    <div class="mb-2 text-muted" v-if="vowel.ipaCL2">
-                        <span class="me-1">{{ `/${vowel.ipaCL2}/` || 'NaN' }}</span>
-                        <span>{{ `/${vowel.thCL2.replace('-', 'อ')}/` || 'NaN' }}</span>
-                        <br>
-                        <button v-if="vowel.ipaCL2" class="mt-1 btn btn-sm btn-outline-success py-0 px-1"
-                            @click="pronouceVowelCL2(vowel)">
+                        <button class="mt-1 btn btn-sm btn-outline-success py-0 px-1" @click="pronouceVowelCL(vowel)"
+                            disabled>
                             🔊
                             <span class="d-none d-md-inline">
                                 {{ langSet[lang ? lang : 'en'].menu.listen }}
@@ -50,10 +38,11 @@
                         </button>
                     </div>
                     <div class="mb-2 text-muted">
-                        <span class="me-1">{{ `/${vowel.ipaBT}/` || 'NaN' }}</span>
+                        <span class="me-1">{{ `/${vowel.ipaBT.replace('ʔ', '')}/` || 'NaN' }}</span>
                         <span>{{ `/${vowel.thBT.replace('-', 'อ')}/` || 'NaN' }} </span>
                         <br>
-                        <button class="mt-1 btn btn-sm btn-outline-success py-0 px-1" @click="pronouceVowelBT(vowel)">
+                        <button v-if="vowel.ipaBT" class="mt-1 btn btn-sm btn-outline-success py-0 px-1"
+                            @click="pronouceVowelBT(vowel)" disabled>
                             🔊
                             <span class="d-none d-md-inline">
                                 {{ langSet[lang ? lang : 'en'].menu.listen }}
@@ -88,7 +77,7 @@
                                         'en'].menu.seeException }})</a></small></span>
                             </div>
                             <div class="mb-2 text-muted">
-                                <span class="me-1">{{ `/${vowel.ipaCL}/` || 'NaN' }}</span>
+                                <span class="me-1">{{ `/${vowel.ipaCL.replace('ʔ', '')}/` || 'NaN' }}</span>
                                 <span>{{ `/${vowel.thCL.replace('-', 'อ')}/` || 'NaN' }} </span>
                                 <br>
                                 <button class="mt-1 btn btn-sm btn-outline-success py-0 px-1"
@@ -101,7 +90,7 @@
                                 </button>
                             </div>
                             <div class="mb-2 text-muted" v-if="vowel.ipaCL2">
-                                <span class="me-1">{{ `/${vowel.ipaCL2}/` || 'NaN' }}</span>
+                                <span class="me-1">{{ `/${vowel.ipaCL2.replace('ʔ', '')}/` || 'NaN' }}</span>
                                 <span>{{ `/${vowel.thCL2.replace('-', 'อ')}/` || 'NaN' }}</span>
                                 <br>
                                 <button v-if="vowel.ipaCL2" class="mt-1 btn btn-sm btn-outline-success py-0 px-1"
@@ -114,7 +103,7 @@
                                 </button>
                             </div>
                             <div class="mb-2 text-muted">
-                                <span class="me-1">{{ `/${vowel.ipaBT}/` || 'NaN' }}</span>
+                                <span class="me-1">{{ `/${vowel.ipaBT.replace('ʔ', '')}/` || 'NaN' }}</span>
                                 <span>{{ `/${vowel.thBT.replace('-', 'อ')}/` || 'NaN' }} </span>
                                 <br>
                                 <button class="mt-1 btn btn-sm btn-outline-success py-0 px-1"

@@ -1,0 +1,30 @@
+{
+    "id": "seo_my",
+    "lang": "my",
+    "meta": {
+        "default": [
+            {
+                "name": "The Mon Language (မန်) - မွန်ဘာသာစကားကို လေ့လာပါ",
+                "content": "မွန်ဘာသာစကား အွန်လိုင်းသင်ယူမှုပလက်ဖောင်း။ မွန်အက္ခရာ AI၊ မွန်-အင်္ဂလိပ်-ထိုင်း-ဗမာ အဘိဓာန်။"
+            }
+        ]
+    },
+    "link": {
+        "default": [
+            {
+                "rel": "canonical",
+                "href": "https://the-mon-language.web.app?lang=my"
+            }
+        ]
+    },
+    "seoMeta": {
+        "default": {
+            "title": "The Mon Language (မန်) - မွန်ဘာသာစကားကို လေ့လာပါ",
+            "description": "မွန်ဘာသာစကား အွန်လိုင်းသင်ယူမှုပလက်ဖောင်း။ မွန်အက္ခရာ AI၊ မွန်-အင်္ဂလိပ်-ထိုင်း-ဗမာ အဘိဓာန်။",
+            "ogType": "website",
+            "ogUrl": "https://the-mon-language.web.app?lang=my",
+            "ogLocale": "my",
+            "ogSiteName": "The Mon Language"
+        }
+    }
+}

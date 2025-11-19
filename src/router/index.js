@@ -5,7 +5,11 @@ const routes = [
   {
     path: '/',
     name: 'home',
-    component: HomeView
+    component: HomeView,
+    //meta: {
+    //  title: "",
+    //  description: ""
+    //}
   },
   {
     path: '/:pathMatch(.*)*',
@@ -111,6 +115,11 @@ const routes = [
     component: () => import('../views/others/ChangeLogsView.vue')
   },
   {
+    path: '/for-developers',
+    name: 'for-developers',
+    component: () => import('../views/others/ForDevelopersView.vue')
+  },
+  {
     path: '/monland',
     name: 'monland',
     component: () => import('../views/others/MonlandView.vue')
@@ -119,7 +128,8 @@ const routes = [
     path: '/grammars/pronoun',
     name: 'grammars-pronoun',
     component: () => import('../views/grammars/PronounView.vue')
-  }
+  },
+
 ]
 
 const router = createRouter({

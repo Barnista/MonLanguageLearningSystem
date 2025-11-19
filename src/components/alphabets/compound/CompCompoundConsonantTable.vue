@@ -49,6 +49,34 @@
             </div>
             <hr>
         </div>
+        <div class="mt-4">
+            <h3>Exceptions:</h3>
+            <p>These exceptions below describe how some consonants; when combining with some diacritics; create distinguish sounds that don't follow the rule. This exception has been noticed by Mr. Zuzarz Jaichop (aka သုည ပညါ).</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Combines</th>
+                        <th>Pronunciation</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="(item, index) in exceptions" :key="index">
+                        <td>
+                            <span class="fs-3">{{ item.letter }}</span>
+                        </td>
+                        <td>
+                            <span class="fs-5 text-danger">/{{ item.ipa }}/</span>
+                            <br>
+                            <span class="fs-5 text-danger ms-2">/{{ item.th }}/</span>
+                        </td>
+                        <td>
+                            <span v-html="item.example"></span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
 </template>
 
@@ -70,6 +98,7 @@ export default {
         return {
             langSet: displayLanguages.langSet,
             compounds: monAlphabets.compoundConsonants,
+            exceptions: monAlphabets.consonants.slice(7, 8)[0].rows,
             vowels: [
                 monAlphabets.vowels.slice(0, 6), // Row 1
                 monAlphabets.vowels.slice(6, 12), // Row 2

@@ -58,24 +58,10 @@
                                 item.members[selected].final).ipa ||
                                 'NaN'}/` }}
                         </div>
-                        <div v-if="craftWord2('က', null, vowel.vowel, item.members[selected].final).ipa2"
-                            class="text-muted">
-                            {{ `/${craftWord2('က', null, vowel.vowel,
-                                item.members[selected].final).ipa2 ||
-                                'NaN'}/`
-                            }}
-                        </div>
                         <div class="text-muted mt-2">
                             {{ `/${craftWord2('က', null, vowel.vowel,
                                 item.members[selected].final).th ||
                                 'NaN'}/` }}
-                        </div>
-                        <div v-if="craftWord2('က', null, vowel.vowel, item.members[selected].final).th2"
-                            class="text-muted">
-                            {{ `/${craftWord2('က', null, vowel.vowel,
-                                item.members[selected].final).th2 ||
-                                'NaN'}/`
-                            }}
                         </div>
                     </div>
                 </div>
@@ -103,24 +89,10 @@
                                 item.members[selected].final).ipa ||
                                 'NaN'}/` }}
                         </div>
-                        <div v-if="craftWord2('ဂ', null, vowel.vowel, item.members[selected].final).ipa2"
-                            class="text-muted">
-                            {{ `/${craftWord2('ဂ', null, vowel.vowel,
-                                item.members[selected].final).ipa2 ||
-                                'NaN'}/`
-                            }}
-                        </div>
                         <div class="text-muted mt-2">
                             {{ `/${craftWord2('ဂ', null, vowel.vowel,
                                 item.members[selected].final).th ||
                                 'NaN'}/` }}
-                        </div>
-                        <div v-if="craftWord2('ဂ', null, vowel.vowel, item.members[selected].final).th2"
-                            class="text-muted">
-                            {{ `/${craftWord2('ဂ', null, vowel.vowel,
-                                item.members[selected].final).th2 ||
-                                'NaN'}/`
-                            }}
                         </div>
                     </div>
                 </div>
@@ -159,24 +131,10 @@
                                         item.members[selected].final).ipa ||
                                         'NaN'}/` }}
                                 </div>
-                                <div v-if="craftWord2('က', null, vowel.vowel, item.members[selected].final).ipa2"
-                                    class="text-muted">
-                                    {{ `/${craftWord2('က', null, vowel.vowel,
-                                        item.members[selected].final).ipa2 ||
-                                        'NaN'}/`
-                                    }}
-                                </div>
                                 <div class="text-muted mt-2">
                                     {{ `/${craftWord2('က', null, vowel.vowel,
                                         item.members[selected].final).th ||
                                         'NaN'}/` }}
-                                </div>
-                                <div v-if="craftWord2('က', null, vowel.vowel, item.members[selected].final).th2"
-                                    class="text-muted">
-                                    {{ `/${craftWord2('က', null, vowel.vowel,
-                                        item.members[selected].final).th2 ||
-                                        'NaN'}/`
-                                    }}
                                 </div>
                             </div>
                         </td>
@@ -206,24 +164,10 @@
                                         item.members[selected].final).ipa ||
                                         'NaN'}/` }}
                                 </div>
-                                <div v-if="craftWord2('ဂ', null, vowel.vowel, item.members[selected].final).ipa2"
-                                    class="text-muted">
-                                    {{ `/${craftWord2('ဂ', null, vowel.vowel,
-                                        item.members[selected].final).ipa2 ||
-                                        'NaN'}/`
-                                    }}
-                                </div>
                                 <div class="text-muted mt-2">
                                     {{ `/${craftWord2('ဂ', null, vowel.vowel,
                                         item.members[selected].final).th ||
                                         'NaN'}/` }}
-                                </div>
-                                <div v-if="craftWord2('ဂ', null, vowel.vowel, item.members[selected].final).th2"
-                                    class="text-muted">
-                                    {{ `/${craftWord2('ဂ', null, vowel.vowel,
-                                        item.members[selected].final).th2 ||
-                                        'NaN'}/`
-                                    }}
                                 </div>
                             </div>
                         </td>

@@ -8,14 +8,18 @@
                         <img :src="require(`@/assets/related-contents/${related.alias}.jpg`)" class="card-img-top"
                             style="height: 12rem; object-fit: cover;">
                     </a>
-                    <div class="card-body">
+                    <div class="card-body pb-2">
                         <h5 class="card-title"><a :href="related.link" target="_blank"
                                 class="link-underline link-underline-opacity-0">{{ related.name }}</a></h5>
                         <p class="card-text text-secondary text-truncate">
                             {{ related.description }}
                         </p>
                     </div>
-                    <div class="card-footer text-end">
+                    <div class="card-footer d-flex justify-content-between align-items-center">
+                        <span class="text-muted">
+                            <i class="bi bi-feather"></i>
+                            {{ related.author }}
+                        </span>
                         <a :href="related.link" target="_blank" class="btn btn-primary">
                             <i class="bi bi-globe"></i>
                             <span class="ms-2">{{ langSet[lang ? lang : 'en'].communityView.explore }}</span>

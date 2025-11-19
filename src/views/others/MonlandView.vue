@@ -52,6 +52,9 @@
 </template>
 
 <script>
+import { useRoute } from 'vue-router';
+import { useHead, useSeoMeta } from '@unhead/vue'
+import seoLanguages from '@/services/display-languages/seo-languages';
 
 import CompMobileKeyboard from '@/components/keyboard/CompMobileKeyboard.vue';
 import CompSimpleKeyboard from '@/components/keyboard/CompSimpleKeyboard.vue';
@@ -65,6 +68,20 @@ export default {
     CompMonland,
     CompSimpleKeyboard,
     CompMobileKeyboard
+  },
+  setup() {
+    // Grab query params
+    const route = useRoute();
+    const lang = route.query.lang || 'eng';
+    const langSEO = seoLanguages.langSEO[lang];
+    useHead({
+      htmlAttrs: { lang: langSEO["lang"] || 'en-US' },
+      meta: langSEO["meta"]["default"],
+      link: langSEO["link"]["default"]
+    });
+    useSeoMeta({
+      ...langSEO["seoMeta"]["default"]
+    });
   },
   data() {
     return {

@@ -80,7 +80,7 @@
                                     <router-link class="dropdown-item" :to="{ path: '/grammars', query: { lang } }">
                                         <i class="bi bi-chat-dots"></i>
                                         {{ langSet[lang ? lang : 'en'].learnSentence.sentence }} ({{ langSet[lang ? lang
-                                        : 'en'].learnSentence.getStart }})
+                                            : 'en'].learnSentence.getStart }})
                                     </router-link>
                                 </li>
                                 <li>
@@ -232,9 +232,15 @@
                                 </li>
                                 <li>
                                     <router-link :to="{ path: '/change-logs', query: { lang } }"
-                                        :class="['dropdown-item', { active: $route.path === '/changelogs' }]">
+                                        :class="['dropdown-item', { active: $route.path === '/change-logs' }]">
                                         <i class="bi bi-journal-text"></i> {{ langSet[lang ? lang :
                                             'en'].aboutView.changeLogs }}
+                                    </router-link>
+                                </li>
+                                <li>
+                                    <router-link :to="{ path: '/for-developers', query: { lang } }"
+                                        :class="['dropdown-item', { active: $route.path === '/for-developers' }]">
+                                        <i class="bi bi-code-slash"></i> APIs & Open-sources
                                     </router-link>
                                 </li>
                             </ul>
@@ -260,13 +266,13 @@
                         </li>
 
                         <!-- LOGIN BUTTON -->
-                        <li class="nav-item">
+                        <!--<li class="nav-item">
                             <router-link :to="{ path: '/membership', query: { lang } }"
                                 :class="['nav-link', { active: $route.path === '/membership' }, 'text-warning']">
                                 <i class="bi bi-person-circle"></i>
                                 Membership
                             </router-link>
-                        </li>
+                        </li>-->
                     </ul>
                 </div>
             </div>

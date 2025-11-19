@@ -402,7 +402,7 @@ export default {
                         // if it's the last char, that means it's another incompleted word, just ignore it.
                     }
                 } else if (compound) {
-                    //some final consonant can disguise itself as a compound symbol
+                    //some final consonant can disguise itself as a Diacritics
                     const nextBlendFinal = char_current + char_next;
                     const prevBlendFinal = char_current + char_prev;
                     const nextIsFinal2Symbol = dbFinalConsonants.isFinal2Symbol(nextBlendFinal);

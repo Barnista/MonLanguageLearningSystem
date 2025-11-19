@@ -3,8 +3,8 @@ export default {
         {
             word: 'လ္ပ',
             full: 'လပ',
-            ipa: 'lɛ̤ˀpaˀ',
-            th: 'เลี่ยะปะ',
+            ipa: 'lɛˑa-pa',
+            th: 'แลฺ.-ปะ',
             translates: [
                 {
                     type: 'ว.',
@@ -19,8 +19,8 @@ export default {
         {
             word: 'သ္ပ',
             full: 'သပ',
-            ipa: 'saˀpaˀ',
-            th: 'ซะปะ',
+            ipa: 'sa-pa',
+            th: 'ซะ-ปะ',
             translates: [
                 {
                     type: 'ก.',
@@ -35,8 +35,8 @@ export default {
         {
             word: 'က္တဵု',
             full: 'ကတဵု',
-            ipa: 'kaˀtɒw',
-            th: 'กะตอว',
+            ipa: 'ka-tɒː',
+            th: 'กะ-ตฺอ',
             translates: [
                 {
                     type: 'น.',
@@ -47,8 +47,8 @@ export default {
         {
             word: 'လ္တူ',
             full: 'လတူ',
-            ipa: 'lɛ̤ˀtao',
-            th: 'เลี่ยะตาว',
+            ipa: 'lɛˑa-taːu',
+            th: 'แลฺ.-เตา',
             translates: [
                 {
                     type: 'บุพ.',
@@ -63,8 +63,8 @@ export default {
         {
             word: 'ခဗ္ဒာဲ',
             full: 'ခဗဒာယ်',
-            ipa: 'kʰaˀpɛ̤ˀta̤i',
-            th: 'ขะเปี่ยต่าย',
+            ipa: 'kʰa-pɛˑa-tàːj',
+            th: 'คะ-แปฺ.-ต่าย',
             translates: [
                 {
                     type: 'ก.',
@@ -85,8 +85,8 @@ export default {
             doubleWith: 1,
             word: 'သက္ကရာဇ်',
             full: 'သက်ကရာဇ်',
-            ipa: 'saˀkkaˀra̤c',
-            th: 'ซักกะราจ'
+            ipa: 'sak-ka-ràːt',
+            th: 'ซัก-กะ-ราจ'
         },
         {
             row: 1,
@@ -94,8 +94,8 @@ export default {
             doubleWith: 2,
             word: 'စက္ခု',
             full: 'စက်ခု',
-            ipa: 'caˀkkʰùˀ',
-            th: 'จักขุ'
+            ipa: 'cak-kʰù',
+            th: 'จัก-ขุ'
         },
         {
             row: 1,
@@ -103,8 +103,8 @@ export default {
             doubleWith: 3,
             word: 'အဂ္ဂ',
             full: 'အဂ်ဂ',
-            ipa: 'ʔaˀkkɛ̤ˀ',
-            th: 'อักเกี่ยะ'
+            ipa: 'ʔak-kɛˑa',
+            th: '/อัก-แกฺ.'
         },
         {
             row: 1,
@@ -112,8 +112,8 @@ export default {
             doubleWith: 4,
             word: 'အနဂ္ဃ',
             full: 'အနဂ်ဃ',
-            ipa: 'ʔaˀnɛˀkkʰɛ̤ˀ',
-            th: 'อะแน่กเคี่ยะ'
+            ipa: 'ʔa-nɛˑak-kʰɛˑa',
+            th: 'อะ-แนก-แคฺ.'
         },
         {
             row: 1,
@@ -130,8 +130,8 @@ export default {
             doubleWith: 3,
             word: 'မၚ်္ဂလ',
             full: 'မင်ဂလ',
-            ipa: 'mɛˀŋkɛ̤ˀlɛ̤ˀ',
-            th: 'แม่งเกี่ยะเลี่ยะ'
+            ipa: 'mɛˑaŋ-kɛˑa-lɛˑa',
+            th: 'แม่ง-แกฺ.-แลฺ.'
         },
         //ROW-2
         {
@@ -140,9 +140,8 @@ export default {
             doubleWith: 1,
             word: 'သစ္စ',
             full: 'သစ်စ',
-            ipa: 'sɒccaˀ',
-            th: 'ซอจจะ',
-            th2: 'ซอจเจีย'
+            ipa: 'sɔt-ca',
+            th: 'ซ็อจ-จะ',
         },
         {
             row: 2,
@@ -150,8 +149,8 @@ export default {
             doubleWith: 2,
             word: 'မိစ္ဆာ',
             full: 'မိစ်ဆာ',
-            ipa: 'mìˀccʰa',
-            th: 'มิ่จฉา'
+            ipa: 'mìt-cʰaː',
+            th: 'มิจ-ชา'
         },
         {
             row: 2,
@@ -168,9 +167,8 @@ export default {
             doubleWith: 4,
             word: 'ဥပ္ပဇ္ၛာဲ',
             full: 'ဥပ်ပဇ်ၛာဲ',
-            ipa: 'ùˀppòccʰa̤i',
-            th: 'อุปปอจช่าย',
-            th2: 'อุปอจช่าย'
+            ipa: 'ʔup-pɔt-cʰàːj',
+            th: 'อุ็ป-ป็อจ-ช่าย'
         },
         {
             row: 2,
@@ -178,9 +176,8 @@ export default {
             doubleWith: 5,
             word: 'ပညာ',
             full: 'ပည်ညာ',
-            ipa: 'pɒɲɲɛ̀a',
-            th: 'ปอญเญีย',
-            th2: 'ปอญญา'
+            ipa: 'pɔn-ɲɛaː',
+            th: 'ปอน-แญฺ—า'
         },
         //ROW-3
         {
@@ -189,8 +186,8 @@ export default {
             doubleWith: 1,
             word: 'ဝဋသံသာ',
             full: 'ဝဋ်ဋသံသာ',
-            ipa: 'wòttaˀsɔmˀsa',
-            th: 'โว่ดตะซอมซา'
+            ipa: 'wɔ̀t-ta-sɔm-saː',
+            th: 'วอต-ตะ-ซอม-ซา'
         },
         {
             row: 3,
@@ -198,9 +195,8 @@ export default {
             doubleWith: 2,
             word: 'သတိသံပဋ္ဌာနံ',
             full: 'သတိသံပဋ်ဌာနံ',
-            ipa: 'saˀtɔɪsɔmˀpɒttʰanòm',
-            th: 'ซะต็อยซอมปอดทาน่ม',
-            th2: 'ซะต็อยซอมปอดทาน่อง'
+            ipa: 'sa-tɒi-sɔm-pɔt-tʰaː-nɔ̀m',
+            th: 'ซะ-ต็อฺย-ซอม-ป็อต-ทา-น่อม'
         },
         {
             row: 3,
@@ -217,8 +213,8 @@ export default {
             doubleWith: 4,
             word: 'ဝဍ္ဎန',
             full: 'ဝဋ်ဎန',
-            ipa: 'wòttʰɛ̤ˀnɛ̤ˀ',
-            th: 'โว่ดเที่ยะเนี่ยะ'
+            ipa: 'wɔ̀t-tʰɛˑa-nɛˑa',
+            th: 'วอต-แทฺ.-แนฺ.'
         },
         {
             row: 3,
@@ -226,8 +222,8 @@ export default {
             doubleWith: 5,
             word: 'ဝဏ္ဏ',
             full: 'ဝဏ်ဏ',
-            ipa: 'wònnaˀ',
-            th: 'โว่นนะ'
+            ipa: 'wɔ̀n-na',
+            th: 'ว่อน-นะ'
         },
         {
             row: 3,
@@ -235,9 +231,8 @@ export default {
             doubleWith: 2,
             word: 'သဏ္ဌာန',
             full: 'သဏ်ဌာန',
-            ipa: 'sɒntʰanɛ̤ˀ',
-            th: 'ซอนทาเนี่ยะ',
-            th2: 'ซอนทานะ'
+            ipa: 'sɔn-tʰaː-nɛˑa',
+            th: 'ซอน-ทา-แนฺ.',
         },
         //ROW-4
         {
@@ -246,8 +241,8 @@ export default {
             doubleWith: 1,
             word: 'ကတ္တိက',
             full: 'ကတ်တိက',
-            ipa: 'kɒttɔɪkaˀ',
-            th: 'กอดต็อยกะ'
+            ipa: 'kɔt-tɒi-ka',
+            th: 'ก็อต-ต็อฺย-กะ'
         },
         {
             row: 4,
@@ -255,8 +250,8 @@ export default {
             doubleWith: 2,
             word: 'ဝတ္ထ',
             full: 'ဝတ်ထ',
-            ipa: 'wòttʰaˀ',
-            th: 'โว่ดทะ'
+            ipa: 'wɔ̀t-tʰa',
+            th: 'วอต-ทะ'
         },
         {
             row: 4,
@@ -264,8 +259,8 @@ export default {
             doubleWith: 3,
             word: 'သဒ္ဒါ',
             full: 'သဒ်ဒါ',
-            ipa: 'sɒttɛ̀a',
-            th: 'ซอดเตี่ย'
+            ipa: 'sɔt-tɛaː',
+            th: 'ซ็อต-แตฺ—า'
         },
         {
             row: 4,
@@ -273,8 +268,8 @@ export default {
             doubleWith: 4,
             word: 'ခန္ဓ',
             full: 'ခန်ဓ',
-            ipa: 'kʰɒntʰɛ̤ˀ',
-            th: 'คอนเที่ยะ'
+            ipa: 'kʰɔn-tʰɛˑa',
+            th: 'คอน-แทฺ.'
         },
         //ROW-5
         {
@@ -283,9 +278,8 @@ export default {
             doubleWith: 1,
             word: 'သိပ္ပံ',
             full: 'သိပ်ပံ',
-            ipa: 'sɔeˀppɔmˀ',
-            th: 'ซิบปอม',
-            th2: 'ซิบปอง'
+            ipa: 'sip-pɔm',
+            th: 'ซิ็ป-ปอม'
         },
         {
             row: 5,
@@ -293,8 +287,8 @@ export default {
             doubleWith: 2,
             word: 'ပုပ္ဖ',
             full: 'ပုပ်ဖ',
-            ipa: 'pùˀpʰaˀ',
-            th: 'ปุบพะ'
+            ipa: 'pup-pʰa',
+            th: 'ปุ็ป-พะ'
         },
         {
             row: 5,
@@ -302,8 +296,8 @@ export default {
             doubleWith: 3,
             word: 'သဗ္ဗ',
             full: 'သဗ်ဗ',
-            ipa: 'sɒppɛ̤ˀ',
-            th: 'ซอบเปี่ยะ'
+            ipa: 'sɔp-pɛˑa',
+            th: 'ซ็อป-แปฺ.'
         },
         {
             row: 5,
@@ -311,8 +305,8 @@ export default {
             doubleWith: 4,
             word: 'ဂဗ္ဘ',
             full: 'ဂဗ်ဘ',
-            ipa: 'kòppʰɛ̤ˀ',
-            th: 'โก่บเพี่ยะ'
+            ipa: 'kɔ̀p-pʰɛˑa',
+            th: 'กอป-แพฺ.'
         },
         {
             row: 5,
@@ -320,8 +314,8 @@ export default {
             doubleWith: 5,
             word: 'ဓမ္မ',
             full: 'ဓမ်မ',
-            ipa: 'tʰòmmɛ̤ˀ',
-            th: 'โท่มเมี่ยะ'
+            ipa: 'tʰɔ̀m-mɛˑa',
+            th: 'ท่อม-แมฺ.'
         },
         {
             row: 5,
@@ -329,8 +323,8 @@ export default {
             doubleWith: 3,
             word: 'သမ္ဗုဒ္ဓ',
             full: 'သမ်ဗုဒ်ဓ',
-            ipa: 'sɒmpùˀttʰɛ̤ˀ',
-            th: 'ซอมปุ่ดเที่ยะ'
+            ipa: 'sɔm-pùt-tʰɛˑa',
+            th: 'ซอม-ปุต-แทฺ.'
         },
         //ROW-none
         {
@@ -339,9 +333,8 @@ export default {
             doubleWith: 3,
             word: 'ပလ္လၚ်္က',
             full: 'ပလ်လင်က',
-            ipa: 'pɒllɛˀŋkaˀ',
-            th: 'ปอลแล่งกะ',
-            th2: 'ปอนลังกะ'
+            ipa: 'pɔː-lɛˑaŋ-ka',
+            th: 'ปอ-แล่ง-กะ'
         },
         {
             row: 6,
@@ -349,8 +342,8 @@ export default {
             doubleWith: 5,
             word: 'တသ္သ',
             full: 'တသ်သ',
-            ipa: 'tɒssaˀ',
-            th: 'ตอดซะ'
+            ipa: 'tɔt-sa',
+            th: 'ต็อต-ซะ'
         },
     ],
     // กฎที่ระบุว่าพยัญชนะซ้อนแบบบาลี-สันสกฤต ตัวใดซ้อนกับตัวใดได้บ้าง

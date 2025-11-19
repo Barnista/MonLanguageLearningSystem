@@ -1,6 +1,6 @@
 <template>
-    <div class="about-dev-view container">
-        <CompDevs :lang="lang" class="mt-5"></CompDevs>
+    <div class="for-developers-view container">
+        <CompForDevelopers class="mt-5" />
     </div>
 </template>
 
@@ -9,14 +9,14 @@ import { useRoute } from 'vue-router';
 import { useHead, useSeoMeta } from '@unhead/vue'
 import seoLanguages from '@/services/display-languages/seo-languages';
 
-import CompDevs from '@/components/others/CompDevs.vue';
+import CompForDevelopers from '@/components/others/for-developers/CompForDevelopers.vue';
 import displayLanguages from '@/services/display-languages/display-languages';
 import { logPageView } from '@/services/firebase/app';
 
 export default {
-    name: 'AboutDevView',
+    name: 'ForDevelopersView',
     components: {
-        CompDevs
+        CompForDevelopers
     },
     setup() {
         // Grab query params

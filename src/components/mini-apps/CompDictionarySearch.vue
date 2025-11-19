@@ -528,7 +528,7 @@ export default {
         },
         onKeyPress(button) {
             if (button === '{enter}') {
-                this.searchFromText(this.text);
+                this.searchFromText(this.text, this.translateFrom, this.translateTo, this.authorIncludes, this.orderBy);
             }
         },
     }

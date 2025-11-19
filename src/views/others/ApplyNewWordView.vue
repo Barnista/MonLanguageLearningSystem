@@ -32,12 +32,29 @@
 
 
 <script>
+import { useRoute } from 'vue-router';
+import { useHead, useSeoMeta } from '@unhead/vue'
+import seoLanguages from '@/services/display-languages/seo-languages';
 
 import displayLanguages from '@/services/display-languages/display-languages';
 import { logPageView } from '@/services/firebase/app';
 
 export default {
     name: 'ApplyNewWordView',
+    setup() {
+        // Grab query params
+        const route = useRoute();
+        const lang = route.query.lang || 'eng';
+        const langSEO = seoLanguages.langSEO[lang];
+        useHead({
+            htmlAttrs: { lang: langSEO["lang"] || 'en-US' },
+            meta: langSEO["meta"]["default"],
+            link: langSEO["link"]["default"]
+        });
+        useSeoMeta({
+            ...langSEO["seoMeta"]["default"]
+        });
+    },
     data() {
         return {
             // Data properties can be added here if needed

@@ -2,26 +2,43 @@ export default {
     projectName: "mon-language-learning-system",
     appName: "The Mon Language (မန်)",
     appName2: "The Mon Language: Learning System",
-    appVersion: "1.7.8 Build 3",
+    appVersion: "1.7.9",
     relatedContents: [
         {
+            name: "Mon Calendar",
+            author: "Nai Saik Chan",
+            description: "Traditional Mon lunar calendar application.",
+            alias: "moncalendar",
+            link: "https://apps.apple.com/us/app/moncalendar/id6740172947"
+        },
+        {
             name: "A AR Dictionary",
+            author: "Nai Saik Chan",
             description: "Mon - Burmese Dictionary web app developed by Nai Sac Lun.",
             alias: "aarmon",
             link: "https://www.aarmon.app/"
         },
         {
             name: "mondictionary.org",
+            author: "Htaw Mon",
             description: "Mon - English Dictionary website developed by Htaw Mon.",
             alias: "mon-dict-htaw",
             link: "https://www.mondictionary.org/"
         },
         {
             name: "Mon Dictionary (iOS/Android)",
+            author: "NetScriper",
             description: "Mon - English Dictionary mobile app developed by NetScriper.",
             alias: "mon-dict",
             link: "https://www.youtube.com/watch?v=acRnwk9LvTo"
         },
+        {
+            name: "Mon English App",
+            author: "Ven. Suriya Mon",
+            description: "Application that helps user convert from old Mon script system to a more modern Myanmar unicode system.",
+            alias: "monengapp",
+            link: "https://monenglishapp.web.app/"
+        }
     ],
     ourCommunities: [
         {
@@ -39,11 +56,12 @@ export default {
             country: "thai"
         },
         {
-            name: "Discord (Official)",
+            name: "Discord (Mon Club)",
             description: "Updates, Discussion, community, and meetings",
             platform: "discord",
-            link: "https://discord.gg/GkMD5hVrYv",
-            country: "thai"
+            link: "https://discord.gg/vng8SMJXmy",
+            //link: "https://discord.gg/GkMD5hVrYv",
+            country: "us"
         },
         {
             name: "Twitch (Barnista)",
@@ -173,92 +191,118 @@ export default {
     ],
     contributors: [
         {
-            name: "ธรรมนูญ วันชะเอม (ဓမ္မနုည ဝန်ဇအေမ် / Tummanoon Wancha-em / aka. Barnista)",
-            role: "Project Founder, Developer, Barnista's persona, independent scholar, Thai-Mon descendant.",
-            link: "https://www.youtube.com/@barnista27",
-            country: "thai"
+            name: "Pioneers & Digital Creators",
+            role: "",
+            link: "",
+            country: "ramanndesa",
+            members: [
+                {
+                    name: "Tummanoon Wancha-em (aka. Barnista / ဓမ္မနုည် ဝန်ဇအေမ် / ธรรมนูญ วันชะเอม)",
+                    role: "Project Founder, Lead Developer, Mon-Thai descendant.",
+                    link: "https://github.com/Barnista",
+                    country: "thai"
+                },
+                {
+                    name: "Nai Saik Chan",
+                    role: "Co-developer: localization on Burmese-version display language, and dictionary database structure origin.",
+                    link: "https://github.com/NaiSaikChan",
+                    country: "mon"
+                },
+                {
+                    name: "Ven. Suriya Mon",
+                    role: "Co-developer: localization on Mon-version display language.",
+                    link: "",
+                    country: "us"
+                },
+                {
+                    name: "Ven. Anonta Mon",
+                    role: "Co-developer: Mon keyboard layout designer.",
+                    link: "https://github.com/anontamon",
+                    country: "mon"
+                },
+                {
+                    name: "Htaw Mon",
+                    role: "Co-developer: Mon Club's Admin (Discord)",
+                    link: "https://github.com/iammon/mon-dictionary",
+                    country: "us"
+                },
+            ]
         },
         {
-            name: "กลุ่มรามัญวิวัฒน์ (ရာမညာဝိဝဍ္ဎန / Rammanyavivatana)",
+            name: "Rammanyavivatana (ရာမညာဝိဝဍ္ဎန / กลุ่มรามัญวิวัฒน์) and other Mon-Thai scholars.",
             role: "",
             link: "",
             country: "thai",
             members: [
                 {
-                    name: "อลงกรณ์ สุนทรชื่น (Alongkorn Mon)",
+                    name: "Alongkorn Mon (อลงกรณ์ สุนทรชื่น)",
                     role: "Human Rights Defender on migrant workers of Myanmese-Mon ethnics in Thailand, Former President of Mon Youth Community Bangkok, Thai-Mon descendant.",
                     link: "",
                     country: "thai"
                 },
                 {
-                    name: "สุนทร ศรีปานเงิน (Sunthorn Sripanngern)",
+                    name: "Sunthorn Sripanngern (สุนทร ศรีปานเงิน)",
                     role: "Mon Language Fundamental & Guide provider. Dictionary provider, Historian, Linguistic Researcher, Mon native speaker.",
                     link: "",
                     country: "thai"
                 },
                 {
-                    name: "ธีรัททมาน์ เจียมจวนขาว (Tirattamar Jiamjuankhao)",
-                    role: "Mon Language Fundamental & Guide provider. Dictionary provider, Mon Linguist, Legal drafter on Thailand's Ethnic Protection Bill, Thai-Mon descendant. ",
+                    name: "Tirattamar Jiamjuankhao (ธีรัททมาน์ เจียมจวนขาว)",
+                    role: "Mon Language Fundamental & Guide provider. Dictionary provider, Mon Linguist, Linguistic Researcher, Legal drafter on Thailand's Ethnic Protection Bill, Thai-Mon descendant. ",
+                    link: "",
+                    country: "thai"
+                },
+                {
+                    name: "Zuzarz Jaichop (သုည ပညါ)",
+                    role: "Independent scholar, Mon language preservationist, author of 'บันทึกความเข้าใจในการหัดอ่านภาษามอญ (လိက်ဂတ်)', Thai-Mon descendant.",
+                    link: "",
+                    country: "thai"
+                },
+                {
+                    name: "Busaba Prapasapong",
+                    role: "Independent scholar, Mon language preservationist, Thai-Mon descendant.",
+                    link: "",
+                    country: "thai"
+                },
+                {
+                    name: "Manop Kaewyok",
+                    role: "Independent scholar, Mon language preservationist, Thai-Mon descendant.",
                     link: "",
                     country: "thai"
                 },
             ]
         },
         {
-            name: "Min Salad",
-            role: "Monttip E-book's admin, Mon-Thai dictionary E-book provider, Buddhist Scholar, Mon native speaker.",
+            name: "Academia and other Monland' scholars.",
+            role: "",
             link: "",
-            country: "mon"
-        },
-        {
-            name: "Nai Saik Chan",
-            role: "Dictionary database provider, asscociate developer (A AR Dictionary).",
-            link: "https://github.com/NaiSaikChan",
-            country: "mon"
-        },
-        {
-            name: "Anonta Mon",
-            role: "Mon-Thai dictionary compiler, Associate developer (Mon Keyboard Layout), keyboard designer.",
-            link: "https://github.com/anontamon",
-            country: "mon"
-        },
-        {
-            name: "สุชาติ ใจชอบ (သုည ပညါ)",
-            role: "Independent scholar, Mon language researcher, author of 'บันทึกความเข้าใจในการหัดอ่านภาษามอญ (လိက်ဂတ်)', Thai-Mon descendant.",
-            link: "",
-            country: "thai"
-        },
-    ],
-    honorableMentions: [
-        {
-            name: "ผศ.บัญญพนต์ พูลสวัสดิ์ (ၜညာဗန် ဘုန်သဝါတ် / Banyapon Poolsawas)",
-            role: "Technical & Innovation Advisor",
-            link: "https://github.com/banyapon",
-            country: "thai"
-        },
-        {
-            name: "Htaw Mon",
-            role: "Associate developer (mondictionary.org), Mon Club's Admin (Discord)",
-            link: "https://github.com/iammon/mon-dictionary",
-            country: "us"
-        },
-        {
-            name: "Nai Sac Lun",
-            role: "Mon-Burmese dictionary compiler (first and second editions).",
-            link: "",
-            country: "us"
-        },
-        {
-            name: "Tanapaphon Phoemphunsapphayakon",
-            role: "Testing and Feedback",
-            link: "",
-            country: "thai"
-        },
-        {
-            name: "Sittinon Singmane",
-            role: "Testing and Feedback",
-            link: "",
-            country: "thai"
+            country: "mon",
+            members: [
+                {
+                    name: "Mon National College",
+                    role: "Academic affiliate, Mon Study and Preservation, and tech fund agent.",
+                    link: "",
+                    country: "mon"
+                },
+                {
+                    name: "Banya Honsar",
+                    role: "Head of Outreach and Mon Ebook Team, Mon National College.",
+                    link: "",
+                    country: "mon"
+                },
+                {
+                    name: "Ven. Ponnya Non",
+                    role: "Tech thinkers, Poetic Mon linguist, buddhist scholar, academic fund agent.",
+                    link: "",
+                    country: "mon"
+                },
+                {
+                    name: "Gi Mar (aka. Min Salad)",
+                    role: "Mon E-book team, Monttip E-book's admin, Buddhist Scholar.",
+                    link: "",
+                    country: "mon"
+                },
+            ]
         },
         {
             name: "Monttip E-book (မတ်ဒိဗ်): Community",
@@ -268,15 +312,35 @@ export default {
         },
         {
             name: "Mon Club: Community",
-            role: "Technical & Linguistic validation",
+            role: "Open discussion and collaboration of Mon youth around the world.",
             link: "https://discord.gg/vng8SMJXmy",
-            country: "mon"
+            country: "ramanndesa"
+        },
+    ],
+    honorableMentions: [
+        {
+            name: "Phra Maha Jaroon Yanajaree and committee members, Wat Chana Songkhram Ratchaworamahawihan, Bangkok, Thailand.",
+            role: "Mon-Thai dictionary colpiler.",
+            link: "",
+            country: "thai"
         },
         {
-            name: "Barnista's Club: Community",
-            role: "Ideas, inspiration, technical enjoyment, and emotional support",
-            link: "https://discord.gg/GSZeRZaVZb",
-            country: "thai"
+            name: "Mon Buddhist Student Society, MCU.",
+            role: "Society of Mon buddhist studying in Mahachulalongkornrajavidyalaya University, Thailand.",
+            link: "",
+            country: "ramanndesa"
+        },
+        {
+            name: "Nai Sac Lun",
+            role: "Mon-Burmese dictionary compiler (first and second editions).",
+            link: "",
+            country: "us"
+        },
+        {
+            name: "Nai Tun Way",
+            role: "Mon-English dictionary compiler.",
+            link: "",
+            country: "mon"
         },
         {
             name: "Mon Khlong Si (มอญคลองสี่): Community",
@@ -290,8 +354,38 @@ export default {
             link: "https://www.facebook.com/profile.php?id=100063487753229",
             country: "thai"
         },
+        {
+            name: "ผศ.บัญญพนต์ พูลสวัสดิ์ (ၜညာဗန် ဘုန်သဝါတ် / Banyapon Poolsawas)",
+            role: "Technical & Innovation Advisor",
+            link: "https://github.com/banyapon",
+            country: "thai"
+        },
+        {
+            name: "Tanapaphon Phoemphunsapphayakon",
+            role: "Testing and Feedback",
+            link: "",
+            country: "thai"
+        },
+        {
+            name: "Sittinon Singmane",
+            role: "Testing and Feedback",
+            link: "",
+            country: "thai"
+        },
     ],
     references: [
+        {
+            name: "Sunthorn Sripanngern. (n.d.). Facebook post regarding Mon consonants",
+            date: "2025, Nov 18",
+            site: "Facebook post",
+            link: "https://www.facebook.com/jakkasiha.sripanngern/posts/pfbid0mxjNwnzaVyCuNeXN7r2wxyoetqWi6iknaamf97NMABBxos7fhP3CmvsbPmPrEdtXl"
+        },
+        {
+            name: "Phra Mahajaroon. แบบเรียนภาษามอญ (ဗီုကတ်ဘာသာမန်)",
+            date: "1997",
+            site: "...",
+            link: "https://drive.google.com/file/d/15s9o47OgTZh-VaMuVCD1k9VKfZIbMaWp/view?usp=sharing"
+        },
         {
             name: "ตัวเลขมอญ",
             date: "2025, Sep 9",
@@ -371,6 +465,11 @@ export default {
             link: "https://router.vuejs.org/"
         },
         {
+            name: "@Unhead/vue",
+            role: "Unhead wraps your document template, improving reactive SSR JavaScript framework SEO and performance.",
+            link: "https://unhead.unjs.io/"
+        },
+        {
             name: "Bootstrap 5.3",
             role: "Bootstrap UI Framework",
             link: "https://getbootstrap.com/docs/5.3/getting-started/introduction/"
@@ -408,6 +507,11 @@ export default {
 
     ],
     technicalsBackEnd: [
+        {
+            name: "MonDictDB",
+            role: "Centralized dictionary database of The Mon Language.",
+            link: "https://barnista.github.io/MonDictDB/"
+        },
         {
             name: "Node.js",
             role: "JavaScript Runtime Environment",

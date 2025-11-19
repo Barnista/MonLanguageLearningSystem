@@ -49,6 +49,15 @@
                     </div>
                 </router-link>
             </div>
+            <div class="col-12 col-xl-3 mb-3">
+                <router-link :to="{ path: '/for-developers', query: { lang } }"
+                    :class="['btn', `btn-dark`, 'w-100', 'h-100', 'py-4', 'shadow-sm', 'rounded-3', 'd-flex', 'flex-column', 'align-items-center']">
+                    <div class="d-flex flex-column justify-content-center align-items-center w-100 h-100">
+                        <i class="fs-1 bi bi-code-slash" style="font-size: 2rem;"></i>
+                        <span class="fs-5 fw-bold">APIs & Open-sources</span>
+                    </div>
+                </router-link>
+            </div>
         </div>
     </div>
 </template>

@@ -42,8 +42,11 @@
                             <span class="fs-1">{{ consonant.letter }}</span>
                             <span v-if="consonant.tone == 'clear'"
                                 class="ms-2 badge rounded-pill text-bg-light text-primary fw-bold">CL</span>
-                            <span v-if="consonant.tone == 'breathy'"
+                            <span v-if="consonant.tone == 'breathy' && !consonant.tone2"
                                 class="ms-2 badge rounded-pill text-bg-light text-danger fw-bold">BT</span>
+                            <span v-if="consonant.tone == 'breathy' && consonant.tone2 == 'clear'"
+                                class="ms-2 badge rounded-pill text-bg-light text-muted fw-bold"><span
+                                    class="text-danger">BT</span> • <span class="text-primary">CL</span></span>
                         </div>
                         <div class="mb-2 text-muted">
                             <span>{{ `/${consonant.ipa}/` || 'NaN' }}</span>
@@ -52,7 +55,7 @@
                                     }})</strong></span>
                         </div>
                         <button class="mt-2 btn btn-sm btn-outline-success py-0 px-1"
-                            @click="pronouceConsonant(consonant)">
+                            @click="pronouceConsonant(consonant)" disabled>
                             🔊
                             <span class="d-none d-md-inline">
                                 {{ langSet[lang ? lang : 'en'].menu.listen }}
@@ -99,7 +102,7 @@ export default {
             copiedIndex: null,
             copiedCIndex: null,
             copiedText: '',
-            consonants: monAlphabets.consonants,
+            consonants: monAlphabets.consonants.slice(0, 7),
         }
     },
     methods: {

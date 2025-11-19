@@ -19,6 +19,8 @@
                             class="me-2">
                         <img v-if="contributor.country == 'us'" src="@/assets/flags/en_us.svg" width="20" height="auto"
                             class="me-2">
+                        <img v-if="contributor.country == 'ramanndesa'" src="@/assets/flags/ramanndesa-2.svg" width="20"
+                            height="auto" class="me-2">
                         <strong>{{ contributor.name }}</strong>
                         <a v-if="contributor.link" :href="contributor.link" target="_blank" class="ms-2">
                             <i class="bi bi-box-arrow-up-right"></i> {{ langSet[lang ? lang : 'en'].aboutDevView.visit
@@ -27,7 +29,7 @@
                     </span>
                     <br>
                     <span class="text-success fs-6">{{ contributor.role
-                    }}</span>
+                        }}</span>
                     <ul v-if="contributor.members" class="">
                         <li v-for="(subCon, subIndex) in contributor.members" :key="subIndex" class="py-1 fs-6">
                             <span>
@@ -37,6 +39,8 @@
                                     height="auto" class="me-2">
                                 <img v-if="subCon.country == 'us'" src="@/assets/flags/en_us.svg" width="20"
                                     height="auto" class="me-2">
+                                <img v-if="subCon.country == 'ramanndesa'" src="@/assets/flags/ramanndesa-2.svg"
+                                    width="20" height="auto" class="me-2">
                                 <strong>{{ subCon.name }}</strong>
                                 <a v-if="subCon.link" :href="subCon.link" target="_blank" class="ms-2">
                                     <i class="bi bi-box-arrow-up-right"></i> {{ langSet[lang ? lang :
@@ -46,7 +50,7 @@
                             </span>
                             <br>
                             <span class="text-success fs-6">{{ subCon.role
-                            }}</span>
+                                }}</span>
                         </li>
                     </ul>
                 </li>
@@ -79,6 +83,8 @@
                             class="me-2">
                         <img v-if="mention.country == 'us'" src="@/assets/flags/en_us.svg" width="20" height="auto"
                             class="me-2">
+                        <img v-if="mention.country == 'ramanndesa'" src="@/assets/flags/ramanndesa-2.svg" width="20"
+                            height="auto" class="me-2">
                         <strong>{{ mention.name }}</strong>
                         <a v-if="mention.link" :href="mention.link" target="_blank" class="ms-2">
                             <i class="bi bi-box-arrow-up-right"></i> {{ langSet[lang ? lang :

@@ -28,7 +28,7 @@
                                 <span>{{ `/${vowel.thCL.replace('-', 'อ')}/` || 'NaN' }} </span>
                             </div>
                             <button class="mt-2 btn btn-sm btn-outline-success py-0 px-1"
-                                @click="pronouceVowelCL(vowel)">
+                                @click="pronouceVowelCL(vowel)" disabled>
                                 🔊
                                 <span class="d-none d-md-inline">
                                     {{ langSet[lang ? lang : 'en'].menu.listen }}

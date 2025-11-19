@@ -9,7 +9,7 @@
         </span>
       </p>
       <div class="d-flex justify-content-center align-items-center mt-4">
-        <label class="text-muted" style="color: #ccc;">{{ langSet[lang || 'en'].homeView.displayLanguage }}: </label>
+        <label class="text-muted" style="color: #ccc;">{{ langSet[lang || 'en'].homeView.displayLanguage }} </label>
         <button class="ms-2 dropdown btn btn-outline-secondary shadow-sm">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             <img :src="langOptions[lang ? lang : 'en'].icon" width="24" height="auto">
@@ -61,6 +61,9 @@
 </template>
 
 <script>
+import { useRoute } from 'vue-router';
+import { useHead, useSeoMeta } from '@unhead/vue'
+import seoLanguages from '@/services/display-languages/seo-languages';
 
 import CompLearnAlphabets from '@/components/home/CompLearnAlphabets.vue';
 import CompLearnGrammar from '@/components/home/CompLearnGrammar.vue';
@@ -74,8 +77,6 @@ import CompOtherCommunities from '@/components/others/communities/CompOtherCommu
 import CompRelatedContent from '@/components/others/communities/CompRelatedContent.vue';
 import CompJoinUs from '@/components/others/communities/CompJoinUs.vue';
 import { logPageView } from '@/services/firebase/app';
-//import CompDevMessage from '@/components/others/abouts/CompDevMessage.vue';
-//import CompNewsUpdates from '@/components/home/CompNewsUpdates.vue';
 
 export default {
   name: 'HomeView',
@@ -87,9 +88,21 @@ export default {
     CompMiniApps,
     CompOtherCommunities,
     CompRelatedContent,
-    CompJoinUs,
-    //CompDevMessage,
-    //CompNewsUpdates
+    CompJoinUs
+  },
+  setup() {
+    // Grab query params
+    const route = useRoute();
+    const lang = route.query.lang || 'eng';
+    const langSEO = seoLanguages.langSEO[lang];
+    useHead({
+      htmlAttrs: { lang: langSEO["lang"] || 'en-US' },
+      meta: langSEO["meta"]["default"],
+      link: langSEO["link"]["default"]
+    });
+    useSeoMeta({
+      ...langSEO["seoMeta"]["default"]
+    });
   },
   data: () => {
     return {

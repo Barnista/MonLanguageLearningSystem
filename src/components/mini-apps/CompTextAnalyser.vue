@@ -39,8 +39,9 @@
                     <div class="mt-4">
                         <div class="text-center">
                             <div class="fw-bold text-muted">{{ langSet[lang || 'en'].textAnalyser.syllables ||
-                                '_SYLLABLES_' }} ({{ syllables.length }}): <span class="fw-normal fs-4">{{ words || 'NaN'
-                                    }}</span>
+                                '_SYLLABLES_' }} ({{ syllables.length }}): <span class="fw-normal fs-4">{{ words ||
+                                    'NaN'
+                                }}</span>
                             </div>
                             <h1 class="mt-2 mb-0">
                                 <span v-for="(letter, index) in syllables" :key="index">
@@ -104,8 +105,8 @@
                             </span>
                         </div>
                         <div v-if="text == 'စိုတ်မန်စိုတ်မွဲ'" class="text-center mt-3">
-                            <router-link class="btn btn-outline-light bg-fabulous shadow" :to="{ path: '/monland', query: { lang } }"
-                                target="_blank">
+                            <router-link class="btn btn-outline-light bg-fabulous shadow"
+                                :to="{ path: '/monland', query: { lang } }" target="_blank">
                                 <i class="bi bi-question-diamond"></i>
                                 <span class="ms-1">
                                     {{ langSet[lang || 'en'].textAnalyser.unlockMonland || '_UNLOCK_MON_RENAISSANCE_' }}
@@ -117,111 +118,64 @@
                             <div class="fw-bold text-center mb-2">
                                 {{ langSet[lang || 'en'].textAnalyser.meanings ||
                                     '_MEANINGS_' }} ({{ meanings.length }}):
-                                <router-link class="ms-1" :to="{ path: '/apps/dictionary', query: { lang, from: 'mon', q: words } }"
+                                <router-link class="ms-1"
+                                    :to="{ path: '/apps/dictionary', query: { lang, from: 'mnw', q: words } }"
                                     target="_blank">
                                     {{ langSet[lang || 'en'].menu.readMore || '_READ_MORE_' }}
                                 </router-link>
                             </div>
                             <div class="col-12 col-lg-6 mb-2">
-                                <ul class="list-group shadow-sm">
-                                    <li v-for="(mItem, mIndex) in meanings.slice(0, Math.ceil(meanings.length / 2))"
-                                        :key="mIndex"
-                                        class="list-group-item d-flex justify-content-between align-items-start pt-2">
-                                        <div class="ms-2 me-auto">
-                                            <span class="me-2">{{ Number(mItem.no).toLocaleString() }}.</span>
-                                            <span v-html="hilightText(text, mItem.word)"
-                                                class="fs-4 text-dark"></span>
-                                            <div class="mt-1">
-                                                <small>IPA: <span class="text-muted">{{ `/${mItem.ipa}/` || 'NaN'
-                                                        }}</span></small>
-                                                <small class="ms-3">TH: <span class="text-muted">{{ `/${mItem.th}/` ||
-                                                    'NaN'
-                                                        }}</span></small>
-                                            </div>
-                                            <div class="my-1">
-                                                <small class="text-muted me-1">{{ langSet[lang ||
-                                                    'en'].dictionary.meanings
-                                                    }}:</small>
-                                                <small v-for="(tItem, tIndex) in mItem.translates" :key="tIndex">
-                                                    <span v-if="tItem.type" class="me-2 fst-italic">
-                                                        <!--<span class="text-success">({{
-                                                            (lang == 'th') ? displayTranslateTypeTH(tItem.type) :
-                                                                displayTranslateType(tItem.type) }})</span>-->
-                                                        <span class="ms-1 fw-bold" v-html="tItem.th"></span>
-                                                        <span class="ms-1 text-muted">|</span>
-                                                    </span>
-                                                </small>
-                                            </div>
-                                        </div>
-                                        <button v-if="copiedIndex2 == mItem.no"
-                                            class="mt-2 ms-1 btn btn-sm btn-light disabled">
-                                            <i class="bi bi-check-square-fill"></i>
-                                            <span class="ms-2 d-none">
-                                                {{ langSet[lang ? lang : 'en'].menu.copied }}
-                                            </span>
-                                        </button>
-                                        <button v-else @click="copyToClipboard2(mItem.word, mItem.no)"
-                                            class="mt-2 ms-1 btn btn-sm btn-outline-secondary">
-                                            <i class="bi bi-clipboard"></i>
-                                            <span class="ms-2 d-none">
-                                                {{ langSet[lang ? lang : 'en'].menu.copy }}
-                                            </span>
-                                        </button>
+                                <ul v-if="isLoading" class="list-group shadow-sm">
+                                    <li class="list-group-item">
+                                        <CompCardDefinitionSkeleton />
+                                    </li>
+                                    <li class="list-group-item">
+                                        <CompCardDefinitionSkeleton />
+                                    </li>
+                                    <li class="list-group-item">
+                                        <CompCardDefinitionSkeleton />
+                                    </li>
+                                    <li class="list-group-item">
+                                        <CompCardDefinitionSkeleton />
+                                    </li>
+                                    <li class="list-group-item">
+                                        <CompCardDefinitionSkeleton />
+                                    </li>
+                                </ul>
+                                <ul v-if="!isLoading" class="list-group shadow-sm">
+                                    <li v-for="(item) in meanings.slice(0, Math.ceil(meanings.length / 2))"
+                                        :key="item.id" class="list-group-item">
+                                        <CompCardDefinition :lang="lang" :word="item" :definitions="item.definitions"
+                                            :hilight="text" />
                                     </li>
                                 </ul>
                             </div>
                             <div class="col-12 col-lg-6 mb-2">
-                                <ul class="list-group shadow-sm">
-                                    <li v-for="(mItem, mIndex) in meanings.slice(Math.ceil(meanings.length / 2), meanings.length)"
-                                        :key="mIndex"
-                                        class="list-group-item d-flex justify-content-between align-items-start pt-2">
-                                        <div class="ms-2 me-auto">
-                                            <span class="me-2">{{ Number(mItem.no).toLocaleString() }}.</span>
-                                            <span v-html="hilightText(text, mItem.word)"
-                                                class="fs-4 text-dark"></span>
-                                            <div class="mt-1">
-                                                <small>IPA: <span class="text-muted">{{ `/${mItem.ipa}/` || 'NaN'
-                                                        }}</span></small>
-                                                <small class="ms-3">TH: <span class="text-muted">{{ `/${mItem.th}/` ||
-                                                    'NaN'
-                                                        }}</span></small>
-                                            </div>
-                                            <div class="my-1">
-                                                <small class="text-muted me-1">{{ langSet[lang ||
-                                                    'en'].dictionary.meanings
-                                                    }}:</small>
-                                                <small v-for="(tItem, tIndex) in mItem.translates" :key="tIndex">
-                                                    <span v-if="tItem.type" class="me-2 fst-italic">
-                                                        <!--<span class="text-success">({{
-                                                            (lang == 'th') ? displayTranslateTypeTH(tItem.type) :
-                                                                displayTranslateType(tItem.type) }})</span>-->
-                                                        <span class="ms-1 fw-bold" v-html="tItem.th"></span>
-                                                        <span class="ms-1 text-muted">|</span>
-                                                    </span>
-                                                </small>
-                                            </div>
-                                        </div>
-                                        <button v-if="copiedIndex2 == mItem.no"
-                                            class="mt-2 ms-1 btn btn-sm btn-light disabled">
-                                            <i class="bi bi-check-square-fill"></i>
-                                            <span class="ms-2 d-none">
-                                                {{ langSet[lang ? lang : 'en'].menu.copied }}
-                                            </span>
-                                        </button>
-                                        <button v-else @click="copyToClipboard2(mItem.word, mItem.no)"
-                                            class="mt-2 ms-1 btn btn-sm btn-outline-secondary">
-                                            <i class="bi bi-clipboard"></i>
-                                            <span class="ms-2 d-none">
-                                                {{ langSet[lang ? lang : 'en'].menu.copy }}
-                                            </span>
-                                        </button>
+                                <ul v-if="isLoading" class="list-group shadow-sm">
+                                    <li class="list-group-item">
+                                        <CompCardDefinitionSkeleton />
+                                    </li>
+                                    <li class="list-group-item">
+                                        <CompCardDefinitionSkeleton />
+                                    </li>
+                                    <li class="list-group-item">
+                                        <CompCardDefinitionSkeleton />
+                                    </li>
+                                    <li class="list-group-item">
+                                        <CompCardDefinitionSkeleton />
+                                    </li>
+                                    <li class="list-group-item">
+                                        <CompCardDefinitionSkeleton />
+                                    </li>
+                                </ul>
+                                <ul v-if="!isLoading" class="list-group shadow-sm">
+                                    <li v-for="(item) in meanings.slice(Math.ceil(meanings.length / 2), meanings.length)"
+                                        :key="item.id" class="list-group-item">
+                                        <CompCardDefinition :lang="lang" :word="item" :definitions="item.definitions"
+                                            :hilight="text" />
                                     </li>
                                 </ul>
                             </div>
-                            <!--<div v-else class="text-center text-muted">
-                                <small>{{ langSet[lang || 'en'].textAnalyser.noMeaning || '_NO_MEANING_FOUND_'
-                                    }}</small>
-                            </div>-->
                         </div>
                         <hr>
                         <div class="d-flex justify-content-between text-muted">
@@ -249,14 +203,18 @@ import { Collapse } from 'bootstrap/dist/js/bootstrap.bundle.min';
 import advancedAlphabets from '@/services/mon-library/alphabets/alphabets-ai';
 import CompSimpleKeyboard from '../keyboard/CompSimpleKeyboard.vue';
 import displayLanguages from '@/services/display-languages/display-languages';
-import dictionary from '@/services/mon-library/dictionary/dictionary';
+import { MonDictDB } from '@/services/mon-library/mon-dict-db/index';
 import CompMobileKeyboard from '../keyboard/CompMobileKeyboard.vue';
+import CompCardDefinition from './CompCardDefinition.vue';
+import CompCardDefinitionSkeleton from './CompCardDefinitionSkeleton.vue';
 
 export default {
     name: 'CompTextAnalyser',
     components: {
         CompSimpleKeyboard,
-        CompMobileKeyboard
+        CompMobileKeyboard,
+        CompCardDefinition,
+        CompCardDefinitionSkeleton
     },
     props: {
         lang: {
@@ -282,11 +240,12 @@ export default {
             ths: [],
             isKeyboardShown: false,
             collapseKeyboard: null,
-            copiedIndex2: null,
+            isLoading: true,
+            payload: null,
+            count: 0
         }
     },
     created() {
-        dictionary.initDB();
         this.windowWidth = window.innerWidth;
         window.addEventListener('resize', () => {
             this.windowWidth = window.innerWidth;
@@ -296,8 +255,33 @@ export default {
         this.collapseKeyboard = new Collapse('#collapseKeyboard', {
             toggle: false
         });
+
+        this.startDB();
     },
     methods: {
+        async startDB() {
+            try {
+                this.isLoading = true;
+                this.payload = await MonDictDB.startDB('https://sql.js.org/dist/');
+                this.count = await MonDictDB.count(this.payload);
+
+                this.performSearch(this.words);
+            } catch (error) {
+                console.error(error);
+            }
+        },
+        async performSearch(text) {
+            this.isLoading = true;
+            let nlang = 'eng';
+            if (this.lang == 'th') nlang = 'tha';
+            else if (this.lang == 'my') nlang = 'mya';
+            if (this.payload) {
+                this.meanings = await MonDictDB.searchByWord(this.payload, text, true, this.searchLimit, true, nlang, [1, 2, 3], 'ASC');
+            } else {
+                console.log('PAYLOAD IS NOT READY');
+            }
+            this.isLoading = false
+        },
         analyseMonText(text) {
             this.hideKeyboard();
 
@@ -312,8 +296,7 @@ export default {
             this.ipas = result.ipas;
             this.ths = result.ths;
 
-            this.meanings = dictionary.searchByWord(this.words, true, this.searchLimit, false);
-            console.log(result);
+            this.performSearch(this.words);
         },
         setText(text) {
             this.text = text;
@@ -336,32 +319,6 @@ export default {
                 this.analyseMonText(this.text);
             }
         },
-        copyToClipboard2(text, index) {
-            this.copiedIndex2 = index;
-            navigator.clipboard.writeText(text).then(() => {
-                //alert('Copied to clipboard: ' + text);
-                setTimeout(() => {
-                    this.copiedIndex2 = null;
-                }, 5000); // Clear after 2 seconds
-            }).catch(err => {
-                console.error('Failed to copy: ', err);
-            });
-        },
-        hilightText(text, word) {
-            let n_word = word;
-            if (text && word) {
-                n_word = n_word.replace(text, `<span class="bg-warning">${text}</span>`);
-            }
-            return n_word;
-        },
-        displayTranslateTypeTH(type) {
-            //return type
-            return dictionary.getTranslateTypeTH(type)
-        },
-        displayTranslateType(type) {
-            //return type
-            return dictionary.getTranslateType(type)
-        }
     }
 }
 </script>
