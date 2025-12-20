@@ -1,0 +1,30 @@
+{
+    "id": "seo_en",
+    "lang": "en-US",
+    "meta": {
+        "default": [
+            {
+                "name": "The Mon Language မန်",
+                "content": "Mon language online learning platform. Mon Alphabet AI, Mon-English-Thai-Burmese Dictionary."
+            }
+        ]
+    },
+    "link": {
+        "default": [
+            {
+                "rel": "canonical",
+                "href": "https://the-mon-language.web.app"
+            }
+        ]
+    },
+    "seoMeta": {
+        "default": {
+            "title": "The Mon Language မန်",
+            "description": "Mon language online learning platform. Mon Alphabet AI, Mon-English-Thai-Burmese Dictionary.",
+            "ogType": "website",
+            "ogUrl": "https://the-mon-language.web.app",
+            "ogLocale": "en_US",
+            "ogSiteName": "The Mon Language"
+        }
+    }
+}

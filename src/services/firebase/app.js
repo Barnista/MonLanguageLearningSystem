@@ -25,7 +25,7 @@ export default {
     firebaseApp,
     analytics,
     logPageView,
-    logCustomEvent  
+    logCustomEvent
 }
 
 export function logPageView(pageName) {
@@ -37,5 +37,24 @@ export function logPageView(pageName) {
 export function logCustomEvent(eventName, eventParams = {}) {
     if (analytics) {
         logEvent(analytics, eventName, eventParams);
+    }
+}
+
+export function parseAuthError(err) {
+    if (!err || !err.code) return String(err || 'Unknown error')
+    switch (err.code) {
+        case 'auth/user-not-found':
+        case 'auth/wrong-password':
+            return 'Invalid email or password.'
+        case 'auth/email-already-in-use':
+            return 'Email already in use.'
+        case 'auth/invalid-email':
+            return 'Invalid email address.'
+        case 'auth/popup-closed-by-user':
+            return 'Popup closed before completing sign in.'
+        case 'auth/popup-blocked':
+            return 'Popup blocked by the browser.'
+        default:
+            return err.message || err.code
     }
 }

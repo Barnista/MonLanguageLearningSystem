@@ -11,7 +11,10 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js'
 import 'bootstrap-icons/font/bootstrap-icons.css';
 
 const head = createHead();
-createApp(App).use(head).use(router).mount('#app');
+const app = createApp(App);
+app.use(head);
+app.use(router);
+app.mount('#app');
 
 
 

@@ -1,0 +1,30 @@
+{
+    "id": "seo_mnw",
+    "lang": "mnw",
+    "meta": {
+        "default": [
+            {
+                "name": "The Mon Language မန် - လ္ၚတ်လိက်မန်ဝိုအ်",
+                "content": "ဒုင်တၠုင် ဏာ နူဘာသာမန် ရပ္ၚောံလုပ်လိက်မန် ၊ ဗဂပ်အက္ခရ်မန် ၊ သဒ္ဒါမည်၊ ပရးမလိက်မည် ထ္ၜးဗီုပြင်န"
+            }
+        ]
+    },
+    "link": {
+        "default": [
+            {
+                "rel": "canonical",
+                "href": "https://the-mon-language.web.app?lang=mnw"
+            }
+        ]
+    },
+    "seoMeta": {
+        "default": {
+            "title": "The Mon Language မန် - လ္ၚတ်လိက်မန်ဝိုအ်",
+            "description": "ဒုင်တၠုင် ဏာ နူဘာသာမန် ရပ္ၚောံလုပ်လိက်မန် ၊ ဗဂပ်အက္ခရ်မန် ၊ သဒ္ဒါမည်၊ ပရးမလိက်မည် ထ္ၜးဗီုပြင်န",
+            "ogType": "website",
+            "ogUrl": "https://the-mon-language.web.app?lang=mnw",
+            "ogLocale": "mnw",
+            "ogSiteName": "The Mon Language"
+        }
+    }
+}

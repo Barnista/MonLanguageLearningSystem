@@ -1,16 +1,24 @@
 <template>
-  <CompNavbar :lang="lang" @onChangeLang="onChangeLang" />
+  <CompNavbar :lang="lang" :currentUser="currentUser" @onChangeLang="onChangeLang" />
 
   <!-- Main Content -->
   <router-view class="safe-zone flex-grow-1" />
 
   <KeyboardModal ref="keyboardModal" :lang="lang" />
+
   <div class="sticky-bottom text-end p-3" id="toastBtn">
-    <button @click="showKeyboard" class="btn btn-lg bg-fabulous rounded-pill shadow">
+    <button @click="showKeyboard" class="btn btn-lg btn-secondary pb-1 pt-2 px-3 rounded-pill shadow">
       <i class="bi bi-keyboard"></i>
-      {{ langSet[lang].keyboard.title }}
-      <!-- For Mon, English, Thai, Burmese -->
     </button>
+    <router-link v-if="!currentUser" :to="{ path: '/login', query: { lang } }" class="ms-2 btn btn-lg bg-fabulous pb-1 pt-2 px-3 rounded-pill shadow">
+      <i class="bi bi-person-circle"></i>
+      Renaissance
+    </router-link>
+    <router-link v-else :to="{ path: '/dashboard#comp-dashboard', query: { lang } }" class="ms-2 btn btn-lg bg-fabulous pb-1 pt-2 ps-2 pe-3 rounded-pill shadow">
+      <img v-if="currentUser.photoURL" :src="getAvatarById(currentUser.photoURL).src" alt="User Avatar" width="28"
+        height="28" class="rounded-circle me-1" :class="[{ circleActive: $route.path === '/dashboard' }]">
+      My Dashboard
+    </router-link>
   </div>
 
   <!-- Footer -->
@@ -22,27 +30,60 @@
 
 <script>
 
-import KeyboardModal from './components/keyboard/KeyboardModal.vue';
-import CompNavbar from './components/misc/CompNavbar.vue';
+import KeyboardModal from './components/based/keyboard/KeyboardModal.vue';
+import CompNavbar from './components/based/misc/CompNavbar.vue';
 
 import about from './services/abouts/about';
 import displayLanguages from './services/display-languages/display-languages';
+
+import { useRoute } from 'vue-router';
+import { useHead, useSeoMeta } from '@unhead/vue'
+import seoLanguages from '@/services/display-languages/seo-languages';
+import { getAuth } from 'firebase/auth';
+import { firebaseApp } from './services/firebase/app';
+import { avatarFullPack, getAvatarById } from './data/avatars/avatars';
 
 export default {
   components: {
     CompNavbar,
     KeyboardModal
   },
+  setup() {
+    // Setup logic: SEO + auth state listener
+    try {
+      const route = useRoute();
+      const lang = route.query.lang || 'en';
+      const langSEO = seoLanguages.langSEO[lang.toString()];
+      useHead({
+        htmlAttrs: { lang: langSEO["lang"] || 'en-US' },
+        meta: langSEO["meta"]["default"],
+        link: langSEO["link"]["default"]
+      });
+      useSeoMeta({
+        ...langSEO["seoMeta"]["default"]
+      });
+    } catch (error) {
+      console.error('Error in setup:', error);
+    }
+  },
   data: () => {
     return {
       about,
       lang: 'en',
-      langSet: displayLanguages.langSet
+      langSet: displayLanguages.langSet,
+      currentUser: null,
+      avatars: avatarFullPack,
+      getAvatarById: getAvatarById
     }
   },
   mounted() {
     this.lang = this.$route.query.lang || 'en';
     console.log('lang', this.lang);
+    const auth = getAuth(firebaseApp);
+
+    setInterval(() => {
+      this.currentUser = auth.currentUser;
+    }, 1000);
   },
   watch: {
     '$route.query.lang'(newLang) {
@@ -57,7 +98,11 @@ export default {
       }
     },
     onChangeLang(lang) {
-      this.lang = lang;
+      try {
+        this.lang = lang;
+      } catch (error) {
+        this.lang = 'en';
+      }
       this.$router.replace({ query: { ...this.$route.query, lang } });
     }
   }
@@ -89,6 +134,10 @@ export default {
   src: url('@/assets/fonts/Pyidaungsu-2.5.4_Regular.ttf'),
     url('@/assets/fonts/Pyidaungsu-2.5.4_Bold.ttf'),
     url('@/assets/fonts/PyidaungsuNumbers-Regular.ttf');
+}
+
+.icon-fonrt {
+  font-family: 'FontAwesome', sans-serif;
 }
 
 .mon-text {

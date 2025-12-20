@@ -1,0 +1,30 @@
+{
+    "id": "seo_th",
+    "lang": "th",
+    "meta": {
+        "default": [
+            {
+                "name": "The Mon Language မန် - เรียนภาษามอญ",
+                "content": "แพลตฟอร์มการเรียนรู้ภาษามอญออนไลน์ พจนานุกรมมอญ-อังกฤษ-ไทย-พม่า อักษรมอญ-อังกฤษ-ไทย-พม่า"
+            }
+        ]
+    },
+    "link": {
+        "default": [
+            {
+                "rel": "canonical",
+                "href": "https://the-mon-language.web.app?lang=th"
+            }
+        ]
+    },
+    "seoMeta": {
+        "default": {
+            "title": "The Mon Language မန် - เรียนภาษามอญ",
+            "description": "แพลตฟอร์มการเรียนรู้ภาษามอญออนไลน์ พจนานุกรมมอญ-อังกฤษ-ไทย-พม่า อักษรมอญ-อังกฤษ-ไทย-พม่า",
+            "ogType": "website",
+            "ogUrl": "https://the-mon-language.web.app?lang=th",
+            "ogLocale": "th",
+            "ogSiteName": "The Mon Language"
+        }
+    }
+}

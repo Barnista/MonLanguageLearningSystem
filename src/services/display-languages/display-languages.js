@@ -1,7 +1,7 @@
-import en from './lang_en.json';
-import th from './lang_th.json';
-import my from './lang_my.json';
-import mnw from './lang_mnw.json';
+import en from '@/data/localizations/lang_en.json';
+import th from '@/data/localizations/lang_th.json';
+import my from '@/data/localizations/lang_my.json';
+import mnw from '@/data/localizations/lang_mnw.json';
 
 export default {
     options: {
