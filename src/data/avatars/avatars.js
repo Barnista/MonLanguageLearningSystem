@@ -1,58 +1,100 @@
 export const avatarStarterPack = [
     {
-        id: 'avatar1',
-        src: require('@/assets/avatars/avatar1.svg'),
+        id: 'avatar_hongsa_0001',
+        name: 'Simple Hongsa - Orange',
+        src: require('@/assets/avatars/avatar_hongsa_0001.svg'),
         backgroundColor: '#ffeeee',
+        stars: 4,
     },
     {
-        id: 'avatar2',
-        src: require('@/assets/avatars/avatar2.svg'),
-        backgroundColor: '#ebfaff',
-    },
-    {
-        id: 'avatar3',
-        src: require('@/assets/avatars/avatar3.svg'),
-        backgroundColor: '#fffaf0',
-    },
-    {
-        id: 'avatar4',
-        src: require('@/assets/avatars/avatar4.svg'),
-        backgroundColor: '#e1fffe',
-    },
-    {
-        id: 'avatar5',
-        src: require('@/assets/avatars/avatar5.svg'),
-        backgroundColor: '#ffe9f9',
-    },
-    {
-        id: 'avatar6',
-        src: require('@/assets/avatars/avatar6.svg'),
+        id: 'avatar_hongsa_0006',
+        name: 'Simple Hongsa - Orange 2',
+        src: require('@/assets/avatars/avatar_hongsa_0006.svg'),
         backgroundColor: '#6b1400',
+        stars: 4,
+    },
+];
+
+export const avatarStandardSSPack = [
+    {
+        id: 'avatar_ss_hongsa_0001',
+        name: 'New Hongsa - Flame',
+        src: require('@/assets/avatars/ss/avatar_ss_hongsa_0001.svg'),
+        backgroundColor: '#fff6e9',
+        stars: 5,
     },
     {
-        id: 'avatar7',
-        src: require('@/assets/avatars/avatar7.svg'),
+        id: 'avatar_ss_asva_0001',
+        name: 'Asva - Flame',
+        src: require('@/assets/avatars/ss/avatar_ss_asva_0001.svg'),
+        backgroundColor: '#fff6e9',
+        stars: 5,
+    }
+]
+
+export const avatarStandardPack = [
+    ...avatarStarterPack,
+    {
+        id: 'avatar_hongsa_0002',
+        name: 'Simple Hongsa - Blue',
+        src: require('@/assets/avatars/avatar_hongsa_0002.svg'),
+        backgroundColor: '#ebfaff',
+        stars: 4,
+    },
+    {
+        id: 'avatar_hongsa_0003',
+        name: 'Simple Hongsa - Green',
+        src: require('@/assets/avatars/avatar_hongsa_0003.svg'),
+        backgroundColor: '#fffaf0',
+        stars: 4,
+    },
+    {
+        id: 'avatar_hongsa_0004',
+        name: 'Simple Hongsa - Ocean',
+        src: require('@/assets/avatars/avatar_hongsa_0004.svg'),
+        backgroundColor: '#e1fffe',
+        stars: 4,
+    },
+    {
+        id: 'avatar_hongsa_0005',
+        name: 'Simple Hongsa - Rose',
+        src: require('@/assets/avatars/avatar_hongsa_0005.svg'),
+        backgroundColor: '#ffe9f9',
+        stars: 4,
+    },
+    {
+        id: 'avatar_hongsa_0007',
+        name: 'Simple Hongsa - Blue 2',
+        src: require('@/assets/avatars/avatar_hongsa_0007.svg'),
         backgroundColor: '#002738',
+        stars: 4,
     },
     {
-        id: 'avatar8',
-        src: require('@/assets/avatars/avatar8.svg'),
+        id: 'avatar_hongsa_0008',
+        name: 'Simple Hongsa - Green 2',
+        src: require('@/assets/avatars/avatar_hongsa_0008.svg'),
         backgroundColor: '#113f19',
+        stars: 4,
     },
     {
-        id: 'avatar9',
-        src: require('@/assets/avatars/avatar9.svg'),
+        id: 'avatar_hongsa_0009',
+        name: 'Simple Hongsa - Ocean 2',
+        src: require('@/assets/avatars/avatar_hongsa_0009.svg'),
         backgroundColor: '#003332',
+        stars: 4,
     },
     {
-        id: 'avatar10',
-        src: require('@/assets/avatars/avatar10.svg'),
+        id: 'avatar_hongsa_0010',
+        name: 'Simple Hongsa - Rose 2',
+        src: require('@/assets/avatars/avatar_hongsa_0010.svg'),
         backgroundColor: '#4c122e',
+        stars: 4,
     },
 ];
 
 export const avatarFullPack = [
-    ...avatarStarterPack,
+    ...avatarStandardPack,
+    ...avatarStandardSSPack
 ];
 
 export function getAvatarById(avatarId) {

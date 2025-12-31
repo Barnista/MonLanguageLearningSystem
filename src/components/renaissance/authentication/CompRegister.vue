@@ -5,14 +5,14 @@
         <form @submit.prevent="handleRegister">
             <div class="form-group mb-2">
                 <label class="form-label" for="email">Email<span class="text-danger">*</span>:</label>
-                <input class="form-control shadow-sm" id="email" v-model="form.email" type="email" placeholder="Insert your email."
-                    :disabled="isRegistering" required />
+                <input class="form-control shadow-sm" id="email" v-model="form.email" type="email"
+                    placeholder="Insert your email." :disabled="isRegistering" required />
                 <label v-if="isWarning && isEmailInvalid" class="form-text text-danger">Email format is invalid.</label>
             </div>
             <div class="form-group mb-2">
                 <label class="form-label" for="password">Password<span class="text-danger">*</span>:</label>
-                <input class="form-control shadow-sm" id="password" v-model="form.password" placeholder="8-16 characters."
-                    type="password" :disabled="isRegistering" required />
+                <input class="form-control shadow-sm" id="password" v-model="form.password"
+                    placeholder="8-16 characters." type="password" :disabled="isRegistering" required />
                 <label v-if="isWarning && isPasswordInvalid" class="form-text text-danger">Password must be 8-16
                     characters long.</label>
             </div>
@@ -28,7 +28,9 @@
             <hr>
             <h3>My Avatar</h3>
             <div class="form-group mb-3">
-                <label class="form-label">Select Avatar:</label>
+                <label class="form-label">Select Avatar (4  Stars): 
+                    <CompFourStars />
+                </label>
                 <div class="avatar-options">
                     <img v-for="(avatar, index) in avatars" :key="index" :src="avatar.src" :alt="avatar.id"
                         :class="{ selected: form.avatar === avatar.id }" @click="form.avatar = avatar.id"
@@ -38,7 +40,8 @@
 
             <div class="form-group mb-2">
                 <label class="form-label" for="gender">Gender<span class="text-danger">*</span>:</label>
-                <select class="form-control shadow-sm" id="gender" v-model="form.gender" :disabled="isRegistering" required>
+                <select class="form-control shadow-sm" id="gender" v-model="form.gender" :disabled="isRegistering"
+                    required>
                     <option value="">Select Gender</option>
                     <option value="male">Male</option>
                     <option value="female">Female</option>
@@ -49,8 +52,8 @@
 
             <div class="form-group mb-2">
                 <label class="form-label" for="generation">Generation<span class="text-danger">*</span>:</label>
-                <select class="form-control shadow-sm" id="generation" v-model="form.generation" :disabled="isRegistering"
-                    required>
+                <select class="form-control shadow-sm" id="generation" v-model="form.generation"
+                    :disabled="isRegistering" required>
                     <option value="">Select Generation</option>
                     <option value="gen-alpha">Gen Alpha (2012-2025)</option>
                     <option value="gen-z">Gen Z (1997-2012)</option>
@@ -77,7 +80,8 @@
             <div class="form-group mb-2">
                 <label class="form-label" for="monCommunity">My Mon community/town <span
                         class="text-muted">(optional)</span>:</label>
-                <select class="form-control shadow-sm" id="generation" v-model="form.monCommunity" :disabled="isRegistering">
+                <select class="form-control shadow-sm" id="generation" v-model="form.monCommunity"
+                    :disabled="isRegistering">
                     <option value="">I am not Mon 😓</option>
                     <option v-for="comm in communities" :key="comm.code" :value="comm.code">
                         {{ comm.name2 }} ----- {{ comm.name }}
@@ -89,25 +93,27 @@
             <h3>My Name</h3>
             <div class="form-group mb-2">
                 <label class="form-label" for="firstName">First Name<span class="text-danger">*</span>:</label>
-                <input class="form-control shadow-sm" id="firstName" v-model="form.firstName" placeholder="1-30 characters."
-                    type="text" :disabled="isRegistering" required />
+                <input class="form-control shadow-sm" id="firstName" v-model="form.firstName"
+                    placeholder="1-30 characters." type="text" :disabled="isRegistering" required />
                 <label v-if="isWarning && !form.firstName" class="form-text text-danger">First name is required.</label>
             </div>
 
             <div class="form-group mb-3">
                 <label class="form-label" for="lastName">Last Name or your Village Name <span
                         class="text-muted">(optional)</span>:</label>
-                <input class="form-control shadow-sm" id="lastName" v-model="form.lastName" placeholder="1-30 characters."
-                    type="text" :disabled="isRegistering" />
+                <input class="form-control shadow-sm" id="lastName" v-model="form.lastName"
+                    placeholder="1-30 characters." type="text" :disabled="isRegistering" />
             </div>
 
             <div class="form-check mt-4 mb-3">
                 <input v-model="form.acceptTerms" type="checkbox" class="form-check-input shadow-sm" id="checkAccept"
                     :disabled="isRegistering" required />
                 <label class="form-check-label" for="checkAccept">
-                    I agree to the 
-                    <router-link :to="{ path: '/terms', query: { lang: this.lang } }" target="_blank">Terms of Use</router-link> and 
-                    <router-link :to="{ path: '/privacy', query: { lang: this.lang } }" target="_blank">Privacy Policy</router-link>
+                    I agree to the
+                    <router-link :to="{ path: '/terms', query: { lang: this.lang } }" target="_blank">Terms of
+                        Use</router-link> and
+                    <router-link :to="{ path: '/privacy', query: { lang: this.lang } }" target="_blank">Privacy
+                        Policy</router-link>
                 </label>
                 <label v-if="isWarning && !form.acceptTerms" class="form-text text-danger">You must accept the terms and
                     conditions.</label>
@@ -137,9 +143,13 @@ import {
     updateProfile
 } from 'firebase/auth'
 import { firebaseApp } from '@/services/firebase/app';
+import CompFourStars from '../misc/stars/CompFourStars.vue'
 
 export default {
     name: 'CompRegister',
+    components: {
+        CompFourStars
+    },
     props: {
         lang: {
             type: String,
@@ -158,7 +168,8 @@ export default {
                 monCommunity: '',
                 firstName: '',
                 lastName: '',
-                avatar: 'avatar1',
+                username: '',
+                avatar: 'avatar_hongsa_0001',
                 acceptTerms: false,
             },
             isWarning: false,
@@ -226,9 +237,13 @@ export default {
                     photoURL: this.form.avatar
                 });
 
+                //generate username from email
+                this.form.username = this.form.email.split('@')[0];
+
                 await FirebaseUser.createUserProfile(
                     user.uid,
                     this.form.email,
+                    this.form.username,
                     this.form.firstName,
                     this.form.lastName,
                     this.form.avatar,
@@ -272,7 +287,7 @@ export default {
     height: 60px;
     margin-right: 10px;
     cursor: pointer;
-    border: 2px solid transparent;
+    border: 3px solid transparent;
     border-radius: 50%;
 }
 

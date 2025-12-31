@@ -203,6 +203,10 @@ html,
   background-color: transparent !important;
 }
 
+.custom-h-100 {
+  min-height: 100vh;
+}
+
 @keyframes gradient-flash {
   0% {
     background-position: 0% 50%;

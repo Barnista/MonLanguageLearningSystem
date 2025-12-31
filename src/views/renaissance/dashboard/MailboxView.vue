@@ -1,13 +1,12 @@
 <template>
-    <div class="dashboard-view pb-5 custom-h-100" :style="{ backgroundColor: getAvatarById(currentUser?.photoURL).backgroundColor }">
+    <div class="mailbox-view pb-5 custom-h-100" :style="{ backgroundColor: getAvatarById(currentUser?.photoURL).backgroundColor }">
         <div class="mt-3 mt-md-4 container">
             <div class="row">
                 <div class="col-12 col-md-4 col-lg-3 col-xl-3">
                     <CompNavPanel :lang="lang" class="rounded border shadow mb-3 mb-md-4" />
                 </div>
                 <div class="col-12 col-md-8 col-lg-9 col-xl-9">
-                    <CompUserPanel :lang="lang" class="rounded border shadow mb-3 mb-md-4" />
-                    <CompDashboard class="rounded border shadow" :lang="lang" />
+                    <CompMailbox class="rounded border shadow" :lang="lang" />
                 </div>
             </div>
         </div>
@@ -15,19 +14,17 @@
 </template>
 
 <script>
-import CompDashboard from '@/components/renaissance/dashboard/CompDashboard.vue';
-import CompUserPanel from '@/components/renaissance/dashboard/panels/CompUserPanel.vue';
 import CompNavPanel from '@/components/renaissance/dashboard/panels/CompNavPanel.vue';
+import CompMailbox from '@/components/renaissance/dashboard/CompMailbox.vue';
 import { getAvatarById } from '@/data/avatars/avatars';
 import { firebaseApp, logPageView } from '@/services/firebase/app';
 import { getAuth } from 'firebase/auth';
 
 export default {
-    name: 'DashboardView',
+    name: 'MailboxView',
     components: {
-        CompDashboard,
-        CompUserPanel,
-        CompNavPanel
+        CompNavPanel,
+        CompMailbox
     },
     data() {
         return {
