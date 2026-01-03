@@ -103,7 +103,7 @@
                   5 Stars:
                   <CompFiveStars />
                 </h6>
-                <div v-if="avatarUnlocks.length == 0" class="text-center text-muted">
+                <div v-if="avatarUnlocksSS.length == 0" class="text-center text-muted">
                   <small>
                     "no avatar has been unlocked yet."
                   </small>
@@ -112,7 +112,7 @@
                   4 Stars:
                   <CompFourStars />
                 </h6>
-                <img v-for="(avatar, index) in avatars" :key="index" :src="avatar.src" :alt="avatar.id"
+                <img v-for="(avatar, index) in avatarUnlocks" :key="index" :src="getAvatarById(avatar.id).src" :alt="avatar.id"
                   :class="{ selected: editUser.avatar === avatar.id }" @click="editAvatar(avatar.id)"
                   class="avatar-img" />
               </div>
@@ -215,14 +215,14 @@
 </template>
 
 <script>
-import Countries from '@/data/countries/countries.json'
-import Communitites from '@/data/communities/mon-communities.json'
+import Countries from '@/assets/data/countries/countries.json'
+import Communitites from '@/assets/data/communities/mon-communities.json'
 
 import { firebaseApp } from '@/services/firebase/app';
 import { getAuth, updateCurrentUser, updateProfile } from 'firebase/auth';
 import FirebaseUser from '@/services/firebase/user';
-import { avatarStarterPack, getAvatarById } from '@/data/avatars/avatars';
-import Progression from '@/data/progression/progression';
+import { avatarStarterPack, getAvatarById } from '@/assets/data/avatars/avatars';
+import Progression from '@/assets/data/progression/progression';
 import CompFiveStars from '../misc/stars/CompFiveStars.vue';
 import CompFourStars from '../misc/stars/CompFourStars.vue';
 
@@ -243,6 +243,7 @@ export default {
       currentUser: null,
       userData: null,
       avatars: avatarStarterPack,
+      avatarUnlocksSS: [],
       avatarUnlocks: [],
       getAvatarById: getAvatarById,
       countries: Countries,
@@ -276,6 +277,30 @@ export default {
       });
       console.log('User is authenticated:', auth.currentUser);
     }
+  },
+  mounted() {
+    // load unlocked avatars
+    FirebaseUser.getAvatarsByStars(this.currentUser.uid, 5).then((querySnapshot) => {
+      this.avatarUnlocks = [];
+      querySnapshot.forEach((doc) => {
+        const avatarData = doc.data();
+        this.avatarUnlocksSS.push(avatarData);
+      });
+      console.log('5-star avatars loaded:', this.avatarUnlocks);
+    }).catch((error) => {
+      console.error('Error loading 5-star avatars:', error);
+    });
+
+    FirebaseUser.getAvatarsByStars(this.currentUser.uid, 4).then((querySnapshot) => {
+      this.avatarUnlocks = [];
+      querySnapshot.forEach((doc) => {
+        const avatarData = doc.data();
+        this.avatarUnlocks.push(avatarData);
+      });
+      console.log('4-star avatars loaded:', this.avatarUnlocks);
+    }).catch((error) => {
+      console.error('Error loading 4-star avatars:', error);
+    });
   },
   methods: {
     async editAvatar(avatarId) {

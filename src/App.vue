@@ -41,7 +41,7 @@ import { useHead, useSeoMeta } from '@unhead/vue'
 import seoLanguages from '@/services/display-languages/seo-languages';
 import { getAuth } from 'firebase/auth';
 import { firebaseApp } from './services/firebase/app';
-import { avatarFullPack, getAvatarById } from './data/avatars/avatars';
+import { avatarFullPack, getAvatarById } from './assets/data/avatars/avatars';
 
 export default {
   components: {

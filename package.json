@@ -17,6 +17,7 @@
     "core-js": "^3.8.3",
     "crypto": "^1.0.1",
     "crypto-browserify": "^3.12.1",
+    "d3": "^7.9.0",
     "datatables.net-bs5": "^2.3.4",
     "datatables.net-dt": "^2.3.4",
     "datatables.net-vue3": "^3.0.4",

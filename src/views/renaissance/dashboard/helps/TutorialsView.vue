@@ -16,7 +16,7 @@
 <script>
 import CompNavPanel from '@/components/renaissance/dashboard/panels/CompNavPanel.vue';
 import CompTutorials from '@/components/renaissance/dashboard/helps/CompTutorials.vue';
-import { getAvatarById } from '@/data/avatars/avatars';
+import { getAvatarById } from '@/assets/data/avatars/avatars';
 import { firebaseApp, logPageView } from '@/services/firebase/app';
 import { getAuth } from 'firebase/auth';
 

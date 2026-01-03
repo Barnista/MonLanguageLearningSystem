@@ -69,4 +69,9 @@ export default [
         name: 'dashboard-tutorials',
         component: () => import('../views/renaissance/dashboard/helps/TutorialsView.vue')
     },
+    {
+        path: '/worldmap',
+        name: 'worldmap',
+        component: () => import('../views/renaissance/worldmap/WorldMapView.vue')
+    }
 ];

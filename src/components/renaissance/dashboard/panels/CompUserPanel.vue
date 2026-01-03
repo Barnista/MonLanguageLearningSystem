@@ -49,8 +49,8 @@
 import { getAuth } from 'firebase/auth';
 import FirebaseUser from '@/services/firebase/user';
 import { firebaseApp } from '@/services/firebase/app';
-import { getAvatarById } from '@/data/avatars/avatars.js';
-import progression from '@/data/progression/progression';
+import { getAvatarById } from '@/assets/data/avatars/avatars.js';
+import progression from '@/assets/data/progression/progression';
 
 export default {
     name: 'CompUserPanel',

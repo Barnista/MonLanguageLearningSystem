@@ -288,7 +288,7 @@
 
 <script>
 
-import { avatarFullPack, getAvatarById } from '@/data/avatars/avatars';
+import { avatarFullPack, getAvatarById } from '@/assets/data/avatars/avatars';
 import about from '@/services/abouts/about';
 import displayLanguages from '@/services/display-languages/display-languages';
 

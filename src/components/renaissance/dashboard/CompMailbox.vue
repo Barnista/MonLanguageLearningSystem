@@ -6,17 +6,16 @@
       </div>
     </div>
 
-    <div class="mt-3">
+    <div class="mt-3" style="min-height: 600px;">
       <div class="d-flex mb-2">
         <button class="btn btn-sm btn-success me-2" @click="claimAllRewards" :disabled="!hasUnclaimedRewards">Claim all
           rewards</button>
       </div>
 
-      <ul class="list-group">
-        <li v-for="mail in filteredMails" :key="mail.id" class="list-group-item d-flex align-items-start"
+      <ul class="list-group h-100">
+        <li v-for="mail in filteredMails" :key="mail.id" class="list-group-item d-flex align-items-start shadow-sm"
           :class="{ unread: !mail.read, claimed: mail.claimed }">
-
-          <div class="flex-grow-1">
+          <div class="flex-grow-1 py-2">
             <div class="d-flex justify-content-between">
               <div>
                 <strong>{{ mail.localization[lang] ? mail.localization[lang].title : mail.title }}</strong>
@@ -24,21 +23,22 @@
                   <span class="text-muted small">
                     {{ formatDate(mail.date) }}
                   </span>
-                  <i class="text-muted small ms-1">by Admin</i>
+                  <i class="text-muted small ms-1">by {{ mail.author || 'No Reply' }}</i>
                 </div>
               </div>
             </div>
 
             <div class="mt-2" v-if="!mail.open">
               <div class="small text-muted d-flex align-items-center justify-content-between">
-                <span>{{ shortText(mail.body) }}</span>
-                <button class="btn btn-sm btn-success" @click="mail.open = true">Read more</button>
+                <span>{{ shortText(lang != 'en' ? mail.localization[lang].content : mail.content) }}</span>
+                <button class="btn btn-sm btn-success" @click="mail.open = true"><i class="bi bi-gem"></i> Read
+                  more</button>
               </div>
             </div>
 
             <div class="mt-2" v-else>
-              <div class="small" v-html="mail.body"></div>
-              <div class="mt-3" v-if="mail.hasRewards">
+              <div class="small" v-html="(lang != 'en') ? mail.localization[lang].body : mail.body"></div>
+              <div class="mt-3">
                 <div class="text-muted me-2">Rewards:</div>
                 <div class="d-flex flex-wrap align-items-top justify-content-start mb-2">
                   <div v-for="(reward, idx) in mail.rewards" :key="idx" class="mb-2">
@@ -74,11 +74,19 @@
                 </div>
                 <div class="text-end mb-2">
                   <div class="btn-group">
-                    <button class="btn btn-sm btn-outline-secondary shadow-sm"
-                      @click="mail.open = false">Minimize</button>
-                    <button class="btn btn-sm btn-success shadow-sm" :disabled="mail.claimed"
-                      @click="claimReward(mail)">
-                      Claim Rewards
+                    <button class="btn btn-sm btn-outline-secondary shadow-sm" @click="mail.open = false"><i
+                        class="bi bi-chevron-bar-up"></i> Minimize</button>
+                    <button v-if="!mail.claimed" class="btn btn-sm btn-success fw-bold shadow-sm"
+                      @click="claimRewards(mail)" :disabled="isClaiming">
+                      <span v-if="!isClaiming"><i class="bi bi-gem"></i> Claim Rewards</span>
+                      <span v-else>
+                        <div class="spinner-border spinner-border-sm text-light" role="status">
+                          <span class="visually-hidden">Loading...</span>
+                        </div> Claiming...
+                      </span>
+                    </button>
+                    <button v-else class="btn btn-sm btn-success fw-bold shadow-sm" disabled="true">
+                      <i class="bi bi-check2-all"></i> Rewards Claimed
                     </button>
                   </div>
                 </div>
@@ -96,11 +104,11 @@
 </template>
 
 <script>
-import avatar1 from '@/assets/avatars/avatar_hongsa_0001.svg';
-import avatar2 from '@/assets/avatars/avatar_hongsa_0002.svg';
-import { getAvatarById } from '@/data/avatars/avatars';
+import { getAvatarById } from '@/assets/data/avatars/avatars';
 import CompFiveStars from '@/components/renaissance/misc/stars/CompFiveStars.vue';
 import CompFourStars from '@/components/renaissance/misc/stars/CompFourStars.vue';
+import { getAuth } from 'firebase/auth';
+import FirebaseUser from '@/services/firebase/user';
 
 export default {
   name: 'CompMailbox',
@@ -113,73 +121,19 @@ export default {
     return {
       getAvatarById: getAvatarById,
       filter: 'all',
-      user: {
-        id: 1,
-        name: 'Thin Thin',
-        coins: 120,
-        inventory: [
-          { id: 'i1', name: 'Gold Coin', qty: 120, icon: avatar2 }
-        ]
-      },
-      mails: [
-        {
-          id: 'm1',
-          title: 'Welcome new user !!!',
-          body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc in eleifend augue. Quisque molestie diam lorem, et venenatis felis malesuada et. Aenean augue turpis, molestie in velit vitae, faucibus congue ex. Nunc lacinia consectetur ex, vitae molestie mi tincidunt eu. Etiam at nunc vulputate, porttitor sapien eleifend, lacinia turpis. Nam hendrerit feugiat pretium. Nullam sit amet felis id sem gravida sagittis. Curabitur ullamcorper ipsum mauris, in auctor nisi facilisis eu. Vestibulum in luctus sem. Integer ullamcorper aliquam neque eget aliquet. Donec in felis efficitur, posuere augue congue, suscipit ligula. Suspendisse potenti.<br><br>Cras porta, nulla id semper consequat, odio nulla gravida felis, ac vestibulum nibh libero eu enim. Proin ultrices, ligula sit amet efficitur sodales, justo dolor blandit tortor, vitae iaculis massa lacus ornare est. Maecenas eu nisl eu risus eleifend commodo sit amet elementum magna. Morbi vitae mi nunc. Donec suscipit metus sed nisi eleifend ultrices. Nam pellentesque mattis dui at iaculis. Nam fermentum nulla eget risus vestibulum, non vehicula urna viverra. Morbi mattis tempus ullamcorper. Nulla tristique, nunc sit amet gravida blandit, ante nulla consequat urna, condimentum efficitur dui urna condimentum justo.',
-          localization: {
-            th: {
-              lang: 'tha',
-              title: 'ยินดีต้อนรับและสวัสดีปีใหม่ 2026 ครับ !!!',
-              body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc in eleifend augue. Quisque molestie diam lorem, et venenatis felis malesuada et. Aenean augue turpis, molestie in velit vitae, faucibus congue ex. Nunc lacinia consectetur ex, vitae molestie mi tincidunt eu. Etiam at nunc vulputate, porttitor sapien eleifend, lacinia turpis. Nam hendrerit feugiat pretium. Nullam sit amet felis id sem gravida sagittis. Curabitur ullamcorper ipsum mauris, in auctor nisi facilisis eu. Vestibulum in luctus sem. Integer ullamcorper aliquam neque eget aliquet. Donec in felis efficitur, posuere augue congue, suscipit ligula. Suspendisse potenti.<br><br>Cras porta, nulla id semper consequat, odio nulla gravida felis, ac vestibulum nibh libero eu enim. Proin ultrices, ligula sit amet efficitur sodales, justo dolor blandit tortor, vitae iaculis massa lacus ornare est. Maecenas eu nisl eu risus eleifend commodo sit amet elementum magna. Morbi vitae mi nunc. Donec suscipit metus sed nisi eleifend ultrices. Nam pellentesque mattis dui at iaculis. Nam fermentum nulla eget risus vestibulum, non vehicula urna viverra. Morbi mattis tempus ullamcorper. Nulla tristique, nunc sit amet gravida blandit, ante nulla consequat urna, condimentum efficitur dui urna condimentum justo.',
-            },
-            my: {
-              lang: 'mya',
-              title: '၂၀၂၆ ခုနှစ် နှစ်သစ်ကို ကြိုဆိုပါတယ်၊ ပျော်ရွှင်ပါစေ!!!',
-              body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc in eleifend augue. Quisque molestie diam lorem, et venenatis felis malesuada et. Aenean augue turpis, molestie in velit vitae, faucibus congue ex. Nunc lacinia consectetur ex, vitae molestie mi tincidunt eu. Etiam at nunc vulputate, porttitor sapien eleifend, lacinia turpis. Nam hendrerit feugiat pretium. Nullam sit amet felis id sem gravida sagittis. Curabitur ullamcorper ipsum mauris, in auctor nisi facilisis eu. Vestibulum in luctus sem. Integer ullamcorper aliquam neque eget aliquet. Donec in felis efficitur, posuere augue congue, suscipit ligula. Suspendisse potenti.<br><br>Cras porta, nulla id semper consequat, odio nulla gravida felis, ac vestibulum nibh libero eu enim. Proin ultrices, ligula sit amet efficitur sodales, justo dolor blandit tortor, vitae iaculis massa lacus ornare est. Maecenas eu nisl eu risus eleifend commodo sit amet elementum magna. Morbi vitae mi nunc. Donec suscipit metus sed nisi eleifend ultrices. Nam pellentesque mattis dui at iaculis. Nam fermentum nulla eget risus vestibulum, non vehicula urna viverra. Morbi mattis tempus ullamcorper. Nulla tristique, nunc sit amet gravida blandit, ante nulla consequat urna, condimentum efficitur dui urna condimentum justo.',
-            },
-          },
-          date: new Date('2026-01-01'),
-          read: false,
-          hasRewards: true,
-          reward: { type: 'coins', amount: 50 },
-          rewards: [
-            { type: 'coin', value: 10000 },
-            { type: 'gem', value: 20 },
-            { type: 'score', value: 100 },
-            { type: 'exp', value: 801 },
-            { type: 'avatar', value: 'avatar_hongsa_0003' },
-            { type: 'avatar', value: 'avatar_hongsa_0008' },
-            { type: 'avatar', value: 'avatar_hongsa_0005' },
-            { type: 'avatar', value: 'avatar_hongsa_0010' },
-          ],
-          claimed: false,
-          open: false
-        },
-        {
-          id: 'm2',
-          title: 'Weekly Event',
-          body: 'You participated and earned an item reward!',
-          localization: {
-
-          },
-          date: new Date('2024-11-21'),
-          read: false,
-          hasRewards: true,
-          reward: { type: 'item', item: { id: 'i2', name: 'Event Badge', qty: 1 } },
-          rewards: [
-            { type: 'coin', value: 1000 },
-          ],
-          claimed: false,
-          open: false
-        },
-      ]
+      user: null,
+      mails: [],
+      isLoading: false,
+      isError: false,
+      errorMsg: null,
+      isClaiming: false
     };
   },
   computed: {
     filteredMails() {
-      if (this.filter === 'all') return this.mails.slice().sort((a, b) => b.date - a.date);
-      if (this.filter === 'unread') return this.mails.filter(m => !m.read).sort((a, b) => b.date - a.date);
-      if (this.filter === 'rewards') return this.mails.filter(m => m.hasRewards).sort((a, b) => b.date - a.date);
+      //if (this.filter === 'all') return this.mails.slice().sort((a, b) => b.date - a.date);
+      //if (this.filter === 'unread') return this.mails.filter(m => !m.read).sort((a, b) => b.date - a.date);
+      //if (this.filter === 'rewards') return this.mails.filter(m => m.hasRewards).sort((a, b) => b.date - a.date);
       return this.mails;
     },
     hasUnread() {
@@ -192,9 +146,36 @@ export default {
       return this.mails.some(m => m.hasRewards && !m.claimed);
     }
   },
+  created() {
+    const auth = getAuth();
+    this.user = auth.currentUser;
+    console.log('Current user:', this.user);
+  },
+  mounted() {
+    // Load mailbox from Firebase
+    if (this.user && this.user.uid) {
+      this.isLoading = true;
+      FirebaseUser.getMailbox(this.user.uid).then((querySnapshot) => {
+        this.mails = [];
+        console.log('Count', querySnapshot.size);
+        querySnapshot.forEach((doc) => {
+          const mailData = doc.data();
+          mailData.id = doc.id;
+          this.mails.push(mailData);
+          console.log('Mailbox loaded:', mailData);
+        });
+        this.isLoading = false;
+      }).catch((error) => {
+        this.isLoading = false;
+        this.isError = true;
+        this.errorMsg = error.message;
+        console.error('Error loading mailbox:', error);
+      });
+    }
+  },
   methods: {
     formatDate(d) {
-      return new Date(d).toLocaleDateString();
+      return (d.toDate()).toLocaleDateString();
     },
     shortText(t) {
       if (!t) return '';
@@ -212,20 +193,19 @@ export default {
     markAllRead() {
       this.mails.forEach(m => m.read = true);
     },
-    claimReward(mail) {
-      if (!mail.hasRewards || mail.claimed) return;
-      const r = mail.reward;
-      if (r.type === 'coins') {
-        this.user.coins += r.amount;
-      } else if (r.type === 'item') {
-        // add item to inventory (simple merge if same name)
-        const existing = this.user.inventory.find(i => i.name === r.item.name);
-        if (existing) existing.qty += r.item.qty || 1;
-        else this.user.inventory.push({ id: r.item.id || 'it' + Date.now(), name: r.item.name, qty: r.item.qty || 1, icon: avatar1 });
+    async claimRewards(mail) {
+      console.log('Claiming rewards for mail:', mail);
+      this.isClaiming = true;
+      try {
+        await FirebaseUser.depositRewards(this.user.uid, mail.rewards);
+        mail = await FirebaseUser.markMailAsClaimed(this.user.uid, mail);
+        this.isClaiming = false;
+        console.log('Rewards claimed for mail:', mail);
+        alert('Rewards claimed successfully!');
+      } catch (error) {
+        this.isClaiming = false;
+        console.error('Error depositing rewards:', error);
       }
-      mail.claimed = true;
-      mail.read = true;
-      this.$emit('rewardClaimed', { mailId: mail.id, reward: r });
     },
     claimAllRewards() {
       this.mails.filter(m => m.hasRewards && !m.claimed).forEach(m => this.claimReward(m));

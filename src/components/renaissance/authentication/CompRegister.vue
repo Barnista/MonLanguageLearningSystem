@@ -28,7 +28,7 @@
             <hr>
             <h3>My Avatar</h3>
             <div class="form-group mb-3">
-                <label class="form-label">Select Avatar (4  Stars): 
+                <label class="form-label">Select Avatar (4 Stars):
                     <CompFourStars />
                 </label>
                 <div class="avatar-options">
@@ -130,9 +130,9 @@
 </template>
 
 <script>
-import Countries from '@/data/countries/countries.json'
-import Communitites from '@/data/communities/mon-communities.json'
-import { avatarStarterPack } from '@/data/avatars/avatars.js'
+import Countries from '@/assets/data/countries/countries.json'
+import Communitites from '@/assets/data/communities/mon-communities.json'
+import { avatarStarterPack } from '@/assets/data/avatars/avatars.js'
 
 import FirebaseUser from '@/services/firebase/user'
 
@@ -263,8 +263,9 @@ export default {
                 this.isRegistering = false;
                 this.errorMessage = error.message;
             }
-            setInterval(() => {
+            const intv = setInterval(() => {
                 if (!this.isRegistering && !this.errorMessage) {
+                    clearInterval(intv);
                     this.$router.push('/dashboard', { query: { lang: this.lang } });
                 }
             }, 1000);
